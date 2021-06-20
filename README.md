@@ -1,1 +1,30 @@
 # grupo_2_ilovelook
+
+
+# Temática de la web y audiencia objetivo
+-------------------------------------------
+## Somos un equipo de desarrolladores a la cual una empresa dedicada a la indumentaria femenina nos contrato para que le realicemos el desarrollo de su pagina web responsive, para esto vamos a utilizar diferentes funcionalidades como crear la base de datos, filtros, agregar productos al carrito, registrarse en la base de datos, realizar una lista de favoritos y detalles de productos.
+
+## La audiencia a la que esta destinada es a aquella persona que se identifique, desee renovar su look y/o realizar compras mayoristas con los estilos urbano, grunge y oversize, pudiéndose así armar combos y conjuntos de acuerdo a sus necesidades.
+-------------------------------------------
+# ¿Cómo ajustaremos nuestra oferta a ese público?
+-------------------------------------------
+## Realizamos regularmente ofertas de looks al igual que liquidaciones todos los fines de temporadas.
+-------------------------------------------
+
+## Integrantes :
+-------------------------------------------
+ ### Emanuel Arroyo
+- 29 años
+- Estudiante desarrollo web full stack
+ --------
+ ### Mariela Paduani
+ - 32 años
+ - Estudiante desarrollo web full stack
+ --------
+ ### Pablo Escobar
+ - 29 años
+ - Me gusta ser compañero y trabajar en equipo, aprender, ayudar a mis pares y mis hobbies
+ son leer ciencia ficcion, escuchar musica y ver series.
+ - Estudiante desarrollo web full stack
+ 
