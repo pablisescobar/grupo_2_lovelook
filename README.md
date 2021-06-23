@@ -15,10 +15,10 @@
 ## Integrantes :
 -------------------------------------------
  ### Emanuel Arroyo
-- 29 años
-- Me considero un buen compañero, me gusta enseñar sobre lo que se y aprendo,y el dia de mañana me gustaria ser un buen desarrollador y poder vivir de esto que me encanta.
-- Me gusta jugar en red con amigos, escuchar musica y tocar la guitarra.
-- Actualmente soy estudiante en desarrollo web full stack
+- 29 años;
+- Soy compañero, me gusta aprender y enseñar, soy muy detallista y autoexigente en lo que hago;
+- Me gusta jugar en red con amigos, escuchar musica y tocar la guitarra;
+- Actualmente soy estudiante en desarrollo web full stack.
  --------
  ### Mariela Paduani
  - 32 años
