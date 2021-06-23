@@ -22,7 +22,8 @@
  --------
  ### Mariela Paduani
  - 32 años
- - Estudiante desarrollo web full stack
+ - Soy una persona trabajadora, resolutiva y capaz de adaptarme a cualquier situación. Me gusta aprender continuamente y siempre cumplo con mis objetivos.
+ - Estudiante de inglés y desarrollo web full stack
  --------
  ### Pablo Escobar
  - 29 años
