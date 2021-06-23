@@ -16,7 +16,7 @@
 -------------------------------------------
  ### Emanuel Arroyo
 - 29 años;
-- Soy compañero, me gusta aprender y enseñar, soy muy detallista y autoexigente en lo que hago;
+- Me gusta aprender y enseñar, soy detallista y autoexigente en lo que hago;
 - Me gusta jugar en red con amigos, escuchar musica y tocar la guitarra;
 - Actualmente soy estudiante en desarrollo web full stack.
  --------
