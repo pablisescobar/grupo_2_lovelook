@@ -30,4 +30,13 @@
  - Me gusta ser compañero y trabajar en equipo, aprender, ayudar a mis pares y mis hobbies
  son leer ciencia ficcion, escuchar musica y ver series.
  - Estudiante desarrollo web full stack
+
+ ##Páginas de referencia
+ 
+ - [Como quieres](https://www.comoquieres.com.ar/)
+ - [Sweet](https://www.sweet.com.ar/)
+ - [Mimo & co](https://tienda.mimo.com.ar/)
+ - [Muaa](https://www.muaa.com.ar/)
+
+
  
