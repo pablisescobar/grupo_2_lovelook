@@ -53,6 +53,7 @@ Elegimos principalmente la estructura de la página [Como quieres](https://www.c
 - [Registro](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/REGISTRO%20RESPONSIVE%20boceto.png)
 
 ### [Paleta de colores](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Paleta%20de%20colores/Paleta%20de%20colores.png)
+![imagen](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Paleta%20de%20colores/Paleta%20de%20colores.png)
 
 ### Tipografia
 - [Cinzel](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/cinzel.png)
