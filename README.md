@@ -46,7 +46,7 @@
 Elegimos principalmente la estructura de la pagina [Muaa](https://www.muaa.com.ar/) basandonos en la parte del Home y menú, el carrito de compra estuvo basado de la página [Todo moda](https://ar.todomoda.com/) y la descripcion del producto fue basada de la pagina [Como quieres](https://www.comoquieres.com.ar/), el resto de las paginas fueron elegidas por la estetica y otras.
 
 ### Wireframe 
-- [Detalle del producto](https://github.com/paloescobar29/grupo_2_ilovelook/tree/main/Boceto/DETALLES-PRODUCTO-RESPONSIVE-boceto.png)
+- [Detalle del producto](https://github.com/paloescobar29/grupo_2_ilovelook/tree/main/Boceto/"DETALLES PRODUCTO RESPONSIVE boceto.png")
 
 
 
