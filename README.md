@@ -46,14 +46,14 @@
 Elegimos principalmente la estructura de la página [Como quieres](https://www.comoquieres.com.ar/) basandonos en la parte del Home y menú, el carrito de compra estuvo basado de la página [Todo moda](https://ar.todomoda.com/), el resto de las páginas fueron elegidas por la estética y sus funcionalidades.
 
 ### Wireframe Responsive 
-- [Home](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/HOME%20RESPONSIVE%20boceto.png)
-- [Carrito de compra](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/CARRITO%20DE%20COMPRA%20RESPONSIVE%20boceto.png)
-- [Detalle de producto](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/DETALLES%20PRODUCTO%20RESPONSIVE%20boceto.png)
-- [Login](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/LOGIN%20RESPONSIVE%20boceto.png)
-- [Registro](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/REGISTRO%20RESPONSIVE%20boceto.png)
+- [Home](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/HOME%20RESPONSIVE%20boceto.png?raw=true)
+- [Carrito de compra](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/CARRITO%20DE%20COMPRA%20RESPONSIVE%20boceto.png?raw=true)
+- [Detalle de producto](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/DETALLES%20PRODUCTO%20RESPONSIVE%20boceto.png?raw=true)
+- [Login](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/LOGIN%20RESPONSIVE%20boceto.png?raw=true)
+- [Registro](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/REGISTRO%20RESPONSIVE%20boceto.png?raw=true)
 
-### [Paleta de colores](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Paleta%20de%20colores/Paleta%20de%20colores.png)
-![imagen](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Paleta%20de%20colores/Paleta%20de%20colores.png)
+### Paleta de colores
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Paleta%20de%20colores/Paleta%20de%20colores.png" width="250" height="100">
 
 ### Tipografia
 <img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/cinzel.png" width="250" height="100">
