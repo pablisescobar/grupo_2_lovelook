@@ -56,17 +56,11 @@ Elegimos principalmente la estructura de la página [Como quieres](https://www.c
 ![imagen](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Paleta%20de%20colores/Paleta%20de%20colores.png)
 
 ### Tipografia
-- ![Cinzel](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/cinzel.png)
-- ![Happy Monkey](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/happy%20monkey.png)
-- ![Oleo Script Swash Caps](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/oleo%20script%20swash%20caps.png)
-- ![Sniglet](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/sniglet.png)
-- ![Yesteryear](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/yesteryear.png)
-
-<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/cinzel.png" width="100" height="300">
-<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/happy%20monkey.png" width="100" height="300">
-<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/oleo%20script%20swash%20caps.png" width="100" height="300">
-<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/sniglet.png" width="100" height="300">
-<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/yesteryear.png" width="100" height="300">
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/cinzel.png" width="250" height="100">
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/happy%20monkey.png" width="250" height="100">
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/oleo%20script%20swash%20caps.png" width="250" height="100">
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/sniglet.png" width="250" height="100">
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/yesteryear.png" width="250" height="100">
 
 
 
