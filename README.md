@@ -13,7 +13,7 @@
 -------------------------------------------
 
 ## Integrantes :
--------------------------------------------
+
  ### Emanuel Arroyo
 - 29 años;
 - Me gusta aprender y enseñar, soy detallista y autoexigente en lo que hago;
@@ -51,6 +51,19 @@ Elegimos principalmente la estructura de la página [Como quieres](https://www.c
 - [Detalle de producto](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/DETALLES%20PRODUCTO%20RESPONSIVE%20boceto.png)
 - [Login](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/LOGIN%20RESPONSIVE%20boceto.png)
 - [Registro](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/REGISTRO%20RESPONSIVE%20boceto.png)
+
+### [Paleta de colores](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Paleta%20de%20colores/Paleta%20de%20colores.png)
+
+### Tipografia
+- [Cinzel](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/cinzel.png)
+- [Happy Monkey](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/happy%20monkey.png)
+- [Oleo Script Swash Caps](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/oleo%20script%20swash%20caps.png)
+- [Sniglet](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/sniglet.png)
+- [Yesteryear](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/yesteryear.png)
+
+
+
+
 
 
 
