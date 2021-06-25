@@ -1,4 +1,4 @@
-# grupo_2_ilovelook
+# Grupo 2 ilovelook
 
 
 # Temática de la web y audiencia objetivo
@@ -43,10 +43,10 @@
 
 ### ¿Por que elegimos estas páginas?
 
-Elegimos principalmente la estructura de la pagina [Muaa](https://www.muaa.com.ar/) basandonos en la parte del Home y menú, el carrito de compra estuvo basado de la página [Todo moda](https://ar.todomoda.com/) y la descripcion del producto fue basada de la pagina [Como quieres](https://www.comoquieres.com.ar/), el resto de las paginas fueron elegidas por la estetica y otras.
+Elegimos principalmente la estructura de la pagina [Como quieres](https://www.comoquieres.com.ar/) basandonos en la parte del Home y menú, el carrito de compra estuvo basado de la página [Todo moda](https://ar.todomoda.com/), el resto de las paginas fueron elegidas por la estetica y sus funcionalidades.
 
 ### Wireframe 
-- [Detalle del producto](Boceto/DETALLES-PRODUCTO-RESPONSIVE-boceto.png)
+
 
 
 
