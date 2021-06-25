@@ -62,8 +62,11 @@ Elegimos principalmente la estructura de la página [Como quieres](https://www.c
 - ![Sniglet](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/sniglet.png)
 - ![Yesteryear](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/yesteryear.png)
 
-<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/cinzel.png" width="324" height="324">
-
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/cinzel.png" width="100" height="300">
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/happy%20monkey.png" width="100" height="300">
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/oleo%20script%20swash%20caps.png" width="100" height="300">
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/sniglet.png" width="100" height="300">
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/yesteryear.png" width="100" height="300">
 
 
 
