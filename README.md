@@ -31,12 +31,23 @@
  son leer ciencia ficcion, escuchar musica y ver series.
  - Estudiante desarrollo web full stack
 
- ##Páginas de referencia
- 
+## Páginas de referencia
+
  - [Como quieres](https://www.comoquieres.com.ar/)
  - [Sweet](https://www.sweet.com.ar/)
  - [Mimo & co](https://tienda.mimo.com.ar/)
  - [Muaa](https://www.muaa.com.ar/)
+ - [Cheeky](https://www.cheeky.com.ar/)
+ - [Todo moda](https://ar.todomoda.com/)
+
+
+### ¿Por que elegimos estas páginas?
+
+Elegimos principalmente la estructura de la pagina [Muaa](https://www.muaa.com.ar/) basandonos en la parte del Home y menú, el carrito de compra estuvo basado de la página [Todo moda](https://ar.todomoda.com/) y la descripcion del producto fue basada de la pagina [Como quieres](https://www.comoquieres.com.ar/), el resto de las paginas fueron elegidas por la estetica y otras.
+
+### Wireframe 
+- [Detalle del producto](Boceto/DETALLES-PRODUCTO-RESPONSIVE-boceto.png)
+
 
 
  
