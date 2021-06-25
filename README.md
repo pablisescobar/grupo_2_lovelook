@@ -1,15 +1,15 @@
 # Grupo 2 ilovelook
 
 
-# Temática de la web y audiencia objetivo
+## Temática de la web y audiencia objetivo
 -------------------------------------------
-## Somos un equipo de desarrolladores a la cual una empresa dedicada a la indumentaria femenina nos contrato para que le realicemos el desarrollo de su pagina web responsive, para esto vamos a utilizar diferentes funcionalidades como crear la base de datos, filtros, agregar productos al carrito, registrarse en la base de datos, realizar una lista de favoritos y detalles de productos.
+### Somos un equipo de desarrolladores a la cual una empresa dedicada a la indumentaria femenina nos contrato para que le realicemos el desarrollo de su pagina web responsive, para esto vamos a utilizar diferentes funcionalidades como crear la base de datos, filtros, agregar productos al carrito, registrarse en la base de datos, realizar una lista de favoritos y detalles de productos.
 
-## La audiencia a la que esta destinada es a aquella persona que se identifique, desee renovar su look y/o realizar compras mayoristas con los estilos urbano, grunge y oversize, pudiéndose así armar combos y conjuntos de acuerdo a sus necesidades.
+### La audiencia a la que esta destinada es a aquella persona que se identifique, desee renovar su look y/o realizar compras mayoristas con los estilos urbano, grunge y oversize, pudiéndose así armar combos y conjuntos de acuerdo a sus necesidades.
 -------------------------------------------
-# ¿Cómo ajustaremos nuestra oferta a ese público?
--------------------------------------------
-## Realizamos regularmente ofertas de looks al igual que liquidaciones todos los fines de temporadas.
+## ¿Cómo ajustaremos nuestra oferta a ese público?
+
+### Realizamos regularmente ofertas de looks al igual que liquidaciones todos los fines de temporadas.
 -------------------------------------------
 
 ## Integrantes :
@@ -45,7 +45,7 @@
 
 Elegimos principalmente la estructura de la página [Como quieres](https://www.comoquieres.com.ar/) basandonos en la parte del Home y menú, el carrito de compra estuvo basado de la página [Todo moda](https://ar.todomoda.com/), el resto de las páginas fueron elegidas por la estética y sus funcionalidades.
 
-### Wireframe Responsive 
+## Wireframe Responsive 
 
 [Home](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/HOME%20RESPONSIVE%20boceto.png?raw=true) 
 
