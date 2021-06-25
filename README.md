@@ -31,7 +31,7 @@
  son leer ciencia ficcion, escuchar musica y ver series.
  - Estudiante desarrollo web full stack
 
- ##Páginas de referencia
+ ## Páginas de referencia
  
  - [Como quieres](https://www.comoquieres.com.ar/)
  - [Sweet](https://www.sweet.com.ar/)
