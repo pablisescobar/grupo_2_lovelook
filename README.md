@@ -56,12 +56,13 @@ Elegimos principalmente la estructura de la página [Como quieres](https://www.c
 ![imagen](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Paleta%20de%20colores/Paleta%20de%20colores.png)
 
 ### Tipografia
-- ![Cinzel](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/cinzel.png){height="36px" width="36px"}
+- ![Cinzel](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/cinzel.png)
 - ![Happy Monkey](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/happy%20monkey.png)
 - ![Oleo Script Swash Caps](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/oleo%20script%20swash%20caps.png)
 - ![Sniglet](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/sniglet.png)
 - ![Yesteryear](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/yesteryear.png)
 
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/cinzel.png" width="324" height="324">
 
 
 
