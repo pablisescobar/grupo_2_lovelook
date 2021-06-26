@@ -1,7 +1,5 @@
 # Grupo 2 lovelook
 
-<div style="text-align:center"><img src ="/Logo/Logo (1).png" /></div>
-
 <p align="center"> 
 <img src="/Logo/Logo (1).png">
 </p>
