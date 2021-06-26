@@ -1,4 +1,4 @@
-# Grupo 2 ilovelook
+# Grupo 2 lovelook
 
 
 ## Temática de la web y audiencia objetivo
@@ -70,7 +70,7 @@ Elegimos principalmente la estructura de la página [Como quieres](https://www.c
 ### Paleta de colores
 <img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Paleta%20de%20colores/Paleta%20de%20colores.png" width="350" height="200">
 
-### Tipografia
+### Tipografía
 <img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/cinzel.png" width="250" height="100">
 <img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/happy%20monkey.png" width="250" height="100">
 <img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/oleo%20script%20swash%20caps.png" width="250" height="100">
