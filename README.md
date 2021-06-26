@@ -1,5 +1,8 @@
 # Grupo 2 lovelook
 
+<p align='center'>
+<img src="../" style='border-radius:10px;'>
+</p>
 
 ## Temática de la web y audiencia objetivo
 -------------------------------------------
@@ -76,7 +79,6 @@ Elegimos principalmente la estructura de la página [Como quieres](https://www.c
 <img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/oleo%20script%20swash%20caps.png" width="250" height="100">
 <img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/sniglet.png" width="250" height="100">
 <img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/yesteryear.png" width="250" height="100">
-
 
 
 
