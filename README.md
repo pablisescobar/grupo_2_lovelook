@@ -1,6 +1,6 @@
 # Grupo 2 lovelook
 
-<div align=”center”>![Logo](https://user-images.githubusercontent.com/85588989/123513266-99c69700-d662-11eb-9481-3c34e7654e01.png)</div>
+<div style="text-align:center"><img src ="./Logo/Logo(1).png" /></div>
 
 ## Temática de la web y audiencia objetivo
 -------------------------------------------
