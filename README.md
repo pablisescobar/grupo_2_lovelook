@@ -1,19 +1,19 @@
 # Grupo 2 ilovelook
 
 
-# Temática de la web y audiencia objetivo
+## Temática de la web y audiencia objetivo
 -------------------------------------------
-## Somos un equipo de desarrolladores a la cual una empresa dedicada a la indumentaria femenina nos contrato para que le realicemos el desarrollo de su pagina web responsive, para esto vamos a utilizar diferentes funcionalidades como crear la base de datos, filtros, agregar productos al carrito, registrarse en la base de datos, realizar una lista de favoritos y detalles de productos.
+### Somos un equipo de desarrolladores a la cual una empresa dedicada a la indumentaria femenina nos contrato para que le realicemos el desarrollo de su pagina web responsive, para esto vamos a utilizar diferentes funcionalidades como crear la base de datos, filtros, agregar productos al carrito, registrarse en la base de datos, realizar una lista de favoritos y detalles de productos.
 
-## La audiencia a la que esta destinada es a aquella persona que se identifique, desee renovar su look y/o realizar compras mayoristas con los estilos urbano, grunge y oversize, pudiéndose así armar combos y conjuntos de acuerdo a sus necesidades.
+### La audiencia a la que esta destinada es a aquella persona que se identifique, desee renovar su look y/o realizar compras mayoristas con los estilos urbano, grunge y oversize, pudiéndose así armar combos y conjuntos de acuerdo a sus necesidades.
 -------------------------------------------
-# ¿Cómo ajustaremos nuestra oferta a ese público?
--------------------------------------------
-## Realizamos regularmente ofertas de looks al igual que liquidaciones todos los fines de temporadas.
+## ¿Cómo ajustaremos nuestra oferta a ese público?
+
+### Realizamos regularmente ofertas de looks al igual que liquidaciones todos los fines de temporadas.
 -------------------------------------------
 
 ## Integrantes :
--------------------------------------------
+
  ### Emanuel Arroyo
 - 29 años;
 - Me gusta aprender y enseñar, soy detallista y autoexigente en lo que hago;
@@ -45,12 +45,39 @@
 
 Elegimos principalmente la estructura de la página [Como quieres](https://www.comoquieres.com.ar/) basandonos en la parte del Home y menú, el carrito de compra estuvo basado de la página [Todo moda](https://ar.todomoda.com/), el resto de las páginas fueron elegidas por la estética y sus funcionalidades.
 
-### Wireframe Responsive 
-- [Home](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/HOME%20RESPONSIVE%20boceto.png)
-- [Carrito de compra](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/CARRITO%20DE%20COMPRA%20RESPONSIVE%20boceto.png)
-- [Detalle de producto](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/DETALLES%20PRODUCTO%20RESPONSIVE%20boceto.png)
-- [Login](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/LOGIN%20RESPONSIVE%20boceto.png)
-- [Registro](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/REGISTRO%20RESPONSIVE%20boceto.png)
+## Wireframe Responsive 
+
+[Home](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/HOME%20RESPONSIVE%20boceto.png?raw=true) 
+
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/HOME%20RESPONSIVE%20boceto.png" width="400" height="400">
+
+[Carrito de compra](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/CARRITO%20DE%20COMPRA%20RESPONSIVE%20boceto.png?raw=true)
+
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/CARRITO%20DE%20COMPRA%20RESPONSIVE%20boceto.png" width="400" height="400">
+
+[Detalle de producto](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/DETALLES%20PRODUCTO%20RESPONSIVE%20boceto.png?raw=true)   
+
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/DETALLES%20PRODUCTO%20RESPONSIVE%20boceto.png" width="400" height="400">
+
+[Login](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/LOGIN%20RESPONSIVE%20boceto.png?raw=true)         
+
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/LOGIN%20RESPONSIVE%20boceto.png" width="600" height="200">
+
+[Registro](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/REGISTRO%20RESPONSIVE%20boceto.png?raw=true)
+
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/REGISTRO%20RESPONSIVE%20boceto.png" width="600" height="200">
+
+### Paleta de colores
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Paleta%20de%20colores/Paleta%20de%20colores.png" width="350" height="200">
+
+### Tipografia
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/cinzel.png" width="250" height="100">
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/happy%20monkey.png" width="250" height="100">
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/oleo%20script%20swash%20caps.png" width="250" height="100">
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/sniglet.png" width="250" height="100">
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/yesteryear.png" width="250" height="100">
+
+
 
 
 
