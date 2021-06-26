@@ -35,7 +35,7 @@
 
  - [Como quieres](https://www.comoquieres.com.ar/)
  - [Sweet](https://www.sweet.com.ar/)
- - [Mimo & co](https://tienda.mimo.com.ar/)
+ - [47Street](https://www.47street.com.ar/)
  - [Muaa](https://www.muaa.com.ar/)
  - [Cheeky](https://www.cheeky.com.ar/)
  - [Todo moda](https://ar.todomoda.com/)
