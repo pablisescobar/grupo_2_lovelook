@@ -2,6 +2,10 @@
 
 <div style="text-align:center"><img src ="/Logo/Logo (1).png" /></div>
 
+<p align="center"> 
+<img src="/Logo/Logo (1).png">
+</p>
+
 ## Temática de la web y audiencia objetivo
 -------------------------------------------
 ### Somos un equipo de desarrolladores a la cual una empresa dedicada a la indumentaria femenina nos contrato para que le realicemos el desarrollo de su pagina web responsive, para esto vamos a utilizar diferentes funcionalidades como crear la base de datos, filtros, agregar productos al carrito, registrarse en la base de datos, realizar una lista de favoritos y detalles de productos.
