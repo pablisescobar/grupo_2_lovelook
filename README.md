@@ -1,6 +1,6 @@
 # Grupo 2 lovelook
 
-<div style="text-align:center"><img src ="./Logo/Logo(1).png" /></div>
+<div style="text-align:center"><img src ="/Logo/Logo (1).png" /></div>
 
 ## Temática de la web y audiencia objetivo
 -------------------------------------------
