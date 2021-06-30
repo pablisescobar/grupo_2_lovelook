@@ -6,9 +6,9 @@
 
 ## Temática de la web y audiencia objetivo
 -------------------------------------------
-### Somos un equipo de desarrolladores a la cual una empresa dedicada a la indumentaria femenina nos contrato para que le realicemos el desarrollo de su pagina web responsive, para esto vamos a utilizar diferentes funcionalidades como crear la base de datos, filtros, agregar productos al carrito, registrarse en la base de datos, realizar una lista de favoritos y detalles de productos.
+### Somos un equipo de desarrolladores a la cual una empresa dedicada a la indumentaria femenina nos contrato para que le realicemos el desarrollo de su página web responsive, para esto vamos a utilizar diferentes funcionalidades como crear la base de datos, filtros, agregar productos al carrito, registrarse en la base de datos, realizar una lista de favoritos y detalles de productos.
 
-### La audiencia a la que esta destinada es a aquella persona que se identifique, desee renovar su look y/o realizar compras mayoristas con los estilos urbano, grunge y oversize, pudiéndose así armar combos y conjuntos de acuerdo a sus necesidades.
+### La audiencia a la que está destinada es a aquella persona que se identifique, desee renovar su look y/o realizar compras mayoristas con los estilos urbano, grunge y oversize, pudiéndose así armar combos y conjuntos de acuerdo a sus necesidades.
 -------------------------------------------
 ## ¿Cómo ajustaremos nuestra oferta a ese público?
 
@@ -20,7 +20,7 @@
  ### Emanuel Arroyo
 - 29 años;
 - Me gusta aprender y enseñar, soy detallista y autoexigente en lo que hago;
-- Me gusta jugar en red con amigos, escuchar musica y tocar la guitarra;
+- Me gusta jugar en red con amigos, escuchar música y tocar la guitarra;
 - Actualmente soy estudiante en desarrollo web full stack.
  --------
  ### Mariela Paduani
@@ -30,8 +30,7 @@
  --------
  ### Pablo Escobar
  - 29 años
- - Me gusta ser compañero y trabajar en equipo, aprender, ayudar a mis pares y mis hobbies
- son leer ciencia ficcion, escuchar musica y ver series.
+ - Me gusta ser compañero y trabajar en equipo, aprender, ayudar a mis pares. Mis hobbies son: leer ciencia ficción, escuchar música y ver series.
  - Estudiante desarrollo web full stack
 
 ## Páginas de referencia
@@ -44,7 +43,7 @@
  - [Todo moda](https://ar.todomoda.com/)
 
 
-### ¿Por que elegimos estas páginas?
+### ¿Por qué elegimos estas páginas?
 
 Elegimos principalmente la estructura de la página [Como quieres](https://www.comoquieres.com.ar/) basandonos en la parte del Home y menú, el carrito de compra estuvo basado de la página [Todo moda](https://ar.todomoda.com/), el resto de las páginas fueron elegidas por la estética y sus funcionalidades.
 
@@ -74,20 +73,10 @@ Elegimos principalmente la estructura de la página [Como quieres](https://www.c
 <img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Paleta%20de%20colores/Paleta%20de%20colores.png" width="350" height="200">
 
 ### Tipografía
-<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/cinzel.png" width="250" height="100">
+
 <img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/happy%20monkey.png" width="250" height="100">
 <img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/oleo%20script%20swash%20caps.png" width="250" height="100">
 <img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/sniglet.png" width="250" height="100">
 <img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/yesteryear.png" width="250" height="100">
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/cinzel.png" width="250" height="100">
 
-
-
-
-
-
-
-
-
-
-
- 
