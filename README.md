@@ -51,15 +51,15 @@ Elegimos principalmente la estructura de la página [Como quieres](https://www.c
 
 [Home](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/HOME%20RESPONSIVE.png?raw=true) 
 
-<img src="https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/HOME%20RESPONSIVE.png" width="400" height="400">
+<img src="https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/HOME%20RESPONSIVE.png" width="600" height="400">
 
 [Carrito de compra](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/CARRITO%20DE%20COMPRA%20RESPONSIVE.png?raw=true)
 
-<img src="https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/CARRITO%20DE%20COMPRA%20RESPONSIVE.png" width="400" height="400">
+<img src="https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/CARRITO%20DE%20COMPRA%20RESPONSIVE.png" width="600" height="400">
 
 [Detalle de producto](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/DETALLES%20PRODUCTO%20RESPONSIVE.png?raw=true)   
 
-<img src="https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/DETALLES%20PRODUCTO%20RESPONSIVE.png" width="400" height="400">
+<img src="https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/DETALLES%20PRODUCTO%20RESPONSIVE.png" width="600" height="400">
 
 [Login](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/LOGIN%20RESPONSIVE.png?raw=true)         
 
