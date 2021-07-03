@@ -69,20 +69,20 @@ Elegimos principalmente la estructura de la página [Como quieres](https://www.c
 
 <img src="https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/REGISTRO%20RESPONSIVE.png" width="600" height="200">
 
-[Favoritos](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/FAVORITOS%20RESPONSIVE.png?raw=true)
+[Favoritos](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/FAVORITOS%20RESPONSIVE.png)
 
-<img scr="https://raw.githubusercontent.com/paloescobar29/grupo_2_lovelook/main/Boceto/FAVORITOS%20RESPONSIVE.png" width="600" height="400">
+![Favoritos](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/FAVORITOS%20RESPONSIVE.png?raw=true)
 
-[Header y Footer](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/HEADER%20Y%20FOOTER%20RESPONSIVE.png?raw=true)
+[Header y Footer](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/HEADER%20Y%20FOOTER%20RESPONSIVE.png)
 
-<img scr="https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/HEADER%20Y%20FOOTER%20RESPONSIVE.png" width="600" height="400">
+![Header y Footer](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/HEADER%20Y%20FOOTER%20RESPONSIVE.png?raw=true)
 
-[Lista de productos](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/LISTA%20DE%20PRODUCTOS%20RESPONSIVE.png?raw=true)
+[Lista de productos](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/LISTA%20DE%20PRODUCTOS%20RESPONSIVE.png)
 
-<img scr="https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/LISTA%20DE%20PRODUCTOS%20RESPONSIVE.png" width="600" height="400">
+![Lista de productos](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/LISTA%20DE%20PRODUCTOS%20RESPONSIVE.png?raw=true)
 
 ### Paleta de colores
-<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Paleta%20de%20colores/Paleta%20de%20colores.png" width="200" height="400">
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Paleta%20de%20colores/Paleta%20de%20colores.png" width="600" height="300">
 
 ### Tipografía
 
