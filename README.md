@@ -75,14 +75,14 @@ Elegimos principalmente la estructura de la página [Como quieres](https://www.c
 
 [Header y Footer](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/HEADER%20Y%20FOOTER%20RESPONSIVE.png?raw=true)
 
-<img scr="https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/HEADER%20Y%20FOOTER%20RESPONSIVE.png" width="600" height="200">
+<img scr="https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/HEADER%20Y%20FOOTER%20RESPONSIVE.png" width="600" height="400">
 
 [Lista de productos](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/LISTA%20DE%20PRODUCTOS%20RESPONSIVE.png?raw=true)
 
-<img scr="https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/LISTA%20DE%20PRODUCTOS%20RESPONSIVE.png" width="600" height="200">
+<img scr="https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/LISTA%20DE%20PRODUCTOS%20RESPONSIVE.png" width="600" height="400">
 
 ### Paleta de colores
-<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Paleta%20de%20colores/Paleta%20de%20colores.png" width="350" height="200">
+<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Paleta%20de%20colores/Paleta%20de%20colores.png" width="350" height="400">
 
 ### Tipografía
 
