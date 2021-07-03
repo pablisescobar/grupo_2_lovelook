@@ -49,25 +49,37 @@ Elegimos principalmente la estructura de la página [Como quieres](https://www.c
 
 ## Wireframe Responsive 
 
-[Home](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/HOME%20RESPONSIVE%20boceto.png?raw=true) 
+[Home](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/HOME%20RESPONSIVE.png?raw=true) 
 
-<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/HOME%20RESPONSIVE%20boceto.png" width="400" height="400">
+<img src="https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/HOME%20RESPONSIVE.png" width="400" height="400">
 
-[Carrito de compra](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/CARRITO%20DE%20COMPRA%20RESPONSIVE%20boceto.png?raw=true)
+[Carrito de compra](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/CARRITO%20DE%20COMPRA%20RESPONSIVE.png?raw=true)
 
-<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/CARRITO%20DE%20COMPRA%20RESPONSIVE%20boceto.png" width="400" height="400">
+<img src="https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/CARRITO%20DE%20COMPRA%20RESPONSIVE.png" width="400" height="400">
 
-[Detalle de producto](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/DETALLES%20PRODUCTO%20RESPONSIVE%20boceto.png?raw=true)   
+[Detalle de producto](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/DETALLES%20PRODUCTO%20RESPONSIVE.png?raw=true)   
 
-<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/DETALLES%20PRODUCTO%20RESPONSIVE%20boceto.png" width="400" height="400">
+<img src="https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/DETALLES%20PRODUCTO%20RESPONSIVE.png" width="400" height="400">
 
-[Login](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/LOGIN%20RESPONSIVE%20boceto.png?raw=true)         
+[Login](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/LOGIN%20RESPONSIVE.png?raw=true)         
 
-<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/LOGIN%20RESPONSIVE%20boceto.png" width="600" height="200">
+<img src="https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/LOGIN%20RESPONSIVE.png" width="600" height="200">
 
-[Registro](https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/REGISTRO%20RESPONSIVE%20boceto.png?raw=true)
+[Registro](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/REGISTRO%20RESPONSIVE.png?raw=true)
 
-<img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Boceto/REGISTRO%20RESPONSIVE%20boceto.png" width="600" height="200">
+<img src="https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/REGISTRO%20RESPONSIVE.png" width="600" height="200">
+
+[Favoritos](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/FAVORITOS%20RESPONSIVE.png?raw=true)
+
+<img scr="https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/FAVORITOS%20RESPONSIVE.png" width="400" height="400")
+
+[Header y Footer](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/HEADER%20Y%20FOOTER%20RESPONSIVE.png?raw=true)
+     
+<img scr="https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/HEADER%20Y%20FOOTER%20RESPONSIVE.png" width="400" height="400")
+
+[Lista de productos](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/LISTA%20DE%20PRODUCTOS%20RESPONSIVE.png?raw=true)
+
+<img scr="https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/LISTA%20DE%20PRODUCTOS%20RESPONSIVE.png" width="400" height="400")
 
 ### Paleta de colores
 <img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Paleta%20de%20colores/Paleta%20de%20colores.png" width="350" height="200">
