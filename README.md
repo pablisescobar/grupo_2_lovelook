@@ -79,7 +79,7 @@ Elegimos principalmente la estructura de la página [Como quieres](https://www.c
 
 [Lista de productos](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/LISTA%20DE%20PRODUCTOS%20RESPONSIVE%20(2).png)
 
-![Lista de productos](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/LISTA%20DE%20PRODUCTOS%20RESPONSIVE.png?raw=true)
+![Lista de productos](https://raw.githubusercontent.com/paloescobar29/grupo_2_lovelook/main/Boceto/LISTA%20DE%20PRODUCTOS%20RESPONSIVE%20(2).png?raw=true)
 
 ### Paleta de colores
 <img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Paleta%20de%20colores/Paleta%20de%20colores.png" width="600" height="300">
