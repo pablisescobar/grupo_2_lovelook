@@ -77,7 +77,7 @@ Elegimos principalmente la estructura de la página [Como quieres](https://www.c
 
 ![Header y Footer](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/HEADER%20Y%20FOOTER%20RESPONSIVE.png?raw=true)
 
-[Lista de productos](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/LISTA%20DE%20PRODUCTOS%20RESPONSIVE.png)
+[Lista de productos](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/LISTA%20DE%20PRODUCTOS%20RESPONSIVE%20(2).png)
 
 ![Lista de productos](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/LISTA%20DE%20PRODUCTOS%20RESPONSIVE.png?raw=true)
 
