@@ -81,6 +81,18 @@ Elegimos principalmente la estructura de la página [Como quieres](https://www.c
 
 ![Lista de productos](https://raw.githubusercontent.com/paloescobar29/grupo_2_lovelook/main/Boceto/LISTA%20DE%20PRODUCTOS%20RESPONSIVE%20(2).png?raw=true)
 
+[Sección Ayuda - Footer](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/SECCI%C3%93N%20AYUDA%20-%20FOOTER.png)
+
+![Sección Ayuda - Footer](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/SECCI%C3%93N%20AYUDA%20-%20FOOTER.png?raw=true)
+
+[Sección Contacto - Footer](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/SECCI%C3%93N%20CONTACTO%20-%20FOOTER.png)
+
+![Sección Contacto - Footer](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/SECCI%C3%93N%20CONTACTO%20-%20FOOTER.png?raw=true)
+
+[Sección Nosotros - Footer](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/SECCI%C3%93N%20NOSOTROS%20-%20FOOTER.png)
+
+![Sección Nosotros - Footer](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/Boceto/SECCI%C3%93N%20NOSOTROS%20-%20FOOTER.png?raw=true)
+
 ### Paleta de colores
 <img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/Paleta%20de%20colores/Paleta%20de%20colores.png" width="600" height="300">
 
