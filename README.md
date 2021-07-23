@@ -18,20 +18,20 @@
 ## Integrantes :
 
  ### Emanuel Arroyo
-- 29 años;
-- Me gusta aprender y enseñar, soy detallista y autoexigente en lo que hago;
-- Me gusta jugar en red con amigos, escuchar música y tocar la guitarra;
+- 29 años
+- Me gusta aprender y enseñar, soy detallista y autoexigente en lo que hago.
+- Me gusta jugar en red con amigos, escuchar música y tocar la guitarra.
 - Actualmente soy estudiante en desarrollo web full stack.
  --------
  ### Mariela Paduani
  - 32 años
  - Soy una persona trabajadora, resolutiva y capaz de adaptarme a cualquier situación. Me gusta aprender continuamente y siempre cumplo con mis objetivos.
- - Estudiante de inglés y desarrollo web full stack
+ - Estudiante de inglés y desarrollo web full stack.
  --------
  ### Pablo Escobar
  - 29 años
  - Me gusta ser compañero y trabajar en equipo, aprender, ayudar a mis pares. Mis hobbies son: leer ciencia ficción, escuchar música y ver series.
- - Estudiante desarrollo web full stack
+ - Estudiante desarrollo web full stack.
 
 ## Páginas de referencia
 
