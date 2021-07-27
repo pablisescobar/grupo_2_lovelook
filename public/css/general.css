@@ -1,0 +1,35 @@
+@import url('ayuda.css');
+@import url('favoritos.css');
+@import url('index.css');
+@import url('listProducts.css');
+@import url('login.css');
+@import url('nosotros.css');
+@import url('productCart.css');
+@import url('productDetail.css');
+@import url('register.css');
+@import url('variables.css');
+@import url('clasesReutilizables.css');
+@import url('animaciones.css');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+li{
+    list-style: none;
+}
+
+.validationError{
+    position: absolute;
+    color: red;
+    line-height: 18px;
+    font-size: 13px;
+}
+

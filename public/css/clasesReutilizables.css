@@ -1,0 +1,43 @@
+.input--style {
+    /* estilos de los imputs */
+    border       : none;
+    outline      : none;
+    border-radius: 3px;
+    border       : 1px solid var(--bordes);
+    transition   : box-shadow 0.5s ease-in;
+    padding-left : 5px;
+    font-size    : 18px;
+}
+
+.input--style:hover {
+    box-shadow  : 0 0 15px var(--shadows);
+    border-color: var(--bordes_claro);
+    cursor      : text;
+}
+
+.input--style:focus {
+    outline   : none;
+    border    : none;
+    box-shadow: 4px 4px 10px var(--shadows);
+}
+
+.button {
+    border            : thin solid var(--bordes);
+    text-align        : center;
+    width             : 100px;
+    padding           : 5px 10px;
+    border-radius     : 10px;
+    background-color  : var(--fondo);
+    color             : var(--paragraph);
+    box-shadow        : 0 0 40px 40px var(--fondo) inset;
+    -webkit-transition: all 200ms ease-in-out;
+    transition        : all 200ms ease-in-out;
+    outline: none;
+}
+
+.button:hover {
+    border          : none;
+    color           : black;
+    background-color: honeydew;
+    box-shadow      : 0 0 10px 0 white inset, 0 0 10px 4px var(--fondo);
+}

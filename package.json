@@ -1,0 +1,23 @@
+{
+  "name": "grupo_2_ilovelook",
+  "version": "1.0.0",
+  "description": "<p align=\"center\"> \r <img src=\"/Logo/Logo (1).png\">\r </p>",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paloescobar29/grupo_2_ilovelook.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paloescobar29/grupo_2_ilovelook/issues"
+  },
+  "homepage": "https://github.com/paloescobar29/grupo_2_ilovelook#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
