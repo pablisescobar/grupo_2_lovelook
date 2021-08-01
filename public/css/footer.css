@@ -1,0 +1,215 @@
+/* icono de whatsapp */
+.whatsapp {
+    z-index   : 998;
+    display   : flex;
+    position  : fixed;
+    right     : 15px;
+    bottom    : 10vh;
+    font-size : 60px;
+    margin    : auto;
+    grid-area : whatsapp;
+    transition: transform 1s ease-in-out;
+    transition: filter 500ms ease;
+    animation : giroLoco 0.6s infinite alternate;
+}
+
+.whatsapp:hover {
+    transform: scale(1.2);
+    filter   : drop-shadow(0px 0px 3px black);
+}
+
+/* View Mobile of Footer */
+
+.footer {
+    padding    : 5px;
+    font-family: var(--poppins);
+    min-width  : 100vw;
+    height     : 250px;
+    box-shadow : 0px -4px 10px var(--bordes_claro);
+    display    : grid;
+    display    : -ms-grid;
+    display    : -moz-grid;
+    grid       : repeat(6, 1fr) / repeat(11, 1fr); /*  */
+    grid-template-areas:  
+      /* info sobre esta practica :  https://developer.mozilla.org/es/docs/Web/CSS/grid-template-areas */
+        ". . .    ayuda     ayuda    ayuda    ayuda    ayuda    .        .        .    "
+        ". . .    contacto  contacto contacto contacto contacto .        .        .    "
+        ". . .    nosotros  nosotros nosotros nosotros nosotros .        .        .    "
+        ". . .    redes     redes    redes    redes    redes    .        afip     afip "
+        ". . copy copy      copy     copy     copy     copy     copy     afip     afip "
+        ". . copy copy      copy     copy     copy     copy     copy     afip     afip ";
+}
+
+/* Elementos generales*/
+.footer .footer-sections {
+    margin: auto;
+}
+
+
+.footer .footer-sections .footer-subtitle {
+    cursor         : pointer;
+    width          : 150px;
+    border         : 1px solid gray;
+    border-radius  : 20px;
+    padding        : 0 10px;
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    transition     : background-color 2s ease;
+}
+
+.footer .footer-sections .footer-subtitle:hover {
+    cursor          : pointer;
+    background-color: var(--fondo);
+}
+
+/* Secciones individuales */
+
+.footer .help {
+    grid-area: ayuda;
+}
+
+.footer .help ul,
+.footer .contact ul,
+.footer .about ul {
+    display: none;
+}
+
+.footer .contact {
+    grid-area: contacto;
+}
+
+.footer .about {
+    grid-area: nosotros;
+}
+
+.footer .redes-sociales {
+    width          : 120px;
+    margin: 0 auto;
+    display        : flex;
+    justify-content: space-around;
+    align-items    : center;
+    grid-area      : redes;
+}
+
+.footer .redes-sociales .iconify {
+    font-size : 40px;
+    transition: color 1s ease;
+}
+
+.footer .redes-sociales .instagram:hover {
+    color: orange;
+}
+
+.footer .redes-sociales .facebook:hover {
+    color: blue;
+}
+
+.footer .legale {
+    grid-area : copy;
+    text-align: center;
+    font-size : 1.2rem;
+}
+
+.footer .otros {
+    grid-area: afip;
+}
+
+.footer .otros .antivirus {
+    width  : 100px;
+    display: none;
+}
+
+.footer .otros .afip {
+    width: 50px;
+}
+
+
+/* View TABLET of footer*/
+
+@media screen and (min-width:768px) {
+    .footer {
+        height: 200px;
+        margin: auto;
+        grid  : repeat(3, 1fr) / repeat(9, 1fr);
+        grid-template-areas:
+            ". . ayuda .     contacto .        nosotros .     . "
+            ". . redes redes .        .        afip     afip  . "
+            ". . copy  copy  copy     copy     copy     .     . ";
+    }
+
+    .footer .otros .antivirus {
+        display: inline-block;
+    }
+
+    .footer .footer-sections .footer-subtitle {
+        border-radius: 5px;
+        border-color : lightgray;
+    }
+}
+
+/* View Desktop of footer */
+
+@media screen and (min-width:1024px) {
+
+    /* Elementos activadas */
+
+    .footer .help ul,
+    .footer .contact ul,
+    .footer .about ul {
+        display: inline-block;
+    }
+
+    .footer {
+        height : 300px;
+        padding: 10px;
+        grid   : repeat(3, 1fr) / repeat(9, 1fr);
+        grid-template-areas:
+            ".    ayuda ayuda contacto  contacto contacto  nosotros  nosotros   .    "
+            ".    .     .     redes     redes    redes     .         afip       afip "
+            ".    .     copy  copy      copy     copy      copy      .          .    ";
+    }
+
+    /* Elementos generales */
+
+    .footer .footer-sections {
+        margin        : 0 auto;
+        padding-bottom: 10px;
+    }
+
+    /* Secciones del footer */
+
+    .footer .footer-sections .footer-subtitle {
+        border         : none;
+        justify-content: start;
+        padding        : 0 0 10px 0;
+    }
+
+    .footer .footer-sections .footer-subtitle:hover {
+        cursor          : initial;
+        background-color: white;
+    }
+
+    .footer .footer-sections .footer-subtitle .icon {
+        display: none;
+    }
+
+    .footer .footer-sections .enlace-hover :hover {
+        text-shadow: 1px 1px 4px black, -1px -1px 4px black;
+        color      : var(--fondo);
+        font-weight: bold;
+        transition : all 0.5s ease;
+    }
+
+    /* Secciones individuales */
+
+    .footer .otros {
+        display    : flex;
+        align-items: center;
+        gap        : 10px;
+    }
+
+
+
+
+}

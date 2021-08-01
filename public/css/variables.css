@@ -5,4 +5,7 @@
     --paragraph:#7E7B7A;
     --shadows:#ce687c;
     --bordes_claro:#fdb4bf;
+
+    /* fuentes */
+    --poppins:'Poppins', sans-serif;
 }

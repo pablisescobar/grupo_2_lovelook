@@ -37,6 +37,18 @@ app.get("/ayuda",(req,res)=>{
 app.get("/Lista_de_productos",(req,res)=>{
     res.sendFile(path.join(__dirname,"/views/listProduct.html"))
 })
+app.get("/header",(req,res)=>{
+    res.sendFile(path.join(__dirname,"/views/header.html"))
+})
+app.get("/footer",(req,res)=>{
+    res.sendFile(path.join(__dirname,"/views/footer.html"))
+})
+
+/* invento para visualizar una informacion falsa de AFIP */
+
+app.get("/afip",(req,res)=>{
+    res.sendFile(path.join(__dirname,"/public/img/afip.png"))
+})
 /* Server */
 app.listen(port, () => {
     console.log(`localhost:${port}`)

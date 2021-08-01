@@ -1,0 +1,102 @@
+/* Checkbox */
+.register .input-container{
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+justify-content: space-between;
+}
+.register__check[type="checkbox"] {
+    display: none;
+}
+.register .input-container input {
+    height: 30px;
+    width: 100%;
+}
+
+.conditions__label {
+    padding-left: 1.3em;
+    position    : relative;
+}
+
+.conditions__label:before {
+    content      : "";
+    background-color: white;
+    width        : 1rem;
+    height       : 1rem;
+    border       : 1px solid darkgray;
+    border-radius: 2px;
+    position     : absolute;
+    left         : 0;
+    bottom: 0.12px;
+    transition: transform 500ms ease-in-out;
+    transform: rotate(180deg);
+}
+
+.register .link-conditions{
+    font-weight: bold;
+}
+.register .link-conditions:hover{
+    text-shadow:1px 1px 4px black,-1px -1px 4px black;
+    color:white;
+}
+
+.register__check[type="checkbox"]:checked+.conditions__label:before {
+    content: '';
+    background-image: url("/public/img/icons/check.png");
+    background-size: 1.2rem;
+    background-position: center;
+    color       : #08e676;
+    border-color: #08e676;
+    transform: rotate(360deg);
+}
+
+@media screen and (min-width:768px) {
+    .register .card{
+        width: 450px;
+        height: 320px;
+    }
+
+    .register .input-container{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .register .card__thumbnail{
+        align-self: start;
+        width: 100px;
+        padding-left: 20px;
+        padding-top: 0;
+        margin: 10px 0 10px 0;
+    }
+
+    .register .input-container{
+        padding: 0 10px;
+        height: 100px;
+    }
+    .register .input-container input {
+            width: 49%;
+    }
+
+    .register .conditions{
+        font-size: 0.8rem;
+        position:absolute;
+        bottom: 70px;
+        left: 10px;
+    }
+    .register .conditions__label {
+        padding-left: 1.8em;
+    }
+
+    .register .btn-register {
+        align-self:center;
+        width: 50%;
+    }
+    .register__check[type="checkbox"]:checked+.conditions__label:before {
+        /* background-size: 1.2rem; */
+        border: none;
+        background-color: transparent;
+    }
+    .conditions__label:before {
+        width        : 0.8rem;
+        height       : 0.8rem;
+    }
+}

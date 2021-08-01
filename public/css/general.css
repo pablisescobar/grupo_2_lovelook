@@ -10,26 +10,52 @@
 @import url('variables.css');
 @import url('clasesReutilizables.css');
 @import url('animaciones.css');
+@import url('header.css');
+@import url('footer.css');
 
-*{
-    margin: 0;
-    padding: 0;
+
+/* Google Font  */
+/*----------- Poppins --------------- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,600&display=swap');
+
+* {
+    margin    : 0;
+    padding   : 0;
     box-sizing: border-box;
 }
 
-a{
+a {
     text-decoration: none;
-    color: black;
+    color          : black;
 }
 
-li{
+li {
     list-style: none;
 }
 
-.validationError{
-    position: absolute;
-    color: red;
+.validationError {
+    position   : absolute;
+    color      : red;
     line-height: 18px;
-    font-size: 13px;
+    font-size  : 13px;
 }
 
+input:focus {
+    outline: none;
+}
+
+button:focus {
+    outline: none;
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.main{
+    width: 100vw;
+    height:500px ;
+    flex-grow: 1;
+}

@@ -1,0 +1,198 @@
+/* View Mobile of Header */
+
+.header {
+    font-family: var(--poppins);
+    width      : 100vw;
+    height     : 180px;
+    display    : grid;
+    grid       : repeat(3, 1fr) / repeat(5, 1fr);
+    grid-template-areas:
+        "menu     lupa     logo     carrito   user"
+        "menu     lupa     logo     carrito   user"
+        "buscador buscador buscador buscador  buscador";
+    box-shadow: 0px 4px 10px var(--bordes_claro);
+}
+
+/* tamaño general de iconos en view mobile */
+.header .icon-size-mobile {
+    font-size: 40px;
+    margin   : auto;
+}
+
+.header .logo {
+    grid-area: logo;
+    width    : 120px;
+}
+
+.header .logo img {
+    width: 100%;
+}
+
+.header .menu {
+    grid-area: menu;
+}
+
+.header .lupa {
+    grid-area: lupa;
+}
+
+.header .estrella {
+    display  : none;
+    grid-area: estrella;
+}
+
+.header .carrito {
+    grid-area: carrito;
+}
+
+.header .usuario {
+    grid-area: user;
+}
+
+.header .navbar {
+    display: none;
+}
+
+.header .search-bar {
+    display        : flex;
+    justify-content: space-between;
+    align-items    : center;
+    height         : 40px;
+    width          : 80vw;
+    grid-area      : buscador;
+    margin         : auto;
+    border         : 1px solid var(--bordes);
+    border-radius  : 20px;
+    padding        : 0 10px 0 20px;
+    transition     : box-shadow 1s ease-in;
+}
+
+.header .search-bar:hover {
+    box-shadow  : 0 0 15px var(--shadows);
+    border-color: var(--bordes_claro);
+    cursor      : text;
+}
+
+.header .search-bar input {
+    width    : 100%;
+    border   : none;
+    font-size: 1.5rem;
+}
+
+.header .search-bar button {
+    width           : 30px;
+    height          : 30px;
+    border          : none;
+    background-color: white;
+    font-size       : 30px;
+}
+
+/* Mediaquery TABLET */
+
+@media screen and (min-width:768px) {
+    .header .icon-size-mobile {
+        font-size: 50px;
+    }
+
+    .header .search-bar {
+        height: 50px;
+        width : 80vw;
+    }
+}
+
+/* Mediaquery DESKTOP */
+
+@media screen and (min-width:1024px) {
+    .header {
+        width: 100vw;
+        grid : repeat(2, 1fr) / repeat(12, 1fr);
+        grid-template-areas:
+            "logo logo buscador buscador buscador buscador buscador buscador buscador carrito estrella user"
+            "logo logo menu menu menu menu menu menu menu menu . .";
+    }
+
+    .header .menu {
+        display: none;
+    }
+
+    .header .navbar {
+        display  : grid;
+        grid-area: menu;
+    }
+
+    .header .estrella {
+        display: inherit;
+    }
+
+    .header .navbar ul {
+        width          : 100%;
+        display        : flex;
+        justify-content: space-between;
+        gap            : 30px;
+    }
+
+    .header .navbar ul li {
+        width  : 15vw;
+        height : 30px;
+        padding: 5px;
+    }
+
+    .header .logo {
+        margin: auto 0;
+        width : 150px;
+        height: 150px;
+    }
+
+    .header .lupa {
+        display: none;
+    }
+
+    .header .search-bar {
+        width : 100%;
+        height: 40px;
+    }
+
+    .header .icon-size-desktop {
+        font-size: 35px;
+    }
+
+    /* Estilos de botones del header */
+
+    .header .btn {
+        text-align: center;
+        position  : relative;
+        transition: transform 0.7s ease-in-out;
+    }
+
+    .header .btn:hover {
+        transform: scale(1.3);
+    }
+
+    .header .btn::after {
+        content         : "";
+        width           : 0;
+        height          : 5px;
+        position        : absolute;
+        background-color: var(--bordes_claro);
+        box-shadow      : 5px 5px 3px lightgray;
+        bottom          : 0;
+        left            : 50%;
+        transform       : translateX(-50%);
+        transition      : all 0.7s ease-in-out;
+        z-index         : -1;
+    }
+
+    .header .btn:hover::after {
+        width: 100%;
+    }
+    /* Finaliza estilo de botones del header */
+
+    .header .icons {
+        transition: font-size 1s ease;
+        font-size : 30px;
+    }
+
+    .header .icons:hover {
+        font-size: 50px;
+    }
+}

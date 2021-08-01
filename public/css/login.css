@@ -1,13 +1,14 @@
 /* Metodología BEM */
 
-.login {
+.login,.register {
     background-color: rgba(255, 255, 255, 0.5);
     display         : flex;
     justify-content : center;
     align-items     : center;
+    height: 100vh;
 }
 
-.login .card {
+.login .card , .register .card{
     background-color: white;
     position        : relative;
     width           : 320px;
@@ -23,7 +24,7 @@
     animation: BgGradient 5s ease infinite;
 }
 
-.login .card__thumbnail {
+.login .card__thumbnail ,.register .card__thumbnail {
     margin-top     : 40px;
     width          : 100px;
     height         : 100px;
@@ -33,7 +34,7 @@
     align-items    : center;
 }
 
-.login .card__logo {
+.login .card__logo , .register .card__logo {
     width    : 100%;
     animation: acercarAlejar 2s alternate infinite;
 

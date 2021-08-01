@@ -1,6 +1,5 @@
 .input--style {
     /* estilos de los imputs */
-    border       : none;
     outline      : none;
     border-radius: 3px;
     border       : 1px solid var(--bordes);
@@ -22,22 +21,26 @@
 }
 
 .button {
+    cursor:pointer;
     border            : thin solid var(--bordes);
     text-align        : center;
-    width             : 100px;
+    width             : max-content;
     padding           : 5px 10px;
     border-radius     : 10px;
     background-color  : var(--fondo);
-    color             : var(--paragraph);
+    color             : black;
     box-shadow        : 0 0 40px 40px var(--fondo) inset;
-    -webkit-transition: all 200ms ease-in-out;
-    transition        : all 200ms ease-in-out;
+    -webkit-transition: background-color,transform 1s ease-in-out;
+    transition        : background-color,transform 1s ease-in-out;
     outline: none;
+    font-weight: 500;
 }
 
 .button:hover {
-    border          : none;
+    transform: scale(1.3);
     color           : black;
-    background-color: honeydew;
+    background-color:var(--fondo-claro);
     box-shadow      : 0 0 10px 0 white inset, 0 0 10px 4px var(--fondo);
 }
+
+
