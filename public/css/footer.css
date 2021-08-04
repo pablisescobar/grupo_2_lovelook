@@ -3,19 +3,28 @@
     z-index   : 998;
     display   : flex;
     position  : fixed;
-    right     : 15px;
+    right     : 7vw;
     bottom    : 10vh;
-    font-size : 60px;
+    font-size : 3.75rem;
     margin    : auto;
     grid-area : whatsapp;
     transition: transform 1s ease-in-out;
     transition: filter 500ms ease;
     animation : giroLoco 0.6s infinite alternate;
+    opacity: 0.8;
 }
 
 .whatsapp:hover {
     transform: scale(1.2);
     filter   : drop-shadow(0px 0px 3px black);
+    opacity: 1;
+}
+
+
+
+.whatsapp:active {
+    opacity: 1;
+    animation: vibracionWhatsapp 10ms 4;
 }
 
 /* View Mobile of Footer */
@@ -164,6 +173,9 @@
 /* View TABLET of footer*/
 
 @media screen and (min-width:768px) {
+    .whatsapp {
+        font-size: 6rem;
+    }
     .footer {
         height: 200px;
         margin: auto;
@@ -199,7 +211,10 @@
 /* View Desktop of footer */
 
 @media screen and (min-width:1024px) {
-
+    .whatsapp {
+        bottom: 20vw;
+right: 2vw;
+    }
     /* Elementos activadas */
 
     .footer .help ul,

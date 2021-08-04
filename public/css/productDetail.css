@@ -2,16 +2,12 @@
 
 
 .details-products {
-    padding           : 10px;
-    font-family       : var(--poppins);
-    display           : block;
-    /* background     : linear-gradient(150deg, black, var(--fondo-claro), black); 
-    background-color  : lightgray;
-    background-size   : 300% 400%;
-    animation         : BgGradient 5s ease infinite;*/
-    max-width         : 500px;
-    min-width         : 250px;
-    margin            : 0 auto;
+    padding    : 10px;
+    font-family: var(--poppins);
+    display    : block;
+    max-width  : 500px;
+    min-width  : 250px;
+    margin     : 0 auto;
 }
 
 .details-products .product {
@@ -25,14 +21,14 @@
     grid-gap: 5px;
 }
 
+/* SECTION DETAIL IMAGES  */
+
 .details-products .product .imgs {
     grid-area: imagenes;
-
 }
 
 .details-products .product .imgs .img-1 {
     grid-area: img1;
-    width    : 100%;
     border   : 1px solid gray;
     font-size: 0;
 }
@@ -111,6 +107,7 @@
     animation    : medioGiro 500ms 1;
 }
 
+/* SECTION FORM 1 */
 
 .details-products .product .form-1 {
     grid-area       : form1;
@@ -224,6 +221,8 @@
     text-shadow    : 2px 2px 2px var(--shadows);
 }
 
+/* SECTION FORM 2 */
+
 .details-products .product .form-2 {
     grid-area       : form2;
     background-color: white;
@@ -238,23 +237,14 @@
     border          : 1px solid gray;
 }
 
-.details-products .product .form-2 .select {
-    outline      : none;
-    border       : none;
-    border-bottom: 2px solid black;
-    font-size    : 1.2rem;
-    appearance   : none;
-    padding      : 5px;
-    border-radius: 3px;
-}
+
 
 .details-products .add-look-container {
-    background-color: white;
-    border-radius   : 15px 3px;
-    padding         : 20px;
-    border          : 1px solid gray;
-    margin-top      : 5px;
-    min-width       : 250px;
+    border-radius: 3px 15px;
+    padding      : 20px;
+    border       : 1px solid gray;
+    margin-top   : 5px;
+    gap          : 10px;
 }
 
 .details-products .add-look-container h2 {
@@ -275,11 +265,25 @@
 .details-products .add-look-container .arts-container .art2,
 .details-products .add-look-container .arts-container .art3,
 .details-products .add-look-container .arts-container .art4 {
-    border    : 1px solid gray;
+    border    : none;
     font-size : 0;
     margin    : 10px 0;
     position  : relative;
-    object-fit: fill;
+    cursor    : pointer;
+}
+
+.details-products .look-art-hover {
+    transition: transform 1s ease-in-out;
+}
+
+.details-products .look-art-hover:hover {
+    transform : scale(1.02);
+    box-shadow: inset 4px 4px 4px var(--shadows);
+}
+
+.details-products .look-art-hover:active {
+    transform : scale(1.02);
+    box-shadow: inset 4px 4px 4px var(--shadows);
 }
 
 .details-products .add-look-container .arts-container .info-card {
@@ -296,26 +300,210 @@
 
 
 @media screen and (min-width:768px) {
+    .details-products {
+        max-width: 700px;
+        min-width: 500px;
+        margin   : 0 auto;
+    }
+
+    .details-products .product {
+        display           : grid;
+        grid-template-rows: 1fr 120px 350px 200px;
+        grid-gap          : 10px;
+    }
+
+    .details-products .product .select {
+        font-size: 1.6rem;
+    }
+
+    .details-products .product .select option {
+        font-size       : 1rem;
+        width           : 100px;
+        background-color: black;
+        color           : white;
+    }
+
     .details-products .add-look-container {
-        margin: 0 auto;
-        gap: 10px;
+        margin: 10px auto;
+        gap   : 10px;
+    }
+
+    .details-products .add-look-container h2 {
+        font-size: 4rem;
+    }
+
+    .details-products .product .form-1 .subtitle-guie-size a {
+        height   : 50px;
+        font-size: 2rem;
     }
 
     .details-products .add-look-container .arts-container {
         display        : flex;
         flex-wrap      : wrap;
         flex-direction : row;
-        gap            : 5px;
+        gap            : 10px;
         justify-content: center;
-
+        margin-top     : 10px;
     }
 
     .details-products .add-look-container .arts-container .art1,
     .details-products .add-look-container .arts-container .art2,
     .details-products .add-look-container .arts-container .art3,
     .details-products .add-look-container .arts-container .art4 {
-        margin: 0;
-        width: 48%;
+        margin      : 0;
+        width       : 48%;
+        border-color: black;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .details-products {
+        display        : flex;
+        flex-direction : column;
+        max-width      : 1000px;
+        justify-content: center;
     }
 
-}
+
+    .details-products .product {
+        grid: 150px 240px 120px / 6fr 2.5fr;
+        grid-template-areas:
+            "imagenes descripcion"
+            "imagenes form1"
+            "imagenes form2";
+        border: none;
+    }
+
+    .details-products .product .imgs {
+        display: grid;
+        grid   : repeat(2, 50%)/1fr 2fr;
+        grid-template-areas:
+            "img2 img1"
+            "img3 img1";
+        grid-gap: 10px;
+    }
+
+    .details-products .product .imgs .img-2,
+    .details-products .product .imgs .img-3 {
+        display: block;
+        border : 1px solid gray;
+    }
+
+    .details-products .product .description {
+        border: none;
+    }
+
+    .details-products .product .description .name {
+        font-size: x-large;
+    }
+
+    .details-products .product .description .price {
+        font-size: x-large;
+    }
+
+    .details-products .product .description .discount {
+        letter-spacing: 4px;
+    }
+
+    .details-products .product .form-1 {
+        gap    : 3%;
+        padding: 0;
+        border : none;
+    }
+
+    .details-products .product .form-1 .subtitle {
+        font-size: 1rem;
+        padding  : 0;
+    }
+
+    .details-products .product .form-1 .subtitle::before {
+        bottom: 0;
+    }
+
+    .details-products .product .select {
+        font-size: 1rem;
+    }
+
+    .details-products .product .form-1 .subtitle-guie-size a {
+        text-shadow   : 6px -4px 2px gray;
+        height        : auto;
+        font-size     : 1rem;
+        background    : none;
+        border        : none;
+        margin-top    : 20px;
+        text-transform: uppercase;
+        letter-spacing: 15px;
+        margin-top    : 0;
+        transition    : text-shadow 2s ease-in-out;
+        animation     : shadowMove 1s infinite alternate ease;
+    }
+
+    .details-products .product .form-1 .subtitle-guie-size a:hover {
+        filter: hue-rotate(10deg);
+
+    }
+
+    .details-products .product .form-1 .btn-add {
+        height: 30px;
+    }
+
+    .details-products .product .form-1 .btn-add::before {
+        transform: scale(1);
+    }
+
+    .details-products .product .form-1 .subtitle::before {
+        left  : 50%;
+        bottom: 0;
+        top   : auto;
+    }
+
+    .details-products .product .form-2 {
+        padding: 0;
+        border : none;
+    }
+
+
+    /* SECCION HIJO DEL CONTENEDOR PRINCIPAL MAIN */
+
+    /* add-look-container */
+
+    .details-products .add-look-container {
+        padding: 0;
+        border : none;
+    }
+
+    .details-products .add-look-container .arts-container {
+        display  : flex;
+        flex-wrap: nowrap;
+    }
+
+    .details-products .add-look-container .arts-container .art1,
+    .details-products .add-look-container .arts-container .art2,
+    .details-products .add-look-container .arts-container .art3,
+    .details-products .add-look-container .arts-container .art4 {
+        filter : saturate(30%);
+        outline: 2px solid var(--shadows);
+    }
+
+
+    .details-products .add-look-container .arts-container .art1:hover,
+    .details-products .add-look-container .arts-container .art2:hover,
+    .details-products .add-look-container .arts-container .art3:hover,
+    .details-products .add-look-container .arts-container .art4:hover {
+        filter    : saturate(100%);
+        box-shadow: 0 0 2px var(--shadows);
+    }
+
+    .details-products .add-look-container .arts-container .art1:active,
+    .details-products .add-look-container .arts-container .art2:active,
+    .details-products .add-look-container .arts-container .art3:active,
+    .details-products .add-look-container .arts-container .art4:active {
+        transition: filter 2s ease;
+        filter    : blur(2px);
+    }
+
+    .details-products .add-look-container h2 {
+        font-size: 4rem;
+        filter   : drop-shadow(6px 8px 2px var(--shadows));
+        border   : none;
+    }
