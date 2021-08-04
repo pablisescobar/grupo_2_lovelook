@@ -1,3 +1,15 @@
+.look-art-hover{
+    transition: transform 1s ease-in-out;
+}
+.look-art-hover:hover{
+    transform: scale(1.02);
+box-shadow: 0px 0px 4px var(--shadows);
+}
+.look-art-hover:active{
+    transform: scale(1.02);
+box-shadow: 0px 0px 4px var(--shadows);
+}
+
 .input--style {
     /* estilos de los imputs */
     outline      : none;

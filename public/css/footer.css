@@ -29,9 +29,10 @@
     display    : grid;
     display    : -ms-grid;
     display    : -moz-grid;
-    grid       : repeat(6, 1fr) / repeat(11, 1fr); /*  */
-    grid-template-areas:  
-      /* info sobre esta practica :  https://developer.mozilla.org/es/docs/Web/CSS/grid-template-areas */
+    grid       : repeat(6, 1fr) / repeat(11, 1fr);
+    /*  */
+    grid-template-areas:
+        /* info sobre esta practica :  https://developer.mozilla.org/es/docs/Web/CSS/grid-template-areas */
         ". . .    ayuda     ayuda    ayuda    ayuda    ayuda    .        .        .    "
         ". . .    contacto  contacto contacto contacto contacto .        .        .    "
         ". . .    nosotros  nosotros nosotros nosotros nosotros .        .        .    "
@@ -67,25 +68,60 @@
 
 .footer .help {
     grid-area: ayuda;
+    position : relative;
 }
 
 .footer .help ul,
 .footer .contact ul,
 .footer .about ul {
+    display         : none;
+    position        : absolute;
+    background-color: white;
+    z-index         : 100;
+    margin          : 0 auto;
+    font-size       : 14px;
+    width           : 200px;
+    padding         : 10px;
+    border-radius   : 5px;
+    box-shadow      : 1px 1px 4px var(--shadows);
+}
+
+.footer .help .list-help {
+    bottom: 0;
+}
+
+.footer .contact .list-contact {
+    bottom: 0;
+}
+
+.footer .about .list-about {
+    bottom: 0;
+}
+
+.footer-sections-desktop{
     display: none;
 }
 
+.footer .help .list-help li,
+.footer .contact .list-contact li,
+.footer .about .list-about li {
+    padding: 20px;
+}
+
+
 .footer .contact {
     grid-area: contacto;
+    position : relative;
 }
 
 .footer .about {
     grid-area: nosotros;
+    position : relative;
 }
 
 .footer .redes-sociales {
     width          : 120px;
-    margin: 0 auto;
+    margin         : 0 auto;
     display        : flex;
     justify-content: space-around;
     align-items    : center;
@@ -108,7 +144,7 @@
 .footer .legale {
     grid-area : copy;
     text-align: center;
-    font-size : 1.2rem;
+    font-size : 1rem;
 }
 
 .footer .otros {
@@ -146,6 +182,18 @@
         border-radius: 5px;
         border-color : lightgray;
     }
+
+
+
+    .footer .help .list-help li,
+.footer .contact .list-contact li,
+.footer .about .list-about li {
+    font-size: 5rem;
+}
+
+.footer .legale {
+    font-size : 1.5rem;
+}
 }
 
 /* View Desktop of footer */
@@ -157,15 +205,26 @@
     .footer .help ul,
     .footer .contact ul,
     .footer .about ul {
-        display: inline-block;
+        display: block;
+        position: relative;
+        width        : fit-content;
+        padding      : 5px;
+        border-radius: none;
+        box-shadow   : none;
+        text-align: left;
+        margin: 0;
+        font-size: 1rem;
     }
+
+    /* Elemento contenedor principal */
 
     .footer {
         height : 300px;
         padding: 10px;
+        margin: 0 auto;
         grid   : repeat(3, 1fr) / repeat(9, 1fr);
         grid-template-areas:
-            ".    ayuda ayuda contacto  contacto contacto  nosotros  nosotros   .    "
+            "ayuda    ayuda ayuda contacto  contacto contacto  nosotros  nosotros   nosotros    "
             ".    .     .     redes     redes    redes     .         afip       afip "
             ".    .     copy  copy      copy     copy      copy      .          .    ";
     }
@@ -173,34 +232,41 @@
     /* Elementos generales */
 
     .footer .footer-sections {
-        margin        : 0 auto;
-        padding-bottom: 10px;
+       display: none;
+    }
+
+    .footer .footer-sections-desktop{
+        display: block;
+        margin: 0 auto;
     }
 
     /* Secciones del footer */
 
-    .footer .footer-sections .footer-subtitle {
+    .footer .footer-sections-desktop .footer-subtitle {
         border         : none;
-        justify-content: start;
+        justify-content: center;
         padding        : 0 0 10px 0;
     }
 
-    .footer .footer-sections .footer-subtitle:hover {
+    .footer .footer-sections-desktop .footer-subtitle:hover {
         cursor          : initial;
         background-color: white;
     }
 
-    .footer .footer-sections .footer-subtitle .icon {
+    .footer .footer-sections-desktop .footer-subtitle .icon {
         display: none;
     }
 
-    .footer .footer-sections .enlace-hover :hover {
+    .footer .footer-sections-desktop .enlace-hover :hover {
         text-shadow: 1px 1px 4px black, -1px -1px 4px black;
         color      : var(--fondo);
         font-weight: bold;
         transition : all 0.5s ease;
     }
 
+    .footer-sections-desktop .footer-sections-desktop .redes-sociales{
+      margin: auto;
+    }
     /* Secciones individuales */
 
     .footer .otros {
@@ -208,8 +274,4 @@
         align-items: center;
         gap        : 10px;
     }
-
-
-
-
 }

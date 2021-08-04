@@ -19,7 +19,7 @@ app.get("/register", (req, res) => {
 app.get("/Carrito",(req,res)=>{
     res.sendFile(path.join(__dirname,"/views/productCart.html"))
 })
-app.get("/Detalle de producto",(req,res)=>{
+app.get("/Detalle",(req,res)=>{
     res.sendFile(path.join(__dirname,"/views/productDetail.html"))
 })
 app.get("/favoritos",(req,res)=>{
@@ -49,6 +49,8 @@ app.get("/footer",(req,res)=>{
 app.get("/afip",(req,res)=>{
     res.sendFile(path.join(__dirname,"/public/img/afip.png"))
 })
+
+
 /* Server */
 app.listen(port, () => {
     console.log(`localhost:${port}`)

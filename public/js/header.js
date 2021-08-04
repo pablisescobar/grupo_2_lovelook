@@ -1,28 +1,23 @@
-let subcategoryMenu = document.getElementById('subMenu');
+let iconMenuMobile = document.getElementById('menu-burger')
+let iconBarrBusqueda = document.getElementById('search')
+let barraBuscador = document.getElementById('search-mobile-tablet')
+let menuMobile = document.getElementById('N1')
 
-let searchBar = document.getElementById('search')
-
-/* barra de buscador mobile */
-
-function dropSearch() {
-    let subcategoryMenu = document.querySelector(".list-menu-burger");
-    if (searchBar.style.display === "flex") {
-        searchBar.style.display = "none";
-    } else {
-        searchBar.style.display = "flex";
-        subcategoryMenu.classList.remove("active")
+function abrirMenu(){
+  
+    if(menuMobile.style.display === "block"){
+        menuMobile.style.display = "none"
+    }else{
+        menuMobile.style.display = "block"
+        barraBuscador.style.display = "none"
     }
 }
 
-
-function dropMenu() {
-    let searchBar = document.querySelector(".list-menu-burger");
-    if (navBar.style.display === "flex") {
-        navBar.style.display = "none";
-        subcategoryMenu.classList.remove("active")
-    } else {
-        navBar.style.display = "flex";
-        searchBar.style.display = "none";
-        subcategoryMenu ? subcategoryMenu.classList.remove("active") : ""
+function abrirBuscador(){
+    if(barraBuscador.style.display === "flex"){
+        barraBuscador.style.display = "none"
+    }else{
+        barraBuscador.style.display = "flex"
+        menuMobile.style.display = "none"
     }
 }

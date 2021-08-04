@@ -40,7 +40,44 @@
         transform: rotate(0);
         transform: scale3d(1, 1.3, 6);
     }
+
     100% {
         transform: rotate(10deg);
     }
+}
+
+@keyframes medioGiro {
+    0% {
+        transform: rotateZ(-2rad);
+    }
+
+    100% {
+        transform: rotateZ(0rad);
+    }
+}
+
+@keyframes expancion {
+    0% {
+        width : 100%;
+        filter: blur(0px);
+    }
+
+    25% {
+        width: 0;
+    }
+
+    50% {
+        width : 80%;
+        filter: blur(1px);
+    }
+
+    75% {
+        width: 0;
+    }
+
+    100% {
+        width : 100%;
+        filter: blur(0px);
+    }
+
 }
