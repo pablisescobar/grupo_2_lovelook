@@ -3,9 +3,9 @@
 .header {
     font-family: var(--poppins);
     width      : 100vw;
-    height     : 180px;
+    height     : fit-content;
     display    : grid;
-    grid       : repeat(3, 1fr) / repeat(5, 1fr);
+    grid       : repeat(3, 1fr) / repeat(2, 1fr) 2fr repeat(2, 1fr);
     grid-template-areas:
         "menu     lupa     logo     carrito   user"
         "menu     lupa     logo     carrito   user"
@@ -38,7 +38,9 @@
 
 .header .logo {
     grid-area: logo;
-    width    : 120px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
 }
 
 .header .logo img {
@@ -115,6 +117,12 @@
         height: 50px;
         width : 80vw;
     }
+
+    .header .logo {
+        height: 250px;
+    }
+
+    
 }
 
 /* Mediaquery DESKTOP */
@@ -193,26 +201,24 @@
         position        : absolute;
         background-color: var(--bordes_claro);
         box-shadow      : 5px 5px 3px lightgray;
-        bottom          : 0;
+        bottom          : 5%;
         left            : 50%;
         transform       : translateX(-50%);
         transition      : all 0.7s ease-in-out;
         z-index         : -1;
+        border-radius: 10px;
     }
 
     .header .btn:hover::after {
-        width: 100%;
+        width: 60%;
     }
     /* Finaliza estilo de botones del header */
 
     .header .icons {
-        transition: font-size 1s ease;
         font-size : 30px;
+        cursor: pointer;
     }
-
-    .header .icons:hover {
-        font-size: 50px;
-    }
+    
 }
 
 

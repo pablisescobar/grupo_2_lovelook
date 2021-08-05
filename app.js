@@ -32,7 +32,7 @@ app.get("/favoritos",(req,res)=>{
 });
 
 app.get("/contacto",(req,res)=>{
-    res.sendFile(path.join(__dirname,"/views/contacto.html"))
+    res.sendFile(path.join(__dirname,"/views/contact.html"))
 });
 
 app.get("/nosotros",(req,res)=>{
