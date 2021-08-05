@@ -1,0 +1,11 @@
+.container {
+    box-shadow: 0 0 10px var(--bordes);
+}
+
+.banner {
+    padding-top: 5px;
+    width: 650px;
+}
+.section1 {
+  
+}

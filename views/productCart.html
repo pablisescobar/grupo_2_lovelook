@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <!-- ICONIFY -->
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/general.css">
+
+    <!--    <script src="/public/js/header.js"></script> -->
+    <script src="/js/header.js" defer></script>
+
+    <!-- FAVICON -->
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="" class="logo"><img src="/img/logo.png" alt=""></a>
+        <span id="menu-burger" onclick="abrirMenu()" class="iconify menu icon-size-mobile icon-size-desktop icons"
+            data-icon="icon-park-outline:hamburger-button" data-inline="false"></span>
+        <div class="navbar-mobile" id="N1">
+            <ul>
+                <li class="btn"><a href="/">Inicio</a></li>
+                <li class="btn"><a href="">Categorias</a></li>
+                <li class="btn"><a href="">Accesorios</a></li>
+                <li class="btn"><a href="">Oportunidades</a></li>
+            </ul>
+        </div>
+        <span onclick="abrirBuscador()" id="search" class="iconify lupa icon-size-mobile icon-size-desktop icons" data-icon="akar-icons:search"
+            data-inline="false"></span>
+        <span class="iconify estrella icon-size-mobile icon-size-desktop icons" data-icon="akar-icons:star"
+            data-inline="false"></span>
+        <span class="iconify carrito icon-size-mobile icon-size-desktop icons"
+            data-icon="emojione-monotone:shopping-cart" data-inline="false"></span>
+        <span class="iconify usuario icon-size-mobile icon-size-desktop icons" data-icon="bi:person-circle"
+            data-inline="false"></span>
+        <nav class="navbar" id="subMenu">
+            <ul>
+                <li class="btn"><a href="/">Inicio</a></li>
+                <li class="btn"><a href="">Categorias</a></li>
+                <li class="btn"><a href="">Accesorios</a></li>
+                <li class="btn"><a href="">Oportunidades</a></li>
+            </ul>
+        </nav>
+
+        <form action="" class="search-bar" id="search-mobile-tablet">
+            <input type="text" class="input-header" name="" id="" placeholder="Buscar...">
+            <button type="submit"><span class="iconify" data-icon="akar-icons:search"
+                    data-inline="false"></span></button>
+        </form>
+    </header>
+
+    <div class="container">
+        <img class="banner" src="/img/remerones/university/remeronUniversity.jpg" alt="">
+
+        <section class="section1">
+            <article>
+                <div class="product">
+                    <img src="/img/conjuntos/conjuntoFlower2.jpg" alt="">
+                    <span class="iconify" data-icon="ion:trash-outline"></span>
+                    <h5>Nombre: Conjunto FLOWERS</h5>
+                    <p>Color: Lila</p>
+                    <p>Talle: M</p>
+                    <p>Descuento:</p>
+                </div>
+
+                <div>
+                    <span class="iconify" data-icon="ion:arrow-undo-outline"></span>
+                    <span class="iconify" data-icon="ion:close-circle-outline"></span>
+                    <span class="iconify" data-icon="ion:sync"></span>
+                    <span class="iconify" data-icon="ion:heart-dislike-outline"></span>
+                </div>
+            </article>
+
+            <article>
+                <div class="product">
+                    <img src="/img/conjuntos/conjuntoTricolor.jpg" alt="">
+                    <span class="iconify" data-icon="ion:trash-outline"></span>
+                    <h5>Nombre: Conjunto TRICOLOR</h5>
+                    <p>Color: Negro</p>
+                    <p>Talle: L</p>
+                    <p>Descuento:</p>
+                </div>
+
+                <div>
+                    <span class="iconify" data-icon="ion:arrow-undo-outline"></span>
+                    <span class="iconify" data-icon="ion:close-circle-outline"></span>
+                    <span class="iconify" data-icon="ion:sync"></span>
+                    <span class="iconify" data-icon="ion:heart-dislike-outline"></span>
+                </div>
+            </article>
+        </section>
+        <hr>
+
+        <section class="section2">
+            <p>¿Te gustaría agregarlo a tu carrito?</p>
+            <img src="/img/remeras/remeraSmile.jpg" alt="">
+            <img src="/img/conjuntos/conjuntoButterflies.jpg" alt="">
+            <img src="/img/remeras/remerasHarryPotter.jpg" alt="">
+        </section>
+
+        <section class="section3">
+            <p>Nuestras Ofertas!!!</p>
+            <img src="/img/remeras/remeraHarryPotter.jpg" alt="">
+        </section>
+    </div>
+
+    <div class="whatsapp">
+        <a href="https://api.whatsapp.com/send?phone=+5491127544242&text=%20Hola,%20quiero%20hacer%20una%20consulta!!!"
+            target="_blank"><span class="iconify" data-icon="logos:whatsapp" data-inline="false"></span></a>
+    </div>
+
+    <footer class="footer">
+
+        <!-- SECCIONES FOOTER MOBILE Y TABLET -->
+
+        <section class="help footer-sections">
+            <h3 class="footer-subtitle" onclick="openHelp()">AYUDA<span class="iconify icon"
+                    data-icon="cil:caret-bottom" data-inline="false"></span></h3>
+            <ul id="list-help">
+                <li class="enlace-hover"><a href="">Preguntas Frecuentes</a></li>
+                <li class="enlace-hover"><a href="">Métodos de envio</a></li>
+                <li class="enlace-hover"><a href="">Promociones Vigentes</a></li>
+                <li class="enlace-hover"><a href="https://www.correoargentino.com.ar/formularios/mercadolibre#numero"
+                        target="_black">Seguimiento de Envios</a></li>
+            </ul>
+        </section>
+
+        <!-- SECCION FOOTER DESKTOP -->
+
+        <section class="help footer-sections-desktop">
+            <h3 class="footer-subtitle">AYUDA<span class="iconify icon" data-icon="cil:caret-bottom"
+                    data-inline="false"></span></h3>
+            <ul id="list-help">
+                <li class="enlace-hover"><a href="">Preguntas Frecuentes</a></li>
+                <li class="enlace-hover"><a href="">Métodos de envio</a></li>
+                <li class="enlace-hover"><a href="">Promociones Vigentes</a></li>
+                <li class="enlace-hover"><a href="https://www.correoargentino.com.ar/formularios/mercadolibre#numero"
+                        target="_black">Seguimiento de Envios</a></li>
+            </ul>
+        </section>
+
+        <!-- SECCIONES FOOTER MOBILE Y TABLET -->
+
+        <section class="contact footer-sections">
+            <h3 class="footer-subtitle" onclick="openContact()">CONTACTO <span class="iconify icon"
+                    data-icon="cil:caret-bottom" data-inline="false"></span></h3>
+            <ul id="list-contact">
+                <li class="enlace-hover"><a href="">Consultas</a></li>
+                <li class="enlace-hover"><a href="">Casting</a></li>
+                <li class="enlace-hover"><a href="">RRHH</a></li>
+                <li class="enlace-hover"><a href="">Franquicias</a></li>
+            </ul>
+        </section>
+
+        <!-- SECCION FOOTER DESKTOP -->
+
+        <section class="contact footer-sections-desktop">
+            <h3 class="footer-subtitle">CONTACTO <span class="iconify icon"
+                    data-icon="cil:caret-bottom" data-inline="false"></span></h3>
+            <ul id="list-contact">
+                <li class="enlace-hover"><a href="">Consultas</a></li>
+                <li class="enlace-hover"><a href="">Casting</a></li>
+                <li class="enlace-hover"><a href="">RRHH</a></li>
+                <li class="enlace-hover"><a href="">Franquicias</a></li>
+            </ul>
+        </section>
+
+        <!-- SECCIONES FOOTER MOBILE Y TABLET -->
+
+        <section class="about footer-sections">
+            <h3 class="footer-subtitle" onclick="openAbout()">NOSOTROS<span class="iconify icon"
+                    data-icon="cil:caret-bottom" data-inline="false"></span></h3>
+            <ul id="list-about">
+                <li class="enlace-hover"><a href="">Nuestros Locales</a></li>
+                <li class="enlace-hover"><a href="">Términos y Condiciones</a></li>
+                <li class="enlace-hover"><a href="">Politicas de Privacidad</a></li>
+            </ul>
+        </section>
+
+        <!-- SECCION FOOTER DESKTOP -->
+
+        <section class="about footer-sections-desktop">
+            <h3 class="footer-subtitle">NOSOTROS<span class="iconify icon" data-icon="cil:caret-bottom"
+                    data-inline="false"></span></h3>
+            <ul id="list-about">
+                <li class="enlace-hover"><a href="">Nuestros Locales</a></li>
+                <li class="enlace-hover"><a href="">Términos y Condiciones</a></li>
+                <li class="enlace-hover"><a href="">Politicas de Privacidad</a></li>
+            </ul>
+        </section>
+
+        <!-- SECCION REDES PARA TODA LAS VISTAS -->
+
+        <section class="redes-sociales footer-sections footer-sections-desktop">
+            <a href=""><span class="iconify instagram" data-icon="akar-icons:instagram-fill"
+                    data-inline="false"></span></a>
+            <a href=""><span class="iconify facebook" data-icon="ant-design:facebook-filled"
+                    data-inline="false"></span></a>
+        </section>
+        <!-- SECCION DE INFO LEGAL PARA TODA LAS VISTAS -->
+
+        <section class="legale">
+            <small>&copy 2021. LOVE LOOK. Todos los derechos reservados</small>
+        </section>
+        <section class="otros">
+            <a href=""><img src="/img/mcfee.png" alt="" class="antivirus"></a>
+            <a href="/afip" target="_black"><img src="/img/data-fiscal.jpg" alt="" class="afip"></a>
+        </section>
+    </footer>
+
+</body>
+
+</html>
