@@ -104,7 +104,9 @@ Elegimos principalmente la estructura de la página [Como quieres](https://www.c
 <img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/yesteryear.png" width="250" height="100">
 <img src="https://github.com/paloescobar29/grupo_2_ilovelook/blob/main/tipografia/cinzel.png" width="250" height="100">
 
-### Link de Trello
+-------------------------
 
-https://trello.com/b/zXWP7zz7/trabajo-integrador-grupo-2-c8
+### [Trello](https://trello.com/b/zXWP7zz7/trabajo-integrador-grupo-2-c8)
+
+
 
