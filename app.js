@@ -44,7 +44,7 @@ app.get("/ayuda",(req,res)=>{
 });
 
 app.get("/Lista_de_productos",(req,res)=>{
-    res.sendFile(path.join(__dirname,"/views/listProduct.html"))
+    res.sendFile(path.join(__dirname,"/views/listProducts.html"))
 });
 
 app.get("/header",(req,res)=>{
