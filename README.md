@@ -108,5 +108,7 @@ Elegimos principalmente la estructura de la página [Como quieres](https://www.c
 
 ### [Trello](https://trello.com/b/zXWP7zz7/trabajo-integrador-grupo-2-c8)
 
+### [RETRO.md](https://github.com/paloescobar29/grupo_2_lovelook/blob/main/RETRO.md)
+
 
 
