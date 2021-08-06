@@ -25,7 +25,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-    
+
 </head>
 
 <body>
@@ -42,8 +42,8 @@
                 <li class="btn"><a href="">Oportunidades</a></li>
             </ul>
         </div>
-        <span onclick="abrirBuscador()" id="search" class="iconify lupa icon-size-mobile icon-size-desktop icons" data-icon="akar-icons:search"
-            data-inline="false"></span>
+        <span onclick="abrirBuscador()" id="search" class="iconify lupa icon-size-mobile icon-size-desktop icons"
+            data-icon="akar-icons:search" data-inline="false"></span>
         <span class="iconify estrella icon-size-mobile icon-size-desktop icons" data-icon="akar-icons:star"
             data-inline="false"></span>
         <span class="iconify carrito icon-size-mobile icon-size-desktop icons"
@@ -71,48 +71,45 @@
 
         <section class="section1">
             <article>
-                <div class="product">
+                <form method="POST" action="" class="product">
                     <img src="/img/conjuntos/conjuntoFlower2.jpg" alt="">
-                    <span class="iconify" data-icon="ion:trash-outline"></span>
+                    <div class="descriptionProduct">
+                    <span class="iconify iconOutline" data-icon="ion:trash-outline"></span>
                     <h5>Nombre: Conjunto FLOWERS</h5>
                     <p>Color: Lila</p>
                     <p>Talle: M</p>
                     <p>Descuento:</p>
-                </div>
-
-                <div>
-                    <span class="iconify" data-icon="ion:arrow-undo-outline"></span>
-                    <span class="iconify" data-icon="ion:close-circle-outline"></span>
-                    <span class="iconify" data-icon="ion:sync"></span>
-                    <span class="iconify" data-icon="ion:heart-dislike-outline"></span>
-                </div>
-            </article>
-
-            <article>
-                <div class="product">
-                    <img src="/img/conjuntos/conjuntoTricolor.jpg" alt="">
-                    <span class="iconify" data-icon="ion:trash-outline"></span>
-                    <h5>Nombre: Conjunto TRICOLOR</h5>
-                    <p>Color: Negro</p>
-                    <p>Talle: L</p>
-                    <p>Descuento:</p>
-                </div>
-
-                <div>
-                    <span class="iconify" data-icon="ion:arrow-undo-outline"></span>
-                    <span class="iconify" data-icon="ion:close-circle-outline"></span>
-                    <span class="iconify" data-icon="ion:sync"></span>
-                    <span class="iconify" data-icon="ion:heart-dislike-outline"></span>
-                </div>
+                    </div>
+                    <br>
+                    <div class="description">
+                        <span class="price">Precio</span>
+                        <span class="valuePrice">$1200</span>
+                        <span class="count">Cantidad</span>
+                        <span class="linea"></span>
+                        <input class="valueCount" type="number" name="cantidad" id="cantidad">
+                        <span class="subPrice">Sub-total</span>
+                        <span class="valueSubPrice">$2400</span>
+                    </div>
+                </form>
             </article>
         </section>
+
+        <section class="buttonsIcons">
+                <span class="iconify iconArrow" data-icon="ion:arrow-undo-outline"></span>
+                <span class="iconify iconSync" data-icon="ion:sync"></span>
+                <span class="iconify iconHeart" data-icon="ion:heart-dislike-outline"></span>
+                <input class="buy" type="submit" value="PAGAR">
+        </section>
+
         <hr>
 
-        <section class="section2">
-            <p>¿Te gustaría agregarlo a tu carrito?</p>
-            <img src="/img/remeras/remeraSmile.jpg" alt="">
-            <img src="/img/conjuntos/conjuntoButterflies.jpg" alt="">
-            <img src="/img/remeras/remerasHarryPotter.jpg" alt="">
+        <section class="sectionAdd">
+            <p class="question">¿Te gustaría agregarlo a tu carrito?</p>
+            <div class="questionImg">
+                <img class="img1" src="/img/remeras/remeraSmile.jpg" alt="">
+                <img class="img2" src="/img/conjuntos/conjuntoButterflies.jpg" alt="">
+                <img class="img3" src="/img/remeras/remerasHarryPotter.jpg" alt="">
+            </div>
         </section>
 
         <section class="section3">
@@ -172,8 +169,8 @@
         <!-- SECCION FOOTER DESKTOP -->
 
         <section class="contact footer-sections-desktop">
-            <h3 class="footer-subtitle">CONTACTO <span class="iconify icon"
-                    data-icon="cil:caret-bottom" data-inline="false"></span></h3>
+            <h3 class="footer-subtitle">CONTACTO <span class="iconify icon" data-icon="cil:caret-bottom"
+                    data-inline="false"></span></h3>
             <ul id="list-contact">
                 <li class="enlace-hover"><a href="">Consultas</a></li>
                 <li class="enlace-hover"><a href="">Casting</a></li>

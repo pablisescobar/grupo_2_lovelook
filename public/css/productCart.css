@@ -1,11 +1,213 @@
 .container {
     box-shadow: 0 0 10px var(--bordes);
+    width: 100%;
 }
 
 .banner {
-    padding-top: 5px;
-    width: 650px;
+    width: 100%;
 }
+
 .section1 {
-  
+    padding-top: 3px;
 }
+
+.section1 .product img {
+    width: 100%;
+}
+
+.section1 .product h5 {
+    font-family: var(--poppins);
+    font-size: 20px;
+}
+
+.section1 .product p {
+    font-family: var(--poppins);
+    font-size: 20px;
+}
+
+.section1 .iconOutline {
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    border: 1px solid var(--bordes_claro);
+    border-radius: 30%;
+    position: absolute;
+    top: 960px;
+    right: 35px;
+}
+
+.description {
+    width: 100%;
+    display: grid;
+    grid:1fr 1fr 1fr / 1fr 1fr 1fr;
+    grid-template-areas: 
+    "precio cantidad subPrecio"
+    "linea linea linea"
+    "valorPrecio valorCantidad valorSubPrecio";
+    text-align: center;
+}
+
+.descriptionProduct {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.description .price{
+    grid-area: precio ;
+}
+
+.description .valuePrice{
+    grid-area: valorPrecio;
+}
+
+.description .count{
+    grid-area: cantidad;
+}
+
+.description .linea{
+    grid-area: linea;
+    width: 80%;
+    height: 3px;
+    background-color: var(--bordes_claro);
+    margin: auto;
+}
+
+.description .valueCount{
+    grid-area:valorCantidad;
+    width: 25px;
+    margin: auto;
+}
+
+.description .subPrice{
+    grid-area: subPrecio;
+}
+
+.description .valueSubPrice{
+    grid-area: valorSubPrecio;
+}
+
+.buttonsIcons {
+    width: 100%;
+    height: fit-content;
+    justify-items: center;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.buttonsIcons .iconHeart {
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    border: 1px solid var(--bordes_claro);
+    border-radius: 30%;
+}
+
+.buttonsIcons .iconArrow{
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    border: 1px solid var(--bordes_claro);
+    border-radius: 30%;
+}
+
+.buttonsIcons .iconSync {
+    width: 22px;
+    height: 22px;
+    background-color: white;
+    border: 1px solid var(--bordes_claro);
+    border-radius: 30%;
+}
+
+.buy {
+    background-color: rgba(144, 238, 144, 0.822);
+    border: 1px solid green;
+    border-radius: 10%;
+}
+
+.sectionAdd p {
+    font-family: var(--yesteryear);
+    font-size: 22px;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.sectionAdd img {
+    width: 100%;
+    padding-top: 20px;
+}
+
+.section3 p {
+    font-family: var(--yesteryear);
+    font-size: 25px;
+    text-align: center;
+}
+
+.section3 img {
+    width: 100%;
+    padding-top: 15px;
+}
+
+@media screen and (min-width: 768px) {
+
+.section1 {
+        padding-top: 15px;
+    }
+    
+.section1 .product {
+    display: grid;
+    margin: auto;
+    border: 1px solid var(--bordes_claro);
+    box-shadow: 0 0 8px var(--bordes);
+    grid: 1fr / 1fr 1fr;
+    grid-template-areas: 
+    "img dP"
+    "img d";
+}
+
+.section1 .iconOutline {
+    top: 970px;
+}
+
+.section1 .product img {
+    grid-area: img;
+    width: 50%;
+    margin: auto;
+}
+
+.section1 .product .descriptionProduct {
+    grid-area: dP;
+}    
+
+.section1 .product .description {
+    grid-area: d;
+}
+
+.buttonsIcons {
+    padding: 15px;
+}
+
+
+.sectionAdd .question {
+    font-size: 40px;
+}
+
+.sectionAdd .questionImg {
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    grid-gap:1em;
+}
+
+.section3 p {
+    font-size: 40px;
+    padding: 20px;
+}
+    }
+
+@media screen and (min-width: 1024px) {
+    
+.sectionAdd .questionImg {
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 10px;
+}
+    }
