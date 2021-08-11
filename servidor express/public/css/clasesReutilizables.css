@@ -1,4 +1,33 @@
+/* ///TAMAÑO DE ICONOS RESPONSIVE HEADER */
+.icon-size {
+    font-size: 3rem;
+}
+@media screen and (min-width: 500px) {
+    .icon-size {
+        font-size: 3.5rem;
+    }
+}
+/* Medidas de iconos para Tablet */
+@media screen and (min-width: 768px) {
+    .icon-size {
+        font-size: 4.5rem;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .icon-size {
+        font-size: 2rem;
+    }
+}
+/* //////////////////////////////////////////////// */
 
+/* /////ALINEACION DE ICONOS EN HEADER /////// */
+.align-icon {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+/* //////////////////////////////////////////////// */
 
 .input--style {
     /* estilos de los imputs */

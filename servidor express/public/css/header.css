@@ -1,53 +1,106 @@
+/* marquee inner */
+
+
+
+
 /* View Mobile of Header */
 
 .header {
     font-family: var(--poppins);
-    width      : 100vw;
-    height     : fit-content;
     display    : grid;
-    grid       : repeat(3, 1fr) / repeat(2, 1fr) 2fr repeat(2, 1fr);
+    grid: 2fr 1fr / repeat(5, 1fr);
     grid-template-areas:
         "menu     lupa     logo     carrito   user"
-        "menu     lupa     logo     carrito   user"
         "buscador buscador buscador buscador  buscador";
-    box-shadow: 0px 4px 10px var(--bordes_claro);
+    border-bottom:8px double var(--bordes_claro);
+    margin-bottom: 20px;
+    z-index: 999;
+    width: 100%;
+    padding: 5px;
 }
 
 .header .navbar-mobile{
     display: none;
     position: absolute;
-    top: 90px;
+    top: 24vw;
     left: 6vw;
-    background-color: rgba(255,255,255,0.8);
-    border-radius: 5px;
-    box-shadow: 1px 1px 4px var(--bordes);
+    width: fit-content;
+    border-radius: 15px;
+    border-left: 10px solid var(--bordes);
     padding: 15px;
+    width: 50vw;
+    background-color: white;
+    z-index: 300;
+    border-bottom: 2px solid var(--bordes);
+    border-top: 2px solid var(--bordes);
 }
 
-.header .navbar-mobile ul{
+
+.header .navbar-mobile ul {
+    height: fit-content;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0;
+    width: fit-content;
+    width:100%;
+}
+
+.header .navbar-mobile ul .btn {
+    display: flex;
     justify-content: space-between;
 }
 
-/* tamaño general de iconos en view mobile */
-.header .icon-size-mobile {
-    font-size: 40px;
-    margin   : auto;
+.header .navbar-mobile ul .btn a {
+    width: fit-content;
+    position: relative;
+    font-size: 1.3rem;
+    background-color: rgba(255,255,255,0.8);
+    border-radius:20px;
+    margin: 3px;
+    padding: 10px 10px 10px 30px;
+    box-shadow: -10px 0px 4px var(--bordes);
+    border:1px solid var(--bordes) ;
+    font-weight: bold;
 }
+
+
+.header .navbar-mobile ul .btn a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    border-radius:20px;
+}
+
+.header .navbar-mobile ul .btn .b1::before {
+    
+    animation: moveLink 2s infinite alternate;
+   
+}
+.header .navbar-mobile ul .btn .b2::before {
+    animation: moveLink 1.1s  infinite alternate;
+    
+}
+.header .navbar-mobile ul .btn .b3::before {
+    animation: moveLink 1.2s  infinite alternate;
+   
+}
+.header .navbar-mobile ul .btn .b4::before {
+    animation: moveLink 2s infinite alternate;
+}
+/* tamaño general de iconos en view mobile */
 
 .header .logo {
     grid-area: logo;
-    display: flex;
-    justify-content: center;
-}
-
-.header .logo img {
-    width: 100%;
+    width: 80px;
+    margin: auto;
 }
 
 .header .menu {
     grid-area: menu;
+
 }
 
 .header .lupa {
@@ -73,16 +126,35 @@
 
 .header .search-bar {
     display        : none;
+    grid-area      : buscador;
     justify-content: space-between;
     align-items    : center;
     height         : 40px;
     width          : 80vw;
-    grid-area      : buscador;
     margin         : auto;
-    border         : 1px solid var(--bordes);
+    border         : 2px solid var(--bordes);
     border-radius  : 20px;
     padding        : 0 10px 0 20px;
     transition     : box-shadow 1s ease-in;
+    box-shadow: -10px 0px 4px var(--bordes);
+    /* --------- */
+    animation: searchBar 1.1s ease-in 1;
+    background-color: white;
+    z-index: 300;
+}
+
+.iconLupaBar{
+    text-shadow: -10px 0px 4px var(--bordes);
+}
+/* ///////////////////////////////////////////// */
+/* Solo para la barra de búsqueda */
+@keyframes searchBar {
+    0% {
+        width: 20vw;
+    }
+    100% {
+        width: 80vw;
+    }
 }
 
 .header .search-bar:hover {
@@ -92,7 +164,7 @@
 }
 
 .header .search-bar input {
-    width    : 100%;
+    width: 100%;
     border   : none;
     font-size: 1.5rem;
 }
@@ -100,6 +172,7 @@
 .header .search-bar button {
     width           : 30px;
     height          : 30px;
+    margin: auto;
     border          : none;
     background-color: white;
     font-size       : 30px;
@@ -108,20 +181,20 @@
 /* Mediaquery TABLET */
 
 @media screen and (min-width:768px) {
-    .header .icon-size-mobile {
-        font-size: 50px;
+    .header{/* width: 100vw; */}
+    
+    .header .logo {
+        width: 200px;
+        margin: auto;
     }
-
     .header .search-bar {
-        height: 50px;
+        height: 70px;
         width : 80vw;
     }
-
-    .header .logo {
-        height: 250px;
+    .details-products .product .form-1 .btn-add {
+        font-size: 1.6rem;
+        width: 250px;
     }
-
-    
 }
 
 /* Mediaquery DESKTOP */
@@ -129,7 +202,8 @@
 @media screen and (min-width:1024px) {
     .header {
         width: 100vw;
-        grid : repeat(2, 1fr) / repeat(12, 1fr);
+        /* height: 200px; */
+        grid: 1fr 0.5fr / repeat(12, 1fr);
         grid-template-areas:
             "logo logo buscador buscador buscador buscador buscador buscador buscador carrito estrella user"
             "logo logo menu menu menu menu menu menu menu menu . .";
@@ -175,11 +249,9 @@
         display: flex;
         width : 100%;
         height: 40px;
+        animation: none;
     }
 
-    .header .icon-size-desktop {
-        font-size: 35px;
-    }
 
     /* Estilos de botones del header */
 
@@ -200,25 +272,21 @@
         position        : absolute;
         background-color: var(--bordes_claro);
         box-shadow      : 5px 5px 3px lightgray;
-        bottom          : 5%;
+        bottom          : 0;
         left            : 50%;
         transform       : translateX(-50%);
         transition      : all 0.7s ease-in-out;
         z-index         : -1;
-        border-radius: 10px;
     }
 
     .header .btn:hover::after {
-        width: 60%;
+        width: 80%;
     }
     /* Finaliza estilo de botones del header */
 
-    .header .icons {
-        font-size : 30px;
-        cursor: pointer;
-    }
-    
+
 }
+
 
 
 

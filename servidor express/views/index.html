@@ -5,14 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="/css/general.css">
-    <link rel="stylesheet" href="/css/carrousel.css">
-    <!--Scripts Locales-->
-    <script src="/js/header.js" defer></script>
-    <script src="/js/footer.js" defer></script>
-    <script src="/js/carousel.js" defer></script>
-    <title>ʆᵒᵛᵉʆᵒᵒᵏ - Home</title>
+    <title>ʆᵒᵛᵉʆᵒᵒᵏ</title>
 
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
@@ -21,49 +14,80 @@
     <!-- ICONIFY -->
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="/css/carrousel.css">
+    <!-- SCRIPTS -->
+    <script src="/js/header.js" defer></script>
+    <script src="/js/footer.js" defer></script>
+    <script src="/js/carousel.js" defer></script>
+
+
+
     <!-- FAVICON -->
 
     <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/icons//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/icons//favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
-
 
 </head>
 
 <body>
     <header class="header">
-        <a href="" class="logo"><img src="/img/logo.png" alt=""></a>
-        <span id="menu-burger" onclick="abrirMenu()" class="iconify menu icon-size-mobile icon-size-desktop icons"
-            data-icon="icon-park-outline:hamburger-button" data-inline="false"></span>
+        <a href="/" class="logo">
+
+            <img src="/img/logo.png" alt=""></a>
+        <!-- ICONO MENU HAMBURGUESA -->
+        <a class="menu icon-size align-icon">
+            <span id="menu-burger" onclick="abrirMenu()" class="iconify " data-icon="icon-park-outline:hamburger-button"
+                data-inline="false"></span>
+        </a>
+
+        <!-- NAVEGACION PRINCIPAL -->
         <div class="navbar-mobile" id="N1">
             <ul>
-                <li class="btn"><a href="/">Inicio</a></li>
-                <li class="btn"><a href="">Categorias</a></li>
-                <li class="btn"><a href="">Accesorios</a></li>
-                <li class="btn"><a href="">Oportunidades</a></li>
+                <li class="btn "><a class="b1" href="/">Inicio</a></li>
+                <li class="btn "><a class="b2" href="/">Categorias</a></li>
+                <li class="btn "><a class="b3" href="/Lista_de_productos">Accesorios</a></li>
+                <li class="btn "><a class="b4" href="/Lista_de_productos">Oportunidades</a></li>
             </ul>
         </div>
-        <span onclick="abrirBuscador()" id="search" class="iconify lupa icon-size-mobile icon-size-desktop icons"
-            data-icon="akar-icons:search" data-inline="false"></span>
-        <span class="iconify estrella icon-size-mobile icon-size-desktop icons" data-icon="akar-icons:star"
-            data-inline="false"></span>
-        <span class="iconify carrito icon-size-mobile icon-size-desktop icons"
-            data-icon="emojione-monotone:shopping-cart" data-inline="false"></span>
-        <span class="iconify usuario icon-size-mobile icon-size-desktop icons" data-icon="bi:person-circle"
-            data-inline="false"></span>
+        <!-- ICONO DE LUPA  -->
+        <a class="lupa icon-size align-icon">
+            <span class="iconify" onclick="abrirBuscador()" id="search" data-icon="akar-icons:search"
+                data-inline="false"></span>
+        </a>
+
+        <!-- ICONO DE FAVORITOS (estrella) -->
+        <a class="estrella icon-size align-icon" href="/favoritos">
+            <span class="iconify" data-icon="akar-icons:star" data-inline="false"></span>
+        </a>
+
+        <!-- ICONO DE CARRITO DE COMPRA -->
+        <a class="carrito align-icon icon-size" href="/carrito">
+            <span class="iconify " data-icon="emojione-monotone:shopping-cart" data-inline="false"></span>
+        </a>
+
+        <!-- ICONO DE USUARIO (circle) -->
+        <a href="/login" class="usuario align-icon icon-size">
+            <span class="iconify  " data-icon="bi:person-circle" data-inline="false"></span>
+        </a>
+
+        <!-- NAVEGACION PRINCIPAL (DESKTOP) -->
         <nav class="navbar" id="subMenu">
             <ul>
                 <li class="btn"><a href="/">Inicio</a></li>
-                <li class="btn"><a href="">Categorias</a></li>
-                <li class="btn"><a href="">Accesorios</a></li>
-                <li class="btn"><a href="">Oportunidades</a></li>
+                <li class="btn"><a href="/">Categorias</a></li>
+                <li class="btn"><a href="/Lista_de_productos">Accesorios</a></li>
+                <li class="btn"><a href="/Lista_de_productos">Oportunidades</a></li>
             </ul>
         </nav>
 
+        <!-- BARRA DE BUSQUEDA -->
         <form action="" class="search-bar" id="search-mobile-tablet">
             <input type="text" class="input-header" name="" id="" placeholder="Buscar...">
-            <button type="submit"><span class="iconify" data-icon="akar-icons:search"
+            <button type="submit"><span class="iconify iconLupaBar" data-icon="akar-icons:search"
                     data-inline="false"></span></button>
         </form>
     </header>
@@ -130,6 +154,11 @@
 
     </main>
     <!--Final de videos-->
+    <div class="whatsapp">
+        <a href="https://api.whatsapp.com/send?phone=+5491127544242&text=%20Hola,%20quiero%20hacer%20una%20consulta!!!"
+            target="_blank"><span class="iconify" data-icon="logos:whatsapp" data-inline="false"></span></a>
+    </div>
+
     <footer class="footer">
 
         <!-- SECCIONES FOOTER MOBILE Y TABLET -->
@@ -138,9 +167,9 @@
             <h3 class="footer-subtitle" onclick="openHelp()">AYUDA<span class="iconify icon"
                     data-icon="cil:caret-bottom" data-inline="false"></span></h3>
             <ul id="list-help">
-                <li class="enlace-hover"><a href="">Preguntas Frecuentes</a></li>
-                <li class="enlace-hover"><a href="">Métodos de envio</a></li>
-                <li class="enlace-hover"><a href="">Promociones Vigentes</a></li>
+                <li class="enlace-hover"><a href="/ayuda">Preguntas Frecuentes</a></li>
+                <li class="enlace-hover"><a href="/ayuda">Métodos de envio</a></li>
+                <li class="enlace-hover"><a href="/ayuda">Promociones Vigentes</a></li>
                 <li class="enlace-hover"><a href="https://www.correoargentino.com.ar/formularios/mercadolibre#numero"
                         target="_black">Seguimiento de Envios</a></li>
             </ul>
@@ -152,9 +181,9 @@
             <h3 class="footer-subtitle">AYUDA<span class="iconify icon" data-icon="cil:caret-bottom"
                     data-inline="false"></span></h3>
             <ul id="list-help">
-                <li class="enlace-hover"><a href="">Preguntas Frecuentes</a></li>
-                <li class="enlace-hover"><a href="">Métodos de envio</a></li>
-                <li class="enlace-hover"><a href="">Promociones Vigentes</a></li>
+                <li class="enlace-hover"><a href="/ayuda">Preguntas Frecuentes</a></li>
+                <li class="enlace-hover"><a href="/ayuda">Métodos de envio</a></li>
+                <li class="enlace-hover"><a href="/ayuda">Promociones Vigentes</a></li>
                 <li class="enlace-hover"><a href="https://www.correoargentino.com.ar/formularios/mercadolibre#numero"
                         target="_black">Seguimiento de Envios</a></li>
             </ul>
@@ -166,10 +195,10 @@
             <h3 class="footer-subtitle" onclick="openContact()">CONTACTO <span class="iconify icon"
                     data-icon="cil:caret-bottom" data-inline="false"></span></h3>
             <ul id="list-contact">
-                <li class="enlace-hover"><a href="">Consultas</a></li>
-                <li class="enlace-hover"><a href="">Casting</a></li>
-                <li class="enlace-hover"><a href="">RRHH</a></li>
-                <li class="enlace-hover"><a href="">Franquicias</a></li>
+                <li class="enlace-hover"><a href="/contacto">Consultas</a></li>
+                <li class="enlace-hover"><a href="/contacto">Casting</a></li>
+                <li class="enlace-hover"><a href="/contacto">RRHH</a></li>
+                <li class="enlace-hover"><a href="/contacto">Franquicias</a></li>
             </ul>
         </section>
 
@@ -179,10 +208,10 @@
             <h3 class="footer-subtitle">CONTACTO <span class="iconify icon" data-icon="cil:caret-bottom"
                     data-inline="false"></span></h3>
             <ul id="list-contact">
-                <li class="enlace-hover"><a href="">Consultas</a></li>
-                <li class="enlace-hover"><a href="">Casting</a></li>
-                <li class="enlace-hover"><a href="">RRHH</a></li>
-                <li class="enlace-hover"><a href="">Franquicias</a></li>
+                <li class="enlace-hover"><a href="/contacto">Consultas</a></li>
+                <li class="enlace-hover"><a href="/contacto">Casting</a></li>
+                <li class="enlace-hover"><a href="/contacto">RRHH</a></li>
+                <li class="enlace-hover"><a href="/contacto">Franquicias</a></li>
             </ul>
         </section>
 
@@ -192,9 +221,9 @@
             <h3 class="footer-subtitle" onclick="openAbout()">NOSOTROS<span class="iconify icon"
                     data-icon="cil:caret-bottom" data-inline="false"></span></h3>
             <ul id="list-about">
-                <li class="enlace-hover"><a href="">Nuestros Locales</a></li>
-                <li class="enlace-hover"><a href="">Términos y Condiciones</a></li>
-                <li class="enlace-hover"><a href="">Politicas de Privacidad</a></li>
+                <li class="enlace-hover"><a href="/nosotros">Nuestros Locales</a></li>
+                <li class="enlace-hover"><a href="/nosotros">Términos y Condiciones</a></li>
+                <li class="enlace-hover"><a href="/nosotros">Politicas de Privacidad</a></li>
             </ul>
         </section>
 
@@ -204,9 +233,9 @@
             <h3 class="footer-subtitle">NOSOTROS<span class="iconify icon" data-icon="cil:caret-bottom"
                     data-inline="false"></span></h3>
             <ul id="list-about">
-                <li class="enlace-hover"><a href="">Nuestros Locales</a></li>
-                <li class="enlace-hover"><a href="">Términos y Condiciones</a></li>
-                <li class="enlace-hover"><a href="">Politicas de Privacidad</a></li>
+                <li class="enlace-hover"><a href="/nosotros">Nuestros Locales</a></li>
+                <li class="enlace-hover"><a href="/nosotros">Términos y Condiciones</a></li>
+                <li class="enlace-hover"><a href="/nosotros">Politicas de Privacidad</a></li>
             </ul>
         </section>
 
@@ -224,15 +253,12 @@
             <small>&copy 2021. LOVE LOOK. Todos los derechos reservados</small>
         </section>
         <section class="otros">
-            <a href=""><img src="/img/mcfee.png" alt="" class="antivirus"></a>
+            <a href="https://www.mcafee.com/es-ar/antivirus.html"><img src="/img/mcfee.png" alt="" class="antivirus"></a>
             <a href="/afip" target="_black"><img src="/img/data-fiscal.jpg" alt="" class="afip"></a>
         </section>
     </footer>
 
-    <div class="whatsapp">
-        <a href="https://api.whatsapp.com/send?phone=+5491127544242&text=%20Hola,%20quiero%20hacer%20una%20consulta!!!"
-            target="_blank"><span class="iconify" data-icon="logos:whatsapp" data-inline="false"></span></a>
-    </div>
+
 </body>
 
 </html>

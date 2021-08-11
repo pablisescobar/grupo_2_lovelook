@@ -19,11 +19,11 @@ app.get("/register", (req, res) => {
     res.sendFile(path.join(__dirname, "/views/register.html")) 
 });
 
-app.get("/Carrito",(req,res)=>{
+app.get("/carrito",(req,res)=>{
     res.sendFile(path.join(__dirname,"/views/productCart.html"))
 });
 
-app.get("/Detalle",(req,res)=>{
+app.get("/detalle",(req,res)=>{
     res.sendFile(path.join(__dirname,"/views/productDetail.html"))
 });
 
@@ -64,5 +64,5 @@ app.get("/afip",(req,res)=>{
 
 /* Server */
 app.listen(port, () => {
-    console.log(`localhost:${port}`)
+    console.log(`http://localhost:${port}`)
 });

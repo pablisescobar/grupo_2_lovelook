@@ -1,4 +1,4 @@
-.container {
+ .container {
     box-shadow: 0 0 10px var(--bordes);
     width: 100%;
 }
@@ -210,4 +210,4 @@
     grid-template-columns: 1fr 1fr 1fr;
     padding: 10px;
 }
-    }
+    } 

@@ -1,14 +1,13 @@
 /* icono de whatsapp */
 .whatsapp {
-    z-index   : 998;
+    z-index   : 800;
     display   : flex;
     position  : fixed;
     right     : 7vw;
-    bottom    : 10vh;
+    bottom: 31vh;
     font-size : 3.75rem;
     margin    : auto;
     grid-area : whatsapp;
-    transition: transform 1s ease-in-out;
     transition: filter 500ms ease;
     animation : giroLoco 0.6s infinite alternate;
     opacity: 0.8;
@@ -27,27 +26,36 @@
     animation: vibracionWhatsapp 10ms 4;
 }
 
+@media screen and (min-width: 768px) {
+    .whatsapp {
+        font-size: 4rem;
+        right: 5vw;
+        bottom: 22vw;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .whatsapp {
+        bottom: 8vw;
+        right: 5vw;
+    }
+}
 /* View Mobile of Footer */
 
 .footer {
-    padding    : 5px;
+    padding: 10px;
     font-family: var(--poppins);
-    min-width  : 100vw;
-    height     : 250px;
+    
     box-shadow : 0px -4px 10px var(--bordes_claro);
     display    : grid;
     display    : -ms-grid;
     display    : -moz-grid;
-    grid       : repeat(6, 1fr) / repeat(11, 1fr);
-    /*  */
-    grid-template-areas:
-        /* info sobre esta practica :  https://developer.mozilla.org/es/docs/Web/CSS/grid-template-areas */
-        ". . .    ayuda     ayuda    ayuda    ayuda    ayuda    .        .        .    "
-        ". . .    contacto  contacto contacto contacto contacto .        .        .    "
-        ". . .    nosotros  nosotros nosotros nosotros nosotros .        .        .    "
-        ". . .    redes     redes    redes    redes    redes    .        afip     afip "
-        ". . copy copy      copy     copy     copy     copy     copy     afip     afip "
-        ". . copy copy      copy     copy     copy     copy     copy     afip     afip ";
+    grid-template-areas: /* info sobre esta practica :  https://developer.mozilla.org/es/docs/Web/CSS/grid-template-areas */
+        "ayuda    ayuda ayuda ayuda    "
+        "contacto contacto  contacto contacto   "
+        "nosotros     nosotros  nosotros  nosotros    "
+        ".    redes     redes     afip "
+        ". copy   copy     afip "
+        ". copy copy  . ";
 }
 
 /* Elementos generales*/
@@ -57,15 +65,21 @@
 
 
 .footer .footer-sections .footer-subtitle {
-    cursor         : pointer;
-    width          : 150px;
-    border         : 1px solid gray;
-    border-radius  : 20px;
-    padding        : 0 10px;
-    display        : flex;
+    cursor: pointer;
+    border: 1px solid var(--fondo);
+    border-radius: 10px;
+    display: flex;
     justify-content: space-between;
-    align-items    : center;
-    transition     : background-color 2s ease;
+    align-items: center;
+    transition: background-color 2s ease;
+    width: 60vw;
+    margin: 5px;
+    padding: 5px 10px;
+    box-shadow: 4px 4px 10px var(--shadows);
+}
+
+.footer .footer-sections .footer-subtitle h3{
+    width: 100%;
 }
 
 .footer .footer-sections .footer-subtitle:hover {
@@ -83,14 +97,15 @@
 .footer .help ul,
 .footer .contact ul,
 .footer .about ul {
-    display         : none;
+    display: none;
     position        : absolute;
     background-color: white;
     z-index         : 100;
     margin          : 0 auto;
-    font-size       : 14px;
-    width           : 200px;
-    padding         : 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    width: 100%;
+    padding: 0 12px;
     border-radius   : 5px;
     box-shadow      : 1px 1px 4px var(--shadows);
 }
@@ -154,6 +169,7 @@
     grid-area : copy;
     text-align: center;
     font-size : 1rem;
+    align-self: center;
 }
 
 .footer .otros {
@@ -171,20 +187,19 @@
 
 
 /* View TABLET of footer*/
-
 @media screen and (min-width:768px) {
-    .whatsapp {
+    /* .whatsapp {
         font-size: 6rem;
-    }
+    } */
     .footer {
-        height: 200px;
         margin: auto;
-        grid  : repeat(3, 1fr) / repeat(9, 1fr);
         grid-template-areas:
-            ". . ayuda .     contacto .        nosotros .     . "
-            ". . redes redes .        .        afip     afip  . "
-            ". . copy  copy  copy     copy     copy     .     . ";
+            " . ayuda     contacto nosotros       .       "
+            " redes redes .               afip     afip   "
+            "copy  copy  copy     copy     copy        ";
+        width: 100%;
     }
+
 
     .footer .otros .antivirus {
         display: inline-block;
@@ -193,9 +208,8 @@
     .footer .footer-sections .footer-subtitle {
         border-radius: 5px;
         border-color : lightgray;
+        width: 200px;
     }
-
-
 
     .footer .help .list-help li,
 .footer .contact .list-contact li,
@@ -211,10 +225,10 @@
 /* View Desktop of footer */
 
 @media screen and (min-width:1024px) {
-    .whatsapp {
+   /*  .whatsapp {
         bottom: 20vw;
 right: 2vw;
-    }
+    } */
     /* Elementos activadas */
 
     .footer .help ul,
@@ -234,13 +248,12 @@ right: 2vw;
     /* Elemento contenedor principal */
 
     .footer {
-        height : 300px;
+        width: 100%;
         padding: 10px;
         margin: 0 auto;
-        grid   : repeat(3, 1fr) / repeat(9, 1fr);
         grid-template-areas:
             "ayuda    ayuda ayuda contacto  contacto contacto  nosotros  nosotros   nosotros    "
-            ".    .     .     redes     redes    redes     .         afip       afip "
+            ".    .     .     redes     redes    redes      afip       afip . "
             ".    .     copy  copy      copy     copy      copy      .          .    ";
     }
 
