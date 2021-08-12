@@ -1,31 +1,31 @@
- .container {
+.container-cart {
     box-shadow: 0 0 10px var(--bordes);
     width: 100%;
 }
 
-.banner {
+.container-cart .banner {
     width: 100%;
 }
 
-.section1 {
+.container-cart .section1 {
     padding-top: 3px;
 }
 
-.section1 .product img {
+.container-cart .section1 .product img {
     width: 100%;
 }
 
-.section1 .product h5 {
+.container-cart .section1 .product h5 {
     font-family: var(--poppins);
     font-size: 20px;
 }
 
-.section1 .product p {
+.container-cart .section1 .product p {
     font-family: var(--poppins);
     font-size: 20px;
 }
 
-.section1 .iconOutline {
+.container-cart .section1 .iconOutline {
     width: 22px;
     height: 22px;
     background-color: white;
@@ -36,35 +36,35 @@
     right: 35px;
 }
 
-.description {
+.container-cart .description {
     width: 100%;
     display: grid;
-    grid:1fr 1fr 1fr / 1fr 1fr 1fr;
-    grid-template-areas: 
-    "precio cantidad subPrecio"
-    "linea linea linea"
-    "valorPrecio valorCantidad valorSubPrecio";
+    grid: 1fr 1fr 1fr / 1fr 1fr 1fr;
+    grid-template-areas:
+        "precio cantidad subPrecio"
+        "linea linea linea"
+        "valorPrecio valorCantidad valorSubPrecio";
     text-align: center;
 }
 
-.descriptionProduct {
+.container-cart .descriptionProduct {
     text-align: left;
     padding-left: 10px;
 }
 
-.description .price{
-    grid-area: precio ;
+.container-cart .description .price {
+    grid-area: precio;
 }
 
-.description .valuePrice{
+.container-cart .description .valuePrice {
     grid-area: valorPrecio;
 }
 
-.description .count{
+.container-cart .description .count {
     grid-area: cantidad;
 }
 
-.description .linea{
+.container-cart .description .linea {
     grid-area: linea;
     width: 80%;
     height: 3px;
@@ -72,21 +72,21 @@
     margin: auto;
 }
 
-.description .valueCount{
-    grid-area:valorCantidad;
+.container-cart .description .valueCount {
+    grid-area: valorCantidad;
     width: 25px;
     margin: auto;
 }
 
-.description .subPrice{
+.container-cart .description .subPrice {
     grid-area: subPrecio;
 }
 
-.description .valueSubPrice{
+.container-cart .description .valueSubPrice {
     grid-area: valorSubPrecio;
 }
 
-.buttonsIcons {
+.container-cart .buttonsIcons {
     width: 100%;
     height: fit-content;
     justify-items: center;
@@ -95,7 +95,7 @@
     padding: 10px;
 }
 
-.buttonsIcons .iconHeart {
+.container-cart .buttonsIcons .iconHeart {
     width: 22px;
     height: 22px;
     background-color: white;
@@ -103,7 +103,7 @@
     border-radius: 30%;
 }
 
-.buttonsIcons .iconArrow{
+.container-cart .buttonsIcons .iconArrow {
     width: 22px;
     height: 22px;
     background-color: white;
@@ -111,7 +111,7 @@
     border-radius: 30%;
 }
 
-.buttonsIcons .iconSync {
+.container-cart .buttonsIcons .iconSync {
     width: 22px;
     height: 22px;
     background-color: white;
@@ -119,95 +119,92 @@
     border-radius: 30%;
 }
 
-.buy {
+.container-cart .buy {
     background-color: rgba(144, 238, 144, 0.822);
     border: 1px solid green;
     border-radius: 10%;
 }
 
-.sectionAdd p {
+.container-cart .sectionAdd p {
     font-family: var(--yesteryear);
     font-size: 22px;
     text-align: center;
     padding-top: 15px;
 }
 
-.sectionAdd img {
+.container-cart .sectionAdd img {
     width: 100%;
     padding-top: 20px;
 }
 
-.section3 p {
+.container-cart .section3 p {
     font-family: var(--yesteryear);
     font-size: 25px;
     text-align: center;
 }
 
-.section3 img {
+.container-cart .section3 img {
     width: 100%;
     padding-top: 15px;
 }
 
 @media screen and (min-width: 768px) {
-
-.section1 {
+    .container-cart .section1 {
         padding-top: 15px;
     }
-    
-.section1 .product {
-    display: grid;
-    margin: auto;
-    border: 1px solid var(--bordes_claro);
-    box-shadow: 0 0 8px var(--bordes);
-    grid: 1fr / 1fr 1fr;
-    grid-template-areas: 
-    "img dP"
-    "img d";
-}
 
-.section1 .iconOutline {
-    top: 970px;
-}
-
-.section1 .product img {
-    grid-area: img;
-    width: 50%;
-    margin: auto;
-}
-
-.section1 .product .descriptionProduct {
-    grid-area: dP;
-}    
-
-.section1 .product .description {
-    grid-area: d;
-}
-
-.buttonsIcons {
-    padding: 15px;
-}
-
-
-.sectionAdd .question {
-    font-size: 40px;
-}
-
-.sectionAdd .questionImg {
-    display: grid;
-    grid-template-columns:1fr 1fr;
-    grid-gap:1em;
-}
-
-.section3 p {
-    font-size: 40px;
-    padding: 20px;
-}
+    .container-cart .section1 .product {
+        display: grid;
+        margin: auto;
+        border: 1px solid var(--bordes_claro);
+        box-shadow: 0 0 8px var(--bordes);
+        grid: 1fr / 1fr 1fr;
+        grid-template-areas:
+            "img dP"
+            "img d";
     }
 
-@media screen and (min-width: 1024px) {
-    
-.sectionAdd .questionImg {
-    grid-template-columns: 1fr 1fr 1fr;
-    padding: 10px;
+    .container-cart .section1 .iconOutline {
+        top: 970px;
+    }
+
+    .container-cart .section1 .product img {
+        grid-area: img;
+        width: 50%;
+        margin: auto;
+    }
+
+    .container-cart .section1 .product .descriptionProduct {
+        grid-area: dP;
+    }
+
+    .container-cart .section1 .product .description {
+        grid-area: d;
+    }
+
+    .container-cart .buttonsIcons {
+        padding: 15px;
+    }
+
+    .container-cart .sectionAdd .question {
+        font-size: 40px;
+    }
+
+    .container-cart .sectionAdd .questionImg {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1em;
+    }
+
+    .container-cart .section3 p {
+        font-size: 40px;
+        padding: 20px;
+    }
 }
-    } 
+
+@media screen and (min-width: 1024px) {
+    .container-cart .sectionAdd .questionImg {
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 10px;
+    }
+}

@@ -1,8 +1,8 @@
-.container {
+.container-listProduct {
     box-shadow: 0 0 10px var(--bordes);
 }
 
-.section1 .iconFilter {
+.container-listProduct .section1 .iconFilter {
     width: 22px;
     height: 22px;
     background-color: white;
@@ -13,21 +13,21 @@
     top: 200px;
 }
 
-hr {
+.container-listProduct hr {
     display: none;
 }
 
-.container .section1 .nav-bar {
+.container-listProduct .container .section1 .nav-bar {
     display: none;
 }
 
-.section2 {
+.container-listProduct .section2 {
     padding: 20px 10px;
     display: grid;
     grid-column: span 1;
 }
 
-.section2 .product {
+.container-listProduct .section2 .product {
     width: 275px;
     height: 500px;
     margin: 1rem;
@@ -37,19 +37,19 @@ hr {
     box-shadow: 0 0 8px var(--bordes);
 }
 
-.section2 .product img {
+.container-listProduct .section2 .product img {
     max-width: 17rem;
     width: 100%;
     height: 70%;
 }
 
-.section2 .product h3 {
+.container-listProduct .section2 .product h3 {
     font-family: var(--poppins);
     font-size: 1.2rem;
     font-weight: 350;
 }
 
-.section2 .product p {
+.container-listProduct .section2 .product p {
     font-family: var(--poppins);
     font-size: 1rem;
     line-height: 40%;
@@ -58,73 +58,73 @@ hr {
 }
 
 @media screen and (min-width: 768px) {
-    .container {
+    .container-listProduct {
         max-width: 768px;
     }
 
-    .section1 .iconFilter {
+    .container-listProduct .section1 .iconFilter {
         display: none;
     }
 
-    .nav-bar {
+    .container-listProduct .nav-bar {
         grid-template-columns: repeat(4, 1fr);
         grid-template-areas: 
         " filtrar . . . color  . talle . precio . ";
     }
 
-    a {
+    .container-listProduct a {
         padding-top: 10px;
         grid-area: filtrar;
     }
 
-    li {
+    .container-listProduct li {
         grid-area: color;
     }
 
-    li {
+    .container-listProduct li {
         grid-area: talle;
     }
 
-    li {
+    .container-listProduct li {
         grid-area: precio;
     }
     
-    hr {
+    .container-listProduct hr {
         display: block;
         border: 1px solid var(--bordes_claro);
     }
 
-    .container .section1 .nav-bar {
+    .container-listProduct .section1 .nav-bar {
         padding: 15px 30px;
         display: grid;
         position: relative;
     }
 
-    .container .section1 .dropdown:hover {
+    .container-listProduct .section1 .dropdown:hover {
         border-bottom: 2px solid pink;
     }
 
-    .container .section1 ul .dropdown ul li {
+    .container-listProduct .section1 ul .dropdown ul li {
         display: none;
         position: relative;
     }
 
-    li {
+    .container-listProduct li {
         padding: 10px;
         transition: all 0.6s ease-in-out;
     }
     
-    li:hover {
+    .container-listProduct li:hover {
         box-shadow: 0px 5px 15px rgba(var(--bordes_claro) 0.795);
         border-radius: 0 20px 20px 0;
     }
 
-    .section2 {
+    .container-listProduct .section2 {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .section2 .product {
+    .container-listProduct .section2 .product {
         width: 285px;
         height: 545px;
         text-align: center;
@@ -133,38 +133,37 @@ hr {
         box-shadow: 0 0 8px var(--bordes);
     }
 
-    .section2 .product img {
+    .container-listProduct .section2 .product img {
         max-width: 18rem;
         width: 100%;
     }
 
-    .section2 .product h3 {
+    .container-listProduct .section2 .product h3 {
         font-size: 1rem;
         font-weight: 250;
     }
     
-    .section2 .product p {
+    .container-listProduct .section2 .product p {
         font-size: 0.8rem;
         line-height: 150%;
         color: green;
         animation: acercarAlejar 2s alternate infinite;
     }
-
+}
     @media screen and (min-width: 1024px) {
-        .container {
+        .container-listProduct {
             max-width: 1024px;
         }
 
-        .section2 {
+        .container-listProduct .section2 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
         }
     
-        .section2 .product {
+        .container-listProduct .section2 .product {
             width: 285px;
             height: 545px;
     }
 
     }
 
-}
