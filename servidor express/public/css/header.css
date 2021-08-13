@@ -1,40 +1,35 @@
 /* marquee inner */
 
-
-
-
 /* View Mobile of Header */
 
 .header {
     font-family: var(--poppins);
-    display    : grid;
+    display: grid;
     grid: 2fr 1fr / repeat(5, 1fr);
     grid-template-areas:
         "menu     lupa     logo     carrito   user"
         "buscador buscador buscador buscador  buscador";
-    border-bottom:8px double var(--bordes_claro);
+    border-bottom: 8px double var(--bordes_claro);
     margin-bottom: 20px;
     z-index: 999;
     width: 100%;
     padding: 5px;
 }
 
-.header .navbar-mobile{
+.header .navbar-mobile {
     display: none;
     position: absolute;
     top: 24vw;
     left: 6vw;
-    width: fit-content;
     border-radius: 15px;
     border-left: 10px solid var(--bordes);
     padding: 15px;
-    width: 50vw;
-    background-color: white;
+    width: fit-content;
+    background-color: rgba(255, 255, 255, 0.5);
     z-index: 300;
     border-bottom: 2px solid var(--bordes);
     border-top: 2px solid var(--bordes);
 }
-
 
 .header .navbar-mobile ul {
     height: fit-content;
@@ -43,7 +38,7 @@
     justify-content: space-evenly;
     margin: 0;
     width: fit-content;
-    width:100%;
+    width: 100%;
 }
 
 .header .navbar-mobile ul .btn {
@@ -55,15 +50,14 @@
     width: fit-content;
     position: relative;
     font-size: 1.3rem;
-    background-color: rgba(255,255,255,0.8);
-    border-radius:20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
     margin: 3px;
     padding: 10px 10px 10px 30px;
     box-shadow: -10px 0px 4px var(--bordes);
-    border:1px solid var(--bordes) ;
+    border: 1px solid var(--bordes);
     font-weight: bold;
 }
-
 
 .header .navbar-mobile ul .btn a::before {
     content: "";
@@ -71,21 +65,17 @@
     width: 100%;
     right: 0;
     bottom: 0;
-    border-radius:20px;
+    border-radius: 20px;
 }
 
 .header .navbar-mobile ul .btn .b1::before {
-    
     animation: moveLink 2s infinite alternate;
-   
 }
 .header .navbar-mobile ul .btn .b2::before {
-    animation: moveLink 1.1s  infinite alternate;
-    
+    animation: moveLink 1.1s infinite alternate;
 }
 .header .navbar-mobile ul .btn .b3::before {
-    animation: moveLink 1.2s  infinite alternate;
-   
+    animation: moveLink 1.2s infinite alternate;
 }
 .header .navbar-mobile ul .btn .b4::before {
     animation: moveLink 2s infinite alternate;
@@ -100,7 +90,6 @@
 
 .header .menu {
     grid-area: menu;
-
 }
 
 .header .lupa {
@@ -108,7 +97,7 @@
 }
 
 .header .estrella {
-    display  : none;
+    display: none;
     grid-area: estrella;
 }
 
@@ -125,17 +114,17 @@
 }
 
 .header .search-bar {
-    display        : none;
-    grid-area      : buscador;
+    display: none;
+    grid-area: buscador;
     justify-content: space-between;
-    align-items    : center;
-    height         : 40px;
-    width          : 80vw;
-    margin         : auto;
-    border         : 2px solid var(--bordes);
-    border-radius  : 20px;
-    padding        : 0 10px 0 20px;
-    transition     : box-shadow 1s ease-in;
+    align-items: center;
+    height: 40px;
+    width: 80vw;
+    margin: auto;
+    border: 2px solid var(--bordes);
+    border-radius: 20px;
+    padding: 0 10px 0 20px;
+    transition: box-shadow 1s ease-in;
     box-shadow: -10px 0px 4px var(--bordes);
     /* --------- */
     animation: searchBar 1.1s ease-in 1;
@@ -143,7 +132,7 @@
     z-index: 300;
 }
 
-.iconLupaBar{
+.iconLupaBar {
     text-shadow: -10px 0px 4px var(--bordes);
 }
 /* ///////////////////////////////////////////// */
@@ -158,48 +147,60 @@
 }
 
 .header .search-bar:hover {
-    box-shadow  : 0 0 15px var(--shadows);
+    box-shadow: 0 0 15px var(--shadows);
     border-color: var(--bordes_claro);
-    cursor      : text;
+    cursor: text;
 }
 
 .header .search-bar input {
     width: 100%;
-    border   : none;
+    border: none;
     font-size: 1.5rem;
 }
 
 .header .search-bar button {
-    width           : 30px;
-    height          : 30px;
+    width: 30px;
+    height: 30px;
     margin: auto;
-    border          : none;
+    border: none;
     background-color: white;
-    font-size       : 30px;
+    font-size: 30px;
 }
 
 /* Mediaquery TABLET */
 
-@media screen and (min-width:768px) {
-    .header{/* width: 100vw; */}
-    
+@media screen and (min-width: 768px) {
     .header .logo {
         width: 200px;
         margin: auto;
     }
     .header .search-bar {
         height: 70px;
-        width : 80vw;
+        width: 80vw;
     }
     .details-products .product .form-1 .btn-add {
         font-size: 1.6rem;
         width: 250px;
     }
+    .header .navbar-mobile {
+        transform: scale(1.5);
+        top: 34vw;
+        left: 11vw;
+    }
+
+    .header .search-bar input {
+        font-size: 2.5rem;
+    }
+
+    .header .search-bar button{
+    transform: scale(1.4);
+    }
+
 }
 
 /* Mediaquery DESKTOP */
 
-@media screen and (min-width:1024px) {
+@media screen and (min-width: 1024px) {
     .header {
         width: 100vw;
         /* height: 200px; */
@@ -214,8 +215,12 @@
     }
 
     .header .navbar {
-        display  : grid;
+        display: grid;
         grid-area: menu;
+    }
+
+    .header .navbar-mobile {
+        display: none !important;
     }
 
     .header .estrella {
@@ -223,21 +228,21 @@
     }
 
     .header .navbar ul {
-        width          : 100%;
-        display        : flex;
+        width: 100%;
+        display: flex;
         justify-content: space-between;
-        gap            : 30px;
+        gap: 30px;
     }
 
     .header .navbar ul li {
-        width  : 15vw;
-        height : 30px;
+        width: 15vw;
+        height: 30px;
         padding: 5px;
     }
 
     .header .logo {
         margin: auto 0;
-        width : 150px;
+        width: 150px;
         height: 150px;
     }
 
@@ -246,18 +251,17 @@
     }
 
     .header .search-bar {
-        display: flex;
-        width : 100%;
+        display: flex !important;
+        width: 100%;
         height: 40px;
         animation: none;
     }
-
 
     /* Estilos de botones del header */
 
     .header .btn {
         text-align: center;
-        position  : relative;
+        position: relative;
         transition: transform 0.7s ease-in-out;
     }
 
@@ -266,27 +270,26 @@
     }
 
     .header .btn::after {
-        content         : "";
-        width           : 0;
-        height          : 5px;
-        position        : absolute;
+        content: "";
+        width: 0;
+        height: 5px;
+        position: absolute;
         background-color: var(--bordes_claro);
-        box-shadow      : 5px 5px 3px lightgray;
-        bottom          : 0;
-        left            : 50%;
-        transform       : translateX(-50%);
-        transition      : all 0.7s ease-in-out;
-        z-index         : -1;
+        box-shadow: 5px 5px 3px lightgray;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: all 1s ease-in-out;
+        z-index: -1;
     }
 
     .header .btn:hover::after {
-        width: 80%;
+        width: 70%;
     }
-    /* Finaliza estilo de botones del header */
-
-
+    .header .search-bar button{
+        transform: none;
+    }
+    .header .search-bar input{
+        font-size: 1.5rem;
+    }
 }
-
-
-
-

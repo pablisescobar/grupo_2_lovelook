@@ -33,6 +33,7 @@
     letter-spacing: 3px;
     font-weight: bold;
     text-align: center;
+    font-size: 1.5rem;
 }
 
 .details-products .product .description .name::first-letter {
@@ -43,21 +44,16 @@
 
 .details-products .product .description .price {
     letter-spacing: 3px;
-    color: rgb(63, 63, 199);
     font-weight: bold;
     font-size: 1.2rem;
     position: relative;
     padding-left: 30px;
-    font-family: "Slabo 27px", serif;
     font-size: 1rem;
     text-align: left;
 }
 
 .details-products .product .description .price:before {
-    content: url("https://api.iconify.design/bx:bxs-discount.svg?color=darkblue&height=24&inline=true");
-    position: relative;
-    left: 0px;
-    top: 6px;
+    content:'$';
 }
 
 .details-products .product .description .price:hover:before {
@@ -73,10 +69,11 @@
     width: 100%;
     font-family: "Slabo 27px";
     text-align: left;
+    animation: acercarAlejar 1s ease alternate infinite;
 }
 
 .details-products .product .description .discount::before {
-    content: url("https://api.iconify.design/fa-solid:shipping-fast.svg?color=green&height=24");
+    /* content: url("https://api.iconify.design/fa-solid:shipping-fast.svg?color=green&height=24"); */
     position: relative;
     left: -10px;
     top: 5px;
@@ -94,6 +91,7 @@
 .details-products .product .form-1 {
     max-width: 500px;
     margin: 0 auto;
+    padding: 10px;
 }
 
 .details-products .product .form-1 .subtitle {
@@ -131,6 +129,13 @@
     border-bottom: 2px solid black;
     display: block;
     width: 100%;
+}
+
+.details-products .product .select:focus{
+    background-color: white;
+}
+.details-products .product .select:active{
+    background-color: white;
 }
 
 .details-products .product .select option {
@@ -187,22 +192,22 @@
     font-weight: bold;
     letter-spacing: 3px;
     color: black;
-    text-shadow: 2px 2px 2px black;
+    /* text-shadow: 2px 2px 2px black; */
     display: inline-block;
     width: 100%;
     /* background: linear-gradient(180deg, black, white); */
     /* transition: background 2s ease, text-shadow 2s ease; */
     background-size: 100% 100%;
     border-radius: 10px;
-    margin: 3px 0;
-    text-align: center;
+    /* margin: 3px 0; */
     font-size: 1.3rem;
 }
 
 .details-products .product .form-1 .subtitle-guie-size:hover a {
     background-size: 200% 500%;
-    color: white;
-    text-shadow: 2px 2px 2px var(--shadows);
+    /* color: white; */
+    /* text-shadow: 2px 2px 2px var(--shadows); */
+    text-decoration: underline;
 }
 
 /* SECTION FORM 2 */
@@ -210,6 +215,7 @@
 .details-products .product .form-2 {
     max-width: 500px;
     margin: 0 auto;
+    padding: 10px;
 }
 
 /* SUMA A TU LOOK */
@@ -233,6 +239,9 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    width: 100%;
+    align-items: center;
+    margin: 10px auto;
 }
 
 .details-products .add-look-container .arts-container .art1,
@@ -241,7 +250,7 @@
 .details-products .add-look-container .arts-container .art4 {
     border: none;
     font-size: 0;
-    margin: 10px 0;
+    /* margin: 10px 0; */
     position: relative;
     cursor: pointer;
     width: 320px;
@@ -294,9 +303,6 @@
     }
 
     .details-products .add-look-container {
-        border-radius: 3px 15px;
-        margin: 0 auto;
-        gap: 10px;
         max-width: 900px;
         width: 768px;
         min-width: 768px;
@@ -307,9 +313,10 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
+        align-items: inherit;
         gap: 10px;
         width: 100%;
-        margin: auto;
+        margin: 10px auto;
     }
 }
 
@@ -358,10 +365,10 @@
     }
 
     .details-products .product .description {
-        border: none;
         grid-area: descripcion;
-        /* width: 282px; */
+        width: 282px;
         margin: auto;
+        padding: 20px;
     }
 
     .details-products .product .description .name {
@@ -373,7 +380,7 @@
     }
 
     .details-products .product .description .discount {
-        letter-spacing: 4px;
+        /* letter-spacing: 4px; */
     }
 
     .details-products .product .form-1 {
@@ -440,7 +447,6 @@
     /* add-look-container */
 
     .details-products .add-look-container {
-        padding: 0;
         border: none;
         width: 100%;
     }
