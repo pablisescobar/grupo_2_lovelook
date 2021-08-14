@@ -26,6 +26,9 @@ app.get("/carrito",(req,res)=>{
 app.get("/detalle",(req,res)=>{
     res.sendFile(path.join(__dirname,"/views/productDetail.html"))
 });
+app.get("/admin",(req,res)=>{
+    res.sendFile(path.join(__dirname,"/views/admin.html"))
+});
 
 app.get("/favoritos",(req,res)=>{
     res.sendFile(path.join(__dirname,"/views/favoritos.html"))

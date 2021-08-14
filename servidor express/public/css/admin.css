@@ -1,0 +1,74 @@
+.admin {
+    padding: 10px;
+}
+
+.admin h2 {
+    text-shadow: 0 0 3px gray, -1px -1px 3px black, -2px -2px 6px black;
+    color: var(--fondo-claro);
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.admin .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.admin .inputRows {
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    margin: 0 auto;
+}
+
+.admin .table-container {
+    overflow: scroll;
+    width: 320px;
+    margin: 0 auto;
+}
+.admin table {
+    width: 800px;
+}
+
+.admin th,
+.admin td {
+    margin: 0 10px;
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+}
+
+.admin td .img-value {
+    height: 70px;
+}
+
+.admin input,
+.admin select,
+.admin button,
+.admin .input {
+    margin: 5px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 1.5rem;
+}
+
+.admin button {
+    width: 50%;
+    align-self: flex-end;
+    padding: 0;
+}
+
+.admin .subir {
+    padding: 5px 10px;
+    background: #97f797;
+    border: 0px solid #fff;
+    width: 100px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.admin .subir:hover {
+    color: #fff;
+    background: green;
+}
