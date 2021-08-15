@@ -21,3 +21,11 @@ function abrirBuscador(){
         menuMobile.style.display = "none"
     }
 }
+
+
+
+/* menu burger y lupa*/
+
+function myFunction(x) {
+    x.classList.toggle("change");
+  }

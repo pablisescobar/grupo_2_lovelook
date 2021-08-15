@@ -11,28 +11,45 @@
 
             <form action="" method="GET" class="inputRows">
 
-                <input type="number" name="id" id="id" placeholder="ID">
+                <input type="number" name="id" id="id" placeholder="ID" required>
 
-                <input type="text" name="codigo" id="code" placeholder="Código">
-
-
-                <input type="text" name="descripcion" id="description" placeholder="Descripción">
+                <input type="text" name="codigo" id="code" placeholder="Código" required>
 
 
-                <input type="text" name="precioCompra" id="priceC" placeholder="Precio Compra">
+                <input type="text" name="descripcion" id="description" placeholder="Descripción" required>
 
 
-                <input type="text" name="precioVenta" id="priceV" placeholder="Precio Venta">
+                <input type="number" name="descuento" id="discount" placeholder="Descuento %">
 
 
-                <input type="text" name="color" id="color" placeholder="Color">
+                <input type="number" name="precioVenta" id="priceV" placeholder="Precio" required>
 
 
-                <select name="talle" id="size">
-                    <option selected>Talle</option>
+                <select type="text" name="color" id="color" placeholder="Color" required>
+                    <option value="" selected hidden>Color</option>
+                    <option value="verde">verde</option>
+                    <option value="verdeClaro">verde claro</option>
+                    <option value="azul">azul</option>
+                    <option value="marron">marron</option>
+                    <option value="marronClaro">marron claro</option>
+                    <option value="gris">gris</option>
+                    <option value="negro">negro</option>
+                    <option value="blanco">blanco</option>
+                    <option value="amarillo">amarillo</option>
+                    <option value="rosa">rosa</option>
                 </select>
 
-                <input type="number" name="cantidad" id="stock" placeholder="Cantidad">
+
+                <select name="talle" id="size" required>
+                    <option selected hidden>Talle</option>
+                    <option value="s">S</option>
+                    <option value="m">M</option>
+                    <option value="l">L</option>
+                    <option value="xl">XL</option>
+                    <option value="xxl">XXL</option>
+                </select>
+
+                <input type="number" name="cantidad" id="stock" placeholder="Cantidad" required>
 
                 <div class="input">
                     <label for="file-upload" class="subir">
@@ -40,10 +57,12 @@
                     </label>
                     <div id="info"></div>
 
-                    <input id="file-upload" onchange='cambiar()' type="file" style='display: none;' />
+                    <input id="file-upload" onchange='cambiar()' accept=".png, .jpg" type="file" style='display: none;' required multiple>
                 </div>
 
-                <button type="submit"><span class="iconify" data-icon="fluent:add-12-filled"></span></button>
+                <button type="submit" class="btn-add"><span class="iconify" data-icon="fluent:add-12-filled"></span></button>
+                <button type="reset" class="btn-reset"><span class="iconify" data-icon="whh:broom"></span></button>
+
 
             </form>
             <div class="table-container">
@@ -70,8 +89,8 @@
                         <td>X</td>
                         <td>20</td>
                         <td><img class="img-value" src="/img/remeras/remeraSmile.jpg" alt=""></td>
-                        <td><button type="submit"><span class="iconify" data-icon="line-md:edit"></span></button></td>
-                        <td><button type="submit"><span class="iconify" data-icon="feather:delete"></span></button>
+                        <td><button class="edit" type="submit"><span class="iconify" data-icon="line-md:edit"></span></button></td>
+                        <td><button class="delete" type="submit"><span class="iconify" data-icon="feather:delete"></span></button>
                         </td>
                     </tr>
                     <tr>
@@ -83,8 +102,8 @@
                         <td>X</td>
                         <td>20</td>
                         <td><img class="img-value" src="/img/remeras/remeraSmile.jpg" alt=""></td>
-                        <td><button type="submit"><span class="iconify" data-icon="line-md:edit"></span></button></td>
-                        <td><button type="submit"><span class="iconify" data-icon="feather:delete"></span></button>
+                        <td><button class="edit" type="submit"><span class="iconify" data-icon="line-md:edit"></span></button></td>
+                        <td><button class="delete" type="submit"><span class="iconify" data-icon="feather:delete"></span></button>
                         </td>
                     </tr>
                     <tr>
@@ -96,8 +115,8 @@
                         <td>X</td>
                         <td>20</td>
                         <td><img class="img-value" src="/img/remeras/remeraSmile.jpg" alt=""></td>
-                        <td><button type="submit"><span class="iconify" data-icon="line-md:edit"></span></button></td>
-                        <td><button type="submit"><span class="iconify" data-icon="feather:delete"></span></button>
+                        <td><button class="edit" type="submit"><span class="iconify" data-icon="line-md:edit"></span></button></td>
+                        <td><button class="delete" type="submit"><span class="iconify" data-icon="feather:delete"></span></button>
                         </td>
                     </tr>
                     <tr>
@@ -109,8 +128,8 @@
                         <td>X</td>
                         <td>20</td>
                         <td><img class="img-value" src="/img/remeras/remeraSmile.jpg" alt=""></td>
-                        <td><button type="submit"><span class="iconify" data-icon="line-md:edit"></span></button></td>
-                        <td><button type="submit"><span class="iconify" data-icon="feather:delete"></span></button>
+                        <td><button class="edit" type="submit"><span class="iconify" data-icon="line-md:edit"></span></button></td>
+                        <td><button class="delete" type="submit"><span class="iconify" data-icon="feather:delete"></span></button>
                         </td>
                     </tr>
                 </table>

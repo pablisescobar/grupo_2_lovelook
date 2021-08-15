@@ -1,3 +1,5 @@
+/* Estilos de vista ADMIN */
+
 .admin {
     padding: 10px;
 }
@@ -7,6 +9,7 @@
     color: var(--fondo-claro);
     font-size: 3rem;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .admin .container {
@@ -29,6 +32,7 @@
 }
 .admin table {
     width: 800px;
+    font-size: 1.5rem;
 }
 
 .admin th,
@@ -40,7 +44,7 @@
 }
 
 .admin td .img-value {
-    height: 70px;
+    height: 75px;
 }
 
 .admin input,
@@ -51,24 +55,333 @@
     height: 40px;
     padding-left: 10px;
     font-size: 1.5rem;
+    color: gray;
+    background-color: var(--fondo-claro);
+    border-color: gray;
+    outline: none;
+    padding-left: 10px;
+    border: none;
+}
+.admin .input {
+    padding: 0;
+    margin: 10px auto;
+    background-color: white;
+}
+
+.admin input:focus,.admin select:focus{
+    color: black;
+    border: 1px solid black;
+    background-color: white;
+}
+
+.admin input::placeholder,.admin select::selection{
+    padding-left: 5px;
+    background-color: var(--fondo-claro);
+}
+
+.admin button.edit {
+    color: blue;
+    border-color: blue;
+    box-shadow: inset 0 0 19px lightblue;
+    transition: all 2s ease;
+    width: 50px;
+    margin: 5px;
+}
+.admin button.edit:hover {
+    color: white;
+    border: 0.5px solid black;
+    background: blue;
+    box-shadow: inset 0 0 19px blue;
+    transform: scale(1.8);
+    border-radius: 50%;
+}
+
+.admin button.delete {
+    color: red;
+    border-color: red;
+    box-shadow: inset 1px 1px 10px lightpink;
+    transition: all 2s ease;
+    width: 50px;
+}
+.admin button.delete:hover {
+    color: white;
+    border: 0.5px solid black;
+    background: red;
+    box-shadow: inset 0 0 19px red;
+    transform: scale(1.8);
+    border-radius: 50%;
 }
 
 .admin button {
     width: 50%;
     align-self: flex-end;
     padding: 0;
+    background-color: white;
+    color: green;
+    border: 2px solid green;
+    box-shadow: inset 0 0 29px lightgreen;
+    transition: transform 1s ease;
+    border-radius: 10px;
+}
+
+
+.admin button.btn-add:active{
+    transform: scale(1.2);
+    color: white;
+    background-color: green;
+    box-shadow: inset 0 0 10px 4px;
+}
+.admin button.btn-reset:active {
+    transform: scale(1.2);
+    color: black;
+    background-color: red;
+    box-shadow: inset 0 0 10px 4px white;
+}
+
+.admin button.btn-reset {
+    color: black;
+    font-size: 2rem;
+    border-color: red;
+    box-shadow: inset 0 0 29px lightpink;
 }
 
 .admin .subir {
     padding: 5px 10px;
     background: #97f797;
-    border: 0px solid #fff;
+    border: 1px solid #000;
     width: 100px;
     text-align: center;
     border-radius: 5px;
+    color: black;
+    box-shadow: inset 0 0 10px green;
+    transition: background 2s ease, border-radius 3s ease;
 }
 
 .admin .subir:hover {
     color: #fff;
     background: green;
+    border-radius: 0 0 20px 5px;
+}
+
+@media screen and (min-width: 768px) {
+    .admin {
+    }
+
+    .admin h2 {
+        text-shadow: 0 0 3px gray, -1px -1px 3px black, -2px -2px 6px black;
+        color: var(--fondo-claro);
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .admin .container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin: 20px 0;
+    }
+
+    .admin .inputRows {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 628px;
+        /* margin: 0 auto; */
+    }
+
+    .admin .table-container {
+        overflow: scroll;
+        width: 700px;
+    }
+    .admin table {
+        width: 1000px;
+        font-size: 2rem;
+    }
+
+    .admin th,
+    .admin td {
+        margin: 0 10px;
+        border: 1px solid black;
+        text-align: center;
+        padding: 5px;
+    }
+
+    .admin td .img-value {
+        height: 130px;
+    }
+
+    .admin input,
+    .admin select,
+    .admin button,
+    .admin .input {
+        width: 46%;
+        height: 50px;
+    }
+    .admin .input {
+        padding: 0;
+        margin: 10px 5px;
+    }
+
+    .admin button {
+        width: 15%;
+        align-self: auto;
+        padding: 0;
+        font-size: 2rem;
+        position: relative;
+    }
+
+    .admin button.delete {
+        width: 50px;
+    }
+
+    .admin .subir {
+        padding: 5px 10px;
+        background: #97f797;
+        border: 0px solid #fff;
+        width: 100px;
+        text-align: center;
+        border-radius: 5px;
+    }
+
+    .admin .subir:hover {
+        color: #fff;
+        background: green;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    .admin button.btn-add:hover{
+        transform: scale(1.2);
+        color: white;
+        background-color: green;
+        box-shadow: inset 0 0 10px 4px;
+    }
+    .admin button.btn-reset:hover {
+        transform: scale(1.2);
+        color: black;
+        background-color: red;
+        box-shadow: inset 0 0 10px 4px white;
+    }
+
+    /* Estilos de vista ADMIN */
+
+.admin {padding: 20px;transform: scale(0.7);position: relative;bottom: 100px;}
+
+.admin h2 {
+    text-shadow: 0 0 3px gray, -1px -1px 3px black, -2px -2px 6px black;
+    color: var(--fondo-claro);
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.admin .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.admin .inputRows {
+    display: inline-block;
+    margin: 0 auto;
+    width: 1000px;
+}
+
+.admin .table-container {
+    /* overflow: scroll; */
+    width: 100%;
+    margin: 0 auto;
+}
+.admin table {
+    width: 100%;
+    font-size: 1.2rem;
+    /* margin: 0 auto; */
+}
+
+.admin th,
+.admin td {
+    /* margin: 0 10px; */
+    /* border: 1px solid black; */
+    /* text-align: center; */
+    /* padding: 5px; */
+}
+
+.admin td .img-value {
+    height: 75px;
+}
+
+.admin input,
+.admin select,
+.admin button,
+.admin .input {width: 111px;height: 30px;align-self: center;margin: 2px;}
+.admin .input {
+    padding: 0;
+    margin: 10px auto;
+    background-color: white;
+    width: 100%;
+}
+
+.admin button.edit {
+    height: 50px;
+}
+.admin button.edit:hover {
+    color: white;
+    border: 0.5px solid black;
+    background: blue;
+    box-shadow: inset 0 0 19px blue;
+    transform: scale(1.8);
+    border-radius: 50%;
+}
+
+.admin button.delete {
+    color: red;
+    border-color: red;
+    box-shadow: inset 1px 1px 10px lightpink;
+    transition: all 2s ease;
+    width: 50px;
+    height: 50px;
+}
+.admin button.delete:hover {
+}
+
+.admin button {
+    /* align-self: flex-end; */
+    /* padding: 0; */
+    /* background-color: white; */
+    /* color: green; */
+    /* border: 2px solid green; */
+    /* box-shadow: inset 0 0 29px lightgreen; */
+    /* transition: transform 1s ease; */
+    height: auto;
+}
+
+
+
+.admin button.btn-reset {
+    /* color: black; */
+    /* font-size: 2rem; */
+    /* border-color: red; */
+    /* box-shadow: inset 0 0 29px lightpink; */
+    height: auto;
+}
+
+.admin .subir {
+    /* padding: 5px 10px; */
+    /* background: #97f797; */
+    /* border: 1px solid #000; */
+    /* width: 100px; */
+    /* text-align: center; */
+    /* border-radius: 5px; */
+    /* color: black; */
+    /* box-shadow: inset 0 0 10px green; */
+    /* transition: background 2s ease, border-radius 3s ease; */
+}
+
+.admin .subir:hover {
+    color: #fff;
+    background: green;
+    border-radius: 0 0 20px 5px;
+}
 }
