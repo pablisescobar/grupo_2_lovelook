@@ -3,69 +3,45 @@ const app = express();
 const port = 3000;
 const path = require('path');
 
-/* Middleword */
+/* Middleware */
 app.use(express.static('public'));
+app.use(express.urlencoded({extended:false}))
+app.use(express.json())  /* lineas para trabajar con POST, -tiene que estar antes de las rutas */
 
-/* Routes */
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '/views/index.html'))
-});
+/* VIEWS */
+app.set('views',path.join(__dirname,'views'))
+app.set('view engine','ejs')
 
-app.get("/login", (req, res) => {
-    res.sendFile(path.join(__dirname, "/views/login.html"))
-});
+/* ENRUTADORES */
+let homeRouter = require('./routes/home')
+let adminRouter = require('./routes/admin');
+let contactRouter = require('./routes/contact');
+let favoritesRouter = require('./routes/favorites');
+let helpRouter = require('./routes/help');
+let listProductsRouter = require('./routes/listProducts')
+let loginRouter = require('./routes/login')
+let productCartRouter = require('./routes/productCart')
+let productDetailRouter = require('./routes/productDetail')
+let registerRouter = require('./routes/register');
+let weRouter = require ('./routes/we')
 
-app.get("/register", (req, res) => { 
-    res.sendFile(path.join(__dirname, "/views/register.html")) 
-});
+/* RUTAS */
 
-app.get("/carrito",(req,res)=>{
-    res.sendFile(path.join(__dirname,"/views/productCart.html"))
-});
-
-app.get("/detalle",(req,res)=>{
-    res.sendFile(path.join(__dirname,"/views/productDetail.html"))
-});
-app.get("/admin",(req,res)=>{
-    res.sendFile(path.join(__dirname,"/views/admin.html"))
-});
-
-app.get("/favoritos",(req,res)=>{
-    res.sendFile(path.join(__dirname,"/views/favoritos.html"))
-});
-
-app.get("/contacto",(req,res)=>{
-    res.sendFile(path.join(__dirname,"/views/contact.html"))
-});
-
-app.get("/nosotros",(req,res)=>{
-    res.sendFile(path.join(__dirname,"/views/nosotros.html"))
-});
-
-app.get("/ayuda",(req,res)=>{
-    res.sendFile(path.join(__dirname,"/views/ayuda.html"))
-});
-
-app.get("/Lista_de_productos",(req,res)=>{
-    res.sendFile(path.join(__dirname,"/views/listProducts.html"))
-});
-
-app.get("/header",(req,res)=>{
-    res.sendFile(path.join(__dirname,"/views/header.html"))
-});
-
-app.get("/footer",(req,res)=>{
-    res.sendFile(path.join(__dirname,"/views/footer.html"))
-});
-
-/* invento para visualizar una informacion falsa de AFIP */
-
-app.get("/afip",(req,res)=>{
-    res.sendFile(path.join(__dirname,"/public/img/afip.png"))
-});
+app.use('/',homeRouter);
+app.use('/admin',adminRouter);
+app.use('/contact',contactRouter);
+app.use('/favorites',favoritesRouter);
+app.use('/help',helpRouter);
+app.use('/list',listProductsRouter);
+app.use('/login',loginRouter);
+app.use('/cart',productCartRouter);
+app.use('/detail',productDetailRouter);
+app.use('/register',registerRouter);
+app.use('/we',weRouter);
 
 
-/* Server */
+
+/* SERVER*/
 app.listen(port, () => {
-    console.log(`http://localhost:${port}`)
+    console.log(`http://localhost:${port}`);
 });
