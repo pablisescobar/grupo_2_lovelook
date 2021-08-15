@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/paloescobar29/grupo_2_ilovelook#readme",
   "dependencies": {
+    "ejs": "^3.1.6",
     "express": "^4.17.1"
   }
 }
