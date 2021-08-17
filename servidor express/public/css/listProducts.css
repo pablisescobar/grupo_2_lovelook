@@ -9,15 +9,15 @@
     border: 1px solid var(--bordes_claro);
     border-radius: 30%;
     position: absolute;
-    left: 19px;
-    top: 200px;
+    left: 15px;
+    top: 185px;
 }
 
 .container-listProduct hr {
     display: none;
 }
 
-.container-listProduct .container .section1 .nav-bar {
+.container-listProduct .section1 .nav-bar {
     display: none;
 }
 
