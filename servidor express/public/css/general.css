@@ -13,7 +13,12 @@
 @import url('header.css');
 @import url('footer.css');
 @import url('contact.css');
+<<<<<<< HEAD
 @import url('bootstrap.css');
+=======
+@import url('admin.css');
+
+>>>>>>> d908c6ca55f94911e8054db90205eb0f0fc478bd
 
 
 /* Google Font  */
