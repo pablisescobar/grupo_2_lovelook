@@ -152,7 +152,8 @@
 }
     @media screen and (min-width: 1024px) {
         .container-listProduct {
-            max-width: 1024px;
+            /* max-width: 1024px; */
+            margin: 0 auto;
         }
 
         .container-listProduct .section2 {
