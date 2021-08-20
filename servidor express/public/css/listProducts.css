@@ -2,6 +2,10 @@
     box-shadow: 0 0 10px var(--bordes);
 }
 
+.container-listProduct .filted {
+    border: none;
+    background: none;
+}
 .container-listProduct .section1 .iconFilter {
     width: 22px;
     height: 22px;
@@ -17,7 +21,7 @@
     display: none;
 }
 
-.container-listProduct .container .section1 .nav-bar {
+.container-listProduct .section1 .nav-bar {
     display: none;
 }
 
@@ -68,8 +72,7 @@
 
     .container-listProduct .nav-bar {
         grid-template-columns: repeat(4, 1fr);
-        grid-template-areas: 
-        " filtrar . . . color  . talle . precio . ";
+        grid-template-areas: " filtrar . . . color  . talle . precio . ";
     }
 
     .container-listProduct a {
@@ -88,7 +91,7 @@
     .container-listProduct li {
         grid-area: precio;
     }
-    
+
     .container-listProduct hr {
         display: block;
         border: 1px solid var(--bordes_claro);
@@ -113,7 +116,7 @@
         padding: 10px;
         transition: all 0.6s ease-in-out;
     }
-    
+
     .container-listProduct li:hover {
         box-shadow: 0px 5px 15px rgba(var(--bordes_claro) 0.795);
         border-radius: 0 20px 20px 0;
@@ -142,7 +145,7 @@
         font-size: 1rem;
         font-weight: 250;
     }
-    
+
     .container-listProduct .section2 .product p {
         font-size: 0.8rem;
         line-height: 150%;
@@ -150,20 +153,18 @@
         animation: acercarAlejar 2s alternate infinite;
     }
 }
-    @media screen and (min-width: 1024px) {
-        .container-listProduct {
-            max-width: 1024px;
-        }
-
-        .container-listProduct .section2 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-        }
-    
-        .container-listProduct .section2 .product {
-            width: 285px;
-            height: 545px;
+@media screen and (min-width: 1024px) {
+    .container-listProduct {
+        max-width: 1024px;
     }
 
+    .container-listProduct .section2 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
     }
 
+    .container-listProduct .section2 .product {
+        width: 285px;
+        height: 545px;
+    }
+}

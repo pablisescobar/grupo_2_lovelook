@@ -53,7 +53,7 @@
 
                 <div class="input">
                     <label for="file-upload" class="subir">
-                        <i class="fas fa-cloud-upload-alt"></i> Subir imagenes
+                        <i class="fas fa-cloud-upload-alt"></i> Subir imágenes
                     </label>
                     <div id="info"></div>
 
@@ -80,58 +80,21 @@
                         <th>Editar</th>
                         <th>Eliminar</th>
                     </tr>
+                    <% products.forEach(product=>{ %> 
                     <tr>
-                        <td>3</td>
-                        <td>123</td>
-                        <td>remera 41</td>
-                        <td>1500</td>
-                        <td>rojo</td>
-                        <td>X</td>
-                        <td>20</td>
-                        <td><img class="img-value" src="/img/remeras/remeraSmile.jpg" alt=""></td>
+                        <td><%=product.id  %> </td>
+                        <td><%=product.code  %></td>
+                        <td><%=product.name  %></td>
+                        <td><%=product.price  %></td>
+                        <td><%=product.color  %></td>
+                        <td><%=product.size.toUpperCase()  %></td>
+                        <td><%=product.stock  %></td>
+                        <td><img class="img-value" src="/img/photos/<%=product.image %>" alt=""></td>
                         <td><button class="edit" type="submit"><span class="iconify" data-icon="line-md:edit"></span></button></td>
                         <td><button class="delete" type="submit"><span class="iconify" data-icon="feather:delete"></span></button>
                         </td>
                     </tr>
-                    <tr>
-                        <td>20</td>
-                        <td>1295</td>
-                        <td>remera estampada</td>
-                        <td>1500</td>
-                        <td>rojo</td>
-                        <td>X</td>
-                        <td>20</td>
-                        <td><img class="img-value" src="/img/remeras/remeraSmile.jpg" alt=""></td>
-                        <td><button class="edit" type="submit"><span class="iconify" data-icon="line-md:edit"></span></button></td>
-                        <td><button class="delete" type="submit"><span class="iconify" data-icon="feather:delete"></span></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>31</td>
-                        <td>145</td>
-                        <td>remera estampada</td>
-                        <td>6200</td>
-                        <td>rojo</td>
-                        <td>X</td>
-                        <td>20</td>
-                        <td><img class="img-value" src="/img/remeras/remeraSmile.jpg" alt=""></td>
-                        <td><button class="edit" type="submit"><span class="iconify" data-icon="line-md:edit"></span></button></td>
-                        <td><button class="delete" type="submit"><span class="iconify" data-icon="feather:delete"></span></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>98</td>
-                        <td>13</td>
-                        <td>remera estampada</td>
-                        <td>1500</td>
-                        <td>rojo</td>
-                        <td>X</td>
-                        <td>20</td>
-                        <td><img class="img-value" src="/img/remeras/remeraSmile.jpg" alt=""></td>
-                        <td><button class="edit" type="submit"><span class="iconify" data-icon="line-md:edit"></span></button></td>
-                        <td><button class="delete" type="submit"><span class="iconify" data-icon="feather:delete"></span></button>
-                        </td>
-                    </tr>
+                    <% }) %> 
                 </table>
             </div>
 

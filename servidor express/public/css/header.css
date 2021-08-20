@@ -348,6 +348,7 @@
     }
     .header .search-bar button {
         transform: none;
+        height: 100%;
     }
     .header .search-bar input {
         font-size: 100%;

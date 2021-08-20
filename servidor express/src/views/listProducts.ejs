@@ -11,7 +11,7 @@
         <section class="section1">
             <span class="iconify iconFilter" data-icon="mi:filter" data-inline="false"></span>
             <nav class="nav-bar">
-                <a href="">FILTRAR</a>
+                <input class="filted" type="submit" value="FILTRAR">
                 <ul>
                     <li class="dropdown">COLOR
                         <ul>
@@ -46,27 +46,14 @@
         </section><br>
         <hr>
         <section class="section2">
-
+            <% products.forEach(product=>{ %> 
             <article class="product">
                 <img src="/img/remerones/vintage/remeronPicapiedras.jpg" alt="">
-                <h3>Remerón personajes Vintage</h3><br>
-                <h3>$1200</h3><br>
-                <p>20% Descuento</p>
+                <h3><%= product.name %></h3><br>
+                <h3>$<%= product.price %></h3><br>
+                <p><%= product.discount %>% Descuento</p>
             </article>
-
-            <article class="product">
-                <img src="/img/remerones/new/remeronBobEsponja.jpg" alt="">
-                <h3>Remerón personajes New</h3><br>
-                <h3>$1200</h3><br>
-                <p>20% Descuento</p>
-            </article>
-
-            <article class="product">
-                <img src="/img/remerones/nature/remeronGetALife.jpg" alt="">
-                <h3>Remerón personajes Nature</h3><br>
-                <h3>$1200</h3><br>
-                <p>20% Descuento</p>
-            </article>
+            <% }) %> 
         </section>
     </main>
 
