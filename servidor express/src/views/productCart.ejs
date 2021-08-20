@@ -7,58 +7,74 @@
 
     <%- include('./partials/header.ejs') %> 
 
-    <main class="containerCart">
-        <img class="banner" src="/img/remerones/university/remeronUniversity.jpg" alt="">
-
+    <main class="container-cart">
         <section class="section1">
-            <article>
-                <form method="POST" action="" class="product">
-                    <img src="/img/conjuntos/conjuntoFlower2.jpg" alt="">
-                    <div class="descriptionProduct">
-                        <span class="iconify iconOutline" data-icon="ion:trash-outline"></span>
-                        <h5>Nombre: Conjunto FLOWERS</h5>
-                        <p>Color: Lila</p>
-                        <p>Talle: M</p>
-                        <p>Descuento:</p>
-                    </div>
-                    <br>
-                    <div class="description">
-                        <span class="price">Precio</span>
-                        <span class="valuePrice">$1200</span>
-                        <span class="count">Cantidad</span>
-                        <span class="linea"></span>
-                        <input class="valueCount" type="number" name="cantidad" id="cantidad">
-                        <span class="subPrice">Sub-total</span>
-                        <span class="valueSubPrice">$2400</span>
-                    </div>
-                </form>
-            </article>
+          <article>
+            <form method="POST" action="" class="product">
+              <img src="/img/photos/conjuntoFlower2.jpg" alt="" />
+              <div class="descriptionProduct">
+                <span
+                  class="iconify iconOutline"
+                  data-icon="ion:trash-outline"
+                ></span>
+                <h5>Nombre: Conjunto FLOWERS</h5>
+                <p>Color: Lila</p>
+                <p>Talle: M</p>
+                <p>Descuento:</p>
+              </div>
+              <br />
+              <div class="description">
+                <span class="price">Precio</span>
+                <span class="valuePrice">$1200</span>
+                <span class="count">Cantidad</span>
+                <span class="linea"></span>
+                <input
+                  class="valueCount"
+                  type="number"
+                  name="cantidad"
+                  id="cantidad"
+                />
+                <span class="subPrice">Sub-total</span>
+                <span class="valueSubPrice">$2400</span>
+              </div>
+            </form>
+          </article>
         </section>
-
+  
         <section class="buttonsIcons">
-            <span class="iconify iconArrow" data-icon="ion:arrow-undo-outline"></span>
-            <span class="iconify iconSync" data-icon="ion:sync"></span>
-            <span class="iconify iconHeart" data-icon="ion:heart-dislike-outline"></span>
-            <input class="buy" type="submit" value="PAGAR">
+          <span
+            class="iconify iconArrow"
+            data-icon="ion:arrow-undo-outline"
+          ></span>
+          <span class="iconify iconSync" data-icon="ion:sync"></span>
+          <span
+            class="iconify iconHeart"
+            data-icon="ion:heart-dislike-outline"
+          ></span>
+          <input class="buy" type="submit" value="PAGAR" />
         </section>
-
+  
         <div>
-            <h4 class="questionAdd">¿Querés agregarlo a tu carrito?</h4>
+          <h4 class="questionAdd">¿Querés agregarlo a tu carrito?</h4>
         </div>
-
-        <%- include('./partials/slider.ejs')  %> 
-
+  
+  
+        <%- include('./partials/slider.ejs') %> 
+  
         <section class="section3">
-            <p>Nuestras Ofertas!!!</p>
-            <img src="/img/remeras/remeraHarryPotter.jpg" alt="">
+          <p>Nuestras Ofertas!!!</p>
+          <div class="imgOffer">
+            <img class="img1" src="/img/photos/remeraHarryPotter.jpg" alt="" />
+            <img class="img2" src="/img/photos/remerasHarryPotter.jpg" alt="" />
+            <img class="img3" src="/img/photos/remeronSuperPoderosas.jpg" alt="">
+          </div>
         </section>
-    </main>
+      </main>
 
     <%- include('./partials/whatsapp.ejs') %> 
 
     <%- include('./partials/footer.ejs') %> 
-
-
+    <%- include('./partials/scripts.ejs') %> 
 
 </body>
 

@@ -1,4 +1,4 @@
-/* Carousel container */
+* Carousel container */
 .carousel-container {
     position: relative;
     margin: 20px auto 30px;
@@ -10,7 +10,7 @@
 
 .slides img{
     width: 100%;
-    height: 100%;
+    height: 300px;
     object-fit: cover;
 }
 
