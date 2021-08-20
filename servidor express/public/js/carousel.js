@@ -53,4 +53,3 @@ function showSlides (number) {
 setInterval(()=> {
  currentSlide(slideIndex + 1)
 }, 5000)
-

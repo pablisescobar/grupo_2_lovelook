@@ -1,78 +1,72 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <%- include('./partials/head.ejs') %> 
+<%- include('./partials/head.ejs') %>
 
-<body>
-    <%- include('./partials/header.ejs') %> 
+    <body>
+        <%- include('./partials/header.ejs') %>
 
+            <!-- CAROUSEL -->
+           <section class="carousel-container">
 
-    <!-- CAROUSEL -->
-    <section class="carousel-container">
-
-        <div class="slides fade">
-            <img src="/img/carrusel.jpg" alt="">
-        </div>
-
-        <div class="slides fade">
-            <img src="/img/carrusel3.jpg" alt="">
-        </div>
-
-        <!-- Next and previous buttons -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-        <!-- The dots/circles -->
-        <div class="dots">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
-        </div>
-    </section>
-    <!-- END CAROUSEL -->
-    <main class="home-inicio">
-        <!--Imagenes-->
-
-        <div class="container-imagenes">
-            <div class="cajaimagen">
-                <div class="imagen1">
-                    <a href="/Lista_de_productos"><img src="/img/foto1.jpg " alt=""></a>
+                <div class="slides fade">
+                    <img src="/img/carrusel.jpg" alt="">
                 </div>
-                <div class="imagen1">
-                    <img src="/img/foto2.jpg" alt="">
-                </div>
-                <div class="imagen1">
-                    <img src="/img/foto3.jpg" alt="">
-                </div>
-                <div class="imagen1">
-                    <img src="/img/foto4.jpg" alt="">
-                </div>
-            </div>
-        </div>
-        </div>
-        <!--Final de imagenes-->
 
-        <!--Comienzo de videos-->
-        <div class="container-video">
-            <div class="cajavideo">
-                <div class=" video1">
-                    <video src="/img/video1.mp4" controls autoplay muted loop></video>
+                <div class="slides fade">
+                    <img src="/img/carrusel3.jpg" alt="">
                 </div>
-                <div class=" video1">
-                    <video src="/img/video2.mp4" controls autoplay muted loop></video>
+
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <!-- The dots/circles -->
+                <div class="dots">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
                 </div>
-            </div>
-        </div>
-        </div>
+            </section>
+            <!-- END CAROUSEL -->
+            <main class="home-inicio">
+                <!--Imagenes-->
 
-    </main>
-    <!--Final de videos-->
-    <%- include('./partials/whatsapp.ejs') %> 
+                <div class="container-fluid">
+                        <div class="cajaPrincipal">
+                            <div class="imagen1">
+                                <img src="/img/foto3.jpg" alt="">
+                            </div>
+                            <div class="imagen1">
+                                <img src="/img/foto4.jpg" alt="">
+                            </div>
+                    </div>
+                </div>
 
-    <%- include('./partials/footer.ejs') %> 
+                <!--Final de imagenes-->
+
+                <!--Comienzo de videos-->
+                <div class="container">
+                        <div class="cajavideo">
+                            <div class=" video1">
+                                <video src="/img/video1.mp4" controls autoplay muted loop></video>
+                            </div>
+                            <div class=" video1">
+                                <video src="/img/video2.mp4" controls autoplay muted loop></video>
+                            </div>
+                        </div>
+                </div>
+
+            </main>
+            <!--Final de videos-->
+            <%- include('./partials/whatsapp.ejs') %>
+
+                <%- include('./partials/footer.ejs') %>
 
 
-</body>
+                    
+
+    </body>
 
 </html>

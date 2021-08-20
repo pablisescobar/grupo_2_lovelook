@@ -1,0 +1,19 @@
+.containerWe {
+    width: 80%;
+    font-family: 'Poppins';
+    padding-left: 20px;
+}
+
+.we {
+    padding: 10px;
+    color: pink;
+    font-size: 1.2rem;
+}
+
+.sectionWe .navWe {
+    width: 200px;
+    padding-left: 2px;
+    padding-bottom: 15px;
+    font-weight: 50px;
+}
+
