@@ -51,9 +51,6 @@ a.btn-primary {
         border-radius: 3%;
     }
 
-    .card-title {
-    }
-
     .card-text {
         font-size: 1.2rem;
     }
@@ -74,7 +71,5 @@ a.btn-primary {
         margin: auto;
     }
 
-    .card-title {
-        /* font-size: 1.5rem; */
-    }
+   
 }
