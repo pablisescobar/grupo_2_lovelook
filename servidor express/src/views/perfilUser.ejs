@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('./partials/head.ejs') %>
+
+    <body>
+        <%- include('./partials/header.ejs') %>
+
+            <main class="perfil-user">
+                <div class="image-container">
+                    <label class="label-perfil-user img-label" for="avatar"><span class="iconify"
+                            data-icon="carbon:add-filled"></span></label>
+                    <input class="input-perfil-user" type="file" name="avatar" id="avatar" hidden>
+                    <div class="image-view"></div>
+                </div>
+                <div class="container">
+                    <label class="label-perfil-user" for="nombre">Nombre :</label>
+                    <input class="input--style input-perfil-user" type="text" name="nombre" id="nombre">
+                </div>
+
+                <div class="container">
+                    <label class="label-perfil-user" for="apellido">Apellido :</label>
+                    <input class="input--style input-perfil-user" type="text" name="apellido" id="apellido">
+                </div>
+
+                <div class="container">
+                    <label class="label-perfil-user" for="direccion">Dirección :</label>
+                    <input class=" input--style input-perfil-user" type="text" name="direccion" id="direccion">
+                </div>
+
+                <div class="container">
+                    <label class="label-perfil-user" for="email">Email :</label>
+                    <input class="input--style input-perfil-user" type="email" name="email" id="email">
+                </div>
+                
+                <div class="container">
+                    <label class="label-perfil-user" for="telefono">Teléfono :</label>
+                    <input class="input--style input-perfil-user" type="tel" name="telefono" id="telefono">
+                </div>
+            </main>
+
+            <%- include('./partials/footer.ejs') %>
+    </body>
+
+</html>

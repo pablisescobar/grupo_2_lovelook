@@ -24,6 +24,7 @@ let productCartRouter = require('./routes/productCart')
 let productDetailRouter = require('./routes/productDetail')
 let registerRouter = require('./routes/register');
 let weRouter = require ('./routes/we')
+let perfilUserRouter = require ('./routes/perfilUser')
 
 /* RUTAS */
 
@@ -38,6 +39,7 @@ app.use('/cart',productCartRouter);
 app.use('/detail',productDetailRouter);
 app.use('/register',registerRouter);
 app.use('/we',weRouter);
+app.use('/perfil',perfilUserRouter);
 
 
 

@@ -1,0 +1,96 @@
+.perfil-user {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 50px 0;
+}
+
+.perfil-user .input-perfil-user {
+    width: 290px;
+    height: 39px;
+    border: 2px solid var(--bordes);
+    font-size: 2rem;
+    padding-left: 10px;
+}
+
+.perfil-user .label-perfil-user {
+    font-size: 1.2rem;
+    display: block;
+}
+
+.perfil-user .image-view {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 1px solid var(--bordes);
+    margin: 0 auto;
+}
+
+.perfil-user .container {
+    width: fit-content;
+    margin: 5px auto;
+}
+
+.perfil-user .image-container {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto 36px auto;
+}
+
+.perfil-user .img-label {
+    position: absolute;
+    right: -9px;
+    bottom: 13px;
+    color: var(--bordes_claro);
+    font-size: 3rem;
+}
+.perfil-user .img-label:active {
+    color: var(--bordes);
+}
+
+@media screen and (min-width: 768px) {
+    
+    .perfil-user .input-perfil-user {
+        width: 397px;
+        height: 50px;
+    }
+
+    .perfil-user .label-perfil-user {
+        font-size: 1.5rem;
+    }
+
+    .perfil-user .image-view {
+        width: 250px;
+        height: 250px;
+    }
+
+    .perfil-user .img-label {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+   
+    .perfil-user .input-perfil-user {
+    width: 396px;
+    height: 41px;
+    font-size: 1.5rem;
+    }
+
+    .perfil-user .label-perfil-user {
+        display: inline;
+    }
+
+    .perfil-user .image-view {
+    width: 150px;
+    height: 150px;
+    }
+
+    .perfil-user .container {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    }
+
+}
