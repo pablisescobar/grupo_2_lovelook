@@ -8,6 +8,7 @@
         "size": "s",
         "stock": 3,
         "price": 2300,
+        "discount": 15,
         "image": "harryPotter.jpg"
     },
     {
@@ -19,6 +20,7 @@
         "size": "m",
         "stock": 3,
         "price": 2300,
+        "discount": 15,
         "image": "harryPotter.jpg"
     },
     {
@@ -30,6 +32,7 @@
         "size": "l",
         "stock": 3,
         "price": 2300,
+        "discount": 15,
         "image": "harryPotter.jpg"
     },
     {
@@ -41,6 +44,7 @@
         "size": "xl",
         "stock": 3,
         "price": 2300,
+        "discount": 15,
         "image": "harryPotter.jpg"
     },
     {
@@ -52,6 +56,7 @@
         "size": "s",
         "stock": 5,
         "price": 2300,
+        "discount": 15,
         "image": "mickey.jpg"
     },
     {
@@ -63,6 +68,7 @@
         "size": "m",
         "stock": 5,
         "price": 2300,
+        "discount": 15,
         "image": "mickey.jpg"
     },
     {
@@ -74,6 +80,7 @@
         "size": "l",
         "stock": 5,
         "price": 2300,
+        "discount": 15,
         "image": "mickey.jpg"
     },
     {
@@ -85,6 +92,7 @@
         "size": "xl",
         "stock": 5,
         "price": 2300,
+        "discount": 15,
         "image": "mickey.jpg"
     },
     {
@@ -96,6 +104,7 @@
         "size": "s",
         "stock": 5,
         "price": 2300,
+        "discount": 15,
         "image": "princess.jpg"
     },
     {
@@ -107,6 +116,7 @@
         "size": "m",
         "stock": 5,
         "price": 2300,
+        "discount": 15,
         "image": "princess.jpg"
     },
     {
@@ -118,6 +128,7 @@
         "size": "l",
         "stock": 5,
         "price": 2300,
+        "discount": 15,
         "image": "princess.jpg"
     },
     {
@@ -129,6 +140,7 @@
         "size": "xl",
         "stock": 5,
         "price": 2300,
+        "discount": 15,
         "image": "princess.jpg"
     },
     {
@@ -140,6 +152,7 @@
         "size": "s",
         "stock": 6,
         "price": 4500,
+        "discount": 25,
         "image": "angels.jpg"
     },
     {
@@ -151,6 +164,7 @@
         "size": "m",
         "stock": 6,
         "price": 4500,
+        "discount": 25,
         "image": "angels.jpg"
     },
     {
@@ -162,6 +176,7 @@
         "size": "l",
         "stock": 6,
         "price": 4500,
+        "discount": 25,
         "image": "angels.jpg"
     },
     {
@@ -172,7 +187,9 @@
         "color": "negro",
         "size": "xl",
         "stock": 6,
+        "discount": 25,
         "price": 4500,
+
         "image": "angels.jpg"
     },
     {
@@ -184,6 +201,7 @@
         "size": "s",
         "stock": 4,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoButterflies.jpg"
     },
     {
@@ -195,6 +213,7 @@
         "size": "m",
         "stock": 4,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoButterflies.jpg"
     },
     {
@@ -206,6 +225,7 @@
         "size": "l",
         "stock": 4,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoButterflies.jpg"
     },
     {
@@ -217,6 +237,7 @@
         "size": "xl",
         "stock": 4,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoButterflies.jpg"
     },
     {
@@ -228,6 +249,7 @@
         "size": "s",
         "stock": 4,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoButterflies.jpg"
     },
     {
@@ -239,6 +261,7 @@
         "size": "m",
         "stock": 4,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoButterflies.jpg"
     },
     {
@@ -250,6 +273,7 @@
         "size": "l",
         "stock": 4,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoButterflies.jpg"
     },
     {
@@ -261,6 +285,7 @@
         "size": "xl",
         "stock": 4,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoButterflies.jpg"
     },
     {
@@ -272,6 +297,7 @@
         "size": "s",
         "stock": 3,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoFlower2.jpg"
     },
     {
@@ -283,6 +309,7 @@
         "size": "m",
         "stock": 3,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoFlower2.jpg"
     },
     {
@@ -294,6 +321,7 @@
         "size": "l",
         "stock": 3,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoFlower2.jpg"
     },
     {
@@ -305,6 +333,7 @@
         "size": "xl",
         "stock": 3,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoFlower2.jpg"
     },
     {
@@ -316,6 +345,7 @@
         "size": "s",
         "stock": 3,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoFlower.jpg"
     },
     {
@@ -327,6 +357,7 @@
         "size": "m",
         "stock": 3,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoFlower.jpg"
     },
     {
@@ -338,6 +369,7 @@
         "size": "l",
         "stock": 3,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoFlower.jpg"
     },
     {
@@ -349,6 +381,7 @@
         "size": "xl",
         "stock": 3,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoFlower.jpg"
     },
     {
@@ -360,6 +393,7 @@
         "size": "s",
         "stock": 10,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoTricolor.jpg"
     },
     {
@@ -371,6 +405,7 @@
         "size": "m",
         "stock": 10,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoTricolor.jpg"
     },
     {
@@ -382,6 +417,7 @@
         "size": "l",
         "stock": 10,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoTricolor.jpg"
     },
     {
@@ -393,6 +429,7 @@
         "size": "xl",
         "stock": 10,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoTricolor.jpg"
     },
     {
@@ -404,6 +441,7 @@
         "size": "s",
         "stock": 10,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoTricolor2.jpg"
     },
     {
@@ -415,6 +453,7 @@
         "size": "m",
         "stock": 10,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoTricolor2.jpg"
     },
     {
@@ -426,6 +465,7 @@
         "size": "l",
         "stock": 10,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoTricolor2.jpg"
     },
     {
@@ -437,6 +477,7 @@
         "size": "xl",
         "stock": 10,
         "price": 4500,
+        "discount": 25,
         "image": "conjuntoTricolor2.jpg"
     },
     {
