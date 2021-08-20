@@ -1,8 +1,10 @@
-const { get } = require("../routes/home");
+const { getProducts,getShops } = require("../data/dataBase");
 
 module.exports = {
     index: (req, res) => {
-        res.render('listProducts')
+        res.render('listProducts',{
+            products:getProducts
+        })
     },
 
     filterSize: (req, res) => {

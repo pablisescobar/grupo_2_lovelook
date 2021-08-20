@@ -7,7 +7,6 @@
     
     <%- include('./partials/header.ejs') %> 
     
-    
     <main class="details-products">
         <section class="product">
             
@@ -85,38 +84,21 @@
         <section class="add-look-container">
             <h2><a href="/list">Sumá a tu look</a></h2>
             <div class="arts-container arts-container-tablet">
+                <% products.forEach(product=>{ %> 
                 <a href="/detail" class="art1 look-art-hover">
                     <img src="/img/photos/2.jpg" alt="">
                     <div class="info-card">
-                        <p>Remera X</p>
-                        <p>$1.500</p>
+                        <p><%= product.category %> </p>
+                        <p>$ <%= product.price %> </p>
                     </div>
                 </a>
-                <a href="/detail" class="art2 look-art-hover">
-                    <img src="/img/photos/5.jpg" alt="">
-                    <div class="info-card">
-                        <p>Remera X</p>
-                        <p>$1.500</p>
-                    </div>
-                </a>
-                <a href="/detail" class="art3 look-art-hover">
-                    <img src="/img/photos/1.jpg" alt="">
-                    <div class="info-card">
-                        <p>Remera X</p>
-                        <p>$1.500</p>
-                    </div>
-                </a>
-                <a href="/detail" class="art4 look-art-hover">
-                    <img src="/img/photos/5.jpg" alt="">
-                    <div class="info-card">
-                        <p>Remera X</p>
-                        <p>$1.500</p>
-                    </div>
-                </a>
+                <% }) %> 
             </div>
         </section>
+        
+       
     </main>
-    
+    <%- include('./partials/whatsapp.ejs') %> 
     <%- include('./partials/footer.ejs') %> 
     
 

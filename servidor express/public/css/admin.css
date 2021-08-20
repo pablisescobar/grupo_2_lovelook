@@ -300,13 +300,7 @@
     /* margin: 0 auto; */
 }
 
-.admin th,
-.admin td {
-    /* margin: 0 10px; */
-    /* border: 1px solid black; */
-    /* text-align: center; */
-    /* padding: 5px; */
-}
+
 
 .admin td .img-value {
     height: 75px;
@@ -315,7 +309,7 @@
 .admin input,
 .admin select,
 .admin button,
-.admin .input {width: 111px;height: 30px;align-self: center;margin: 2px;}
+.admin .input {width: 111px;height: 30px;align-self: center;margin: 2px;font-size: 1rem;}
 .admin .input {
     padding: 0;
     margin: 10px auto;
@@ -343,8 +337,7 @@
     width: 50px;
     height: 50px;
 }
-.admin button.delete:hover {
-}
+
 
 .admin button {
     /* align-self: flex-end; */
@@ -354,7 +347,7 @@
     /* border: 2px solid green; */
     /* box-shadow: inset 0 0 29px lightgreen; */
     /* transition: transform 1s ease; */
-    height: auto;
+    height: 24px;
 }
 
 
@@ -364,19 +357,8 @@
     /* font-size: 2rem; */
     /* border-color: red; */
     /* box-shadow: inset 0 0 29px lightpink; */
-    height: auto;
-}
-
-.admin .subir {
-    /* padding: 5px 10px; */
-    /* background: #97f797; */
-    /* border: 1px solid #000; */
-    /* width: 100px; */
-    /* text-align: center; */
-    /* border-radius: 5px; */
-    /* color: black; */
-    /* box-shadow: inset 0 0 10px green; */
-    /* transition: background 2s ease, border-radius 3s ease; */
+    height: 24px;
+    font-size: 1rem;
 }
 
 .admin .subir:hover {

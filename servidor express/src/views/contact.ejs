@@ -10,36 +10,36 @@
         <form action="" method="POST">
             <div class="form-item">
                 <label for="asunto">Asunto</label>
-                <select class="case-input" name="asunto" id="asunto">
-                    <option value="" selected>Atención al cliente</option>
-                    <option value="">RRHH</option>
-                    <option value="">Franquicias</option>
-                    <option value="">Otros</option>
+                <select class="case-input" name="asunto" id="asunto" onchange="selectionOption()">
+                    <option value="atencion" selected >Atención al cliente</option>
+                    <option value="rrhh" >RRHH</option>
+                    <option value="franquicias" >Franquicias</option>
+                    <option value="otros" >Otros</option>
                 </select>
             </div>
-            <div class="form-item">
+            <div class="form-item" id="nombre">
                 <label for="nombre">Nombre</label>
                 <input type="text" name="nombre" id="nombre" autocomplete="name" required
                     x-moz-errormessage="mensaje para validaciones" mozactionhint="siguiente">
             </div>
-            <div class="form-item">
+            <div class="form-item" id="apellido">
                 <label for="apellido">Apellido</label>
                 <input type="text" name="apellido" id="apellido" autocomplete="family-name" required
                     x-moz-errormessage="mensaje para validaciones" mozactionhint="siguiente">
             </div>
-            <div class="form-item">
+            <div class="form-item" id="dni" style="display:none;">
                 <label for="dni">DNI</label>
                 <input class="document-input" type="number" name="dni" id="dni" required
                     x-moz-errormessage="mensaje para validaciones">
             </div>
 
-            <div class="form-item">
+            <div class="form-item" id="email">
                 <label for="email">E-mail</label>
                 <input type="email" name="email" id="email" title="ejemplo@email.com" required
                     x-moz-errormessage="mensaje para validaciones" mozactionhint="siguiente">
             </div>
 
-            <div class="form-item">
+            <div class="form-item" id="telefono">
                 <label for="tel">Teléfono</label required>
                 <input type="tel" name="telefono" title="Ingresa el numero sin - _ ni espacios" id="tel"
                     autocomplete="tel" x-moz-errormessage="mensaje para validaciones" mozactionhint="siguiente">
@@ -47,47 +47,47 @@
 
 
 
-            <div class="form-item">
+            <div class="form-item" id="cv" style="display:none;">
                 <label for="cv" title="Archivo .pdf o .docx">CV</label>
                 <input class="cv-input" type="file" name="cv" id="cv" accept=".pdf, .docx" required
                     x-moz-errormessage="mensaje para validaciones" mozactionhint="siguiente">
             </div>
 
-            <div class="form-item">
+            <div class="form-item" id="localidad" style="display:none;">
                 <label for="localidad">Localidad</label>
                 <input type="text" name="localidad" id="localidad" required
                     x-moz-errormessage="mensaje para validaciones" mozactionhint="siguiente">
             </div>
 
-            <div class="form-item">
+            <div class="form-item" id="domicilio" style="display:none;">
                 <label for="domicilio">Domicilio</label>
                 <input type="text" name="domicilio" id="domicilio" autocomplete="address-line1" required
                     x-moz-errormessage="mensaje para validaciones" mozactionhint="siguiente">
             </div>
 
-            <div class="form-item">
+            <div class="form-item" id="ciudad" style="display:none;">
                 <label for="cuidad">Ciudad</label>
                 <input type="text" name="cuidad" id="cuidad" required x-moz-errormessage="mensaje para validaciones"
                     mozactionhint="siguiente">
             </div>
 
-            <div class="form-item">
+            <div class="form-item" id="cuit" style="display:none;">
                 <label for="cuit">CUIT</label>
                 <input type="text" name="cuit" id="cuit" required x-moz-errormessage="mensaje para validaciones"
                     mozactionhint="siguiente">
             </div>
 
-            <div class="form-item">
+            <div class="form-item" id="razon" style="display:none;">
                 <label for="RSocial">Razón Social</label>
                 <input type="text" name="RSocial" id="RSocial" required x-moz-errormessage="mensaje para validaciones"
                     mozactionhint="siguiente">
             </div>
-            <div class="form-item">
+            <div class="form-item" id="direSocial" style="display:none;">
                 <label for="DSocial">Dirección Social</label>
                 <input type="text" name="DSocial" id="DSocial" required x-moz-errormessage="mensaje para validaciones"
                     mozactionhint="siguiente">
             </div>
-            <div class="form-item">
+            <div class="form-item" id="mensaje">
                 <label for="msj">Mensaje</label>
                 <textarea rows="5" maxlength="97" title="97 caracteres máximo" name="mensaje" id="msj"
                     placeholder="Hola !!" spellcheck="true" required x-moz-errormessage="mensaje para validaciones"
