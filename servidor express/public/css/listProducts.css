@@ -157,8 +157,9 @@ select#size.dropdown {
     }
 
     .container-listProduct .section2 .product img {
-        max-width: 18rem;
+        /* max-width: 1024px; */
         width: 100%;
+        /* margin: 0 auto; */
     }
 
     .container-listProduct .section2 .product h3 {
@@ -175,7 +176,7 @@ select#size.dropdown {
 }
     @media screen and (min-width: 1024px) {
         .container-listProduct {
-            /* max-width: 1024px; */
+            max-width: 1024px;
             margin: 0 auto;
         }
 
