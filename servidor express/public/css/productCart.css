@@ -192,6 +192,8 @@
     box-shadow: 0 5px 10px var(--bordes_claro);
 }
 
+
+
 @media screen and (min-width: 768px) {
 
     .container-cart .section1 {
@@ -294,5 +296,18 @@
     .container-cart .sectionAdd .questionImg {
         grid-template-columns: 1fr 1fr 1fr;
         padding: 10px;
+    }
+
+    .slick-list.draggable {
+        max-width: 80%;
+    }
+    
+    .card-slider {
+        width: 80%;
+        margin: auto;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
     }
 }
