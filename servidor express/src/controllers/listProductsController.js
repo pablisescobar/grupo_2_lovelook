@@ -2,7 +2,7 @@ const { getProducts,getShops } = require("../data/dataBase");
 
 module.exports = {
     index: (req, res) => {
-        res.render('listProducts',{
+        res.render('products/listProducts',{
             products:getProducts
         })
     },

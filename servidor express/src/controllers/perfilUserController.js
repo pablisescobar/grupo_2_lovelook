@@ -1,5 +1,5 @@
 module.exports =  {
     index: (req,res)=>{
-        res.render('perfilUser')
+        res.render('users/perfilUser')
     }
 }
