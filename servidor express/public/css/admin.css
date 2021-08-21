@@ -290,7 +290,7 @@
 }
 
 .admin .table-container {
-    /* overflow: scroll; */
+    overflow: hidden;
     width: 100%;
     margin: 0 auto;
 }

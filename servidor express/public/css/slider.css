@@ -6,6 +6,10 @@
     border-radius: 5%;
 }
 
+.slick-dots {
+    position: relative !important;
+}
+
 .card-img-top {
     width: 80%;
     height: 230px;

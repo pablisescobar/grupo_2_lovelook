@@ -81,25 +81,32 @@
 
             </form>
         </section>
-        <section class="add-look-container">
+        <!-- <section class="add-look-container">
             <h2><a href="/list">Sumá a tu look</a></h2>
             <div class="arts-container arts-container-tablet">
-                <% products.forEach(product=>{ %> 
+                
                 <a href="/detail" class="art1 look-art-hover">
                     <img src="/img/photos/2.jpg" alt="">
                     <div class="info-card">
-                        <p><%= product.category %> </p>
-                        <p>$ <%= product.price %> </p>
+                        <p </p>
+                        <p>$ </p>
                     </div>
                 </a>
-                <% }) %> 
+               
             </div>
+        </section> -->
+        <section class="add-look-container">
+            <h2><%= title %></h2>
+            <%- include('./partials/slider.ejs') %> 
+
         </section>
         
+        <%- include('./partials/whatsapp.ejs') %> 
        
     </main>
     <%- include('./partials/whatsapp.ejs') %> 
     <%- include('./partials/footer.ejs') %> 
+    <%- include('./partials/scripts.ejs') %> 
     
 
     
