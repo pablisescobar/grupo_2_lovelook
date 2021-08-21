@@ -1,28 +1,40 @@
-.container-fluid {
+.home-inicio {
+    min-width: 320px;
+    width: 90%;
+    margin: auto;
+}
+
+.home-inicio video {
+    width: 100%;
+}
+.home-inicio .container-fluid {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     width: 100%;
 }
 
-.imagen1 img{
-    width: 100%; 
+.home-inicio .imagen1 img {
+    width: 100%;
     height: 100%;
-} 
-.container {
-    margin: 0 auto;
-    padding-left: 25px;
 }
-.cajavideo {
-    width: 85%;
+.home-inicio .container {
+    margin: 0 auto;
+}
+.home-inicio .cajavideo {
     padding-bottom: 14px;
 }
-.video1{
-    width: 85%;
-}
 
-    
+
 @media screen and (min-width: 768px) {
-        
- 
+    .home-inicio .cajavideo {
+       
+display: flex;
+       
+justify-content: center;
+       
+gap: 21px;
+       
+
     }
+}
