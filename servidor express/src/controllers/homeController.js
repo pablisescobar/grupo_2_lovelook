@@ -1,9 +1,9 @@
-const { getProducts } = require("../data/dataBase")
+let { getProducts } = require('../data/dataBase')
 
 module.exports =  {
     index: (req,res)=>{
-        res.render('home',{
-            products:getProducts
+        res.render('home', {
+            products: getProducts
         })
     }
 }
