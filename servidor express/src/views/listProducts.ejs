@@ -10,45 +10,46 @@
     <main class="container-listProduct">
         <section class="section1">
             <span class="iconify iconFilter" data-icon="mi:filter" data-inline="false"></span>
-            <nav class="nav-bar">
+            <form class="nav-bar">
                 <input class="filted" type="submit" value="FILTRAR">
-                <ul>
-                    <li class="dropdown">COLOR
-                        <ul>
-                            <li>AZUL</li>
-                            <li>NEGRO</li>
-                            <li>ROSA</li>
-                            <li>LILA</li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="dropdown">TALLE
-                        <ul>
-                            <li>S</li>
-                            <li>M</li>
-                            <li>L</li>
-                            <li>XL</li>
-                        </ul>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="dropdown">PRECIO
-                        <ul>
-                            <li>$1000</li>
-                            <li>$1100</li>
-                            <li>$1200</li>
-                            <li>$1300</li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
+                
+                    <select class="dropdown" type="text" name="color" id="color" placeholder="Color" required title="Color">
+                        <option value="" selected hidden>Color</option>
+                        <option value="verde">verde</option>
+                        <option value="lila">lila</option>
+                        <option value="gris">gris</option>
+                        <option value="negro">negro</option>
+                        <option value="blanco">blanco</option>
+                        <option value="natural">natural</option>
+                        <option value="rosa">rosa</option>
+                        <option value="celeste">celeste</option>
+                        <option value="naranja">naranja</option>
+                    </select>
+
+                        <select class="dropdown" name="talle" id="size" required title="Talle">
+                            <option selected hidden>Talle</option>
+                            <option value="s">S</option>
+                            <option value="m">M</option>
+                            <option value="l">L</option>
+                            <option value="xl">XL</option>
+                            <option value="xxl">XXL</option>
+                        </select>
+                        
+                        <select class="dropdown" name="talle" id="size" required title="Talle">
+                            <option selected hidden>Precio</option>
+                            <option value="1000">$1000 - $1999</option>
+                            <option value="2000">$2000 - $2999</option>
+                            <option value="3000">$3000 - $3999</option>
+                            <option value="4000">$4000 - $4999</option>
+                        </select>
+            
+            </form>
         </section><br>
         <hr>
         <section class="section2">
             <% products.forEach(product=>{ %> 
             <article class="product">
-                <img src="/img/remerones/vintage/remeronPicapiedras.jpg" alt="">
+            <img src= "/img/photos/<%= product.image %>" alt=""> 
                 <h3><%= product.name %></h3><br>
                 <h3>$<%= product.price %></h3><br>
                 <p><%= product.discount %>% Descuento</p>

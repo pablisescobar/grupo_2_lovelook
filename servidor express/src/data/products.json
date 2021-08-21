@@ -12,18 +12,6 @@
         "image": "harryPotter.jpg"
     },
     {
-        "id" : 2,
-        "category": "buzo",
-        "name": "Mickey",
-        "code" : 1124,
-        "color": "rosa",
-        "size": "m",
-        "stock": 5,
-        "price": 2300,
-        "discount": 15,
-        "image": "mickey.jpg"
-    },
-    {
         "id" : 3,
         "category": "buzo",
         "name": "Princess",
@@ -57,19 +45,7 @@
         "stock": 4,
         "price": 4500,
         "discount": 25,
-        "image": "conjuntoButterflies.jpg"
-    },
-    {
-        "id" : 101,
-        "category": "conjunto",
-        "name": "Butterfly",
-        "code" : 2555,
-        "color": "lila",
-        "size": "l",
-        "stock": 4,
-        "price": 4500,
-        "discount": 25,
-        "image": "conjuntoButterflies.jpg"
+        "image": "butterflies.jpg"
     },
     {
         "id" : 102,
@@ -81,7 +57,7 @@
         "stock": 3,
         "price": 4500,
         "discount": 25,
-        "image": "conjuntoFlower2.jpg"
+        "image": "flower2.jpg"
     },
     {
         "id" : 103,
@@ -93,7 +69,7 @@
         "stock": 10,
         "price": 4500,
         "discount": 25,
-        "image": "conjuntoTricolor.jpg"
+        "image": "tricolor.jpg"
     },
     {
         "id" : 200,
@@ -104,7 +80,7 @@
         "size": "m",
         "stock": 12,
         "price": 1000,
-        "image": "remeraHarryPotter.jpg"
+        "image": "harryPotter.jpg"
     },
     {
         "id" : 201,
@@ -115,7 +91,7 @@
         "size": "l",
         "stock": 12,
         "price": 1000,
-        "image": "remeraSmile.jpg"
+        "image": "smile.jpg"
     },
     {
         "id" : 400,
@@ -126,29 +102,18 @@
         "size": "xl",
         "stock": 4,
         "price": 1200,
-        "image": "remeronGetALife.jpg"
+        "image": "getALife.jpg"
     },
     {
         "id" : 401,
         "category": "remerones",
-        "name": "Bob Esponja",
+        "name": "Snakes",
         "code" : 585,
         "color": "negro",
         "size": "s",
         "stock": 6,
         "price": 1200,
-        "image": "remeronBobEsponja.jpg"
-    },
-    {
-        "id" : 402,
-        "category": "remerones",
-        "name": "Burbuja",
-        "code" : 586,
-        "color": "verde",
-        "size": "m",
-        "stock": 6,
-        "price": 1200,
-        "image": "remeronBurbuja.jpg"
+        "image": "snakes.jpg"
     },
     {
         "id" : 403,
@@ -159,7 +124,7 @@
         "size": "l",
         "stock": 6,
         "price": 1200,
-        "image": "remeronMerida.jpg"
+        "image": "merida.jpg"
     },
     {
         "id" : 404,
@@ -170,7 +135,7 @@
         "size": "l",
         "stock": 6,
         "price": 1200,
-        "image": "remeronStitch3.jpg"
+        "image": "stitch3.jpg"
     },
     {
         "id" : 405,
@@ -181,7 +146,7 @@
         "size": "xl",
         "stock": 6,
         "price": 1200,
-        "image": "remeronSuperPoderosas.jpg"
+        "image": "powerGirls.jpg"
     },
     {
         "id" : 406,
@@ -192,7 +157,7 @@
         "size": "s",
         "stock": 6,
         "price": 1200,
-        "image": "remeronLooneyTunes.jpg"
+        "image": "looneyTunes.jpg"
     },
     {
         "id" : 407,
@@ -203,6 +168,28 @@
         "size": "l",
         "stock": 6,
         "price": 1200,
-        "image": "remeronPicapiedras.jpg"
+        "image": "tigger.jpg"
+    },
+    {
+        "id" : 408,
+        "category": "remeron",
+        "name": "Simpsons",
+        "code" : 592,
+        "color": "rosa",
+        "size": "m",
+        "stock": 5,
+        "price": 1200,
+        "image": "simpsons.jpg"
+    },
+    {
+        "id" : 409,
+        "category": "remerones",
+        "name": "Burbuja",
+        "code" : 593,
+        "color": "verde",
+        "size": "xl",
+        "stock": 6,
+        "price": 1200,
+        "image": "bubble.jpg"
     }
 ]
