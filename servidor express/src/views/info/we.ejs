@@ -5,24 +5,20 @@
 
     <body>
         <%- include('../partials/header.ejs') %>
-
+        <div class="containerGeneralWe">
             <div class="containerWe">
                 <div class="sectionWe">
                     <div class="cold-md-2">
                         <p class="we"> Nosotros </p>
                         <ul class="navWe">
                             <li class="active">
-                                <a class="listHelp">
-                                    Políticas de privacidad
-                                </a>
+                                <a href="#Privacidad">Políticas de privacidad</a>
                             </li>
                             <li>
-                                <a href="">
-                                    Nuestros Locales
-                                </a>
+                                <a href="#Locales">Nuestros Locales</a>
                             </li>
                             <li>
-                                <a href="">Términos y Condiciones </a>
+                                <a href="#Terminos">Términos y Condiciones </a>
                             </li>
                         </ul>
                     </div>
@@ -30,11 +26,11 @@
 
 
                 <div class="col-sm-12 col-xs-12 nopadding text-center pt20" style="background-color: #ededed">
-                    <p class="f-bold mb10 t-color f-13 text-center" style="color_: #d26879;">Políticas de privacidad</p>
+                    <p id="Privacidad" class="f-bold mb10 t-color f-13 text-center" style="color_: #d26879;">Políticas de privacidad</p>
                 </div>
                 <div>
                     <div class="pl-15 pr-15 f-13" id="termMobile">
-                        <p class="f-bold mb10 mt10" style="padding-top: 30px" ;>INFORMACIÓN GENERAL</p>
+                        <p class="f-bold mb10 mt10"  style="padding-top: 30px" ;>INFORMACIÓN GENERAL</p>
                         <br>
                         <br>
                         <p>
@@ -103,7 +99,7 @@
                 <br>
                 <br>
                 <div class="container-stores p0">
-                    <h2>Nuestros locales</h2>
+                    <h2 id="Locales">Nuestros locales</h2>
                     <br>
                     <ul class="store__list-item map-pick map-shop hidden-md hidden-lg">
                         <li class="store__list-item" id="list_65">
@@ -143,10 +139,10 @@
                 </div>
                 <br>
                 <div>
-                    <div class="terminos">
+                    <div id="terminos">
                         <br>
                         <br>
-                        <h2>TERMINOS Y CONDICIONES</h2>
+                        <h2 id="Terminos">TERMINOS Y CONDICIONES</h2>
                         <br>
                         <p> Bienvenidos a WWW.LOVELOOK.COM.AR, sitio web perteneciente a LOVELOOK S.A. (en adelante
                             "LOVELOOK"). Por
@@ -928,6 +924,7 @@
 
                     <%- include('../partials/footer.ejs') %>
             </div>
+        </div>
     </body>
 
 </html>
