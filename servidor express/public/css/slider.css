@@ -22,15 +22,15 @@
 
 .card-title {
     font-family: 'Poppins';
-    font-size: 130%;
+    font-size: 120%;
     margin: 2px;
     margin: auto;
 }
 
 .card-text {
     font-family: 'Poppins';
-    font-size: 1.4rem;
-    padding: 5px;
+    font-size: 110%;
+    padding: 2px;
     margin: auto;
 }
 
