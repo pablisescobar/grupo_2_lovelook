@@ -48,7 +48,7 @@
 @media screen and (min-width: 768px) {
     .home-inicio .cajavideo {
         display: flex;
-        justify-content: center;
+        justify-content: space-evenly;
         gap: 21px;
     }
     .home-inicio h2 {
