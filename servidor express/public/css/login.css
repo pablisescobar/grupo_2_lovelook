@@ -12,14 +12,14 @@
 .login .card , .register .card{
     background-color: white;
     position        : relative;
-    width           : 320px;
-    height          : 450px;
+    width: 320px;
+    height: 449px;
     box-shadow: 0 0 10px var(--bordes);
     display         : flex;
     flex-direction  : column;
     align-items     : center;
     gap             : 20px;
-    border-radius   : 10px;
+    border-radius: 10px;
     background: linear-gradient(150deg,rgba(253,180,191,1), white, rgba(253,180,191,1));
     background-size: 400% 300%;
     animation: BgGradient 5s ease infinite;
