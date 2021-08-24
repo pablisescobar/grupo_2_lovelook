@@ -6,14 +6,29 @@
     border-radius: 5%;
 }
 
+.slick-next, .slick-prev {
+    width: 40px !important;
+    height:40px !important;
+    /* background-color: var(--bordes) !important; */
+    border-radius: 50% !important;
+    color: white !important;
+    text-shadow: 0px 0px 15px var(--bordes) !important;
+}
+.slick-next:before, .slick-prev:before {
+    color: white !important;
+    font-size: 2.5rem !important;
+    line-height: 110% !important;
+}
 .slick-dots {
     position: relative !important;
 }
 
 .card-img-top {
-    width: 80%;
-    height: 230px;
+    width: 100%;
+    height: 320px;
     margin: auto;
+    object-fit: cover;
+    object-position: top;
 }
 
 .card-body {
@@ -22,7 +37,7 @@
 
 .card-title {
     font-family: 'Poppins';
-    font-size: 120%;
+    font-size: 150%;
     margin: 2px;
     margin: auto;
 }
@@ -50,7 +65,6 @@ a.btn-primary {
 @media screen and (min-width: 768px) {
 
     .slick-slide {
-        width: 284px;
         height: 400px;
         border-radius: 3%;
     }
@@ -71,7 +85,7 @@ a.btn-primary {
     }
     
     .card-slider {
-        width: 80%;
+        width: 100%;
         margin: auto;
     }
 

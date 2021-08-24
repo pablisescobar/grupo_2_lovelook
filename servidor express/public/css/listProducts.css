@@ -15,12 +15,14 @@ select#color.dropdown {
     color: pink;
     border: 1px solid var(--bordes_claro);
     height: 30px;
+    background-color: white;
 }
 
 select#size.dropdown {
     border-radius: 15px;
     color: pink;
     border: 1px solid var(--bordes_claro);
+    background-color: white;
 }
 
 .container-listProduct .section1 .iconFilter {

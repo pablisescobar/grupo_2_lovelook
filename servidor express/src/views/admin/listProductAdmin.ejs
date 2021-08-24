@@ -1,0 +1,52 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head.ejs') %>
+
+    <body>
+        <%- include('../partials/header.ejs') %>
+            <main class="admin">
+                <div class="button-add">
+                    <a href="/admin/addProduct" ><span class="iconify"
+                        data-icon="fluent:add-12-filled"></span>Agregar Productos</a>
+                </div>
+<div class="table-container">
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Código</th>
+            <th>Descripción</th>
+            <th>Precio</th>
+            <th>Color</th>
+            <th>Talle</th>
+            <th>Cantidad</th>
+            <th>Imagen</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+        <% products.forEach(product=>{ %> 
+        <tr>
+            <td><%=product.id  %> </td>
+            <td><%=product.code  %></td>
+            <td><%=product.name  %></td>
+            <td><%=product.price  %></td>
+            <td><%=product.color  %></td>
+            <td><%=product.size.toUpperCase()  %></td>
+            <td><%=product.stock  %></td>
+            <td><img class="img-value" src="/img/photos/<%=product.image %>" alt=""></td>
+            <td><a class="edit" role="button" href="/admin/editProduct"><span class="iconify" data-icon="line-md:edit"></span></a></td>
+            <td><button class="delete" type="submit"><span class="iconify" data-icon="feather:delete"></span></button>
+            </td>
+        </tr>
+        <% }) %> 
+    </table>
+</main>
+
+    <%- include('../partials/footer.ejs') %>
+
+</body>
+
+</html>

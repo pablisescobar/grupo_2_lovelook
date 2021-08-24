@@ -1,13 +1,18 @@
 const { getProducts } = require("../data/dataBase")
 
 module.exports =  {
-    index: (req,res)=>{
-        res.render('admin/admin',{
-            products:getProducts
+    listProductAdmin:(req,res)=>{
+
+        res.render('admin/listProductAdmin',{
+        products:getProducts
+    })
+},
+    
+    addProductAdmin:(req,res)=>{
+        res.render('admin/addProducts',{
         })
     },
-
-    users:(req,res)=>{
-        
+    editProduct:(req,res)=>{
+        res.render('admin/editProduct')
     }
 }

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs') %>
+
+    <body>
+        <%- include('../partials/header.ejs') %>
+
+        <main class="admin">
+            <h2>Productos</h2>
+            <div class="container">
+
+                <form action="" method="GET" class="inputRows">
+
+                    <input type="number" name="id" id="id" placeholder="ID" required title="ID">
+
+                    <input type="text" name="codigo" id="code" placeholder="Código" required title="Código">
+
+
+                    <input type="text" name="descripcion" id="description" placeholder="Descripción" required
+                        title="Descripción">
+
+
+                    <input type="number" name="descuento" id="discount" placeholder="Descuento %" title="Descuento">
+
+
+                    <input type="number" name="precioVenta" id="priceV" placeholder="Precio" required
+                        title="Precio">
+
+
+                    <select type="text" name="color" id="color" placeholder="Color" required title="Color">
+                        <option value="" selected hidden>Color</option>
+                        <option value="verde">verde</option>
+                        <option value="lila">lila</option>
+                        <option value="gris">gris</option>
+                        <option value="negro">negro</option>
+                        <option value="blanco">blanco</option>
+                        <option value="natural">natural</option>
+                        <option value="rosa">rosa</option>
+                        <option value="celeste">celeste</option>
+                        <option value="naranja">naranja</option>
+                    </select>
+
+
+                    <select name="talle" id="size" required title="Talle">
+                        <option selected hidden>Talle</option>
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                        <option value="xxl">XXL</option>
+                    </select>
+
+                    <input type="number" name="cantidad" id="stock" placeholder="Cantidad" required title="Stock">
+
+                    <div class="input">
+                        <label for="file-upload" class="subir">
+                            <i class="fas fa-cloud-upload-alt"></i> Subir imágenes
+                        </label>
+                        <div id="info"></div>
+                        
+                        <input id="file-upload" onchange='cambiar()' accept=".png, .jpg" type="file"
+                        style='display: none;' required multiple>
+                    </div>
+                    
+                    <div class="prev-img"></div>
+                    <button type="submit" class="btn-add"><span class="iconify" data-icon="ant-design:save-outlined"></span></button>
+                   
+
+                            <a href="/admin" class="left-row"><span class="iconify" data-icon="bi:arrow-left-square"></span></a>
+
+
+                </form>
+
+            </div>
+            
+        </main>
+
+
+        <%- include('../partials/footer.ejs') %>
+    </body>
+
+</html>

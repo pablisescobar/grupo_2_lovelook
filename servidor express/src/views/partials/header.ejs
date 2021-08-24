@@ -6,7 +6,7 @@
     <a class="menu icon-size align-icon">
         <!-- <span id="menu-burger" onclick="abrirMenu()" class="iconify " data-icon="icon-park-outline:hamburger-button"
             data-inline="false"></span> -->
-            <div class="container" onclick="myFunction(this),abrirMenu()">
+            <div class="container" onclick="openNav()">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
@@ -14,15 +14,25 @@
               
     </a>
 
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/">Inicio</a>
+        <a href="/">Categorías</a>
+        <a href="/products">Accesorios</a>
+        <a href="/products">Oportunidades</a>
+      </div>
+      
+<!--       <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+ -->
     <!-- NAVEGACION PRINCIPAL -->
-    <div class="navbar-mobile" id="N1">
+    <!-- <div class="navbar-mobile" id="N1">
         <ul>
             <li class="btn "><a class="b1" href="/">Inicio</a></li>
             <li class="btn "><a class="b2" href="/">Categorías</a></li>
-            <li class="btn "><a class="b3" href="/list">Accesorios</a></li>
-            <li class="btn "><a class="b4" href="/list">Oportunidades</a></li>
+            <li class="btn "><a class="b3" href="/products">Accesorios</a></li>
+            <li class="btn "><a class="b4" href="/products">Oportunidades</a></li>
         </ul>
-    </div>
+    </div> -->
     <!-- ICONO DE LUPA  -->
     <a class="icon-size align-icon lupa" onclick="abrirBuscador()">
         <span class="iconify"  id="search" data-icon="akar-icons:search"
@@ -30,17 +40,17 @@
     </a>
 
     <!-- ICONO DE FAVORITOS (estrella) -->
-    <a class="estrella icon-size align-icon" href="/favorites">
+    <a class="estrella icon-size align-icon" href="/user/favorites">
         <span class="iconify" data-icon="akar-icons:star" data-inline="false"></span>
     </a>
 
     <!-- ICONO DE CARRITO DE COMPRA -->
-    <a class="carrito align-icon icon-size" href="/cart">
+    <a class="carrito align-icon icon-size" href="/user/cart">
         <span class="iconify " data-icon="emojione-monotone:shopping-cart" data-inline="false"></span>
     </a>
 
     <!-- ICONO DE USUARIO (circle) -->
-    <a href="/login" class="usuario align-icon icon-size">
+    <a href="/user/login" class="usuario align-icon icon-size">
         <span class="iconify  " data-icon="bi:person-circle" data-inline="false"></span>
     </a>
     
@@ -53,8 +63,8 @@
         <ul>
             <li class="btn"><a href="/">Inicio</a></li>
             <li class="btn"><a href="/">Categorías</a></li>
-            <li class="btn"><a href="/list">Accesorios</a></li>
-            <li class="btn"><a href="/list">Oportunidades</a></li>
+            <li class="btn"><a href="/products">Accesorios</a></li>
+            <li class="btn"><a href="/products">Oportunidades</a></li>
         </ul>
     </nav>
 

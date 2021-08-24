@@ -1,8 +1,53 @@
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1500;
+    top: 0;
+    left: 0;
+    background-color: snow;
+    overflow-x: hidden;
+    transition: 1s;
+    padding-top: 60px;
+    box-shadow: inset -10px 5px 30px var(
+    --bordes);
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    /* text-shadow: 4px 4px 2px grey; */
+    display: block;
+    transition: 2s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  @media screen and (max-height: 320px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
 /* MENU BURGER ANIMADO */
 
 .header .container {
     display: inline-block;
     cursor: pointer;
+}
+.header:hover{
+    opacity: 1;
 }
 
 .header .bar1,
@@ -36,6 +81,9 @@
 /* View Mobile of Header */
 
 .header {
+    position: sticky;
+    top: 0;
+    opacity: 0.9;
     font-family: var(--poppins);
     display: grid;
     grid: 2fr 1fr / repeat(5, 1fr);
@@ -43,10 +91,11 @@
         "menu     lupa     logo     carrito   user"
         "buscador buscador buscador buscador  buscador";
     border-bottom: 8px double var(--bordes_claro);
-    margin-bottom: 20px;
+    /* margin-bottom: 10px; */
     z-index: 999;
     width: 100%;
     padding: 5px;
+    background-color: white;
 }
 
 .header .navbar-mobile {
@@ -142,6 +191,7 @@
 
 .header .carrito {
     grid-area: carrito;
+    display: none;
 }
 
 .header .usuario {
@@ -284,7 +334,7 @@
     }
 
     .header .estrella {
-        display: inherit;
+        display: none;
     }
 
     .header .navbar ul {

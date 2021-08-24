@@ -1,7 +1,25 @@
 /* Estilos de vista ADMIN */
 
-.admin {
-    padding: 10px;
+
+
+.admin .button-add{
+    /* padding: 10px; */
+    width: fit-content;
+    margin: 10px;
+    background-color: lightgreen;
+    border: 2px solid green;
+    /* box-shadow: inset 0 0 29px lightgreen; */
+}
+.admin .button-add a{width: 100%;padding: 10px;}
+
+.admin .left-row{
+    color: white;
+    padding: 5px;
+    background-color: gray;
+    box-shadow: 0 0 3px lightgray;
+    width: fit-content;
+    font-size: 2rem;
+    margin: 10px;
 }
 
 .admin h2 {
@@ -27,8 +45,9 @@
 
 .admin .table-container {
     overflow: scroll;
-    width: 320px;
-    margin: 0 auto;
+    /* width: 250px; */
+    /* margin: 0 auto; */
+    padding: 10px;
 }
 .admin table {
     width: 800px;
@@ -43,9 +62,7 @@
     padding: 5px;
 }
 
-.admin td .img-value {
-    height: 75px;
-}
+
 
 .admin input,
 .admin select,
@@ -79,37 +96,44 @@
     background-color: var(--fondo-claro);
 }
 
-.admin button.edit {
+.admin .edit {
     color: blue;
-    border-color: blue;
+    border: 1px solid blue;
     box-shadow: inset 0 0 19px lightblue;
     transition: all 2s ease;
     width: 50px;
-    margin: 5px;
+    padding: 5px;
 }
-.admin button.edit:hover {
+.admin .edit:hover {
     color: white;
     border: 0.5px solid black;
     background: blue;
     box-shadow: inset 0 0 19px blue;
-    transform: scale(1.8);
-    border-radius: 50%;
+    transform: scale(1.2);
+    /* border-radius: 50%; */
 }
 
+.admin .prev-img{
+    width: 120px;
+    height: 120px;
+    border: 1px solid gray;
+    /* margin: 10px; */
+}
 .admin button.delete {
     color: red;
     border-color: red;
     box-shadow: inset 1px 1px 10px lightpink;
     transition: all 2s ease;
     width: 50px;
+    cursor: pointer;
 }
 .admin button.delete:hover {
     color: white;
     border: 0.5px solid black;
     background: red;
     box-shadow: inset 0 0 19px red;
-    transform: scale(1.8);
-    border-radius: 50%;
+    transform: scale(1.2);
+    /* border-radius: 50%; */
 }
 
 .admin button {
@@ -121,7 +145,6 @@
     border: 2px solid green;
     box-shadow: inset 0 0 29px lightgreen;
     transition: transform 1s ease;
-    border-radius: 10px;
 }
 
 
@@ -190,7 +213,6 @@
 
     .admin .table-container {
         overflow: scroll;
-        width: 700px;
     }
     .admin table {
         width: 1000px;
@@ -234,9 +256,9 @@
     }
 
     .admin .subir {
-        padding: 5px 10px;
-        background: #97f797;
-        border: 0px solid #fff;
+        /* padding: 5px 10px; */
+        /* background: #97f797; */
+        /* border: 0px solid #fff; */
         width: 100px;
         text-align: center;
         border-radius: 5px;
@@ -265,7 +287,7 @@
 
     /* Estilos de vista ADMIN */
 
-.admin {padding: 20px;transform: scale(0.7);position: relative;bottom: 100px;}
+.admin {padding: 20px;position: relative;}
 
 .admin h2 {
     text-shadow: 0 0 3px gray, -1px -1px 3px black, -2px -2px 6px black;
@@ -282,9 +304,9 @@
 }
 
 .admin .inputRows {
-    display: inline-block;
-    margin: 0 auto;
-    width: 1000px;
+    /* display: flex; */
+    flex-direction: column;
+    margin: 50px auto;
 }
 
 .admin .table-container {
@@ -298,33 +320,26 @@
     /* margin: 0 auto; */
 }
 
-
-
-.admin td .img-value {
-    height: 75px;
-}
-
 .admin input,
 .admin select,
 .admin button,
-.admin .input {width: 111px;height: 30px;align-self: center;margin: 2px;font-size: 1rem;}
+.admin .input {width: 50%;height: 30px;align-self: center;margin: 2px;font-size: 1rem;}
 .admin .input {
     padding: 0;
     margin: 10px auto;
     background-color: white;
-    width: 100%;
+    width: 50%;
 }
 
-.admin button.edit {
+.admin .edit {
     height: 50px;
 }
-.admin button.edit:hover {
-    color: white;
-    border: 0.5px solid black;
-    background: blue;
-    box-shadow: inset 0 0 19px blue;
-    transform: scale(1.8);
-    border-radius: 50%;
+.admin .edit:hover {
+    /* color: white; */
+    /* border: 0.5px solid black; */
+    /* background: blue; */
+    /* box-shadow: inset 0 0 19px blue; */
+    transform: scale(1.2);
 }
 
 .admin button.delete {

@@ -9,7 +9,7 @@
         "stock": 3,
         "price": 2300,
         "discount": 15,
-        "image": "harryPotter.jpg"
+        "image": ["harryPotter.jpg"]
     },
     {
         "id" : 3,
@@ -21,7 +21,7 @@
         "stock": 5,
         "price": 2300,
         "discount": 15,
-        "image": "princess.jpg"
+        "image": ["princess.jpg"]
     },
     {
         "id" : 100,
@@ -33,7 +33,7 @@
         "stock": 6,
         "price": 4500,
         "discount": 25,
-        "image": "angels.jpg"
+        "image": ["angels.jpg"]
     },
     {
         "id" : 101,
@@ -45,7 +45,7 @@
         "stock": 4,
         "price": 4500,
         "discount": 25,
-        "image": "butterflies.jpg"
+        "image": ["butterflies.jpg"]
     },
     {
         "id" : 102,
@@ -57,7 +57,7 @@
         "stock": 3,
         "price": 4500,
         "discount": 25,
-        "image": "flower2.jpg"
+        "image": ["flower2.jpg"]
     },
     {
         "id" : 103,
@@ -69,7 +69,7 @@
         "stock": 10,
         "price": 4500,
         "discount": 25,
-        "image": "tricolor.jpg"
+        "image": ["tricolor.jpg"]
     },
     {
         "id" : 200,
@@ -80,7 +80,8 @@
         "size": "m",
         "stock": 12,
         "price": 1000,
-        "image": "harryPotter.jpg"
+        "image": ["harryPotter.jpg"],
+        "discount": 0
     },
     {
         "id" : 201,
@@ -91,7 +92,8 @@
         "size": "l",
         "stock": 12,
         "price": 1000,
-        "image": "smile.jpg"
+        "image": ["smile.jpg"],
+        "discount": 0
     },
     {
         "id" : 400,
@@ -102,7 +104,8 @@
         "size": "xl",
         "stock": 4,
         "price": 1200,
-        "image": "getALife.jpg"
+        "image": ["getALife.jpg"],
+        "discount": 0
     },
     {
         "id" : 401,
@@ -113,7 +116,8 @@
         "size": "s",
         "stock": 6,
         "price": 1200,
-        "image": "snakes.jpg"
+        "image": ["snakes.jpg"],
+        "discount": 5
     },
     {
         "id" : 403,
@@ -124,7 +128,8 @@
         "size": "l",
         "stock": 6,
         "price": 1200,
-        "image": "merida.jpg"
+        "image": ["merida.jpg"],
+        "discount": 2
     },
     {
         "id" : 404,
@@ -135,7 +140,8 @@
         "size": "l",
         "stock": 6,
         "price": 1200,
-        "image": "stitch3.jpg"
+        "image": ["stitch3.jpg"],
+        "discount": 25
     },
     {
         "id" : 405,
@@ -146,7 +152,8 @@
         "size": "xl",
         "stock": 6,
         "price": 1200,
-        "image": "powerGirls.jpg"
+        "image": ["powerGirls.jpg"],
+        "discount": 25
     },
     {
         "id" : 406,
@@ -157,7 +164,8 @@
         "size": "s",
         "stock": 6,
         "price": 1200,
-        "image": "looneyTunes.jpg"
+        "image": ["looneyTunes.jpg"],
+        "discount": 5
     },
     {
         "id" : 407,
@@ -168,7 +176,8 @@
         "size": "l",
         "stock": 6,
         "price": 1200,
-        "image": "tigger.jpg"
+        "image": ["tigger.jpg"],
+        "discount": 0
     },
     {
         "id" : 408,
@@ -179,7 +188,8 @@
         "size": "m",
         "stock": 5,
         "price": 1200,
-        "image": "simpsons.jpg"
+        "image": ["simpsons.jpg","snakes2.jpg","smile2.jpg"],
+        "discount": 10
     },
     {
         "id" : 409,
@@ -190,6 +200,7 @@
         "size": "xl",
         "stock": 6,
         "price": 1200,
-        "image": "bubble.jpg"
+        "image": ["bubble.jpg"],
+        "discount": 0
     }
 ]

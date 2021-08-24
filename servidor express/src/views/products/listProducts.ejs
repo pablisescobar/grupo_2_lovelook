@@ -49,7 +49,7 @@
         <section class="section2">
             <% products.forEach(product=>{ %> 
             <article class="product">
-            <img src= "/img/photos/<%= product.image %>" alt=""> 
+            <img src= "/img/photos/<%= product.image[0] %>" alt=""> 
                 <h3><%= product.name %></h3><br>
                 <h3>$<%= product.price %></h3><br>
                 <p><%= product.discount %>% Descuento</p>
@@ -62,7 +62,7 @@
 
     <%- include('../partials/footer.ejs') %> 
 
-
+    <%- include('../partials/scripts.ejs') %> 
 
 </body>
 

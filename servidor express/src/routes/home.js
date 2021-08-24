@@ -1,8 +1,10 @@
 let express = require('express');
 let router = express.Router();
-let controller = require('../controllers/homeController.js');
+let {index} = require('../controllers/homeController.js');
 
 
-router.get('/',controller.index);
+router.get('/',index);
+
+
 
 module.exports = router
