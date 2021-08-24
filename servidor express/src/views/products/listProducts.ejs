@@ -1,69 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
+  <%- include('../partials/head.ejs') %>
 
-    <%- include('../partials/head.ejs') %> 
-   
-<body>
-
-    <%- include('../partials/header.ejs') %> 
+  <body>
+    <%- include('../partials/header.ejs') %>
 
     <main class="container-listProduct">
-        <section class="section1">
-            <span class="iconify iconFilter" data-icon="mi:filter" data-inline="false"></span>
-            <form class="nav-bar">
-                <input class="filted" type="submit" value="FILTRAR">
-                
-                    <select class="dropdown" type="text" name="color" id="color" placeholder="Color" required title="Color">
-                        <option value="" selected hidden>Color</option>
-                        <option value="verde">verde</option>
-                        <option value="lila">lila</option>
-                        <option value="gris">gris</option>
-                        <option value="negro">negro</option>
-                        <option value="blanco">blanco</option>
-                        <option value="natural">natural</option>
-                        <option value="rosa">rosa</option>
-                        <option value="celeste">celeste</option>
-                        <option value="naranja">naranja</option>
-                    </select>
+      <section class="section1">
+        <span
+          class="iconify iconFilter"
+          data-icon="mi:filter"
+          data-inline="false"
+        ></span>
+        <form class="nav-bar">
+          <input class="filted" type="submit" value="FILTRAR" />
 
-                        <select class="dropdown" name="talle" id="size" required title="Talle">
-                            <option selected hidden>Talle</option>
-                            <option value="s">S</option>
-                            <option value="m">M</option>
-                            <option value="l">L</option>
-                            <option value="xl">XL</option>
-                            <option value="xxl">XXL</option>
-                        </select>
-                        
-                        <select class="dropdown" name="talle" id="size" required title="Talle">
-                            <option selected hidden>Precio</option>
-                            <option value="1000">$1000 - $1999</option>
-                            <option value="2000">$2000 - $2999</option>
-                            <option value="3000">$3000 - $3999</option>
-                            <option value="4000">$4000 - $4999</option>
-                        </select>
-            
-            </form>
-        </section><br>
-        <hr>
-        <section class="section2">
-            <% products.forEach(product=>{ %> 
-            <article class="product">
-            <img src= "/img/photos/<%= product.image %>" alt=""> 
-                <h3><%= product.name %></h3><br>
-                <h3>$<%= product.price %></h3><br>
+          <select
+            class="dropdown"
+            type="text"
+            name="color"
+            id="color"
+            placeholder="Color"
+            required
+            title="Color"
+          >
+            <option value="" selected hidden>Color</option>
+            <option value="verde">verde</option>
+            <option value="lila">lila</option>
+            <option value="gris">gris</option>
+            <option value="negro">negro</option>
+            <option value="blanco">blanco</option>
+            <option value="natural">natural</option>
+            <option value="rosa">rosa</option>
+            <option value="celeste">celeste</option>
+            <option value="naranja">naranja</option>
+          </select>
+
+          <select
+            class="dropdown"
+            name="talle"
+            id="size"
+            required
+            title="Talle"
+          >
+            <option selected hidden>Talle</option>
+            <option value="s">S</option>
+            <option value="m">M</option>
+            <option value="l">L</option>
+            <option value="xl">XL</option>
+            <option value="xxl">XXL</option>
+          </select>
+
+          <select
+            class="dropdown"
+            name="talle"
+            id="size"
+            required
+            title="Talle"
+          >
+            <option selected hidden>Precio</option>
+            <option value="1000">$1000 - $1999</option>
+            <option value="2000">$2000 - $2999</option>
+            <option value="3000">$3000 - $3999</option>
+            <option value="4000">$4000 - $4999</option>
+          </select>
+        </form>
+      </section>
+      <br />
+      <hr />
+      <section class="section2">
+        <% products.forEach(product=>{ %>
+        <article class="cardProduct">
+          <div>
+            <a class="cardProductImage" href=""><img src="/img/photos/<%= product.image %>" alt=""/></a>
+            <div class='cardInfo'>
+                <h3><%= product.name %></h3>
+                <h3>$<%= product.price %></h3>
                 <p><%= product.discount %>% Descuento</p>
-            </article>
-            <% }) %> 
-        </section>
+            </div>
+          </div>
+        </article>
+        <% }) %>
+      </section>
     </main>
 
-    <%- include('../partials/whatsapp.ejs') %> 
-
-    <%- include('../partials/footer.ejs') %> 
-
-
-
-</body>
-
+    <%- include('../partials/whatsapp.ejs') %> <%-
+    include('../partials/footer.ejs') %>
+  </body>
 </html>
