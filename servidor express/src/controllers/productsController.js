@@ -3,7 +3,8 @@ const { getProducts, getShops } = require("../data/dataBase");
 module.exports = {
     list: (req, res) => {
         res.render('products/listProducts', {
-            products: getProducts
+            products: getProducts,
+            position:""
         })
     },
 
@@ -15,7 +16,8 @@ module.exports = {
         res.render('products/productDetail', {
             products:productsFilter ,
             product: productoId,
-            title: title
+            title: title,
+            position:""
         })
     },
 

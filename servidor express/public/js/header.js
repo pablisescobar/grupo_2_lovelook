@@ -18,6 +18,7 @@ function myFunction(x) {
 /* Menu burger 2  */
   function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("mySidenav").style.opacity = "1";
   
   }
   

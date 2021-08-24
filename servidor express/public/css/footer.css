@@ -26,6 +26,7 @@
     animation: vibracionWhatsapp 10ms 4;
 }
 
+
 @media screen and (min-width: 768px) {
     .whatsapp {
         font-size: 4rem;
@@ -39,6 +40,12 @@
         right: 44px;
     }
 }
+
+
+
+/* ///////////////////// */
+
+
 /* View Mobile of Footer */
 
 .footer {

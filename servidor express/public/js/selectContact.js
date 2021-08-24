@@ -5,10 +5,7 @@ function selectionOption() {
     let asunto = document.getElementById('asunto')
     let option = asunto.value;
 
-    let nombre = document.getElementById('nombre')
-    let apellido = document.getElementById('apellido')
     let dni = document.getElementById('dni')
-    let email = document.getElementById('email')
     let telefono = document.getElementById('telefono')
     let cv = document.getElementById('cv')
     let localidad = document.getElementById('localidad')
@@ -53,6 +50,3 @@ function selectionOption() {
         direSocial.style.display = "flex"
     }
 }
-
-
-

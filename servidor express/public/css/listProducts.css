@@ -66,6 +66,8 @@ select#size.dropdown {
 .container-listProduct .section2 .product img {
     max-width: 17rem;
     width: 100%;
+    object-fit: cover;
+    object-position: top;
     height: 70%;
 }
 

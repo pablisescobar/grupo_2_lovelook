@@ -6,7 +6,8 @@ module.exports =  {
         let products = getProducts.filter(product=>product.discount >= 15)
         res.render('products/home', {
             products: products, 
-            title: title
+            title: title,
+            position:""
         })
     }
 }
