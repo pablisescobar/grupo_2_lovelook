@@ -1,4 +1,5 @@
-let { getProducts } = require('../data/dataBase')
+let { getProducts,getImgCarousel } = require('../data/dataBase')
+let path=require('path')
 
 module.exports =  {
     index: (req,res)=>{
@@ -7,7 +8,12 @@ module.exports =  {
         res.render('products/home', {
             products: products, 
             title: title,
-            position:""
+            position:"",
+            carousel:getImgCarousel
         })
+    },
+    afip:(req,res)=>{
+        res.sendFile(path.join(__dirname,'../../public/img/afip.png'))
+        
     }
 }

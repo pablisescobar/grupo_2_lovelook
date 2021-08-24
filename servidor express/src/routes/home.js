@@ -1,9 +1,10 @@
 let express = require('express');
 let router = express.Router();
-let {index} = require('../controllers/homeController.js');
+let {index,afip} = require('../controllers/homeController.js');
 
 
 router.get('/',index);
+router.get('/afip',afip);
 
 
 

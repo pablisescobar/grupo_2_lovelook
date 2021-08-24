@@ -1,6 +1,6 @@
 .home-inicio {
     min-width: 320px;
-    width: 90%;
+    width: 100%;
     margin: auto;
 }
 
@@ -50,6 +50,7 @@
         display: flex;
         justify-content: space-evenly;
         gap: 21px;
+        width: 100%;
     }
     .home-inicio h2 {
         text-align: center;

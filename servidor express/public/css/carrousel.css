@@ -9,14 +9,16 @@
 
 
  .slides img{
-    width: 100%;
-    height: 100%;
+    /* width: 100%; */
+    /* height: 100%; */
     object-fit: cover;
+    object-position: top;
 }
 
  .dots {
     width: 100%;
     text-align: center;
+    margin-top: 11px;
 }
 
 /* Botones de anterior y siguiente */
@@ -24,38 +26,37 @@
     cursor: pointer;
     position: absolute;
     top: 40%;
-    width: 20px;
+    /* width: 20px; */
     padding: 16px;
     color: var(--dark-blue);
     font-weight: bold;
     /* font-size: 19px; */
     transition: 0.6s ease;
-    border-radius: 0 6px 6px 0;
     user-select: none;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(255,255,255,0.8);
 }
 
 /* Posición de el boton siguiente a la derecha */
  .carousel-container .next {
     right: 0;
-    border-radius: 3px 0 0 3px;
+    border-radius: 8px 0 0 8px;
 }
  .carousel-container .prev {
     left: 0;
     text-align: left;
-    border-radius: 3px 0 0 3px;
+    border-radius: 0 6px 6px 0;
 }
 
 /* En hover, agrega un fondo con transparencia */
 .prev:hover, .next:hover {
-    background-color: rgba(255, 255, 255, 0.9);
+    /* background-color: rgba(255, 255, 255, 0.9); */
 }
 
 /* Puntos indicadores */
 .dot {
     cursor: pointer;
-    height: 15px;
-    width: 15px;
+    height: 10px;
+    width: 10px;
     margin: 0 2px;
     background-color: #bbb;
     border-radius: 50%;
@@ -73,6 +74,8 @@
     -webkit-animation-duration: 1.5s;
     animation-name: fade;
     animation-duration: 1.5s;
+    height: 200px;
+    width: 100%;
 }
 
 @-webkit-keyframes fade {
@@ -84,6 +87,12 @@
     from {opacity: .4}
     to {opacity: 1}
 }
+@media screen and (min-width: 768px) {
+
+    .carousel-container .fade{
+    height: 400px;
+}
+}
 
 @media screen and (min-width: 1024px) {
     .carousel-container {
@@ -91,20 +100,7 @@
         position: relative;
     }
 
+    .carousel-container .fade{}
 
-/* Esconde las imágenes por default */
-
-
- .slides img{
-    
-height: 450px;
-}
-
-
-/* Botones de anterior y siguiente */
- .carousel-container .prev, .home-inicio .carousel-container .next {
-   
-right: 0;
-}
 
 }

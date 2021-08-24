@@ -1,12 +1,10 @@
 <section class="carousel-container">
-
-    <div class="slides fade">
-        <img src="/img/carrusel.jpg" alt="">
+    <% carousel.forEach(element => { %>
+    <div class="slides fade" id="<%=element.id %>">
+        <img src="/img/carousel/<%= element.image %>" alt="">
     </div>
 
-    <div class="slides fade">
-        <img src="/img/carrusel3.jpg" alt="">
-    </div>
+    <% }) %>
 
     <!-- Next and previous buttons -->
     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
@@ -14,9 +12,8 @@
 
     <!-- The dots/circles -->
     <div class="dots">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
+        <% carousel.forEach((element, index) => { %>
+        <span class="dot" onclick="currentSlide(`<%= index + 1 %>`)"></span>
+        <% }) %>
     </div>
 </section>
