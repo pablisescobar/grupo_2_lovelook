@@ -25,3 +25,17 @@ function myFunction(x) {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("mySidenav").style.opacity = "0.5";
   }
+
+  function openBarSearch(){
+    let barSearch = document.getElementById('search-mobile')
+    let searchIco = document.getElementById('search-ico')
+    if(barSearch.style.width == "0vw" & barSearch.style.opacity =="0"){
+      barSearch.style.width = "80vw";
+      barSearch.style.opacity = "1";
+      searchIco.style.color = "var(--bordes)"
+    }else{
+      barSearch.style.width = "0vw";
+       barSearch.style.opacity ="0";
+       searchIco.style.color = "black"
+    }
+  }
