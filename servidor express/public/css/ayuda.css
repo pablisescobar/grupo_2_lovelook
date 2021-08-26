@@ -8,6 +8,7 @@
 .help {
     color: black;
     font-size: 1.1rem;
+    padding-top: 15px;
 }
 
 .descriptionHelp {
@@ -39,9 +40,15 @@
 
 .titleHelp {
     padding: 15px;
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
     /* display: block; */
     /* transition: all 5s; */
+}
+
+.panel-heading .help {
+    padding: 10px;
+    color: pink;
+    font-size: 1.2rem;
 }
 
 .panel-heading:hover > .descriptionHelp {
@@ -50,12 +57,7 @@
 
 .shipping {
     font-family: var(--poppins);
-    display: none;
     padding: 25px;
-}
-
-.help:hover > .shipping {
-    display: block;
 }
 
 .shipping .help {
@@ -64,33 +66,34 @@
     font-size: 1.2rem;
 }
 
-.terms {
-    font-family: var(--poppins);
-    padding: 25px;
-    /* display: flex; */
-    /* flex-flow: column; */
-    display: none;
-    /* flex-direction: column; */
-}
 
-.Help:hover > .terms {
-    display: block;
-}
-
-.active:hover > .terms {
-    display: block;
-}
-
-.terms .help {
-    padding: 10px;
-    color: pink;
-    font-size: 1.2rem;
-}
-
-.terms p {
-    line-height: 22px;
-    margin: 0 0 11px;
-}
+.containerHelp .accordion {
+    background-color: white;
+    color: var(--bordes);
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .containerHelp .active, .accordion:hover {
+    background-color: pink;
+    border-radius: 15px;
+    width: fit-content;
+  }
+  
+  /* Style the accordion panel. Note: hidden by default */
+  .containerHelp .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
 
 @media screen and (min-width: 768px) {
     .containerHelp {
