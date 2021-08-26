@@ -194,6 +194,7 @@
 
 .header .lupa {
     grid-area: lupa;
+    transition: color 1s ease-in;
 }
 
 .header .change .lupa {
@@ -235,7 +236,7 @@
     border: 2px solid var(--bordes);
     border-radius: 20px;
     padding: 0 10px 0 20px;
-    transition:1s ease-in;
+    transition: width 1s ease,opacity 500ms ease-in;
     box-shadow: -10px 0px 4px var(--bordes);
     background-color: white;
     z-index: 300;
