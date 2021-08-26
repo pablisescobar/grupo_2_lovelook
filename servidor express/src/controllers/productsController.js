@@ -1,10 +1,13 @@
 const { getProducts, getShops } = require("../data/dataBase");
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
     list: (req, res) => {
         res.render('products/listProducts', {
             products: getProducts,
-            position:""
+            position:"",
+            toThousand
+            
         })
     },
 
@@ -17,7 +20,8 @@ module.exports = {
             products:productsFilter ,
             product: productoId,
             title: title,
-            position:""
+            position:"",
+            toThousand
         })
     },
 

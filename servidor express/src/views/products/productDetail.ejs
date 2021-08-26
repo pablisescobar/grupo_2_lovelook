@@ -34,10 +34,10 @@
                             <%=product.name%>
                         </p>
                         <p class="price">
-                            <%=product.price%>
+                            <%=toThousand(product.price)%>
                         </p>
                         <p class="discount">
-                            <%=product.discount %>% descuento
+                            <%=product.discount >0?`${product.discount}% Descuento` : "" %>
                         </p>
                     </div>
 

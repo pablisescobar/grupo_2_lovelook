@@ -17,6 +17,7 @@
 @import url('carrousel.css');
 @import url('slider.css');
 @import url('perfilUser.css');
+@import url('headerAdmin.css');
 
 
 
@@ -44,10 +45,7 @@ a {
     display: inline-block;
 }
 
-a:active{
-    background-color: transparent;
-    
-}
+
 
 li {
     list-style: none;

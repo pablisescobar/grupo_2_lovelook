@@ -2,11 +2,13 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const path = require('path');
+let methodOverride = require('method-override')
 
 /* Middleware */
 app.use(express.static('public'));
 app.use(express.urlencoded({extended:false}))
 app.use(express.json())  /* lineas para trabajar con POST, -tiene que estar antes de las rutas */
+app.use(methodOverride('_method'))
 
 /* VIEWS */
 app.set('views',path.join(__dirname,'views'))

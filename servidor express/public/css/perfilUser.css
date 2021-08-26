@@ -5,6 +5,7 @@
     margin: 50px 0;
 }
 
+
 .perfil-user .input-perfil-user {
     width: 290px;
     height: 39px;
@@ -21,9 +22,9 @@
 .perfil-user .image-view {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
     border: 1px solid var(--bordes);
     margin: 0 auto;
+    border-radius: 50%;
 }
 
 .perfil-user .container {
@@ -39,7 +40,7 @@
 
 .perfil-user .img-label {
     position: absolute;
-    right: -9px;
+    right: -5px;
     bottom: 13px;
     color: var(--bordes_claro);
     font-size: 3rem;
@@ -66,6 +67,7 @@
 
     .perfil-user .img-label {
         font-size: 4rem;
+        bottom: 32px;
     }
 }
 
@@ -87,10 +89,15 @@
     }
 
     .perfil-user .container {
-    width: 500px;
+    width: 50%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    }
+
+    .perfil-user .img-label{
+        font-size: 2.5rem;
+        right: -7px;
     }
 
 }

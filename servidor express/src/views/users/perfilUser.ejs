@@ -5,13 +5,21 @@
     <body>
         <%- include('../partials/header.ejs') %>
 
-            <main class="perfil-user">
+            <form action="" class="perfil-user">
+
+
+
                 <div class="image-container">
-                    <label class="label-perfil-user img-label" for="avatar"><span class="iconify"
+                    <label class="label-perfil-user img-label" for="examinar"><span class="iconify"
                             data-icon="carbon:add-filled"></span></label>
-                    <input class="input-perfil-user" type="file" name="avatar" id="avatar" hidden>
-                    <div class="image-view"></div>
+                    <input class="input-perfil-user" type="file" name="avatar" id="examinar" hidden>
+                    <div class="image-view" id="imagePreview"></div>
                 </div>
+
+
+
+
+
                 <div class="container">
                     <label class="label-perfil-user" for="nombre">Nombre :</label>
                     <input class="input--style input-perfil-user" type="text" name="nombre" id="nombre">
@@ -36,7 +44,7 @@
                     <label class="label-perfil-user" for="telefono">Teléfono :</label>
                     <input class="input--style input-perfil-user" type="tel" name="telefono" id="telefono">
                 </div>
-            </main>
+            </form>
 
             <%- include('../partials/footer.ejs') %>
     </body>

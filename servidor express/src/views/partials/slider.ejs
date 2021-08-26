@@ -8,7 +8,7 @@
             <h5 class="card-title">
               <%= productX.name %>
             </h5>
-            <p class="card-text">$ <%= productX.price %>
+            <p class="card-text">$ <%= toThousand(productX.price) %>
             </p>
             <a href="/user/cart" class="btn-primary">Comprar</a>
           </div>

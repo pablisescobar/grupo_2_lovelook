@@ -1,5 +1,6 @@
 let { getProducts,getImgCarousel } = require('../data/dataBase')
 let path=require('path')
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports =  {
     index: (req,res)=>{
@@ -9,7 +10,8 @@ module.exports =  {
             products: products, 
             title: title,
             position:"",
-            carousel:getImgCarousel
+            carousel:getImgCarousel,
+            toThousand
         })
     },
     afip:(req,res)=>{
