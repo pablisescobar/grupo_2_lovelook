@@ -33,7 +33,7 @@ select#size.dropdown {
     border-radius: 30%;
     position: absolute;
     left: 15px;
-    top: 185px;
+    top: 165px;
 }
 
 .container-listProduct hr {
@@ -53,7 +53,7 @@ select#size.dropdown {
     justify-content: center;
 }
 
-.container-listProduct .section2 .product {
+.container-listProduct .section2 .product a {
     width: 275px;
     height: 500px;
     margin: 1rem;
@@ -158,8 +158,8 @@ select#size.dropdown {
         height: 545px;
         text-align: center;
         justify-self: center;
-        border: 1px solid var(--bordes_claro);
-        box-shadow: 0 0 8px var(--bordes);
+        /* border: 1px solid var(--bordes_claro); */
+        /* box-shadow: 0 0 8px var(--bordes); */
     }
 
     .container-listProduct .section2 .product img {
