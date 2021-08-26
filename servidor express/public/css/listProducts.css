@@ -158,8 +158,6 @@ select#size.dropdown {
         height: 545px;
         text-align: center;
         justify-self: center;
-        /* border: 1px solid var(--bordes_claro); */
-        /* box-shadow: 0 0 8px var(--bordes); */
     }
 
     .container-listProduct .section2 .product img {
@@ -188,13 +186,8 @@ select#size.dropdown {
         height: 80%;
     }
 
-    .cardInfo{
-    }
-
-
     .container-listProduct .section2 .product h3 {
         font-size: 1.8rem;
-        /* font-weight: 250; */
     }
 
     .container-listProduct .section2 .product p {
@@ -224,7 +217,6 @@ select#size.dropdown {
     .container-listProduct .section2 {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        /* padding-bottom: 10px; */
     }
 
     .container-listProduct .section2 .product {
