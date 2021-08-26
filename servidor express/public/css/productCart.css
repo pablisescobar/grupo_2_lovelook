@@ -195,10 +195,6 @@
 
 @media screen and (min-width: 768px) {
 
-    .container-cart {
-        /* width: 900px; */
-    }
-
     .container-cart .section1 {
         padding-top: 15px;
         max-width: 600px;
@@ -253,9 +249,7 @@
 
     .container-cart .section3 p {
         font-size: 40px;
-        /* padding: 20px; */
         border-bottom: 2px solid var(--bordes_claro);
-        /* text-align: center; */
     }
 
     .container-cart .section3 .imgOffer {
