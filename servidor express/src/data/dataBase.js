@@ -1,4 +1,5 @@
-let fs=require('fs')
+const fs=require('fs')
+const path = require('path')
 
 module.exports = {
     getShops : JSON.parse(fs.readFileSync('./src/data/shops.json','utf-8')),

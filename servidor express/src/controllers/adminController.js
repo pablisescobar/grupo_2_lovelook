@@ -29,6 +29,7 @@ module.exports = {
             products: getProducts,
             position: "",
             toThousand
+            
         })
     },
 
@@ -51,7 +52,7 @@ module.exports = {
         })
 
         let {
-            code,
+            name,
             description,
             season,
             category,
@@ -64,7 +65,7 @@ module.exports = {
 
         let newProduct = {
             id: lastId + 1,
-            code,
+            name,
             description,
             season,
             category,
@@ -78,7 +79,7 @@ module.exports = {
 
         getProducts.push(newProduct)
         writeProductsJSON(getProducts)
-        res.redirect('/admin/products')
+        res.redirect(`/admin/products#${newProduct.id}`)
 
 
     },
@@ -86,6 +87,28 @@ module.exports = {
     editProduct: (req, res) => {
         res.render('admin/editProduct', {
             position: ""
+        })
+    },
+
+    searchAdmin: (req, res) => {
+        let result = []
+
+        getProducts.forEach(product => {
+           
+                if (String(product.name).toLowerCase().includes(req.query.keys.toLowerCase())) {
+                    result.push(product)
+                } else if (String(product.season).toLowerCase().includes(req.query.keys.toLowerCase())) {
+                    result.push(product)
+                } else if (String(product.category).toLowerCase().includes(req.query.keys.toLowerCase())) {
+                    result.push(product)
+                } else if (String(product.description).toLowerCase().includes(req.query.keys.toLowerCase())) {
+                    result.push(product)
+                }
+        })
+
+        res.render('admin/searchResultAdmin', {
+            result,
+            toThousand
         })
     },
 

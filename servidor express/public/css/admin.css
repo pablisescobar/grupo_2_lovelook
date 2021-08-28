@@ -13,6 +13,11 @@
     padding: 10px;
 }
 
+.admin .description-cell{
+    overflow-wrap: anywhere;
+    font-size: 0.7rem;
+    }
+
 .admin .left-row {
     color: white;
     padding: 5px;
@@ -66,10 +71,12 @@
 
 .admin th,
 .admin td {
-    margin: 0 10px;
-    border: 1px solid black;
+    margin: 10px;
+    /* border: 1px solid black; */
     text-align: center;
     padding: 5px;
+    background-color: whitesmoke;
+    empty-cells: hide;
 }
 
 .admin .icons-guie-scroll {
@@ -90,10 +97,10 @@
 .admin input,
 .admin select,
 .admin button,
-.admin .input {
+.admin .input,
+.admin textarea {
     margin: 5px;
     height: 40px;
-    padding-left: 10px;
     font-size: 1.5rem;
     color: gray;
     background-color: var(--fondo-claro);
@@ -101,6 +108,10 @@
     outline: none;
     padding-left: 10px;
     border: none;
+}
+
+.admin textarea{
+    height: 120px;
 }
 .admin .input {
     padding: 0;
@@ -173,7 +184,7 @@
 }
 
 .admin button.btn-add:active {
-    transform: scale(1.2);
+    transform: scale(1.1);
     color: white;
     background-color: green;
     box-shadow: inset 0 0 10px 4px;
@@ -241,9 +252,9 @@
     .admin th,
     .admin td {
         margin: 0 10px;
-        border: 1px solid black;
+        /* border: 1px solid black; */
         text-align: center;
-        padding: 5px;
+        /* padding: 5px; */
     }
 
     .admin td img {
@@ -317,6 +328,12 @@
         position: relative;
     }
 
+    .admin textarea{
+        width: 50%;
+        margin: 0 auto;
+        font-size: 1.5rem;
+    }
+
     .admin h2 {
         text-shadow: 0 0 3px gray, -1px -1px 3px black, -2px -2px 6px black;
         color: var(--fondo-claro);
@@ -338,14 +355,14 @@
     }
 
     .admin .table-container {
-        overflow: hidden;
+        /* overflow: hidden; */
         width: 100%;
         margin: 0 auto;
     }
     .admin table {
         width: 100%;
         font-size: 1.2rem;
-        /* margin: 0 auto; */
+        margin: 0 auto;
     }
 
     .admin input,

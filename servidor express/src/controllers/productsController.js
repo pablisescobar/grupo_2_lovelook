@@ -24,6 +24,7 @@ module.exports = {
             toThousand
         })
     },
+    
 
    /*  offer: (req, res) => {
         let title = "Suma a tu look";

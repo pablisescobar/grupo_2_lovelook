@@ -1,4 +1,5 @@
 const { getProducts } = require("../data/dataBase");
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
     login: (req, res) => {
@@ -22,11 +23,11 @@ module.exports = {
         let productsOffer = getProducts.filter(product => product.discount > 15 ? product : null)
         res.render('users/productCart',{
             products:productsOffer,
-            position:""
+            position:"",
+            toThousand
+
         })
     },
 
-    favorites:(req,res)=>{
-        
-    }
+ 
 }

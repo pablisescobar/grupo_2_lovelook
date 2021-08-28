@@ -6,16 +6,14 @@
     <body>
         <%- include('../partials/headerAdmin.ejs') %>
             <main class="admin">
-                <h2>Productos</h2>
+                
                 <div class="container">
-
-                    <form action="" method="POST" class="inputRows">
+                    <form action="/admin/products/add" method="POST" class="inputRows" enctype="multipart/form-data">
 
                         <input type="text" name="name" id="name" placeholder="Nombre" title="nombre">
 
-                        <input type="text" name="description" id="description" placeholder="Descripción"
-                            title="Descripción">
-
+                        <textarea type="text" name="description" id="description" placeholder="Descripción"
+                            title="Descripción"></textarea>
 
                         <!-- SELECT DE TEMPORADA -->
                         <select name="season" id="season" title="temporada">
@@ -28,14 +26,17 @@
 
                         <!-- SELECT DE CATEGORÍA -->
                         <select name="category" id="category" title="category">
-                            <option selected hidden>Categorías</option>                 
-                                <option value="buzo">buzo</option>
-                                
-                            </select>
+                            <option selected hidden>Categorías</option>
+                            <% categories.forEach(category=>{ %>
+                                <option value="<%= category %>">
+                                    <%= category %>
+                                </option>
+                                <% }) %>
+                        </select>
 
 
                         <input type="number" name="discount" id="discount" placeholder="Descuento %" title="Descuento">
-                        
+
 
                         <input type="number" name="price" id="price" placeholder="Precio" title="Precio">
 
@@ -43,14 +44,22 @@
                         <!-- SELECT DE COLOR -->
                         <select name="color" id="color" title="color">
                             <option selected hidden>Color</option>
-                            
-                            <option value="negro">negro</option>
+                            <% colors.forEach(color=>{ %>
+                                <option value="<%= color %>">
+                                    <%= color %>
+                                </option>
+                                <% }) %>
                         </select>
 
                         <!-- SELECT DE TALLE -->
-                        <select name="talle" id="size" title="Talle">
+                        <select name="size" id="size" title="Talle">
                             <option selected hidden>Talle</option>
-                            <option value="s">S</option>
+
+                            <% sizes.forEach(size=>{ %>
+                                <option value="<%= size %>">
+                                    <%= size %>
+                                </option>
+                                <% }) %>
 
                         </select>
 
@@ -61,11 +70,11 @@
                             <label for="file-upload" class="subir">
                                 <i class="fas fa-cloud-upload-alt"></i> Subir imágenes
                             </label>
-                            <div id="info"></div>
-                            
+                            <div id="info" style="margin: 3px;"></div>
+
 
                             <input name="image" id="file-upload" onchange='cambiar()' accept=".png, .jpg" type="file"
-                                style='display: none;' multiple>
+                                style='display: none;'>
                         </div>
 
                         <button type="submit" class="btn-add"><span class="iconify"

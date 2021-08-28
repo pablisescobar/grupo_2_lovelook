@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include('../partials/head.ejs') %>
-
-    <body>
-        <%- include('../partials/headerAdmin.ejs') %>
+    <%- include('../partials/head.ejs') %>
+<body>
+    <%- include('../partials/headerAdmin.ejs') %>
             <main class="admin">
                 <h2 style="text-align: center;">Productos</h2>
                 <div class="button-add">
@@ -36,7 +35,7 @@
                             <th scope="col">Categoría</th>
                             <th scope="col">Eliminar</th>
                         </tr>
-                        <% products.forEach(product=>{ %>
+                        <% result.forEach(product=>{ %>
                             <tr id="<%= product.id %>">
                                 <td>
                                     <a class="edit" role="button" href="/admin/products/edit/<% product.id %>">
@@ -89,7 +88,7 @@
                                         <!-- CATEGORÍA -->
                                 </td>
                                 <td>
-                                    <form action=""><!-- ?? -->
+                                    <form action="" method=""><!-- ?? -->
                                         <button class="delete" type="submit">
                                             <span class="iconify" data-icon="feather:delete">
                                             </span>
@@ -101,7 +100,5 @@
                             <% }) %>
                     </table>
             </main>
-
-    </body>
-
+</body>
 </html>

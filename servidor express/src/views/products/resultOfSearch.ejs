@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head.ejs')%>
+
+    <body>
+        <%- include('../partials/header.ejs') %>
+
+            <main class="container-listProduct">
+                <% if (result.length> 0) { %>
+
+                    <h3 style="text-align: center;
+                    letter-spacing: 3px;
+                    font-size: 1.5rem;">
+                        Resultado de la búsqueda: <%= search.toUpperCase() %>
+                    </h3>
+
+                    <section class="section2" style="flex-direction: row;
+                    justify-content: center;
+                    padding: 0;border-bottom: 7px solid var(--fondo-claro);">
+                        <% result.forEach(product=>{ %>
+                            <article class="product" style="width: 200px;height: auto;">
+                                <a style="width: 100%;
+                                height: 100%;
+                                margin: 20px 0;" href="/products/detail/<%= product.id %>">
+                                    <img src="/img/photos/<%= product.image[0] %>" alt="">
+                                    <h3>
+                                        <%= product.name %>
+                                    </h3><br>
+                                    <h3>$<%= toThousand(product.price) %>
+                                    </h3><br>
+                                    <p>
+                                        <%=product.discount>0?`${product.discount}% Descuento` : "" %>
+                                    </p>
+                                </a>
+                            </article>
+                            <% }) %>
+                            
+                    </section>
+                    <div class="container"><!--  -->
+                        <div class="card-slider">
+                          <% products.forEach(productX=> { %>
+                            <div class="col-lg-12">
+                              <div class="card w-100">
+                                <img class="card-img-top" src="/img/photos/<%= productX.image[0] %>">
+                                <div class="card-body">
+                                  <h5 class="card-title">
+                                    <%= productX.name %>
+                                  </h5>
+                                  <p class="card-text">$ <%= toThousand(productX.price) %>
+                                  </p>
+                                  <a href="/user/cart" class="btn-primary">Comprar</a>
+                                </div>
+                              </div>
+                            </div>
+                          <% }) %>
+                        </div>
+                      </div>
+                    <% } else { %>
+
+
+                        <div>
+                            <p
+                                style="text-align: center;letter-spacing: 3px;margin: 25px 0 50px 0;font-size: 1.5rem;color:oracle;"><%= `No hay productos que coincidan con ${search.toUpperCase()}`  %> 
+                                
+                        </div>
+                        <div class="container"><!--  -->
+                            <div class="card-slider">
+                              <% products.forEach(productX=> { %>
+                                <div class="col-lg-12">
+                                  <div class="card w-100">
+                                    <img class="card-img-top" src="/img/photos/<%= productX.image[0] %>">
+                                    <div class="card-body">
+                                      <h5 class="card-title">
+                                        <%= productX.name %>
+                                      </h5>
+                                      <p class="card-text">$ <%= toThousand(productX.price) %>
+                                      </p>
+                                      <a href="/user/cart" class="btn-primary">Comprar</a>
+                                    </div>
+                                  </div>
+                                </div>
+                              <% }) %>
+                            </div>
+                          </div>
+                        <% } %>
+                            </section>
+            </main>
+
+            <%- include('../partials/footer.ejs')%>
+                <%- include('../partials/whatsapp.ejs')%>
+                <%- include('../partials/scripts.ejs')%>
+    </body>
+
+</html>
