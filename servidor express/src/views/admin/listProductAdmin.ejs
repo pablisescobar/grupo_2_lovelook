@@ -2,23 +2,24 @@
 <html lang="es">
 
 <%- include('../partials/head.ejs') %>
-
     <body>
         <%- include('../partials/headerAdmin.ejs') %>
             <main class="admin">
                 <h2 style="text-align: center;">Productos</h2>
                 <div class="button-add">
-                    <a href="/admin/products/add"><span class="iconify" data-icon="fluent:add-12-filled"></span>Agregar
-                        Productos</a>
+                    <a href="/admin/products/add"><span class="iconify" data-icon="fluent:add-12-filled">
+                    </span>Agregar Productos</a>
                 </div>
                 <div class="table-container">
                     <table>
                         <div class="icons-guie-scroll">
                             <div class="icon-touch">
-                                <span class="iconify" data-icon="carbon:touch-interaction"></span>
+                                <span class="iconify" data-icon="carbon:touch-interaction">
+                                </span>
                             </div>
                             <div class="icon-right-table">
-                                <span class="iconify" data-icon="akar-icons:arrow-right"></span>
+                                <span class="iconify" data-icon="akar-icons:arrow-right">
+                                </span>
                             </div>
                         </div>
                         <tr>
@@ -40,16 +41,16 @@
                             <tr id="<%= product.id %>">
                                 <td>
                                     <a class="edit" role="button" href="/admin/products/edit/<% product.id %>">
-                                        <span class="iconify" data-icon="line-md:edit"></span>
+                                        <span class="iconify" data-icon="line-md:edit">
+                                        </span>
                                     </a>
                                 </td>
-
                                 <td>
                                     <%= product.price ? `$${toThousand(product.price)}` : "--" %>
                                         <!-- PRECIO -->
                                 </td>
                                 <td>
-                                    <img class="img-value" src="/img/photos/<%= product.image[0]%>" alt="">
+                                    <img class="img-value" src="/img/photos/<%= product.image[0] %>" alt="">
                                     <!-- IMAGEN -->
                                 </td>
                                 <td>
