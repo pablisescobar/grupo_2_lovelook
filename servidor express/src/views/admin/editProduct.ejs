@@ -9,9 +9,8 @@
                 <h2>Productos</h2>
                 <div class="container">
 
-                    <form action="" method="GET" class="inputRows">
-
-                        <input type="text" name="name" id="name" placeholder="Nombre" title="nombre">
+                    <form action="/admin/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="inputRows">
+                        <input type="text" name="name" id="name" placeholder="<%- product.name %>" title="nombre">
 
                         <input type="text" name="description" id="description" placeholder="Descripción"
                             title="Descripción">
@@ -28,30 +27,49 @@
 
                         <!-- SELECT DE CATEGORÍA -->
                         <select name="category" id="category" title="category">
-                            <option selected hidden>Categorías</option>                 
-                                <option value="buzo">buzo</option>
-                                
-                            </select>
+                            <option selected hidden>Categorías</option>
+                            <option value="babuchas">Babuchas</option>
+                            <option value="buzos">Buzos</option>
+                            <option value="camperas">Camperas</option>
+                            <option value="Conjunto">Conjunto</option>
+                            <option value="jeans">Jeans</option>
+                            <option value="maxibuzos">Maxibuzos</option>
+                            <option value="pijamas">Pijamas</option>
+                            <option value="polleras">Polleras</option>
+                            <option value="remeras">Remeras</option>
+                            <option value="remerones">Remerones</option>
+                            <option value="shorts">Shorts</option>
+                        </select>
 
 
                         <input type="number" name="discount" id="discount" placeholder="Descuento %" title="Descuento">
-                        
+
 
                         <input type="number" name="price" id="price" placeholder="Precio" title="Precio">
 
 
                         <!-- SELECT DE COLOR -->
                         <select name="color" id="color" title="color">
+                            <option value="amarillo">Amarillo</option>
                             <option selected hidden>Color</option>
-                            
-                            <option value="negro">negro</option>
+                            <option value="blanco">Blanco</option>
+                            <option value="celeste">Celeste</option>
+                            <option value="gris">Gris</option>
+                            <option value="lila">Lila</option>
+                            <option value="marron">Marrón</option>
+                            <option value="naranja">Naranja</option>
+                            <option value="natural">Natural</option>
+                            <option value="negro">Negro</option>
+                            <option value="rosa">Rosa</option>
                         </select>
 
                         <!-- SELECT DE TALLE -->
-                        <select name="talle" id="size" title="Talle">
+                        <select name="size" id="size" title="Talle">
                             <option selected hidden>Talle</option>
                             <option value="s">S</option>
-
+                            <option value="m">M</option>
+                            <option value="l">L</option>
+                            <option value="xl">XL</option>
                         </select>
 
                         <input type="number" name="stock" id="stock" placeholder="Cantidad" title="Stock">
@@ -61,8 +79,12 @@
                             <label for="file-upload" class="subir">
                                 <i class="fas fa-cloud-upload-alt"></i> Subir imágenes
                             </label>
-                            <div id="info"></div>
-                            
+                            <div id="info" style="margin: 3px;"></div>
+
+
+                            <input name="image" id="file-upload" onchange='cambiar()' accept=".png, .jpg" type="file"
+                                style='display: none;'>
+                        </div>
 
                             <input name="image" id="file-upload" onchange='cambiar()' accept=".png, .jpg" type="file"
                                 style='display: none;' multiple>

@@ -39,7 +39,7 @@
                         <% products.forEach(product=>{ %>
                             <tr id="<%= product.id %>">
                                 <td>
-                                    <a class="edit" role="button" href="/admin/products/edit/<% product.id %>">
+                                    <a class="edit" role="button" href="/admin/products/edit/<%- product.id %>">
                                         <span class="iconify" data-icon="line-md:edit"></span>
                                     </a>
                                 </td>

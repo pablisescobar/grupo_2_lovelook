@@ -29,7 +29,7 @@ module.exports = {
             products: getProducts,
             position: "",
             toThousand
-            
+
         })
     },
 
@@ -74,7 +74,7 @@ module.exports = {
             color,
             size,
             stock,
-            image: req.file ? [req.file.filename] : "defect.jpg"
+            image: req.file ? req.file.filename : "defect.jpg"
         }
 
         getProducts.push(newProduct)
@@ -84,26 +84,20 @@ module.exports = {
 
     },
 
-    editProduct: (req, res) => {
-        res.render('admin/editProduct', {
-            position: ""
-        })
-    },
-
     searchAdmin: (req, res) => {
         let result = []
 
         getProducts.forEach(product => {
-           
-                if (String(product.name).toLowerCase().includes(req.query.keys.toLowerCase())) {
-                    result.push(product)
-                } else if (String(product.season).toLowerCase().includes(req.query.keys.toLowerCase())) {
-                    result.push(product)
-                } else if (String(product.category).toLowerCase().includes(req.query.keys.toLowerCase())) {
-                    result.push(product)
-                } else if (String(product.description).toLowerCase().includes(req.query.keys.toLowerCase())) {
-                    result.push(product)
-                }
+
+            if (String(product.name).toLowerCase().includes(req.query.keys.toLowerCase())) {
+                result.push(product)
+            } else if (String(product.season).toLowerCase().includes(req.query.keys.toLowerCase())) {
+                result.push(product)
+            } else if (String(product.category).toLowerCase().includes(req.query.keys.toLowerCase())) {
+                result.push(product)
+            } else if (String(product.description).toLowerCase().includes(req.query.keys.toLowerCase())) {
+                result.push(product)
+            }
         })
 
         res.render('admin/searchResultAdmin', {
@@ -112,9 +106,47 @@ module.exports = {
         })
     },
 
-    updateProduct: (req, res) => {
+    editProduct: (req, res) => {
 
-    }
+        let product = getProducts.find(product => product.id === +req.params.id);
+        res.render('admin/editProduct', {
+            product
+        })
+    },
+
+    updateProduct: (req, res) => {
+        const {
+            name,
+            price,
+            color,
+            discount,
+            category,
+            description,
+            season,
+            size,
+            stock,
+             } = req.body
+
+        getProducts.forEach(product => {
+            if (product.id === +req.params.id) {
+                product.id = product.id,
+                    product.name = name,
+                    product.price = price,
+                    product.color = color,
+                    product.discount = discount,
+                    product.category = category,
+                    product.description = description,
+                    product.season = season,
+                    product.size = size,
+                    product.stock = stock,
+                    product.image = req.file ? req.file.filename : product.image
+            }
+        })
+
+        writeProductsJSON(getProducts)
+
+        res.send(`Has editado el producto ${name}`)
+    },
 
 
 }

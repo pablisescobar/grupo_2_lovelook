@@ -1,6 +1,7 @@
 let express = require('express');
 let router = express.Router();
-let { listProductAdmin,
+let { 
+    listProductAdmin,
     addProductAdmin,
     editProduct,
     productStore,
@@ -18,10 +19,10 @@ router.get('/products/add', addProductAdmin);
 router.post('/products/add',multer.single('image'), productStore);
 
 /* GET - View Edit Product */
-router.get('/products/edit/:id', editProduct)
+router.get('/products/edit/:id', editProduct);
 
 /* PUT - Editamos un producto con el método realizado en el controlador */
-router.put('/products/edit/:id', updateProduct)
+router.put('/products/edit/:id',multer.single('image'), updateProduct);
 
 router.get('/products/search',searchAdmin)
 
