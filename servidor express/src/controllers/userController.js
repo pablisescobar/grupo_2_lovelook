@@ -1,21 +1,29 @@
 const { getProducts } = require("../data/dataBase");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
+let categorias = [];
+getProducts.forEach(product => {
+    if (!categorias.includes(product.category)) {
+        categorias.push(product.category)
+    }
+})
 module.exports = {
     login: (req, res) => {
         res.render('users/login',{
-            position:"position:relative;"
+            position:"position:relative;",
+            categorias
         })
     },
     register:(req,res)=>{
         res.render('users/register',{
-            position:"position:relative;"
+            position:"position:relative;",
+            categorias
         })
     },
 
     perfil:(req,res)=>{
         res.render('users/perfilUser',{
-            position:""
+            position:"",
+            categorias
         })
     },
 
@@ -24,7 +32,8 @@ module.exports = {
         res.render('users/productCart',{
             products:productsOffer,
             position:"",
-            toThousand
+            toThousand,
+            categorias
 
         })
     },

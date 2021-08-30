@@ -50,17 +50,26 @@
 
     </div>
 
-    <!-- NAVEGACION PRINCIPAL (DESKTOP) -->
-    <nav class="navbar" id="subMenu">
+     <!-- NAVEGACION PRINCIPAL (DESKTOP) -->
+     <nav class="navbar" id="subMenu">
         <ul>
             <li class="btn"><a href="/">Inicio</a></li>
-            <li class="btn"><a href="/">Categorías</a></li>
+            <li id="categoriasDesplegable" class="btn">
+                <span>Categorías</span>
+                <div class="menu_desplegable" id="categoriasDesplegableView">
+                    <div class="desplegable">
+                        <% categorias.forEach(cat => { %> 
+                        <a href="/products/"><span><%= cat %></span></a>
+                        <% }); %>
+                    </div>
+                </div>                                                                          
+            </li>
             <li class="btn"><a href="/products">Accesorios</a></li>
             <li class="btn"><a href="/products">Oportunidades</a></li>
         </ul>
     </nav>
 
-    <!-- BARRA DE BUSQUEDA -->
+    <!-- BARRA DE BÚSQUEDA -->
     <form action="/search" method="GET" class="search-bar" id="search-mobile">
         <input type="text" class="input-header" name="keys" placeholder="Buscar...">
         <button type="submit">
@@ -68,4 +77,5 @@
             </span>
         </button>
     </form>
+    
 </header>

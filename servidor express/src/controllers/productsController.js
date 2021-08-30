@@ -1,11 +1,18 @@
 const { getProducts, getShops } = require("../data/dataBase");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+let categorias = [];
+getProducts.forEach(product => {
+    if (!categorias.includes(product.category)) {
+        categorias.push(product.category)
+    }
+})
 module.exports = {
     list: (req, res) => {
         res.render('products/listProducts', {
             products: getProducts,
             position:"",
+            categorias,
             toThousand
             
         })
@@ -21,6 +28,7 @@ module.exports = {
             product: productoId,
             title: title,
             position:"",
+            categorias,
             toThousand
         })
     },

@@ -430,4 +430,22 @@
     .header .search-bar input {
         font-size: 100%;
     }
+    .menu_desplegable {
+        display: none;
+        position: absolute;
+        top: 32px;
+        left: 10px;
+        font-size: 1.6vw;
+        background-color: rgba(234, 137, 154, 0.6);
+        border-radius: 8px;
+        width: 13vw;
+        height: 10vw;
+        transition: all 1.5ms;
+    }
+    .desplegable {
+        display: flex;
+        flex-direction: column;
+        width: 13vw;
+        height: 10vw;
+    }
 }
