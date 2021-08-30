@@ -8,6 +8,8 @@ module.exports = {
     
     getImgCarousel:JSON.parse(fs.readFileSync('./src/data/carousel.json','utf-8')),
 
+    getCategory:JSON.parse(fs.readFileSync('./src/data/category.json','utf-8')),
+
     writeProductsJSON: (dataBase) => {
         fs.writeFileSync(path.join(__dirname, "../data/products.json"), JSON.stringify(dataBase), "utf-8")
     }

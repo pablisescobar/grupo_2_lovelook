@@ -2,6 +2,12 @@ let { getProducts, getImgCarousel } = require('../data/dataBase')
 let path = require('path')
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+let categorias = [];
+getProducts.forEach(product => {
+    if (!categorias.includes(product.category)) {
+        categorias.push(product.category)
+    }
+})
 module.exports = {
     index: (req, res) => {
         let title = "Productos Destacados";
@@ -11,6 +17,7 @@ module.exports = {
             title: title,
             position: "",
             carousel: getImgCarousel,
+            categorias,
             toThousand
         })
     },
@@ -44,7 +51,8 @@ module.exports = {
             toThousand,
             search: req.query.keys,
             position: "",
-            products
+            products,
+            categorias
 
         })
     }

@@ -114,7 +114,29 @@ module.exports = {
 
     updateProduct: (req, res) => {
 
-    }
+    },
 
+
+
+
+
+
+
+
+
+
+
+
+    
+     eliminarProducto:(req, res) => {
+        getProducts.forEach(product => {
+            if(product.id === +req.params.id){
+                let productoAEliminar = getProducts.indexOf(product)
+                getProducts.splice(productoAEliminar, 1)
+            }
+        }) 
+        writeProductsJSON(getProducts)
+         res.redirect('/admin/products')
+     }
 
 }
