@@ -63,15 +63,20 @@
   
         <%- include('../partials/slider.ejs') %> 
   
+
+        <div>
+          <h4 class="questionAdd">Nuestras Ofertas</h4>
+        </div>
+
+
         <section class="section3">
-          <p>Nuestras Ofertas!!!</p>
+          <% products.forEach(product=>{ %> 
+          <p><%= product.title%></p>
           <div class="imgOffer">
-            <a href="/products/detail/<%- product.id %>"></a>
-          <img class="img1" src="/img/photos/harryPotter.jpg" alt="">
-          <img class="img2" src="/img/photos/harryPotter2.jpg" alt="">
-          <img class="img3" src="/img/photos/powerGirls.jpg" alt="">
-            </a>
+            <a href="/products/detail/<%- product.id %>">
+              <img class="offerImg" src= "/img/photos/<%= product.image %>" alt="">
           </div>
+          <% }) %> 
         </section>
       </main>
 

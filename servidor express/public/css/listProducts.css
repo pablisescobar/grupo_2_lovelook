@@ -52,6 +52,9 @@ select#size.dropdown {
     align-items: center;
     justify-content: center;
 }
+.container-listProduct .section2 .product:hover {
+    animation: opacity 3s alternate;
+    }
 
 .container-listProduct .section2 .product a {
     width: 275px;
@@ -158,6 +161,10 @@ select#size.dropdown {
         height: 545px;
         text-align: center;
         justify-self: center;
+    }
+
+    .container-listProduct .section2 .product:hover {
+    animation: opacity 3s alternate;
     }
 
     .container-listProduct .section2 .product img {
