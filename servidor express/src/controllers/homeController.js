@@ -40,12 +40,7 @@ module.exports = {
                 } else if (String(product.description).toLowerCase().includes(req.query.keys.toLowerCase())) {
                     result.push(product)
                 }
-            
-
-
-
         })
-
         res.render('products/resultOfSearch', {
             result,
             toThousand,
@@ -53,7 +48,6 @@ module.exports = {
             position: "",
             products,
             categorias
-
         })
     }
 }

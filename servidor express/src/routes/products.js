@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-let {detail,list,search} = require('../controllers/productsController.js');
+let {detail,list,search,} = require('../controllers/productsController.js');
 
 
 router.get('/',list);
