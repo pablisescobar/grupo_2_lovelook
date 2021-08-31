@@ -7,17 +7,19 @@ getProducts.forEach(product => {
         categorias.push(product.category)
     }
 })
+
 module.exports = {
     list: (req, res) => {
         res.render('products/listProducts', {
             products: getProducts,
             position:"",
             categorias,
-            toThousand
+            toThousand,
+            display:"display:grid;"
             
         })
     },
-
+    
     detail: (req, res) => {
         let productoId = getProducts.find(productX => productX.id == +req.params.id)
         let title = "Suma a tu look";
@@ -32,17 +34,26 @@ module.exports = {
             toThousand
         })
     },
-    
+    category:(req,res)=>{
+        function categories(category){
+            let arrayCategories = []
+            getProducts.forEach(product=>{
+                if(product.category.toLowerCase() === String(category).toLowerCase()){
+                    if(!arrayCategories.includes(product)){
+                        arrayCategories.push(product)
+                    }
+                }
+            })
+            return arrayCategories
+        }
+         let categoriesOfList = categories(req.params.category)
 
-   /*  offer: (req, res) => {
-        let title = "Suma a tu look";
-
-        let productsOffer = getProducts.filter(product => product.discount ? product : null)
-
-
-        res.render('products/productDetail', {
-
-        })
-    } */
-
+         res.render('products/listProducts',{
+             products:categoriesOfList,
+             display:"display:none;",
+             position:"",
+             categorias,
+             toThousand
+         })
+    }
 }

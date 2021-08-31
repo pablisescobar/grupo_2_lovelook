@@ -374,6 +374,7 @@
         width: 15vw;
         height: 30px;
         padding: 5px;
+        cursor: pointer;
     }
 
     .header .logo {

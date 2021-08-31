@@ -8,6 +8,9 @@ getProducts.forEach(product => {
         categorias.push(product.category)
     }
 })
+
+
+
 module.exports = {
     index: (req, res) => {
         let title = "Productos Destacados";
