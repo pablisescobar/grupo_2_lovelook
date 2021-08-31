@@ -25,6 +25,13 @@ select#size.dropdown {
     background-color: white;
 }
 
+select#price.dropdown {
+    border-radius: 15px;
+    color: pink;
+    border: 1px solid var(--bordes_claro);
+    background-color: white;
+}
+
 .container-listProduct .section1 .iconFilter {
     width: 22px;
     height: 22px;
@@ -64,6 +71,7 @@ select#size.dropdown {
     text-align: center;
     border: 1px solid var(--bordes_claro);
     box-shadow: 0 0 8px var(--bordes);
+    border-radius: 5%;
 }
 
 .container-listProduct .section2 .product img {
@@ -72,6 +80,7 @@ select#size.dropdown {
     object-fit: cover;
     object-position: top;
     height: 70%;
+    border-radius: 15px;
 }
 
 .container-listProduct .section2 .product h3 {

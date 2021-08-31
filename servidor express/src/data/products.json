@@ -1,21 +1,21 @@
 [
     {
-        "id": 100,
+        "id": 1000,
         "name": "Angels",
         "color": "negro",
-        "category": "Conjunto",
+        "category": "conjunto",
         "price": 4500,
-        "size": "M",
+        "size": "l",
         "season": "winter",
-        "stock": 9,
+        "stock": 7,
         "discount": 25,
-        "description": "Conjunto de buzo y babucha frizado con diseño estampado",
+        "description": "Conjunto de buzo y babucha frizado",
         "image": [
             "angels.jpg"
         ]
     },
     {
-        "id": 300,
+        "id": 3001,
         "name": "Burbuja",
         "color": "verde",
         "category": "remeron",
@@ -30,22 +30,22 @@
         ]
     },
     {
-        "id": 100,
+        "id": 1001,
         "name": "Butterflies",
         "color": "lila",
         "category": "Conjunto",
         "price": 4500,
-        "size": "L",
+        "size": "xl",
         "season": "winter",
-        "stock": 9,
+        "stock": 5,
         "discount": 25,
-        "description": "Conjunto de buzo y babucha frizado con diseño estampado",
+        "description": "remeron de algodon",
         "image": [
             "butterflies.jpg"
         ]
     },
     {
-        "id": 300,
+        "id": 3002,
         "name": "Butterfly",
         "color": "gris",
         "category": "remeron",
@@ -60,7 +60,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3003,
         "name": "Changes",
         "color": "blanco",
         "category": "remeron",
@@ -75,7 +75,7 @@
         ]
     },
     {
-        "id": 500,
+        "id": 5001,
         "name": "Do Not",
         "color": "gris",
         "category": "maxibuzo",
@@ -89,9 +89,8 @@
             "doNot3.jpg"
         ]
     },
-   
     {
-        "id": 300,
+        "id": 3004,
         "name": "Get a Life",
         "color": "blanco",
         "category": "remeron",
@@ -106,7 +105,7 @@
         ]
     },
     {
-        "id": 200,
+        "id": 2001,
         "name": "Hogwarts",
         "color": "negro",
         "category": "remera",
@@ -121,7 +120,7 @@
         ]
     },
     {
-        "id": 200,
+        "id": 2002,
         "name": "Harry Potter",
         "color": "naranja",
         "category": "remera",
@@ -136,7 +135,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3005,
         "name": "Looney Tunes",
         "color": "negro",
         "category": "remeron",
@@ -151,7 +150,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3006,
         "name": "Merida",
         "color": "lila",
         "category": "remeron",
@@ -166,7 +165,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3007,
         "name": "Mickey",
         "color": "negro",
         "category": "remeron",
@@ -181,7 +180,7 @@
         ]
     },
     {
-        "id": 500,
+        "id": 5002,
         "name": "Mickey",
         "color": "negro",
         "category": "maxibuzo",
@@ -196,7 +195,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3008,
         "name": "Picapiedras",
         "color": "blanco",
         "category": "remeron",
@@ -211,7 +210,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3009,
         "name": "Power Girls",
         "color": "rosa",
         "category": "rosa",
@@ -226,7 +225,7 @@
         ]
     },
     {
-        "id": 400,
+        "id": 4000,
         "name": "Princess",
         "color": "lila",
         "category": "buzo",
@@ -241,7 +240,7 @@
         ]
     },
     {
-        "id": 200,
+        "id": 2003,
         "name": "Be kind",
         "color": "gris",
         "category": "remera",
@@ -256,7 +255,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3010,
         "name": "Simpsons",
         "color": "blanco",
         "category": "remeron",
@@ -271,7 +270,7 @@
         ]
     },
     {
-        "id": 200,
+        "id": 2004,
         "name": "Smile",
         "color": "blanca",
         "category": "remera",
@@ -286,7 +285,7 @@
         ]
     },
     {
-        "id": 200,
+        "id": 2005,
         "name": "Smile",
         "color": "negro",
         "category": "remera",
@@ -301,7 +300,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3011,
         "name": "Snakes",
         "color": "gris",
         "category": "remeron",
@@ -316,7 +315,7 @@
         ]
     },
     {
-        "id": 200,
+        "id": 2006,
         "name": "Stitch",
         "color": "celeste",
         "category": "remera",
@@ -331,7 +330,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3012,
         "name": "Stitch",
         "color": "lila",
         "category": "remeron",
@@ -346,7 +345,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3013,
         "name": "Stitch",
         "color": "gris",
         "category": "remeron",
@@ -361,7 +360,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3014,
         "name": "Tigger",
         "color": "rosa",
         "category": "remeron",
@@ -376,22 +375,22 @@
         ]
     },
     {
-        "id": 100,
+        "id": 1002,
         "name": "Tricolor",
         "color": "negro",
         "category": "Conjunto",
         "price": 4500,
-        "size": "S",
-        "season": "winter",
-        "stock": 6,
+        "size": "l",
+        "season": "primavera",
+        "stock": 9,
         "discount": 25,
-        "description": "Conjunto de buzo y babucha frizado con diseño estampado",
+        "description": "Conjunto de buzo y babucha frizado",
         "image": [
             "tricolor2.jpg"
         ]
     },
     {
-        "id": 400,
+        "id": 4001,
         "name": "University",
         "color": "marrón",
         "category": "buzo",
@@ -406,7 +405,7 @@
         ]
     },
     {
-        "id": 400,
+        "id": 4002,
         "name": "University",
         "color": "negro",
         "category": "buzo",
@@ -421,7 +420,7 @@
         ]
     },
     {
-        "id": 500,
+        "id": 5003,
         "name": "Vogue",
         "color": "negro",
         "category": "maxibuzo",
@@ -436,7 +435,7 @@
         ]
     },
     {
-        "id": 200,
+        "id": 2007,
         "name": "Wild",
         "color": "gris",
         "category": "remera",
@@ -451,7 +450,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3015,
         "name": "Wonderland",
         "color": "blanco",
         "category": "remeron",
@@ -466,22 +465,22 @@
         ]
     },
     {
-        "id": 100,
+        "id": 1003,
         "name": "Angels",
-        "color": "negro",
+        "color": "natural",
         "category": "Conjunto",
         "price": 4500,
-        "size": "M",
+        "size": "l",
         "season": "winter",
-        "stock": 12,
+        "stock": 8,
         "discount": 25,
-        "description": "Conjunto de buzo y babucha frizado con diseño estampado",
+        "description": "Conjunto de buzo y babucha frizado",
         "image": [
             "angels.jpg"
         ]
     },
     {
-        "id": 300,
+        "id": 3016,
         "name": "Burbuja",
         "color": "verde",
         "category": "remeron",
@@ -496,22 +495,22 @@
         ]
     },
     {
-        "id": 100,
+        "id": 1004,
         "name": "Butterflies",
-        "color": "lila",
-        "category": "Conjunto",
+        "color": "negro",
+        "category": "conjunto",
         "price": 4500,
-        "size": "L",
+        "size": "l",
         "season": "winter",
-        "stock": 12,
+        "stock": 4,
         "discount": 25,
-        "description": "Conjunto de buzo y babucha frizado con diseño estampado",
+        "description": "Conjunto de buzo y babucha frizado",
         "image": [
             "butterflies.jpg"
         ]
     },
     {
-        "id": 300,
+        "id": 3017,
         "name": "Butterfly",
         "color": "gris",
         "category": "remeron",
@@ -526,7 +525,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3018,
         "name": "Changes",
         "color": "blanco",
         "category": "remeron",
@@ -541,7 +540,7 @@
         ]
     },
     {
-        "id": 500,
+        "id": 5004,
         "name": "Do Not",
         "color": "gris",
         "category": "maxibuzo",
@@ -555,9 +554,8 @@
             "doNot3.jpg"
         ]
     },
-   
     {
-        "id": 300,
+        "id": 3019,
         "name": "Get a Life",
         "color": "blanco",
         "category": "remeron",
@@ -572,7 +570,7 @@
         ]
     },
     {
-        "id": 200,
+        "id": 2008,
         "name": "Hogwarts",
         "color": "negro",
         "category": "remera",
@@ -587,7 +585,7 @@
         ]
     },
     {
-        "id": 200,
+        "id": 2009,
         "name": "Harry Potter",
         "color": "naranja",
         "category": "remera",
@@ -602,7 +600,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3020,
         "name": "Looney Tunes",
         "color": "negro",
         "category": "remeron",
@@ -617,7 +615,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3021,
         "name": "Merida",
         "color": "lila",
         "category": "remeron",
@@ -632,7 +630,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3022,
         "name": "Mickey",
         "color": "negro",
         "category": "remeron",
@@ -647,7 +645,7 @@
         ]
     },
     {
-        "id": 500,
+        "id": 5005,
         "name": "Mickey",
         "color": "negro",
         "category": "maxibuzo",
@@ -662,7 +660,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3023,
         "name": "Picapiedras",
         "color": "blanco",
         "category": "remeron",
@@ -677,7 +675,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3024,
         "name": "Power Girls",
         "color": "rosa",
         "category": "rosa",
@@ -692,7 +690,7 @@
         ]
     },
     {
-        "id": 400,
+        "id": 4005,
         "name": "Princess",
         "color": "lila",
         "category": "buzo",
@@ -707,7 +705,7 @@
         ]
     },
     {
-        "id": 200,
+        "id": 2010,
         "name": "Be kind",
         "color": "gris",
         "category": "remera",
@@ -722,7 +720,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3025,
         "name": "Simpsons",
         "color": "blanco",
         "category": "remeron",
@@ -737,7 +735,7 @@
         ]
     },
     {
-        "id": 200,
+        "id": 2011,
         "name": "Smile",
         "color": "blanca",
         "category": "remera",
@@ -752,7 +750,7 @@
         ]
     },
     {
-        "id": 200,
+        "id": 2012,
         "name": "Smile",
         "color": "negro",
         "category": "remera",
@@ -767,7 +765,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3026,
         "name": "Snakes",
         "color": "gris",
         "category": "remeron",
@@ -782,7 +780,7 @@
         ]
     },
     {
-        "id": 200,
+        "id": 2012,
         "name": "Stitch",
         "color": "celeste",
         "category": "remera",
@@ -797,7 +795,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3027,
         "name": "Stitch",
         "color": "lila",
         "category": "remeron",
@@ -812,7 +810,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3028,
         "name": "Stitch",
         "color": "gris",
         "category": "remeron",
@@ -827,7 +825,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3029,
         "name": "Tigger",
         "color": "rosa",
         "category": "remeron",
@@ -842,22 +840,22 @@
         ]
     },
     {
-        "id": 100,
+        "id": 1005,
         "name": "Tricolor",
-        "color": "negro",
-        "category": "Conjunto",
+        "color": "gris",
+        "category": "conjunto",
         "price": 4500,
-        "size": "S",
+        "size": "l",
         "season": "winter",
-        "stock": 8,
+        "stock": 11,
         "discount": 25,
-        "description": "Conjunto de buzo y babucha frizado con diseño estampado",
+        "description": "Conjunto de buzo y babucha frizado",
         "image": [
-            "tricolor2.jpg"
+            "tricolor.jpg"
         ]
     },
     {
-        "id": 400,
+        "id": 4006,
         "name": "University",
         "color": "marrón",
         "category": "buzo",
@@ -872,7 +870,7 @@
         ]
     },
     {
-        "id": 400,
+        "id": 4007,
         "name": "University",
         "color": "negro",
         "category": "buzo",
@@ -887,7 +885,7 @@
         ]
     },
     {
-        "id": 500,
+        "id": 5006,
         "name": "Vogue",
         "color": "negro",
         "category": "maxibuzo",
@@ -902,7 +900,7 @@
         ]
     },
     {
-        "id": 200,
+        "id": 2013,
         "name": "Wild",
         "color": "gris",
         "category": "remera",
@@ -917,7 +915,7 @@
         ]
     },
     {
-        "id": 300,
+        "id": 3030,
         "name": "Wonderland",
         "color": "blanco",
         "category": "remeron",

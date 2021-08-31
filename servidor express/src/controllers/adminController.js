@@ -74,7 +74,7 @@ module.exports = {
             color,
             size,
             stock,
-            image: req.file ? req.file.filename : "defect.jpg"
+            image: req.file ? [req.file.filename] : "defect.jpg"
         }
 
         getProducts.push(newProduct)
@@ -139,7 +139,7 @@ module.exports = {
                     product.season = season,
                     product.size = size,
                     product.stock = stock,
-                    product.image = req.file ? req.file.filename : product.image
+                    product.image = req.file ? [req.file.filename] : product.image
             }
         })
 
@@ -147,12 +147,6 @@ module.exports = {
 
         res.send(`Has editado el producto ${name}`)
     },
-
-
-
-
-
-
     
      eliminarProducto:(req, res) => {
         getProducts.forEach(product => {
