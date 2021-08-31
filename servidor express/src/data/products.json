@@ -9,71 +9,12 @@
         "season": "winter",
         "stock": 9,
         "discount": 25,
-        "description": "Conjunto de buzo y babucha frizado con diseño estampado",
+        "description": "Conjunto de buzo y babucha frisado con diseño estampado",
         "image": [
             "angels.jpg"
         ]
     },
-    {
-        "id": 300,
-        "name": "Burbuja",
-        "color": "verde",
-        "category": "remeron",
-        "price": 1200,
-        "size": "S",
-        "season": "summer",
-        "stock": 6,
-        "discount": 0,
-        "description": "Remeron de algodón con diseño estampado",
-        "image": [
-            "bubble.jpg"
-        ]
-    },
-    {
-        "id": 100,
-        "name": "Butterflies",
-        "color": "lila",
-        "category": "Conjunto",
-        "price": 4500,
-        "size": "L",
-        "season": "winter",
-        "stock": 9,
-        "discount": 25,
-        "description": "Conjunto de buzo y babucha frizado con diseño estampado",
-        "image": [
-            "butterflies.jpg"
-        ]
-    },
-    {
-        "id": 300,
-        "name": "Butterfly",
-        "color": "gris",
-        "category": "remeron",
-        "price": 1200,
-        "size": "L",
-        "season": "spring",
-        "stock": 12,
-        "discount": 0,
-        "description": "Remeron de algodón con diseño de mariposas estampado",
-        "image": [
-            "butterfly2.jpg"
-        ]
-    },
-    {
-        "id": 300,
-        "name": "Changes",
-        "color": "blanco",
-        "category": "remeron",
-        "price": 1200,
-        "size": "S",
-        "season": "summer",
-        "stock": 6,
-        "discount": 0,
-        "description": "Remeron de algon estampado",
-        "image": [
-            "changes.jpg"
-        ]
-    },
+
     {
         "id": 500,
         "name": "Do Not",
@@ -89,24 +30,8 @@
             "doNot3.jpg"
         ]
     },
-   
     {
-        "id": 300,
-        "name": "Get a Life",
-        "color": "blanco",
-        "category": "remeron",
-        "price": 1200,
-        "size": "L",
-        "season": "spring",
-        "stock": 11,
-        "discount": 0,
-        "description": "Remeron de algodón estampado",
-        "image": [
-            "getALife.jpg"
-        ]
-    },
-    {
-        "id": 200,
+        "id": 205,
         "name": "Hogwarts",
         "color": "negro",
         "category": "remera",
@@ -121,7 +46,7 @@
         ]
     },
     {
-        "id": 200,
+        "id": 280,
         "name": "Harry Potter",
         "color": "naranja",
         "category": "remera",
@@ -136,52 +61,7 @@
         ]
     },
     {
-        "id": 300,
-        "name": "Looney Tunes",
-        "color": "negro",
-        "category": "remeron",
-        "price": 1200,
-        "size": "S",
-        "season": "summer",
-        "stock": 14,
-        "discount": 0,
-        "description": "Remeron de algodón estampado",
-        "image": [
-            "looneyTunes.jpg"
-        ]
-    },
-    {
-        "id": 300,
-        "name": "Merida",
-        "color": "lila",
-        "category": "remeron",
-        "price": 1200,
-        "size": "XL",
-        "season": "summer",
-        "stock": 15,
-        "discount": 0,
-        "description": "Remeron con diseño Disney princesas estampado",
-        "image": [
-            "merida.jpg"
-        ]
-    },
-    {
-        "id": 300,
-        "name": "Mickey",
-        "color": "negro",
-        "category": "remeron",
-        "price": 1200,
-        "size": "S",
-        "season": "spring",
-        "stock": 6,
-        "discount": 0,
-        "description": "Remeron con diseño Disney estampado",
-        "image": [
-            "mickey.jpg"
-        ]
-    },
-    {
-        "id": 500,
+        "id": 590,
         "name": "Mickey",
         "color": "negro",
         "category": "maxibuzo",
@@ -196,37 +76,7 @@
         ]
     },
     {
-        "id": 300,
-        "name": "Picapiedras",
-        "color": "blanco",
-        "category": "remeron",
-        "price": 1200,
-        "size": "M",
-        "season": "summer",
-        "stock": 8,
-        "discount": 0,
-        "description": "Remeron con diseño de dibujos estampado",
-        "image": [
-            "picapiedras.jpg"
-        ]
-    },
-    {
-        "id": 300,
-        "name": "Power Girls",
-        "color": "rosa",
-        "category": "rosa",
-        "price": 1200,
-        "size": "L",
-        "season": "spring",
-        "stock": 9,
-        "discount": 0,
-        "description": "Remeron con diseño de dibujos estampado",
-        "image": [
-            "powerGirls.jpg"
-        ]
-    },
-    {
-        "id": 400,
+        "id": 406,
         "name": "Princess",
         "color": "lila",
         "category": "buzo",
@@ -241,7 +91,7 @@
         ]
     },
     {
-        "id": 200,
+        "id": 280,
         "name": "Be kind",
         "color": "gris",
         "category": "remera",
@@ -256,22 +106,7 @@
         ]
     },
     {
-        "id": 300,
-        "name": "Simpsons",
-        "color": "blanco",
-        "category": "remeron",
-        "price": 1200,
-        "size": "S",
-        "season": "spring",
-        "stock": 12,
-        "discount": 0,
-        "description": "Remeron de algodón estampado",
-        "image": [
-            "simpsons.jpg"
-        ]
-    },
-    {
-        "id": 200,
+        "id": 2011,
         "name": "Smile",
         "color": "blanca",
         "category": "remera",
@@ -286,7 +121,7 @@
         ]
     },
     {
-        "id": 200,
+        "id": 260,
         "name": "Smile",
         "color": "negro",
         "category": "remera",
@@ -301,22 +136,7 @@
         ]
     },
     {
-        "id": 300,
-        "name": "Snakes",
-        "color": "gris",
-        "category": "remeron",
-        "price": 1200,
-        "size": "L",
-        "season": "summer",
-        "stock": 25,
-        "discount": 0,
-        "description": "Remeron de algodón con diseño estampado",
-        "image": [
-            "snakes.jpg"
-        ]
-    },
-    {
-        "id": 200,
+        "id": 298,
         "name": "Stitch",
         "color": "celeste",
         "category": "remera",
@@ -330,68 +150,9 @@
             "stitch.jpg"
         ]
     },
+
     {
-        "id": 300,
-        "name": "Stitch",
-        "color": "lila",
-        "category": "remeron",
-        "price": 1200,
-        "size": "L",
-        "season": "spring",
-        "stock": 12,
-        "discount": 0,
-        "description": "Remeron de algodón con diseño de stitch estampado",
-        "image": [
-            "stitch2.jpg"
-        ]
-    },
-    {
-        "id": 300,
-        "name": "Stitch",
-        "color": "gris",
-        "category": "remeron",
-        "price": 1200,
-        "size": "XL",
-        "season": "spring",
-        "stock": 9,
-        "discount": 0,
-        "description": "Remeron de algodón con diseño de stitch estampado",
-        "image": [
-            "stitch3.jpg"
-        ]
-    },
-    {
-        "id": 300,
-        "name": "Tigger",
-        "color": "rosa",
-        "category": "remeron",
-        "price": 1200,
-        "size": "S",
-        "season": "summer",
-        "stock": 11,
-        "discount": 0,
-        "description": "Remeron de algodón estampado",
-        "image": [
-            "tigger.jpg"
-        ]
-    },
-    {
-        "id": 100,
-        "name": "Tricolor",
-        "color": "negro",
-        "category": "Conjunto",
-        "price": 4500,
-        "size": "S",
-        "season": "winter",
-        "stock": 6,
-        "discount": 25,
-        "description": "Conjunto de buzo y babucha frizado con diseño estampado",
-        "image": [
-            "tricolor2.jpg"
-        ]
-    },
-    {
-        "id": 400,
+        "id": 450,
         "name": "University",
         "color": "marrón",
         "category": "buzo",
@@ -406,7 +167,7 @@
         ]
     },
     {
-        "id": 400,
+        "id": 420,
         "name": "University",
         "color": "negro",
         "category": "buzo",
@@ -421,7 +182,7 @@
         ]
     },
     {
-        "id": 500,
+        "id": 520,
         "name": "Vogue",
         "color": "negro",
         "category": "maxibuzo",
@@ -436,7 +197,7 @@
         ]
     },
     {
-        "id": 200,
+        "id": 210,
         "name": "Wild",
         "color": "gris",
         "category": "remera",
@@ -450,98 +211,10 @@
             "wild.jpg"
         ]
     },
+
+
     {
-        "id": 300,
-        "name": "Wonderland",
-        "color": "blanco",
-        "category": "remeron",
-        "price": 1200,
-        "size": "XL",
-        "season": "spring",
-        "stock": 8,
-        "discount": 0,
-        "description": "Remeron de algodón con diseño de dibujos estampado",
-        "image": [
-            "wonderland.jpg"
-        ]
-    },
-    {
-        "id": 100,
-        "name": "Angels",
-        "color": "negro",
-        "category": "Conjunto",
-        "price": 4500,
-        "size": "M",
-        "season": "winter",
-        "stock": 12,
-        "discount": 25,
-        "description": "Conjunto de buzo y babucha frizado con diseño estampado",
-        "image": [
-            "angels.jpg"
-        ]
-    },
-    {
-        "id": 300,
-        "name": "Burbuja",
-        "color": "verde",
-        "category": "remeron",
-        "price": 1200,
-        "size": "S",
-        "season": "summer",
-        "stock": 6,
-        "discount": 0,
-        "description": "Remeron de algodón con diseño estampado",
-        "image": [
-            "bubble.jpg"
-        ]
-    },
-    {
-        "id": 100,
-        "name": "Butterflies",
-        "color": "lila",
-        "category": "Conjunto",
-        "price": 4500,
-        "size": "L",
-        "season": "winter",
-        "stock": 12,
-        "discount": 25,
-        "description": "Conjunto de buzo y babucha frizado con diseño estampado",
-        "image": [
-            "butterflies.jpg"
-        ]
-    },
-    {
-        "id": 300,
-        "name": "Butterfly",
-        "color": "gris",
-        "category": "remeron",
-        "price": 1200,
-        "size": "L",
-        "season": "spring",
-        "stock": 12,
-        "discount": 0,
-        "description": "Remeron de algodón con diseño de mariposas estampado",
-        "image": [
-            "butterfly2.jpg"
-        ]
-    },
-    {
-        "id": 300,
-        "name": "Changes",
-        "color": "blanco",
-        "category": "remeron",
-        "price": 1200,
-        "size": "S",
-        "season": "summer",
-        "stock": 6,
-        "discount": 0,
-        "description": "Remeron de algon estampado",
-        "image": [
-            "changes.jpg"
-        ]
-    },
-    {
-        "id": 500,
+        "id": 570,
         "name": "Do Not",
         "color": "gris",
         "category": "maxibuzo",
@@ -555,24 +228,8 @@
             "doNot3.jpg"
         ]
     },
-   
     {
-        "id": 300,
-        "name": "Get a Life",
-        "color": "blanco",
-        "category": "remeron",
-        "price": 1200,
-        "size": "L",
-        "season": "spring",
-        "stock": 11,
-        "discount": 0,
-        "description": "Remeron de algodón estampado",
-        "image": [
-            "getALife.jpg"
-        ]
-    },
-    {
-        "id": 200,
+        "id": 270,
         "name": "Hogwarts",
         "color": "negro",
         "category": "remera",
@@ -587,7 +244,7 @@
         ]
     },
     {
-        "id": 200,
+        "id": 280,
         "name": "Harry Potter",
         "color": "naranja",
         "category": "remera",
@@ -602,52 +259,7 @@
         ]
     },
     {
-        "id": 300,
-        "name": "Looney Tunes",
-        "color": "negro",
-        "category": "remeron",
-        "price": 1200,
-        "size": "S",
-        "season": "summer",
-        "stock": 14,
-        "discount": 0,
-        "description": "Remeron de algodón estampado",
-        "image": [
-            "looneyTunes.jpg"
-        ]
-    },
-    {
-        "id": 300,
-        "name": "Merida",
-        "color": "lila",
-        "category": "remeron",
-        "price": 1200,
-        "size": "XL",
-        "season": "summer",
-        "stock": 15,
-        "discount": 0,
-        "description": "Remeron con diseño Disney princesas estampado",
-        "image": [
-            "merida.jpg"
-        ]
-    },
-    {
-        "id": 300,
-        "name": "Mickey",
-        "color": "negro",
-        "category": "remeron",
-        "price": 1200,
-        "size": "S",
-        "season": "spring",
-        "stock": 6,
-        "discount": 0,
-        "description": "Remeron con diseño Disney estampado",
-        "image": [
-            "mickey.jpg"
-        ]
-    },
-    {
-        "id": 500,
+        "id": 501,
         "name": "Mickey",
         "color": "negro",
         "category": "maxibuzo",
@@ -662,37 +274,7 @@
         ]
     },
     {
-        "id": 300,
-        "name": "Picapiedras",
-        "color": "blanco",
-        "category": "remeron",
-        "price": 1200,
-        "size": "M",
-        "season": "summer",
-        "stock": 8,
-        "discount": 0,
-        "description": "Remeron con diseño de dibujos estampado",
-        "image": [
-            "picapiedras.jpg"
-        ]
-    },
-    {
-        "id": 300,
-        "name": "Power Girls",
-        "color": "rosa",
-        "category": "rosa",
-        "price": 1200,
-        "size": "L",
-        "season": "spring",
-        "stock": 9,
-        "discount": 0,
-        "description": "Remeron con diseño de dibujos estampado",
-        "image": [
-            "powerGirls.jpg"
-        ]
-    },
-    {
-        "id": 400,
+        "id": 454,
         "name": "Princess",
         "color": "lila",
         "category": "buzo",
@@ -707,7 +289,7 @@
         ]
     },
     {
-        "id": 200,
+        "id": 254,
         "name": "Be kind",
         "color": "gris",
         "category": "remera",
@@ -722,22 +304,7 @@
         ]
     },
     {
-        "id": 300,
-        "name": "Simpsons",
-        "color": "blanco",
-        "category": "remeron",
-        "price": 1200,
-        "size": "S",
-        "season": "spring",
-        "stock": 12,
-        "discount": 0,
-        "description": "Remeron de algodón estampado",
-        "image": [
-            "simpsons.jpg"
-        ]
-    },
-    {
-        "id": 200,
+        "id": 277,
         "name": "Smile",
         "color": "blanca",
         "category": "remera",
@@ -752,7 +319,7 @@
         ]
     },
     {
-        "id": 200,
+        "id": 289,
         "name": "Smile",
         "color": "negro",
         "category": "remera",
@@ -767,22 +334,7 @@
         ]
     },
     {
-        "id": 300,
-        "name": "Snakes",
-        "color": "gris",
-        "category": "remeron",
-        "price": 1200,
-        "size": "L",
-        "season": "summer",
-        "stock": 25,
-        "discount": 0,
-        "description": "Remeron de algodón con diseño estampado",
-        "image": [
-            "snakes.jpg"
-        ]
-    },
-    {
-        "id": 200,
+        "id": 295,
         "name": "Stitch",
         "color": "celeste",
         "category": "remera",
@@ -796,68 +348,9 @@
             "stitch.jpg"
         ]
     },
+
     {
-        "id": 300,
-        "name": "Stitch",
-        "color": "lila",
-        "category": "remeron",
-        "price": 1200,
-        "size": "L",
-        "season": "spring",
-        "stock": 12,
-        "discount": 0,
-        "description": "Remeron de algodón con diseño de stitch estampado",
-        "image": [
-            "stitch2.jpg"
-        ]
-    },
-    {
-        "id": 300,
-        "name": "Stitch",
-        "color": "gris",
-        "category": "remeron",
-        "price": 1200,
-        "size": "XL",
-        "season": "spring",
-        "stock": 9,
-        "discount": 0,
-        "description": "Remeron de algodón con diseño de stitch estampado",
-        "image": [
-            "stitch3.jpg"
-        ]
-    },
-    {
-        "id": 300,
-        "name": "Tigger",
-        "color": "rosa",
-        "category": "remeron",
-        "price": 1200,
-        "size": "S",
-        "season": "summer",
-        "stock": 11,
-        "discount": 0,
-        "description": "Remeron de algodón estampado",
-        "image": [
-            "tigger.jpg"
-        ]
-    },
-    {
-        "id": 100,
-        "name": "Tricolor",
-        "color": "negro",
-        "category": "Conjunto",
-        "price": 4500,
-        "size": "S",
-        "season": "winter",
-        "stock": 8,
-        "discount": 25,
-        "description": "Conjunto de buzo y babucha frizado con diseño estampado",
-        "image": [
-            "tricolor2.jpg"
-        ]
-    },
-    {
-        "id": 400,
+        "id": 465,
         "name": "University",
         "color": "marrón",
         "category": "buzo",
@@ -872,7 +365,7 @@
         ]
     },
     {
-        "id": 400,
+        "id": 475,
         "name": "University",
         "color": "negro",
         "category": "buzo",
@@ -887,7 +380,7 @@
         ]
     },
     {
-        "id": 500,
+        "id": 5546,
         "name": "Vogue",
         "color": "negro",
         "category": "maxibuzo",
@@ -902,7 +395,7 @@
         ]
     },
     {
-        "id": 200,
+        "id": 2120,
         "name": "Wild",
         "color": "gris",
         "category": "remera",
@@ -914,21 +407,6 @@
         "description": "Remera de algodón con detalle en las vistas",
         "image": [
             "wild.jpg"
-        ]
-    },
-    {
-        "id": 300,
-        "name": "Wonderland",
-        "color": "blanco",
-        "category": "remeron",
-        "price": 1200,
-        "size": "XL",
-        "season": "spring",
-        "stock": 8,
-        "discount": 0,
-        "description": "Remeron de algodón con diseño de dibujos estampado",
-        "image": [
-            "wonderland.jpg"
         ]
     }
 ]
