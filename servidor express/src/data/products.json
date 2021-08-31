@@ -15,51 +15,9 @@
         ]
     },
 
-    {
-        "id": 500,
-        "name": "Do Not",
-        "color": "gris",
-        "category": "maxibuzo",
-        "price": 2600,
-        "size": "XL",
-        "season": "winter",
-        "stock": 8,
-        "discount": 15,
-        "description": "Maxibuzo con diseños estampados",
-        "image": [
-            "doNot3.jpg"
-        ]
-    },
-    {
-        "id": 205,
-        "name": "Hogwarts",
-        "color": "negro",
-        "category": "remera",
-        "price": 1000,
-        "size": "M",
-        "season": "spring",
-        "stock": 12,
-        "discount": 0,
-        "description": "Remera edición Harry Potter con diseño estampado",
-        "image": [
-            "hogwarts.jpg"
-        ]
-    },
-    {
-        "id": 280,
-        "name": "Harry Potter",
-        "color": "naranja",
-        "category": "remera",
-        "price": 1000,
-        "size": "XL",
-        "season": "spring",
-        "stock": 13,
-        "discount": 0,
-        "description": "Remera edición Harry Potter con diseño estampado",
-        "image": [
-            "harryPotter2.jpg"
-        ]
-    },
+  
+   
+    
     {
         "id": 590,
         "name": "Mickey",
@@ -90,21 +48,7 @@
             "princess.jpg"
         ]
     },
-    {
-        "id": 280,
-        "name": "Be kind",
-        "color": "gris",
-        "category": "remera",
-        "price": 1000,
-        "size": "L",
-        "season": "summer",
-        "stock": 21,
-        "discount": 0,
-        "description": "Remera de algodón estampado",
-        "image": [
-            "remeraBeKind.jpg"
-        ]
-    },
+ 
     {
         "id": 2011,
         "name": "Smile",
@@ -133,21 +77,6 @@
         "description": "Remera con diseño estampado",
         "image": [
             "smile2.jpg"
-        ]
-    },
-    {
-        "id": 298,
-        "name": "Stitch",
-        "color": "celeste",
-        "category": "remera",
-        "price": 1000,
-        "size": "XL",
-        "season": "spring",
-        "stock": 7,
-        "discount": 0,
-        "description": "Remera de algodón con diseño de Stitch estampado",
-        "image": [
-            "stitch.jpg"
         ]
     },
 
@@ -259,21 +188,6 @@
         ]
     },
     {
-        "id": 501,
-        "name": "Mickey",
-        "color": "negro",
-        "category": "maxibuzo",
-        "price": 2600,
-        "size": "XL",
-        "season": "autumn",
-        "stock": 7,
-        "discount": 15,
-        "description": "Maxibuzo con diseño Disney estampado",
-        "image": [
-            "mickey2.jpg"
-        ]
-    },
-    {
         "id": 454,
         "name": "Princess",
         "color": "lila",
@@ -297,25 +211,10 @@
         "size": "L",
         "season": "summer",
         "stock": 21,
-        "discount": 0,
+        "discount": 20,
         "description": "Remera de algodón estampado",
         "image": [
             "remeraBeKind.jpg"
-        ]
-    },
-    {
-        "id": 277,
-        "name": "Smile",
-        "color": "blanca",
-        "category": "remera",
-        "price": 1000,
-        "size": "M",
-        "season": "summer",
-        "stock": 15,
-        "discount": 0,
-        "description": "Remera con diseño estampado",
-        "image": [
-            "smile.jpg"
         ]
     },
     {
@@ -377,36 +276,6 @@
         "description": "Buzo frizado con diseño universitario",
         "image": [
             "university2.jpg"
-        ]
-    },
-    {
-        "id": 5546,
-        "name": "Vogue",
-        "color": "negro",
-        "category": "maxibuzo",
-        "price": 2600,
-        "size": "XL",
-        "season": "winter",
-        "stock": 6,
-        "discount": 15,
-        "description": "Maxibuzo frizado con diseño estampado",
-        "image": [
-            "vogue.jpg"
-        ]
-    },
-    {
-        "id": 2120,
-        "name": "Wild",
-        "color": "gris",
-        "category": "remera",
-        "price": 1000,
-        "size": "S",
-        "season": "summer",
-        "stock": 7,
-        "discount": 0,
-        "description": "Remera de algodón con detalle en las vistas",
-        "image": [
-            "wild.jpg"
         ]
     }
 ]
