@@ -434,13 +434,13 @@
         display: none;
         position: absolute;
         top: 32px;
-        left: 10px;
+        left: 14px;
         font-size: 1.6vw;
         background-color: rgba(234, 137, 154, 0.6);
         border-radius: 8px;
-        width: 13vw;
-        height: 10vw;
-        transition: all 1.5ms;
+        width: 12vw;
+        height: 15vw;
+        transition: all 2s;
     }
     .desplegable {
         display: flex;
