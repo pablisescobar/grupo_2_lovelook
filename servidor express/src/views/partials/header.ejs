@@ -59,7 +59,7 @@
                 <div class="menu_desplegable" id="categoriasDesplegableView">
                     <div class="desplegable">
                         <% categorias.forEach(cat => { %> 
-                        <a href="/products/"><span><%= cat %></span></a>
+                        <a href="/products/<%= cat.toLowerCase() %>"><span><%= cat.toLowerCase() %></span></a>
                         <% }); %>
                     </div>
                 </div>                                                                          

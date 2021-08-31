@@ -6,7 +6,7 @@
     <%- include('../partials/header.ejs')%>
 
     <main class="container-listProduct">
-        <section class="section1">
+        <section class="section1" style=<%= display %>>
             <span class="iconify iconFilter" data-icon="mi:filter" data-inline="false"></span>
             <form class="nav-bar">
                 <input class="filted" type="submit" value="FILTRAR">
@@ -47,7 +47,7 @@
         <section class="section2">
             <% products.forEach(product=>{ %> 
             <article class="product">
-                <a href="/products/detail/<%- product.id %>">
+                <a href="/products/detail/<%= product.id %>">
             <img src= "/img/photos/<%= product.image[0] %>" alt="">
                 <h3><%= product.name %></h3><br>
                 <h3>$<%= product.price %></h3><br>
