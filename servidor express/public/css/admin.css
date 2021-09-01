@@ -1,3 +1,49 @@
+.login-admin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 10px;
+}
+.login-admin .image-admin {
+    width: 200px;
+    position: relative;
+    left: 7px;
+}
+
+.login-admin .contac-desarrollator {
+    width: 100%;
+    text-align: right;
+    padding: 10px;
+}
+
+.login-admin .contac-desarrollator a {
+    text-decoration: revert;
+    color: gray;
+}
+
+.login-admin input {
+    width: 250px;
+    height: 30px;
+    margin: 10px;
+    padding: 8px;
+}
+
+.login-admin button {
+    border: 1px solid lightblue;
+
+    background: snow;
+
+    border-radius: 5px;
+
+    padding: 5px 20px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
 /* Estilos de vista ADMIN */
 
 .admin .button-add {
@@ -13,10 +59,10 @@
     padding: 10px;
 }
 
-.admin .description-cell{
+.admin .description-cell {
     overflow-wrap: anywhere;
     font-size: 0.7rem;
-    }
+}
 
 .admin .left-row {
     color: white;
@@ -110,7 +156,7 @@
     border: none;
 }
 
-.admin textarea{
+.admin textarea {
     height: 120px;
 }
 .admin .input {
@@ -222,6 +268,11 @@
 }
 
 @media screen and (min-width: 768px) {
+   
+    .login-admin .contac-desarrollator {
+        width: 30%;
+    }
+
     .admin h2 {
         text-shadow: 0 0 3px gray, -1px -1px 3px black, -2px -2px 6px black;
         color: var(--fondo-claro);
@@ -318,7 +369,7 @@
         background-color: red;
         box-shadow: inset 0 0 10px 4px white;
     }
-    .admin .icons-guie-scroll{
+    .admin .icons-guie-scroll {
         display: none;
     }
     /* Estilos de vista ADMIN */
@@ -328,7 +379,7 @@
         position: relative;
     }
 
-    .admin textarea{
+    .admin textarea {
         width: 50%;
         margin: 0 auto;
         font-size: 1.5rem;

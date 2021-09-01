@@ -24,6 +24,9 @@ getProducts.forEach(product => {
 })
 
 module.exports = {
+    loginAdmin:(req,res)=>{
+        res.render('admin/loginAdmin')
+    },
     listProductAdmin: (req, res) => {
         res.render('admin/listProductAdmin', {
             products: getProducts,
@@ -147,12 +150,6 @@ module.exports = {
 
         res.send(`Has editado el producto ${name}`)
     },
-
-
-
-
-
-
     
      eliminarProducto:(req, res) => {
         getProducts.forEach(product => {

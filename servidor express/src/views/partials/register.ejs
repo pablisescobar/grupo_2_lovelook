@@ -1,0 +1,21 @@
+<main class="register">
+    <form action="/index.html" method="POST" class="card">
+        <figure class="card__thumbnail">
+            <img src="/img/logo.png" alt="" class="card__logo">
+        </figure>
+        <div class="input-container">
+            <input class="input--style" type="text" name="nombreApellido" placeholder="Nombre y Apellido" required>
+            <input class="input--style" type="email" name="email" placeholder="E-mail" required>
+            <input class="input--style" type="password" name="pass" placeholder="Contraseña" required minlength="8">
+            <input class="input--style" type="password" name="pass" placeholder="Confirmar contraseña" required>
+        </div>
+        <div class="conditions">
+
+            <input class="register__check" type="checkbox" name="condiciones" id="condiciones" required>
+            <label class="conditions__label" for="condiciones">Aceptar <a href="#"
+                    class="link-conditions">condiciones</a></label>
+        </div>
+        <input class="button btn-register" type="submit" value="Registrar">
+        <a class="haveAccount" href="/user/login">Ya tengo cuenta</a>
+    </form>
+</main>

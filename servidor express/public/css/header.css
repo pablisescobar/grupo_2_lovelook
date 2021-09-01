@@ -25,7 +25,7 @@
 
 .sidenav a:hover {
     color: lightblue;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     letter-spacing: 1px;
 }
 
@@ -110,9 +110,7 @@
 
 .header .sidenav a:active {
     color: lightblue;
-
-    text-decoration: underline;
-
+    /* text-decoration: underline; */
     letter-spacing: 1px;
 }
 
@@ -302,7 +300,8 @@
     /* fin menu burger */
 
     .header .logo {
-        width: 200px;
+        /* width: 100px; */
+        transform: scale(1.8);
         margin: auto;
     }
     .header .search-bar {
@@ -344,6 +343,7 @@
     .header .user-desktop {
         display: flex;
         font-size: 2.2rem;
+        z-index: 3;
     }
 
     .header .sidenav {
@@ -381,6 +381,7 @@
         margin: auto 0;
         width: 100px;
         height: 100px;
+        transform: none;
     }
 
     .header .lupa {

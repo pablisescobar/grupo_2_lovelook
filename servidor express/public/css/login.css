@@ -1,12 +1,59 @@
+/* Modal Header */
 
-
+  
+  /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10000; /* Sit on top */
+    margin: 0 auto;
+    top: -1000px;
+    opacity: 0;
+    width: 100%; /* Full width */
+    height: 100vh; /* Full height */
+    /* overflow: auto; */ /* Enable scroll if needed */
+    /* background-color: rgb(0,0,0); */ /* Fallback color */
+    /* background-color: rgba(0,0,0,0.4); */ /* Black w/ opacity */
+  }
+  /* The Close Button */
+.close {
+    position: absolute;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    top: 5px;
+    right: 10px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    /* position: relative; */
+    /* background-color: #fefefe; */
+    /* margin: auto; */
+    /* padding: 0; */
+    /* opacity: 0; */
+    /* border: 1px solid #888; */
+    /* width: 80%; */
+  }
+  
+  /* Add Animation */
+  @keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+  }
 
 .login,.register {
-    background-color: rgba(255, 255, 255, 0.5);
     display         : flex;
     justify-content : center;
     align-items     : center;
-    margin: 20px;
 }
 
 .login .card , .register .card{
@@ -19,6 +66,7 @@
     flex-direction  : column;
     align-items     : center;
     gap             : 20px;
+    z-index: 10000;
     border-radius: 10px;
     background: linear-gradient(150deg,rgba(253,180,191,1), white, rgba(253,180,191,1));
     background-size: 400% 300%;
@@ -96,6 +144,7 @@
         left  : 50px;
         bottom: 80px;
     }
+    .login .card, .register .card {}
 
     .login .button--positionIngresar {
 
