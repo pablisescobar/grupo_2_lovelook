@@ -8,7 +8,6 @@ getProducts.forEach(product => {
     }
 })
 
-<<<<<<< HEAD
 let colors = [];
 getProducts.forEach(product => {
     if(!colors.includes(product.color)){
@@ -30,23 +29,16 @@ getProducts.forEach(product => {
     }  
 });
 
-=======
->>>>>>> 0c20f7a365e521561806fc4c12757a227cea63f5
 module.exports = {
     list: (req, res) => {
         res.render('products/listProducts', {
             products: getProducts,
             position:"",
             categorias,
-<<<<<<< HEAD
             colors,
             sizes,
             prices,
             toThousand
-=======
-            toThousand,
-            display:"display:grid;"
->>>>>>> 0c20f7a365e521561806fc4c12757a227cea63f5
             
         })
     },
