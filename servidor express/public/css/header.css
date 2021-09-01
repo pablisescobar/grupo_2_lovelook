@@ -23,6 +23,15 @@
     width: fit-content;
 }
 
+.navOut{
+    /* width: 100%; */
+    /* height: 100vh; */
+    position: absolute;
+    top: 0;
+    /* background-color: red; */
+    right: 0;
+    z-index: 1300;
+}
 .sidenav a:hover {
     color: lightblue;
     /* text-decoration: underline; */
@@ -193,6 +202,7 @@
 .header .lupa {
     grid-area: lupa;
     transition: color 1s ease-in;
+    z-index: 1400;
 }
 
 .header .change .lupa {
@@ -214,6 +224,7 @@
 .header .usuario {
     grid-area: user;
     font-size: 3.2rem;
+    cursor: pointer;
     text-align: right;
     margin-right: 27px;
 }
@@ -267,11 +278,10 @@
 }
 
 .header .search-bar button {
-    width: 30px;
     height: 30px;
     margin: auto;
     border: none;
-    background-color: white;
+    background-color: rgba(0,0,0,0);
     font-size: 30px;
 }
 

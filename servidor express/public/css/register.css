@@ -1,9 +1,9 @@
 /* Checkbox */
-.register .input-container{
+.register .input-container {
     height: 180px;
     display: flex;
     flex-direction: column;
-justify-content: space-between;
+    justify-content: space-between;
 }
 .register__check[type="checkbox"] {
     display: none;
@@ -13,64 +13,78 @@ justify-content: space-between;
     width: 100%;
 }
 
-.register .haveAccount{
+.register .haveAccount {
     margin: 5px;
-    transition: color 1s ease,letter-spacing 1s ease;
+    transition: color 1s ease, letter-spacing 1s ease;
 }
-.register .haveAccount:hover{
+.register .haveAccount:hover {
     color: lightblue;
-    text-decoration:underline ;
-    text-shadow: 0 0 2px black,-1px -1px 2px gray;
+    text-decoration: underline;
+    text-shadow: 0 0 2px black, -1px -1px 2px gray;
     letter-spacing: 2px;
 }
 .conditions__label {
     padding-left: 1.3em;
-    position    : relative;
+    position: relative;
 }
 
 .conditions__label:before {
-    content      : "";
+    content: "";
     background-color: white;
-    width        : 1rem;
-    height       : 1rem;
-    border       : 1px solid darkgray;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid darkgray;
     border-radius: 2px;
-    position     : absolute;
-    left         : 0;
+    position: absolute;
+    left: 0;
     bottom: 0.12px;
     transition: transform 500ms ease-in-out;
     transform: rotate(180deg);
 }
 
-.register .link-conditions{
-    font-weight: bold;
-}
-.register .link-conditions:hover{
-    text-shadow:1px 1px 4px black,-1px -1px 4px black;
-    color:white;
+.register .close-dos {position: absolute;color: #aaa;float: right;font-size: 28px;font-weight: bold;top: 5px;right: 10px;z-index: 1000;cursor: pointer;}
+
+.modal-register{
+    position: relative;
+    z-index: 10000;
+    margin: 0 auto;
+    top: -1000px;
+    right: 0;
+    width: 100%;
+    opacity: 1;
+    height: 100vh;
 }
 
-.register__check[type="checkbox"]:checked+.conditions__label:before {
-    content: '';
+.register .link-conditions {
+    font-weight: bold;
+}
+.register .link-conditions:hover {
+    text-shadow: 1px 1px 4px black, -1px -1px 4px black;
+    color: white;
+}
+
+.register__check[type="checkbox"]:checked + .conditions__label:before {
+    content: "";
     background-image: url("/img/icons/check.png");
     background-size: 1.2rem;
     background-position: center;
-    color       : #08e676;
+    color: #08e676;
     border: none;
     transform: rotate(360deg);
 }
 
-@media screen and (min-width:768px) {
-    .register .card{
+@media screen and (min-width: 768px) {
+    .register .card {
         width: 450px;
         height: 320px;
+        position: absolute;
     }
 
-    .register .input-container{
+    .register .input-container {
         flex-direction: row;
         flex-wrap: wrap;
     }
-    .register .card__thumbnail{
+    .register .card__thumbnail {
         align-self: start;
         width: 130px;
         transform: scale(1);
@@ -79,17 +93,17 @@ justify-content: space-between;
         margin: 10px 0 10px 0;
     }
 
-    .register .input-container{
+    .register .input-container {
         padding: 0 10px;
         height: 100px;
     }
     .register .input-container input {
-            width: 49%;
+        width: 49%;
     }
 
-    .register .conditions{
+    .register .conditions {
         font-size: 0.8rem;
-        position:absolute;
+        position: absolute;
         bottom: 84px;
         left: 10px;
     }
@@ -98,16 +112,16 @@ justify-content: space-between;
     }
 
     .register .btn-register {
-        align-self:center;
+        align-self: center;
         width: 50%;
     }
-    .register__check[type="checkbox"]:checked+.conditions__label:before {
+    .register__check[type="checkbox"]:checked + .conditions__label:before {
         /* background-size: 1.2rem; */
         border: none;
         background-color: transparent;
     }
     .conditions__label:before {
-        width        : 0.8rem;
-        height       : 0.8rem;
+        width: 0.8rem;
+        height: 0.8rem;
     }
 }
