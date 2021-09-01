@@ -166,9 +166,9 @@ select#price.dropdown {
     }
 
     .container-listProduct .section2 .product {
-        width: 285px;
-        height: 545px;
-        text-align: center;
+        /* width: 285px; */
+        /* height: 545px; */
+        /* text-align: center; */
         justify-self: center;
     }
 
@@ -226,8 +226,8 @@ select#price.dropdown {
     }
 
     .container-listProduct .section2 .product {
-        width: 285px;
-        height: 545px;
+        /* width: 285px; */
+        /* height: 545px; */
     }
 
     .container-listProduct .section2 {
@@ -236,7 +236,7 @@ select#price.dropdown {
     }
 
     .container-listProduct .section2 .product {
-        width: 285px;
-        height: 545px;
+        /* width: 285px; */
+        /* height: 545px; */
     }
 }

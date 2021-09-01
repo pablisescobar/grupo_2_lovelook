@@ -34,10 +34,11 @@
                             <%=product.name%>
                         </p>
                         <p class="price">
-                            <%=toThousand(product.price)%>
+                            <%=toThousand(Math.round(product.price - product.price * product.discount / 100))%>
                         </p>
+                        <span class="price-line-medio"><%= product.discount > 0?`$${product.price}` : "" %></span>
                         <p class="discount">
-                            <%=product.discount >0?`${product.discount}% Descuento` : "" %>
+                            <%=product.discount > 0?`${product.discount}% Descuento` : "" %>
                         </p>
                     </div>
 

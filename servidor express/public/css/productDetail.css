@@ -5,6 +5,11 @@
     padding: 10px;
 }
 
+.price-line-medio{
+    text-decoration: line-through;
+    color: green;
+}
+
 /* Style the images inside the grid */
 .details-products .column img {
     opacity: 0.6;
@@ -368,15 +373,18 @@
         grid-area: descripcion;
         width: 282px;
         margin: auto;
-        padding: 20px;
+        /* padding: 20px; */
+        text-align: left;
     }
 
     .details-products .product .description .name {
-        font-size: x-large;
+        font-size: 1.5rem;
+        text-align: left;
     }
 
     .details-products .product .description .price {
-        font-size: x-large;
+        font-size: 1.2rem;
+        padding: 0;
     }
 
     .details-products .product .form-1 {
@@ -448,7 +456,8 @@
     /* add-look-container */
 
     .details-products .product .description .discount {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        padding: 0;
     }
 
     .details-products .add-look-container h2 {

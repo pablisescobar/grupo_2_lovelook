@@ -374,6 +374,7 @@
         width: 15vw;
         height: 30px;
         padding: 5px;
+        cursor: pointer;
     }
 
     .header .logo {
@@ -439,13 +440,13 @@
         background-color: rgba(234, 137, 154, 0.6);
         border-radius: 8px;
         width: 13vw;
-        height: 10vw;
-        transition: all 1.5ms;
+        height: 20vw;
+        transition: height 1.5ms;
     }
     .desplegable {
         display: flex;
         flex-direction: column;
-        width: 13vw;
-        height: 10vw;
+        justify-content: space-evenly;
+        width: 100%;
     }
 }
