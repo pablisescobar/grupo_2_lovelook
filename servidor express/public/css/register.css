@@ -16,6 +16,7 @@
 .register .haveAccount {
     margin: 5px;
     transition: color 1s ease, letter-spacing 1s ease;
+    cursor: pointer;
 }
 .register .haveAccount:hover {
     color: lightblue;

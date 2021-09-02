@@ -43,7 +43,7 @@ nav.onclick = function () {
   }
 
 /* BAR SEARCH */
-function openBarSearch() {
+searchIco.onclick = function () {
   if (barSearch.style.width == "0vw" & barSearch.style.opacity == "0") {
     barSearch.style.width = "80vw";
     barSearch.style.opacity = "1";
@@ -51,11 +51,17 @@ function openBarSearch() {
     searchIco.style.filter = "drop-shadow(4px 4px 2px gray);"
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("mySidenav").style.opacity = "0.5";
- 
+    document.getElementById("nav").style.width="0"
+    document.getElementById("nav").style.height="0"
+    document.getElementById("btn-lupa").style.display = "inline-block";
+    
   } else {
     barSearch.style.width = "0vw";
     barSearch.style.opacity = "0";
     searchIco.style.color = "black";
     searchIco.style.filter = "drop-shadow(4px 4px 2px red);";
+  setTimeout(()=>{
+      document.getElementById("btn-lupa").style.display = "none";
+    },500)
   }
 }

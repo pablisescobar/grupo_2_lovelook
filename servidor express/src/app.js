@@ -31,6 +31,23 @@ app.use('/info',infoRouter);
 app.use('/products',productsRouter);
 app.use('/user',userRouter);
 
+/* -------ERROR 404------------ */
+let {getProducts} = require ('./data/dataBase')
+app.use((req,res,next)=>{
+let categorias = [];
+getProducts.forEach(product => {
+    if (!categorias.includes(product.category)) {
+        categorias.push(product.category)
+    }
+})
+    res.status(404).render('status404',{
+categorias,
+position:"position:relative"
+    })
+})
+
+/* ---------------------------- */
+
 
 /* SERVER*/
 app.listen(port, () => {
