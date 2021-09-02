@@ -1,3 +1,40 @@
+/* envios,medios de pago y cambios y devoluciones */
+/* Style the.details-products  tab */
+/* .details-products .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  } */
+  /* Style the buttons that are used to open and close the accordion panel */
+/* .details-products .accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+     text-align: left; 
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }  */
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  /* .details-products .active, .details-products .accordion:hover {
+    background-color: #ccc;
+  } */
+  
+  /* Style the accordion panel. Note: hidden by default */
+ /*  .details-products .panel {
+    padding: 0 18px;
+    background-color: white;
+    overflow: hidden;
+    height: 100px;
+    max-height: 0px;
+    transition: max-height 0.2s ease-out;
+  } */
+
+
+
 /* The grid: Four equal columns that floats next to each other */
 .details-products .column {
     float: left;
@@ -444,7 +481,6 @@
     }
 
     .details-products .product .form-2 {
-        /* padding: 10px; */
         border: none;
         grid-area: form2;
         width: 100%;

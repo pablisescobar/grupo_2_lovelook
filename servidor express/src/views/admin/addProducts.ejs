@@ -6,7 +6,7 @@
     <body>
         <%- include('../partials/headerAdmin.ejs') %>
             <main class="admin">
-                
+
                 <div class="container">
                     <form action="/admin/products/add" method="POST" class="inputRows" enctype="multipart/form-data">
 
@@ -17,7 +17,7 @@
 
                         <!-- SELECT DE TEMPORADA -->
                         <select name="season" id="season" title="temporada">
-                            <option selected hidden>Temporada</option>
+                            <option selected hidden value="--">Temporada</option>
                             <option value="invierno">Invierno</option>
                             <option value="verano">Verano</option>
                             <option value="otonio">Otoño</option>
@@ -26,10 +26,10 @@
 
                         <!-- SELECT DE CATEGORÍA -->
                         <select name="category" id="category" title="category">
-                            <option selected hidden>Categorías</option>
+                            <option selected hidden value="--">Categorías</option>
                             <% categories.forEach(category=>{ %>
                                 <option value="<%= category %>">
-                                    <%= category %>
+                                    <%= capitalize(category) %>
                                 </option>
                                 <% }) %>
                         </select>
@@ -43,23 +43,31 @@
 
                         <!-- SELECT DE COLOR -->
                         <select name="color" id="color" title="color">
-                            <option selected hidden>Color</option>
+                            <option selected hidden value="--">Color</option>
                             <% colors.forEach(color=>{ %>
-                                <option value="<%= color %>">
-                                    <%= color %>
+                                <option value="<%= color ? color.toLowerCase():"--" %>">
+                                    <%= capitalize(color) %>
                                 </option>
                                 <% }) %>
+
                         </select>
+
+                        <div action="admin/products/add" method="POST" class="container-addColor">
+                            <input type="text" name="addColor" placeholder="Agregar color... " class="input-addColor" id="input-addColor">
+                            <div class="icon-addColor" onclick="addColor()">
+                                <span class="iconify " data-icon="ant-design:appstore-add-outlined"
+                                    ></span>
+                            </div>
+                        </div> 
 
                         <!-- SELECT DE TALLE -->
                         <select name="size" id="size" title="Talle">
-                            <option selected hidden>Talle</option>
-
-                            <% sizes.forEach(size=>{ %>
-                                <option value="<%= size %>">
-                                    <%= size %>
-                                </option>
-                                <% }) %>
+                            <option selected hidden value="--">Talle</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
 
                         </select>
 
@@ -74,7 +82,7 @@
 
 
                             <input name="image" id="file-upload" onchange='cambiar()' accept=".png, .jpg" type="file"
-                                style='display: none;'>
+                                style='display: none;' multiple>
                         </div>
 
                         <button type="submit" class="btn-add"><span class="iconify"

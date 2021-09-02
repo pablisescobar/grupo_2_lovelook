@@ -21,7 +21,7 @@ router.get('/products', listProductAdmin);
 router.get('/products/add', addProductAdmin);
 
 /* POST - Creamos un producto con el método realizado en el controlador */
-router.post('/products/add', multer.single('image'), productStore);
+router.post('/products/add', multer.array('image',4), productStore);
 
 /* GET - View Edit Product */
 router.get('/products/edit/:id', editProduct);

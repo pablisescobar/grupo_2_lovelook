@@ -156,6 +156,19 @@
     border: none;
 }
 
+.admin .container-addColor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.admin .icon-addColor{
+    font-size: 1.5rem;
+    color: var(--bordes_claro);
+    background-color: black;
+    padding: 2px;
+}
+.admin .input-addColor{font-size: 0.7rem;flex-grow: 0.5;}
+
 .admin textarea {
     height: 120px;
 }

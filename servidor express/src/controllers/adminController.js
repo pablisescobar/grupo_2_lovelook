@@ -1,25 +1,30 @@
-const { getProducts, writeProductsJSON } = require("../data/dataBase")
+const { getProducts, writeProductsJSON,getCategory, getColors } = require("../data/dataBase")
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
 
 let categories = []
 let colors = []
 let sizes = []
 
-getProducts.forEach(product => {
-    if (!categories.includes(product.category)) {
-        categories.push(product.category)
+
+/* FUNCIÓN PARA CAPITALIZE - MAYÚSCULA EN LA PRIMER LETRA */
+function capitalize(text) {
+    return text.charAt(0).toUpperCase() + text.slice(1);
+}
+
+getCategory.forEach(categoryName => {
+    if (!categories.includes(categoryName.category.toLowerCase())) {
+        categories.push(categoryName.category.toLowerCase())
     }
 })
 getProducts.forEach(product => {
-    if (!colors.includes(product.color)) {
-        colors.push(product.color)
+    if (!colors.includes(product.color.toLowerCase())) {
+            colors.push(product.color.toLowerCase())
     }
 })
 
 getProducts.forEach(product => {
-    if (!sizes.includes(product.size)) {
-        sizes.push(product.size)
+    if (!sizes.includes(product.size.toLowerCase())) {
+        sizes.push(product.size.toLowerCase())
     }
 })
 
@@ -37,15 +42,19 @@ module.exports = {
     },
 
     addProductAdmin: (req, res) => {
+       
         res.render('admin/addProducts', {
             position: "",
             categories,
-            sizes,
-            colors
+            colors,
+            capitalize
+        
         })
     },
 
     productStore: (req, res) => {
+        
+
         let lastId = 1;
 
         getProducts.forEach(product => {
@@ -53,6 +62,7 @@ module.exports = {
                 lastId = product.id
             }
         })
+
 
         let {
             name,
@@ -66,6 +76,12 @@ module.exports = {
             stock
         } = req.body;
 
+        let setImages = []
+        if(req.files){
+            req.files.forEach(image=>{
+                setImages.push(image.filename)
+            })
+        }
         let newProduct = {
             id: lastId + 1,
             name,
@@ -77,7 +93,7 @@ module.exports = {
             color,
             size,
             stock,
-            image: req.file ? [req.file.filename] : "defect.jpg"
+            image: setImages.length > 0 ? setImages : ["default.png"]
         }
 
         getProducts.push(newProduct)
