@@ -8,12 +8,36 @@ getProducts.forEach(product => {
     }
 })
 
+let colors = [];
+getProducts.forEach(product => {
+    if(!colors.includes(product.color)){
+        colors.push(product.color)
+    }  
+});
+
+let sizes = [];
+getProducts.forEach(product => {
+    if(!sizes.includes(product.size)){
+        sizes.push(product.size)
+    }  
+});
+
+let prices = [];
+getProducts.forEach(product => {
+    if(!prices.includes(product.price)){
+        prices.push(product.price)
+    }  
+});
+
 module.exports = {
     list: (req, res) => {
         res.render('products/listProducts', {
             products: getProducts,
             position:"",
             categorias,
+            colors,
+            sizes,
+            prices,
             toThousand,
             display:"display:grid;"
             
@@ -53,7 +77,10 @@ module.exports = {
              display:"display:none;",
              position:"",
              categorias,
-             toThousand
+             toThousand,
+             colors,
+            sizes,
+            prices,
          })
     }
 }

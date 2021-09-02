@@ -4,7 +4,8 @@
 <%- include('../partials/head.ejs') %>
 
     <body>
-
+        <%- include('../partials/register.ejs') %> 
+    <%- include('../partials/login.ejs') %> 
         <%- include('../partials/header.ejs')%>
 
             <main class="details-products">
@@ -47,18 +48,13 @@
                         <h4 class="subtitle">Descripción del producto</h4>
                         <select class="select select-style" name="color" id="">
                             <option value="" selected hidden>Color</option>
-                            <option value="">Negro</option>
-                            <option value="">Natural</option>
-                            <option value="">Lila</option>
-                            <option value="">Rosa</option>
-                            <option value="">Blanco</option>
+                            <option value="<%= product.color %> "><%=product.color%></option>
+                           
                         </select>
                         <select class="select select-style" name="talle" id="">
                             <option value="" selected hidden>Talles</option>
-                            <option value="">S</option>
-                            <option value="">M</option>
-                            <option value="">L</option>
-                            <option value="">XL</option>
+                            <option value="<%= product.size %>"><%= product.size %></option>
+                            
                         </select>
                         <div class="btn-add">
                             <input type="submit" value="Agregar al carrito">
@@ -91,23 +87,11 @@
 
                     </form>
                 </section>
-                <!-- <section class="add-look-container">
-            <h2><a href="/list">Sumá a tu look</a></h2>
-            <div class="arts-container arts-container-tablet">
-                
-                <a href="/detail" class="art1 look-art-hover">
-                    <img src="/img/photos/2.jpg" alt="">
-                    <div class="info-card">
-                        <p </p>
-                        <p>$ </p>
-                    </div>
-                </a>
-               
-            </div>
-        </section> -->
+
                 <section class="add-look-container">
-                    <h2>
+                    <h2><a href="/products">
                         <%= title %>
+                    </a>
                     </h2>
 
                     <%- include('../partials/slider.ejs') %>

@@ -1,4 +1,4 @@
-<header class="header" style=<%=position %>>
+<header class="header" style=<%= position %>>
     <a href="/" class="logo">
         <img src="/img/logo.png" alt="">
     </a>
@@ -9,13 +9,14 @@
             <div class="bar2"></div>
             <div class="bar3"></div>
         </div>
-
+        
     </a>
-
+    
+    <div id="nav" class="navOut"></div>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <!-- ICONO DE USUARIO (circle) -->
-        <a href="/user/login" class="usuario align-icon icon-size">
+        <a id="myBtn2" class="usuario align-icon icon-size">
             <span class="iconify  " data-icon="bi:person-circle" data-inline="false"></span>
         </a>
         <a href="/">Inicio</a>
@@ -24,18 +25,20 @@
         <a href="/products">Oportunidades</a>
     </div>
 
+    
+
     <!-- ICONO DE LUPA  -->
     <a class="icon-size align-icon lupa" id="search-ico" onclick="openBarSearch(this)">
         <span class="iconify" id="search" data-icon="akar-icons:search" data-inline="false"></span>
     </a>
 
     <!-- ICONO DE FAVORITOS (estrella) -->
-    <a class="estrella icon-size align-icon" href="/user/favorites">
+    <a class="estrella icon-size align-icon" href="">
         <span class="iconify" data-icon="akar-icons:star" data-inline="false"></span>
     </a>
 
     <!-- ICONO DE USUARIO (circle) -->
-    <a href="/user/login" class="usuario align-icon icon-size user-desktop">
+    <a id="myBtn" class="usuario align-icon icon-size user-desktop">
         <span class="iconify  " data-icon="bi:person-circle" data-inline="false"></span>
     </a>
 
@@ -58,8 +61,8 @@
                 <span>Categorías</span>
                 <div class="menu_desplegable" id="categoriasDesplegableView">
                     <div class="desplegable">
-                        <% categorias.forEach(cat => { %> 
-                        <a href="/products/<%= cat.toLowerCase() %>"><span><%= cat.toLowerCase() %></span></a>
+                        <% categorias.forEach(category => { %> 
+                        <a href="/products/<%= category.toLowerCase() %>"><span><%= category.toLowerCase() %></span></a>
                         <% }); %>
                     </div>
                 </div>                                                                          
@@ -70,9 +73,9 @@
     </nav>
 
     <!-- BARRA DE BÚSQUEDA -->
-    <form action="/search" method="GET" class="search-bar" id="search-mobile">
+    <form style="width: 0vw; opacity: 0;" action="/search" method="GET" class="search-bar" id="search-mobile">
         <input type="text" class="input-header" name="keys" placeholder="Buscar...">
-        <button type="submit">
+        <button type="submit" id="btn-lupa">
             <span class="iconify iconLupaBar" data-icon="akar-icons:search" data-inline="false">
             </span>
         </button>

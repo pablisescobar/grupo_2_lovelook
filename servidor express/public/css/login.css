@@ -1,17 +1,53 @@
+/* Modal Header */
 
-
+  
+  /* The Modal (background) */
+.modal {
+    /* display: none; */ /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10000; /* Sit on top */
+    margin: 0 auto;
+    top: -1000px;
+    /* opacity: 0; */
+    width: 100%; /* Full width */
+    height: 100vh; /* Full height */
+    /* overflow: auto; */ /* Enable scroll if needed */
+    /* background-color: rgb(0,0,0); */ /* Fallback color */
+    /* background-color: rgba(0,0,0,0.4); */ /* Black w/ opacity */
+  }
+  /* The Close Button */
+.close {
+    position: absolute;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    top: 5px;
+    right: 10px;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
 
 .login,.register {
-    background-color: rgba(255, 255, 255, 0.5);
     display         : flex;
     justify-content : center;
     align-items     : center;
-    margin: 20px;
+    z-index: 1000;
+    margin: 0 auto;
+    top: -1000px;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
 }
 
 .login .card , .register .card{
     background-color: white;
-    position        : relative;
+    position: fixed;
     width: 320px;
     height: 449px;
     box-shadow: 0 0 10px var(--bordes);
@@ -19,6 +55,7 @@
     flex-direction  : column;
     align-items     : center;
     gap             : 20px;
+    z-index: 100;
     border-radius: 10px;
     background: linear-gradient(150deg,rgba(253,180,191,1), white, rgba(253,180,191,1));
     background-size: 400% 300%;
@@ -96,10 +133,21 @@
         left  : 50px;
         bottom: 80px;
     }
+    .login .card, .register .card {
+    transform: scale(1.5);
+}
 
     .login .button--positionIngresar {
 
         right : 50px;
         bottom: 80px;
     }
+}
+
+
+@media screen and (min-width:1024px) {
+    .login .card, .register .card {
+    transform: none;
+}
+
 }

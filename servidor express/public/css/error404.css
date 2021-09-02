@@ -1,0 +1,79 @@
+.error-title{
+    font-size: 1.5rem;
+    font-family: 'Poppins';
+    text-align: center;
+    margin: 0 20px;
+    color: gray;
+    animation: titilar 1s 1s infinite alternate;
+}
+.error-logo{
+    width: 50%;
+    margin: 0 auto;
+    animation: titilar 1s 3s infinite alternate;
+}
+.container-logo-error404{
+    position: relative;
+    margin: 0 auto;
+    display: block;
+}
+.error-img{
+    margin: 0 auto;
+    width: 50%;
+    position: absolute;
+    /* top: 0; */
+    left: 0;
+    /* z-index: 100; */
+    filter: opacity(0.3);
+    /* bottom: 0; */
+    right: 0;
+    animation: titilar 1s 2s infinite alternate;
+}
+.container-error-404{background-color: var(--fondo-claro);padding: 20px;}
+.container-img{
+    position: relative;
+    width: 100%;
+}
+
+.rame-container{}
+.fram-item{
+    height: 400px;
+}
+
+@media screen and (min-width:768px) {
+    .error-title{
+    
+    }
+    .error-logo{}
+    .error-img{
+        
+    }
+    .container-logo-error404{}
+    .container-img{
+      
+    }
+    .container-error-404{
+    
+    }
+    .rame-container{}
+.fram-item{}
+}
+@media screen and (min-width:1024px) {
+    .error-title{
+      
+    }
+    .container-error-404{
+    
+    }
+    .error-logo{}
+    .error-img{
+      
+    }
+    .container-logo-error404{}
+    .container-img{
+        margin: 0 auto;
+        width: 80%;
+        padding: 0 150px 100px;
+    }
+    .rame-container{}
+.fram-item{}
+}
