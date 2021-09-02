@@ -35,3 +35,20 @@ Hacer Menos:
 
 Dejar de hacer:
 -  
+
+## Retrospectiva: "SPRINT 3"
+
+Empezar a hacer :
+- Comunicación fluida
+
+Hacer más:
+- Arreglar cosas
+
+Seguir Haciendo como equipo:
+- Mejorar las vistas 
+
+Hacer Menos:
+- No pedir ayuda
+
+Dejar de hacer:
+- Adelantar cosas ya que complica a los demas integrantes del equipo
