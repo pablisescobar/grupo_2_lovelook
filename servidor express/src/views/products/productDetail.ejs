@@ -21,101 +21,88 @@
                                     </div>
                                     <% });%>
                             </div>
-
-                            <div class="containerImage">
-                                <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-                                <img id="expandedImg" style="width:fit-content">
-                                <div id="imgtext"></div>
-                            </div>
-
-
-                            <!-- detalle del producto -->
-                            <div class="description">
-                                <p class="name">
-                                    <%=product.name%>
-                                </p>
-                                <p class="price">
-                                    <%=toThousand(Math.round(product.price - product.price * product.discount / 100))%>
-                                </p>
-                                <span class="price-line-medio">
-                                    <%= product.discount> 0?`$${product.price}` : "" %>
-                                </span>
-                                <p class="discount">
-                                    <%=product.discount> 0?`${product.discount}% Descuento` : "" %>
-                                </p>
-                            </div>
-
-                            <!-- filtro de producto -->
-                            <form class="form-1" action="#" name="formulario-1">
-                                <h4 class="subtitle">Descripción del producto</h4>
-                                <select class="select select-style" name="color" id="">
-                                    <option value="" hidden>Color</option>
-                                    <option value=<%=`Color : ${product.color.toUpperCase()}` %>
-                                        <%= product.color ? "selected" :null %>><%= product.color.toUpperCase() %>
-                                    </option>
-
-                                </select>
-                                <select class="select select-style" name="talle" id="">
-                                    <option value="" hidden>Talles</option>
-                                    <option value=<%=`Talle : ${product.size}` %>
-                                        <%= product.size ? "selected" :null %>><%= product.size %>
-                                    </option>
-
-                                </select>
-                                <div class="btn-add">
-                                    <input type="submit" value="Agregar al carrito">
+                            <div class="description-general-container">
+                                <div class="containerImage">
+                                    <span onclick="this.parentElement.style.display='none'"
+                                        class="closebtn">&times;</span>
+                                    <img id="expandedImg" style="width:fit-content">
+                                    <div id="imgtext"></div>
                                 </div>
-                                <h4 class="subtitle-guie-size"><a href="#img-guie">Guiá de talles</a></h4>
-                            </form>
-
-                            <form class="form-2" action="#" name="formulario-2">
-
-                                <select class="select" name="sends" id="">
-                                    <option value="" select>Envíos</option>
-                                    <option value="correo">Correo</option>
-                                    <option value="retiro-sucursal">Retiro sucursal</option>
-                                    <option value="correo-express">Correo express</option>
-                                </select>
-                                <select class="select" name="pay" id="">
-                                    <option value="" selected>Medios de pago</option>
-                                    <option value="deb">Débito</option>
-                                    <option value="credit">Crédito</option>
-                                    <option value="transfer">Transferencia</option>
-                                    <option value="paid-market">Mercado pago</option>
-                                </select>
-                                <select class="select" name="changes" id="">
-                                    <option value="" selected>Cambios y devoluciones</option>
-                                    <option value="X">Fallado</option>
-                                    <option value="Y">No es lo que esperaba</option>
-                                    <option value="Z">Talle equivocado</option>
-                                    <option value="A">...</option>
-                                </select>
-
-                            </form>
-                            <!-- <div class="form-2">
-
-                        <button class="accordion" >Envíos</button>
-                        <div class="panel">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus modi aperiam
-                                perferendis iure adipisci, omnis totam commodi blanditiis ex magni ullam eum nihil
-                                dicta</p>
-                        </div>
-                        <button class="accordion" >Medios de pago</button>
-                        <div class="panel">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus modi aperiam
-                                perferendis iure adipisci, omnis totam commodi blanditiis ex magni ullam eum nihil
-                                dicta</p>
-                        </div>
-                        <button class="accordion" >Cambios y devoluciones</button>
-                        <div class="panel">
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus modi aperiam
-                                perferendis iure adipisci, omnis totam commodi blanditiis ex magni ullam eum nihil
-                                dicta</p>
-                        </div>
-                    </div> -->
 
 
+                                <!-- detalle del producto -->
+                                <div class="description">
+                                    <p class="name">
+                                        <%=product.name%>
+                                    </p>
+                                    <p class="price">
+                                        <%=toThousand(Math.round(product.price - product.price * product.discount /
+                                            100))%>
+                                    </p>
+                                    <span class="price-line-medio">
+                                        <%= product.discount> 0?`$${toThousand(Math.round(product.price))}` : "" %>
+                                    </span>
+                                    <p class="discount">
+                                        <%=product.discount> 0?`${product.discount} %Off` : "" %>
+                                    </p>
+                                </div>
+
+                                <!-- filtro de producto -->
+                                <form class="form-1" action="#" name="formulario-1">
+                                    <h4 class="subtitle">Descripción del producto</h4>
+                                    <select class="select select-style" name="color" id="">
+                                        <option value="" hidden>Color</option>
+                                        <option value=<%=`Color : ${product.color.toUpperCase()}` %>
+                                            <%= product.color ? "selected" :null %>><%= product.color.toUpperCase() %>
+                                        </option>
+
+                                    </select>
+                                    <select class="select select-style" name="talle" id="">
+                                        <option value="" hidden>Talles</option>
+                                        <option value=<%=`Talle : ${product.size}` %>
+                                            <%= product.size ? "selected" :null %>><%= product.size %>
+                                        </option>
+
+                                    </select>
+                                    <div class="btn-add">
+                                        <input type="submit" value="Agregar al carrito">
+                                    </div>
+                                    <h4 class="subtitle-guie-size"><a href="#img-guie">Guiá de talles</a></h4>
+                                </form>
+                                
+                                <div class="accordion-container">
+                                    <div class="subtitle-item" id="ItemSubtitle1">
+                                        <h4>Envios ...</h4>
+                                    </div>
+                                    <div class="contain-hidden" id="InfoHidden">
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel quam inventore
+                                            dignissimos? Dolores nam autem ad necessitatibus sapiente deleniti vel ratione
+                                            magnam. Eum deleniti et asperiores quaerat est velit? Atque?</p>
+                                    </div>
+                                    <div class="subtitle-item" id="ItemSubtitle2">
+                                        <h4>Medios de pago ...</h4>
+                                    </div>
+                                    <div class="contain-hidden" id="InfoHidden">
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel quam inventore
+                                            dignissimos? Dolores nam autem ad necessitatibus sapiente deleniti vel ratione
+                                            magnam. Eum deleniti et asperiores quaerat est velit? Atque?Lorem ipsum dolor
+                                            sit amet consectetur, adipisicing elit. Architecto quod minima velit ullam
+                                            dolores obcaecati qui! Excepturi veritatis iusto modi obcaecati provident quo
+                                            magnam sequi voluptates, expedita consequuntur praesentium reiciendis.</p>
+                                    </div>
+                                    <div class="subtitle-item" id="ItemSubtitle3">
+                                        <h4>Cambios y devoluciones ...</h4>
+                                    </div>
+                                    <div class="contain-hidden" id="InfoHidden">
+                                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel quam inventore
+                                            dignissimos? Dolores nam autem ad necessitatibus sapiente deleniti vel ratione
+                                            magnam. Eum deleniti et asperiores quaerat est velit? Atque?</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </section>
+                        <div class="closes" id="closes"></div>
 
                         <section class="add-look-container">
                             <h2><a href="/products">

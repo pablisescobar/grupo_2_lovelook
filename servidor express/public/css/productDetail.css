@@ -38,7 +38,7 @@
 /* The grid: Four equal columns that floats next to each other */
 .details-products .column {
     float: left;
-    width: 25%;
+    width: 40%;
     padding: 10px;
 }
 
@@ -53,9 +53,13 @@
     cursor: pointer;
     border-radius: 10px;
     object-fit: cover;
+    object-position: top;
     /* width: 250px; */
+    
 }
 
+.details-products .subtitle-item{
+}
 .details-products .column img:hover {
     opacity: 1;
 }
@@ -111,10 +115,46 @@
     margin: 20px auto;
 }
 
+.details-products .accordion-container{
+    grid-area: accordion;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 10px;
+}
+.details-products .contain-hidden{height: 0;opacity: 0;position: relative;z-index: -1;}
+
+.details-products .active{
+    padding: 10px;
+    height: fit-content;
+    opacity: 1;
+    background-color: white;
+    position: absolute;
+    z-index: 200;
+    border: 1px solid var(--bordes);
+    transition: height 2s , opacity 2s;
+}
+.details-products .subtitle-item:hover{
+    text-decoration: underline;
+    color: var(--bordes);
+}
+.details-products .subtitle-item:active{
+    color: var(--bordes);
+}
+
+.details-products .closes{
+position: absolute;
+top: 0;
+left: 0;
+bottom: 0;
+width: 100vw;
+z-index: 100;
+}
+
 .details-products .product {
     display: block;
     margin: auto;
     position: relative;
+    padding: 10px;
 }
 
 .details-products .containerImage img {
@@ -126,23 +166,24 @@
 .details-products [class^="img"] {
     max-width: 600px;
     max-height: 100%;
+    /* height: 200px; */
     margin: 0 auto 5px;
-    padding: 10px;
+    /* padding: 10px; */
     display: flex;
     width: 100%;
     justify-content: center;
 }
 
 .details-products .product .description {
-    text-align: center;
-    max-width: 400px;
+    /* text-align: center; */
+    max-width: 600px;
     margin: 0 auto;
 }
 
 .details-products .product .description .name {
     letter-spacing: 3px;
     font-weight: bold;
-    text-align: center;
+    /* text-align: center; */
     font-size: 1.5rem;
 }
 
@@ -150,7 +191,7 @@
     letter-spacing: 3px;
     font-weight: bold;
     position: relative;
-    padding-left: 30px;
+    /* padding-left: 30px; */
     font-size: 1rem;
     text-align: left;
 }
@@ -191,7 +232,7 @@
 /* SECTION FORM 1 */
 
 .details-products .product .form-1 {
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 10px;
 }
@@ -349,6 +390,7 @@
         min-width: 768px;
     }
 
+    .details-products .accordion-container{}
     .details-products .product .form-1 .subtitle {
         font-size: 2rem;
     }
@@ -374,27 +416,33 @@
 
     .details-products .product {
         /* grid: 127px 176px 91px / 1fr 4fr 0.4fr 1fr; */
-        display: grid;
-        grid-template-areas:
+        /* display: grid; */
+        /* grid-template-areas:
             "imagenes imagenes descripcion ."
             "imagenes imagenes form1 ."
-            "imagenes imagenes form2 .";
+            "imagenes imagenes accordion ."; */
+        display: flex;
+        flex-wrap: wrap;
         border: none;
     }
 
     .details-products .containerImage {
         position: absolute;
-        height: 100%;
-        left: 55%;
+        height: fit-content;
+        left: 0;
         z-index: 200;
     }
 
     .details-products .containerImage img {
-        height: 90vh;
+        height: 80vh;
         object-fit: contain;
     }
-
-    .details-products .product .imgs {
+    .details-products .accordion-container{
+    width: 320px;
+    position: relative;
+    z-index: 200;
+}
+     .details-products .product .imgs {
         grid-area: imagenes;
         /* align-items: start; */
         /* justify-content: start; */
@@ -403,7 +451,8 @@
         /* grid-template-areas:
             "img img1"
             "img img1"; */
-        /* width: 500px; */
+        width: 500px;
+        height: 300px;
     }
 
     .details-products .product .description {
@@ -429,7 +478,7 @@
         /* padding: 0; */
         border: none;
         grid-area: form1;
-        width: 100%;
+        width: 320px;
         margin: auto;
     }
 
@@ -506,3 +555,4 @@
         grid-area: color;
     }
 }
+

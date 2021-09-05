@@ -150,7 +150,6 @@
     font-size: 1.5rem;
     color: gray;
     background-color: var(--fondo-claro);
-    border-color: gray;
     outline: none;
     padding-left: 10px;
     border: none;
@@ -159,6 +158,7 @@
 .admin .container-addColor{
     display: flex;
     align-items: center;
+    flex-grow: 1;
     justify-content: center;
 }
 .admin .icon-addColor{
@@ -167,7 +167,7 @@
     background-color: black;
     padding: 2px;
 }
-.admin .input-addColor{font-size: 0.7rem;flex-grow: 0.5;}
+.admin .input-addColor{font-size: 0.7rem;flex-grow: 0.8;}
 
 .admin textarea {
     height: 120px;
@@ -305,8 +305,13 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
-        width: 628px;
+        width: 650px;
         /* margin: 0 auto; */
+    }
+
+    .admin .container-addColor{
+        
+justify-content: flex-end;
     }
 
     .admin .button-add {
@@ -446,6 +451,11 @@
         width: 50%;
     }
 
+    .admin .container-addColor{
+    width: 50%;
+    align-self: center;
+    justify-content: center;
+}
     .admin .edit {
         height: 50px;
     }
