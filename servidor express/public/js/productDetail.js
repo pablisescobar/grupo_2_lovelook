@@ -145,5 +145,8 @@ closeItems.onclick = function(){
   info[1].classList.remove('active')
   info[2].classList.remove('active')
   closeItems.style.display="none"
+  subtitle1.style.color = "black"
+  subtitle2.style.color = "black"
+  subtitle3.style.color = "black"
 }
 
