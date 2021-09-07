@@ -1,4 +1,5 @@
 let {getProducts} = require ('../data/dataBase')
+
 let categorias = [];
 getProducts.forEach(product => {
     if (!categorias.includes(product.category)) {

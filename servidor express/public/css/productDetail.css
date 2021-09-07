@@ -5,7 +5,7 @@
     border: 1px solid #ccc;
     background-color: #f1f1f1;
   } */
-  /* Style the buttons that are used to open and close the accordion panel */
+/* Style the buttons that are used to open and close the accordion panel */
 /* .details-products .accordion {
     background-color: #eee;
     color: #444;
@@ -17,14 +17,14 @@
     outline: none;
     transition: 0.4s;
   }  */
-  
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  /* .details-products .active, .details-products .accordion:hover {
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+/* .details-products .active, .details-products .accordion:hover {
     background-color: #ccc;
   } */
-  
-  /* Style the accordion panel. Note: hidden by default */
- /*  .details-products .panel {
+
+/* Style the accordion panel. Note: hidden by default */
+/*  .details-products .panel {
     padding: 0 18px;
     background-color: white;
     overflow: hidden;
@@ -33,8 +33,6 @@
     transition: max-height 0.2s ease-out;
   } */
 
-
-
 /* The grid: Four equal columns that floats next to each other */
 .details-products .column {
     float: left;
@@ -42,7 +40,7 @@
     padding: 10px;
 }
 
-.price-line-medio{
+.price-line-medio {
     text-decoration: line-through;
     color: green;
 }
@@ -55,10 +53,13 @@
     object-fit: cover;
     object-position: top;
     /* width: 250px; */
-    
 }
 
-.details-products .subtitle-item{cursor: pointer;z-index: 3000;}
+.details-products .subtitle-item {
+    cursor: pointer;
+    z-index: 3000;
+    width: fit-content;
+}
 .details-products .column img:hover {
     opacity: 1;
 }
@@ -114,16 +115,24 @@
     margin: 20px auto;
 }
 
-.details-products .accordion-container{
+.details-products .accordion-container {
     grid-area: accordion;
     max-width: 500px;
     margin: 0 auto;
     padding: 10px;
     z-index: 300;
 }
-.details-products .contain-hidden{height: 0;opacity: 0;position: relative;z-index: -1;}
+.details-products .contain-hidden {
+    height: 0;
+    opacity: 0;
+    position: relative;
+    z-index: -1;
+}
+.details-products .contain-hidden p{
+    z-index: 20;
+}
 
-.details-products .active{
+.details-products .active {
     padding: 10px;
     height: fit-content;
     opacity: 1;
@@ -134,31 +143,28 @@
     background-color: white;
     position: absolute;
     z-index: 200;
-    border: 1px solid var(
-    --bordes);
-    transition: height 2s , opacity 2s;
+    border: 1px solid var(--bordes);
+    transition: height 2s, opacity 2s;
 }
-.details-products .subtitle-item:hover{
+.details-products .subtitle-item:hover {
     text-decoration: underline;
     color: var(--bordes);
 }
-.details-products .subtitle-item:active{
+.details-products .subtitle-item:active {
     color: var(--bordes);
 }
+.details-products .subtitle-guie-size{
+    width: fit-content;
+}
 
-.details-products .closes{
-
-position: absolute;
-
-top: 0;
-
-left: 0;
-
-bottom: 0;
-
-width: 100vw;
-
-z-index: 100;
+.details-products .closes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    z-index: 150;
+    background-color: rgba(255,205,212,.5);
 }
 
 .details-products .product {
@@ -344,6 +350,7 @@ z-index: 100;
     border-radius: 10px;
     /* margin: 3px 0; */
     font-size: 1.3rem;
+    cursor: pointer;
 }
 
 .details-products .product .form-1 .subtitle-guie-size:hover a {
@@ -371,6 +378,29 @@ z-index: 100;
     text-shadow: 4px 4px 10px var(--bordes);
 }
 
+.details-products .close-img-size {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.details-products .img{
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+}
+.details-products .img-guie {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 50%;
+    z-index: 400;
+    margin: auto;
+    opacity: 1;
+    transition: opacity 2s;
+}
 @media screen and (min-width: 768px) {
     .details-products .product .select {
         font-size: 2rem;
@@ -395,7 +425,8 @@ z-index: 100;
         min-width: 768px;
     }
 
-    .details-products .accordion-container{}
+    .details-products .accordion-container {
+    }
     .details-products .product .form-1 .subtitle {
         font-size: 2rem;
     }
@@ -442,12 +473,12 @@ z-index: 100;
         height: 80vh;
         object-fit: contain;
     }
-    .details-products .accordion-container{
-    width: 320px;
-    position: relative;
-    z-index: 200;
-}
-     .details-products .product .imgs {
+    .details-products .accordion-container {
+        width: 320px;
+        position: relative;
+        z-index: 200;
+    }
+    .details-products .product .imgs {
         grid-area: imagenes;
         /* align-items: start; */
         /* justify-content: start; */
@@ -553,4 +584,3 @@ z-index: 100;
         grid-area: color;
     }
 }
-

@@ -139,7 +139,7 @@ subtitle3.onclick = function () {
   }
 }
 
-
+let imgGuie = document.getElementById('img-guie')
 closeItems.onclick = function(){
   info[0].classList.remove('active')
   info[1].classList.remove('active')
@@ -148,5 +148,11 @@ closeItems.onclick = function(){
   subtitle1.style.color = "black"
   subtitle2.style.color = "black"
   subtitle3.style.color = "black"
+  imgGuie.classList.remove('img-guie')
 }
 
+let linkGuie = document.getElementById('link-guie-task')
+linkGuie.onclick=function(){
+  imgGuie.classList.toggle('img-guie')
+  closeItems.style.display="block"
+}

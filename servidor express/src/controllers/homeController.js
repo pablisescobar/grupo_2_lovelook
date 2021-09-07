@@ -2,6 +2,7 @@ let { getProducts, getImgCarousel } = require('../data/dataBase')
 let path = require('path')
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
+
 let categorias = [];
 getProducts.forEach(product => {
     if (!categorias.includes(product.category)) {
