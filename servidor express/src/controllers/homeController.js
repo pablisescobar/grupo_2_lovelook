@@ -14,6 +14,7 @@ getProducts.forEach(product => {
 
 module.exports = {
     index: (req, res) => {
+        
         let title = "Productos Destacados";
         let products = getProducts.filter(product => product.discount >= 15)
         res.render('products/home', {

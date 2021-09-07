@@ -8,6 +8,19 @@ getProducts.forEach(product => {
     }
 })
 module.exports = {
+    login:(req,res)=>{
+        res.render('users/login',{
+            position:"position:relative",
+            categorias
+        })
+    },
+    register:(req,res)=>{
+        res.render('users/register',{
+            position:"position:relative;",
+            categorias
+        })
+    },
+
     perfil:(req,res)=>{
         res.render('users/perfilUser',{
             position:"",
@@ -24,6 +37,7 @@ module.exports = {
             categorias
         })
     },
+
 
  
 }
