@@ -10,69 +10,51 @@
                 <div class="container">
 
                     <form action="/admin/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="inputRows">
-                        <input type="text" name="name" id="name" placeholder="<%- product.name %>" title="nombre">
+                        <input type="text" name="name" id="name" title="nombre" value="<%- product.name %>">
 
-                        <input type="text" name="description" id="description" placeholder="Descripción"
-                            title="Descripción">
+                        <input type="text" name="description" id="description" title="Descripción" value="<%- product.description %>">
 
 
                         <!-- SELECT DE TEMPORADA -->
                         <select name="season" id="season" title="temporada">
                             <option selected hidden>Temporada</option>
-                            <option value="invierno">Invierno</option>
-                            <option value="verano">Verano</option>
-                            <option value="otonio">Otoño</option>
-                            <option value="primavera">Primavera</option>
+                            <% seasons.forEach(season => { %>
+                                <option value="<%- season %>" <%-season == product.season ? `selected` : ""  %>><%- season %></option>
+                             <% }) %>
                         </select>
 
                         <!-- SELECT DE CATEGORÍA -->
                         <select name="category" id="category" title="category">
-                            <option selected hidden>Categorías</option>
-                            <option value="babuchas">Babuchas</option>
-                            <option value="buzos">Buzos</option>
-                            <option value="camperas">Camperas</option>
-                            <option value="Conjunto">Conjunto</option>
-                            <option value="jeans">Jeans</option>
-                            <option value="maxibuzos">Maxibuzos</option>
-                            <option value="pijamas">Pijamas</option>
-                            <option value="polleras">Polleras</option>
-                            <option value="remeras">Remeras</option>
-                            <option value="remerones">Remerones</option>
-                            <option value="shorts">Shorts</option>
+                            <option selected hidden><%- product.category %></option>
+                            <% categories.forEach(category => { %>
+                                <option value="<%- category %>" ><%- category %></option>
+                             <% }) %>
                         </select>
 
 
-                        <input type="number" name="discount" id="discount" placeholder="Descuento %" title="Descuento">
+                        <input type="number" name="discount" id="discount" title="Descuento" value="<%- product.discount %>">
 
 
-                        <input type="number" name="price" id="price" placeholder="Precio" title="Precio">
+                        <input type="number" name="price" id="price" title="Precio" value="<%- product.price %>">
 
 
                         <!-- SELECT DE COLOR -->
                         <select name="color" id="color" title="color">
-                            <option value="amarillo">Amarillo</option>
                             <option selected hidden>Color</option>
-                            <option value="blanco">Blanco</option>
-                            <option value="celeste">Celeste</option>
-                            <option value="gris">Gris</option>
-                            <option value="lila">Lila</option>
-                            <option value="marron">Marrón</option>
-                            <option value="naranja">Naranja</option>
-                            <option value="natural">Natural</option>
-                            <option value="negro">Negro</option>
-                            <option value="rosa">Rosa</option>
+                            <% colors.forEach(color => { %>
+                                <option value="<%- color %>" <%-color == product.color ? `selected` : ""  %>><%- color %></option>
+                             <% }) %>
                         </select>
 
                         <!-- SELECT DE TALLE -->
                         <select name="size" id="size" title="Talle">
                             <option selected hidden>Talle</option>
-                            <option value="s">S</option>
-                            <option value="m">M</option>
-                            <option value="l">L</option>
-                            <option value="xl">XL</option>
+                            <% sizes.forEach(size => { %>
+                                <option value="<%- size %>" <%-size == product.size ? `selected` : ""  %>><%- size %></option>
+                             <% }) %>
                         </select>
 
-                        <input type="number" name="stock" id="stock" placeholder="Cantidad" title="Stock">
+                        <input type="number" name="stock" id="stock" title="Stock" value="<%- product.stock %>">
 
 
                         <div class="input">

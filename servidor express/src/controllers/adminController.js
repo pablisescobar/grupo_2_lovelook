@@ -4,6 +4,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 let categories = []
 let colors = []
 let sizes = []
+let seasons = []
 
 
 /* FUNCIÓN PARA CAPITALIZE - MAYÚSCULA EN LA PRIMER LETRA */
@@ -25,6 +26,12 @@ getProducts.forEach(product => {
 getProducts.forEach(product => {
     if (!sizes.includes(product.size.toLowerCase())) {
         sizes.push(product.size.toLowerCase())
+    }
+})
+
+getProducts.forEach(product => {
+    if (!seasons.includes(product.season.toLowerCase())) {
+        seasons.push(product.season.toLowerCase())
     }
 })
 
@@ -129,7 +136,11 @@ module.exports = {
 
         let product = getProducts.find(product => product.id === +req.params.id);
         res.render('admin/editProduct', {
-            product
+            product,
+            categories,
+            colors,
+            sizes,
+            seasons
         })
     },
 
@@ -149,22 +160,22 @@ module.exports = {
         getProducts.forEach(product => {
             if (product.id === +req.params.id) {
                 product.id = product.id,
-                    product.name = name,
-                    product.price = price,
-                    product.color = color,
-                    product.discount = discount,
-                    product.category = category,
-                    product.description = description,
-                    product.season = season,
-                    product.size = size,
-                    product.stock = stock,
-                    product.image = req.file ? [req.file.filename] : product.image
+                product.name = name,
+                product.price = price,
+                product.color = color,
+                product.discount = discount,
+                product.category = category,
+                product.description = description,
+                product.season = season,
+                product.size = size,
+                product.stock = stock,
+                product.image = req.file ? [req.file.filename] : product.image
             }
         })
 
         writeProductsJSON(getProducts)
 
-        res.send(`Has editado el producto ${name}`)
+        res.redirect('/admin/products')
     },
     
      eliminarProducto:(req, res) => {
