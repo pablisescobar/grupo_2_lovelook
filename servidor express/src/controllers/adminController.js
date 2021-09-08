@@ -102,6 +102,7 @@ module.exports = {
             res.redirect(`/admin/products#${newProduct.id}`)
 
         } else {
+            /* res.send(errors) */
             res.render('admin/addProducts', {
                 position: "",
                 categories,
@@ -183,7 +184,9 @@ module.exports = {
         } else {
             let product = getProducts.find(product => product.id === +req.params.id);
             res.render('admin/editProduct', {
-                product
+                product,
+                errors: errors.mapped(),
+                old: req.body
             })
         }
 

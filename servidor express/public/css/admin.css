@@ -101,7 +101,8 @@
 .admin .inputRows {
     display: flex;
     flex-direction: column;
-    width: 320px;
+    align-items: center;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -153,6 +154,7 @@
     outline: none;
     padding-left: 10px;
     border: none;
+    width: 100%;
 }
 
 .admin .container-addColor{
@@ -160,6 +162,7 @@
     align-items: center;
     flex-grow: 1;
     justify-content: center;
+    width: 80%;
 }
 .admin .icon-addColor{
     font-size: 1.5rem;
@@ -185,10 +188,15 @@
     background-color: white;
 }
 
+.admin .error-validator{
+    color: red;
+    align-self: flex-start;
+}
 .admin input::placeholder,
 .admin select::selection {
     padding-left: 5px;
     background-color: var(--fondo-claro);
+    width: 100%;
 }
 
 .admin .edit {
@@ -302,10 +310,9 @@
 
     .admin .inputRows {
         display: flex;
-        flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
-        width: 650px;
+        width: 60%;
         /* margin: 0 auto; */
     }
 
@@ -339,7 +346,6 @@ justify-content: flex-end;
     .admin select,
     .admin button,
     .admin .input {
-        width: 46%;
         height: 50px;
     }
     .admin .input {
@@ -398,7 +404,6 @@ justify-content: flex-end;
     }
 
     .admin textarea {
-        width: 50%;
         margin: 0 auto;
         font-size: 1.5rem;
     }
@@ -418,9 +423,11 @@ justify-content: flex-end;
     }
 
     .admin .inputRows {
-        /* display: flex; */
+        display: flex;
         flex-direction: column;
+        align-items: center;
         margin: 50px auto;
+        width: fit-content;
     }
 
     .admin .table-container {
@@ -438,7 +445,7 @@ justify-content: flex-end;
     .admin select,
     .admin button,
     .admin .input {
-        width: 50%;
+        width: 100%;
         height: 30px;
         align-self: center;
         margin: 2px;
