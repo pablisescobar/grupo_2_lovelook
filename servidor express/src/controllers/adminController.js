@@ -1,6 +1,6 @@
-const { getProducts, writeProductsJSON,getCategory, getColors } = require("../data/dataBase")
+const { getProducts, writeProductsJSON, getCategory, getColors } = require("../data/dataBase")
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
+const { validationResult } = require('express-validator')
 let categories = []
 let colors = []
 let sizes = []
@@ -18,7 +18,7 @@ getCategory.forEach(categoryName => {
 })
 getProducts.forEach(product => {
     if (!colors.includes(product.color.toLowerCase())) {
-            colors.push(product.color.toLowerCase())
+        colors.push(product.color.toLowerCase())
     }
 })
 
@@ -29,7 +29,7 @@ getProducts.forEach(product => {
 })
 
 module.exports = {
-    loginAdmin:(req,res)=>{
+    loginAdmin: (req, res) => {
         res.render('admin/loginAdmin')
     },
     listProductAdmin: (req, res) => {
@@ -41,62 +41,77 @@ module.exports = {
     },
 
     addProductAdmin: (req, res) => {
-       
+
         res.render('admin/addProducts', {
             position: "",
             categories,
             colors,
-            capitalize  
+            capitalize
         })
     },
 
     productStore: (req, res) => {
-        
 
-        let lastId = 1;
+        let errors = validationResult(req)
 
-        getProducts.forEach(product => {
-            if (product.id > lastId) {
-                lastId = product.id
+        if (errors.isEmpty()) {
+
+            let lastId = 1;
+
+            getProducts.forEach(product => {
+                if (product.id > lastId) {
+                    lastId = product.id
+                }
+            })
+
+
+            let {
+                name,
+                description,
+                season,
+                category,
+                discount,
+                price,
+                color,
+                size,
+                stock
+            } = req.body;
+
+            let setImages = []
+            if (req.files) {
+                req.files.forEach(image => {
+                    setImages.push(image.filename)
+                })
             }
-        })
+            let newProduct = {
+                id: lastId + 1,
+                name,
+                description,
+                season,
+                category,
+                discount,
+                price,
+                color,
+                size,
+                stock,
+                image: setImages.length > 0 ? setImages : ["default.png"]
+            }
 
+            getProducts.push(newProduct)
+            writeProductsJSON(getProducts)
+            res.redirect(`/admin/products#${newProduct.id}`)
 
-        let {
-            name,
-            description,
-            season,
-            category,
-            discount,
-            price,
-            color,
-            size,
-            stock
-        } = req.body;
-
-        let setImages = []
-        if(req.files){
-            req.files.forEach(image=>{
-                setImages.push(image.filename)
+        } else {
+            res.render('admin/addProducts', {
+                position: "",
+                categories,
+                colors,
+                capitalize,
+                errors: errors.mapped(),
+                old: req.body
             })
         }
-        let newProduct = {
-            id: lastId + 1,
-            name,
-            description,
-            season,
-            category,
-            discount,
-            price,
-            color,
-            size,
-            stock,
-            image: setImages.length > 0 ? setImages : ["default.png"]
-        }
 
-        getProducts.push(newProduct)
-        writeProductsJSON(getProducts)
-        res.redirect(`/admin/products#${newProduct.id}`)
 
 
     },
@@ -132,48 +147,58 @@ module.exports = {
     },
 
     updateProduct: (req, res) => {
-        const {
-            name,
-            price,
-            color,
-            discount,
-            category,
-            description,
-            season,
-            size,
-            stock,
-             } = req.body
+        let errors = validationResult(req)
+        if (errors.isEmpty()) {
+            const {
+                name,
+                price,
+                color,
+                discount,
+                category,
+                description,
+                season,
+                size,
+                stock,
+            } = req.body
 
+            getProducts.forEach(product => {
+                if (product.id === +req.params.id) {
+                    product.id = product.id,
+                        product.name = name,
+                        product.price = price,
+                        product.color = color,
+                        product.discount = discount,
+                        product.category = category,
+                        product.description = description,
+                        product.season = season,
+                        product.size = size,
+                        product.stock = stock,
+                        product.image = req.file ? [req.file.filename] : product.image
+                }
+            })
+
+            writeProductsJSON(getProducts)
+
+            res.send(`Has editado el producto ${name}`)
+        } else {
+            let product = getProducts.find(product => product.id === +req.params.id);
+            res.render('admin/editProduct', {
+                product
+            })
+        }
+
+
+    },
+
+    eliminarProducto: (req, res) => {
         getProducts.forEach(product => {
             if (product.id === +req.params.id) {
-                product.id = product.id,
-                    product.name = name,
-                    product.price = price,
-                    product.color = color,
-                    product.discount = discount,
-                    product.category = category,
-                    product.description = description,
-                    product.season = season,
-                    product.size = size,
-                    product.stock = stock,
-                    product.image = req.file ? [req.file.filename] : product.image
-            }
-        })
-
-        writeProductsJSON(getProducts)
-
-        res.send(`Has editado el producto ${name}`)
-    },
-    
-     eliminarProducto:(req, res) => {
-        getProducts.forEach(product => {
-            if(product.id === +req.params.id){
                 let productoAEliminar = getProducts.indexOf(product)
                 getProducts.splice(productoAEliminar, 1)
             }
-        }) 
+        })
         writeProductsJSON(getProducts)
-         res.redirect('/admin/products')
-     }
+        res.redirect('/admin/products')
+    }
 
 }
