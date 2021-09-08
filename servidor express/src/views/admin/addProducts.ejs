@@ -20,7 +20,8 @@
                             <% } %>
 
                                 <!-- TEXTAREA DESCRIPTION -->
-                                <textarea type="text" name="description" id="description" placeholder="Descripción" title="Descripción"><%= locals.old && old.description  %></textarea>
+                                <textarea type="text" name="description" id="description" placeholder="Descripción"
+                                    title="Descripción"><%= locals.old && old.description  %></textarea>
 
 
                                 <!-- SELECT DE TEMPORADA -->
@@ -43,10 +44,10 @@
 
                                         <!-- SELECT DE CATEGORÍA -->
                                         <select name="category" id="category" title="category">
-                                            <option >Categorías</option>
+                                            <option>Categorías</option>
                                             <% categories.forEach(categoria=>{ %>
-                                                <option value="<%= categoria %>" <%=locals.old && old.category==categoria
-                                                    ? "selected" : null %>>
+                                                <option value="<%= categoria %>" <%=locals.old &&
+                                                    old.category==categoria ? "selected" : null %>>
                                                     <%= capitalize(categoria) %>
                                                 </option>
                                                 <% }) %>
@@ -59,8 +60,9 @@
 
                                                 <!-- INPUT DISCOUNT -->
                                                 <input type="number" name="discount" id="discount"
-                                                    placeholder="Descuento %" title="Descuento" value="<%= locals.old && old.discount %>">
-                                                    
+                                                    placeholder="Descuento %" title="Descuento"
+                                                    value="<%= locals.old && old.discount %>">
+
                                                 <!-- INPUT PRICE -->
                                                 <input type="text" name="price" id="price" placeholder="Precio"
                                                     title="Precio" value="<%= locals.old && old.price %>">
@@ -72,9 +74,9 @@
 
                                                         <!-- SELECT DE COLOR -->
                                                         <select name="color" id="color" title="color">
-                                                            <option hidden>Color</option>
+                                                        
                                                             <% colors.forEach(color=>{ %>
-                                                                <option value="<%= locals.old && old.color %>">
+                                                                <option value="<%= color %>" <%= locals.old && old.color == color ? "selected" : null %>>
                                                                     <%= capitalize(color) %>
                                                                 </option>
                                                                 <% }) %>
@@ -98,19 +100,12 @@
 
                                                                 <!-- SELECT DE TALLE -->
                                                                 <select name="size" id="size" title="Talle">
-                                                                    <option hidden value="" <%=locals.old &&
-                                                                        old.size=="" ? "selected" : null %>>Talle
-                                                                    </option>
-                                                                    <option value="S" <%=locals.old && old.size=="S"
-                                                                        ? "selected" : null %>>S</option>
-                                                                    <option value="M" <%=locals.old && old.size=="M"
-                                                                        ? "selected" : null %>>M</option>
-                                                                    <option value="L" <%=locals.old && old.size=="L"
-                                                                        ? "selected" : null %>>L</option>
-                                                                    <option value="XL" <%=locals.old && old.size=="XL"
-                                                                        ? "selected" : null %>>XL</option>
-                                                                    <option value="XXL" <%=locals.old && old.size=="XXL"
-                                                                        ? "selected" : null %>>XXL</option>
+                                                                    <option hidden>Talle</option>
+                                                                    <option value="S" <%=locals.old && old.size=="S" ? "selected" : null %>>S</option>
+                                                                    <option value="M" <%=locals.old && old.size=="M" ? "selected" : null %>>M</option>
+                                                                    <option value="L" <%=locals.old && old.size=="L" ? "selected" : null %>>L</option>
+                                                                    <option value="XL" <%=locals.old && old.size=="XL" ? "selected" : null %>>XL</option>
+                                                                    <option value="XXL" <%=locals.old && old.size=="XXL" ? "selected" : null %>>XXL</option>
                                                                 </select>
                                                                 <% if(locals.errors && errors.size){ %>
                                                                     <small class="error-validator">
@@ -129,14 +124,11 @@
 
 
                                                                                 <div class="input">
-                                                                                    <label for="file-upload"
-                                                                                        class="subir">
-                                                                                        <i
-                                                                                            class="fas fa-cloud-upload-alt"></i>
+                                                                                    <label for="file-upload"class="subir"><i class="fas fa-cloud-upload-alt"></i>
                                                                                         Subir imágenes
                                                                                     </label>
-                                                                                    <div id="info" style="margin: 3px;">
-                                                                                    </div>
+
+                                                                                    <div id="info" style="margin: 3px;"></div>
 
 
                                                                                     <input name="image" id="file-upload"

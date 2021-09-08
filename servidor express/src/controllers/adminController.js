@@ -4,6 +4,7 @@ const { validationResult } = require('express-validator')
 let categories = []
 let colors = []
 let sizes = []
+let seasons = []
 
 
 /* FUNCIÓN PARA CAPITALIZE - MAYÚSCULA EN LA PRIMER LETRA */
@@ -25,6 +26,12 @@ getProducts.forEach(product => {
 getProducts.forEach(product => {
     if (!sizes.includes(product.size.toLowerCase())) {
         sizes.push(product.size.toLowerCase())
+    }
+})
+
+getProducts.forEach(product => {
+    if (!seasons.includes(product.season.toLowerCase())) {
+        seasons.push(product.season.toLowerCase())
     }
 })
 
@@ -143,13 +150,15 @@ module.exports = {
 
         let product = getProducts.find(product => product.id === +req.params.id);
         res.render('admin/editProduct', {
-            product
+            product,
+            categories,
+            colors,
+            sizes,
+            seasons
         })
     },
 
     updateProduct: (req, res) => {
-        let errors = validationResult(req)
-        if (errors.isEmpty()) {
             const {
                 name,
                 price,
@@ -177,20 +186,7 @@ module.exports = {
                         product.image = req.file ? [req.file.filename] : product.image
                 }
             })
-
-            writeProductsJSON(getProducts)
-
-            res.send(`Has editado el producto ${name}`)
-        } else {
-            let product = getProducts.find(product => product.id === +req.params.id);
-            res.render('admin/editProduct', {
-                product,
-                errors: errors.mapped(),
-                old: req.body
-            })
-        }
-
-
+        res.redirect('/admin/products')
     },
 
     eliminarProducto: (req, res) => {
