@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('../partials/head.ejs') %>
+
+  <body>
+    <%- include('../partials/header.ejs')%>
+
+    <div class="register">
+        <form action="/index.html" method="POST" class="card modal-content-register">
+            <figure class="card__thumbnail">
+                <img src="/img/logo.png" alt="" class="card__logo">
+            </figure>
+            <div class="input-container">
+                <input class="input--style" type="text" name="nombreApellido" placeholder="Nombre y Apellido" required>
+                <input class="input--style" type="email" name="email" placeholder="E-mail" required>
+                <input class="input--style" type="password" name="pass" placeholder="Contraseña" required minlength="8">
+                <input class="input--style" type="password" name="pass" placeholder="Confirmar contraseña" required>
+            </div>
+            <div class="conditions">
+    
+                <input class="input__check" type="checkbox" name="condiciones" id="condiciones" required>
+                <label class="check__label" for="condiciones">Aceptar <a href="/info/we#Terminos"
+                        class="link-conditions">condiciones</a></label>
+            </div>
+            <input class="button btn-register" type="submit" value="Registrar">
+            <a href="/user/login" class="haveAccount">Ya tengo cuenta</a>
+        </form>
+    </div>
+
+    <%- include('../partials/footer.ejs') %> 
+    <%- include('../partials/scripts.ejs') %> 
+
+</body>
+
+</html>

@@ -4,8 +4,7 @@
 <%- include('../partials/head.ejs') %>
 
     <body>
-        <%- include('../partials/register.ejs') %>
-            <%- include('../partials/login.ejs') %>
+      
                 <%- include('../partials/header.ejs')%>
 
                     <main class="details-products">
@@ -67,7 +66,12 @@
                                     <div class="btn-add">
                                         <input type="submit" value="Agregar al carrito">
                                     </div>
-                                    <h4 class="subtitle-guie-size"><a href="#img-guie">Guiá de talles</a></h4>
+                                    <h4 class="subtitle-guie-size"><a id="link-guie-task" >Guiá de talles</a></h4>
+                                    
+                                        <div class="img" id="img-guie">
+                                            <img src="/img/guie-size.jpg" alt="">
+                                        </div>
+                                  
                                 </form>
                                 
                                 <div class="accordion-container">
@@ -102,7 +106,7 @@
                             </div>
                             
                         </section>
-                        <div class="closes" id="closes"></div>
+                        <div class="closes" id="closes" style="display: none;"></div>
 
                         <section class="add-look-container">
                             <h2><a href="/products">
@@ -112,7 +116,7 @@
 
                             <%- include('../partials/slider.ejs') %>
                         </section>
-
+                
 
                     </main>
                     <%- include('../partials/whatsapp.ejs') %>

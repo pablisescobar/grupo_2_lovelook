@@ -36,25 +36,21 @@
 .login,.register {
     display         : flex;
     justify-content : center;
-    align-items     : center;
-    z-index: 1000;
-    margin: 0 auto;
-    top: -1000px;
+    /* z-index: 1000; */
+    margin: 20px auto;
     width: 100%;
-    height: 100vh;
-    position: absolute;
 }
 
 .login .card , .register .card{
     background-color: white;
-    position: fixed;
+    /* position: fixed; */
     width: 320px;
     height: 449px;
     box-shadow: 0 0 10px var(--bordes);
     display         : flex;
     flex-direction  : column;
     align-items     : center;
-    gap             : 20px;
+    gap: 10px;
     z-index: 100;
     border-radius: 10px;
     background: linear-gradient(150deg,rgba(253,180,191,1), white, rgba(253,180,191,1));
@@ -66,7 +62,7 @@
     margin-top     : 40px;
     width          : 100px;
     height         : 100px;
-    transform      : scale(1.3);
+    transform: scale(1.1);
     display        : flex;
     justify-content: center;
     align-items    : center;
@@ -85,7 +81,7 @@
 }
 
 .login .card__enlace {
-    position   : absolute;
+    /* position   : absolute; */
     bottom     : 150px;
     display    : inline-block;
     width      : 100%;
@@ -109,12 +105,12 @@
 }
 
 .login .button--positionRegister {
-    position: absolute;
+    /* position: absolute; */
     bottom  : 100px;
 }
 
 .login .button--positionIngresar {
-    position: absolute;
+    /* position: absolute; */
     bottom  : 50px;
 }
 

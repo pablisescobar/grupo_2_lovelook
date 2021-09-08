@@ -80,7 +80,7 @@ module.exports = {
              toThousand,
              colors,
             sizes,
-            prices,
+            prices
          })
     }
 }

@@ -5,7 +5,7 @@
     flex-direction: column;
     justify-content: space-between;
 }
-.register__check[type="checkbox"] {
+.input__check[type="checkbox"] {
     display: none;
 }
 .register .input-container input {
@@ -24,12 +24,12 @@
     text-shadow: 0 0 2px black, -1px -1px 2px gray;
     letter-spacing: 2px;
 }
-.conditions__label {
+.check__label {
     padding-left: 1.3em;
     position: relative;
 }
 
-.conditions__label:before {
+.check__label:before {
     content: "";
     background-color: white;
     width: 1rem;
@@ -64,7 +64,7 @@
     color: white;
 }
 
-.register__check[type="checkbox"]:checked + .conditions__label:before {
+.input__check[type="checkbox"]:checked + .check__label:before {
     content: "";
     background-image: url("/img/icons/check.png");
     background-size: 1.2rem;
@@ -108,7 +108,7 @@
         bottom: 84px;
         left: 10px;
     }
-    .register .conditions__label {
+    .register .check__label {
         padding-left: 1.8em;
     }
 
@@ -116,12 +116,12 @@
         align-self: center;
         width: 50%;
     }
-    .register__check[type="checkbox"]:checked + .conditions__label:before {
+    .input__check[type="checkbox"]:checked + .check__label:before {
         /* background-size: 1.2rem; */
         border: none;
         background-color: transparent;
     }
-    .conditions__label:before {
+    .check__label:before {
         width: 0.8rem;
         height: 0.8rem;
     }

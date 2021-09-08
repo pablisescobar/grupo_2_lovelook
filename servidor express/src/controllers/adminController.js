@@ -44,7 +44,6 @@ module.exports = {
             products: getProducts,
             position: "",
             toThousand
-
         })
     },
 
@@ -54,8 +53,7 @@ module.exports = {
             position: "",
             categories,
             colors,
-            capitalize
-        
+            capitalize  
         })
     },
 
