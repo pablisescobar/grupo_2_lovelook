@@ -9,11 +9,11 @@ module.exports = [
         .withMessage('El nombre debe ser mayor a 5 caracteres'),
 
     check('season')
-        .isEmpty()
+        .notEmpty()
         .withMessage('Selecciona una temporada'),
 
     check('category')
-        .isEmpty()
+        .notEmpty()
         .withMessage('Selecciona una categoria'),
 
     check('price')
@@ -23,11 +23,11 @@ module.exports = [
         .withMessage('Ingresa un valor numerico'),
 
     check('color')
-        .isEmpty()
+        .notEmpty()
         .withMessage('Selecciona o agrega un color').bail(),
 
     check('size')
-        .isEmpty()
+        .notEmpty()
         .withMessage('Selecciona un talle'),
 
     check('stock')

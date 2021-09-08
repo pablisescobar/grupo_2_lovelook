@@ -180,7 +180,9 @@
     margin: 10px auto;
     background-color: white;
 }
-
+.admin .label-input-admin{
+    align-self: flex-start;
+}
 .admin input:focus,
 .admin select:focus {
     color: black;
@@ -189,8 +191,10 @@
 }
 
 .admin .error-validator{
-    color: red;
-    align-self: flex-start;
+    
+color: red;
+    
+align-self: flex-start;
 }
 .admin input::placeholder,
 .admin select::selection {
@@ -245,20 +249,21 @@
     padding: 0;
     background-color: white;
     color: green;
+    border-radius: 5px;
     border: 2px solid green;
     box-shadow: inset 0 0 29px lightgreen;
     transition: transform 1s ease;
 }
 
 .admin button.btn-add:active {
-    transform: scale(1.1);
+    /* transform: scale(1.1); */
     color: white;
     background-color: green;
     box-shadow: inset 0 0 10px 4px;
 }
 .admin button.btn-reset:active {
-    transform: scale(1.2);
-    color: black;
+    /* transform: scale(1.2); */
+    color: white;
     background-color: red;
     box-shadow: inset 0 0 10px 4px white;
 }
@@ -459,7 +464,7 @@ justify-content: flex-end;
     }
 
     .admin .container-addColor{
-    width: 50%;
+    width: 80%;
     align-self: center;
     justify-content: center;
 }

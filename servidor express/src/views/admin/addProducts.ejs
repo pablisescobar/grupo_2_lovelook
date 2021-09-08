@@ -25,8 +25,9 @@
 
 
                                 <!-- SELECT DE TEMPORADA -->
+                                <label class="label-input-admin" for="season">Temporada:</label>
                                 <select name="season" id="season" title="temporada">
-                                    <option>Temporada</option>
+                                    <option hidden></option>
                                     <option value="invierno" <%=locals.old && old.season=="invierno" ? "selected" : null
                                         %>>Invierno</option>
                                     <option value="verano" <%=locals.old && old.season=="verano" ? "selected" : null %>
@@ -43,8 +44,9 @@
                                     <% } %>
 
                                         <!-- SELECT DE CATEGORÍA -->
+                                        <label class="label-input-admin" for="category">Categorias:</label>
                                         <select name="category" id="category" title="category">
-                                            <option>Categorías</option>
+                                            <option hidden></option>
                                             <% categories.forEach(categoria=>{ %>
                                                 <option value="<%= categoria %>" <%=locals.old &&
                                                     old.category==categoria ? "selected" : null %>>
@@ -73,8 +75,9 @@
                                                     <% } %>
 
                                                         <!-- SELECT DE COLOR -->
+                                                        <label class="label-input-admin" for="color">Color:</label>
                                                         <select name="color" id="color" title="color">
-                                                        
+                                                            <option hidden></option>
                                                             <% colors.forEach(color=>{ %>
                                                                 <option value="<%= color %>" <%= locals.old && old.color == color ? "selected" : null %>>
                                                                     <%= capitalize(color) %>
@@ -99,8 +102,9 @@
                                                                 </div>
 
                                                                 <!-- SELECT DE TALLE -->
+                                                                <label class="label-input-admin" for="size">Talles:</label>
                                                                 <select name="size" id="size" title="Talle">
-                                                                    <option hidden>Talle</option>
+                                                                    <option hidden></option>
                                                                     <option value="S" <%=locals.old && old.size=="S" ? "selected" : null %>>S</option>
                                                                     <option value="M" <%=locals.old && old.size=="M" ? "selected" : null %>>M</option>
                                                                     <option value="L" <%=locals.old && old.size=="L" ? "selected" : null %>>L</option>
