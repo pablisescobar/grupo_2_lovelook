@@ -12,7 +12,7 @@
                     <form action="/admin/products/edit/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="inputRows">
                         <input type="text" name="name" id="name" title="nombre" value="<%- product.name %>">
 
-                        <input type="text" name="description" id="description" title="Descripción" value="<%- product.description %>">
+                        <textarea type="text" name="description" id="description" title="Descripción" value="<%- product.description %>"><%- product.description %></textarea>
 
 
                         <!-- SELECT DE TEMPORADA -->
