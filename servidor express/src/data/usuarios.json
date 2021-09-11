@@ -5,7 +5,13 @@
         "apellido": "Arroyo",
         "email": "emanuel.arroyo@gmail.com",
         "password": "135246",
-        "rol": "User"
+        "rol": "User",
+        "avatar":"",
+        "tel":"",
+        "adress":"",
+        "pc":"",
+        "province":"",
+        "city":""
     },
     {
         "id": 2,
@@ -13,7 +19,13 @@
         "apellido": "Paduani",
         "email": "mariela.paduani@gmail.com",
         "password": "654321",
-        "rol": "Admin"
+        "rol": "Admin",
+        "avatar":"",
+        "tel":"",
+        "adress":"",
+        "pc":"",
+        "province":"",
+        "city":""
     },
     {
         "id": 3,
@@ -21,6 +33,12 @@
         "apellido": "Escobar",
         "email": "pablodescobarocampo@gmail.com",
         "password": "123456",
-        "rol": "User"
+        "rol": "User",
+        "avatar":"",
+        "tel":"",
+        "adress":"",
+        "pc":"",
+        "province":"",
+        "city":""
     }
 ]

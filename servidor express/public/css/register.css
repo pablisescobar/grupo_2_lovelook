@@ -78,7 +78,7 @@
     .register .card {
         width: 450px;
         height: 320px;
-        position: absolute;
+        /* position: absolute; */
     }
 
     .register .input-container {

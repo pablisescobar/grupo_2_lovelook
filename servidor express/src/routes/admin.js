@@ -10,6 +10,7 @@ let {
     eliminarProducto,
     loginAdmin } = require('../controllers/adminController.js');
 let multer = require('../middleware/uploadProductsFiles')
+let productValidator = require('../validations/adminValidation')
 
 /* GET - View login Admin */
 router.get('/', loginAdmin)
@@ -21,13 +22,13 @@ router.get('/products', listProductAdmin);
 router.get('/products/add', addProductAdmin);
 
 /* POST - Creamos un producto con el método realizado en el controlador */
-router.post('/products/add', multer.array('image',4), productStore);
+router.post('/products/add', multer.array('image',4),productValidator, productStore);
 
 /* GET - View Edit Product */
 router.get('/products/edit/:id', editProduct);
 
 /* PUT - Editamos un producto con el método realizado en el controlador */
-router.put('/products/edit/:id', multer.single('image'), updateProduct);
+router.put('/products/edit/:id', multer.single('image'), productValidator,updateProduct);
 
 router.get('/products/search', searchAdmin)
 

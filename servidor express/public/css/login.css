@@ -130,7 +130,6 @@
         bottom: 80px;
     }
     .login .card, .register .card {
-    transform: scale(1.5);
 }
 
     .login .button--positionIngresar {
