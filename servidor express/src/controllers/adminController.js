@@ -53,6 +53,8 @@ module.exports = {
             position: "",
             categories,
             colors,
+            seasons,
+            sizes,
             capitalize
         })
     },
@@ -115,6 +117,8 @@ module.exports = {
                 categories,
                 colors,
                 capitalize,
+                seasons,
+                sizes,
                 errors: errors.mapped(),
                 old: req.body
             })
@@ -154,11 +158,17 @@ module.exports = {
             categories,
             colors,
             sizes,
-            seasons
+            seasons,
+            capitalize
         })
     },
 
     updateProduct: (req, res) => {
+        let product = getProducts.find(product => product.id === +req.params.id);
+
+           let errors = validationResult(req)
+
+           if(errors.isEmpty()){
             const {
                 name,
                 price,
@@ -186,7 +196,21 @@ module.exports = {
                         product.image = req.file ? [req.file.filename] : product.image
                 }
             })
-        res.redirect('/admin/products')
+        res.redirect(`/admin/products#${product.id}`)
+           }else{
+            res.render('admin/editProduct', {
+                product,
+                categories,
+                colors,
+                sizes,
+                seasons,
+                capitalize,
+                errors:errors.mapped(),
+                old : req.body
+            })
+           }
+
+            
     },
 
     eliminarProducto: (req, res) => {

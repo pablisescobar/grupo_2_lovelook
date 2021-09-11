@@ -6,18 +6,18 @@
     <body>
         <%- include('../partials/headerAdmin.ejs') %>
             <main class="admin">
-
+                <h2>Agregar un producto</h2>
                 <div class="container">
                     <form action="/admin/products/add" method="POST" class="inputRows" enctype="multipart/form-data">
 
                         <!-- INPUT NAME -->
-                        <input type="text" name="name" value="<%= locals.old && old.name %>" id="name"
-                            placeholder="Nombre" title="nombre">
                         <% if(locals.errors && errors.name){ %>
                             <small class="error-validator">
                                 <%= errors.name.msg %>
                             </small>
                             <% } %>
+                        <input type="text" name="name" value="<%= locals.old && old.name %>" id="name"
+                            placeholder="Nombre" title="nombre">
 
                                 <!-- TEXTAREA DESCRIPTION -->
                                 <textarea type="text" name="description" id="description" placeholder="Descripción"
@@ -26,39 +26,55 @@
 
                                 <!-- SELECT DE TEMPORADA -->
                                 <label class="label-input-admin" for="season">Temporada:</label>
-                                <select name="season" id="season" title="temporada">
-                                    <option hidden></option>
-                                    <option value="invierno" <%=locals.old && old.season=="invierno" ? "selected" : null
-                                        %>>Invierno</option>
-                                    <option value="verano" <%=locals.old && old.season=="verano" ? "selected" : null %>
-                                        >Verano</option>
-                                    <option value="otoño" <%=locals.old && old.season=="otoño" ? "selected" : null %>
-                                        >Otoño</option>
-                                    <option value="primavera" <%=locals.old && old.season=="primavera" ? "selected" :
-                                        null %>>Primavera</option>
-                                </select>
                                 <% if(locals.errors && errors.season){ %>
                                     <small class="error-validator">
                                         <%= errors.season.msg %>
                                     </small>
                                     <% } %>
+                                <select name="season" id="season" title="temporada">
+                                    <option hidden></option>
+                                    <% seasons.forEach(season=> { %>
+                                        <option value="<%- season %>" <%-locals.old && old.season == season ? `selected` : "" %>>
+                                            <%- capitalize(season) %>
+                                        </option>
+                                        <% }) %>
+                                </select>
+                                <div class="container-addOption">
+                                    <input type="text"
+                                    placeholder="Agregar temporada... "
+                                    class="input-addOption" id="input-addSeason">
+                                        <div class="icon-addOption" onclick="addOption(`input-addSeason`,`season`)">
+                                            <span class="iconify "
+                                            data-icon="ant-design:appstore-add-outlined"></span>
+                                        </div>
+                                    </div>
+                                    
 
                                         <!-- SELECT DE CATEGORÍA -->
                                         <label class="label-input-admin" for="category">Categorias:</label>
-                                        <select name="category" id="category" title="category">
-                                            <option hidden></option>
-                                            <% categories.forEach(categoria=>{ %>
-                                                <option value="<%= categoria %>" <%=locals.old &&
-                                                    old.category==categoria ? "selected" : null %>>
-                                                    <%= capitalize(categoria) %>
-                                                </option>
-                                                <% }) %>
-                                        </select>
                                         <% if(locals.errors && errors.category){ %>
                                             <small class="error-validator">
                                                 <%= errors.category.msg %>
                                             </small>
                                             <% } %>
+                                        <select name="category" id="category" title="category">
+                                            <option hidden></option>
+                                            <% categories.forEach(category=> { %>
+                                                <option value="<%= category %>">
+                                                    <%= capitalize(category) %>
+                                                </option>
+                                                <% }) %>
+                                        </select>
+                                        <div class="container-addOption">
+                                            <input type="text"
+                                            placeholder="Agregar categoria... "
+                                            class="input-addOption" id="input-addCategory">
+                                                <div class="icon-addOption" onclick="addOption(`input-addCategory`,`category`)">
+                                                    <span class="iconify "
+                                                        data-icon="ant-design:appstore-add-outlined"></span>
+                                                    </div>
+                                                </div>
+                                                
 
                                                 <!-- INPUT DISCOUNT -->
                                                 <input type="number" name="discount" id="discount"
@@ -66,73 +82,91 @@
                                                     value="<%= locals.old && old.discount %>">
 
                                                 <!-- INPUT PRICE -->
-                                                <input type="text" name="price" id="price" placeholder="Precio"
-                                                    title="Precio" value="<%= locals.old && old.price %>">
                                                 <% if(locals.errors && errors.price){ %>
                                                     <small class="error-validator">
                                                         <%= errors.price.msg %>
                                                     </small>
                                                     <% } %>
+                                                <input type="text" name="price" id="price" placeholder="Precio"
+                                                    title="Precio" value="<%= locals.old && old.price %>">
+                                                
 
                                                         <!-- SELECT DE COLOR -->
                                                         <label class="label-input-admin" for="color">Color:</label>
-                                                        <select name="color" id="color" title="color">
-                                                            <option hidden></option>
-                                                            <% colors.forEach(color=>{ %>
-                                                                <option value="<%= color %>" <%= locals.old && old.color == color ? "selected" : null %>>
-                                                                    <%= capitalize(color) %>
-                                                                </option>
-                                                                <% }) %>
-                                                        </select>
                                                         <% if(locals.errors && errors.color){ %>
                                                             <small class="error-validator">
                                                                 <%= errors.color.msg %>
                                                             </small>
                                                             <% } %>
+                                                        <select name="color" id="color" title="color">
+                                                            <option hidden></option>
+                                                            <% colors.forEach(color=> { %>
+                                                                <option value="<%= color %>" <%=locals.old &&
+                                                                    old.color==color ? "selected" : null %>><%= capitalize(color) %>
+                                                                </option>
+                                                                <% }) %>
+                                                        </select>
 
-
-                                                                <div class="container-addColor">
-                                                                    <input type="text" name="addColor"
-                                                                        placeholder="Agregar color... "
-                                                                        class="input-addColor" id="input-addColor">
-                                                                    <div class="icon-addColor" onclick="addColor()">
+                                                        <div class="container-addOption">
+                                                            <input type="text" name="addColor"
+                                                            placeholder="Agregar color... "
+                                                            class="input-addOption" id="input-addColor">
+                                                            <div class="icon-addOption" onclick="addOption(`input-addColor`,`color`)">
                                                                         <span class="iconify "
-                                                                            data-icon="ant-design:appstore-add-outlined"></span>
+                                                                        data-icon="ant-design:appstore-add-outlined"></span>
                                                                     </div>
                                                                 </div>
+                                                               
 
                                                                 <!-- SELECT DE TALLE -->
-                                                                <label class="label-input-admin" for="size">Talles:</label>
+                                                                <label class="label-input-admin"
+                                                                    for="size">Talles:</label>
+                                                                    <% if(locals.errors && errors.size){ %>
+                                                                        <small class="error-validator">
+                                                                            <%= errors.size.msg %>
+                                                                        </small>
+                                                                        <% } %>
                                                                 <select name="size" id="size" title="Talle">
                                                                     <option hidden></option>
-                                                                    <option value="S" <%=locals.old && old.size=="S" ? "selected" : null %>>S</option>
-                                                                    <option value="M" <%=locals.old && old.size=="M" ? "selected" : null %>>M</option>
-                                                                    <option value="L" <%=locals.old && old.size=="L" ? "selected" : null %>>L</option>
-                                                                    <option value="XL" <%=locals.old && old.size=="XL" ? "selected" : null %>>XL</option>
-                                                                    <option value="XXL" <%=locals.old && old.size=="XXL" ? "selected" : null %>>XXL</option>
+                                                                    <% sizes.forEach(size=> { %>
+                                                                        <option value="<%- size %>"
+                                                                            <%=locals.old && old.size== size
+                                                                        ? "selected" : null %>>
+                                                                            <%- size.toUpperCase() %>
+                                                                        </option>
+                                                                        <% }) %>
                                                                 </select>
-                                                                <% if(locals.errors && errors.size){ %>
-                                                                    <small class="error-validator">
-                                                                        <%= errors.size.msg %>
-                                                                    </small>
-                                                                    <% } %>
+                                                                <div class="container-addOption">
+                                                                    <input type="text"
+                                                                            placeholder="Agregar Talle... "
+                                                                            class="input-addOption" id="input-addSize">
+                                                                            <div class="icon-addOption" onclick="addOption(`input-addSize`,`size`)">
+                                                                                <span class="iconify"
+                                                                                data-icon="ant-design:appstore-add-outlined"></span>
+                                                                        </div>
+                                                                    </div>
+                                                                    
 
-                                                                        <input type="number" name="stock" id="stock"
-                                                                            placeholder="Cantidad" title="Stock"
-                                                                            value="<%= locals.old && old.stock %>">
+                                                                        <!-- INPUT STOCK/CANTIDAD -->
                                                                         <% if(locals.errors && errors.stock){ %>
                                                                             <small class="error-validator">
                                                                                 <%= errors.stock.msg %>
                                                                             </small>
                                                                             <% } %>
-
-
+                                                                        <input type="number" name="stock" id="stock"
+                                                                            placeholder="Cantidad" title="Stock"
+                                                                            value="<%= locals.old && old.stock %>">
+                                                                        
+                                                                            
                                                                                 <div class="input">
-                                                                                    <label for="file-upload"class="subir"><i class="fas fa-cloud-upload-alt"></i>
+                                                                                    <label for="file-upload"
+                                                                                        class="subir"><i
+                                                                                            class="fas fa-cloud-upload-alt"></i>
                                                                                         Subir imágenes
                                                                                     </label>
 
-                                                                                    <div id="info" style="margin: 3px;"></div>
+                                                                                    <div id="info" style="margin: 3px;">
+                                                                                    </div>
 
 
                                                                                     <input name="image" id="file-upload"
@@ -140,15 +174,19 @@
                                                                                         accept=".png, .jpg" type="file"
                                                                                         style='display: none;' multiple>
                                                                                 </div>
-
-                                                                                <button type="submit"
-                                                                                    class="btn-add"><span
-                                                                                        class="iconify"
-                                                                                        data-icon="fluent:add-12-filled"></span></button>
+                                                                                <div class="button-container">
+                                                                                    
                                                                                 <button type="reset"
                                                                                     class="btn-reset"><span
                                                                                         class="iconify"
                                                                                         data-icon="whh:broom"></span></button>
+                                                                                        <button type="submit"
+                                                                                    class="btn-add"><span
+                                                                                        class="iconify"
+                                                                                        data-icon="fluent:add-12-filled"></span></button>
+                                                                                </div>
+
+                                                                                
 
                                                                                 <a href="/admin/products"
                                                                                     class="left-row"><span

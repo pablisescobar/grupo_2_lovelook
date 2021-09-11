@@ -28,7 +28,7 @@ router.post('/products/add', multer.array('image',4),productValidator, productSt
 router.get('/products/edit/:id', editProduct);
 
 /* PUT - Editamos un producto con el método realizado en el controlador */
-router.put('/products/edit/:id', multer.single('image'), productValidator,updateProduct);
+router.put('/products/edit/:id', multer.single('image',4), productValidator,updateProduct);
 
 router.get('/products/search', searchAdmin)
 

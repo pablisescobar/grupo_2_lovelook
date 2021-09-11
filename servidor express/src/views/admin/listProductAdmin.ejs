@@ -2,13 +2,14 @@
 <html lang="es">
 
 <%- include('../partials/head.ejs') %>
+
     <body>
         <%- include('../partials/headerAdmin.ejs') %>
             <main class="admin">
                 <h2 style="text-align: center;">Productos</h2>
                 <div class="button-add">
                     <a href="/admin/products/add"><span class="iconify" data-icon="fluent:add-12-filled">
-                    </span>Agregar Productos</a>
+                        </span>Agregar Productos</a>
                 </div>
                 <div class="table-container">
                     <table>
@@ -89,7 +90,9 @@
                                         <!-- CATEGORÍA -->
                                 </td>
                                 <td>
-                                    <form action="/admin/products/eliminarProducto/<%= product.id %>?_method=DELETE" method="POST"><!-- ?? -->
+                                    <form action="/admin/products/eliminarProducto/<%= product.id %>?_method=DELETE"
+                                        method="POST">
+                                        <!-- ?? -->
                                         <button class="delete" type="submit">
                                             <span class="iconify" data-icon="feather:delete">
                                             </span>
