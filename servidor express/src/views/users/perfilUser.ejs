@@ -21,29 +21,32 @@
 
 
                 <div class="container">
-                    <label class="label-perfil-user" for="nombre">Nombre :</label>
+                    <label class="label-perfil-user" for="nombre">Nombre: <%= user.name %></label>
                     <input class="input--style input-perfil-user" type="text" name="nombre" id="nombre">
                 </div>
 
                 <div class="container">
-                    <label class="label-perfil-user" for="apellido">Apellido :</label>
+                    <label class="label-perfil-user" for="apellido">Apellido: <%= user.last_name %></label>
                     <input class="input--style input-perfil-user" type="text" name="apellido" id="apellido">
                 </div>
 
                 <div class="container">
-                    <label class="label-perfil-user" for="direccion">Dirección :</label>
+                    <label class="label-perfil-user" for="direccion">Dirección: <%= user.address ? user.address : "------" %></label>
                     <input class=" input--style input-perfil-user" type="text" name="direccion" id="direccion">
                 </div>
 
                 <div class="container">
-                    <label class="label-perfil-user" for="email">Email :</label>
+                    <label class="label-perfil-user" for="email">Email: <%= user.email %></label>
                     <input class="input--style input-perfil-user" type="email" name="email" id="email">
                 </div>
                 
                 <div class="container">
-                    <label class="label-perfil-user" for="telefono">Teléfono :</label>
+                    <label class="label-perfil-user" for="telefono">Teléfono: <%= user.tel ? user.tel : "------" %></label>
                     <input class="input--style input-perfil-user" type="tel" name="telefono" id="telefono">
                 </div>
+
+                <a href="/users/profile/edit/<%= user.id %>" class="btn btn-ad-primary">EDITAR DATOS</a>
+
             </form>
 
             <%- include('../partials/footer.ejs') %>

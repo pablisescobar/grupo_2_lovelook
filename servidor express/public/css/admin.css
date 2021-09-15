@@ -52,12 +52,10 @@
 /* Estilos de vista ADMIN */
 
 .admin .button-add {
-    /* padding: 10px; */
     width: fit-content;
     margin: 10px auto;
     background-color: lightgreen;
     border: 2px solid green;
-    /* box-shadow: inset 0 0 29px lightgreen; */
 }
 .admin .button-add a {
     width: 100%;
@@ -109,7 +107,6 @@
     flex-direction: column;
     align-items: center;
     width: 90%;
-    /* margin: 0 auto; */
 }
 
 .admin .table-container {
@@ -130,7 +127,6 @@
 .admin th,
 .admin td {
     margin: 10px;
-    /* border: 1px solid black; */
     text-align: center;
     padding: 5px;
     background-color: whitesmoke;
@@ -220,6 +216,7 @@ text-align: center;
     
 margin: auto;
 }
+
 .admin input::placeholder,
 .admin select::selection {
     padding-left: 5px;
@@ -233,22 +230,20 @@ margin: auto;
     box-shadow: inset 0 0 19px lightblue;
     transition: all 2s ease;
     width: 50px;
-    /* padding: 5px; */
 }
+
 .admin .edit:hover {
     color: white;
     border: 0.5px solid black;
     background: blue;
     box-shadow: inset 0 0 19px blue;
     transform: scale(1.2);
-    /* border-radius: 50%; */
 }
 
 .admin .prev-img {
     width: 120px;
     height: 120px;
     border: 1px solid gray;
-    /* margin: 10px; */
 }
 .admin button.delete {
     color: red;
@@ -284,7 +279,6 @@ margin: auto;
     box-shadow: inset 0 0 10px 4px;
 }
 .admin button.btn-reset:active {
-    /* transform: scale(1.2); */
     color: white;
     background-color: red;
     box-shadow: inset 0 0 10px 4px white;
@@ -340,7 +334,6 @@ margin: auto;
         flex-wrap: wrap;
         justify-content: space-between;
         width: 60%;
-        /* margin: 0 auto; */
     }
 
     .admin .container-addOption{
@@ -355,9 +348,7 @@ justify-content: flex-end;
     .admin th,
     .admin td {
         margin: 0 10px;
-        /* border: 1px solid black; */
         text-align: center;
-        /* padding: 5px; */
     }
 
     .admin td img {
@@ -392,9 +383,6 @@ justify-content: flex-end;
     }
 
     .admin .subir {
-        /* padding: 5px 10px; */
-        /* background: #97f797; */
-        /* border: 0px solid #fff; */
         width: 100px;
         text-align: center;
         border-radius: 5px;
@@ -430,7 +418,6 @@ justify-content: flex-end;
 
     .admin textarea {
         margin: 0 auto;
-        /* font-size: 1.5rem; */
     }
 
     .admin h2 {
@@ -456,7 +443,6 @@ justify-content: flex-end;
     }
 
     .admin .table-container {
-        /* overflow: hidden; */
         width: 100%;
         margin: 0 auto;
     }
@@ -491,10 +477,6 @@ justify-content: flex-end;
         height: 50px;
     }
     .admin .edit:hover {
-        /* color: white; */
-        /* border: 0.5px solid black; */
-        /* background: blue; */
-        /* box-shadow: inset 0 0 19px blue; */
         transform: scale(1.2);
     }
 
@@ -505,17 +487,6 @@ justify-content: flex-end;
         transition: all 2s ease;
         width: 50px;
         height: 50px;
-    }
-
-    .admin button {
-        /* align-self: flex-end; */
-        /* padding: 0; */
-        /* background-color: white; */
-        /* color: green; */
-        /* border: 2px solid green; */
-        /* box-shadow: inset 0 0 29px lightgreen; */
-        /* transition: transform 1s ease; */
-        /* height: 24px; */
     }
 
     .admin button.btn-reset {

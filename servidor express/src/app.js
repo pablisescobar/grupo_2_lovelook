@@ -2,14 +2,16 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const path = require('path');
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
+const cookiesParser = require('cookie-parser');
 
 
 /* Middleware */
 app.use(express.static('public'));
-app.use(express.urlencoded({extended:false}))
-app.use(express.json())  /* lineas para trabajar con POST, -tiene que estar antes de las rutas */
-app.use(methodOverride('_method'))
+app.use(express.urlencoded({extended:false}));
+app.use(express.json());  /* lineas para trabajar con POST, -tiene que estar antes de las rutas */
+app.use(methodOverride('_method'));
+app.use(cookieParser())
 
 /* VIEWS */
 app.set('views',path.join(__dirname,'views'))

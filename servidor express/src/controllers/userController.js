@@ -1,5 +1,8 @@
-const { getProducts } = require("../data/dataBase");
+const { validationResult } = require("express-validator");
+const { getProducts, writeProductsJSON, users, writeUsersJSON } = require("../data/dataBase");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+let bcrypt = require('bcryptjs')
+
 
 let categorias = [];
 getProducts.forEach(product => {
@@ -7,37 +10,136 @@ getProducts.forEach(product => {
         categorias.push(product.category)
     }
 })
+
 module.exports = {
-    login:(req,res)=>{
-        res.render('users/login',{
-            position:"position:relative",
-            categorias
-        })
-    },
-    register:(req,res)=>{
-        res.render('users/register',{
-            position:"position:relative;",
+    register: (req, res) => {
+        res.render('users/register', {
+            position: "position:relative;",
             categorias
         })
     },
 
-    perfil:(req,res)=>{
-        res.render('users/perfilUser',{
-            position:"",
-            categorias
+    login: (req, res) => {
+        res.render('users/login', {
+            position: "position:relative",
+            categorias,
+            session: req.session
         })
     },
 
-    cart:(req,res)=>{
+    perfil: (req, res) => {
+        let user = users.find(user.id === req.session.user.id)
+
+        res.render('users/perfilUser', {
+            position: "",
+            categorias,
+            user,
+            session: req.session
+        })
+    },
+
+    profileEdit: (req, res) => {
+        let user = users.find(user => user.id === +req.params.id)
+
+        res.render('userProfileEdit', {
+            categorias,
+            user,
+            session: req.session
+        })
+    },
+
+    updateProfile: (req, res => {
+        let errors = validationResult(req)
+
+        if (errors.isEmpty()) {
+            let user = users.find(user => user.id === +req.params.id)
+
+            let {
+                name,
+                last_name,
+                tel,
+                adress,
+                pc,
+                province,
+                city
+            } = req.body
+
+            user.name = name
+            user.last_name = last_name
+            user.tel = tel
+            user.adress = adress
+            user.pc = pc
+            user.province = province
+            user.city = city
+
+            writeUsersJSON(users)
+
+            delete user.password
+
+            req.session.user = user
+
+            res.redirect('/users/perfil')
+
+        } else {
+            res.render('userProfileEdit', {
+                categorias,
+                errors: errors.mapped(),
+                old: req.body,
+                session: req.session
+            })
+        }
+
+    }),
+
+    processLogin: (req, res) => {
+        let errors = validationResult(req)
+
+        if (errors.isEmpty()) {
+            let user = users.find(user => user.email === req.body.email)
+
+            req.session.user = {
+                id: user.id,
+                name: user.name,
+                last_name: user.last_name,
+                email: user.email,
+                avatar: user.avatar,
+                rol: user.rol
+            }
+
+            if (req.body.remember) {
+                res.cookie("", req.session.user, { expires: new Date(Date.now() + 900000), httpOnly: true })
+            }
+
+            res.locals.user = req.session.user
+
+            res.redirect('/')
+        } else {
+            res.render('login', {
+                categorias,
+                errors: errors.mapped(),
+                session: req.session
+            })
+        }
+    },
+
+
+
+    logout: (req, res) => {
+        req.session.destroy()
+        if (req.cookies.user) {
+            res.cookie('', '', { maxAge: -1 })
+        }
+
+        res.redirect('/')
+    },
+
+    cart: (req, res) => {
         let productsOffer = getProducts.filter(product => product.discount > 15 ? product : null)
-        res.render('users/productCart',{
-            products:productsOffer,
-            position:"",
+        res.render('users/productCart', {
+            products: productsOffer,
+            position: "",
             toThousand,
             categorias
         })
-    },
-
-
- 
+    }
 }
