@@ -21,7 +21,7 @@ router.get('/register',register)
 
 /* View perfil user */
 router.get('/perfil', perfil);
-router.get('/profile/edit/.id', profileEdit)
+router.get('/profile/edit/:id', profileEdit)
 router.put('/profile/edit/:id', updateProfile)
 
 /* View cart shopping */
