@@ -7,9 +7,11 @@ let {perfil,
      processLogin,
      logout,
      profileEdit,
-     updateProfile } = require('../controllers/userController.js');
+     updateProfile, 
+     processRegister} = require('../controllers/userController.js');
 const loginValidator = require('../validations/loginValidator');
 const userLog = require('../middleware/userLog');
+const registerValidation = require('../validations/registerValidation.js');
 
 /* View login */
 router.get('/login', userLog, login);
@@ -17,7 +19,8 @@ router.post('/login', loginValidator, processLogin);
 router.get('/logout', logout);
 
 /* View register */
-router.get('/register',register)
+router.get('/register',register);
+router.post('/register', registerValidation, processRegister)
 
 /* View perfil user */
 router.get('/perfil', perfil);
