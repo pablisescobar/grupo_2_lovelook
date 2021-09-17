@@ -11,7 +11,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());  /* lineas para trabajar con POST, -tiene que estar antes de las rutas */
 app.use(methodOverride('_method'));
-app.use(cookieParser())
+app.use(cookiesParser())
 
 /* VIEWS */
 app.set('views',path.join(__dirname,'views'))

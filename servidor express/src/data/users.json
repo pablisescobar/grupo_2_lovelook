@@ -1,8 +1,8 @@
 [
     {
         "id": 1,
-        "nombre": "Emanuel",
-        "apellido": "Arroyo",
+        "name": "Emanuel",
+        "last_name": "Arroyo",
         "email": "emanuel.arroyo@gmail.com",
         "password": "135246",
         "rol": "User",
@@ -15,8 +15,8 @@
     },
     {
         "id": 2,
-        "nombre": "Mariela",
-        "apellido": "Paduani",
+        "name": "Mariela",
+        "last_name": "Paduani",
         "email": "mariela.paduani@gmail.com",
         "password": "654321",
         "rol": "Admin",
@@ -29,8 +29,8 @@
     },
     {
         "id": 3,
-        "nombre": "Pablo",
-        "apellido": "Escobar",
+        "name": "Pablo",
+        "last_name": "Escobar",
         "email": "pablodescobarocampo@gmail.com",
         "password": "123456",
         "rol": "User",
