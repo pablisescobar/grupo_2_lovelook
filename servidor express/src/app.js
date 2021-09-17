@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 const path = require('path');
 const methodOverride = require('method-override');
-const cookiesParser = require('cookie-parser');
+let cookieParser = require('cookie-parser')
 
 
 /* Middleware */

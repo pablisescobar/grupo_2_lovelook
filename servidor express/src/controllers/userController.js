@@ -107,7 +107,7 @@ module.exports = {
             }
 
             if (req.body.remember) {
-                res.cookie("", req.session.user, { expires: new Date(Date.now() + 900000), httpOnly: true })
+                res.cookie("userLoveLook", req.session.user, { expires: new Date(Date.now() + 900000), httpOnly: true })
             }
 
             res.locals.user = req.session.user
@@ -126,8 +126,8 @@ module.exports = {
 
     logout: (req, res) => {
         req.session.destroy()
-        if (req.cookies.user) {
-            res.cookie('', '', { maxAge: -1 })
+        if (req.cookies.userLoveLook) {
+            res.cookie('userLoveLook', '', { maxAge: -1 })
         }
 
         res.redirect('/')
