@@ -3,15 +3,14 @@ const app = express();
 const port = 3000;
 const path = require('path');
 const methodOverride = require('method-override');
-let cookieParser = require('cookie-parser')
-
+let cookieParser = require('cookie-parser');
 
 /* Middleware */
 app.use(express.static('public'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());  /* lineas para trabajar con POST, -tiene que estar antes de las rutas */
 app.use(methodOverride('_method'));
-app.use(cookiesParser())
+app.use(cookieParser());
 
 /* VIEWS */
 app.set('views',path.join(__dirname,'views'))

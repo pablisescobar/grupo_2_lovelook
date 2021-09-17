@@ -1,5 +1,5 @@
 const { validationResult } = require("express-validator");
-const { getProducts, writeProductsJSON, users, writeUsersJSON } = require("../data/dataBase");
+const { getProducts, writeProductsJSON, getUsers, writeUsersJSON } = require("../data/dataBase");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 let bcrypt = require('bcryptjs')
 
@@ -28,7 +28,7 @@ module.exports = {
     },
 
     perfil: (req, res) => {
-        let user = users.find(user.id === req.session.user.id)
+        let user = getUsers.find(user.id === req.session.user.id)
 
         res.render('users/perfilUser', {
             position: "",
@@ -39,7 +39,7 @@ module.exports = {
     },
 
     profileEdit: (req, res) => {
-        let user = users.find(user => user.id === +req.params.id)
+        let user = getUsers.find(user => user.id === +req.params.id)
 
         res.render('userProfileEdit', {
             categorias,
@@ -52,7 +52,7 @@ module.exports = {
         let errors = validationResult(req)
 
         if (errors.isEmpty()) {
-            let user = users.find(user => user.id === +req.params.id)
+            let user = getUsers.find(user => user.id === +req.params.id)
 
             let {
                 name,
@@ -72,7 +72,7 @@ module.exports = {
             user.province = province
             user.city = city
 
-            writeUsersJSON(users)
+            writeUsersJSON(getUsers)
 
             delete user.password
 
@@ -95,7 +95,7 @@ module.exports = {
         let errors = validationResult(req)
 
         if (errors.isEmpty()) {
-            let user = users.find(user => user.email === req.body.email)
+            let user = getUsers.find(user => user.email === req.body.email)
 
             req.session.user = {
                 id: user.id,
@@ -107,7 +107,7 @@ module.exports = {
             }
 
             if (req.body.remember) {
-                res.cookie("userLoveLook", req.session.user, { expires: new Date(Date.now() + 900000), httpOnly: true })
+                res.cookie("userLoveLook", req.session.user, { expires: new Date(Date.now() + 90000), httpOnly: true })
             }
 
             res.locals.user = req.session.user
