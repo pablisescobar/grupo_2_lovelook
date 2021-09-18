@@ -42,6 +42,7 @@ module.exports = {
         let user = getUsers.find(user => user.id === +req.params.id)
 
         res.render('userProfileEdit', {
+            position:"",
             categorias,
             user,
             session: req.session
@@ -78,10 +79,11 @@ module.exports = {
 
             req.session.user = user
 
-            res.redirect('/users/perfil')
+            res.redirect('/user/perfil')
 
         } else {
             res.render('userProfileEdit', {
+                position: "",
                 categorias,
                 errors: errors.mapped(),
                 old: req.body,
@@ -114,8 +116,9 @@ module.exports = {
 
             res.redirect('/')
         } else {
-            res.render('login', {
+            res.render('users/login', {
                 categorias,
+                position:"position: relative",
                 errors: errors.mapped(),
                 session: req.session
             })
@@ -160,11 +163,12 @@ module.exports = {
 
             writeUsersJSON(getUsers)
 
-            res.redirect('/users/login')
+            res.redirect('/user/login')
 
         } else {
-            res.render('register', {
+            res.render('users/register', {
                 categorias,
+                position:"position:relative",
                 errors: errors.mapped(),
                 old : req.body,
                 session: req.session

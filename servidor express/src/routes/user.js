@@ -11,7 +11,7 @@ let {perfil,
      processRegister } = require('../controllers/userController.js');
 const loginValidator = require('../validations/loginValidator');
 const userLog = require('../middleware/userLog');
-const registerValidation = require('../validations/registerValidation.js');
+const registerValidation = require('../validations/registerValidation');
 const uploadUserAvatar = require('../middleware/uploadUserAvatar')
 
 /* View login */

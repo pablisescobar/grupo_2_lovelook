@@ -18,7 +18,7 @@ module.exports = [
 
     body('email')
     .custom(value => {
-        let user = users.fin(user => user.email === value)
+        let user = users.find(user => user.email === value)
 
         if(user === undefined){
             return true

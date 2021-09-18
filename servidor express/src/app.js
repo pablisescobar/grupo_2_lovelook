@@ -4,7 +4,7 @@ const port = 3000;
 const path = require('path');
 const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
-const sessions = require('express-session')
+const session = require('express-session')
 
 /* Middleware */
 app.use(express.static('public'));
@@ -15,8 +15,7 @@ app.use(cookieParser());
 app.use(session({
     secret: "LovelookModa",
     resave: false,
-    saveUninitialized: true,
-    cookie: { maxAge: 60000 }
+    saveUninitialized: true
 }))
 
 /* VIEWS */
