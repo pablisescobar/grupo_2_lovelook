@@ -13,7 +13,7 @@ app.use(express.json());  /* lineas para trabajar con POST, -tiene que estar ant
 app.use(methodOverride('_method'));
 app.use(cookieParser());
 app.use(session({
-    secret: "LovelookModa",
+    secret: "loveLookModa",
     resave: false,
     saveUninitialized: true
 }))

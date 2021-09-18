@@ -1,7 +1,7 @@
 const { validationResult } = require("express-validator");
 const { getProducts, writeProductsJSON, getUsers, writeUsersJSON } = require("../data/dataBase");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-let bcrypt = require('bcryptjs')
+let bcrypt = require('bcryptjs');
 
 
 let categorias = [];
