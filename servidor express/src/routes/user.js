@@ -8,10 +8,11 @@ let {perfil,
      logout,
      profileEdit,
      updateProfile, 
-     processRegister} = require('../controllers/userController.js');
+     processRegister } = require('../controllers/userController.js');
 const loginValidator = require('../validations/loginValidator');
 const userLog = require('../middleware/userLog');
 const registerValidation = require('../validations/registerValidation.js');
+const uploadUserAvatar = require('../middleware/uploadUserAvatar')
 
 /* View login */
 router.get('/login', userLog, login);
@@ -20,12 +21,12 @@ router.get('/logout', logout);
 
 /* View register */
 router.get('/register',register);
-router.post('/register', registerValidation, processRegister)
+router.post('/register',registerValidation, processRegister)
 
 /* View perfil user */
 router.get('/perfil', perfil);
 router.get('/profile/edit/:id', profileEdit)
-router.put('/profile/edit/:id', updateProfile)
+router.put('/profile/edit/:id',uploadUserAvatar.single('avatar') ,updateProfile)
 
 /* View cart shopping */
 router.get('/cart', cart);

@@ -25,7 +25,7 @@ module.exports = [
     .notEmpty()
     .withMessage('Debes ingresar tu contraseña'),
 
-    check('pass')
+    body('pass')
     .custom((value, {req}) => {
         let user = getUsers.find(user => user.email === req.body.email)
         return bcrypt.compareSync(value, user.pass)

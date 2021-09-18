@@ -48,7 +48,7 @@ module.exports = {
         })
     },
 
-    updateProfile: (req, res => {
+    updateProfile: (req, res) => {
         let errors = validationResult(req)
 
         if (errors.isEmpty()) {
@@ -74,7 +74,7 @@ module.exports = {
 
             writeUsersJSON(getUsers)
 
-            delete user.password
+            delete user.pass
 
             req.session.user = user
 
@@ -89,7 +89,7 @@ module.exports = {
             })
         }
 
-    }),
+    },
 
     processLogin: (req, res) => {
         let errors = validationResult(req)

@@ -3,7 +3,8 @@ const app = express();
 const port = 3000;
 const path = require('path');
 const methodOverride = require('method-override');
-let cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
+const sessions = require('express-session')
 
 /* Middleware */
 app.use(express.static('public'));
@@ -11,6 +12,12 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());  /* lineas para trabajar con POST, -tiene que estar antes de las rutas */
 app.use(methodOverride('_method'));
 app.use(cookieParser());
+app.use(session({
+    secret: "LovelookModa",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 60000 }
+}))
 
 /* VIEWS */
 app.set('views',path.join(__dirname,'views'))

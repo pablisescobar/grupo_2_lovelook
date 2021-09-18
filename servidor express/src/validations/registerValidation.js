@@ -1,4 +1,5 @@
 const { check, body } = require('express-validator')
+const { users } = require('../data/users.json')
 
 module.exports = [
     check('name')
@@ -14,6 +15,18 @@ module.exports = [
     .withMessage('Debes escribir un email').bail()
     .isEmail()
     .withMessage('Debes escribir un email valido'),
+
+    body('email')
+    .custom(value => {
+        let user = users.fin(user => user.email === value)
+
+        if(user === undefined){
+            return true
+        }else {
+            return false
+        }
+    })
+    .withMessage('Email ya registrado'),
 
     check('pass1')
     .notEmpty()
