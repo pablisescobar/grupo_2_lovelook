@@ -1,7 +1,7 @@
 const { validationResult } = require("express-validator");
 const { getProducts, writeProductsJSON, getUsers, writeUsersJSON } = require("../data/dataBase");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-let bcrypt = require('bcryptjs')
+let bcrypt = require('bcryptjs');
 
 
 let categorias = [];
@@ -78,7 +78,7 @@ module.exports = {
 
             req.session.user = user
 
-            res.redirect('/users/perfil')
+            res.redirect('/user/perfil')
 
         } else {
             res.render('userProfileEdit', {
@@ -114,7 +114,7 @@ module.exports = {
 
             res.redirect('/')
         } else {
-            res.render('login', {
+            res.render('users/login', {
                 categorias,
                 errors: errors.mapped(),
                 session: req.session
@@ -160,7 +160,7 @@ module.exports = {
 
             writeUsersJSON(getUsers)
 
-            res.redirect('/users/login')
+            res.redirect('/user/login')
 
         } else {
             res.render('register', {
