@@ -43,7 +43,8 @@ module.exports = {
         res.render('admin/listProductAdmin', {
             products: getProducts,
             position: "",
-            toThousand
+            toThousand,
+            session: req.session
         })
     },
 
@@ -55,7 +56,8 @@ module.exports = {
             colors,
             seasons,
             sizes,
-            capitalize
+            capitalize,
+            session: req.session
         })
     },
 
@@ -120,7 +122,8 @@ module.exports = {
                 seasons,
                 sizes,
                 errors: errors.mapped(),
-                old: req.body
+                old: req.body,
+                session: req.session
             })
         }
 
@@ -146,7 +149,8 @@ module.exports = {
 
         res.render('admin/searchResultAdmin', {
             result,
-            toThousand
+            toThousand,
+            session: req.session
         })
     },
 
@@ -159,7 +163,8 @@ module.exports = {
             colors,
             sizes,
             seasons,
-            capitalize
+            capitalize,
+            session: req.session
         })
     },
 
