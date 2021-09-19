@@ -12,7 +12,8 @@ let {perfil,
 const loginValidator = require('../validations/loginValidator');
 const userLog = require('../middleware/userLog');
 const registerValidation = require('../validations/registerValidation');
-const uploadUserAvatar = require('../middleware/uploadUserAvatar')
+const uploadUserAvatar = require('../middleware/uploadUserAvatar');
+const userSessionCheck = require('../middleware/userSessionCheck')
 
 /* View login */
 router.get('/login', userLog, login);
@@ -24,8 +25,8 @@ router.get('/register',register);
 router.post('/register',registerValidation, processRegister)
 
 /* View perfil user */
-router.get('/perfil', perfil);
-router.get('/profile/edit/:id', profileEdit)
+router.get('/perfil', userSessionCheck, perfil);
+router.get('/profile/edit/:id',userSessionCheck, profileEdit)
 router.put('/profile/edit/:id',uploadUserAvatar.single('avatar') ,updateProfile)
 
 /* View cart shopping */

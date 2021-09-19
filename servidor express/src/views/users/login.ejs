@@ -12,19 +12,19 @@
                       <figure class="card__thumbnail">
                         <img src="/img/logo.png" alt="" class="card__logo">
                       </figure>
-                      <input class="card__input input--style" type="email" name="email" placeholder="Ingresa tu email" value="<%= locals.old && old.email %>">
+                      <input class="card__input input--style" type="email" name="email" placeholder="Ingresa tu email" value="<%= (locals.old && old.email) ? old.email : '' %>">
                       <% if (locals.errors && errors.email) { %>
                         <small class="text-danger"><%= errors.email.msg %> </small>
                       <% } %>
                   
-                      <input class="card__input input--style" type="password" name="pass" placeholder="Ingresa tu contraseña" value="<%= locals.old && old.pass %>">
+                      <input class="card__input input--style" type="password" name="pass" placeholder="Ingresa tu contraseña" value="<%= (locals.old && old.pass) ? old.pass : '' %>">
                       <% if (locals.errors && errors.pass) { %>
                         <small class="text-danger"><%= errors.pass.msg %> </small>
                       <% } %>
                   
                       <div style="display: flex;align-items: center;">
                         <input class="input__check" type="checkbox" name="remember" id="remember">
-                        <label class="check__label" for="remember">Recordar</label>
+                        <label class="check__label" for="remember">Recordarme</label>
                       </div>
                       
                       <% if (locals.errorMsg ) { %>

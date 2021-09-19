@@ -29,7 +29,7 @@ module.exports = {
     },
 
     perfil: (req, res) => {
-        let user = getUsers.find(user.id === req.session.user.id)
+        let user = getUsers.find(user => user.id === req.session.user.id)
 
         res.render('users/perfilUser', {
             position: "",
@@ -179,7 +179,7 @@ module.exports = {
     },
 
     logout: (req, res) => {
-        req.session.destroy()
+        req.session.destroy();
         if (req.cookies.userLoveLook) {
             res.cookie('userLoveLook', '', { maxAge: -1 })
         }
