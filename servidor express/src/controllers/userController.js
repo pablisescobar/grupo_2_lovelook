@@ -15,7 +15,8 @@ module.exports = {
     register: (req, res) => {
         res.render('users/register', {
             position: "position:relative;",
-            categorias
+            categorias,
+            session: req.session
         })
     },
 
@@ -72,6 +73,7 @@ module.exports = {
             user.pc = pc
             user.province = province
             user.city = city
+            user.avatar = req.file ? req.file.filename : "default-image.png"
 
             writeUsersJSON(getUsers)
 

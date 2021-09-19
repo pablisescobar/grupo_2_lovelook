@@ -124,13 +124,16 @@
     left  : 50px;
 }
 
+.text-danger {
+    color: red;
+}
+
 @media screen and (min-width:768px) {
     .login .button--positionRegister {
         left  : 50px;
         bottom: 80px;
     }
-    .login .card, .register .card {
-}
+
 
     .login .button--positionIngresar {
 

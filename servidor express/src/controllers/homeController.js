@@ -23,7 +23,8 @@ module.exports = {
             position: "",
             carousel: getImgCarousel,
             categorias,
-            toThousand
+            toThousand,
+            session: req.session
         })
     },
     afip: (req, res) => {
@@ -52,7 +53,8 @@ module.exports = {
             search: req.query.keys,
             position: "",
             products,
-            categorias
+            categorias,
+            session: req.session
         })
     }
 }
