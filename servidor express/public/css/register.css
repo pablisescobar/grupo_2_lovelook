@@ -111,9 +111,9 @@
 
     .register .conditions {
         font-size: 0.8rem;
-        position: absolute;
+       /*  position: relative;
         bottom: 84px;
-        left: 10px;
+        left: 10px; */
     }
     .register .check__label {
         padding-left: 1.8em;
