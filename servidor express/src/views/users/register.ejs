@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
-  <%- include('../partials/head.ejs') %>
+
+<%- include('../partials/head.ejs') %>
 
   <body>
     <%- include('../partials/header.ejs')%>
 
     <div class="register">
-        <form action="/user/register" method="POST" class="card modal-content-register" enctype="multipart/form-data">
+        <form action="/user/registerUser" method="POST" class="card modal-content-register">
             <figure class="card__thumbnail">
                 <img src="/img/logo.png" alt="" class="card__logo">
             </figure>
@@ -34,14 +35,14 @@
             </div>
             <div class="conditions">
     
-                <input class="input__check" type="checkbox" name="condiciones" id="condiciones" required>
+                <input class="input__check" type="checkbox" name="condiciones" id="condiciones">
                 <label class="check__label" for="condiciones">Aceptar <a href="/info/we#Terminos"
                         class="link-conditions">condiciones</a></label>
                         <% if (locals.errors && errors.condiciones) { %> 
                             <small class="errors-validation_register"><%= errors.condiciones.msg %></small>
                         <% } %>
             </div>
-            <input class="button btn-register" type="submit" value="Registrar">
+            <button class="button btn-register" type="submit" value="Registrar">Registrar</button>
             <a href="/user/login" class="haveAccount">Ya tengo cuenta</a>
         </form>
     </div>

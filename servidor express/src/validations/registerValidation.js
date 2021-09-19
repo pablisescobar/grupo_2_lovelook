@@ -10,7 +10,7 @@ module.exports = [
     .notEmpty()
     .withMessage('Debes escribir un apellido'),
 
-    check('email')
+    /* check('email')
     .notEmpty()
     .withMessage('Debes escribir un email').bail()
     .isEmail()
@@ -19,6 +19,7 @@ module.exports = [
     body('email')
     .custom(value => {
         let user = users.find(user => user.email === value)
+        return user.email == value
 
         if(user === undefined){
             return true
@@ -26,7 +27,7 @@ module.exports = [
             return false
         }
     })
-    .withMessage('Email ya registrado'),
+    .withMessage('Email ya registrado'), */
 
     check('pass1')
     .notEmpty()
@@ -35,7 +36,7 @@ module.exports = [
         min:6,
         max:10
     })
-    .withMessage('La contraseña debe contener un minimo de 6 y maximo de 10 caracteres'),
+    .withMessage('La contraseña debe tener un minimo de 6 y maximo de 10 caracteres'),
     
     body('pass2')
     .custom((value, {req}) => value !== req.body.pass1 ? false : true)

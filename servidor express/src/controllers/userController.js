@@ -1,7 +1,7 @@
 const { validationResult } = require("express-validator");
 const { getProducts, writeProductsJSON, getUsers, writeUsersJSON } = require("../data/dataBase");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-let bcrypt = require('bcryptjs');
+const bcrypt = require('bcrypt');
 
 
 let categorias = [];
@@ -126,17 +126,16 @@ module.exports = {
     },
     processRegister: (req, res) => {
         let errors = validationResult(req)
-
+        console.log(errors)
+        
         if (errors.isEmpty()) {
-
-            let lastId = 0;
-
-            getUsers.forEach(user => {
-                if(user.id > lastId){
-                    lastId = user.id
-                }
-            }) 
-
+            let lastId = 0
+        getUsers.forEach(user => {
+            console.log(getUsers)
+            lastId = user.id
+        }) 
+        
+        
             let {
                 name, 
                 last_name,
@@ -149,7 +148,7 @@ module.exports = {
                 name,
                 last_name,
                 email,
-                pass : bcrypt.hashSync(pass1, 12),
+                pass1 : bcrypt.hashSync(pass1, 12),
                 avatar : req.file ? req.file.filename : "default-image.png",
                 rol: "ROL_USER",
                 tel: "",
@@ -159,21 +158,20 @@ module.exports = {
                 city:""
             }
 
-            users.push(newUser)
+            getUsers.push(newUser)
 
             writeUsersJSON(getUsers)
 
             res.redirect('/user/login')
+        }else{
+            res.render('users/register', { dataBase: getUsers, errors: errors.mapped(), old: req.body, categorias,
+                position:"position: relative" });
 
-        } else {
-            res.render('users/register', {
-                categorias,
-                position:"position:relative",
-                errors: errors.mapped(),
-                old : req.body,
-                session: req.session
-            })
         }
+        
+        
+
+     
     },
 
     logout: (req, res) => {
