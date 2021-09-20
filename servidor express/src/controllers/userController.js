@@ -130,12 +130,10 @@ module.exports = {
     },
     processRegister: (req, res) => {
         let errors = validationResult(req)
-        console.log(errors)
-        
+
         if (errors.isEmpty()) {
             let lastId = 0
         getUsers.forEach(user => {
-            console.log(getUsers)
             lastId = user.id
         }) 
         

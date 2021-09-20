@@ -7,7 +7,7 @@
     <%- include('../partials/header.ejs')%>
 
     <div class="register">
-        <form action="/user/registerUser" method="POST" class="card modal-content-register">
+        <form action="/user/register" method="POST" class="card modal-content-register">
             <figure class="card__thumbnail">
                 <img src="/img/logo.png" alt="" class="card__logo">
             </figure>
@@ -20,7 +20,7 @@
                 <% if (locals.errors && errors.last_name) { %> 
                     <small class="errors-validation_register"><%= errors.last_name.msg %></small>
                 <% } %>
-                <input class="input--style" type="email" name="email" placeholder="E-mail" value="<%= locals.old && old.email %>">
+                <input class="input--style" name="email" placeholder="E-mail" value="<%= locals.old && old.email %>">
                 <% if (locals.errors && errors.email) { %> 
                     <small class="errors-validation_register"><%= errors.email.msg %></small>
                 <% } %>

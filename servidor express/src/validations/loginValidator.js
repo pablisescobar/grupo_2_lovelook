@@ -12,7 +12,7 @@ module.exports = [
     body('email')
     .custom(value => {
         let user = getUsers.find(user => user.email === value)
-
+        
         if(user !== undefined) {
             return true
         } else {
