@@ -49,6 +49,7 @@ getProducts.forEach(product => {
 })
     res.status(404).render('status404',{
 categorias,
+session: req.session,
 position:"position:relative"
     })
 })

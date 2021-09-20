@@ -10,19 +10,22 @@ module.exports =  {
     contact: (req,res)=>{
         res.render('info/contact',{
             position:"",
-            categorias
+            categorias,
+            session: req.session
         })
         },
     help: (req,res)=>{
         res.render('info/help',{
             position:"",
-            categorias
+            categorias,
+            session: req.session
         })
     },
     we: (req,res)=>{
         res.render('info/we',{
             position:"position:relative",
-            categorias
+            categorias,
+            session: req.session
         })
     }
 }
