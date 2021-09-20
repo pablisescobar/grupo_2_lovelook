@@ -1,5 +1,5 @@
-const { validationResult } = require("express-validator");
 const { getProducts, writeProductsJSON, getUsers, writeUsersJSON } = require("../data/dataBase");
+const { validationResult } = require("express-validator");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const bcrypt = require('bcrypt');
 
@@ -128,12 +128,10 @@ module.exports = {
     },
     processRegister: (req, res) => {
         let errors = validationResult(req)
-        console.log(errors)
-        
+
         if (errors.isEmpty()) {
             let lastId = 0
         getUsers.forEach(user => {
-            console.log(getUsers)
             lastId = user.id
         }) 
         

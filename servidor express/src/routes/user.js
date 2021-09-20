@@ -21,7 +21,7 @@ router.get('/logout', logout);
 
 /* View register */
 router.get('/register',register);
-router.post('/registerUser', registerValidation, processRegister)
+router.post('/register', registerValidation, processRegister)
 
 /* View perfil user */
 router.get('/perfil', perfil);
