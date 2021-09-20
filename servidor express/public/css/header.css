@@ -53,17 +53,6 @@ z-index: 1300;
     margin-left: 50px;
 }
 
-.session {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    background: #00d900;
-    border-radius: 50px;
-    position: relative;
-    top: 20px;
-    left: 400px;
-}
-
 @media screen and (max-height: 320px) {
     .sidenav {
         padding-top: 15px;
@@ -477,5 +466,16 @@ z-index: 1300;
         flex-direction: column;
         justify-content: space-evenly;
         width: 100%;
+    }
+
+    .session {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background: #00d900;
+        border-radius: 50px;
+        position: relative;
+        top: 20px;
+        left: 400px;
     }
 }
