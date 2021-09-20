@@ -1,8 +1,46 @@
 <!DOCTYPE html>
 <html lang="es">
-    <%- include('partials/head') %> 
-<body>
-    <%- include('partials/header') %> 
-    
-</body>
+  <%- include('../partials/head')%>
+  <body>
+
+    <%- include('../partials/header')%>
+
+        <form action="/user/profile/edit/<%= user.id %>?_method=PUT" method="POST" class="perfil-user">
+            <div class="image-container">
+                <label class="label-perfil-user img-label" for="examinar"><span class="iconify" data-icon="carbon:add-filled"></span></label>
+                <input class="input-perfil-user" type="file" name="avatar" id="examinar" hidden/>
+                <div class="image-view" id="imagePreview"></div>
+            </div>
+
+            <div class="container">
+                <label class="label-perfil-user" for="nombre">Nombre: </label>
+                <input class="input--style input-perfil-user" type="text" name="name" id="nombre" value="<%= user.name %>"/>
+            </div>
+
+            <div class="container">
+                <label class="label-perfil-user" for="apellido">Apellido: </label>
+                <input class="input--style input-perfil-user" type="text" name="last_name" id="apellido" value="<%= user.last_name %>"/>
+            </div>
+
+            <div class="container">
+                <label class="label-perfil-user" for="direccion">Dirección: </label>
+                <input class=" input--style input-perfil-user" type="text" name="address" id="direccion" value="<%= user.address ? user.address : "------" %>">
+            </div>
+
+            <div class="container">
+                <label class="label-perfil-user" for="email">Email: </label>
+                <input class="input--style input-perfil-user" type="email" name="email" id="email" value="<%= user.email %>"/>
+            </div>
+
+            <div class="container">
+                <label class="label-perfil-user" for="telefono">Teléfono: </label>
+                <input class="input--style input-perfil-user" type="tel" name="tel" id="telefono" value="<%= user.tel ? user.tel : "------" %>">
+            </div>
+
+            <button class="changesButton" type="submit">GUARDAR CAMBIOS</button>
+        </form>
+
+    <%- include('../partials/footer')%>
+
+  </body>
 </html>

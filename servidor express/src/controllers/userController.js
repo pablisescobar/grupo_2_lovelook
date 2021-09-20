@@ -1,7 +1,7 @@
 const { getProducts, writeProductsJSON, getUsers, writeUsersJSON } = require("../data/dataBase");
 const { validationResult } = require("express-validator");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 
 let categorias = [];
@@ -22,7 +22,7 @@ module.exports = {
 
     login: (req, res) => {
         res.render('users/login', {
-            position: "position:relative",
+            position: "position:relative;",
             categorias,
             session: req.session
         })
@@ -32,7 +32,7 @@ module.exports = {
         let user = getUsers.find(user => user.id === req.session.user.id)
 
         res.render('users/perfilUser', {
-            position: "",
+            position: "position:relative;",
             categorias,
             user,
             session: req.session
@@ -42,8 +42,8 @@ module.exports = {
     profileEdit: (req, res) => {
         let user = getUsers.find(user => user.id === +req.params.id)
 
-        res.render('userProfileEdit', {
-            position:"",
+        res.render('users/userProfileEdit', {
+            position:"position:relative;",
             categorias,
             user,
             session: req.session
@@ -73,7 +73,7 @@ module.exports = {
             user.pc = pc
             user.province = province
             user.city = city
-            user.avatar = req.file ? req.file.filename : "default-image.png"
+            user.avatar = req.file ? req.file.filename : user.avatar
 
             writeUsersJSON(getUsers)
 
@@ -84,8 +84,8 @@ module.exports = {
             res.redirect('/user/perfil')
 
         } else {
-            res.render('userProfileEdit', {
-                position: "",
+            res.render('users/userProfileEdit', {
+                position: "position:relative;",
                 categorias,
                 errors: errors.mapped(),
                 old: req.body,
@@ -120,8 +120,10 @@ module.exports = {
         } else {
             res.render('users/login', {
                 categorias,
-                position:"position: relative",
+                position:"position: relative;",
                 errors: errors.mapped(),
+                old:req.body,
+
                 session: req.session
             })
         }

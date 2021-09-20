@@ -39,8 +39,8 @@ module.exports = {
             sizes,
             prices,
             toThousand,
-            display:"display:grid;"
-            
+            display:"display:grid;",
+            session: req.session
         })
     },
     
@@ -55,7 +55,8 @@ module.exports = {
             title: title,
             position:"",
             categorias,
-            toThousand
+            toThousand,
+            session: req.session
         })
     },
     category:(req,res)=>{
@@ -80,7 +81,8 @@ module.exports = {
              toThousand,
              colors,
             sizes,
-            prices
+            prices,
+            session: req.session
          })
     }
 }

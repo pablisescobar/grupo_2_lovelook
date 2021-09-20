@@ -11,9 +11,10 @@
 
                 <div class="image-container">
                     <label class="label-perfil-user img-label" for="examinar"><span class="iconify"
-                            data-icon="carbon:add-filled"></span></label>
+                            data-icon="carbon:add-filled" style="display: none;"></span></label>
                     <input class="input-perfil-user" type="file" name="avatar" id="examinar" hidden>
-                    <div class="image-view" id="imagePreview"></div>
+                    
+                    <img class="image-view" src="/img/user/userAvatars/<%= user.avatar %>" alt="">
                 </div>
 
 
@@ -21,31 +22,31 @@
 
 
                 <div class="container">
-                    <label class="label-perfil-user" for="nombre">Nombre: <%= user.name %></label>
-                    <input class="input--style input-perfil-user" type="text" name="nombre" id="nombre">
+                    <label class="label-perfil-user" for="nombre">Nombre: </label>
+                    <input class="input--style input-perfil-user" type="text" name="nombre" id="nombre" value="<%= user.name %>">
                 </div>
 
                 <div class="container">
-                    <label class="label-perfil-user" for="apellido">Apellido: <%= user.last_name %></label>
-                    <input class="input--style input-perfil-user" type="text" name="apellido" id="apellido">
+                    <label class="label-perfil-user" for="apellido">Apellido: </label>
+                    <input class="input--style input-perfil-user" type="text" name="apellido" id="apellido" value="<%= user.last_name %>">
                 </div>
 
                 <div class="container">
-                    <label class="label-perfil-user" for="direccion">Dirección: <%= user.address ? user.address : "------" %></label>
-                    <input class=" input--style input-perfil-user" type="text" name="direccion" id="direccion">
+                    <label class="label-perfil-user" for="direccion">Dirección: </label>
+                    <input class=" input--style input-perfil-user" type="text" name="direccion" id="direccion" value="<%= user.address ? user.address : "------" %>">
                 </div>
 
                 <div class="container">
-                    <label class="label-perfil-user" for="email">Email: <%= user.email %></label>
-                    <input class="input--style input-perfil-user" type="email" name="email" id="email">
+                    <label class="label-perfil-user" for="email">Email: </label>
+                    <input class="input--style input-perfil-user" type="email" name="email" id="email" value="<%= user.email %>">
                 </div>
                 
                 <div class="container">
-                    <label class="label-perfil-user" for="telefono">Teléfono: <%= user.tel ? user.tel : "------" %></label>
-                    <input class="input--style input-perfil-user" type="tel" name="telefono" id="telefono">
+                    <label class="label-perfil-user" for="telefono">Teléfono: </label>
+                    <input class="input--style input-perfil-user" type="tel" name="telefono" id="telefono" value="<%= user.tel ? user.tel : "------" %>">
                 </div>
 
-                <a href="/users/profile/edit/<%= user.id %>" class="btn btn-ad-primary">EDITAR DATOS</a>
+                <a href="/user/profile/edit/<%= user.id %>" class="changesButton">EDITAR DATOS</a>
 
             </form>
 

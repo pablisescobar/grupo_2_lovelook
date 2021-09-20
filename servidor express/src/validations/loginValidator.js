@@ -21,14 +21,15 @@ module.exports = [
     })
     .withMessage("Email no registrado"),
 
-    check('pass')
+    check('pass1')
     .notEmpty()
     .withMessage('Debes ingresar tu contraseña'),
 
-    body('pass')
+    body('pass1')
     .custom((value, {req}) => {
         let user = getUsers.find(user => user.email === req.body.email)
-        return /*bcrypt.compareSync*/ value === user.password ? true : false
+        return bcrypt.compareSync(value, user.pass1)
+
     })
     .withMessage('contraseña inválida')
 ]

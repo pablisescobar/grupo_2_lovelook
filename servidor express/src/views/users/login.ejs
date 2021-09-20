@@ -12,14 +12,14 @@
                       <figure class="card__thumbnail">
                         <img src="/img/logo.png" alt="" class="card__logo">
                       </figure>
-                      <input class="card__input input--style" type="email" name="email" placeholder="Ingresa tu email" value="<%= (locals.old && old.email) ? old.email : '' %>">
+                      <input class="card__input input--style" type="email" name="email" placeholder="Ingresa tu email" value="<%= locals.old && old.email %>">
                       <% if (locals.errors && errors.email) { %>
                         <small class="text-danger"><%= errors.email.msg %> </small>
                       <% } %>
                   
-                      <input class="card__input input--style" type="password" name="pass" placeholder="Ingresa tu contraseña" value="<%= (locals.old && old.pass) ? old.pass : '' %>">
-                      <% if (locals.errors && errors.pass) { %>
-                        <small class="text-danger"><%= errors.pass.msg %> </small>
+                      <input class="card__input input--style" type="password" name="pass1" placeholder="Ingresa tu contraseña">
+                      <% if (locals.errors && errors.pass1) { %>
+                        <small class="text-danger"><%= errors.pass1.msg %> </small>
                       <% } %>
                   
                       <div style="display: flex;align-items: center;">
