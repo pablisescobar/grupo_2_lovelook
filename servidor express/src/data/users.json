@@ -26,5 +26,19 @@
         "pc": "",
         "province": "",
         "city": ""
+    },
+    {
+        "id": 3,
+        "name": "Mariela",
+        "last_name": "Paduani",
+        "email": "marielapaduani@gmail.com",
+        "pass1": "$2a$12$2M6BOInlLF8QaEgqAG7uleaFEB6AggrgjwREnwP8dD5rtR11SFcW2",
+        "avatar": "default-image.png",
+        "rol": "ROL_USER",
+        "tel": "",
+        "address": "",
+        "pc": "",
+        "province": "",
+        "city": ""
     }
 ]
