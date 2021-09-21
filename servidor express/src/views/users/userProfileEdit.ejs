@@ -5,7 +5,7 @@
 
     <%- include('../partials/header')%>
 
-        <form action="/user/profile/edit/<%= user.id %>?_method=PUT" method="POST" class="perfil-user">
+        <form action="/user/profile/edit/<%= user.id %>?_method=PUT" method="POST" class="perfil-user" enctype="multipart/form-data">
             <div class="image-container">
                 <label class="label-perfil-user img-label" for="examinar"><span class="iconify" data-icon="carbon:add-filled"></span></label>
                 <input class="input-perfil-user" type="file" name="avatar" id="examinar" hidden/>
