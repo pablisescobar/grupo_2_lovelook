@@ -19,7 +19,6 @@ module.exports = [
     body('email')
     .custom(value => {
         let user = getUsers.find(user => user.email === value)
-            console.log(user)
         if(user === undefined){
             return true
         }else {
