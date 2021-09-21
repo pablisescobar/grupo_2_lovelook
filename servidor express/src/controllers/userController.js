@@ -60,7 +60,7 @@ module.exports = {
                 name,
                 last_name,
                 tel,
-                adress,
+                address,
                 pc,
                 province,
                 city
@@ -69,7 +69,7 @@ module.exports = {
             user.name = name
             user.last_name = last_name
             user.tel = tel
-            user.adress = adress
+            user.address = address
             user.pc = pc
             user.province = province
             user.city = city
@@ -122,8 +122,7 @@ module.exports = {
                 categorias,
                 position:"position: relative;",
                 errors: errors.mapped(),
-                old:req.body,
-
+                old:req.body, 
                 session: req.session
             })
         }
@@ -166,7 +165,7 @@ module.exports = {
 
             res.redirect('/user/login')
         }else{
-            res.render('users/register', { dataBase: getUsers, errors: errors.mapped(), old: req.body, categorias,
+            res.render('users/register', { dataBase: getUsers, errors: errors.mapped(), old: req.body, categorias,session: req.session,
                 position:"position: relative" });
 
         }
@@ -191,7 +190,8 @@ module.exports = {
             products: productsOffer,
             position: "",
             toThousand,
-            categorias
+            categorias,
+            session: req.session
         })
     }
 }
