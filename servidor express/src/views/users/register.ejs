@@ -12,15 +12,16 @@
                 <img src="/img/logo.png" alt="" class="card__logo">
             </figure>
             <div class="input-container">
-                <input class="input--style" type="text" name="name" placeholder="Nombre" value="<%= locals.old && old.name %>">
-                <% if (locals.errors && errors.name) { %> 
-                    <small class="errors-validation_register"><%= errors.name.msg %></small>
-                <% } %>
+                <input  class="input--style" type="text" name="name" placeholder="<% if (locals.errors && errors.name) { %><%= errors.name.msg %><% } %>" value="<%= locals.old && old.name %>">
+                 
+                    <small class="errors-validation_register"></small>
+                
                 <input class="input--style" type="text" name="last_name" placeholder="Apellido" value="<%= locals.old && old.last_name %>">
                 <% if (locals.errors && errors.last_name) { %> 
-                    <small class="errors-validation_register"><%= errors.last_name.msg %></small>
+                    <small style="font-size: x-small;" class="errors-validation_register"><%= errors.last_name.msg %></small>
                 <% } %>
-                <input class="input--style" name="email" placeholder="E-mail" value="<%= locals.old && old.email %>">
+                <input class="input--style" name="email" placeholder="<%= (typeof errors != 'undefined' && errors.apellido)?errors.apellido.msg: "Email" %>"
+                value="<%= locals.old && old.email %>">
                 <% if (locals.errors && errors.email) { %> 
                     <small class="errors-validation_register"><%= errors.email.msg %></small>
                 <% } %>
