@@ -51,16 +51,5 @@
         "pc": "",
         "province": "",
         "city": ""
-    },
-    {
-        "id": 5,
-        "name": "pablo",
-        "last_name": "escobar",
-        "email": "ocampo_blo@live.com.ar",
-        "pass1": "$2a$12$.gaAgz0LO8kklFRY1QE3Y.N5Opz3nfqZesH2nayGLqOkElH8DLiFS",
-        "avatar": "default-image.png",
-        "rol": "ROL_USER",
-        "tel": "1130933991",
-        "address": ""
     }
 ]
