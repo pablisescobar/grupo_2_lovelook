@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
 let {index,afip,search} = require('../controllers/homeController.js');
-
+let cookieCheck = require('../middleware/cookieCheck')
 
 router.get('/',index);
 router.get('/afip',afip);
