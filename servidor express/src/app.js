@@ -5,7 +5,7 @@ const path = require('path');
 const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
 const session = require('express-session')
-const localsCheck =require('../middleware/localsCheck')
+const localsCheck =require('./middleware/localsCheck')
 
 /* Middleware */
 app.use(express.static('public'));
