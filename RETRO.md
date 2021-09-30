@@ -52,3 +52,24 @@ Hacer Menos:
 
 Dejar de hacer:
 - Adelantar cosas ya que complica a los demas integrantes del equipo
+
+## Retrospectiva: "SPRINT 4"
+
+Empezar a hacer :
+- Ultimar detalles
+
+Hacer más:
+- 
+
+Seguir Haciendo como equipo:
+- Comunicación 
+- Ayuda mutua
+
+Hacer Menos:
+- 
+
+Dejar de hacer:
+- 
+
+# Como equipo consideramos que:
+- Debido a la buena comunicación y buen compañerismo obtenido en este sprint logramos realizar nuestros objetivos positivamente lo cual nos lleva a no poder completar la estrella de mar...
