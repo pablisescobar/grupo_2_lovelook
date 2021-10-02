@@ -6,6 +6,7 @@ const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
 const session = require('express-session')
 const localsCheck =require('./middleware/localsCheck')
+const headerCategories = require('./middleware/headerCategories')
 
 /* Middleware */
 app.use(express.static('public'));
@@ -19,7 +20,7 @@ app.use(session({
     saveUninitialized: true
 }))
 app.use(localsCheck)
-
+app.use(headerCategories)
 /* VIEWS */
 app.set('views',path.join(__dirname,'views'))
 app.set('view engine','ejs')
