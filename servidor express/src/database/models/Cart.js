@@ -8,12 +8,12 @@ module.exports = (sequelize, DataTypes) => {
         totalPrice: {
             type: DataTypes.INTEGER(11)
         },
-        /* userId: {
+        userId: {
             type: DataTypes.INTEGER(11)
         },
         productId: {
             type: DataTypes.INTEGER(11)
-        } */
+        }
     }
     let Cart = sequelize.define("Cart", cols, {
         tableName: "shopping_cart",

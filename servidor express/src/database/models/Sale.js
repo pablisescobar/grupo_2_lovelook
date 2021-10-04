@@ -16,6 +16,13 @@ module.exports=(sequelize,DataTypes)=>{
         tableName:"sales",
         timestamps:true
     })
-
+    Size.associate=models=>{
+        Size.belongsToMany(models.Product,{
+            as:"products",
+            through:"product_size",
+            foreignKey:"sizeId",
+            otherKey:"productId"
+        })
+    }
     return Sale
 }

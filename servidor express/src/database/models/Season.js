@@ -18,6 +18,9 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     const Season = sequelize.define(alias, cols, config);
-
+    Season.hasMany(models.Product,{
+    as:"products",
+    foreignKey:"productId"
+    })
     return Season;
 }

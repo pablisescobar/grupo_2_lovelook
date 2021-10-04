@@ -13,6 +13,11 @@ module.exports=(sequelize,DataTypes)=>{
         tableName:"roles",
         timestamps:false
     })
-
+    Rol.associate=models=>{
+       Rol.hasMany(models.User,{
+           as:"users",
+           foreignKey:"userId"
+       })
+    }
     return Rol
 }
