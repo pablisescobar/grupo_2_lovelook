@@ -2,13 +2,13 @@ module.exports = function(sequelize, dataTypes){
     let alias = "Product";
     let cols = {
         id: {
-         type: dataTypes.INTEGER(10).UNSIGNED,
+         type: dataTypes.INTEGER(11),
          primaryKey: true,
          autoIncrement: true,
          allowNull: false
         },
         name: {
-            type: dataTypes.VARCHAR(50).UNSIGNED,
+            type: dataTypes.VARCHAR(50),
             allowNull: false
         },
         description: {
@@ -19,23 +19,23 @@ module.exports = function(sequelize, dataTypes){
             allowNull: false
         },
         amount: {
-            type: dataTypes.INTEGER(10).UNSIGNED,
+            type: dataTypes.INTEGER(11),
             allowNull: false
         },
         imageId: {
-            type: dataTypes.INTEGER(10),
+            type: dataTypes.INTEGER(11),
             allowNull: false
         },
         categoryId: {
-            type: dataTypes.INTEGER(10),
+            type: dataTypes.INTEGER(11),
             allowNull: false
         },
         colorId: {
-            type: dataTypes.INTEGER(10),
+            type: dataTypes.INTEGER(11),
             allowNull: false
         },
         seasonId: {
-            type: dataTypes.INTEGER(10),
+            type: dataTypes.INTEGER(11),
             allowNull: false
         }
     }
