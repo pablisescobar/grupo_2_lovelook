@@ -204,7 +204,6 @@ CREATE TABLE `products` (
   `amount` int(11) NOT NULL,
   `imageId` int(11) NOT NULL,
   `categoryId` int(11) NOT NULL,
-  `colorId` int(11) NOT NULL,
   `seasonId` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `categoryId` (`categoryId`),
@@ -402,4 +401,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-09-30  2:03:07
+-- Dump completed on 2021-10-03 23:10:54
