@@ -28,24 +28,50 @@ module.exports=(sequelize,DataTypes)=>{
             type:DataTypes.STRING(60),
             
         },
-       /*  rolId:{
+        rolId:{
             type:DataTypes.INTEGER(11),
             
         },
         locationId:{
-            type:DataTypes.INTEGER(11),
-           
+            type:DataTypes.INTEGER(11),  
         },
         avatarId:{
             type:DataTypes.INTEGER(11),
           
-        }, */
+        },
         
     }
    let User = sequelize.define("User",cols,{
         tableName:"users",
         timestamps:false
     })
+    User.associate=models=>{
+        User.belongsTo(models.Rol,{
+            as:"rol",
+            foreignKey:"rolId"
+        })
+        User.belongsTo(models.Location,{
+            as:"location",
+            foreignKey:"locationId"
+        })
+        User.belongsTo(models.Avatar,{
+            as:"avatar",
+            foreignKey:"avatarId"
+        })
+        User.belongsToMany(models.Product,{
+            as:"products",
+            through:"shopping_cart",
+            foreignKey:"userId",
+            otherKey:"productId"
+        }),
+        User.belongsToMany(models.Product,{
+            as:"products",
+            through:"sale",
+            foreignKey:"userId",
+            otherKey:"productId"
+        })
+
+    }
 
     return User
 }

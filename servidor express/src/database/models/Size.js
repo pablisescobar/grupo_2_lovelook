@@ -2,7 +2,7 @@ module.exports = function(sequelize, dataTypes) {
     let alias = "Size";
     let cols = {
         id: {
-            type: dataTypes.INTEGER(10).UNSIGNED,
+            type: dataTypes.INTEGER(10),
             primaryKey: true,
             autoIncrement: true,
             allowNull: false
