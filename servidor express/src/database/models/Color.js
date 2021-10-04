@@ -1,4 +1,4 @@
-module.exports = function(sequelize, dataTypes) {
+module.exports = function (sequelize, dataTypes) {
     let alias = "Color";
     let cols = {
         id: {
@@ -8,7 +8,7 @@ module.exports = function(sequelize, dataTypes) {
             allowNull: false
         },
         name: {
-            type: dataTypes.VARCHAR(50),
+            type: dataTypes.STRING(50),
             allowNull: false
         }
     }
@@ -19,12 +19,13 @@ module.exports = function(sequelize, dataTypes) {
 
     const Color = sequelize.define(alias, cols, config)
 
-    Color.associate=models=>{
-        Color.belongsToMany(models.Product,{
-            as:"products",
-            through:"product_color",
-            foreignKey:"colorId",
-            otherKey:"productId"
+    Color.associate = models => {
+        Color.belongsToMany(models.Product, {
+            as: "products",
+            through: "product_color",
+            foreignKey: "colorId",
+            otherKey: "productId",
+            timestamps:false
         })
     }
     return Color

@@ -7,8 +7,7 @@ let {
     productStore,
     updateProduct,
     searchAdmin,
-    eliminarProducto,
-    loginAdmin } = require('../controllers/adminController.js');
+    eliminarProducto } = require('../controllers/adminController.js');
 let multer = require('../middleware/uploadProductsFiles')
 let productValidator = require('../validations/adminValidation')
 let uploadAdminCheck = require('../middleware/uploadAdminCheck')
@@ -26,15 +25,10 @@ router.post('/products/add',uploadAdminCheck, multer.array('image',4),productVal
 router.get('/products/edit/:id',uploadAdminCheck, editProduct);
 
 /* PUT - Editamos un producto con el método realizado en el controlador */
-router.put('/products/edit/:id',uploadAdminCheck, multer.single('image',4), productValidator,updateProduct);
+router.put('/products/edit/:id',uploadAdminCheck, multer.array('image',4), productValidator,updateProduct);
 
 /* Bar search */
 router.get('/products/search',uploadAdminCheck, searchAdmin)
-
-
-
-
-
 
 /* Delete - borre un producto que coincida con el id de la ruta parametrizada */
 router.delete('/products/eliminarProducto/:id', eliminarProducto);

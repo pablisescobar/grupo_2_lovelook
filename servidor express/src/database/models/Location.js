@@ -1,34 +1,37 @@
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, dataTypes) => {
     let alias = "Location";
     let cols = {
         id: {
-            type:DataTypes.INTEGER(11),
-            primarykey: true,
+            type:dataTypes.INTEGER(11),
+            primaryKey: true,
             autoIncrement: true,
+            allowNull: false
         },
         province: {
-            type:DataTypes.STRING(50)
+            type:dataTypes.STRING(50)
         },
         city: {
-            type:DataTypes.STRING(50)
+            type:dataTypes.STRING(50)
         },
         pc: {
-            type:DataTypes.INTEGER(11) 
+            type:dataTypes.INTEGER(11) 
         },
         address:{
-            type:DataTypes.STRING(50)
+            type:dataTypes.STRING(50)
         }
 
     }
     let config = {
-        tableName:  "locations",
+        tableName:"locations",
         timestamps:false
     }
 
     const Location = sequelize.define(alias, cols, config)
-    Location.belongsTo(models.User,{
-        as:"user",
-        foreignKey:"locationId"
-    })
-    return Location;
+    Location.associate=models=>{
+        Location.belongsTo(models.User,{
+            as:"user",
+            foreignKey:"locationId"
+        })
+        return Location;
+    }
 }

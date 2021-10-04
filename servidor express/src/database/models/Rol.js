@@ -1,12 +1,14 @@
-module.exports=(sequelize,DataTypes)=>{
+module.exports=(sequelize,dataTypes)=>{
     const cols= {
         id:{
-            type:DataTypes.INTEGER(11),
+            type:dataTypes.INTEGER(11),
             primaryKey:true,
-            autoIncrement:true
+            autoIncrement:true,
+            allowNull: false
         },
         name:{
-            type:DataTypes.STRING(50)
+            type:dataTypes.STRING(50),
+            allowNull: false
         }
     }
    let Rol = sequelize.define("Rol",cols,{
@@ -16,7 +18,7 @@ module.exports=(sequelize,DataTypes)=>{
     Rol.associate=models=>{
        Rol.hasMany(models.User,{
            as:"users",
-           foreignKey:"userId"
+           foreignKey:"rolId"
        })
     }
     return Rol

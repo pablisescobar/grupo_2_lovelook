@@ -1,18 +1,19 @@
-module.exports = (sequelize, DataTypes) => {
+/* module.exports = (sequelize, dataTypes) => {
     const cols = {
         id: {
-            type: DataTypes.INTEGER(11),
+            type: dataTypes.INTEGER(11),
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false
         },
         totalPrice: {
-            type: DataTypes.INTEGER(11)
+            type: dataTypes.INTEGER(11)
         },
         userId: {
-            type: DataTypes.INTEGER(11)
+            type: dataTypes.INTEGER(11)
         },
         productId: {
-            type: DataTypes.INTEGER(11)
+            type: dataTypes.INTEGER(11)
         }
     }
     let Cart = sequelize.define("Cart", cols, {
@@ -21,4 +22,4 @@ module.exports = (sequelize, DataTypes) => {
     })
 
     return Cart
-}
+} */

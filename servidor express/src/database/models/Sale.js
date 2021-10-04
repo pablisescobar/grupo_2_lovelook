@@ -1,28 +1,26 @@
-module.exports=(sequelize,DataTypes)=>{
+/* module.exports=(sequelize,dataTypes)=>{
     const cols= {
         id:{
-            type:DataTypes.INTEGER(11),
+            type:dataTypes.INTEGER(11),
             primaryKey:true,
-            autoIncrement:true
+            autoIncrement:true,
+            allowNull: false
         },
         userId:{
-            type:DataTypes.INTEGER(11)
+            type:dataTypes.INTEGER(11),
+            allowNull: false
         },
         productId:{
-            type:DataTypes.INTEGER(11)
-        }
+            type:dataTypes.INTEGER(11),
+            allowNull: false
+        },
+        createdAt: dataTypes.TIMESTAMP,
+        updatedAt: dataTypes.TIMESTAMP,
     }
    let Sale = sequelize.define("Sale",cols,{
         tableName:"sales",
         timestamps:true
     })
-    Size.associate=models=>{
-        Size.belongsToMany(models.Product,{
-            as:"products",
-            through:"product_size",
-            foreignKey:"sizeId",
-            otherKey:"productId"
-        })
-    }
+    
     return Sale
-}
+} */

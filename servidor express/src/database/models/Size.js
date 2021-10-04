@@ -1,4 +1,4 @@
-module.exports = function(sequelize, dataTypes) {
+module.exports = (sequelize, dataTypes) =>{
     let alias = "Size";
     let cols = {
         id: {
@@ -8,7 +8,7 @@ module.exports = function(sequelize, dataTypes) {
             allowNull: false
         },
         name: {
-            type: dataTypes.VARCHAR(50),
+            type: dataTypes.STRING(50),
             allowNull: false
         }
     }
@@ -18,6 +18,14 @@ module.exports = function(sequelize, dataTypes) {
     }
 
     const Size = sequelize.define(alias, cols, config)
-
+    Size.associate=models=>{
+        Size.belongsToMany(models.Product,{
+            as:"products",
+            through:"product_size",
+            foreignKey:"sizeId",
+            otherKey:"productId",
+            timestamps:false
+        })
+    }
     return Size
 }

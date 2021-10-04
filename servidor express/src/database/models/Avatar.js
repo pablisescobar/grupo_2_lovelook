@@ -1,18 +1,20 @@
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, dataTypes) => {
     let alias = "Avatar";
     let cols = {
         id: {
-            type: DataTypes.INTEGER(11),
+            type: dataTypes.INTEGER(11),
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false
         },
         filename: {
-            type:DataTypes.STRING(50)
+            type:dataTypes.STRING(50),
+            allowNull: false
         }
 
     }
     let config = {
-        tableName: "Avatars",
+        tableName: "avatars",
         timestamps: false
     }
 

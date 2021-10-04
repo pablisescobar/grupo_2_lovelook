@@ -1,44 +1,44 @@
 
 
-module.exports=(sequelize,DataTypes)=>{
+module.exports=(sequelize,dataTypes)=>{
     const cols= {
         id:{
-            type:DataTypes.INTEGER(11),
+            type:dataTypes.INTEGER(11),
             primaryKey:true,
-            autoIncrement:true
+            autoIncrement:true,
+            allowNull: false
             
         },
         firstName:{
-            type:DataTypes.STRING(50),
-            
+            type:dataTypes.STRING(50),
+            allowNull: false
         },
         lastName:{
-            type:DataTypes.STRING(50),
-            
+            type:dataTypes.STRING(50),
+            allowNull: false
         },
         phone:{
-            type:DataTypes.INTEGER(50),
+            type:dataTypes.INTEGER(50),
+            allowNull: true
             
         },
         email:{
-            type:DataTypes.STRING(100),
-            
+            type:dataTypes.STRING(100),
+            allowNull: false
         },
         password:{
-            type:DataTypes.STRING(60),
-            
+            type:dataTypes.STRING(60),
+            allowNull: false
         },
         rolId:{
-            type:DataTypes.INTEGER(11),
-            
+            type:dataTypes.INTEGER(11),
         },
         locationId:{
-            type:DataTypes.INTEGER(11),  
+            type:dataTypes.INTEGER(11),
         },
         avatarId:{
-            type:DataTypes.INTEGER(11),
-          
-        },
+            type:dataTypes.INTEGER(11),
+        }
         
     }
    let User = sequelize.define("User",cols,{
@@ -66,7 +66,7 @@ module.exports=(sequelize,DataTypes)=>{
         }),
         User.belongsToMany(models.Product,{
             as:"products",
-            through:"sale",
+            through:"sales",
             foreignKey:"userId",
             otherKey:"productId"
         })

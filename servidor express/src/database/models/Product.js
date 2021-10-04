@@ -8,14 +8,15 @@ module.exports = function(sequelize, dataTypes){
          allowNull: false
         },
         name: {
-            type: dataTypes.VARCHAR(50),
+            type: dataTypes.STRING(50),
             allowNull: false
         },
         description: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
+            allowNull: false
         },
         price: {
-            type: dataTypes.DECIMAL(1, 3),
+            type: dataTypes.DECIMAL,
             allowNull: false
         },
         amount: {
@@ -41,7 +42,7 @@ module.exports = function(sequelize, dataTypes){
     }
     let config = {
         tableName: "products",
-        timestamps: true
+        timestamps: false
     }
 
     const Product = sequelize.define(alias, cols, config)

@@ -1,8 +1,8 @@
 let db = require('../database/models')
 module.exports = (req, res, next) => {
-    db.Category.findALL({
+    db.Category.findAll({
         include: [{
-            association: ""
+            association: "products"
         }]
         .then(categories => {
             res.locals.categories = categories
