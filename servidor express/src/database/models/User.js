@@ -1,5 +1,3 @@
-
-
 module.exports=(sequelize,dataTypes)=>{
     const cols= {
         id:{
@@ -49,20 +47,14 @@ module.exports=(sequelize,dataTypes)=>{
         User.belongsTo(models.Rol,{
             as:"rol",
             foreignKey:"rolId"
-        })
+        }),
         User.belongsTo(models.Location,{
             as:"location",
             foreignKey:"locationId"
-        })
+        }),
         User.belongsTo(models.Avatar,{
             as:"avatar",
             foreignKey:"avatarId"
-        })
-        User.belongsToMany(models.Product,{
-            as:"products",
-            through:"shopping_cart",
-            foreignKey:"userId",
-            otherKey:"productId"
         }),
         User.belongsToMany(models.Product,{
             as:"products",
@@ -70,7 +62,6 @@ module.exports=(sequelize,dataTypes)=>{
             foreignKey:"userId",
             otherKey:"productId"
         })
-
     }
 
     return User

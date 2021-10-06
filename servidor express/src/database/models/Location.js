@@ -32,6 +32,6 @@ module.exports = (sequelize, dataTypes) => {
             as:"user",
             foreignKey:"locationId"
         })
-        return Location;
     }
+    return Location;
 }

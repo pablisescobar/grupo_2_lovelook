@@ -31,10 +31,6 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.INTEGER(11),
             allowNull: false
         },
-        colorId: {
-            type: dataTypes.INTEGER(11),
-            allowNull: false
-        },
         seasonId: {
             type: dataTypes.INTEGER(11),
             allowNull: false
@@ -47,6 +43,7 @@ module.exports = function(sequelize, dataTypes){
 
     const Product = sequelize.define(alias, cols, config)
 
+    /* Associations */
     Product.associate = models => {
         Product.belongsTo(models.Category, {
             as:"category",
@@ -55,22 +52,6 @@ module.exports = function(sequelize, dataTypes){
         Product.hasMany(models.Image,{
             as:"images",
             foreignKey:"imageId"
-        })
-        Product.belongsTo(models.Season,{
-            as:"season",
-            foreignKey:"seasonId"
-        })
-        Product.belongsToMany(models.User,{
-            as:"users",
-            through:"shopping_cart",
-            foreignKey:"productId",
-            otherKey:"userId"
-        }),
-        Product.belongsToMany(models.User,{
-            as:"users",
-            through:"sales",
-            foreignKey:"productId",
-            otherKey:"userId"
         }),
         Product.belongsToMany(models.Color,{
             as:"colors",
@@ -78,12 +59,23 @@ module.exports = function(sequelize, dataTypes){
             foreignKey:"productId",
             otherKey:"colorId"
         }),
+        Product.belongsTo(models.Season,{
+            as:"season",
+            foreignKey:"seasonId"
+        }),
         Product.belongsToMany(models.Size,{
             as:"sizes",
             through:"product_size",
             foreignKey:"productId",
             otherKey:"sizeId"
+        }),
+        Product.belongsToMany(models.User,{
+            as:"users",
+            through:"sales",
+            foreignKey:"productId",
+            otherKey:"userId"
         })
+    
     }
 
     return Product

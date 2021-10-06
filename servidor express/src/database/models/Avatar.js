@@ -20,7 +20,7 @@ module.exports = (sequelize, dataTypes) => {
 
     const Avatar = sequelize.define(alias, cols, config);
     Avatar.associate=models=>{
-        Avatar.belongTo(models.User,{
+        Avatar.belongsTo(models.User,{
             as:"user",
             foreignKey:"avatarId"
         })
