@@ -13,13 +13,13 @@ function capitalize(text) {
 module.exports = {
     listProductAdmin: (req, res) => {
         db.Product.findAll({
-                include: [{ association: "category" },
-                    { association: "season" },
-                    { association: "images" },
-                    { association: "colors" },
-                    { association: "sizes" }
-                ]
-            })
+            include: [{ association: "category" },
+            { association: "season" },
+            { association: "images" },
+            { association: "colors" },
+            { association: "sizes" }
+            ]
+        })
             .then(products => {
                 /* console.log(products);
                 res.send(products) */
@@ -55,13 +55,21 @@ module.exports = {
     productStore: (req, res) => {
 
         let errors = validationResult(req)
-
+        if (req.fileValidatorError) {
+            let image = {
+              param: "image",
+              msg: req.fileValidatorError,
+            };
+            errors.push(image);
+          }
         if (errors.isEmpty()) {
             let arrayImages = [];
             if (req.files) {
                 req.files.forEach(image => {
                     arrayImages.push(image.filename)
                 })
+            } else {
+                arrayImages.push("default.png")
             }
 
 
@@ -74,42 +82,50 @@ module.exports = {
                 color,
                 size,
                 season,
+                discount
             } = req.body
 
-            db.Product.create({
+            try {
+                db.Product.create({
                     name,
                     description,
                     price,
                     amount,
+                    discount,
                     categoryId: category,
                     seasonId: season
                 })
-                .then(product => {
-                    if (arrayImages.length > 0) {
-                        var images = arrayImages.map(image => {
-                            return {
-                                filename: image,
-                                productId: product.id
-                            }
+                    .then(product => {
+                        if (arrayImages.length > 0) {
+                           let images = arrayImages.map(image => {
+                                return {
+                                    filename: image,
+                                    productId: product.id
+                                }
+                            })
+                            db.Image.bulkCreate(images)
+                        }else{
+                            arrayImages.push("default.png")
+                        }
+                        
+                        db.product_color.create({
+                            productId: product.id,
+                            colorId: color
                         })
-                    }
-                    db.product_color.create({
-                        productId: product.id,
-                        colorId: color
-                    })
-                })
-            then(product => {
-                db.product_size.create({
-                    productId: product.id,
-                    sizeId: size
-                })
-            })
+                        .then(()=>{
+                                        db.product_size.create({
+                                            productId: product.id,
+                                            sizeId: size
+                                        })
+                                        .then(()=>res.redirect(`/admin/products#{product.id}`))
+                                    })
+                                    
+                                })
+                    
+            } catch (err) {
+                res.send(err)
+             }
 
-            db.Image.bulkCreate(images)
-
-
-            .then(() => res.redirect(`/admin/products`))
-                .catch(err => console.log(err))
 
         } else {
             let categoriesDb = db.Category.findAll()
@@ -139,10 +155,10 @@ module.exports = {
 
     searchAdmin: (req, res) => {
         db.Product.findAll({
-                where: {
-                    [Op.like]: `%${req.query.keys}%`
-                }
-            })
+            where: {
+                [Op.like]: `%${req.query.keys}%`
+            }
+        })
             .then(result => {
                 res.render('admin/searchResultAdmin', {
                     result,
@@ -188,19 +204,19 @@ module.exports = {
             } = req.body
 
             db.Product.update({
-                    name,
-                    description,
-                    price,
-                    amount,
-                    imageId,
-                    categoryId,
-                    colorId,
-                    seasonId
-                }, {
-                    where: {
-                        id: +req.params.id
-                    }
-                })
+                name,
+                description,
+                price,
+                amount,
+                imageId,
+                categoryId,
+                colorId,
+                seasonId
+            }, {
+                where: {
+                    id: +req.params.id
+                }
+            })
                 .then(product => {
                     res.redirect(`/admin/products#${product.id}`)
                 })
@@ -230,10 +246,10 @@ module.exports = {
 
     eliminarProducto: (req, res) => {
         db.Product.destroy({
-                where: {
-                    id: +req.params.id
-                }
-            })
+            where: {
+                id: +req.params.id
+            }
+        })
             .then(() => res.redirect('/admin/products'))
             .catch(error => console.log(error))
     }

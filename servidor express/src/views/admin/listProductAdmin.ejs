@@ -50,7 +50,7 @@
                                         <!-- PRECIO -->
                                 </td>
                                 <td>
-                                    <img class="img-value" src="/img/photos/<%= product.images[0]?.filename %>" alt=""> 
+                                    <img class="img-value" src="/img/photos/<%= product.images.length>0? product.images[0].filename:'default.png' %>" alt=""> 
                                     <!-- IMAGEN -->
                                 </td>
                                 <td>
@@ -76,7 +76,9 @@
                                         <!-- COLOR -->
                                 </td>
                                 <td>
-                                    <%=product.sizes[0].name %>
+                                    <% product.sizes.forEach(size=>{ %> 
+                                        <%=size.name.toUpperCase()%>
+                                        <% }) %> 
                                         <!-- TALLE -->
                                 </td>
                                 <td>

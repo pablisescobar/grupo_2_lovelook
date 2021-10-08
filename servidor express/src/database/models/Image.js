@@ -9,7 +9,8 @@ module.exports = (sequelize, dataTypes) => {
         },
         filename: {
             type:dataTypes.STRING(100),
-            allowNull:false
+            allowNull:false,
+            defaultValue:"default.png"
         },
         productId:{
             type:dataTypes.INTEGER(11),
