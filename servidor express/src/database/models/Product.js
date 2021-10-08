@@ -23,9 +23,8 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.INTEGER(11),
             allowNull: false
         },
-        imageId: {
-            type: dataTypes.INTEGER(11),
-            allowNull: false
+        discount:{
+            type:dataTypes.INTEGER(11)
         },
         categoryId: {
             type: dataTypes.INTEGER(11),
@@ -40,7 +39,7 @@ module.exports = function(sequelize, dataTypes){
         tableName: "products",
         timestamps: false
     }
-
+    
     const Product = sequelize.define(alias, cols, config)
 
     /* Associations */
@@ -51,7 +50,7 @@ module.exports = function(sequelize, dataTypes){
         })
         Product.hasMany(models.Image,{
             as:"images",
-            foreignKey:"imageId"
+            foreignKey:"productId"
         }),
         Product.belongsToMany(models.Color,{
             as:"colors",
@@ -67,7 +66,8 @@ module.exports = function(sequelize, dataTypes){
             as:"sizes",
             through:"product_size",
             foreignKey:"productId",
-            otherKey:"sizeId"
+            otherKey:"sizeId",
+            timestamps: false
         }),
         Product.belongsToMany(models.User,{
             as:"users",

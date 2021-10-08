@@ -6,8 +6,8 @@ const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
 const session = require('express-session')
 const localsCheck =require('./middleware/localsCheck')
-/* const headerCategories = require('./middleware/headerCategories')
- */
+const headerCategories = require('./middleware/headerCategories')
+
 /* Middleware */
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended:false }));
@@ -20,7 +20,8 @@ app.use(session({
     saveUninitialized: true
 }))
 app.use(localsCheck)
-/* app.use(headerCategories) */
+app.use(headerCategories)
+
 /* VIEWS */
 app.set('views',path.join(__dirname,'views'))
 app.set('view engine','ejs')
@@ -42,7 +43,7 @@ app.use('/products',productsRouter);
 app.use('/user',userRouter);
 
 /* -------ERROR 404------------ */
-/* let {getProducts} = require ('./data/dataBase')
+let {getProducts} = require ('./data/dataBase')
 app.use((req,res,next)=>{
 let categorias = [];
 getProducts.forEach(product => {
@@ -55,7 +56,7 @@ categorias,
 session: req.session,
 position:"position:relative"
     })
-}) */
+})
 
 /* ---------------------------- */
 

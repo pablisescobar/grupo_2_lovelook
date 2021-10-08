@@ -10,6 +10,10 @@ module.exports = (sequelize, dataTypes) => {
         filename: {
             type:dataTypes.STRING(100),
             allowNull:false
+        },
+        productId:{
+            type:dataTypes.INTEGER(11),
+            allowNull:false
         }
 
     }
@@ -22,7 +26,7 @@ module.exports = (sequelize, dataTypes) => {
     Image.associate=models=>{
         Image.belongsTo(models.Product,{
             as:"product",
-            foreignKey:"imageId"
+            foreignKey:"productId"
         })
     }
     return Image;

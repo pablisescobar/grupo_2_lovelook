@@ -70,8 +70,8 @@
                 <span>Categorías</span>
                 <div class="menu_desplegable" id="categoriasDesplegableView">
                     <div class="desplegable">
-                        <% categorias.forEach(category => { %> 
-                        <a href="/products/<%= category.toLowerCase() %>"><span><%= category.toLowerCase() %></span></a>
+                        <% locals.categories.forEach(category => { %> 
+                        <a href="/products/<%= category.name.toLowerCase() %>"><span><%= category.name.toLowerCase() %></span></a>
                         <% }); %>
                     </div>
                 </div>                                                                          

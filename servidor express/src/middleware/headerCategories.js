@@ -4,9 +4,10 @@ module.exports = (req, res, next) => {
         include: [{
             association: "products"
         }]
+    })
+
         .then(categories => {
             res.locals.categories = categories
             next()
         })
-    })
 }

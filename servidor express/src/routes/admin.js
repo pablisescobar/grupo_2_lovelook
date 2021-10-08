@@ -13,22 +13,22 @@ let productValidator = require('../validations/adminValidation')
 let uploadAdminCheck = require('../middleware/uploadAdminCheck')
 
 /* GET - View List Products */
-router.get('/products',uploadAdminCheck, listProductAdmin);
+router.get('/products'/* ,uploadAdminCheck */, listProductAdmin);
 
 /* GET - View Add Product  */
-router.get('/products/add',uploadAdminCheck ,addProductAdmin);
+router.get('/products/add'/* ,uploadAdminCheck */ ,addProductAdmin);
 
 /* POST - Creamos un producto con el método realizado en el controlador */
-router.post('/products/add',uploadAdminCheck, multer.array('image',4),productValidator, productStore);
+router.post('/products/add'/* ,uploadAdminCheck */, multer.array('image',4),productValidator, productStore);
 
 /* GET - View Edit Product */
-router.get('/products/edit/:id',uploadAdminCheck, editProduct);
+router.get('/products/edit/:id'/* ,uploadAdminCheck */, editProduct);
 
 /* PUT - Editamos un producto con el método realizado en el controlador */
-router.put('/products/edit/:id',uploadAdminCheck, multer.array('image',4), productValidator,updateProduct);
+router.put('/products/edit/:id'/* ,uploadAdminCheck */, multer.array('image',4), productValidator,updateProduct);
 
 /* Bar search */
-router.get('/products/search',uploadAdminCheck, searchAdmin)
+router.get('/products/search'/* ,uploadAdminCheck */, searchAdmin)
 
 /* Delete - borre un producto que coincida con el id de la ruta parametrizada */
 router.delete('/products/eliminarProducto/:id', eliminarProducto);

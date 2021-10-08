@@ -31,7 +31,7 @@
                             <th scope="col">Descuento</th>
                             <th scope="col">Descripción</th>
                             <th scope="col">Código</th>
-                            <th scope="col">Color</th>
+                            <th scope="col">Colores</th>
                             <th scope="col">Talle</th>
                             <th scope="col">Cantidad</th>
                             <th scope="col">Temporada</th>
@@ -50,7 +50,7 @@
                                         <!-- PRECIO -->
                                 </td>
                                 <td>
-                                    <img class="img-value" src="/img/photos/<%= product.image[0] %>" alt="">
+                                    <img class="img-value" src="/img/photos/<%= product.images[0]?.filename %>" alt=""> 
                                     <!-- IMAGEN -->
                                 </td>
                                 <td>
@@ -70,23 +70,25 @@
                                         <!-- CODIGO -->
                                 </td>
                                 <td>
-                                    <%=product.color %>
+                                    <% product.colors.forEach(color=>{ %> 
+                                    <%=color.name.toUpperCase()%>,<br>
+                                    <% }) %> 
                                         <!-- COLOR -->
                                 </td>
                                 <td>
-                                    <%= String(product.size).toLowerCase() %>
+                                    <%=product.sizes[0].name %>
                                         <!-- TALLE -->
                                 </td>
                                 <td>
-                                    <%=product.stock %>
+                                    <%=product.amount %>
                                         <!-- CANTIDAD -->
                                 </td>
                                 <td>
-                                    <%=product.season %>
+                                    <%=product.season.name %>
                                         <!-- TEMPORADA -->
                                 </td>
                                 <td>
-                                    <%=product.category %>
+                                    <%=product.category.name %>
                                         <!-- CATEGORÍA -->
                                 </td>
                                 <td>

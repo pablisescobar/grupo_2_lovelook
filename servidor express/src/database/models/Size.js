@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes) =>{
         tableName: "sizes",
         timestamps: false
     }
-
+    
     const Size = sequelize.define(alias, cols, config)
     Size.associate=models=>{
         Size.belongsToMany(models.Product,{
@@ -24,7 +24,7 @@ module.exports = (sequelize, dataTypes) =>{
             through:"product_size",
             foreignKey:"sizeId",
             otherKey:"productId",
-            timestamps:false
+            timestamps: false
         })
     }
     return Size
