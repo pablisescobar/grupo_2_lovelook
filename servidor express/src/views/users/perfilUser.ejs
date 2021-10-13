@@ -17,10 +17,6 @@
                     <img class="image-view" src="/img/user/userAvatars/<%= user.avatar %>" alt="">
                 </div>
 
-
-
-
-
                 <div class="container">
                     <label class="label-perfil-user" for="nombre">Nombre: </label>
                     <input class="input--style input-perfil-user" type="text" name="nombre" id="nombre" value="<%= user.name %>">
@@ -32,20 +28,37 @@
                 </div>
 
                 <div class="container">
-                    <label class="label-perfil-user" for="direccion">Dirección: </label>
-                    <input class=" input--style input-perfil-user" type="text" name="direccion" id="direccion" value="<%= user.address ? user.address : "------" %>">
-                </div>
-
-                <div class="container">
                     <label class="label-perfil-user" for="email">Email: </label>
                     <input class="input--style input-perfil-user" type="email" name="email" id="email" value="<%= user.email %>">
                 </div>
                 
                 <div class="container">
                     <label class="label-perfil-user" for="telefono">Teléfono: </label>
-                    <input class="input--style input-perfil-user" type="tel" name="telefono" id="telefono" value="<%= user.tel ? user.tel : "------" %>">
+                    <input class="input--style input-perfil-user" type="tel" name="telefono" id="telefono" value="<%= user.phone ? user.phone : "------" %>">
+                </div>
+                <% User.location.forEach(loc => { %>
+                 
+                    <div class="container">
+                        <label class="label-perfil-user" for="direccion">Dirección: </label>
+                        <input class=" input--style input-perfil-user" type="text" name="direccion" id="direccion" value="<%= location.address ? location.address : "------" %>">
+                    </div>
+                    
+                    <div class="container">
+                        <label class="label-perfil-user" for="city">Ciudad: </label>
+                        <input class=" input--style input-perfil-user" type="text" name="city" id="city" value="<%= location.city ? location.city : "------" %>">
+                    </div>
+                    
+                <div class="container">
+                    <label class="label-perfil-user" for="cp">Codigo Postal: </label>
+                    <input class=" input--style input-perfil-user" type="number" name="cp" id="cp" value="<%= location.cp ? location.cp : "------" %>">
+                </div>
+            
+                <div class="container">
+                    <label class="label-perfil-user" for="province">Provincia: </label>
+                    <input class=" input--style input-perfil-user" type="text" name="province" id="province" value="<%= location.province ? location.province : "------" %>">
                 </div>
 
+            <% }) %>
                 <a href="/user/profile/edit/<%= user.id %>" class="changesButton">EDITAR DATOS</a>
 
             </form>
