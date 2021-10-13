@@ -77,7 +77,7 @@
                                                         <%= errors.price.msg %>
                                                     </small>
                                                     <% } %>
-                                                        <input type="text" name="price" id="price" placeholder="Precio" title="Precio" value="<%= locals.old && old.price %>">
+                                                        <input type="number" name="price" id="price" placeholder="Precio" title="Precio" value="<%= locals.old && old.price %>">
 
 
                                                         <!-- SELECT DE COLOR -->
@@ -130,9 +130,9 @@
 
 
                                                                         <!-- INPUT STOCK/CANTIDAD -->
-                                                                        <% if(locals.errors && errors.stock){ %>
+                                                                        <% if(locals.errors && errors.amount){ %>
                                                                             <small class="error-validator">
-                                                                                <%= errors.stock.msg %>
+                                                                                <%= errors.amount.msg %>
                                                                             </small>
                                                                             <% } %>
                                                                                 <input type="number" name="amount" id="stock" placeholder="Cantidad" title="Stock" value="<%= locals.old && old.amount %>">

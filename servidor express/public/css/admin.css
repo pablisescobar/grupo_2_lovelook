@@ -475,9 +475,12 @@ justify-content: flex-end;
 }
     .admin .edit {
         height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
     .admin .edit:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
     }
 
     .admin button.delete {

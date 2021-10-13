@@ -35,24 +35,23 @@
                             <th scope="col">Categoría</th>
                             <th scope="col">Eliminar</th>
                         </tr>
-                        <% result.forEach(product=>{ %>
+                        <% results.forEach(product=>{ %>
                             <tr id="<%= product.id %>">
                                 <td>
-                                    <a class="edit" role="button" href="/admin/products/edit/<% product.id %>">
+                                    <a class="edit" role="button" href="/admin/products/edit/<%- product.id %>">
                                         <span class="iconify" data-icon="line-md:edit"></span>
                                     </a>
                                 </td>
-
                                 <td>
                                     <%= product.price ? `$${toThousand(product.price)}` : "--" %>
                                         <!-- PRECIO -->
                                 </td>
                                 <td>
-                                    <img class="img-value" src="/img/photos/<%- product.image[0] %>" alt="">
+                                    <img class="img-value" src="/img/photos/<%= product.images.length> 0 ? product.images[0].filename:'default.png' %>" alt=""> 
                                     <!-- IMAGEN -->
                                 </td>
                                 <td>
-                                    <%=product.name %>
+                                    <%= product.name %>
                                         <!-- NOMBRE -->
                                 </td>
                                 <td>
@@ -68,27 +67,33 @@
                                         <!-- CODIGO -->
                                 </td>
                                 <td>
-                                    <%=product.color %>
+                                    <% product.colors.forEach(color=>{ %> 
+                                    <%=color.name.toUpperCase()%>,<br>
+                                    <% }) %> 
                                         <!-- COLOR -->
                                 </td>
                                 <td>
-                                    <%= String(product.size).toLowerCase() %>
+                                    <% product.sizes.forEach(size=>{ %> 
+                                        <%=size.name.toUpperCase()%>
+                                        <% }) %> 
                                         <!-- TALLE -->
                                 </td>
                                 <td>
-                                    <%=product.stock %>
+                                    <%=product.amount %>
                                         <!-- CANTIDAD -->
                                 </td>
                                 <td>
-                                    <%=product.season %>
+                                    <%=product.season.name %>
                                         <!-- TEMPORADA -->
                                 </td>
                                 <td>
-                                    <%=product.category %>
+                                    <%=product.category.name %>
                                         <!-- CATEGORÍA -->
                                 </td>
                                 <td>
-                                    <form action="" method=""><!-- ?? -->
+                                    <form action="/admin/products/eliminarProducto/<%= product.id %>?_method=DELETE"
+                                        method="POST">
+                                        <!-- ?? -->
                                         <button class="delete" type="submit">
                                             <span class="iconify" data-icon="feather:delete">
                                             </span>

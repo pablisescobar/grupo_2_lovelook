@@ -3,6 +3,8 @@ const db = require('../database/models')
 const { Op } = require('sequelize')
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const { validationResult } = require('express-validator')
+const fs = require('fs').promises
+
 
 
 /* FUNCIÓN PARA CAPITALIZE - MAYÚSCULA EN LA PRIMER LETRA */
@@ -53,25 +55,21 @@ module.exports = {
     },
 
     productStore: (req, res) => {
-
         let errors = validationResult(req)
         if (req.fileValidatorError) {
             let image = {
-              param: "image",
-              msg: req.fileValidatorError,
+                param: "image",
+                msg: req.fileValidatorError,
             };
             errors.push(image);
-          }
+        }
         if (errors.isEmpty()) {
             let arrayImages = [];
             if (req.files) {
                 req.files.forEach(image => {
                     arrayImages.push(image.filename)
                 })
-            } else {
-                arrayImages.push("default.png")
             }
-
 
             let {
                 name,
@@ -97,43 +95,48 @@ module.exports = {
                 })
                     .then(product => {
                         if (arrayImages.length > 0) {
-                           let images = arrayImages.map(image => {
+                            let images = arrayImages.map(image => {
                                 return {
                                     filename: image,
                                     productId: product.id
                                 }
                             })
                             db.Image.bulkCreate(images)
-                        }else{
-                            arrayImages.push("default.png")
                         }
-                        
-                        db.product_color.create({
+
+                        db.ProductColor.create({
                             productId: product.id,
                             colorId: color
                         })
-                        .then(()=>{
-                                        db.product_size.create({
-                                            productId: product.id,
-                                            sizeId: size
-                                        })
-                                        .then(()=>res.redirect(`/admin/products#{product.id}`))
-                                    })
-                                    
+                            .then(() => {
+                                db.ProductSize.create({
+                                    productId: product.id,
+                                    sizeId: size
                                 })
-                    
+                                    .then(() => res.redirect(`/admin/products#${product.id}`))
+                            })
+
+                    })
+
             } catch (err) {
-                res.send(err)
-             }
+                res.redirect('/admin/products/add')
+            }
 
 
         } else {
+
+            Promise.all(req.files.map(file => {
+                fs.unlink(`./public/img/photos/${file.filename}`)
+            }))
+
             let categoriesDb = db.Category.findAll()
             let seasonsDb = db.Season.findAll()
             let sizesDb = db.Size.findAll()
             let colorsDb = db.Color.findAll()
+
             Promise.all([categoriesDb, seasonsDb, sizesDb, colorsDb])
                 .then(([categories, seasons, sizes, colors]) => {
+
                     res.render('admin/addProducts', {
                         position: "",
                         categories,
@@ -146,6 +149,7 @@ module.exports = {
                         old: req.body,
                     })
                 })
+
                 .catch(error => console.log(error))
         }
 
@@ -154,28 +158,56 @@ module.exports = {
     },
 
     searchAdmin: (req, res) => {
-        db.Product.findAll({
-            where: {
-                [Op.like]: `%${req.query.keys}%`
-            }
-        })
-            .then(result => {
-                res.render('admin/searchResultAdmin', {
-                    result,
-                    toThousand,
-                    session: req.session
-                })
+        try {
+            db.Product.findAll({
+                where: {
+                    [Op.or]: [{
+                        name: {
+                            [Op.like]: `%${req.query.keys}%`
+                        }
+                    }, {
+                        description: {
+                            [Op.like]: `%${req.query.keys}%`
+                        }
+                    }]
+                },
+                include: [{ association: "category" },
+                { association: "season" },
+                { association: "images" },
+                { association: "colors" },
+                { association: "sizes" }]
             })
+
+                .then(results => {
+                    res.render('admin/searchResultAdmin', {
+                        results,
+                        position: "",
+                        toThousand,
+                        session: req.session
+                    })
+                })
+        } catch (err) {
+            console.log(err);
+            res.redirect('/admin/products')
+        }
     },
 
     editProduct: (req, res) => {
+
         let categoriesDb = db.Category.findAll()
         let seasonsDb = db.Season.findAll()
         let sizesDb = db.Size.findAll()
         let colorsDb = db.Color.findAll()
-        let productDb = db.Product.findByPk(+req.params.id)
+        let productDb = db.Product.findByPk(+req.params.id, {
+            include: [{ association: "category" },
+            { association: "season" },
+            { association: "images" },
+            { association: "colors" },
+            { association: "sizes" }]
+        })
         Promise.all([categoriesDb, seasonsDb, sizesDb, colorsDb, productDb])
             .then(([categories, seasons, sizes, colors, product]) => {
+                /* res.send(product) */
                 res.render('admin/editProduct', {
                     product,
                     categories,
@@ -186,46 +218,128 @@ module.exports = {
                     session: req.session
                 })
             })
+            .catch(error => console.log(error))
     },
 
     updateProduct: (req, res) => {
         let errors = validationResult(req)
+        if (req.fileValidatorError) {
+            let image = {
+                param: "image",
+                msg: req.fileValidatorError,
+            };
+            errors.push(image);
+        }
         if (errors.isEmpty()) {
 
+            let arrayImages = [];
+            if (req.files) {
+                req.files.forEach(image => {
+                    arrayImages.push(image.filename)
+                })
+            }
+
+            let id = +req.params.id
             let {
                 name,
                 description,
                 price,
                 amount,
-                imageId,
-                categoryId,
-                colorId,
-                seasonId
+                category,
+                color,
+                size,
+                season,
+                discount
             } = req.body
+
 
             db.Product.update({
                 name,
                 description,
                 price,
                 amount,
-                imageId,
-                categoryId,
-                colorId,
-                seasonId
+                discount,
+                categoryId: category,
+                seasonId: season
             }, {
                 where: {
-                    id: +req.params.id
+                    id: id
                 }
             })
-                .then(product => {
-                    res.redirect(`/admin/products#${product.id}`)
+                .then(() => {
+                    if (arrayImages.length > 0) {
+                        var imagesNew = arrayImages.map(image => {
+                            return {
+                                filename: image,
+                                productId: id
+                            }
+                        })
+                        if (req.files.length > 0) {
+
+                            db.Image.findAll({
+                                where: {
+                                    productId: id
+                                }
+                            })
+
+                                .then(images => {
+                                    Promise.all(images.map(image => {
+                                        fs.unlink(`./public/img/photos/${image.filename}`)
+                                    }))
+                                    .then(()=>{
+                                        images.forEach(image=>{
+                                            db.Image.destroy({
+                                                where: {
+                                                    filename: image.filename
+                                                }
+                                            })
+                                        })
+                                    })
+                                })
+                                
+                                .then(() => {
+                                    db.Image.bulkCreate(imagesNew)
+                                })   
+                        }
+                    }
+
+
+                    db.ProductColor.update({
+                        productId: id,
+                        colorId: color
+                    }, {
+                        where: {
+                            productId: id
+                        }
+                    })
+
+                    db.ProductSize.update({
+                        productId: id,
+                        sizeId: size
+                    }, {
+                        where: {
+                            productId: id
+                        }
+                    })
+
+                        .then(() => {
+                            res.redirect(`/admin/products#${id}`)
+                        })
+                        .catch(err => console.log(err))
                 })
+
         } else {
             let categoriesDb = db.Category.findAll()
             let seasonsDb = db.Season.findAll()
             let sizesDb = db.Size.findAll()
             let colorsDb = db.Color.findAll()
-            let productDb = db.Product.findByPk(+req.params.id)
+            let productDb = db.Product.findByPk(+req.params.id, {
+                include: [{ association: "category" },
+                { association: "season" },
+                { association: "images" },
+                { association: "colors" },
+                { association: "sizes" }]
+            })
             Promise.all([categoriesDb, seasonsDb, sizesDb, colorsDb, productDb])
                 .then(([categories, seasons, sizes, colors, product]) => {
                     res.render('admin/editProduct', {
@@ -240,18 +354,78 @@ module.exports = {
                     })
                 })
         }
+    },
+
+    eliminarProducto: (req, res) => {
+
+        try {
+            let id = +req.params.id
+            let color = db.ProductColor.destroy({
+                where: {
+                    productId: id
+                }
+            })
+
+            let size = db.ProductSize.destroy({
+                where: {
+                    productId: id
+                }
+            })
+
+            let product = db.Product.destroy({
+                where: {
+                    id: id
+                }
+            })
+
+
+            let image = db.Image.destroy({
+                where: {
+                    productId: id
+                }
+            })
+
+            Promise.all([color, size, product, image])
+                .then(() => {
+                    res.redirect('/admin/products')
+                })
+            db.Image.findAll({
+                where: {
+                    productId: id
+                }
+            })
+                .then((images) => {
+                    Promise.all(images.map(image => {
+                        fs.unlink(`./public/img/photos/${image.filename}`)
+                    }))
+                })
+
+
+        } catch (err) {
+            console.log(err)
+        }
 
 
     },
 
-    eliminarProducto: (req, res) => {
-        db.Product.destroy({
+    message: (req, res) => {
+        db.Message.findAll()
+            .then(messages => {
+                res.render('admin/messagesAdmin', {
+                    session: req.session,
+                    messages
+                })
+            })
+    },
+    deleteMessage: (req, res) => {
+        db.Message.destroy({
             where: {
                 id: +req.params.id
             }
         })
-            .then(() => res.redirect('/admin/products'))
-            .catch(error => console.log(error))
+            .then(() => {
+                res.redirect('/admin/messages')
+            })
+            .catch(err => console.log(err))
     }
-
 }

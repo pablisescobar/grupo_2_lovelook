@@ -13,7 +13,7 @@
                         enctype="multipart/form-data" class="inputRows">
 
                         <!-- INPUT NAME -->
-                        <label class="label-input-admin" for="season">Nombre:</label>
+                        <label class="label-input-admin" for="name">Nombre:</label>
                         <% if(locals.errors && errors.name){ %>
                             <small class="error-validator">
                                 <%= errors.name.msg %>
@@ -24,7 +24,7 @@
 
 
                                 <!-- TEXTAREA DESCRIPTION -->
-                                <label class="label-input-admin" for="season">Descripción:</label>
+                                <label class="label-input-admin" for="description">Descripción:</label>
                                 <textarea type="text" name="description" id="description"
                                     title="Descripción"><%- locals.old ? old.description : product.description %></textarea>
 
@@ -37,9 +37,9 @@
                                     <% } %>
                                         <select name="season" id="season" title="temporada">
                                             <% seasons.forEach(season=> { %>
-                                                <option value="<%= season %>" <%=locals.old && old.season==season
-                                                    ? 'selected' : product.season==season ? 'selected' : null %>><%=
-                                                        capitalize(season) %>
+                                                <option value="<%= season.id %>" <%=locals.old && old.season==season.id
+                                                    ? 'selected' : product.season.id==season.id ? 'selected' : null %>>
+                                                    <%= capitalize(season.name) %>
                                                 </option>
                                                 <% }) %>
                                         </select>
@@ -63,10 +63,10 @@
                                             <% } %>
                                                 <select name="category" id="category" title="category">
                                                     <% categories.forEach(category=> { %>
-                                                        <option value="<%- category %>" <%=locals.old &&
-                                                            old.category==category ? 'selected' :
-                                                            product.category==category ? 'selected' : null %>><%-
-                                                                capitalize(category) %>
+                                                        <option value="<%- category.id %>" <%=locals.old &&
+                                                            old.category==category.id ? 'selected' :
+                                                            product.category.id==category.id ? 'selected' : null %>><%-
+                                                                capitalize(category.name) %>
                                                         </option>
                                                         <% }) %>
                                                 </select>
@@ -82,7 +82,7 @@
 
 
                                                 <!-- INPUT DISCOUNT -->
-                                                <label class="label-input-admin" for="season">Descuento:</label>
+                                                <label class="label-input-admin" for="discount">Descuento:</label>
                                                 <input type="number" name="discount" id="discount" title="Descuento"
                                                     value="<%- locals.old ? old.discount : product.discount %>">
 
@@ -106,10 +106,11 @@
                                                             <% } %>
                                                                 <select name="color" id="color" title="color">
                                                                     <% colors.forEach(color=> { %>
-                                                                        <option value="<%= color %>" <%=locals.old &&
-                                                                            old.color==color ? 'selected' :
-                                                                            product.color==color ? `selected` : null %>>
-                                                                            <%= capitalize(color) %>
+                                                                        <option value="<%=locals.old ?old.color : color.id %>" <%=locals.old &&
+                                                                            old.color==color.id ? 'selected' :
+                                                                            product.colors[0].id==color.id ? `selected` : null
+                                                                            %>>
+                                                                            <%= capitalize(color.name) %>
                                                                         </option>
                                                                         <% }) %>
                                                                 </select>
@@ -135,11 +136,11 @@
                                                                     <% } %>
                                                                         <select name="size" id="size" title="Talle">
                                                                             <% sizes.forEach(size=> { %>
-                                                                                <option value="<%= size %>"
-                                                                                    <%=locals.old && old.size==size
-                                                                                    ? 'selected' : product.size==size ?
-                                                                                    `selected` : null %>>
-                                                                                    <%= size.toUpperCase() %>
+                                                                                <option value="<%= size.id %>"
+                                                                                    <%=locals.old && old.size==size.id
+                                                                                    ? 'selected' : product.sizes[0].id==size.id
+                                                                                    ? `selected` : null %>>
+                                                                                    <%= size.name.toUpperCase() %>
                                                                                 </option>
                                                                                 <% }) %>
                                                                         </select>
@@ -158,15 +159,15 @@
 
                                                                         <!-- INPUT STOCK/CANTIDAD -->
                                                                         <label class="label-input-admin"
-                                                                            for="season">Cantidad:</label>
-                                                                        <% if(locals.errors && errors.stock){ %>
+                                                                            for="stock">Cantidad:</label>
+                                                                        <% if(locals.errors && errors.amount){ %>
                                                                             <small class="error-validator">
-                                                                                <%= errors.stock.msg %>
+                                                                                <%= errors.amount.msg %>
                                                                             </small>
                                                                             <% } %>
                                                                                 <input type="number" name="amount"
                                                                                     id="stock" title="Stock"
-                                                                                    value="<%= locals.old ? old.stock : product.stock %>">
+                                                                                    value="<%= locals.old ? old.amount : product.amount %>">
 
 
                                                                                 <div class="input">
@@ -183,13 +184,8 @@
                                                                                     <input name="image" id="file-upload"
                                                                                         onchange='cambiar()'
                                                                                         accept=".png, .jpg" type="file"
-                                                                                        style='display: none;'>
+                                                                                        style='display: none;' multiple>
                                                                                 </div>
-
-                                                                                <input name="image" id="file-upload"
-                                                                                    onchange='cambiar()'
-                                                                                    accept=".png, .jpg" type="file"
-                                                                                    style='display: none;' multiple>
 
                                                                                 <button type="submit"
                                                                                     class="btn-add"><span
