@@ -34,8 +34,8 @@ module.exports=(sequelize,dataTypes)=>{
         locationId:{
             type:dataTypes.INTEGER(11),
         },
-        avatarId:{
-            type:dataTypes.INTEGER(11),
+        avatar:{
+            type:dataTypes.STRING(150)
         }
         
     }
@@ -52,10 +52,10 @@ module.exports=(sequelize,dataTypes)=>{
             as:"location",
             foreignKey:"locationId"
         }),
-        User.belongsTo(models.Avatar,{
+       /*  User.hasMany(models.Avatar,{
             as:"avatar",
             foreignKey:"avatarId"
-        }),
+        }), */
         User.belongsToMany(models.Product,{
             as:"products",
             through:"sales",

@@ -36,26 +36,23 @@ let userRouter = require('./routes/user');
 
 /* RUTAS */
 
-app.use('/',homeRouter);
+ app.use('/',homeRouter); 
 app.use('/admin',adminRouter);
 app.use('/info',infoRouter);
 app.use('/products',productsRouter);
-app.use('/user',userRouter);
+app.use('/user',userRouter); 
 
 /* -------ERROR 404------------ */
-let {getProducts} = require ('./data/dataBase')
 app.use((req,res,next)=>{
-let categorias = [];
-getProducts.forEach(product => {
-    if (!categorias.includes(product.category)) {
-        categorias.push(product.category)
-    }
-})
+    const db = require('./database/models')
+db.Category.findAll()
+.then(categorias=>{
     res.status(404).render('status404',{
 categorias,
 session: req.session,
 position:"position:relative"
     })
+})
 })
 
 /* ---------------------------- */

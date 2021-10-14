@@ -121,13 +121,12 @@ module.exports = {
             } catch (err) {
                 res.redirect('/admin/products/add')
             }
-
-
         } else {
-
-            Promise.all(req.files.map(file => {
-                fs.unlink(`./public/img/photos/${file.filename}`)
-            }))
+            if (req.files > 0) {
+                Promise.all(req.files.map(file => {
+                    fs.unlink(`./public/img/photos/${file.filename}`)
+                }))
+            }
 
             let categoriesDb = db.Category.findAll()
             let seasonsDb = db.Season.findAll()
@@ -286,20 +285,20 @@ module.exports = {
                                     Promise.all(images.map(image => {
                                         fs.unlink(`./public/img/photos/${image.filename}`)
                                     }))
-                                    .then(()=>{
-                                        images.forEach(image=>{
-                                            db.Image.destroy({
-                                                where: {
-                                                    filename: image.filename
-                                                }
+                                        .then(() => {
+                                            images.forEach(image => {
+                                                db.Image.destroy({
+                                                    where: {
+                                                        filename: image.filename
+                                                    }
+                                                })
                                             })
                                         })
-                                    })
                                 })
-                                
+
                                 .then(() => {
                                     db.Image.bulkCreate(imagesNew)
-                                })   
+                                })
                         }
                     }
 
@@ -356,7 +355,7 @@ module.exports = {
         }
     },
 
-    eliminarProducto: (req, res) => {
+    destroy: (req, res) => {
 
         try {
             let id = +req.params.id
@@ -427,5 +426,156 @@ module.exports = {
                 res.redirect('/admin/messages')
             })
             .catch(err => console.log(err))
+    },
+    insert: {
+        season: (req, res) => {
+            let errors = validationResult(req)
+            if (errors.isEmpty()) {
+                try {
+                    db.Season.create({
+                        name: req.body.seasonInsert.toLowerCase()
+                    })
+                        .then(() => {
+                            res.redirect('/admin/products/add')
+                        })
+                } catch (err) {
+                    console.log("NO SE CREO NADA");
+                }
+            } else {
+                let categoriesDb = db.Category.findAll()
+                let seasonsDb = db.Season.findAll()
+                let sizesDb = db.Size.findAll()
+                let colorsDb = db.Color.findAll()
+
+                Promise.all([categoriesDb, seasonsDb, sizesDb, colorsDb])
+                    .then(([categories, seasons, sizes, colors]) => {
+
+                        res.render('admin/addProducts', {
+                            position: "",
+                            categories,
+                            colors,
+                            seasons,
+                            sizes,
+                            capitalize,
+                            session: req.session,
+                            errors: errors.mapped(),
+                            old: req.body,
+                        })
+                    })
+                    .catch(error => console.log(error))
+            }
+        },
+
+        category: (req, res) => {
+            let errors = validationResult(req)
+            if (errors.isEmpty()) {
+                try {
+                    db.Category.create({
+                        name: req.body.categoryInsert
+                    })
+                        .then(() => {
+                            res.redirect('/admin/products/add')
+                        })
+                } catch (err) {
+                    console.log("NO SE CREO NADA");
+                }
+            } else {
+                let categoriesDb = db.Category.findAll()
+                let seasonsDb = db.Season.findAll()
+                let sizesDb = db.Size.findAll()
+                let colorsDb = db.Color.findAll()
+
+                Promise.all([categoriesDb, seasonsDb, sizesDb, colorsDb])
+                    .then(([categories, seasons, sizes, colors]) => {
+
+                        res.render('admin/addProducts', {
+                            position: "",
+                            categories,
+                            colors,
+                            seasons,
+                            sizes,
+                            capitalize,
+                            session: req.session,
+                            errors: errors.mapped(),
+                            old: req.body,
+                        })
+                    })
+                    .catch(error => console.log(error))
+            }
+
+        },
+        color: (req, res) => {
+            let errors = validationResult(req)
+            if (errors.isEmpty()) {
+                try {
+                    db.Color.create({
+                        name: req.body.colorInsert.toLowerCase()
+                    })
+                        .then(() => {
+                            res.redirect('/admin/products/add')
+                        })
+                } catch (err) {
+                    console.log("NO SE CREO NADA");
+                }
+            } else {
+                let categoriesDb = db.Category.findAll()
+                let seasonsDb = db.Season.findAll()
+                let sizesDb = db.Size.findAll()
+                let colorsDb = db.Color.findAll()
+
+                Promise.all([categoriesDb, seasonsDb, sizesDb, colorsDb])
+                    .then(([categories, seasons, sizes, colors]) => {
+
+                        res.render('admin/addProducts', {
+                            position: "",
+                            categories,
+                            colors,
+                            seasons,
+                            sizes,
+                            capitalize,
+                            session: req.session,
+                            errors: errors.mapped(),
+                            old: req.body,
+                        })
+                    })
+                    .catch(error => console.log(error))
+            }
+        }
+    },
+    destroyValue: {
+        season: (req, res) => {
+            db.Season.destroy({
+                where:{
+                    id: +req.params.id
+            },force:true
+        })
+            .then(()=>{
+                res.redirect('/admin/products/add')
+            })
+            .catch(err => console.log(err))
+         },
+        category: (req, res) => {
+            db.Category.destroy({
+                where:{
+                    id: +req.params.id
+            },force:true
+        })
+            .then(()=>{
+                res.redirect('/admin/products/add')
+            })
+            .catch(err => console.log(err))
+         },
+         
+        color: (req, res) => {
+            db.Color.destroy({
+                where:{
+                    id: +req.params.id
+            },force:true
+        })
+        .then(()=>{
+                res.redirect('/admin/products/add')
+        })
+        .catch(err => console.log(err))
+         }
     }
 }

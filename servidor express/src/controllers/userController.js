@@ -1,21 +1,13 @@
-let db = require('../database/models')
+const bcrypt = require('bcryptjs');
 const { validationResult } = require("express-validator");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const bcrypt = require('bcryptjs');
+const db = require('../database/models')
 
-
-/* let categorias = [];
-getProducts.forEach(product => {
-    if (!categorias.includes(product.category)) {
-        categorias.push(product.category)
-    }
-}) */
 
 module.exports = {
     register: (req, res) => {
         res.render('users/register', {
             position: "position:relative;",
-            categorias,
             session: req.session
         })
     },
@@ -23,7 +15,6 @@ module.exports = {
     login: (req, res) => {
         res.render('users/login', {
             position: "position:relative;",
-            categorias,
             session: req.session
         })
     },
@@ -60,10 +51,10 @@ module.exports = {
         let errors = validationResult(req)
 
         if (errors.isEmpty()) {
-            let { name, last_name, phone, address, pc, province, city } = req.body;
+            let { firstname, lastName, phone, address, pc, province, city } = req.body;
             db.User.update({
-                name,
-                last_name,
+                firstname,
+                lastName,
                 phone,
                 avatar: req.file ? req.file.filename : req.session.user.avatar
             }, {
@@ -136,11 +127,10 @@ module.exports = {
                 .then(user => {
                     req.session.user = {
                         id: user.id,
-                        name: user.name,
-                        last_name: user.last_name,
+                        firstName: user.firstName,
+                        lastName: user.lastName,
                         email: user.email,
-                        avatar: user.avatar,
-                        rol: user.rol
+                        rolId: user.rolId
                     };
                     if (req.body.remember) {
                         res.cookie("userLoveLook", req.session.user, { expires: new Date(Date.now() + 90000), httpOnly: true })
@@ -151,7 +141,6 @@ module.exports = {
                 })
         } else {
             res.render('users/login', {
-                categorias,
                 position: "position: relative;",
                 errors: errors.mapped(),
                 old: req.body,
@@ -179,31 +168,32 @@ module.exports = {
     },
     processRegister: (req, res) => {
         let errors = validationResult(req)
-        if (req.fileValidaterError) {
+       /*  if (req.fileValidatorError) {
             let image = {
                 param: "image",
-                msg: req.fileValidaterError,
+                msg: req.fileValidatorError,
             };
             errors.push(image);
-        }
+        } */
 
         if (errors.isEmpty()) {
 
-            let { name, last_name, email, pass1 } = req.body
-
+            let { firstName, lastName, email, password } = req.body
+            /* res.send(req.body) */
             db.User.create({
-                name,
-                last_name,
+                firstName,
+                lastName,
                 email,
-                pass: bcrypt.hashSync(pass1, 12),
-                avatar: req.file ? req.file.filename : "default-image.png",
-                rol: 0,
+                password: bcrypt.hashSync(password, 12),
+                rolId: 1,
             }).then(() => {
-                res.redirect('/users/login')
+                res.redirect('/user/login')
             }).catch(err => console.log(err))
         } else {
             res.render('users/register', {
-                errors: errors.mapped(), old: req.body, session: req.session,
+                errors: errors.mapped(),
+                old: req.body,
+                session: req.session,
                 position: "position: relative"
             });
         }
