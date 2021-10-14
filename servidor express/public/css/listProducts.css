@@ -64,7 +64,8 @@ select#price.dropdown {
     }
 
 .container-listProduct .section2 .product a {
-    width: 275px;
+    width: fit-content;
+    width: moz-fit-content;
     height: 500px;
     margin: 1rem;
     padding: 1rem;

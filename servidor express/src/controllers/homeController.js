@@ -1,5 +1,7 @@
 let { getProducts, getImgCarousel } = require('../data/dataBase')
-let path = require('path')
+let path = require('path');
+const db = require('../database/models');
+const { Op } = require('sequelize')
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 
@@ -14,25 +16,98 @@ getProducts.forEach(product => {
 
 module.exports = {
     index: (req, res) => {
-        
-        let title = "Productos Destacados";
-        let products = getProducts.filter(product => product.discount >= 15)
-        res.render('products/home', {
-            products: products,
-            title: title,
+        db.Product.findAll({
+            where: {
+                discount: {
+                   [Op.gte] : 15 
+                }  
+            },
+            include: [{ association: "category" },
+            { association: "images" },
+            { association: "colors" },
+            { association: "season" },
+            { association: "sizes" },
+            ]
+        })
+        .then(products =>{
+            res.render('products/home', {
+            products,
+            title: 'Nuestras Ofertas',
             position: "",
             carousel: getImgCarousel,
             categorias,
             toThousand,
             session: req.session
+        }) 
         })
+        
+        /* let title = "Productos Destacados";
+        let products = getProducts.filter(product => product.discount >= 15)
+        */
     },
     afip: (req, res) => {
         res.sendFile(path.join(__dirname, '../../public/img/afip.png'))
 
     },
     search: (req, res) => {
-        let result = []
+        db.Product.findAll({
+            where: {
+                name: {
+                    [Op.like]: `%${req.query.keys}%`
+                }
+            },  
+            where: {
+                description: {
+                    [Op.like]: `%${req.query.keys}%`
+                }
+            },  
+            include: [
+                { association: "category" },
+                { association: "images" },
+                { association: "colors" },
+                { association: "season" },
+                { association: "sizes" },
+            ]
+        })
+        .then(result =>{
+            db.Product.findAll({
+                include: [
+                    { association: "category" },
+                    { association: "images" },
+                    { association: "colors" },
+                    { association: "season" },
+                    { association: "sizes" },
+                ]
+            })
+            .then(products =>{
+                db.Category.findAll({
+                    where: {
+                        name :{
+                            [Op.like]: `%${req.query.keys}%`
+                        }
+                    },
+                    include: [{
+                        association: 'products'
+                    }]
+                })
+                .then(categoryResult =>{
+                    res.render('products/resultOfSearch', {
+                    result: products,
+                    result,
+                    categoryResult,
+                    toThousand,
+                    search: req.query.keys,
+                    position: "",
+                    products,
+                    session: req.session
+                })
+            })
+                
+            })
+           
+        })
+
+        /* let result = []
 
         let products = getProducts.filter(product => product.discount >= 15)
         getProducts.forEach(product => {
@@ -55,6 +130,6 @@ module.exports = {
             products,
             categorias,
             session: req.session
-        })
+        }) */
     }
 }

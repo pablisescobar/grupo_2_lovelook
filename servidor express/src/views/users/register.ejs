@@ -12,14 +12,19 @@
                 <img src="/img/logo.png" alt="" class="card__logo">
             </figure>
             <div class="input-container">
-                <input  class="input--style" type="text" name="name" placeholder="<%= (locals.errors  && errors.name) ? errors.name.msg : "Nombre" %>" value="<%= locals.old && old.name %>">
-                
-                <input class="input--style" type="text" name="last_name" placeholder="<%= (locals.errors  && errors.last_name) ? errors.last_name.msg : "apellido" %>" value="<%= locals.old && old.last_name %>">
-                
-                <input class="input--style" name="email" placeholder="<%= (locals.errors  && errors.email) ? errors.pass1.msg : "email" %>"
-                value="<%= locals.old && old.email %>">
-                
-                <input class="input--style" type="password" name="pass1" placeholder="<%= (locals.errors  && errors.pass1) ? errors.pass1.msg : "password" %>">
+                <input  class="input--style" type="text" name="firstName" placeholder="nombre" value="<%= locals.old && old.firstName %>">
+                <% if (locals.errors && errors.firstName) { %> 
+                    <small class="errors-validation_register"><%= errors.firstName.msg %></small>
+                <% } %>
+                <input class="input--style" type="text" name="lastName" placeholder="last_name" value="<%= locals.old && old.lastName %>">
+                <% if (locals.errors && errors.lastName) { %> 
+                    <small class="errors-validation_register"><%= errors.lastName.msg %></small>
+                <% } %>
+                <input class="input--style" name="email" placeholder="email"value="<%= locals.old && old.email %>">
+                <% if (locals.errors && errors.email) { %> 
+                    <small class="errors-validation_register"><%= errors.email.msg %></small>
+                <% } %>
+                <input class="input--style" type="password" name="password" placeholder="password">
                 
                 <input class="input--style" type="password" name="pass2" placeholder="Confirmar contraseña" >
                 <% if (locals.errors && errors.pass2) { %> 

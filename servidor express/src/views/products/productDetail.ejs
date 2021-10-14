@@ -13,12 +13,17 @@
                             <!-- Imagenes del producto -->
 
                             <div class="imgs row">
-                                <% product.image.forEach(img=> { %>
+                                <% if (product.images.length > 0) { %>
+                                    <% product.images.forEach(img=> { %>
                                     <div class="column">
-                                        <img src="/img/photos/<%= img %>" alt="Nature" style="width:100%"
-                                            onclick="myFunction(this);">
+                                        <img src="/img/photos/<%= img.filename ? img.filename : 'default.png' %>" alt="Nature" style="width:100%" onclick="myFunction(this);">
                                     </div>
                                     <% });%>
+                                <% } else{ %>
+                                    <div class="column">
+                                        <img src="/img/photos/default.png" alt="Nature" style="width:100%" onclick="myFunction(this);">
+                                    </div>
+                                <% } %> 
                             </div>
                             <div class="description-general-container">
                                 <div class="containerImage">
@@ -27,7 +32,6 @@
                                     <img id="expandedImg" style="width:fit-content">
                                     <div id="imgtext"></div>
                                 </div>
-
 
                                 <!-- detalle del producto -->
                                 <div class="description">
@@ -49,17 +53,18 @@
                                 <!-- filtro de producto -->
                                 <form class="form-1" action="#" name="formulario-1">
                                     <h4 class="subtitle">Descripción del producto</h4>
+                                    <p> <%= product.description %>  </p>
                                     <select class="select select-style" name="color" id="">
                                         <option value="" hidden>Color</option>
-                                        <option value=<%=`Color : ${product.color.toUpperCase()}` %>
-                                            <%= product.color ? "selected" :null %>><%= product.color.toUpperCase() %>
+                                        <option value='<%= product.colors.length > 0 ? product.colors[0].name : ' '  %>' 
+                                            <%= product.colors.length > 0 ? "selected" :null %>><%= product.colors.length > 0 ? product.colors[0].name : 'Color' %>
                                         </option>
 
                                     </select>
                                     <select class="select select-style" name="talle" id="">
                                         <option value="" hidden>Talles</option>
-                                        <option value=<%=`Talle : ${product.size}` %>
-                                            <%= product.size ? "selected" :null %>><%= product.size %>
+                                        <option value='<%= product.sizes.length > 0 ? product.sizes[0].name : ' '  %>'
+                                            <%= product.sizes.length > 0 ? "selected" :null %>><%= product.sizes.length > 0 ? product.sizes[0].name : 'Talle' %>
                                         </option>
 
                                     </select>
@@ -110,7 +115,7 @@
 
                         <section class="add-look-container">
                             <h2><a href="/products">
-                                    <%= title %>
+                                    <%= titleSlider %>
                                 </a>
                             </h2>
 

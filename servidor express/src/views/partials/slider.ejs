@@ -1,15 +1,23 @@
 <div class="container"><!--  -->
   <div class="card-slider">
-    <% products.forEach(productX=> { %>
+    <% products.forEach(product => { %>
       <div class="col-lg-12">
         <div class="card w-100">
-          <img class="card-img-top" src="/img/photos/<%= productX.image[0] %>">
+          <a href="/products/detail/<%= product.id %>">
+            <img class="card-img-top" src="/img/photos/<%= product.images.length > 0? product.images[0].filename:'default.png' %>">
+          </a>
           <div class="card-body">
             <h5 class="card-title">
-              <%= productX.name %>
+              <%= product.name %>
             </h5>
-            <p class="card-text">$ <%= toThousand(productX.price) %>
+            <p class="card-text">$ <%= toThousand(product.price) %>
             </p>
+            <span class="price-line-medio">
+              <%= product.discount> 0?`$${toThousand(Math.round(product.price))}` : "" %>
+          </span>
+          <p class="discount">
+              <%=product.discount> 0?`${product.discount} %Off` : "" %>
+          </p>
             <a href="/user/cart" class="btn-primary">Comprar</a>
           </div>
         </div>
