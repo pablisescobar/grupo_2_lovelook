@@ -28,8 +28,8 @@
                         
                         <select class="dropdown" name="price" id="price" required title="price">
                             <option selected hidden>Precio</option>
-                            <% product.find(product => { %>
-                                 <option value="<%- product.price %>"><%- product.price %></option>
+                            <% product.find(price => { %>
+                                <option value="<%- price.price %>"><%- price.price %></option>
                              <% }) %>
                         </select>
             
@@ -37,7 +37,7 @@
         </section>
         <hr>
         <section class="section2">
-            <% product.forEach(product=>{ %> 
+            <% category.forEach(product=>{ %> 
             <article class="product">
                 <a href="/products/detail/<%= product.id %>">
                 <img src= "/img/photos/<%= product.images.length>0? product.images[0].filename:'default.png' %>" alt="">
