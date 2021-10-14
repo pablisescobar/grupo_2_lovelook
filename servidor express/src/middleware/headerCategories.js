@@ -5,8 +5,7 @@ module.exports = (req, res, next) => {
             association: "products"
         }]
     })
-
-        .then(categories => {
+    .then(categories => {
             res.locals.categories = categories
             next()
         })
