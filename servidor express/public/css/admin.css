@@ -1,54 +1,3 @@
-.login-admin {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    gap: 10px;
-}
-.login-admin .image-admin {
-    width: 200px;
-    position: relative;
-    left: 7px;
-}
-
-.admin textarea {
-    overflow: hidden;
-    resize: none;
-}
-
-.login-admin .contac-desarrollator {
-    width: 100%;
-    text-align: right;
-    padding: 10px;
-}
-
-.login-admin .contac-desarrollator a {
-    text-decoration: revert;
-    color: gray;
-}
-
-.login-admin input {
-    width: 250px;
-    height: 30px;
-    margin: 10px;
-    padding: 8px;
-}
-
-.login-admin button {
-    border: 1px solid lightblue;
-
-    background: snow;
-
-    border-radius: 5px;
-
-    padding: 5px 20px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-}
-
 /* Estilos de vista ADMIN */
 
 .admin .button-add {
@@ -62,6 +11,10 @@
     padding: 10px;
 }
 
+.admin textarea {
+    overflow: hidden;
+    resize: none;
+}
 .admin .description-cell {
     overflow-wrap: anywhere;
     font-size: 0.7rem;
@@ -90,6 +43,7 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    padding: 15px;
 }
 
 .admin .icon-right-table {
@@ -169,7 +123,6 @@
     align-items: center;
     flex-grow: 1;
     justify-content: center;
-    width: 80%;
 }
 .admin .icon-addColor{
     font-size: 1.5rem;
@@ -177,7 +130,7 @@
     background-color: black;
     padding: 2px;
 }
-.admin .input-addOption{font-size: 0.7rem;flex-grow: 0.8;}
+.admin .input-addOption{font-size: 0.7rem;}
 
 .admin textarea {
     height: 120px;
@@ -261,7 +214,7 @@ margin: auto;
 }
 
 .admin button {
-    width: 50%;
+    width: 40%;
     align-self: flex-end;
     padding: 0;
     background-color: white;
@@ -308,12 +261,64 @@ margin: auto;
     background: green;
     border-radius: 0 0 20px 5px;
 }
+.form-secondary{
+    width: 80%;
+}
+.admin .container-inserts{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
 
+.admin .del{
+    color: gray;
+}
+.admin .btn-delete:hover .del{
+    color: red;
+}
+.admin .btn-delete{
+    border: 1.5px solid gray;
+    text-align: center;
+    color: gray;
+    box-shadow: inset 0 0 29px lightpink;
+    width: 15%;
+}
+.admin .btn-delete:hover{
+    border-color: red;
+    color: red;
+    box-shadow: inset 0 0 29px whitesmoke;
+}
+.admin .formDelete{
+    width: 320px;
+    margin: 0 auto;
+    padding: 40px 0;
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    background-color: whitesmoke;
+    z-index: 300;
+    border: 2px solid black;
+}
+.admin .windowGeneral{
+    width: 0;
+}
+.admin .activeWindow{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 250;
+    background-color: rgba(0,0,0,0.5);
+}
+.admin .btn-windowDel{
+    box-shadow: none;
+    width:50%;
+    height: 35px;
+    font-size: 100%;
+}
 @media screen and (min-width: 768px) {
-   
-    .login-admin .contac-desarrollator {
-        width: 30%;
-    }
 
     .admin h2 {
         text-shadow: 0 0 3px gray, -1px -1px 3px black, -2px -2px 6px black;
@@ -327,13 +332,14 @@ margin: auto;
         flex-direction: column;
         gap: 20px;
         margin: 20px 0;
+        padding: 15px;
     }
 
     .admin .inputRows {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        width: 60%;
+        width: 100%;
     }
 
     .admin .container-addOption{
@@ -392,6 +398,9 @@ justify-content: flex-end;
         color: #fff;
         background: green;
     }
+    .form-secondary{
+    width: 60%;
+}
 }
 
 @media screen and (min-width: 1024px) {
@@ -430,15 +439,16 @@ justify-content: flex-end;
 
     .admin .container {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         gap: 20px;
+        justify-content: center;
     }
 
     .admin .inputRows {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin: 50px auto;
+        /* margin: 50px auto; */
         width: 40%;
     }
 
@@ -502,4 +512,9 @@ justify-content: flex-end;
         background: green;
         border-radius: 0 0 20px 5px;
     }
+    .form-secondary{
+    width: 30%;
+    align-self: self-start;
+}
+
 }

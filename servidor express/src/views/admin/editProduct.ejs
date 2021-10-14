@@ -29,7 +29,8 @@
                                     title="Descripción"><%- locals.old ? old.description : product.description %></textarea>
 
                                 <!-- SELECT DE TEMPORADA -->
-                                <label class="label-input-admin" for="season">Temporada:</label>
+                                <label class="label-input-admin" for="season"
+                                    onchange="valueChange('deleteSeason',0)">Temporada:</label>
                                 <% if(locals.errors && errors.season){ %>
                                     <small class="error-validator">
                                         <%= errors.season.msg %>
@@ -43,14 +44,7 @@
                                                 </option>
                                                 <% }) %>
                                         </select>
-                                        <div class="container-addOption">
-                                            <input type="text" placeholder="Agregar temporada... "
-                                                class="input-addOption" id="input-addSeason">
-                                            <div class="icon-addOption" onclick="addOption(`input-addSeason`,`season`)">
-                                                <span class="iconify "
-                                                    data-icon="ant-design:appstore-add-outlined"></span>
-                                            </div>
-                                        </div>
+
 
 
 
@@ -61,7 +55,8 @@
                                                 <%= errors.category.msg %>
                                             </small>
                                             <% } %>
-                                                <select name="category" id="category" title="category">
+                                                <select name="category" id="category" title="category"
+                                                    onchange="valueChange('deleteCategory',1)">
                                                     <% categories.forEach(category=> { %>
                                                         <option value="<%- category.id %>" <%=locals.old &&
                                                             old.category==category.id ? 'selected' :
@@ -70,15 +65,7 @@
                                                         </option>
                                                         <% }) %>
                                                 </select>
-                                                <div class="container-addOption">
-                                                    <input type="text" placeholder="Agregar categoria... "
-                                                        class="input-addOption" id="input-addCategory">
-                                                    <div class="icon-addOption"
-                                                        onclick="addOption(`input-addCategory`,`category`)">
-                                                        <span class="iconify "
-                                                            data-icon="ant-design:appstore-add-outlined"></span>
-                                                    </div>
-                                                </div>
+
 
 
                                                 <!-- INPUT DISCOUNT -->
@@ -104,26 +91,20 @@
                                                                 <%= errors.color.msg %>
                                                             </small>
                                                             <% } %>
-                                                                <select name="color" id="color" title="color">
+                                                                <select name="color" id="color" title="color"
+                                                                    onchange="valueChange('deleteColor',2)">
                                                                     <% colors.forEach(color=> { %>
-                                                                        <option value="<%=locals.old ?old.color : color.id %>" <%=locals.old &&
-                                                                            old.color==color.id ? 'selected' :
-                                                                            product.colors[0].id==color.id ? `selected` : null
-                                                                            %>>
+                                                                        <option
+                                                                            value="<%=locals.old ?old.color : color.id %>"
+                                                                            <%=locals.old && old.color==color.id
+                                                                            ? 'selected' :
+                                                                            product.colors[0].id==color.id ? `selected`
+                                                                            : null %>>
                                                                             <%= capitalize(color.name) %>
                                                                         </option>
                                                                         <% }) %>
                                                                 </select>
-                                                                <div class="container-addOption">
-                                                                    <input type="text" name="addColor"
-                                                                        placeholder="Agregar color... "
-                                                                        class="input-addOption" id="input-addColor">
-                                                                    <div class="icon-addOption"
-                                                                        onclick="addOption(`input-addColor`,`color`)">
-                                                                        <span class="iconify "
-                                                                            data-icon="ant-design:appstore-add-outlined"></span>
-                                                                    </div>
-                                                                </div>
+
 
 
                                                                 <!-- SELECT DE TALLE -->
@@ -138,24 +119,13 @@
                                                                             <% sizes.forEach(size=> { %>
                                                                                 <option value="<%= size.id %>"
                                                                                     <%=locals.old && old.size==size.id
-                                                                                    ? 'selected' : product.sizes[0].id==size.id
-                                                                                    ? `selected` : null %>>
+                                                                                    ? 'selected' :
+                                                                                    product.sizes[0].id==size.id ?
+                                                                                    `selected` : null %>>
                                                                                     <%= size.name.toUpperCase() %>
                                                                                 </option>
                                                                                 <% }) %>
                                                                         </select>
-                                                                        <div class="container-addOption">
-                                                                            <input type="text"
-                                                                                placeholder="Agregar Talle... "
-                                                                                class="input-addOption"
-                                                                                id="input-addSize">
-                                                                            <div class="icon-addOption"
-                                                                                onclick="addOption(`input-addSize`,`size`)">
-                                                                                <span class="iconify"
-                                                                                    data-icon="ant-design:appstore-add-outlined"></span>
-                                                                            </div>
-                                                                        </div>
-
 
                                                                         <!-- INPUT STOCK/CANTIDAD -->
                                                                         <label class="label-input-admin"
@@ -190,22 +160,19 @@
                                                                                 <button type="submit"
                                                                                     class="btn-add"><span
                                                                                         class="iconify"
-                                                                                        data-icon="ant-design:save-outlined"></span></button>
+                                                                                        data-icon="ant-design:save-outlined"></span>
+                                                                                </button>
 
 
                                                                                 <a href="/admin/products"
                                                                                     class="left-row"><span
                                                                                         class="iconify"
-                                                                                        data-icon="bi:arrow-left-square"></span></a>
+                                                                                        data-icon="bi:arrow-left-square"></span>
+                                                                                </a>
 
 
+                    </form>
                 </div>
-
-
-                </form>
-
-                </div>
-
             </main>
     </body>
 
