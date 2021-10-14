@@ -84,7 +84,8 @@
 @media screen and (min-width: 768px) {
     .register .card {
         width: 450px;
-        height: 320px;
+        height: fit-content;
+        height: moz-fit-content;
         /* position: absolute; */
     }
 

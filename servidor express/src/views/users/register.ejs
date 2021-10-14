@@ -12,19 +12,19 @@
                 <img src="/img/logo.png" alt="" class="card__logo">
             </figure>
             <div class="input-container">
-                <input  class="input--style" type="text" name="firstName" placeholder="nombre" value="<%= locals.old && old.firstName %>">
+                <input  class="input--style" type="text" name="firstName" placeholder="Nombre" value="<%= locals.old && old.firstName %>">
                 <% if (locals.errors && errors.firstName) { %> 
                     <small class="errors-validation_register"><%= errors.firstName.msg %></small>
                 <% } %>
-                <input class="input--style" type="text" name="lastName" placeholder="last_name" value="<%= locals.old && old.lastName %>">
+                <input class="input--style" type="text" name="lastName" placeholder="Apellido" value="<%= locals.old && old.lastName %>">
                 <% if (locals.errors && errors.lastName) { %> 
                     <small class="errors-validation_register"><%= errors.lastName.msg %></small>
                 <% } %>
-                <input class="input--style" name="email" placeholder="email"value="<%= locals.old && old.email %>">
+                <input class="input--style" name="email" placeholder="Email"value="<%= locals.old && old.email %>">
                 <% if (locals.errors && errors.email) { %> 
                     <small class="errors-validation_register"><%= errors.email.msg %></small>
                 <% } %>
-                <input class="input--style" type="password" name="password" placeholder="password">
+                <input class="input--style" type="password" name="password" placeholder="Password">
                 
                 <input class="input--style" type="password" name="pass2" placeholder="Confirmar contraseña" >
                 <% if (locals.errors && errors.pass2) { %> 
@@ -35,7 +35,7 @@
     
                 <input class="input__check" type="checkbox" name="condiciones" id="condiciones">
                 <label class="check__label" for="condiciones">Aceptar <a href="/info/we#Terminos"
-                        class="link-conditions">condiciones</a></label>
+                        class="link-conditions">Términos y condiciones</a></label>
                     </div>
                     <% if (locals.errors && errors.condiciones) { %> 
                         <small class="errors-validation_register"><%= errors.condiciones.msg %></small>

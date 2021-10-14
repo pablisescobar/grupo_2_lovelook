@@ -16,29 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `avatars`
---
-
-DROP TABLE IF EXISTS `avatars`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `avatars` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `filename` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `avatars`
---
-
-LOCK TABLES `avatars` WRITE;
-/*!40000 ALTER TABLE `avatars` DISABLE KEYS */;
-/*!40000 ALTER TABLE `avatars` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `categories`
 --
 
@@ -413,15 +390,13 @@ CREATE TABLE `users` (
   `password` varchar(60) NOT NULL,
   `rolId` int(11) DEFAULT NULL,
   `locationId` int(11) DEFAULT NULL,
-  ` avatarId` int(11) DEFAULT NULL,
+  `avatar` varchar(150) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `locationId` (`locationId`),
-  KEY ` avatarId` (` avatarId`),
   KEY `rolId` (`rolId`),
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`locationId`) REFERENCES `locations` (`id`),
-  CONSTRAINT `users_ibfk_2` FOREIGN KEY (` avatarId`) REFERENCES `avatars` (`id`),
   CONSTRAINT `users_ibfk_3` FOREIGN KEY (`rolId`) REFERENCES `roles` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -430,6 +405,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (5,'mariela','paduani',NULL,'mariela@gmail.com','$2a$12$tD5e.5Jhp/WQWMgAH8njjeREM6PBt7F9w7jlZfk6Mc1VBcHCH5V.O',1,NULL,NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -446,4 +422,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-10-14  1:34:14
+-- Dump completed on 2021-10-14 15:02:58

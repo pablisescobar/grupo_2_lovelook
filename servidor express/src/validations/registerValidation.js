@@ -10,6 +10,26 @@ module.exports = [
     .notEmpty()
     .withMessage('Debes escribir un apellido'),
 
+    check('email')
+    .notEmpty()
+    .withMessage('Debes escribir un email').bail('Este campo no puede estar vacio')
+    .isEmail()
+    .withMessage('Debes escribir un email valido'),
+
+    body('email')
+        .custom( value => {
+            return db.User.findOne({
+                where:{
+                    email : value
+                }
+                })
+                .then(user => {
+                    if(user){
+                        return Promise.reject('Este mail ya está registrado')
+                    }
+                })
+    }),
+    
    /*  check('email')
     .notEmpty()
     .withMessage('Debes escribir un email').bail('Este campo no puede estar vacio')

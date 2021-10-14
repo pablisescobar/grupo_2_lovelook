@@ -21,7 +21,9 @@
                       <% if (locals.errors && errors.pass1) { %>
                         <small class="text-danger"><%= errors.pass1.msg %> </small>
                       <% } %>
-                  
+                      <a href="/undefined" class="card__enlace">
+                        <span class="card__text">¿Olvidé mi contraseña?</span>
+                      </a>
                       <div style="display: flex;align-items: center;">
                         <input class="input__check" type="checkbox" name="remember" id="remember">
                         <label class="check__label" for="remember">Recordarme</label>
@@ -31,10 +33,6 @@
                         <small class="text-danger"><%= errorMsg %> </small>
                       <% } %>
 
-                      <a href="/undefined" class="card__enlace">
-                        <span class="card__text">¿Olvide mi contraseña?</span>
-                      </a>
-                      
                       <button type="submit" class="button button--positionRegister">
                         INGRESAR
                       </button>
