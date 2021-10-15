@@ -1,8 +1,7 @@
+const db = require('../database/models');
 const bcrypt = require('bcryptjs');
 const { validationResult } = require("express-validator");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const db = require('../database/models')
-
 
 module.exports = {
     register: (req, res) => {
@@ -29,9 +28,6 @@ module.exports = {
                 session: req.session
             })
         })
-
-        /* let user = getUsers.find(user => user.id === req.session.user.id) */
-
     },
 
     profileEdit: (req, res) => {
@@ -44,7 +40,6 @@ module.exports = {
                 session: req.session
             })
         })
-        /* let user = getUsers.find(user => user.id === +req.params.id) */
     },
 
     updateProfile: (req, res) => {
@@ -83,36 +78,6 @@ module.exports = {
                 session: req.session
             })
         }
-        /*  let user = getUsers.find(user => user.id === +req.params.id)
- 
-         let {
-             name,
-             last_name,
-             tel,
-             address,
-             pc,
-             province,
-             city
-         } = req.body
- 
-         user.name = name
-         user.last_name = last_name
-         user.tel = tel
-         user.address = address
-         user.pc = pc
-         user.province = province
-         user.city = city
-         user.avatar = req.file ? req.file.filename : user.avatar
- 
-         writeUsersJSON(getUsers)
- 
-         delete user.pass
- 
-         req.session.user = user
- 
-         res.redirect('/user/perfil') */
-
-
     },
 
     processLogin: (req, res) => {
@@ -147,24 +112,6 @@ module.exports = {
                 session: req.session
             })
         }
-        /*  let user = getUsers.find(user => user.email === req.body.email)
-
-         req.session.user = {
-             id: user.id,
-             name: user.name,
-             last_name: user.last_name,
-             email: user.email,
-             avatar: user.avatar,
-             rol: user.rol
-         }
-
-         if (req.body.remember) {
-             res.cookie("userLoveLook", req.session.user, { expires: new Date(Date.now() + 90000), httpOnly: true })
-         }
-
-         res.locals.user = req.session.user
-
-         res.redirect('/') */
     },
     processRegister: (req, res) => {
         let errors = validationResult(req)
@@ -179,7 +126,6 @@ module.exports = {
         if (errors.isEmpty()) {
 
             let { firstName, lastName, email, password } = req.body
-            /* res.send(req.body) */
             db.User.create({
                 firstName,
                 lastName,
@@ -197,40 +143,6 @@ module.exports = {
                 position: "position: relative"
             });
         }
-
-        /*    let lastId = 0
-       getUsers.forEach(user => {
-           lastId = user.id
-       }) 
-       
-       
-           let {
-               name, 
-               last_name,
-               email, 
-               pass1
-           } = req.body
-
-           let newUser = {
-               id : lastId + 1,
-               name,
-               last_name,
-               email,
-               pass1 : bcrypt.hashSync(pass1, 12),
-               avatar : req.file ? req.file.filename : "default-image.png",
-               rol: "ROL_USER",
-               tel: "",
-               address: "",
-               pc: "",
-               province: "",
-               city:""
-           }
-
-           getUsers.push(newUser)
-
-           writeUsersJSON(getUsers)
-
-           res.redirect('/user/login') */
     },
 
     logout: (req, res) => {

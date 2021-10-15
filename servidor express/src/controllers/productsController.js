@@ -1,34 +1,5 @@
 const db = require('../database/models')
-const { getProducts, getShops } = require("../data/dataBase");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
-/* let categorias = [];
-getProducts.forEach(product => {
-    if (!categorias.includes(product.category)) {
-        categorias.push(product.category)
-    }
-})
-
-let colors = [];
-getProducts.forEach(product => {
-    if(!colors.includes(product.color)){
-        colors.push(product.color)
-    }  
-});
-
-let sizes = [];
-getProducts.forEach(product => {
-    if(!sizes.includes(product.size)){
-        sizes.push(product.size)
-    }  
-});
-
-let prices = [];
-getProducts.forEach(product => {
-    if(!prices.includes(product.price)){
-        prices.push(product.price)
-    }  
-}); */
 
 module.exports = {
     list: (req, res) => {
@@ -59,7 +30,6 @@ module.exports = {
             })
         })
     },
-    
     detail: (req, res) => {
         db.Product.findOne({
             where: {
@@ -87,7 +57,6 @@ module.exports = {
                 ]
             })
             .then(products =>{
-                /* res.send(product.colors.id) */
                 res.render('products/productDetail', {
                 product,
                 products,
@@ -97,27 +66,9 @@ module.exports = {
                 session: req.session
             }) 
             })
-            
-           
-            
         }).catch(err => {
             console.log(err);
         })
-
-
-        /* let productoId = getProducts.find(productX => productX.id == +req.params.id)
-        let title = "Suma a tu look";
-        let productsFilter = getProducts.filter(product=>product.discount >= 10)
-        
-        res.render('products/productDetail', {
-            products:productsFilter ,
-            product: productoId,
-            title: title,
-            position:"",
-            categorias,
-            toThousand,
-            session: req.session
-        }) */
     },
     category:(req,res)=>{
 
@@ -160,37 +111,9 @@ module.exports = {
                             product,
                             session: req.session
                         })
-                    })
-                    
+                    }) 
                 })
-                
             })
-            
         })
-
-        /* function categories(category){
-            let arrayCategories = []
-            getProducts.forEach(product=>{
-                if(product.category.toLowerCase() === String(category).toLowerCase()){
-                    if(!arrayCategories.includes(product)){
-                        arrayCategories.push(product)
-                    }
-                }
-            })
-            return arrayCategories
-        }
-         let categoriesOfList = categories(req.params.category)
-
-         res.render('products/listProducts',{
-             products:categoriesOfList,
-             display:"display:none;",
-             position:"",
-             categorias,
-             toThousand,
-             colors,
-            sizes,
-            prices,
-            session: req.session
-         }) */
     }
 }
