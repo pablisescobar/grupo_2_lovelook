@@ -1,4 +1,3 @@
-/* const { getProducts, writeProductsJSON, getCategory, getColors } = require("../data/dataBase") */
 const db = require('../database/models')
 const { Op } = require('sequelize')
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -23,8 +22,6 @@ module.exports = {
             ]
         })
             .then(products => {
-                /* console.log(products);
-                res.send(products) */
                 res.render('admin/listProductAdmin', {
                     products,
                     position: "",
@@ -206,7 +203,6 @@ module.exports = {
         })
         Promise.all([categoriesDb, seasonsDb, sizesDb, colorsDb, productDb])
             .then(([categories, seasons, sizes, colors, product]) => {
-                /* res.send(product) */
                 res.render('admin/editProduct', {
                     product,
                     categories,
