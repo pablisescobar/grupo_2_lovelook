@@ -73,3 +73,20 @@ Dejar de hacer:
 
 # Como equipo consideramos que:
 - Debido a la buena comunicación y buen compañerismo obtenido en este sprint logramos realizar nuestros objetivos positivamente lo cual nos lleva a no poder completar la estrella de mar...
+
+## Retrospectiva: "SPRINT 5"
+
+Empezar a hacer :
+- Funcionalidades faltantes
+
+Hacer más:
+- Comunicación
+
+Seguir Haciendo como equipo:
+-  Ayudar al compañero/a
+
+Hacer Menos:
+- No autoexigirnos
+
+Dejar de hacer:
+- 
