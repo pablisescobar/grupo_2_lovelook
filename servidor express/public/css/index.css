@@ -40,7 +40,6 @@
     width: 100%;
 }
 .home-inicio h2 {
-    font-family: var(--yesteryear);
     text-align: center;
     color: pink;
     border-bottom: 2px solid var(--bordes_claro);
@@ -62,7 +61,6 @@
     bottom: 205px;
     color: white;
     background-color: rgba(234, 137, 154, 0.6);
-    font-family: var(--yesteryear);
     font-weight: bold;
 }
 @media screen and (min-width: 768px) {
