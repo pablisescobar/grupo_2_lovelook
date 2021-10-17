@@ -116,7 +116,8 @@ module.exports = {
                     })
 
             } catch (err) {
-                res.redirect('/admin/products/add')
+               res.send(err)
+                /* res.redirect('/admin/products/add') */
             }
         } else {
             if (req.files > 0) {

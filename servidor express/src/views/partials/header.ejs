@@ -21,7 +21,7 @@
         </a>
         <a href="/">Inicio</a>
         <a href="/">Categorías</a>
-        <a href="/products">Accesorios</a>
+        <a href="/products/accesorios">Accesorios</a>
         <a href="/products">Oportunidades</a>
     </div>
 
@@ -42,7 +42,7 @@
         <div class="menu-user">
             <a href="/user/perfil">Mis datos</a>
             <a href="/user/logout">Cerrar sesión</a>
-            <% if (session.user.rol === "ROL_ADMIN") { %>
+            <% if (session.user.rol === 2) { %>
                 <a href="/admin/products">ADMIN</a>
             <% } %>
         </div>
@@ -76,7 +76,7 @@
                     </div>
                 </div>                                                                          
             </li>
-            <li class="btn"><a href="/products">Accesorios</a></li>
+            <li class="btn"><a href="/products/accesorios">Accesorios</a></li>
             <li class="btn"><a href="/products">Oportunidades</a></li>
         </ul>
     </nav>
