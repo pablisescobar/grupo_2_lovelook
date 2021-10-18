@@ -11,7 +11,7 @@ const storage = multer.diskStorage({
 })
 
 const fileFilter = function(req, file,callback) {
-    if(!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)){
+    if(!file.originalname.match(/\.(jpg|jpeg|png|gif|webp)$/)){
         req.fileValidationError = "Archivos permitidos (.jpg, .jpeg, .png, .gif)";
         return callback(null,false,req.fileValidationError);
     }

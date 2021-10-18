@@ -1,7 +1,6 @@
 const db = require('../database/models')
 const { check, body } = require('express-validator');
 const bcrypt = require('bcryptjs')
-/* const { getUsers } = require('../data/dataBase'); */
 
 module.exports = [
     check('email')
@@ -26,5 +25,4 @@ module.exports = [
                 return Promise.reject("Email o contraseña incorrecta")
             })
         })
-
 ]
