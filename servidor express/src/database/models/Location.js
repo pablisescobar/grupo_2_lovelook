@@ -28,7 +28,7 @@ module.exports = (sequelize, dataTypes) => {
 
     const Location = sequelize.define(alias, cols, config)
     Location.associate=models=>{
-        Location.belongsTo(models.User,{
+        Location.hasOne(models.User,{
             as:"user",
             foreignKey:"locationId"
         })

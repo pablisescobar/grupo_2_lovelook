@@ -18,7 +18,7 @@ module.exports = [
                 }
             })
             .then(user => {
-                if(!bcrypt.compareSync(req.body.password, user.datavalues.password)){
+                if(!bcrypt.compareSync(req.body.password, user.password)){
                     return Promise.reject()
                 }
             })
@@ -27,28 +27,4 @@ module.exports = [
             })
         })
 
-
-   /*  body('email')
-    .custom(value => {
-        let user = getUsers.find(user => user.email === value)
-        
-        if(user !== undefined) {
-            return true
-        } else {
-            return false
-        }
-    })
-    .withMessage("Email no registrado"), */
-
-    /* check('pass1')
-    .notEmpty()
-    .withMessage('Debes ingresar tu contraseña'),
-
-    body('pass1')
-    .custom((value, {req}) => {
-        let user = getUsers.find(user => user.email === req.body.email)
-        return bcrypt.compareSync(value, user.pass1)
-
-    })
-    .withMessage('contraseña inválida') */
 ]

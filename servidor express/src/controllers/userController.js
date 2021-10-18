@@ -22,6 +22,7 @@ module.exports = {
         db.User.findByPk(req.session.user.id, {
             include: [{ association: "location" }]
         }).then((user) => {
+            console.log(user)
             res.render('users/perfilUser', {
                 position: "position:relative;",
                 user,
