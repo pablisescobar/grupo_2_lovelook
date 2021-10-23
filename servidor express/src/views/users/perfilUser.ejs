@@ -3,7 +3,7 @@
 <%- include('../partials/head.ejs') %>
 
     <body>
-        <%- include('../partials/header.ejs', {categorias}) %>
+        <%- include('../partials/header.ejs') %>
 
             <form action="" class="perfil-user">
 
@@ -19,12 +19,12 @@
 
                 <div class="container">
                     <label class="label-perfil-user" for="nombre">Nombre: </label>
-                    <input class="input--style input-perfil-user" type="text" name="nombre" id="nombre" value="<%= user.name %>">
+                    <input class="input--style input-perfil-user" type="text" name="nombre" id="nombre" value="<%= user.firstName %>">
                 </div>
 
                 <div class="container">
                     <label class="label-perfil-user" for="apellido">Apellido: </label>
-                    <input class="input--style input-perfil-user" type="text" name="apellido" id="apellido" value="<%= user.last_name %>">
+                    <input class="input--style input-perfil-user" type="text" name="apellido" id="apellido" value="<%= user.lastName %>">
                 </div>
 
                 <div class="container">
@@ -36,29 +36,26 @@
                     <label class="label-perfil-user" for="telefono">Teléfono: </label>
                     <input class="input--style input-perfil-user" type="tel" name="telefono" id="telefono" value="<%= user.phone ? user.phone : "------" %>">
                 </div>
-                <% User.location.forEach(loc => { %>
                  
                     <div class="container">
                         <label class="label-perfil-user" for="direccion">Dirección: </label>
-                        <input class=" input--style input-perfil-user" type="text" name="direccion" id="direccion" value="<%= location.address ? location.address : "------" %>">
+                        <input class=" input--style input-perfil-user" type="text" name="direccion" id="direccion" value="<%= user.location != null && user.location.address ? user.location.address : "------" %>">
                     </div>
                     
                     <div class="container">
                         <label class="label-perfil-user" for="city">Ciudad: </label>
-                        <input class=" input--style input-perfil-user" type="text" name="city" id="city" value="<%= location.city ? location.city : "------" %>">
+                        <input class=" input--style input-perfil-user" type="text" name="city" id="city" value="<%= user.location != null && user.location.city ? user.location.city : "------" %>">
                     </div>
                     
                 <div class="container">
                     <label class="label-perfil-user" for="cp">Codigo Postal: </label>
-                    <input class=" input--style input-perfil-user" type="number" name="cp" id="cp" value="<%= location.cp ? location.cp : "------" %>">
+                    <input class=" input--style input-perfil-user" type="number" name="cp" id="cp" value="<%= user.location != null && user.location.pc ? user.location.pc : "------" %>">
                 </div>
             
                 <div class="container">
                     <label class="label-perfil-user" for="province">Provincia: </label>
-                    <input class=" input--style input-perfil-user" type="text" name="province" id="province" value="<%= location.province ? location.province : "------" %>">
+                    <input class=" input--style input-perfil-user" type="text" name="province" id="province" value="<%= user.location != null && user.location.province ? user.location.province : "------" %>">
                 </div>
-
-            <% }) %>
                 <a href="/user/profile/edit/<%= user.id %>" class="changesButton">EDITAR DATOS</a>
 
             </form>

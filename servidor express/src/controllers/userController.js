@@ -22,6 +22,7 @@ module.exports = {
         db.User.findByPk(req.session.user.id, {
             include: [{ association: "location" }]
         }).then((user) => {
+            console.log(user)
             res.render('users/perfilUser', {
                 position: "position:relative;",
                 user,
@@ -50,6 +51,7 @@ module.exports = {
             db.User.update({
                 firstname,
                 lastName,
+                pc,
                 phone,
                 avatar: req.file ? req.file.filename : req.session.user.avatar
             }, {
@@ -115,13 +117,6 @@ module.exports = {
     },
     processRegister: (req, res) => {
         let errors = validationResult(req)
-       /*  if (req.fileValidatorError) {
-            let image = {
-                param: "image",
-                msg: req.fileValidatorError,
-            };
-            errors.push(image);
-        } */
 
         if (errors.isEmpty()) {
 
@@ -132,6 +127,7 @@ module.exports = {
                 email,
                 password: bcrypt.hashSync(password, 12),
                 rolId: 1,
+                avatar: 'default-image.png'
             }).then(() => {
                 res.redirect('/user/login')
             }).catch(err => console.log(err))
