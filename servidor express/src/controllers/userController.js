@@ -97,7 +97,7 @@ module.exports = {
                         firstName: user.firstName,
                         lastName: user.lastName,
                         email: user.email,
-                        rolId: user.rolId
+                        rol: user.rolId
                     };
                     if (req.body.remember) {
                         res.cookie("userLoveLook", req.session.user, { expires: new Date(Date.now() + 90000), httpOnly: true })

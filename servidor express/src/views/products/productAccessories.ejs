@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head.ejs') %>
+
+    <body>
+        <%- include('../partials/load.ejs') %>
+        <%- include('../partials/header.ejs')%>
+
+            <main class="container-listProduct">
+                
+                <section class="section2">
+                    <% products.forEach(product=>{ %>
+                        <article class="product">
+                            <a href="/products/detail/<%= product.id %>">
+                                <img src="/img/photos/<%= product.images.length>0? product.images[0].filename:'default.png'%>"
+                                    alt="">
+                                <h3>
+                                    <%= product.name %>
+                                </h3>
+                                <h3>$<%= product.price %>
+                                </h3>
+                                <p>
+                                    <%=product.discount> 0?`${product.discount}% Descuento` : "" %>
+                                </p>
+                            </a>
+                        </article>
+                        <% }) %>
+                </section>
+            </main>
+
+            <%- include('../partials/footer.ejs') %>
+                <%- include('../partials/scripts.ejs') %>
+
+    </body>
+
+</html>
