@@ -150,7 +150,7 @@ module.exports = {
         res.redirect('/')
     },
 
-    cart: (req, res) => {
+    /* cart: (req, res) => {
         let productsOffer = getProducts.filter(product => product.discount > 15 ? product : null)
         res.render('users/productCart', {
             products: productsOffer,
@@ -159,5 +159,5 @@ module.exports = {
             categorias,
             session: req.session
         })
-    }
+    } */
 }
