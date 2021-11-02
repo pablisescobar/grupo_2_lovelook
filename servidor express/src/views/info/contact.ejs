@@ -1,107 +1,182 @@
 <!DOCTYPE html>
 <html lang="es">
 
-    <%- include('../partials/head.ejs') %> 
+<%- include('../partials/head.ejs') %>
 
-<body>
-    <%- include('../partials/load.ejs') %>
-    <%- include('../partials/header.ejs') %> 
+    <body>
+        <%- include('../partials/load.ejs') %>
+            <%- include('../partials/header.ejs') %>
 
-    <main class="form-contact-container">
-        <form action="/info/contact" method="POST" enctype="multipart/form-data">
-            <div class="form-item">
-                <label for="asunto">Asunto</label>
-                <select class="case-input" name="issue" id="asunto" onchange="selectionOption()">
-                    <option value="atencion" id="atencion" >Atención al cliente</option>
-                    <option value="rrhh" id="rrhh">RRHH</option>
-                    <option value="franquicias" id="franquicias" >Franquicias</option>
-                    <option value="otros" id="otros" >Otros</option>
-                </select>
-            </div>
-            <div class="form-item" id="nombre">
-                <label for="nombre">Nombre</label>
-                <input type="text" name="name" id="nombre" autocomplete="name" mozactionhint="siguiente">
-            </div>
-            <div class="form-item" id="apellido">
-                <label for="apellido">Apellido</label>
-                <input type="text" name="lastName" id="apellido" autocomplete="family-name" mozactionhint="siguiente">
-            </div>
-            <div class="form-item" id="dni" style="display:none;">
-                <label for="dni">DNI</label>
-                <input class="document-input" type="number" name="dni" id="dni">
-            </div>
+                <main class="form-contact-container">
+                    <form action="/info/contact" method="POST" enctype="multipart/form-data">
+                        <div class="form-item">
+                            <label for="asunto">Asunto</label>
+                            <select class="case-input" name="issue" id="asunto" onchange="selectionOption()">
+                                <option value="atencion" id="atencion">Atención al cliente</option>
+                                <option value="rrhh" id="rrhh">RRHH</option>
+                                <option value="franquicias" id="franquicias">Franquicias</option>
+                                <option value="otros" id="otros">Otros</option>
+                            </select>
 
-            <div class="form-item" id="email">
-                <label for="email">E-mail</label>
-                <input type="email" name="email" id="email" title="ejemplo@email.com" mozactionhint="siguiente">
-            </div>
+                        </div>
+                        <div class="form-item" id="nombre">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" name="name" id="nombre" autocomplete="name" mozactionhint="siguiente">
+                            <% if(locals.errors && errors.name){ %>
+                                <span id="nombreError">
+                                    <%= errors.name.msg %>
+                                </span>
+                                <% } %>
 
-            <div class="form-item" id="telefono">
-                <label for="tel">Teléfono</label>
-                <input type="tel" name="phone" title="Ingresa el numero sin - _ ni espacios" id="tel"
-                    autocomplete="tel" mozactionhint="siguiente">
-            </div>
+                        </div>
+                        <div class="form-item" id="apellido">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" name="lastName" id="apellido" autocomplete="family-name"
+                                mozactionhint="siguiente">
+                            <% if(locals.errors && errors.lastName){ %>
+                                <span id="apellidoError">
+                                    <%= errors.lastName.msg %>
+                                </span>
+                                <% } %>
 
+                        </div>
+                        <div class="form-item" id="dni" style="display:none;">
+                            <label for="dni">DNI</label>
+                            <input class="document-input" type="number" name="dni" id="dni">
+                            <% if(locals.errors && errors.dni){ %>
+                                <span id="dniError">
+                                    <%= errors.dni.msg %>
+                                </span>
+                                <% } %>
 
+                        </div>
 
-            <div class="form-item" id="cv" style="display:none;">
-                <label for="cv" title="Archivo .pdf o .docx">CV</label>
-                <input class="cv-input" type="file" name="cv" id="cv" accept=".pdf, .docx" mozactionhint="siguiente">
-            </div>
-
-            <div class="form-item" id="localidad" style="display:none;">
-                <label for="localidad">Localidad</label>
-                <input type="text" name="location" id="localidad" mozactionhint="siguiente">
-            </div>
-
-            <div class="form-item" id="domicilio" style="display:none;">
-                <label for="domicilio">Domicilio</label>
-                <input type="text" name="address" id="domicilio" autocomplete="address-line1" mozactionhint="siguiente">
-            </div>
-
-            <div class="form-item" id="ciudad" style="display:none;">
-                <label for="cuidad">Ciudad</label>
-                <input type="text" name="city" id="cuidad" 
-                    mozactionhint="siguiente">
-            </div>
-
-            <div class="form-item" id="cuit" style="display:none;">
-                <label for="cuit">CUIT</label>
-                <input type="text" name="cuit" id="cuit" 
-                    mozactionhint="siguiente">
-            </div>
-
-            <div class="form-item" id="razon" style="display:none;">
-                <label for="RSocial">Razón Social</label>
-                <input type="text" name="businessName" id="RSocial" 
-                    mozactionhint="siguiente">
-            </div>
-            <div class="form-item" id="direSocial" style="display:none;">
-                <label for="DSocial">Dirección Social</label>
-                <input type="text" name="socialAddress" id="DSocial"
-                    mozactionhint="siguiente">
-            </div>
-            <div class="form-item" id="mensaje">
-                <label for="msg">Mensaje</label>
-                <textarea rows="5" maxlength="97" title="97 caracteres máximo" name="msg" id="msg"
-                    placeholder="Hola !!" spellcheck="true"
-                    mozactionhint="siguiente"></textarea>
-            </div>
-            <div class="form-item captcha-contain">
-            </div>
-
-            <div class="form-item">
-                <button class="btn-send" type="submit">Enviar</button>
-            </div>
-        </form>
-    </main>
-
-    <%- include('../partials/whatsapp.ejs') %> 
-
-    <%- include('../partials/footer.ejs') %> 
+                        <div class="form-item" id="email">
+                            <label for="email">E-mail</label>
+                            <input type="email" name="email" id="email" title="ejemplo@email.com"
+                                mozactionhint="siguiente">
+                            <% if(locals.errors && errors.email){ %>
+                                <span id="emailError">
+                                    <%= errors.email.msg %>
+                                </span>
+                                <% } %>
+                            </div>
+                            
+                            <div class="form-item" id="telefono">
+                                <label for="tel">Teléfono</label>
+                                <input type="tel" name="phone" title="Ingresa el numero sin - _ ni espacios" id="tel"
+                                autocomplete="tel" mozactionhint="siguiente">
+                                
+                                <% if(locals.errors && errors.phone){ %>
+                                    <span id="telError">
+                                        <%= errors.phone.msg %>
+                                    </span>
+                                    <% } %>
+                        </div>
 
 
 
-</body>
+                        <div class="form-item" id="cv" style="display:none;">
+                            <label for="cv" title="Archivo .pdf o .docx">CV</label>
+                            <input class="cv-input" type="file" name="cv" id="cv" accept=".pdf, .docx"
+                                mozactionhint="siguiente">
+                                <% if(locals.errors && errors.cv){ %>
+                                    <span id="cvError">
+                                        <%= errors.cv.msg %>
+                                    </span>
+                                    <% } %>
+                           
+
+                        </div>
+
+                        <div class="form-item" id="localidad" style="display:none;">
+                            <label for="localidad">Localidad</label>
+                            <input type="text" name="location" id="localidad" mozactionhint="siguiente">
+                            <% if(locals.errors && errors.location){ %>
+                                <span id="localidadError">
+                                    <%= errors.location.msg %>
+                                </span>
+                                <% } %>
+                            
+
+                        </div>
+
+                        <div class="form-item" id="domicilio" style="display:none;">
+                            <label for="domicilio">Domicilio</label>
+                            <input type="text" name="address" id="domicilio" autocomplete="address-line1"
+                                mozactionhint="siguiente">
+                                <% if(locals.errors && errors.address){ %>
+                                    <span id="domicilioError">
+                                        <%= errors.address.msg %>
+                                    </span>
+                                    <% } %>
+                            
+
+                        </div>
+
+                        <div class="form-item" id="ciudad" style="display:none;">
+                            <label for="cuidad">Ciudad</label>
+                            <input type="text" name="city" id="ciudad" mozactionhint="siguiente">
+                            <% if(locals.errors && errors.city){ %>
+                                <span id="ciudadError">
+                                    <%= errors.city.msg %>
+                                </span>
+                                <% } %>
+                          
+
+                        </div>
+
+                        <div class="form-item" id="cuit" style="display:none;">
+                            <label for="cuit">CUIT</label>
+                            <input type="text" name="cuit" id="cuit" mozactionhint="siguiente">
+                            <% if(locals.errors && errors.cuit){ %>
+                                <span id="cuitError">
+                                    <%= errors.cuit.msg %>
+                                </span>
+                                <% } %>
+
+                        </div>
+
+                        <div class="form-item" id="razon" style="display:none;">
+                            <label for="RSocial">Razón Social</label>
+                            <input type="text" name="businessName" id="RSocial" mozactionhint="siguiente">
+                            <% if(locals.errors && errors.businessName){ %>
+                                <span id="RSocialError">
+                                    <%= errors.businessName.msg %>
+                                </span>
+                                <% } %>
+
+                        </div>
+
+                        <div class="form-item" id="direSocial" style="display:none;">
+                            <label for="DSocial">Dirección Social</label>
+                            <input type="text" name="socialAddress" id="DSocial" mozactionhint="siguiente">
+
+                            <span id="DSocialError"></span>
+
+                        </div>
+                        <div class="form-item" id="mensaje">
+                            <label for="msg">Mensaje</label>
+                            <textarea rows="5" maxlength="97" title="97 caracteres máximo" name="msg" id="msg"
+                                placeholder="Hola !!" spellcheck="true" mozactionhint="siguiente"></textarea>
+
+                            <span id="msgError"></span>
+                        </div>
+                        <div class="form-item captcha-contain">
+                        </div>
+
+                        <div class="form-item">
+                            <button class="btn-send" type="submit">Enviar</button>
+                        </div>
+                    </form>
+                </main>
+
+                <%- include('../partials/whatsapp.ejs') %>
+
+                    <%- include('../partials/footer.ejs') %>
+
+
+
+    </body>
 
 </html>

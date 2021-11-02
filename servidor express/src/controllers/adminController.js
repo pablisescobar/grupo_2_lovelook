@@ -405,6 +405,7 @@ module.exports = {
     },
 
     message: (req, res) => {
+
         db.Message.findAll()
             .then(messages => {
                 res.render('admin/messagesAdmin', {
