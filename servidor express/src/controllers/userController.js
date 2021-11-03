@@ -64,7 +64,7 @@ module.exports = {
                         address,
                         city,
                         province,
-                        cp,
+                        pc,
                         userId: req.params.id
                     })
                         .then(() => {
