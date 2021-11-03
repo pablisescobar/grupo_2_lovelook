@@ -2,7 +2,7 @@
 <html lang="es">
   <%- include('../partials/head')%>
   <body>
-
+    <%- include('../partials/load.ejs') %>
     <%- include('../partials/header')%>
 
         <form action="/user/profile/edit/<%= user.id %>?_method=PUT" method="POST" class="perfil-user" enctype="multipart/form-data">

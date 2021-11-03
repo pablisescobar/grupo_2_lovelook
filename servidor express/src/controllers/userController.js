@@ -22,6 +22,7 @@ module.exports = {
         db.User.findByPk(req.session.user.id, {
             include: [{ association: "location" }]
         }).then((user) => {
+            console.log(user)
             res.render('users/perfilUser', {
                 position: "position:relative;",
                 user,
@@ -50,6 +51,7 @@ module.exports = {
             db.User.update({
                 firstname,
                 lastName,
+                pc,
                 phone,
                 avatar: req.file ? req.file.filename : req.session.user.avatar
             }, {
@@ -95,7 +97,7 @@ module.exports = {
                         firstName: user.firstName,
                         lastName: user.lastName,
                         email: user.email,
-                        rolId: user.rolId
+                        rol: user.rolId
                     };
                     if (req.body.remember) {
                         res.cookie("userLoveLook", req.session.user, { expires: new Date(Date.now() + 90000), httpOnly: true })
@@ -115,13 +117,6 @@ module.exports = {
     },
     processRegister: (req, res) => {
         let errors = validationResult(req)
-       /*  if (req.fileValidatorError) {
-            let image = {
-                param: "image",
-                msg: req.fileValidatorError,
-            };
-            errors.push(image);
-        } */
 
         if (errors.isEmpty()) {
 
@@ -132,6 +127,7 @@ module.exports = {
                 email,
                 password: bcrypt.hashSync(password, 12),
                 rolId: 1,
+                avatar: 'default-image.png'
             }).then(() => {
                 res.redirect('/user/login')
             }).catch(err => console.log(err))
@@ -154,7 +150,7 @@ module.exports = {
         res.redirect('/')
     },
 
-    cart: (req, res) => {
+    /* cart: (req, res) => {
         let productsOffer = getProducts.filter(product => product.discount > 15 ? product : null)
         res.render('users/productCart', {
             products: productsOffer,
@@ -163,5 +159,5 @@ module.exports = {
             categorias,
             session: req.session
         })
-    }
+    } */
 }

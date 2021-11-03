@@ -4,11 +4,12 @@
 <%- include('../partials/head.ejs') %>
 
     <body>
+        <%- include('../partials/load.ejs') %>
         <%- include('../partials/headerAdmin.ejs') %>
             <main class="admin">
                 <h2>Agregar un producto</h2>
                 <div class="container">
-                    <form action="/admin/products/add" method="get" class="inputRows" enctype="multipart/form-data">
+                    <form action="/admin/products/add" method="post" class="inputRows" enctype="multipart/form-data">
 
                         <!-- INPUT NAME -->
                         <% if(locals.errors && errors.name){ %>
