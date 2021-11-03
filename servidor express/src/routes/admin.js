@@ -22,7 +22,7 @@ let uploadAdminCheck = require('../middleware/uploadAdminCheck')
 router.get('/products', uploadAdminCheck , listProductAdmin);
 
 /* GET - View Add Product  */
-router.get('/products/add', uploadAdminCheck, addProductAdmin);
+router.get('/products/add',  uploadAdminCheck, addProductAdmin);
 
 /* POST - Creamos un producto con el método realizado en el controlador */
 router.post('/products/add', uploadAdminCheck, multer.array('image', 4), productValidator, productStore);

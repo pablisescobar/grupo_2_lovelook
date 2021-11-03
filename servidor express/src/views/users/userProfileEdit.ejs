@@ -34,22 +34,22 @@
             
             <div class="container">
                 <label class="label-perfil-user" for="direccion">Dirección: </label>
-                <input class=" input--style input-perfil-user" type="text" name="address" id="direccion" value="<%= user.location[0]?.address ? user.location[0].address : "------" %>">
+                <input class=" input--style input-perfil-user" type="text" name="address" id="direccion" value="<%= user.location ? user.location[0]?.address : "------" %>">
             </div>
             
             <div class="container">
                 <label class="label-perfil-user" for="cp">Codigo Postal: </label>
-                <input class=" input--style input-perfil-user" type="number" name="cp" id="cp" value="<%= user.location[0]?.cp ? user.location[0].cp : "------" %>">
+                <input class=" input--style input-perfil-user" type="number" name="pc" id="cp" value="<%= user.location ? user.location[0]?.pc : "------" %>">
             </div>
 
             <div class="container">
                 <label class="label-perfil-user" for="city">City: </label>
-                <input class=" input--style input-perfil-user" type="text" name="city" id="city" value="<%= user.location[0]?.city ? user.location[0].city : "------" %>">
+                <input class=" input--style input-perfil-user" type="text" name="city" id="city" value="<%= user.location ? user.location[0]?.city : "------" %>">
             </div>
 
             <div class="container">
                 <label class="label-perfil-user" for="province">Provincia: </label>
-                <input class=" input--style input-perfil-user" type="text" name="province" id="province" value="<%= user.location[0]?.province ? user.location[0].province : "------" %>">
+                <input class=" input--style input-perfil-user" type="text" name="province" id="province" value="<%= user.location ? user.location[0]?.province : "------" %>">
             </div>
             <button class="changesButton" type="submit">GUARDAR CAMBIOS</button>
         </form>

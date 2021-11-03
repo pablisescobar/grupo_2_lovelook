@@ -69,6 +69,14 @@ a.btn-primary {
     margin: auto;
 }
 
+.discount {
+    padding: 10px;
+    font-size: 0.8rem;
+    line-height: 150%;
+    color: green;
+    animation: acercarAlejar 2s alternate infinite;
+}
+
 @media screen and (min-width: 768px) {
 
     .slick-slide {
@@ -83,6 +91,11 @@ a.btn-primary {
     .slick-list.draggable {
         max-width: 90%;
     }
+
+    .card-slider {
+        width: auto;
+        margin: auto;
+    }
 }
 
 @media screen and (min-width: 1024px) {
@@ -92,8 +105,7 @@ a.btn-primary {
     }
     
     .card-slider {
-        width: 100%;
-        margin: auto;
+        width: 850px;
     }
 
 }
