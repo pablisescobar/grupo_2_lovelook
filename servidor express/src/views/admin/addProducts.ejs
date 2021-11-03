@@ -16,6 +16,8 @@
                                 <%= errors.name.msg %>
                             </small>
                             <% } %>
+                            <small class="error-validator" id="errorName">
+                            </small>
                                 <input type="text" name="name" value="<%= locals.old && old.name %>" id="name"
                                     placeholder="Nombre" title="nombre">
 
@@ -31,6 +33,8 @@
                                         <%= errors.season.msg %>
                                     </small>
                                     <% } %>
+                                    <small class="error-validator" id="errorSeason">
+                                    </small>
                                         <div class="container-inserts">
                                             <select onchange="valueChange('deleteSeason',0)" name="season" id="season" title="temporada">
                                                 <option hidden selected disabled></option>
@@ -55,6 +59,8 @@
                                                 <%= errors.category.msg %>
                                             </small>
                                             <% } %>
+                                            <small class="error-validator" id="errorCategory">
+                                            </small>
 
                                                 <div class="container-inserts">
                                                     <select name="category" id="category" title="category" onchange="valueChange('deleteCategory',1)">
@@ -82,6 +88,8 @@
                                                         <%= errors.price.msg %>
                                                     </small>
                                                     <% } %>
+                                                    <small class="error-validator" id="errorPrice">
+                                                    </small>
                                                         <input type="number" name="price" id="price"
                                                             placeholder="Precio" title="Precio"
                                                             value="<%= locals.old && old.price %>">
@@ -94,6 +102,8 @@
                                                                 <%= errors.color.msg %>
                                                             </small>
                                                             <% } %>
+                                                            <small class="error-validator" id="errorColor">
+                                                            </small>
                                                                 <div class="container-inserts">
                                                                     <select name="color" id="color" title="color"
                                                                         class="form-control fa" onchange="valueChange('deleteColor',2)">
@@ -119,6 +129,8 @@
                                                                         <%= errors.size.msg %>
                                                                     </small>
                                                                     <% } %>
+                                                                    <small class="error-validator" id="errorSize">
+                                                                    </small>
                                                                         <select name="size" id="size" title="Talle">
                                                                             <option hidden></option>
                                                                             <% sizes.forEach(size=> { %>
@@ -137,6 +149,8 @@
                                                                                 <%= errors.amount.msg %>
                                                                             </small>
                                                                             <% } %>
+                                                                            <small class="error-validator" id="errorAmount">
+                                                                            </small>
                                                                                 <input type="number" name="amount"
                                                                                     id="stock" placeholder="Cantidad"
                                                                                     title="Stock"
@@ -235,7 +249,7 @@
                 </div>
 
             </main>
-
+            <script src="/js/productValidator.js"></script>
     </body>
 
 </html>

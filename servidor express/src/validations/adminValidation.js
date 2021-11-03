@@ -1,38 +1,42 @@
-let { check } = require('express-validator')
-
+let { check } = require("express-validator");
 
 module.exports = [
-    check('name')
-        .notEmpty()
-        .withMessage('Ingrese un nombre para el producto').bail()
-        .isLength({ min: 5 })
-        .withMessage('El nombre debe ser mayor a 5 caracteres'),
+  check("name")
+    .notEmpty()
+    .withMessage("Ingrese un nombre para el producto")
+    .bail()
+    .isLength({ min: 5 })
+    .withMessage("El nombre debe ser mayor a 5 caracteres"),
 
-    check('season')
-        .notEmpty()
-        .withMessage('Selecciona una temporada'),
+  check("description")
+    .notEmpty()
+    .withMessage("Debes ingresar una descripción")
+    .isLength({ min: 20 })
+    .withMessage("Debes ingresar mínimo 20 caracteres"),
 
-    check('category')
-        .notEmpty()
-        .withMessage('Selecciona una categoria'),
+  check("season").notEmpty()
+    .withMessage("Selecciona una temporada"),
 
-    check('price')
-        .notEmpty()
-        .withMessage('Ingresa un precio').bail()
-        .isNumeric()
-        .withMessage('Ingresa un valor numerico'),
+  check("category").notEmpty()
+    .withMessage("Selecciona una categoria"),
 
-    check('color')
-        .notEmpty()
-        .withMessage('Selecciona o agrega un color').bail(),
+  check("price")
+    .notEmpty()
+    .withMessage("Ingresa un precio")
+    .bail()
+    .isNumeric()
+    .withMessage("Ingresa un valor numerico"),
 
-    check('size')
-        .notEmpty()
-        .withMessage('Selecciona un talle'),
+  check("color").notEmpty()
+    .withMessage("Selecciona o agrega un color").bail(),
 
-    check('amount')
-        .notEmpty()
-        .withMessage('Ingresa una cantidad').bail()
-        .isNumeric()
-        .withMessage('Ingresa un valor numerico')
-]
+  check("size").notEmpty()
+    .withMessage("Selecciona un talle"),
+
+  check("amount")
+    .notEmpty()
+    .withMessage("Ingresa una cantidad")
+    .bail()
+    .isNumeric()
+    .withMessage("Ingresa un valor númerico"),
+];

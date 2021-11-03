@@ -42,8 +42,16 @@
                 <a href="/products/detail/<%= product.id %>">
                 <img src= "/img/photos/<%= product.images.length>0? product.images[0].filename:'default.png' %>" alt="">
                 <h3><%= product.name %></h3>
-                <h3>$<%= product.price %></h3>
-                <p><%=product.discount > 0?`${product.discount}% Descuento` : "" %></p>
+                <p class="price">
+                    <%=toThousand(Math.round(product.price - product.price * product.discount /
+                        100))%>
+                </p>
+                <span class="price-line-medio">
+                    <%= product.discount> 0?`$${toThousand(Math.round(product.price))}` : "" %>
+                </span>
+                <p class="discount">
+                    <%=product.discount> 0?`${product.discount} %Off` : "" %>
+                </p>
                 </a>
             </article>
             <% }) %> 

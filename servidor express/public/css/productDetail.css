@@ -42,7 +42,6 @@
 
 .price-line-medio {
     text-decoration: line-through;
-    color: green;
 }
 
 /* Style the images inside the grid */
@@ -375,6 +374,7 @@
     font-family: var(--yesteryear);
     font-size: 2.5rem;
     font-weight: lighter;
+    filter: drop-shadow(6px 8px 2px var(--shadows));
 }
 
 .details-products .close-img-size {
