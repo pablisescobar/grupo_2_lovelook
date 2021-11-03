@@ -3,254 +3,253 @@
 
 <%- include('../partials/head.ejs') %>
 
-    <body>
-        <%- include('../partials/load.ejs') %>
-        <%- include('../partials/headerAdmin.ejs') %>
-            <main class="admin">
-                <h2>Agregar un producto</h2>
-                <div class="container">
-                    <form action="/admin/products/add" method="post" class="inputRows" enctype="multipart/form-data">
+<body>
+    <%- include('../partials/load.ejs') %>
+    <%- include('../partials/headerAdmin.ejs') %>
+    <main class="admin">
+        <h2>Agregar un producto</h2>
+        <div class="container">
+            <form action="/admin/products/add" method="post" class="inputRows" enctype="multipart/form-data"
+                id="productForm">
 
-                        <!-- INPUT NAME -->
-                        <% if(locals.errors && errors.name){ %>
-                            <small class="error-validator">
-                                <%= errors.name.msg %>
-                            </small>
-                            <% } %>
-                            <small class="error-validator" id="errorName">
-                            </small>
-                                <input type="text" name="name" value="<%= locals.old && old.name %>" id="name"
-                                    placeholder="Nombre" title="nombre">
+                <!-- INPUT NAME -->
+                <input type="text" name="name" value="<%= locals.old && old.name %>" id="name" placeholder="Nombre"
+                    title="nombre">
+                <% if(locals.errors && errors.name){ %>
+                <small class="error-validator">
+                    <%= errors.name.msg %>
+                </small>
+                <% } %>
+                <small class="error-validator" id="errorName">
+                </small>
 
-                                <!-- TEXTAREA DESCRIPTION -->
-                                <textarea type="text" name="description" id="description" placeholder="Descripción"
-                                    title="Descripción"><%= locals.old && old.description  %></textarea>
+                <!-- TEXTAREA DESCRIPTION -->
+                <textarea type="text" name="description" id="description" placeholder="Descripción"
+                    title="Descripción"><%= locals.old && old.description  %></textarea>
 
+                <% if(locals.errors && errors.description){ %>
+                <small class="error-validator">
+                    <%= errors.description.msg %>
+                </small>
+                <% } %>
+                <small class="error-validator" id="errorDescription">
+                </small>
 
-                                <!-- SELECT DE TEMPORADA -->
-                                <label class="label-input-admin" for="season">Temporada:</label>
-                                <% if(locals.errors && errors.season){ %>
-                                    <small class="error-validator">
-                                        <%= errors.season.msg %>
-                                    </small>
-                                    <% } %>
-                                    <small class="error-validator" id="errorSeason">
-                                    </small>
-                                        <div class="container-inserts">
-                                            <select onchange="valueChange('deleteSeason',0)" name="season" id="season" title="temporada">
-                                                <option hidden selected disabled></option>
-                                                <% seasons.forEach(season=> { %>
-                                                    <option id="seasonValue" value="<%- season.id %>" <%-locals.old &&
-                                                        old.season==season.id ? `selected` : "" %>>
-                                                        <%- capitalize(season.name) %>
-                                                    </option>
-                                                    <% }) %>
-                                            </select>
-                                            <span class="btn-delete" id="DelSeason">
-                                                <small class="fas fa-minus del"></small>
-                                            </span>
-                                        </div>
+                <!-- SELECT DE TEMPORADA -->
+                <div class="container-inserts">
+                    <select onchange="valueChange('deleteSeason',0)" name="season" id="season" title="temporada">
+                        <option hidden selected>Temporada</option>
+                        <% seasons.forEach(season=> { %>
+                        <option id="seasonValue" value="<%- season.id %>" <%-locals.old && old.season==season.id ? `selected` : "" %>>
+                            <%- capitalize(season.name) %>
+                        </option>
+                        <% }) %>
+                    </select>
+                    <span class="btn-delete" id="DelSeason">
+                        <small class="fas fa-minus del"></small>
+                    </span>
+                </div>
+                <% if(locals.errors && errors.season){ %>
+                <small class="error-validator">
+                    <%= errors.season.msg %>
+                </small>
+                <% } %>
+                <small class="error-validator" id="errorSeason">
+                </small>
 
-
-
-                                        <!-- SELECT DE CATEGORÍA -->
-                                        <label class="label-input-admin" for="category">Categorias:</label>
-                                        <% if(locals.errors && errors.category){ %>
-                                            <small class="error-validator">
-                                                <%= errors.category.msg %>
-                                            </small>
-                                            <% } %>
-                                            <small class="error-validator" id="errorCategory">
-                                            </small>
-
-                                                <div class="container-inserts">
-                                                    <select name="category" id="category" title="category" onchange="valueChange('deleteCategory',1)">
-                                                        <option hidden selected disabled></option>
-                                                        <% categories.forEach(category=> { %>
-                                                            <option value="<%= category.id %>" <%-locals.old &&
-                                                                old.category==category.id ? `selected` : "" %>>
-                                                                <%= capitalize(category.name) %>
-                                                            </option>
-                                                            <% }) %>
-                                                    </select>
-                                                    <span type="menu" class="btn-delete" id="DelCategoty">
-                                                        <small class="fas fa-minus del"></small>
-                                                    </span>
-                                                </div>
-
-                                                <!-- INPUT DISCOUNT -->
-                                                <input type="number" name="discount" id="discount"
-                                                    placeholder="Descuento %" title="Descuento"
-                                                    value="<%= locals.old && old.discount %>">
-
-                                                <!-- INPUT PRICE -->
-                                                <% if(locals.errors && errors.price){ %>
-                                                    <small class="error-validator">
-                                                        <%= errors.price.msg %>
-                                                    </small>
-                                                    <% } %>
-                                                    <small class="error-validator" id="errorPrice">
-                                                    </small>
-                                                        <input type="number" name="price" id="price"
-                                                            placeholder="Precio" title="Precio"
-                                                            value="<%= locals.old && old.price %>">
-
-
-                                                        <!-- SELECT DE COLOR -->
-                                                        <label class="label-input-admin" for="color">Color:</label>
-                                                        <% if(locals.errors && errors.color){ %>
-                                                            <small class="error-validator">
-                                                                <%= errors.color.msg %>
-                                                            </small>
-                                                            <% } %>
-                                                            <small class="error-validator" id="errorColor">
-                                                            </small>
-                                                                <div class="container-inserts">
-                                                                    <select name="color" id="color" title="color"
-                                                                        class="form-control fa" onchange="valueChange('deleteColor',2)">
-                                                                        <option hidden selected disabled></option>
-                                                                        <% colors.forEach(color=> { %>
-                                                                            <option class="fa" value="<%= color.id %>"
-                                                                                <%=locals.old && old.color==color.id
-                                                                                ? "selected" : "" %>><%=
-                                                                                    capitalize(color.name) %>
-                                                                            </option>
-                                                                            <% }) %>
-                                                                    </select>
-                                                                    <span type="menu" class="btn-delete" id="DelColor">
-                                                                        <small class="fas fa-minus del"></small>
-                                                                    </span>
-                                                                </div>
-
-                                                                <!-- SELECT DE TALLE -->
-                                                                <label class="label-input-admin"
-                                                                    for="size">Talles:</label>
-                                                                <% if(locals.errors && errors.size){ %>
-                                                                    <small class="error-validator">
-                                                                        <%= errors.size.msg %>
-                                                                    </small>
-                                                                    <% } %>
-                                                                    <small class="error-validator" id="errorSize">
-                                                                    </small>
-                                                                        <select name="size" id="size" title="Talle">
-                                                                            <option hidden></option>
-                                                                            <% sizes.forEach(size=> { %>
-                                                                                <option value="<%- size.id %>"
-                                                                                    <%=locals.old && old.size==size.id
-                                                                                    ? "selected" : "" %>>
-                                                                                    <%- size.name.toUpperCase() %>
-                                                                                </option>
-                                                                                <% }) %>
-                                                                        </select>
-
-
-                                                                        <!-- INPUT STOCK/CANTIDAD -->
-                                                                        <% if(locals.errors && errors.amount){ %>
-                                                                            <small class="error-validator">
-                                                                                <%= errors.amount.msg %>
-                                                                            </small>
-                                                                            <% } %>
-                                                                            <small class="error-validator" id="errorAmount">
-                                                                            </small>
-                                                                                <input type="number" name="amount"
-                                                                                    id="stock" placeholder="Cantidad"
-                                                                                    title="Stock"
-                                                                                    value="<%= locals.old && old.amount %>">
-
-
-                                                                                <div class="input">
-                                                                                    <label for="file-upload"
-                                                                                        class="subir"><i
-                                                                                            class="fas fa-cloud-upload-alt"></i>
-                                                                                        Subir imágenes
-                                                                                    </label>
-
-                                                                                    <div id="info" style="margin: 3px;">
-                                                                                    </div>
-
-
-                                                                                    <input name="image" id="file-upload"
-                                                                                        onchange='cambiar()' type="file"
-                                                                                        style='display: none;' multiple>
-                                                                                </div>
-                                                                                <div class="button-container">
-
-                                                                                    <button type="reset"
-                                                                                        class="btn-reset"><span
-                                                                                            class="iconify"
-                                                                                            data-icon="whh:broom"></span></button>
-                                                                                    <button type="submit"
-                                                                                        class="btn-add"><span
-                                                                                            class="iconify"
-                                                                                            data-icon="fluent:add-12-filled"></span></button>
-                                                                                </div>
+                <!-- SELECT DE CATEGORÍA -->
+                <div class="container-inserts">
+                    <select name="category" id="category" title="category" onchange="valueChange('deleteCategory',1)">
+                        <option hidden selected>Categoría</option>
+                        <% categories.forEach(category=> { %>
+                        <option value="<%= category.id %>" <%-locals.old && old.category==category.id ? `selected` : "" %>>
+                            <%= capitalize(category.name) %>
+                        </option>
+                        <% }) %>
+                    </select>
+                    <span type="menu" class="btn-delete" id="DelCategoty">
+                        <small class="fas fa-minus del"></small>
+                    </span>
+                </div>
+                <% if(locals.errors && errors.category){ %>
+                <small class="error-validator">
+                    <%= errors.category.msg %>
+                </small>
+                <% } %>
+                <small class="error-validator" id="errorCategory">
+                </small>
 
 
 
-                                                                                <a href="/admin/products"
-                                                                                    class="left-row"><span
-                                                                                        class="iconify"
-                                                                                        data-icon="bi:arrow-left-square"></span></a>
+                <!-- INPUT DISCOUNT -->
+                <input type="number" name="discount" id="discount" placeholder="Descuento %" title="Descuento"
+                    value="<%= locals.old && old.discount %>">
+
+                <!-- INPUT PRICE -->
+                <input type="number" name="price" id="price" placeholder="Precio" title="Precio"
+                    value="<%= locals.old && old.price %>">
+                <% if(locals.errors && errors.price){ %>
+                <small class="error-validator">
+                    <%= errors.price.msg %>
+                </small>
+                <% } %>
+                <small class="error-validator" id="errorPrice">
+                </small>
 
 
-                    </form>
-                    <div class="form-secondary">
-                        <form action="/admin/products/addSeason" method="post">
-                            <div class="container-addOption">
-                                <input type="text" name="seasonInsert" placeholder="Agregar temporada... "
-                                    class="input-addOption">
-                                <button class="icon-addOption" type="submit">
-                                    <span class="iconify " data-icon="ant-design:appstore-add-outlined"></span>
-                                </button>
-                            </div>
-                            <% if(locals.errors && errors.seasonInsert){ %>
-                                <small class="error-validator">
-                                    <%= errors.seasonInsert.msg %>
-                                </small>
-                                <% } %>
-                        </form>
-                        <form action="/admin/products/addCategory" method="post">
-                            <div class="container-addOption">
-                                <input type="text" name="categoryInsert" placeholder="Agregar categoria... "
-                                    class="input-addOption">
-                                <button class="icon-addOption" type="submit">
-                                    <span class="iconify " data-icon="ant-design:appstore-add-outlined"></span>
-                                </button>
-                            </div>
-                            <% if(locals.errors && errors.categoryInsert){ %>
-                                <small class="error-validator">
-                                    <%= errors.categoryInsert.msg %>
-                                </small>
-                                <% } %>
-                        </form>
-                        <form action="/admin/products/addColor" method="post">
-                            <div class="container-addOption">
-                                <input type="text" name="colorInsert" placeholder="Agregar color... "
-                                    class="input-addOption">
-                                <button class="icon-addOption" type="submit">
-                                    <span class="iconify " data-icon="ant-design:appstore-add-outlined"></span>
-                                </button>
-                            </div>
-                            <% if(locals.errors && errors.colorInsert){ %>
-                                <small class="error-validator">
-                                    <%= errors.colorInsert.msg %>
-                                </small>
-                                <% } %>
-                        </form>
+
+                <!-- SELECT DE COLOR -->
+                <div class="container-inserts">
+                    <select name="color" id="color" title="color" class="form-control fa"
+                        onchange="valueChange('deleteColor',2)">
+                        <option hidden selected>Color</option>
+                        <% colors.forEach(color=> { %>
+                        <option class="fa" value="<%= color.id %>" <%=locals.old && old.color==color.id ? "selected" : "" %>><%= capitalize(color.name) %>
+                        </option>
+                        <% }) %>
+                    </select>
+                    <span type="menu" class="btn-delete" id="DelColor">
+                        <small class="fas fa-minus del"></small>
+                    </span>
+                </div>
+                <% if(locals.errors && errors.color){ %>
+                <small class="error-validator">
+                    <%= errors.color.msg %>
+                </small>
+                <% } %>
+                <small class="error-validator" id="errorColor">
+                </small>
+
+
+                <!-- SELECT DE TALLE -->
+                <select name="size" id="size" title="Talle">
+                    <option hidden selected>Talle</option>
+                    <% sizes.forEach(size=> { %>
+                    <option value="<%- size.id %>" <%=locals.old && old.size==size.id ? "selected" : "" %>>
+                        <%- size.name.toUpperCase() %>
+                    </option>
+                    <% }) %>
+                </select>
+                <% if(locals.errors && errors.size){ %>
+                <small class="error-validator">
+                    <%= errors.size.msg %>
+                </small>
+                <% } %>
+                <small class="error-validator" id="errorSize">
+                </small>
+
+
+
+                <!-- INPUT STOCK/CANTIDAD -->
+                <input type="number" name="amount" id="stock" placeholder="Cantidad" title="Stock"
+                    value="<%= locals.old && old.amount %>">
+                <% if(locals.errors && errors.amount){ %>
+                <small class="error-validator">
+                    <%= errors.amount.msg %>
+                </small>
+                <% } %>
+                <small class="error-validator" id="errorStock">
+                </small>
+
+
+
+                <div class="input">
+                    <label for="file-upload" class="subir"><i class="fas fa-cloud-upload-alt"></i>
+                        Subir imágenes
+                    </label>
+
+                    <div id="info" style="margin: 3px;">
                     </div>
-                    <form id="formDelSeason" method="post" style="display: none;" class="formDelete">
-                        <p style="text-align: center;">Esta seguro de eliminar esta información</p>
-                        <button type="submit" class="btn-windowDel">Aceptar
-                        </button>
-                            <span style="color: black;box-shadow: none;width:50%;" onclick="closeWindowDel()">Cancelar</span>
-                    </form>
-                    <div class="windowGeneral" onclick="closeWindowDel2()"></div>
 
 
+                    <input name="image" id="file-upload" onchange='cambiar()' type="file" style='display: none;'
+                        multiple>
+                    <% if(locals.errors && errors.image){ %>
+                    <small class="error-validator">
+                        <%= errors.image.msg %>
+                    </small>
+                    <% } %>
+                    <small class="error-validator" id="errorFileUpload">
+                    </small>
+                </div>
+                <div class="button-container">
+
+                    <button type="reset" class="btn-reset"><span class="iconify" data-icon="whh:broom"></span></button>
+                    <button type="submit" class="btn-add"><span class="iconify"
+                            data-icon="fluent:add-12-filled"></span></button>
                 </div>
 
-            </main>
-            <script src="/js/productValidator.js"></script>
-    </body>
+
+
+                <a href="/admin/products" class="left-row"><span class="iconify"
+                        data-icon="bi:arrow-left-square"></span></a>
+                <small class="error-validator" id="errorProductForm">
+                </small>
+            </form>
+
+            <div class="form-secondary">
+                <form action="/admin/products/addSeason" method="post">
+                    <div class="container-addOption">
+                        <input type="text" name="seasonInsert" placeholder="Agregar temporada... "
+                            class="input-addOption" id="seasonInsert">
+                        <button class="icon-addOption" type="submit">
+                            <span class="iconify " data-icon="ant-design:appstore-add-outlined"></span>
+                        </button>
+                    </div>
+                    <% if(locals.errors && errors.seasonInsert){ %>
+                    <small class="error-validator">
+                        <%= errors.seasonInsert.msg %>
+                    </small>
+                    <% } %>
+                    <small class="error-validator" id="errorSeasonInsert">
+                    </small>
+                </form>
+                <form action="/admin/products/addCategory" method="post">
+                    <div class="container-addOption">
+                        <input type="text" name="categoryInsert" placeholder="Agregar categoria... "
+                            class="input-addOption" id="categoryInsert">
+                        <button class="icon-addOption" type="submit">
+                            <span class="iconify " data-icon="ant-design:appstore-add-outlined"></span>
+                        </button>
+                    </div>
+                    <% if(locals.errors && errors.categoryInsert){ %>
+                    <small class="error-validator">
+                        <%= errors.categoryInsert.msg %>
+                    </small>
+                    <% } %>
+                    <small class="error-validator" id="errorCategoryInsert">
+                    </small>
+                </form>
+                <form action="/admin/products/addColor" method="post">
+                    <div class="container-addOption">
+                        <input type="text" name="colorInsert" placeholder="Agregar color... " class="input-addOption"
+                            id="colorInsert">
+                        <button class="icon-addOption" type="submit">
+                            <span class="iconify " data-icon="ant-design:appstore-add-outlined"></span>
+                        </button>
+                    </div>
+                    <% if(locals.errors && errors.colorInsert){ %>
+                    <small class="error-validator">
+                        <%= errors.colorInsert.msg %>
+                    </small>
+                    <% } %>
+                    <small class="error-validator" id="errorcolorInsert">
+                    </small>
+                </form>
+            </div>
+            <form id="formDelSeason" method="post" style="display: none;" class="formDelete">
+                <p style="text-align: center;">Esta seguro de eliminar esta información</p>
+                <button type="submit" class="btn-windowDel">Aceptar
+                </button>
+                <span style="color: black;box-shadow: none;width:50%;" onclick="closeWindowDel()">Cancelar</span>
+            </form>
+            <div class="windowGeneral" onclick="closeWindowDel2()"></div>
+
+
+        </div>
+
+    </main>
+    <script src="/js/productValidator.js"></script>
+</body>
 
 </html>

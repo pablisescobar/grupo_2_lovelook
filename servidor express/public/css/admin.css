@@ -470,6 +470,7 @@ justify-content: flex-end;
         align-self: center;
         margin: 2px;
         font-size: 1rem;
+        margin: 10px 0;
     }
     .admin .input {
         padding: 0;
@@ -517,4 +518,11 @@ justify-content: flex-end;
     align-self: self-start;
 }
 
+}
+.errorValidator {
+    box-shadow: 0 0 10px red;
+}
+
+.isValid {
+    box-shadow: 0 0 10px green;
 }
