@@ -7,13 +7,13 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true,
             allowNull: false
         },
+        issue:{
+            type:dataTypes.STRING(50),
+            allowNull:false 
+        },
         msg:{
             type:dataTypes.TEXT, 
             allowNull:false 
-        },
-        issue:{
-            type:dataTypes.STRING(100),
-            allowNull:false  
         },
         name:{
             type:dataTypes.STRING(50),
@@ -25,7 +25,6 @@ module.exports = (sequelize, dataTypes) => {
         },
         dni:{
             type:dataTypes.INTEGER,
-            allowNull:false  
         },
         email:{
             type:dataTypes.STRING(100),

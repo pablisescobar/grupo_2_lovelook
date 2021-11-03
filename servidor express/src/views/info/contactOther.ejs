@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head.ejs') %>
+
+    <body>
+        <%- include('../partials/load.ejs') %>
+            <%- include('../partials/header.ejs') %>
+
+                <main class="form-contact-container">
+                    <form action="/info/contact/other" method="POST">
+                       
+                        <div class="form-item" id="nombre">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" name="name" id="nombre" value=<%= locals.old && old.name %>>
+                            <% if(locals.errors && errors.name){ %>
+                                <span id="nombreError" style="color:red">
+                                    <%= errors.name.msg %>
+                                </span>
+                                <% } %>
+                        </div>
+                        <div class="form-item" id="apellido">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" name="lastName" id="apellido" autocomplete="family-name"
+                                mozactionhint="siguiente" value=<%= locals.old && old.lastName %>>
+                            <% if(locals.errors && errors.lastName){ %>
+                                <span id="apellidoError" style="color:red">
+                                    <%= errors.lastName.msg %>
+                                </span>
+                                <% } %>
+                        </div>
+                        <div class="form-item" id="email">
+                            <label for="email">E-mail</label>
+                            <input type="text" name="email" id="email" title="ejemplo@email.com"
+                                mozactionhint="siguiente" value=<%= locals.old && old.email %>>
+                            <% if(locals.errors && errors.email){ %>
+                                <span id="emailError" style="color:red">
+                                    <%= errors.email.msg %>
+                                </span>
+                                <% } %>
+                        </div>
+                        <div class="form-item" id="mensaje">
+                            <label for="msg">Mensaje</label>
+                            <textarea rows="5" maxlength="97" title="97 caracteres máximo" name="msg" id="msg"
+                                placeholder="Hola !!" spellcheck="true" mozactionhint="siguiente"><%= locals.old && old.name %></textarea>
+
+                            <% if(locals.errors && errors.msg){ %>
+                                <span id="msgError" style="color:red">
+                                    <%= errors.msg.msg %>
+                                </span>
+                                <% } %>
+
+                        </div>
+                        <div class="form-item captcha-contain">
+                        </div>
+
+                        <div class="form-item">
+                            <button class="btn-send" type="submit">Enviar</button>
+                        </div>
+                    </form>
+
+                </main>
+
+                <%- include('../partials/whatsapp.ejs') %>
+
+                    <%- include('../partials/footer.ejs') %>
+
+
+
+    </body>
+
+</html>

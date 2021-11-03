@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('../partials/head.ejs') %>
+
+    <body>
+        <%- include('../partials/load.ejs') %>
+            <%- include('../partials/header.ejs') %>
+
+                <main class="form-contact-container">
+
+                    <form action="/info/contact/franchise" method="POST">
+                       
+                        <div class="form-item" id="nombre">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" name="name" id="nombre" value=<%= locals.old && old.name %>>
+                            <% if(locals.errors && errors.name){ %>
+                                <span id="nombreError" style="color:red">
+                                    <%= errors.name.msg %>
+                                </span>
+                                <% } %>
+
+                        </div>
+                        <div class="form-item" id="apellido">
+                            <label for="apellido">Apellido</label>
+                            <input type="text" name="lastName" id="apellido" autocomplete="family-name"
+                                mozactionhint="siguiente" value=<%= locals.old && old.lastName %>>
+                            <% if(locals.errors && errors.lastName){ %>
+                                <span id="apellidoError" style="color:red">
+                                    <%= errors.lastName.msg %>
+                                </span>
+                                <% } %>
+
+                        </div>
+                        <div class="form-item" id="dni">
+                            <label for="dni">DNI</label>
+                            <input class="document-input" type="number" name="dni" id="dni" value=<%= locals.old && old.dni %>>
+                            <% if(locals.errors && errors.dni){ %>
+                                <span id="dniError" style="color:red">
+                                    <%= errors.dni.msg %>
+                                </span>
+                                <% } %>
+
+                        </div>
+
+                        <div class="form-item" id="email">
+                            <label for="email">E-mail</label>
+                            <input type="text" name="email" id="email" title="ejemplo@email.com"
+                                mozactionhint="siguiente" value=<%= locals.old && old.email %>>
+                            <% if(locals.errors && errors.email){ %>
+                                <span id="emailError" style="color:red">
+                                    <%= errors.email.msg %>
+                                </span>
+                                <% } %>
+                        </div>
+
+                        <div class="form-item" id="telefono">
+                            <label for="tel">Teléfono</label>
+                            <input type="tel" name="phone" title="Ingresa el numero sin - _ ni espacios" id="tel"
+                                autocomplete="tel" mozactionhint="siguiente" value=<%= locals.old && old.phone %>>
+
+                            <% if(locals.errors && errors.phone){ %>
+                                <span id="telError" style="color:red">
+                                    <%= errors.phone.msg %>
+                                </span>
+                                <% } %>
+                        </div>
+
+
+                        <div class="form-item" id="localidad">
+                            <label for="localidad">Localidad</label>
+                            <input type="text" name="location" id="localidad" value=<%= locals.old && old.location %>>
+                            <% if(locals.errors && errors.location){ %>
+                                <span id="localidadError" style="color:red">
+                                    <%= errors.location.msg %>
+                                </span>
+                                <% } %>
+
+
+                        </div>
+
+                        <div class="form-item" id="domicilio">
+                            <label for="domicilio">Domicilio</label>
+                            <input type="text" name="address" id="domicilio" autocomplete="address-line1"
+                                mozactionhint="siguiente" value=<%= locals.old && old.address %>>
+                            <% if(locals.errors && errors.address){ %>
+                                <span id="domicilioError" style="color:red">
+                                    <%= errors.address.msg %>
+                                </span>
+                                <% } %>
+
+
+                        </div>
+
+                        <div class="form-item" id="ciudad">
+                            <label for="cuidad">Ciudad</label>
+                            <input type="text" name="city" id="ciudad" mozactionhint="siguiente" value=<%= locals.old && old.city %>>
+                            <% if(locals.errors && errors.city){ %>
+                                <span id="ciudadError" style="color:red">
+                                    <%= errors.city.msg %>
+                                </span>
+                                <% } %>
+
+
+                        </div>
+
+                        <div class="form-item" id="cuit">
+                            <label for="cuit">CUIT</label>
+                            <input type="text" name="cuit" id="cuit" mozactionhint="siguiente" value=<%= locals.old && old.cuit %>>
+                            <% if(locals.errors && errors.cuit){ %>
+                                <span id="cuitError" style="color:red">
+                                    <%= errors.cuit.msg %>
+                                </span>
+                                <% } %>
+
+                        </div>
+
+                        <div class="form-item" id="razon">
+                            <label for="RSocial">Razón Social</label>
+                            <input type="text" name="businessName" id="RSocial" mozactionhint="siguiente" value=<%= locals.old && old.businessName %>>
+                            <% if(locals.errors && errors.businessName){ %>
+                                <span id="RSocialError" style="color:red">
+                                    <%= errors.businessName.msg %>
+                                </span>
+                                <% } %>
+
+
+                        </div>
+
+                        <div class="form-item" id="direSocial">
+                            <label for="DSocial">Dirección Social</label>
+                            <input type="text" name="socialAddress" id="DSocial" value=<%= locals.old && old.socialAddress %>>
+
+                            <% if(locals.errors && errors.socialAddress){ %>
+                                <span id="DSocialError" style="color:red">
+                                    <%= errors.socialAddress.msg %>
+                                </span>
+                                <% } %>
+
+
+                        </div>
+                        <div class="form-item" id="mensaje">
+                            <label for="msg">Mensaje</label>
+                            <textarea rows="5" maxlength="97" title="97 caracteres máximo" name="msg" id="msg"
+                                placeholder="Hola !!"><%= locals.old && old.msg %></textarea>
+
+                            <% if(locals.errors && errors.msg){ %>
+                                <span id="msgError" style="color:red">
+                                    <%= errors.msg.msg %>
+                                </span>
+                                <% } %>
+
+                        </div>
+                        <div class="form-item captcha-contain">
+                        </div>
+
+                        <div class="form-item">
+                            <button class="btn-send" type="submit">Enviar</button>
+                        </div>
+                    </form>
+
+                </main>
+
+                <%- include('../partials/whatsapp.ejs') %>
+
+                    <%- include('../partials/footer.ejs') %>
+
+
+
+    </body>
+
+</html>
