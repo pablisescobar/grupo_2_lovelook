@@ -94,7 +94,7 @@ select#price.dropdown {
     font-weight: bold;
 }
 
-.container-listProduct .section2 .product p {
+.container-listProduct .section2 .product .discount {
     font-family: var(--poppins);
     font-size: 1rem;
     line-height: 40%;
@@ -211,7 +211,7 @@ select#price.dropdown {
         font-size: 1.8rem;
     }
 
-    .container-listProduct .section2 .product p {
+    .discount {
         font-size: 0.8rem;
         line-height: 150%;
         color: green;

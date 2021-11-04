@@ -10,8 +10,10 @@
             <h5 class="card-title">
               <%= product.name %>
             </h5>
-            <p class="card-text">$ <%= toThousand(product.price) %>
-            </p>
+            <p class="price">
+              <%=toThousand(Math.round(product.price - product.price * product.discount /
+                  100))%>
+          </p>
             <span class="price-line-medio">
               <%= product.discount> 0?`$${toThousand(Math.round(product.price))}` : "" %>
           </span>
