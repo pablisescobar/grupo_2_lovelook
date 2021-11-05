@@ -6,7 +6,13 @@
     justify-content: space-between;
 }
 .input__check[type="checkbox"] {
-    display: none;
+    display: block;
+    position: absolute;
+    z-index: 999;
+    background: none;
+    height: 18px;
+    width: 18px;
+    bottom: 3px;
 }
 .register .input-container input {
     height: 30px;
@@ -112,6 +118,7 @@
 
     .register .conditions {
         font-size: 0.8rem;
+        position: relative;
        /*  position: relative;
         bottom: 84px;
         left: 10px; */
@@ -124,13 +131,14 @@
         align-self: center;
         width: 50%;
     }
-    .input__check[type="checkbox"]:checked + .check__label:before {
-        /* background-size: 1.2rem; */
+    /* .input__check[type="checkbox"]:checked + .check__label:before {
+         background-size: 1.2rem; 
         border: none;
         background-color: transparent;
     }
     .check__label:before {
         width: 0.8rem;
         height: 0.8rem;
-    }
+    } */
+    
 }
