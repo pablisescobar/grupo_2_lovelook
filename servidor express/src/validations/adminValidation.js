@@ -4,18 +4,14 @@ module.exports = [
   check("name")
     .notEmpty()
     .withMessage("El campo nombre es obligatorio").bail()
-    .isAlpha('es-ES')
+    .isString()
     .withMessage('Debes ingresar un nombre valido')
     .isLength({ min: 5 })
     .withMessage("El nombre debe ser mayor a 5 caracteres"),
 
   check("description")
     .notEmpty()
-    .withMessage("Debes ingresar una descripción")
-    .isAlpha('es-ES')
-    .withMessage('Debes ingresar una descripción válida')
-    .isLength({ min: 20 })
-    .withMessage("Debes ingresar mínimo 20 caracteres"),
+    .withMessage("Debes ingresar una descripción"),
 
   check("season")
     .notEmpty()
@@ -41,4 +37,5 @@ module.exports = [
     .withMessage("Ingresa una cantidad").bail()
     .isNumeric()
     .withMessage("Ingresa un valor númerico"),
+  
 ];

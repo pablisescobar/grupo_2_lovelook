@@ -175,9 +175,9 @@ module.exports = {
                 { association: "sizes" }]
             })
 
-                .then(results => {
-                    res.render('admin/searchResultAdmin', {
-                        results,
+                .then(products => {
+                    res.render('admin/listProductAdmin', {
+                        products,
                         position: "",
                         toThousand,
                         session: req.session
@@ -338,6 +338,7 @@ module.exports = {
             })
             Promise.all([categoriesDb, seasonsDb, sizesDb, colorsDb, productDb])
                 .then(([categories, seasons, sizes, colors, product]) => {
+                    /* res.send(errors) */
                     res.render('admin/editProduct', {
                         product,
                         categories,

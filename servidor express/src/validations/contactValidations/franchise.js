@@ -1,37 +1,41 @@
-let { check } = require('express-validator')
+let { check,body } = require('express-validator')
 
 
 
 module.exports = [
     check('name')
         .notEmpty()
-        .withMessage('Ingrese un nombre').bail()
+        .withMessage('Campo obligatorio').bail()
         .isAlpha()
         .withMessage('El nombre no puede contener numeros').bail()
         .isLength({ min: 4 })
-        .withMessage('El nombre debe ser mayor a 4 caracteres'),
+        .withMessage('El nombre debe tener mas de 4 caracteres'),
 
     check('lastName')
         .notEmpty()
-        .withMessage('Ingrese un apellido').bail()
+        .withMessage('Campo obligatorio').bail()
         .isAlpha()
         .withMessage('El apellido no puede contener numeros').bail()
         .isLength({ min: 4 })
-        .withMessage('El apellido debe tener minimo 4 caracteres'),
+        .withMessage('El apellido debe tener mas de 4 caracteres'),
 
     check('dni')
         .notEmpty()
-        .withMessage('Ingrese un dni')
+        .withMessage('Campo obligatorio')
         .isLength({ min: 7, max: 8 })
         .withMessage('El valor ingresado no es un dni'),
 
     check('phone')
+        .notEmpty()
+        .withMessage('Campo obligatorio').bail()
         .isNumeric()
-        .withMessage('El valor debe ser numerico'),
+        .withMessage('El valor debe ser numerico').bail()
+        .isLength({ min: 8 })
+        .withMessage('El telefono debe tener mas de 8 numeros'),
 
     check('email')
         .notEmpty()
-        .withMessage('Debes ingresar un email').bail()
+        .withMessage('Campo obligatorio').bail()
         .isEmail()
         .withMessage('Debes ingresar un email válido'),
 
@@ -39,33 +43,41 @@ module.exports = [
         .notEmpty()
         .withMessage('Seleccione una localidad'),
 
-    check('address')
+    body('address')
         .notEmpty()
+        .withMessage('Campo obligatorio').bail()
+        .custom((value,{req})=>{
+           return !/^[a-zA-Z\sñáéíóúü]+\s+[0-9]{2,5}$/.test(req.body.address)?false:true
+        })
         .withMessage('Ingrese una dirección y su altura').bail()
         .isLength({ min: 5 })
-        .withMessage('Debe ingresar mas de 5 caracteres'),
+        .withMessage('El domicilio debe tener mas de 5 caracteres'),
 
-    check('city')
+    check('province')
         .notEmpty()
-        .withMessage('Ingrese una ciudad').bail(),
+        .withMessage('Selección obligatoria').bail(),
 
-    check('cuit')
+    body('cuit')
         .notEmpty()
-        .withMessage('Ingrese un cuit valido').bail()
-        .isNumeric()
-        .withMessage('Ingresa un valor numerico'),
+        .withMessage('Campo obligatorio').bail()
+        .custom((value,{req})=>{
+            return !/\b(20|23|24|27|30|33|34)(\D)?[0-9]{7,8}(\D)?[0-9]/.test(req.body.cuit)?false:true
+        })
+        .withMessage("El cuit ingresado es invalido"),
 
-    check('businessName')
+    body('businessName')
         .notEmpty()
-        .withMessage('Ingresa una razon social').bail()
-        .isAlpha()
-        .withMessage('El valor no puedo contener numeros'),
+        .withMessage('Campo obligatorio').bail()
+        .custom((value,{req})=>{
+            return /[,_{}´\+\[\]@=\/&%\$#"\^`~!-:;'¿?°\|\.]/.test(req.body.businessName)?false:true
+        })
+        .withMessage('No se permiten caracteres especiales'),
 
-    check('socialAddress')
+    check('socialLocation')
         .notEmpty()
-        .withMessage('Ingrese una dirección social').bail(),
+        .withMessage('Campo obligatorio').bail(),
 
     check('msg')
         .notEmpty()
-        .withMessage('Este campo no puede estar vacio'),
+        .withMessage('Campo obligatorio'),
 ]

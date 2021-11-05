@@ -5,28 +5,28 @@ let { check } = require('express-validator')
 module.exports = [
     check('name')
         .notEmpty()
-        .withMessage('Ingrese un nombre')
-        .isString()
-        .withMessage('El nombre no puede contener numeros')
+        .withMessage('Campo obligatorio').bail()
+        .isAlpha()
+        .withMessage('El nombre no puede contener numeros').bail()
         .isLength({ min: 4 })
-        .withMessage('El nombre debe ser mayor a 4 caracteres'),
+        .withMessage('El nombre debe tener mas de 4 caracteres'),
 
     check('lastName')
         .notEmpty()
-        .withMessage('Ingrese un apellido')
+        .withMessage('Campo obligatorio').bail()
         .isAlpha()
-        .withMessage('El apellido no puede contener numeros')
+        .withMessage('El apellido no puede contener numeros').bail()
         .isLength({ min: 4 })
-        .withMessage('El apellido debe tener minimo 4 caracteres'),
+        .withMessage('El apellido debe tener mas de 4 caracteres'),
 
         
     check('email')
         .notEmpty()
-        .withMessage('Debes ingresar un email')
+        .withMessage('Campo obligatorio').bail()
         .isEmail()
         .withMessage('Debes ingresar un email válido'),
 
     check('msg')
         .notEmpty()
-        .withMessage('Este campo no puede estar vacio')
+        .withMessage('Campo obligatorio')
 ]

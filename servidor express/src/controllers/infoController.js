@@ -1,6 +1,8 @@
 let db = require('../database/models')
-let { validationResult} = require('express-validator')
+let { validationResult } = require('express-validator')
 const fs = require('fs').promises
+const fetch = require('node-fetch')
+
 
 module.exports = {
     contactOther: (req, res) => {
@@ -29,16 +31,16 @@ module.exports = {
     },
     sendContactOther: (req, res) => {
         let errors = validationResult(req)
-        
+
         if (errors.isEmpty()) {
             let { msg,
                 name,
                 lastName,
                 email
-                 } = req.body
+            } = req.body
 
             db.Message.create({
-                issue:"Consultas generales",
+                issue: "Consultas generales",
                 msg,
                 name,
                 lastName,
@@ -49,8 +51,8 @@ module.exports = {
                 })
                 .catch(err => console.log(err))
         } else {
-        
-            res.render(`info/contactOther`,{
+
+            res.render(`info/contactOther`, {
                 position: "",
                 session: req.session,
                 old: req.body,
@@ -63,9 +65,9 @@ module.exports = {
     sendContactAttention: (req, res) => {
 
         let errors = validationResult(req)
-       
+
         if (errors.isEmpty()) {
-            let { 
+            let {
                 msg,
                 name,
                 lastName,
@@ -73,7 +75,7 @@ module.exports = {
                 phone } = req.body
 
             db.Message.create({
-                issue:"Atención al cliente",
+                issue: "Atención al cliente",
                 msg,
                 name,
                 lastName,
@@ -81,13 +83,13 @@ module.exports = {
                 phone
             })
                 .then(() => {
-                    
+
                     res.redirect(`/`)
                 })
                 .catch(err => console.log(err))
         } else {
-        
-            res.render(`info/contactAttention`,{
+
+            res.render(`info/contactAttention`, {
                 position: "",
                 session: req.session,
                 old: req.body,
@@ -100,10 +102,11 @@ module.exports = {
     },
     sendContactFranchise: (req, res) => {
 
+
         let errors = validationResult(req)
         console.log(errors);
         if (errors.isEmpty()) {
-            let { 
+            let {
                 msg,
                 name,
                 lastName,
@@ -112,34 +115,49 @@ module.exports = {
                 phone,
                 location,
                 address,
-                city,
+                province,
                 cuit,
                 businessName,
-                socialAddress } = req.body
+                socialLocation } = req.body
 
-            db.Message.create({
-                issue:"Franquicia",
-                msg,
-                name,
-                lastName,
-                dni,
-                email,
-                phone,
-                location,
-                address,
-                city,
-                cuit,
-                businessName,
-                socialAddress
-            })
-                .then(() => {
-                    
-                    res.redirect(`/`)
+            fetch("https://apis.datos.gob.ar/georef/api/provincias")
+                .then(res => res.json())
+                .then(provincesBack => {
+                    new Promise((resolve, reject) => {
+                        provincesBack.provincias.forEach(provinceItem => {
+                            if (province === provinceItem.id) {
+                                resolve(provinceItem.nombre)
+                            }
+
+                        })
+                    })
+                        .then(province => {
+                            db.Message.create({
+                                issue: "Franquicia",
+                                msg,
+                                name,
+                                lastName,
+                                dni,
+                                email,
+                                phone,
+                                location,
+                                address,
+                                province,
+                                cuit,
+                                businessName,
+                                socialLocation
+                            })
+                                .then(() => {
+                                    res.redirect(`/`)
+                                })
+                                .catch(err => console.log(err))
+                        })
+
                 })
-                .catch(err => console.log(err))
+
         } else {
-        
-            res.render(`info/contactFranchise`,{
+
+            res.render(`info/contactFranchise`, {
                 position: "",
                 session: req.session,
                 old: req.body,
@@ -152,49 +170,49 @@ module.exports = {
     },
     sendContactRRHH: (req, res) => {
         let arrayCV = [];
-            if (req.files) {
-                req.files.forEach(cv => {
-                    arrayCV.push(cv.filename)
-                })
-            }
+        if (req.files) {
+            req.files.forEach(cv => {
+                arrayCV.push(cv.filename)
+            })
+        }
         let errors = validationResult(req)
-        
+
         if (errors.isEmpty()) {
-            
-             let {
+
+            let {
                 name,
                 lastName,
                 email,
                 phone,
                 msg,
-                 } = req.body 
+            } = req.body
 
             db.Message.create({
-                issue:"RRHH",
+                issue: "RRHH",
                 name,
                 lastName,
                 email,
                 phone,
-                cv: req.files.length == 0 ? null : arrayCV[0] ,
+                cv: req.files.length == 0 ? null : arrayCV[0],
                 msg,
-            }) 
-             .then(() => {  
+            })
+                .then(() => {
                     res.redirect('/')
                 })
                 .catch(err => console.log(err))
         } else {
             /* Elimino el archivo en el back-end */
-           Promise.all(arrayCV.map(cv => {
-            fs.unlink(`./public/CV/${cv}`)
-        }))
-        .then(()=>{
-            res.render(`info/contactRRHH`,{
-                position: "",
-                session: req.session,
-                old: req.body,
-                errors: errors.mapped()
-            })
-        })
+            Promise.all(arrayCV.map(cv => {
+                fs.unlink(`./public/CV/${cv}`)
+            }))
+                .then(() => {
+                    res.render(`info/contactRRHH`, {
+                        position: "",
+                        session: req.session,
+                        old: req.body,
+                        errors: errors.mapped()
+                    })
+                })
         }
 
 

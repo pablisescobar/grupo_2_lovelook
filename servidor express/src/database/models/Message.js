@@ -42,7 +42,7 @@ module.exports = (sequelize, dataTypes) => {
         address:{
             type:dataTypes.STRING(100) 
         },
-        city:{
+        province:{
             type:dataTypes.STRING(100) 
         },
         cuit:{
@@ -51,7 +51,7 @@ module.exports = (sequelize, dataTypes) => {
         businessName:{
             type:dataTypes.STRING(50) 
         },
-        socialAddress:{
+        socialLocation:{
             type:dataTypes.STRING(50) 
         }
     }

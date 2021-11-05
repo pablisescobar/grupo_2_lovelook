@@ -20,6 +20,7 @@
 @import url('headerAdmin.css');
 @import url('error404.css');
 @import url('load.css');
+@import url('validations.css');
 
 
 
@@ -42,7 +43,7 @@
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none !important;
     color          : black;
     display: inline-block;
 }

@@ -6,7 +6,7 @@
   flex-wrap: wrap;
   gap: 2px;
   justify-content: space-between;
-  padding: 20px;
+  padding: 8px;
   position: sticky;
   z-index: 1000;
   top: 0;

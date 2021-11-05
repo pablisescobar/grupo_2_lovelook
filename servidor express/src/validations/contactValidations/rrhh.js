@@ -1,11 +1,9 @@
 let { check, body } = require('express-validator')
 
-
-
 module.exports = [
     check('name')
         .notEmpty()
-        .withMessage('Ingrese un nombre').bail()
+        .withMessage('Campo obligatorio').bail()
         .isAlpha()
         .withMessage('El nombre no puede contener numeros').bail()
         .isLength({ min: 4 })
@@ -13,29 +11,32 @@ module.exports = [
 
     check('lastName')
         .notEmpty()
-        .withMessage('Ingrese un apellido').bail()
+        .withMessage('Campo obligatorio').bail()
         .isAlpha()
         .withMessage('El apellido no puede contener numeros').bail()
         .isLength({ min: 4 })
-        .withMessage('El apellido debe tener minimo 4 caracteres'),
+        .withMessage('El apellido debe tener mas de 4 caracteres'),
 
     check('phone')
         .notEmpty()
-        .withMessage('Ingrese un telefono').bail()
+        .withMessage('Campo obligatorio').bail()
         .isNumeric()
-        .withMessage('El valor debe ser numerico'),
+        .withMessage('El valor debe ser numerico').bail()
+        .isLength({ min: 8 })
+        .withMessage('El telefono debe tener mas de 8 numeros'),
 
-    body('cv').custom((value, { req }) => {
+    body('cv')
+    .custom((value, { req }) => {
         return !/\.(pdf)$/.test(req.files[0].path) || req.files.length == 0 ? false : true
     }).withMessage("Archivo permitido (.pdf)"),
 
     check('email')
         .notEmpty()
-        .withMessage('Debes ingresar un email').bail()
+        .withMessage('Campo obligatorio').bail()
         .isEmail()
         .withMessage('Debes ingresar un email válido'),
 
     check('msg')
         .notEmpty()
-        .withMessage('Este campo no puede estar vacio')
+        .withMessage('Campo obligatorio')
 ]
