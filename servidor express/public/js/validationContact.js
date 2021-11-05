@@ -466,18 +466,22 @@ window.addEventListener("load", function () {
         event.preventDefault()
         let error = false;
         let elementos = form.elements;
-
+let cvInputView = document.querySelectorAll('#cvInputView')
         for (let i = 0; i < elementos.length - 1; i++) {
-            if (elementos[i].value == '' || !elementos[i].classList.contains("validationsSuccess")) {
+
+            if (elementos[i].value === '') {
+
                 spans[i].classList.add('validationsErrors');
                 elementos[i].classList.add("validationsErrors")
                 spans[i].innerText = "Campo obligatorio";
                 error = true;
+               
             } else {
                 spans[i].innerText = "";
                 spans[i].classList.remove('validationsErrors');
                 elementos[i].classList.remove('validationsErrors')
                 elementos[i].classList.add("validationsSuccess")
+                
             }
         }
         if (!error) {
