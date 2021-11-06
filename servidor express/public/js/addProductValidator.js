@@ -32,7 +32,7 @@ window.addEventListener("load", function () {
     fileUpload = ge("file-upload"),
     errorFileUpload = ge("errorFileUpload"),
     formAdd = ge("productForm"),
-    submitErrors = ge('errorProductForm'),
+    submitErrors = ge('errorAddProductForm'),
     seasonInsert = ge("seasonInsert"),
     errorSeasonInsert = ge("insertSeason"),
     categoryInsert = ge("categoryInsert"),
@@ -168,18 +168,18 @@ window.addEventListener("load", function () {
         addBorderRed(fileUpload);
       }
     }
-  });
+  })
   formAdd.addEventListener('submit',function(event){
     let error = false;
     event.preventDefault()
-    let elementosForm = this.elements
+    let elementosForm = formAdd.elements
     
     for (let index = 0; index < elementosForm.length-1; index++) {
         if(elementosForm[index].value == "" && elementosForm[index].name !== "archivo"){
           if(index == "4") {
             continue 
           }
-          addBorderRed(elementosForm[index]);
+            addBorderRed(elementosForm[index]);
             submitErrors.innerHTML = "Los campos señalados son obligatorios";
             error = true;
         }
