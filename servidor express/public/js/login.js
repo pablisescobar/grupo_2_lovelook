@@ -82,7 +82,7 @@ function ge(element) {
         let error = false;
         event.preventDefault()
         let elementsForm = loginForm.elements
-        for (let i = 0; i < 1 ; i++) {
+        for (let i = 0; i <= 1 ; i++) {
             if(elementsForm[i].value == "" || elementsForm[i].style.boxShadow == '0 0 6px red'){
                 elementsForm[i].style.boxShadow = '0 0 6px red'
                 errorLoginForm.innerText = "Los campos señalados son obligatorios";
