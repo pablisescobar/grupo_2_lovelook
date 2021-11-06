@@ -39,6 +39,7 @@ $NombreError = qs("span#nombreError"),
     $MsgError = qs("span#msgError")
 
 window.addEventListener("load", function () {
+    
 
     /* ------------ */
     /* Consultas */
@@ -466,11 +467,11 @@ window.addEventListener("load", function () {
         event.preventDefault()
         let error = false;
         let elementos = form.elements;
-let cvInputView = document.querySelectorAll('#cvInputView')
+       
         for (let i = 0; i < elementos.length - 1; i++) {
 
             if (elementos[i].value === '') {
-
+                elementos[i].classList.remove("validationsSuccess")
                 spans[i].classList.add('validationsErrors');
                 elementos[i].classList.add("validationsErrors")
                 spans[i].innerText = "Campo obligatorio";
