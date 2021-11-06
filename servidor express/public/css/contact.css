@@ -16,8 +16,10 @@
   flex-direction: column;
 }
 
+
 .form-contact-container input,
-.form-contact-container select {
+.form-contact-container select,
+.form-contact-container .cv-input {
   height: 30px;
   margin: 3px 0;
   background-color: var(--fondo-claro);
@@ -25,12 +27,20 @@
   outline: none;
   padding-left: 10px;
   border: none;
+  display: flex;
+  align-items: center;
+  transition: .5s all ease;
+}
+
+.form-contact-container .cv-input:link{
+  border: 1px solid lightblue;
+  background-color: white;
 }
 
 .form-contact-container input:focus,
 .form-contact-container select:focus {
-  border: 1px solid var(--shadows);
   background-color: #fff;
+  box-shadow: 0 0 2px lightblue;
 }
 
 .form-contact-container select:focus option {
@@ -58,28 +68,28 @@
 .form-contact-container textarea::placeholder {
   font-size: 1rem;
   padding: 5px 0 0 10px;
-  background-color: var(--fondo-claro);
   margin: auto 0;
 }
 
 .form-contact-container textarea:focus {
   outline: none;
-  border: 1px solid var(--shadows);
+  border-color: lightblue;
+  box-shadow: none;
 }
 
 .form-contact-container .btn-send {
   background-color: white;
   box-shadow: inset -2px -2px 3px var(--shadows),inset 2px 2px 6px var(--fondo);
-  border-radius: 20px;
+  border-radius: 5px;
   width: 50%;
   align-self: flex-end;
-  padding: 0;
+  padding: 10px;
+  letter-spacing: 1px;
+  border: none;
 }
 
 .form-contact-container .btn-send:hover {
-  box-shadow: inset -2px -2px 6px black,inset 4px 4px 2px white;
   background-color: var(--fondo);
-  
 }
 
 .form-contact-container .captcha-contain {

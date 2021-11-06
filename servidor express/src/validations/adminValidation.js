@@ -37,4 +37,5 @@ module.exports = [
     .withMessage("Ingresa una cantidad").bail()
     .isNumeric()
     .withMessage("Ingresa un valor númerico"),
+  
 ];
