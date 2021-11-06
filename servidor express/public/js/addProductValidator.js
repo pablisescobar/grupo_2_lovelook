@@ -1,6 +1,17 @@
 function ge(element) {
   return document.getElementById(element);
 }
+
+function addBorderRed(input){
+  input.style.boxShadow = '0 0 10px red'
+}
+
+function addBorderGreen(input){
+  input.style.boxShadow = '0 0 10px green'
+}
+
+
+
 window.addEventListener("load", function () {
   let inputName = ge("name"),
     errorName = ge("errorName"),
@@ -28,22 +39,22 @@ window.addEventListener("load", function () {
     errorCategoryInsert = ge("insertCategory"),
     colorInsert = ge("colorInsert"),
     errorColorInsert = ge("insertColor"),
-    regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
+    regExAlpha = /^[a-zA-Z\sñáéíóúü ]{5,20}$/,
+    regExDescrip = /^[a-zA-Z\sñáéíóúü ]{20,500}$/,
     regExNum = /^[0-9]{7,8}$/;
 
   inputName.addEventListener("blur", function () {
     switch (true) {
       case !inputName.value.trim():
         errorName.innerHTML = "El campo nombre es obligatorio";
-        inputName.classList.add("errorValidator");
+        addBorderRed(inputName);
         break;
       case !regExAlpha.test(inputName.value):
-        errorName.innerHTML = "Debes ingresar un nombre válido";
-        inputName.classList.add("errorValidator");
+        errorName.innerHTML = "Debes ingresar un nombre válido, 5 - 20 caracteres";
+        addBorderRed(inputName);
         break;
       default:
-        inputName.classList.remove("errorValidator");
-        inputName.classList.add("isValid");
+        addBorderGreen(inputName);
         errorName.innerHTML = "";
         break;
     }
@@ -52,15 +63,14 @@ window.addEventListener("load", function () {
     switch (true) {
       case !description.value.trim():
         errorDescription.innerHTML = "Debes ingresar una descripción";
-        description.classList.add("errorValidator");
+        addBorderRed(description);
         break;
-      case !regExAlpha.test(description.value):
-        errorDescription.innerHTML = "Debes ingresar una descripción válida";
-        description.classList.add("errorValidator");
+      case !regExDescrip.test(description.value):
+        errorDescription.innerHTML = "Debes ingresar una descripción válida, 20 - 500 caracteres";
+        addBorderRed(description);
         break;
       default:
-        description.classList.remove("errorValidator");
-        description.classList.add("isValid");
+        addBorderGreen(description);
         errorDescription.innerHTML = "";
         break;
     }
@@ -69,11 +79,10 @@ window.addEventListener("load", function () {
     switch (true) {
       case !season.value.trim():
         errorSeason.innerHTML = "Selecciona una temporada";
-        season.classList.add("errorValidator");
+        addBorderRed(season);
         break;
       default:
-        season.classList.remove("errorValidator");
-        season.classList.add("isValid");
+        addBorderGreen(season);
         errorSeason.innerHTML = "";
         break;
     }
@@ -82,11 +91,10 @@ window.addEventListener("load", function () {
     switch (true) {
       case !category.value.trim():
         errorCategory.innerHTML = "Selecciona una categoría";
-        category.classList.add("errorValidator");
+        addBorderRed(category);
         break;
       default:
-        category.classList.remove("errorValidator");
-        category.classList.add("isValid");
+        addBorderGreen(category);
         errorCategory.innerHTML = "";
         break;
     }
@@ -95,11 +103,10 @@ window.addEventListener("load", function () {
     switch (true) {
       case !price.value.trim():
         errorPrice.innerHTML = "Ingresa un precio";
-        price.classList.add("errorValidator");
+        addBorderRed(price);
         break;
       default:
-        price.classList.remove("errorValidator");
-        price.classList.add("isValid");
+        addBorderGreen(price);
         errorPrice.innerHTML = "";
         break;
     }
@@ -108,11 +115,10 @@ window.addEventListener("load", function () {
     switch (true) {
       case !color.value.trim():
         errorColor.innerHTML = "Selecciona un color";
-        color.classList.add("errorValidator");
+        addBorderRed(color);
         break;
       default:
-        color.classList.remove("errorValidator");
-        color.classList.add("isValid");
+        addBorderGreen(color);
         errorColor.innerHTML = "";
         break;
     }
@@ -121,11 +127,10 @@ window.addEventListener("load", function () {
     switch (true) {
       case !size.value.trim():
         errorSize.innerHTML = "Selecciona un talle";
-        size.classList.add("errorValidator");
+        addBorderRed(size);
         break;
       default:
-        size.classList.remove("errorValidator");
-        size.classList.add("isValid");
+        addBorderGreen(size);
         errorSize.innerHTML = "";
         break;
     }
@@ -134,11 +139,10 @@ window.addEventListener("load", function () {
     switch (true) {
       case !stock.value.trim():
         errorStock.innerHTML = "Ingresa una cantidad";
-        stock.classList.add("errorValidator");
+        addBorderRed(stock);
         break;
       default:
-        stock.classList.remove("errorValidator");
-        stock.classList.add("isValid");
+        addBorderGreen(stock);
         errorStock.innerHTML = "";
         break;
     }
@@ -161,7 +165,7 @@ window.addEventListener("load", function () {
         };
         reader.readAsDataURL(fileUpload.files[0]);
         errorFileUpload.innerHTML = "";
-        fileUpload.classList.remove("errorValidator");
+        addBorderRed(fileUpload);
       }
     }
   });
@@ -172,7 +176,10 @@ window.addEventListener("load", function () {
     
     for (let index = 0; index < elementosForm.length-1; index++) {
         if(elementosForm[index].value == "" && elementosForm[index].name !== "archivo"){
-            elementosForm[index].classList.add('errorvalidator');
+          if(index == "4") {
+            continue 
+          }
+          addBorderRed(elementosForm[index]);
             submitErrors.innerHTML = "Los campos señalados son obligatorios";
             error = true;
         }
@@ -189,11 +196,10 @@ window.addEventListener("load", function () {
     switch (true) {
       case !seasonInsert.value.trim():
         errorSeasonInsert.innerHTML = "Ingrese una temporada";
-        seasonInsert.classList.add("errorValidator");
+        addBorderRed(seasonInsert);
         break;
       default:
-        seasonInsert.classList.remove("errorValidator");
-        seasonInsert.classList.add("isValid");
+        addBorderGreen(seasonInsert);
         errorSeasonInsert.innerHTML = "";
         break;
     }
@@ -202,11 +208,10 @@ window.addEventListener("load", function () {
     switch (true) {
       case !categoryInsert.value.trim():
         errorCategoryInsert.innerHTML = "Ingrese una categoría";
-        categoryInsert.classList.add("errorValidator");
+        addBorderRed(categoryInsert);
         break;
       default:
-        categoryInsert.classList.remove("errorValidator");
-        categoryInsert.classList.add("isValid");
+        addBorderGreen(categoryInsert);
         errorCategoryInsert.innerHTML = "";
         break;
     }
@@ -214,14 +219,14 @@ window.addEventListener("load", function () {
   colorInsert.addEventListener("blur", function () {
     switch (true) {
       case !colorInsert.value.trim():
-        errorColorInsert.innerHTML = "Ingrese una color";
-        colorInsert.classList.add("errorValidator");
+        errorColorInsert.innerHTML = "Ingrese un color";
+        addBorderRed(colorInsert);
         break;
       default:
-        colorInsert.classList.remove("errorValidator");
-        colorInsert.classList.add("isValid");
+        addBorderGreen(colorInsert);
         errorColorInsert.innerHTML = "";
         break;
     }
   });
+
 });

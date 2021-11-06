@@ -38,7 +38,7 @@
                 <!-- SELECT DE TEMPORADA -->
                 <div class="container-inserts">
                     <select onchange="valueChange('deleteSeason',0)" name="season" id="season" title="temporada">
-                        <option hidden selected>Temporada</option>
+                        <option value="" hidden selected>Temporada</option>
                         <% seasons.forEach(season=> { %>
                         <option id="seasonValue" value="<%- season.id %>" <%-locals.old && old.season==season.id ? `selected` : "" %>>
                             <%- capitalize(season.name) %>
@@ -60,7 +60,7 @@
                 <!-- SELECT DE CATEGORÍA -->
                 <div class="container-inserts">
                     <select name="category" id="category" title="category" onchange="valueChange('deleteCategory',1)">
-                        <option hidden selected>Categoría</option>
+                        <option value="" hidden selected>Categoría</option>
                         <% categories.forEach(category=> { %>
                         <option value="<%= category.id %>" <%-locals.old && old.category==category.id ? `selected` : "" %>>
                             <%= capitalize(category.name) %>
@@ -102,7 +102,7 @@
                 <div class="container-inserts">
                     <select name="color" id="color" title="color" class="form-control fa"
                         onchange="valueChange('deleteColor',2)">
-                        <option hidden selected>Color</option>
+                        <option value="" hidden selected>Color</option>
                         <% colors.forEach(color=> { %>
                         <option class="fa" value="<%= color.id %>" <%=locals.old && old.color==color.id ? "selected" : "" %>><%= capitalize(color.name) %>
                         </option>
@@ -123,7 +123,7 @@
 
                 <!-- SELECT DE TALLE -->
                 <select name="size" id="size" title="Talle">
-                    <option hidden selected>Talle</option>
+                    <option value="" hidden selected>Talle</option>
                     <% sizes.forEach(size=> { %>
                     <option value="<%- size.id %>" <%=locals.old && old.size==size.id ? "selected" : "" %>>
                         <%- size.name.toUpperCase() %>
@@ -183,7 +183,7 @@
 
                 <a href="/admin/products" class="left-row"><span class="iconify"
                         data-icon="bi:arrow-left-square"></span></a>
-                <small class="error-validator" id="errorProductForm">
+                <small class="error-validator" id="errorAddProductForm">
                 </small>
             </form>
 
@@ -249,7 +249,7 @@
         </div>
 
     </main>
-    <script src="/js/productValidator.js"></script>
+    <script src="/js/addProductValidator.js"></script>
 </body>
 
 </html>

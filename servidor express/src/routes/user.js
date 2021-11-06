@@ -17,7 +17,7 @@ const userSessionCheck = require('../middleware/userSessionCheck')
 
 /* View login */
 router.get('/login', userLog, login);
-router.post('/login', /* loginValidator, */ processLogin);
+router.post('/login', loginValidator, processLogin);
 router.get('/logout', logout);
 
 /* View register */
