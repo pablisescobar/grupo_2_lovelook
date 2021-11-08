@@ -6,4 +6,16 @@ window.onload = () => {
     document.getElementById("categoriasDesplegable").addEventListener("mouseout", event => {
         document.getElementById("categoriasDesplegableView").style.display = 'none' //elemento a ocultar
     });
+    document.getElementById("categorias_dii").addEventListener("click", event => {
+        console.log(event)
+        let categoriasDesplegable = document.getElementById("category_m")
+        if(categoriasDesplegable.style.display == 'none'){
+            categoriasDesplegable.style.display = 'block'
+        }else{
+            categoriasDesplegable.style.display = 'none'
+        }
+    
+    });
+
+   
 }
