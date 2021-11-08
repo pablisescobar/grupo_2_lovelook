@@ -40,6 +40,20 @@ $NombreError = qs("span#nombreError"),
 
 window.addEventListener("load", function () {
 
+    function error(input, message, text) {
+        input.classList.remove("validationsSuccess")
+        input.classList.add("validationsErrors")
+        message.classList.add("validationsErrors")
+        message.innerText = text
+    }
+
+    function success(input, message) {
+        message.classList.remove("validationsErrors")
+        input.classList.remove("validationsErrors")
+        input.classList.add("validationsSuccess")
+        message.innerText = ""
+    }
+
 
     /* ------------ */
     /* Consultas */
@@ -48,35 +62,16 @@ window.addEventListener("load", function () {
     $inputNombre.onblur = function () {
         switch (true) {
             case !$inputNombre.value.trim():
-                $NombreError.innerText = "Campo obligatorio"
-                $inputNombre.classList.remove("validationsSuccess")
-                $inputNombre.classList.add("validationsErrors")
-                $NombreError.classList.add("validationsErrors")
+                error($inputNombre, $NombreError, "Campo obligatorio")
                 break;
             case !regExAlpha.test($inputNombre.value):
-
-                $NombreError.classList.remove("validationsErrors")
-                $NombreError.innerText = "El nombre no puede contener numeros"
-                $inputNombre.classList.remove("validationsSuccess")
-                $inputNombre.classList.add("validationsErrors")
-                $NombreError.classList.add("validationsErrors")
-
+                error($inputNombre, $NombreError, "El nombre no puede contener numeros ni caracteres especiales")
                 break;
             case $inputNombre.value.length < 5:
-                $NombreError.innerText = "El nombre debe ser mayor a 4 caracteres"
-                $inputNombre.classList.remove("validationsSuccess")
-                $inputNombre.classList.add("validationsErrors")
-                $NombreError.classList.add("validationsErrors")
-
-
+                error($inputNombre, $NombreError, "El nombre debe ser mayor a 4 caracteres")
                 break;
             default:
-                $NombreError.classList.remove("validationsErrors")
-                $inputNombre.classList.remove("validationsErrors")
-                $inputNombre.classList.add("validationsSuccess")
-                $NombreError.innerText = ""
-
-
+                success($inputNombre, $NombreError)
         }
     }
 
@@ -84,33 +79,16 @@ window.addEventListener("load", function () {
     $inputApellido.onblur = function () {
         switch (true) {
             case !$inputApellido.value.trim():
-                $ApellidoError.innerText = "Campo obligatorio"
-                $inputApellido.classList.remove("validationsSuccess")
-                $inputApellido.classList.add("validationsErrors")
-                $ApellidoError.classList.add("validationsErrors")
-
+                error($inputApellido, $ApellidoError, "Campo obligatorio")
                 break;
             case !regExAlpha.test($inputApellido.value):
-                $ApellidoError.innerText = "El apellido no puede contener numeros"
-                $inputApellido.classList.remove("validationsSuccess")
-                $inputApellido.classList.add("validationsErrors")
-                $ApellidoError.classList.add("validationsErrors")
-
+                error($inputApellido, $ApellidoError, "El apellido no puede contener numeros")
                 break;
             case $inputApellido.value.length < 5:
-                $ApellidoError.innerText = "El apellido debe ser mayor a 4 caracteres"
-                $inputApellido.classList.remove("validationsSuccess")
-                $inputApellido.classList.add("validationsErrors")
-                $ApellidoError.classList.add("validationsErrors")
-
+                error($inputApellido, $ApellidoError, "El apellido debe ser mayor a 4 caracteres")
                 break;
             default:
-                $ApellidoError.classList.remove("validationsErrors")
-                $ApellidoError.innerText = ""
-                $inputApellido.classList.remove("validationsErrors")
-                $inputApellido.classList.add("validationsSuccess")
-
-
+                success($inputApellido, $ApellidoError)
         }
     }
 
@@ -118,26 +96,13 @@ window.addEventListener("load", function () {
     $inputEmail.onblur = function () {
         switch (true) {
             case !$inputEmail.value.trim():
-                $EmailError.innerText = "Campo obligatorio"
-                $inputEmail.classList.remove("validationsSuccess")
-                $inputEmail.classList.add("validationsErrors")
-                $EmailError.classList.add("validationsErrors")
+                error($inputEmail, $EmailError, "Campo obligatorio")
                 break;
-
             case !regExEmail.test($inputEmail.value):
-                $EmailError.innerText = "Debes ingresar un email válido"
-                $inputEmail.classList.remove("validationsSuccess")
-                $inputEmail.classList.add("validationsErrors")
-                $EmailError.classList.add("validationsErrors")
+                error($inputEmail, $EmailError, "Debes ingresar un email válido")
                 break;
-
             default:
-                $inputEmail.classList.remove("validationsErrors")
-                $EmailError.classList.remove("validationsErrors")
-                $inputEmail.classList.add("validationsSuccess")
-                $EmailError.innerText = ""
-
-
+                success($inputEmail, $EmailError)
         }
     }
 
@@ -145,18 +110,10 @@ window.addEventListener("load", function () {
     $inputMsg.onblur = function () {
         switch (true) {
             case !$inputMsg.value.trim():
-                $MsgError.innerText = "Campo obligatorio"
-                $inputMsg.classList.remove("validationsSuccess")
-                $inputMsg.classList.add("validationsErrors")
-                $MsgError.classList.add("validationsErrors")
+                error($inputMsg, $MsgError, "Campo obligatorio")
                 break;
-
             default:
-                $inputMsg.classList.remove("validationsErrors")
-                $MsgError.classList.remove("validationsErrors")
-                $inputMsg.classList.add("validationsSuccess")
-                $MsgError.innerText = ""
-
+                success($inputMsg, $MsgError)
         }
     }
 
@@ -164,34 +121,18 @@ window.addEventListener("load", function () {
 
         /* TELEFONO */
         $inputTel.onblur = function () {
-
             switch (true) {
                 case !$inputTel.value.trim():
-                    $TelError.innerText = "Campo obligatorio"
-                    $inputTel.classList.remove("validationsSuccess")
-                    $inputTel.classList.add("validationsErrors")
-                    $TelError.classList.add("validationsErrors")
+                    error($inputTel, $TelError, "Campo obligatorio")
                     break;
-
                 case isNaN($inputTel.value):
-                    $TelError.innerText = "El valor debe ser numerico"
-                    $inputTel.classList.remove("validationsSuccess")
-                    $inputTel.classList.add("validationsErrors")
-                    $TelError.classList.add("validationsErrors")
+                    error($inputTel, $TelError, "El valor debe ser numerico")
                     break;
                 case $inputTel.value.length < 8:
-                    $TelError.innerText = "El telefono debe tener mas de 8 numeros"
-                    $inputTel.classList.remove("validationsSuccess")
-                    $inputTel.classList.add("validationsErrors")
-                    $TelError.classList.add("validationsErrors")
+                    error($inputTel, $TelError, "El telefono debe tener mas de 8 numeros")
                     break;
-
                 default:
-                    $inputTel.classList.remove("validationsErrors")
-                    $TelError.classList.remove("validationsErrors")
-                    $inputTel.classList.add("validationsSuccess")
-                    $TelError.innerText = ""
-
+                    success($inputTel, $TelError)
             }
         }
     }
@@ -200,17 +141,13 @@ window.addEventListener("load", function () {
     /* ------------ */
     if (location.pathname == "/info/contact/rrhh") {
         /* CV */
-        $inputCv.onblur = function () {
+        document.querySelector("#cvInputView").oninput = function () {
             if ($inputCv.files.length == 0) {
-                $CvError.innerText = "Archivo obligatorio"
-                $inputView.classList.add("validationsErrors")
-                $inputView.classList.add("validationsErrors")
-                $CvError.classList.add("validationsErrors")
+                error($inputView, $CvError, "Archivo obligatorio")
             }
         }
         $inputCv.onchange = function () {
             var nameFile = document.querySelectorAll("#cvInput")[0].files[0].name;
-
             if (nameFile.length > 15) {/*Si el nombre del archivo tiene mas de 15 caracteres */
                 nameFile = `${nameFile.substr(0, 15)}(...)`; /*  se substraen los primeros 15 caracteres y se coloca (...) */
             }
@@ -219,19 +156,11 @@ window.addEventListener("load", function () {
 
             let $inputView = document.querySelector("#cvInputView")
             switch (true) {
-
                 case !/\.(pdf)/.test($inputCv.value):
-                    $CvError.innerText = "Archivo permitido (.pdf)"
-                    $inputView.classList.remove("validationsSuccess")
-                    $inputView.classList.add("validationsErrors")
-                    $CvError.classList.add("validationsErrors")
+                    error($inputView, $CvError, "Archivo permitido (.pdf)")
                     break;
-
                 default:
-                    $inputView.classList.remove("validationsErrors")
-                    $CvError.classList.remove("validationsErrors")
-                    $inputView.classList.add("validationsSuccess")
-                    $CvError.innerText = ""
+                    success($inputView, $CvError)
             }
         }
     }
@@ -242,28 +171,15 @@ window.addEventListener("load", function () {
     if (location.pathname == "/info/contact/franchise") {
         /* DNI */
         $inputDni.onblur = function () {
-
             switch (true) {
                 case !$inputDni.value.trim():
-                    $DniError.innerText = "Campo obligatorio"
-                    $inputDni.classList.remove("validationsSuccess")
-                    $inputDni.classList.add("validationsErrors")
-                    $DniError.classList.add("validationsErrors")
+                    error($inputDni, $DniError, "Campo obligatorio")
                     break;
-
-                case !regExDNI.test(document.querySelector('#dniInput').value):
-                    $DniError.innerText = "El valor ingresado no es un dni"
-                    $inputDni.classList.remove("validationsSuccess")
-                    $inputDni.classList.add("validationsErrors")
-                    $DniError.classList.add("validationsErrors")
+                case !regExDNI.test($inputDni.value):
+                    error($inputDni, $DniError, "El valor ingresado no es un dni")
                     break;
-
                 default:
-                    $inputDni.classList.remove("validationsErrors")
-                    $DniError.classList.remove("validationsErrors")
-                    $inputDni.classList.add("validationsSuccess")
-                    $DniError.innerText = ""
-
+                    success($inputDni, $DniError)
             }
 
         }
@@ -289,24 +205,18 @@ window.addEventListener("load", function () {
 
         $selectProvince.onblur = function () {
             if ($selectProvince.options[$selectProvince.selectedIndex].value == "") {
-                $ProvinceError.innerText = "Selección obligatoria"
-                $selectProvince.classList.remove("validationsSuccess")
-                $selectProvince.classList.add("validationsErrors")
-                $ProvinceError.classList.add("validationsErrors")
+                error($selectProvince, $ProvinceError, "Selección obligatoria")
             }
         }
-
 
         $selectProvince.onchange = function (event) {
             $selectLocalidad.innerHTML = ""
             $selectLocalidad.disabled = false
             $selectDSocial.disabled = false
+            
             let provinceNombre = event.target.value;
 
-            $selectProvince.classList.remove("validationsErrors")
-            $ProvinceError.classList.remove("validationsErrors")
-            $selectProvince.classList.add("validationsSuccess")
-            $ProvinceError.innerText = ""
+            success($selectProvince,$ProvinceError)
 
 
             /* OPTIONS SELECT LOCALIDADES */
@@ -342,17 +252,11 @@ window.addEventListener("load", function () {
         /* LOCALIDAD */
         $selectLocalidad.onblur = function () {
             if ($selectLocalidad.options[$selectLocalidad.selectedIndex].value == "") {
-                $LocalidadError.innerText = "Selección obligatoria"
-                $selectLocalidad.classList.remove("validationsSuccess")
-                $selectLocalidad.classList.add("validationsErrors")
-                $LocalidadError.classList.add("validationsErrors")
+                error($selectLocalidad,$LocalidadError,"Selección obligatoria")
             }
         }
         $selectLocalidad.onchange = function () {
-            $selectLocalidad.classList.remove("validationsErrors")
-            $LocalidadError.classList.remove("validationsErrors")
-            $selectLocalidad.classList.add("validationsSuccess")
-            $LocalidadError.innerText = ""
+            success($selectLocalidad,$LocalidadError)
         }
 
         /* DOMICILIO */
@@ -360,33 +264,17 @@ window.addEventListener("load", function () {
 
             switch (true) {
                 case !$inputDomicilio.value.trim():
-
-                    $DomicilioError.innerText = "Campo obligatorio"
-                    $inputDomicilio.classList.remove("validationsSuccess")
-                    $inputDomicilio.classList.add("validationsErrors")
-                    $DomicilioError.classList.add("validationsErrors")
+                    error($inputDomicilio,$DomicilioError,"Campo obligatorio")
                     break;
-
                 case !regExDomicilio.test($inputDomicilio.value):
-                    $inputDomicilio.innerHTML = ""
-                    $DomicilioError.innerText = "Ingrese una dirección y su altura"
-                    $inputDomicilio.classList.remove("validationsSuccess")
-                    $inputDomicilio.classList.add("validationsErrors")
-                    $DomicilioError.classList.add("validationsErrors")
+                    error($inputDomicilio,$DomicilioError,"Ingrese una dirección y su altura")
                     break;
-
                 case $inputDomicilio.value.trim().length < 6:
-                    $DomicilioError.innerText = "El domicilio debe tener mas de 5 caracteres"
-                    $inputDomicilio.classList.remove("validationsSuccess")
-                    $inputDomicilio.classList.add("validationsErrors")
-                    $DomicilioError.classList.add("validationsErrors")
+                    error($inputDomicilio,$DomicilioError,"El domicilio debe tener mas de 5 caracteres")
                     break;
 
                 default:
-                    $inputDomicilio.classList.remove("validationsErrors")
-                    $DomicilioError.classList.remove("validationsErrors")
-                    $inputDomicilio.classList.add("validationsSuccess")
-                    $DomicilioError.innerText = ""
+                    success($inputDomicilio,$DomicilioError)
             }
 
         }
@@ -395,24 +283,15 @@ window.addEventListener("load", function () {
         $inputCuit.onblur = function () {
             switch (true) {
                 case !$inputCuit.value.trim():
-                    $CuitError.innerText = "Campo obligatorio"
-                    $inputCuit.classList.remove("validationsSuccess")
-                    $inputCuit.classList.add("validationsErrors")
-                    $CuitError.classList.add("validationsErrors")
+                    error($inputCuit,$CuitError,"Campo obligatorio")
                     break;
 
                 case !regExCUIT.test($inputCuit.value):
-                    $CuitError.innerText = "El cuit ingresado es invalido"
-                    $inputCuit.classList.remove("validationsSuccess")
-                    $inputCuit.classList.add("validationsErrors")
-                    $CuitError.classList.add("validationsErrors")
+                    error($inputCuit,$CuitError,"El cuit ingresado es invalido")
                     break;
 
                 default:
-                    $inputCuit.classList.remove("validationsErrors")
-                    $CuitError.classList.remove("validationsErrors")
-                    $inputCuit.classList.add("validationsSuccess")
-                    $CuitError.innerText = ""
+                    success($inputCuit,$CuitError)
             }
         }
 
@@ -420,24 +299,15 @@ window.addEventListener("load", function () {
         $inputRSocial.onblur = function () {
             switch (true) {
                 case !$inputRSocial.value.trim():
-                    $RSocialError.innerText = "Campo obligatorio"
-                    $inputRSocial.classList.remove("validationsSuccess")
-                    $inputRSocial.classList.add("validationsErrors")
-                    $RSocialError.classList.add("validationsErrors")
+                    error($inputRSocial,$RSocialError,"Campo obligatorio")
                     break;
 
                 case !regExAlphanumeric.test($inputRSocial.value):
-                    $RSocialError.innerText = "No se permiten caracteres especiales"
-                    $inputRSocial.classList.remove("validationsSuccess")
-                    $inputRSocial.classList.add("validationsErrors")
-                    $RSocialError.classList.add("validationsErrors")
+                    error($inputRSocial,$RSocialError,"No se permiten caracteres especiales")
                     break;
 
                 default:
-                    $inputRSocial.classList.remove("validationsErrors")
-                    $RSocialError.classList.remove("validationsErrors")
-                    $inputRSocial.classList.add("validationsSuccess")
-                    $RSocialError.innerText = ""
+                    success($inputRSocial,$RSocialError)
             }
         }
 
@@ -445,17 +315,11 @@ window.addEventListener("load", function () {
         $selectDSocial.onblur = function () {
             switch (true) {
                 case !$selectDSocial.value.trim():
-                    $DSocialError.innerText = "Campo obligatorio"
-                    $selectDSocial.classList.remove("validationsSuccess")
-                    $selectDSocial.classList.add("validationsErrors")
-                    $DSocialError.classList.add("validationsErrors")
+                    error($selectDSocial,$DSocialError,"Campo obligatorio")
                     break;
 
                 default:
-                    $selectDSocial.classList.remove("validationsErrors")
-                    $DSocialError.classList.remove("validationsErrors")
-                    $selectDSocial.classList.add("validationsSuccess")
-                    $DSocialError.innerText = ""
+                    success($selectDSocial,$DSocialError)
             }
         }
     }
