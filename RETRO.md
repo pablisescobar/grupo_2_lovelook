@@ -90,3 +90,20 @@ Hacer Menos:
 
 Dejar de hacer:
 - 
+
+## Retrospectiva: "SPRINT 6"
+
+Empezar a hacer :
+- Agregar funcionalidades adicionales
+
+Hacer más:
+- Mejorar la página
+
+Seguir Haciendo como equipo:
+-  Comunicación
+
+Hacer Menos:
+- No autoexigirnos
+
+Dejar de hacer:
+- 
