@@ -69,7 +69,7 @@ module.exports = [
         .notEmpty()
         .withMessage('Campo obligatorio').bail()
         .custom((value,{req})=>{
-            return /[,_{}´\+\[\]@=\/&%\$#"\^`~!-:;'¿?°\|\.]/.test(req.body.businessName)?false:true
+            return !/^[a-z0-9A-Z\sñáéíóúü]*$/.test(req.body.businessName)?false:true
         })
         .withMessage('No se permiten caracteres especiales'),
 

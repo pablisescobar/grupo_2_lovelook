@@ -43,7 +43,7 @@ app.use('/products',productsRouter);
 app.use('/user',userRouter); 
 
 /* -------ERROR 404------------ */
-/* app.use((req,res,next)=>{
+app.use((req,res,next)=>{
     const db = require('./database/models')
 db.Category.findAll()
 .then(categorias=>{
@@ -53,7 +53,7 @@ session: req.session,
 position:"position:relative"
     })
 })
-}) */
+})
 
 /* ---------------------------- */
 

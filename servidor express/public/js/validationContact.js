@@ -21,7 +21,7 @@ var $inputNombre = qs("input#nombreInput"),
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
     regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/,
     regExCUIT = /\b(20|23|24|27|30|33|34)(\D)?[0-9]{7,8}(\D)?[0-9]/,
-    regExSpecialCharacters = /[,_{}´\+\[\]@=\/&%\$#"\^`~!-:;'¿?°\|\.]/
+    regExAlphanumeric = /^[a-z0-9A-Z\sñáéíóúü]*$/
 
 /* Errors span */
 $NombreError = qs("span#nombreError"),
@@ -39,6 +39,7 @@ $NombreError = qs("span#nombreError"),
     $MsgError = qs("span#msgError")
 
 window.addEventListener("load", function () {
+
 
     /* ------------ */
     /* Consultas */
@@ -425,7 +426,7 @@ window.addEventListener("load", function () {
                     $RSocialError.classList.add("validationsErrors")
                     break;
 
-                case regExSpecialCharacters.test($inputRSocial.value):
+                case !regExAlphanumeric.test($inputRSocial.value):
                     $RSocialError.innerText = "No se permiten caracteres especiales"
                     $inputRSocial.classList.remove("validationsSuccess")
                     $inputRSocial.classList.add("validationsErrors")
@@ -461,31 +462,176 @@ window.addEventListener("load", function () {
 
     let form = qs("#form")
 
+    function validationError(index, span, elements) {
+        span[index].classList.add('validationsErrors');
+        elements[index].classList.add("validationsErrors")
+        if (elements[index].value === "") {
+            span[index].innerText = "Campo obligatorio";
+        }
+    }
+
+    function validationsSuccess(index, span, elements) {
+        span[index].innerText = "";
+        span[index].classList.remove('validationsErrors');
+        elements[index].classList.remove('validationsErrors')
+        elements[index].classList.add("validationsSuccess")
+    }
     form.addEventListener("submit", function (event) {
         let spans = document.querySelectorAll(".error")
         event.preventDefault()
         let error = false;
         let elementos = form.elements;
-let cvInputView = document.querySelectorAll('#cvInputView')
         for (let i = 0; i < elementos.length - 1; i++) {
-
-            if (elementos[i].value === '') {
-
-                spans[i].classList.add('validationsErrors');
-                elementos[i].classList.add("validationsErrors")
-                spans[i].innerText = "Campo obligatorio";
-                error = true;
-               
-            } else {
-                spans[i].innerText = "";
-                spans[i].classList.remove('validationsErrors');
-                elementos[i].classList.remove('validationsErrors')
-                elementos[i].classList.add("validationsSuccess")
-                
+            if (elementos[i].name == "name") {
+                switch (true) {
+                    case elementos[i].value === '':
+                    case !regExAlpha.test(elementos[i].value):
+                    case elementos[i].value.length < 5:
+                        validationError(i, spans, elementos)
+                        error = true;
+                        break;
+                    default:
+                        validationsSuccess(i, spans, elementos)
+                        break;
+                }
             }
+            if (elementos[i].name == "lastName") {
+                switch (true) {
+                    case elementos[i].value === '':
+                    case !regExAlpha.test(elementos[i].value):
+                    case elementos[i].value.length < 5:
+                        validationError(i, spans, elementos)
+                        error = true;
+                        break;
+                    default:
+                        validationsSuccess(i, spans, elementos)
+                        break;
+                }
+            }
+            if (elementos[i].name == "email") {
+                switch (true) {
+                    case elementos[i].value === '':
+                    case !regExEmail.test(elementos[i].value):
+                        validationError(i, spans, elementos)
+                        error = true;
+                        break;
+                    default:
+                        validationsSuccess(i, spans, elementos)
+                        break;
+                }
+            }
+            if (elementos[i].name == "msg") {
+                switch (true) {
+                    case elementos[i].value === '':
+                        validationError(i, spans, elementos)
+                        error = true;
+                        break;
+                    default:
+                        validationsSuccess(i, spans, elementos)
+                        break;
+                }
+            }
+            if (elementos[i].name == "phone") {
+                switch (true) {
+                    case elementos[i].value === '':
+                    case isNaN(elementos[i].value):
+                    case elementos[i].value.length < 8:
+                        validationError(i, spans, elementos)
+                        error = true;
+                        break;
+                    default:
+                        validationsSuccess(i, spans, elementos)
+                        break;
+                }
+            }
+            if (elementos[i].name == "cv") {
+                switch (true) {
+                    case elementos[i].files.length == 0:
+                    case !/\.(pdf)/.test($inputCv.value):
+                        validationError(i, spans, elementos)
+                        error = true;
+                        break;
+                    default:
+                        validationsSuccess(i, spans, elementos)
+                        break;
+                }
+            }
+            if (elementos[i].name == "dni") {
+                switch (true) {
+                    case !elementos[i].value.trim():
+                    case !regExDNI.test(elementos[i].value):
+                        validationError(i, spans, elementos)
+                        error = true;
+                        break;
+                    default:
+                        validationsSuccess(i, spans, elementos)
+                        break;
+                }
+            }
+            if (elementos[i].name == "province") {
+                switch (true) {
+                    case elementos[i].options[elementos[i].selectedIndex].value == "":
+                        validationError(i, spans, elementos)
+                        error = true;
+                        break;
+                    default:
+                        validationsSuccess(i, spans, elementos)
+                        break;
+                }
+            }
+            if (elementos[i].name == "location" || elementos[i].name === "socialLocation") {
+                switch (true) {
+                    case elementos[i].disabled === true:
+                    case elementos[i].options[elementos[i].selectedIndex].value == "":
+                        validationError(i, spans, elementos)
+                        error = true;
+                        break;
+                    default:
+                        validationsSuccess(i, spans, elementos)
+                        break;
+                }
+            }
+            if (elementos[i].name === "address") {
+                switch (true) {
+                    case !elementos[i].value.trim():
+                    case !regExDomicilio.test(elementos[i].value):
+                    case elementos[i].value.trim().length < 6:
+                        validationError(i, spans, elementos)
+                        error = true;
+                        break;
+                    default:
+                        validationsSuccess(i, spans, elementos)
+                        break;
+                }
+            }
+            if (elementos[i].name === "cuit") {
+                switch (true) {
+                    case !elementos[i].value.trim():
+                    case !regExCUIT.test(elementos[i].value):
+                        validationError(i, spans, elementos)
+                        error = true;
+                        break;
+                    default:
+                        validationsSuccess(i, spans, elementos)
+                        break;
+                }
+            }
+            if (elementos[i].name === "businessName") {
+                switch (true) {
+                    case !elementos[i].value.trim():
+                    case !regExAlphanumeric.test(elementos[i].value):
+                        validationError(i, spans, elementos)
+                        error = true;
+                        break;
+                    default:
+                        validationsSuccess(i, spans, elementos)
+                        break;
+                }
+            }
+
         }
         if (!error) {
-            this.submit()
+            form.submit()
         }
 
     })
