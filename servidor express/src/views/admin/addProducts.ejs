@@ -1,13 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
 
-<%- include('../partials/head.ejs') %>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ʆᵒᵛᵉʆᵒᵒᵏ</title>
+    
+        <!-- FONT AWESOME -->
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+            integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    
+        <!-- ICONIFY -->
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="/css/general.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+        <!-- SCRIPTS -->
+        
+        
+        <script src="/js/admin.js" defer></script>
+        <script src="/js/load.js"></script>
+    
+        <!-- FAVICON -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/icons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+    </head>
 
 <body>
     <%- include('../partials/load.ejs') %>
     <%- include('../partials/headerAdmin.ejs') %>
     <main class="admin">
-        <h2>Agregar un producto</h2>
+        <h2 class="mt-4 text-center">Agregar un producto</h2>
         <div class="container">
             <form action="/admin/products/add" method="post" class="inputRows" enctype="multipart/form-data"
                 id="productForm">
@@ -38,14 +66,14 @@
                 <!-- SELECT DE TEMPORADA -->
                 <div class="container-inserts">
                     <select onchange="valueChange('deleteSeason',0)" name="season" id="season" title="temporada">
-                        <option hidden selected>Temporada</option>
+                        <option value="" hidden selected>Temporada</option>
                         <% seasons.forEach(season=> { %>
                         <option id="seasonValue" value="<%- season.id %>" <%-locals.old && old.season==season.id ? `selected` : "" %>>
                             <%- capitalize(season.name) %>
                         </option>
                         <% }) %>
                     </select>
-                    <span class="btn-delete" id="DelSeason">
+                    <span class="btn btn-danger ml-10" id="DelSeason">
                         <small class="fas fa-minus del"></small>
                     </span>
                 </div>
@@ -60,14 +88,14 @@
                 <!-- SELECT DE CATEGORÍA -->
                 <div class="container-inserts">
                     <select name="category" id="category" title="category" onchange="valueChange('deleteCategory',1)">
-                        <option hidden selected>Categoría</option>
+                        <option value="" hidden selected>Categoría</option>
                         <% categories.forEach(category=> { %>
                         <option value="<%= category.id %>" <%-locals.old && old.category==category.id ? `selected` : "" %>>
                             <%= capitalize(category.name) %>
                         </option>
                         <% }) %>
                     </select>
-                    <span type="menu" class="btn-delete" id="DelCategoty">
+                    <span type="menu" class="btn btn-danger" id="DelCategoty">
                         <small class="fas fa-minus del"></small>
                     </span>
                 </div>
@@ -102,13 +130,13 @@
                 <div class="container-inserts">
                     <select name="color" id="color" title="color" class="form-control fa"
                         onchange="valueChange('deleteColor',2)">
-                        <option hidden selected>Color</option>
+                        <option value="" hidden selected>Color</option>
                         <% colors.forEach(color=> { %>
                         <option class="fa" value="<%= color.id %>" <%=locals.old && old.color==color.id ? "selected" : "" %>><%= capitalize(color.name) %>
                         </option>
                         <% }) %>
                     </select>
-                    <span type="menu" class="btn-delete" id="DelColor">
+                    <span type="menu" class="btn btn-danger" id="DelColor">
                         <small class="fas fa-minus del"></small>
                     </span>
                 </div>
@@ -123,7 +151,7 @@
 
                 <!-- SELECT DE TALLE -->
                 <select name="size" id="size" title="Talle">
-                    <option hidden selected>Talle</option>
+                    <option value="" hidden selected>Talle</option>
                     <% sizes.forEach(size=> { %>
                     <option value="<%- size.id %>" <%=locals.old && old.size==size.id ? "selected" : "" %>>
                         <%- size.name.toUpperCase() %>
@@ -154,7 +182,7 @@
 
 
                 <div class="input">
-                    <label for="file-upload" class="subir"><i class="fas fa-cloud-upload-alt"></i>
+                    <label for="file-upload" class="btn btn-success"><i class="fas fa-cloud-upload-alt"></i>
                         Subir imágenes
                     </label>
 
@@ -174,16 +202,16 @@
                 </div>
                 <div class="button-container">
 
-                    <button type="reset" class="btn-reset"><span class="iconify" data-icon="whh:broom"></span></button>
-                    <button type="submit" class="btn-add"><span class="iconify"
+                    <button type="reset" class="btn btn-danger"><span class="iconify" data-icon="whh:broom"></span></button>
+                    <button type="submit" class="btn btn-success"><span class="iconify"
                             data-icon="fluent:add-12-filled"></span></button>
                 </div>
 
 
 
-                <a href="/admin/products" class="left-row"><span class="iconify"
+                <a href="/admin/products" class="btn btn-secondary mt-4 w-100"><span class="iconify f-2"
                         data-icon="bi:arrow-left-square"></span></a>
-                <small class="error-validator" id="errorProductForm">
+                <small class="error-validator" id="errorAddProductForm">
                 </small>
             </form>
 
@@ -192,7 +220,7 @@
                     <div class="container-addOption">
                         <input type="text" name="seasonInsert" placeholder="Agregar temporada... "
                             class="input-addOption" id="seasonInsert">
-                        <button class="icon-addOption" type="submit">
+                        <button class="btn btn-success" type="submit">
                             <span class="iconify " data-icon="ant-design:appstore-add-outlined"></span>
                         </button>
                     </div>
@@ -208,7 +236,7 @@
                     <div class="container-addOption">
                         <input type="text" name="categoryInsert" placeholder="Agregar categoria... "
                             class="input-addOption" id="categoryInsert">
-                        <button class="icon-addOption" type="submit">
+                        <button class="btn btn-success" type="submit">
                             <span class="iconify " data-icon="ant-design:appstore-add-outlined"></span>
                         </button>
                     </div>
@@ -224,7 +252,7 @@
                     <div class="container-addOption">
                         <input type="text" name="colorInsert" placeholder="Agregar color... " class="input-addOption"
                             id="colorInsert">
-                        <button class="icon-addOption" type="submit">
+                        <button class="btn btn-success" type="submit">
                             <span class="iconify " data-icon="ant-design:appstore-add-outlined"></span>
                         </button>
                     </div>
@@ -249,7 +277,7 @@
         </div>
 
     </main>
-    <script src="/js/productValidator.js"></script>
+    <script src="/js/addProductValidator.js"></script>
 </body>
 
 </html>

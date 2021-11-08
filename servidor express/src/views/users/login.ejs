@@ -3,54 +3,61 @@
 
 <%- include('../partials/head.ejs')%>
 
-    <body>
-      <%- include('../partials/load.ejs') %>
-              <%- include('../partials/header.ejs')%>
+<body>
+  <%- include('../partials/load.ejs') %>
+  <%- include('../partials/header.ejs')%>
 
-                <div class="login">
+  <div class="login">
 
-                    <form action="/user/login" method="POST" class="card modal-content">
-                      <figure class="card__thumbnail">
-                        <img src="/img/logo.png" alt="" class="card__logo">
-                      </figure>
-                      <input class="card__input input--style" type="email" name="email" placeholder="Ingresa tu email" value="<%= locals.old && old.email %>">
-                      <% if (locals.errors && errors.email) { %>
-                        <small class="text-danger"><%= errors.email.msg %> </small>
-                      <% } %>
-                  
-                      <input class="card__input input--style" type="password" name="password" placeholder="Ingresa tu contraseña">
-                      <% if (locals.errors && errors.pass1) { %>
-                        <small class="text-danger"><%= errors.pass1.msg %> </small>
-                      <% } %>
-                      <a href="/undefined" class="card__enlace">
-                        <span class="card__text">¿Olvidé mi contraseña?</span>
-                      </a>
-                      <div style="display: flex;align-items: center;">
-                        <input class="input__check" type="checkbox" name="remember" id="remember">
-                        <label class="check__label" for="remember">Recordarme</label>
-                      </div>
-                      
-                      <% if (locals.errorMsg ) { %>
-                        <small class="text-danger"><%= errorMsg %> </small>
-                      <% } %>
+    <form action="/user/login" method="POST" class="card modal-content" id="loginForm">
+      <figure class="card__thumbnail">
+        <img src="/img/logo.png" alt="" class="card__logo">
+      </figure>
+      <input class="card__input input--style" type="email" id="email" name="email" placeholder="Ingresa tu email"
+        value="<%= locals.old && old.email %>">
+      <% if (locals.errors && errors.email) { %>
+      <small class="text-danger"><%= errors.email.msg %> </small>
+      <% } %>
+      <small class="error-validator" id="errorEmail">
+      </small>
 
-                      <button type="submit" class="button button--positionRegister">
-                        INGRESAR
-                      </button>
-                      <a href="/user/register" class="button button--positionRegister">REGISTRARSE</a>
-                    </form>
-                  
-                  </div>
-                  
-                  </div>
+      <input class="card__input input--style" type="password" id="password" name="password"
+        placeholder="Ingresa tu contraseña">
+      <% if (locals.errors && errors.pass1) { %>
+      <small class="text-danger"><%= errors.pass1.msg %> </small>
+      <% } %>
+      <small class="error-validator" id="errorPassword">
+      </small>
+      <a href="/undefined" class="card__enlace">
+        <span class="card__text">¿Olvidé mi contraseña?</span>
+      </a>
+      <div style="display: flex;align-items: center;">
+        <input class="input__check" type="checkbox" name="remember" id="remember">
+        <label class="check__label" for="remember">Recordarme</label>
+      </div>
 
-                    <%- include('../partials/whatsapp.ejs') %>
-                        <%- include('../partials/footer.ejs') %>
-                            <%- include('../partials/scripts.ejs') %>
+      <% if (locals.errorMsg ) { %>
+      <small class="text-danger"><%= errorMsg %> </small>
+      <% } %>
 
+      <button type="submit" class="button button--positionRegister">
+        INGRESAR
+      </button>
+      <a href="/user/register" class="button button--positionRegister">REGISTRARSE</a>
+      <small class="error-validator" id="errorLoginForm">
+      </small>
+    </form>
 
+  </div>
 
+  </div>
 
-    </body>
+  <%- include('../partials/whatsapp.ejs') %>
+  <%- include('../partials/footer.ejs') %>
+  <%- include('../partials/scripts.ejs') %>
+
+  <script src="/js/login.js"></script>
+
+</body>
 
 </html>

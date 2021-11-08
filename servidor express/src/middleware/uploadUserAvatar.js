@@ -10,10 +10,10 @@ const storage = multer.diskStorage({
     }
 })
 
-const fileFilter = function(req, title, callback){
-    if(!filename.originalname.match(/\.(jpg|jpeg|png|gif$/)){
+const fileFilter = function(req, file, callback){
+    if(!file.originalname.match(/\.(jpg|jpeg|png|gif)$/)){
         req.fileValidationError ="Solo imagenes(.jpg .jpeg .png .gif)"
-        return callback(null,false,req.fileValidationError);
+        return callback(null,false,req.fileValidationError)
     }
     callback(null,true);
 }
