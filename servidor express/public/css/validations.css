@@ -3,7 +3,7 @@ textarea.validationsErrors,
 label.validationsErrors,
 select.validationsErrors
 {
- box-shadow: inset 0 0 15px 1px rgb(243,171,171),0 0 2px red;
+ box-shadow: inset 0 0 5px 1px rgb(243,171,171),0 0 2px red;
  background-color: white !important;
 } 
 
@@ -32,7 +32,7 @@ textarea.validationsSuccess,
 label.validationsSuccess,
 select.validationsSuccess
 {
-    box-shadow: inset 0 0 15px 1px rgb(191, 233, 191),0 0 2px green;
+    box-shadow: inset 0 0 5px 1px rgb(191, 233, 191),0 0 2px green;
     background-color: white !important;
   
 }

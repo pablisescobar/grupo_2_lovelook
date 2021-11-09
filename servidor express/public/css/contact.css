@@ -62,7 +62,8 @@
   padding: 10px;
   border-color: var(--fondo-claro);
   font-size: 1.2rem;
-  resize: none;
+  resize: vertical;
+  margin-bottom: 2px !important
 }
 
 .form-contact-container textarea::placeholder {
