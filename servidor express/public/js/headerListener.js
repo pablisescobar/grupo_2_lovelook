@@ -14,7 +14,7 @@ window.onload = () => {
         }else{
             categoriasDesplegable.style.display = 'none'
         }
-    
+
     });
 
    

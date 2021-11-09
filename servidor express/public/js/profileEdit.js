@@ -1,4 +1,4 @@
-function global(element){
+/* function global(element){
     return document.getElementById(element)
 }
 
@@ -8,5 +8,5 @@ window.addEventListener('load', ()=> {
     email = global('email'),
     phone = global('telefono'),
     address = global(' direccion'),
-    codepostal
-})
+    codepostal = global(cp)
+}) */
