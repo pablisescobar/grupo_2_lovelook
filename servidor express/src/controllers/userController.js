@@ -22,13 +22,13 @@ module.exports = {
         db.User.findByPk(req.session.user.id, {
             include: [{ association: "location" }]
         }).then((user) => {
-            console.log(user)
             res.render('users/perfilUser', {
                 position: "position:relative;",
                 user,
                 session: req.session
             })
         })
+        .catch(err=>console.log(err))
     },
 
     profileEdit: (req, res) => {

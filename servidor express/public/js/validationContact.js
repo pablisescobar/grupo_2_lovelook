@@ -1,6 +1,9 @@
 function qs(id) {
     return document.querySelector(id)
 }
+/* Form */
+let form = qs("#form")
+
 /* Elements form */
 var $inputNombre = qs("input#nombreInput"),
     $inputApellido = qs("input#apellidoInput"),
@@ -140,6 +143,7 @@ window.addEventListener("load", function () {
     /* RRHH */
     /* ------------ */
     if (location.pathname == "/info/contact/rrhh") {
+       
         /* CV */
         document.querySelector("#cvInputView").oninput = function () {
             if ($inputCv.files.length == 0) {
@@ -324,7 +328,7 @@ window.addEventListener("load", function () {
         }
     }
 
-    let form = qs("#form")
+    
 
     function validationError(index, span, elements) {
         span[index].classList.add('validationsErrors');
@@ -340,6 +344,7 @@ window.addEventListener("load", function () {
         elements[index].classList.remove('validationsErrors')
         elements[index].classList.add("validationsSuccess")
     }
+
     form.addEventListener("submit", function (event) {
         let spans = document.querySelectorAll(".error")
         event.preventDefault()
