@@ -13,7 +13,7 @@
       <figure class="card__thumbnail">
         <img src="/img/logo.png" alt="" class="card__logo">
       </figure>
-      <input class="card__input input--style" type="email" id="email" name="email" placeholder="Ingresa tu email"
+      <input class="card__input input--style" type="text" id="email" name="email" placeholder="Ingresa tu email"
         value="<%= locals.old && old.email %>">
       <% if (locals.errors && errors.email) { %>
       <small class="text-danger"><%= errors.email.msg %> </small>
