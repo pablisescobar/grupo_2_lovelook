@@ -1,5 +1,3 @@
-/* Estilos de vista ADMIN */
-
 .admin .button-add {
     width: fit-content;
     margin: 10px auto;
@@ -363,12 +361,6 @@ justify-content: flex-end;
         object-fit: contain;
     }
 
-    .admin input,
-    .admin select,
-    .admin button,
-    .admin .input {
-        /* height: 50px; */
-    }
     .admin .input {
         padding: 0;
         margin: 10px 5px;
@@ -376,9 +368,6 @@ justify-content: flex-end;
 
     .admin button {
         padding: 0;
-    }
-
-    .admin button.delete {
     }
 
     .admin .subir {
@@ -411,7 +400,6 @@ justify-content: flex-end;
     .admin .icons-guie-scroll {
         display: none;
     }
-    /* Estilos de vista ADMIN */
 
     .admin {
         padding: 20px;
@@ -441,7 +429,6 @@ justify-content: flex-end;
         display: flex;
         flex-direction: column;
         align-items: center;
-        /* margin: 50px auto; */
         width: 40%;
     }
 
@@ -464,16 +451,13 @@ justify-content: flex-end;
         font-size: 1rem;
         margin: 10px 5px 10px 0;
     }
-    .admin .input {
-    }
 
     .admin .container-addOption{
     width: 80%;
     align-self: center;
     justify-content: center;
 }
-    .admin .edit {
-    }
+
     .admin .edit:hover {
         transform: scale(1.1);
     }

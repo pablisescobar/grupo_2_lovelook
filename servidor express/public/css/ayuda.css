@@ -54,14 +54,12 @@
     transition: 0.4s;
   }
   
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
   .containerHelp .active, .accordion:hover {
     background-color: pink;
     border-radius: 15px;
     width: fit-content;
   }
   
-  /* Style the accordion panel. Note: hidden by default */
   .containerHelp .panel {
     padding: 0 18px;
     background-color: white;

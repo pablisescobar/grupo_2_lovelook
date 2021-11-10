@@ -41,8 +41,7 @@
     .containerWe {
         font-size: 1.2rem;
     }
-    .containerGeneralWe{
-    }
+
     .we {
         font-size: 2rem;
         padding: 9px;
@@ -57,8 +56,5 @@ font-size: 1.5rem;
     .containerWe {
         padding: 70px;
         font-size: 1rem;
-    }
-    .containerGeneralWe{
-        /* margin: 50% 0; */
     }
 }
