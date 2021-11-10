@@ -25,9 +25,9 @@ router.get('/register',userLog,register);
 router.post('/register',userLog,registerValidation, processRegister)
 
 /* View perfil user */
-router.get('/perfil',userLog, userSessionCheck, perfil);
-router.get('/profile/edit/:id',userLog, userSessionCheck, profileEdit)
-router.put('/profile/edit/:id',userLog,uploadUserAvatar.single('avatar') ,updateProfile)
+router.get('/perfil', userSessionCheck, perfil);
+router.get('/profile/edit/:id', userSessionCheck, profileEdit)
+router.put('/profile/edit/:id',uploadUserAvatar.single('avatar') ,updateProfile)
 
 /* View cart shopping 
 router.get('/cart', cart); */
