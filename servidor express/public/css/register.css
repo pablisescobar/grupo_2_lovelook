@@ -13,6 +13,7 @@
     height: 18px;
     width: 18px;
     bottom: 3px;
+    opacity: 0;
 }
 .register .input-container input {
     height: 30px;
@@ -96,8 +97,8 @@
     }
 
     .register .input-container {
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: flex;
+        flex-direction: column;
     }
     .register .card__thumbnail {
         align-self: start;
@@ -109,11 +110,13 @@
     }
 
     .register .input-container {
+        display: contents;
         padding: 0 10px;
         height: 100px;
     }
     .register .input-container input {
-        width: 49%;
+        width: 60%;
+        margin-bottom: 3px;
     }
 
     .register .conditions {
