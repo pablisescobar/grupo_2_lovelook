@@ -1,7 +1,9 @@
-const db = require('../database/models')
-const bcrypt = require('bcryptjs')
-const { validationResult } = require('express-validator')
-const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+const db = require('../database/models');
+const Op = require('sequelize')
+const bcrypt = require('bcryptjs');
+const { validationResult } = require("express-validator");
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
 
 module.exports = {
   register: (req, res) => {
@@ -150,60 +152,33 @@ module.exports = {
         res.locals.user = req.session.user
 
         res.redirect('/')
-      })
-    } else {
-      res.render('users/login', {
-        position: 'position: relative;',
-        errors: errors.mapped(),
-        old: req.body,
-        session: req.session,
-      })
-    }
-  },
-  processRegister: (req, res) => {
-    let errors = validationResult(req)
-
-    if (errors.isEmpty()) {
-      let { firstName, lastName, email, password } = req.body
-      db.User.create({
-        firstName,
-        lastName,
-        email,
-        password: bcrypt.hashSync(password, 12),
-        rolId: 1,
-        avatar: 'default-image.png',
-      })
-        .then(() => {
-          res.redirect('/user/login')
+    })
+  }
+}
+  ,
+     cart: (req, res) => {
+        db.Product.findAll({
+            where: {
+              discount: {
+                [Op.gte]: 20,
+              },
+            },
+            limit:3,
+            include: [
+              { association: "category" },
+              { association: "images" },
+              { association: "colors" },
+              { association: "season" },
+              { association: "sizes" },
+            ],
+          })
+          .then(products=>{
+              res.render('users/productCart', {
+                  products,
+                  position: "",
+                  toThousand,
+                  session: req.session
+          })
         })
-        .catch((err) => console.log(err))
-    } else {
-      res.render('users/register', {
-        errors: errors.mapped(),
-        old: req.body,
-        session: req.session,
-        position: 'position: relative',
-      })
     }
-  },
-
-  logout: (req, res) => {
-    req.session.destroy()
-    if (req.cookies.userLoveLook) {
-      res.cookie('userLoveLook', '', { maxAge: -1 })
-    }
-
-    res.redirect('/')
-  },
-
-  /* cart: (req, res) => {
-        let productsOffer = getProducts.filter(product => product.discount > 15 ? product : null)
-        res.render('users/productCart', {
-            products: productsOffer,
-            position: "",
-            toThousand,
-            categorias,
-            session: req.session
-        })
-    } */
 }

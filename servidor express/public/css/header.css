@@ -17,7 +17,7 @@
     text-decoration: none;
     font-size: 1.2rem;
     color: black;
-    /* text-shadow: 4px 4px 2px grey; */
+   
     display: block;
     transition: 2s;
     width: fit-content;
@@ -29,11 +29,6 @@ li #categorias_dii {
 }
 
 .navOut{
-    
-/* width: 100%; */
-    
-/* height: 100vh; */
-    
 position: absolute;
     
 top: 0;
@@ -46,7 +41,6 @@ z-index: 1300;
 }
 .sidenav a:hover {
     color: lightblue;
-    /* text-decoration: underline; */
     letter-spacing: 1px;
 }
 
@@ -54,7 +48,7 @@ z-index: 1300;
     position: absolute;
     top: 0;
     right: 25px;
-    font-size: 40px;
+    font-size: 30px;
     margin-left: 50px;
 }
 
@@ -66,8 +60,6 @@ z-index: 1300;
         font-size: 18px;
     }
 }
-
-/* MENU BURGER ANIMADO */
 
 .header .container {
     display: inline-block;
@@ -95,7 +87,6 @@ z-index: 1300;
     -webkit-transform: rotate(-45deg) translate(-9px, 6px);
     transform: rotate(-45deg) translate(-13px, 12px);
     background-color: var(--bordes);
-    /* border: 1px solid black; */
 }
 
 .header .change .bar2 {
@@ -106,7 +97,6 @@ z-index: 1300;
     -webkit-transform: rotate(45deg) translate(-8px, -8px);
     transform: rotate(45deg) translate(-9px, -8px);
     background-color: var(--bordes);
-    /* border: 1px solid black; */
 }
 
 .header .menu-user{
@@ -118,8 +108,27 @@ z-index: 1300;
     grid-area: session;
 }
 
+<<<<<<< HEAD
+.header span.count{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border-color: none;
+    background-color: red;
+    color: white;
+   font-size: .8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: 10px;
+}
+
+
 /* View Mobile of Header */
 
+=======
+>>>>>>> 0de339583e45f8672c8f27c2342a54392a06751a
 .header {
     position: sticky;
     top: 0;
@@ -131,7 +140,6 @@ z-index: 1300;
         "menu     carrito     logo   session lupa"
         "buscador buscador buscador buscador  buscador";
     border-bottom: 8px double var(--bordes_claro);
-    /* margin-bottom: 10px; */
     z-index: 999;
     width: 100%;
     padding: 5px;
@@ -140,7 +148,6 @@ z-index: 1300;
 
 .header .sidenav a:active {
     color: lightblue;
-    /* text-decoration: underline; */
     letter-spacing: 1px;
 }
 
@@ -208,7 +215,6 @@ z-index: 1300;
 .header .navbar-mobile ul .btn .b4::before {
     animation: moveLink 2s infinite alternate;
 }
-/* tamaño general de iconos en view mobile */
 
 .header .logo {
     grid-area: logo;
@@ -239,12 +245,25 @@ z-index: 1300;
 
 .header .carrito {
     grid-area: carrito;
-    display: none;
+    display: flex;
+    position: relative;
 }
 
+.header .products-cart-container{
+    width: 300px;
+    height: fit-content; 
+    background-color: #fff;
+    border:1px solid black;
+    position: absolute;
+    bottom:-40px;
+    z-index: 10000;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: end;
+}
 .header .usuario {
     grid-area: user;
-    font-size: 3.2rem;
+    font-size: 2.5rem;
     cursor: pointer;
     text-align: right;
     margin-right: 27px;
@@ -284,11 +303,19 @@ z-index: 1300;
     z-index: 300;
 }
 
+.header .desplegable{padding: 0 30px;}
+.header .desplegable a{
+    color:gray;
+}
+.header .desplegable .fa-angle-right,.header .fa-angle-down{
+color: lightblue;
+display: inline-block;
+}
+
 .iconLupaBar {
     text-shadow: -10px 0px 4px var(--bordes);
 }
-/* ///////////////////////////////////////////// */
-/* Solo para la barra de búsqueda */
+
 @keyframes searchBar {
     0% {
         width: 20%;
@@ -318,10 +345,7 @@ z-index: 1300;
     font-size: 30px;
 }
 
-/* Mediaquery TABLET */
-
 @media screen and (min-width: 768px) {
-    /* menu burger */
     .header .bar1,
     .header .bar2,
     .header .bar3 {
@@ -340,10 +364,7 @@ z-index: 1300;
         transform: rotate(45deg) translate(-14px, -21px);
     }
 
-    /* fin menu burger */
-
     .header .logo {
-        /* width: 100px; */
         transform: scale(1.8);
         margin: auto;
     }
@@ -371,15 +392,13 @@ z-index: 1300;
     }
 }
 
-/* Mediaquery DESKTOP */
-
 @media screen and (min-width: 1024px) {
     .header {
         width: 100vw;
         height: 110px;
         grid: 1fr 0.5fr / repeat(12, 1fr);
         grid-template-areas:
-            "logo logo buscador buscador buscador buscador buscador buscador buscador carrito session user"
+            "logo logo buscador buscador buscador buscador buscador buscador buscador session carrito user"
             "logo logo menu menu menu menu menu menu menu menu . .";
     }
 
@@ -445,10 +464,7 @@ z-index: 1300;
         opacity: 1 !important;
         transition: none !important;
         height: 56%;
-        /* animation: none; */
     }
-
-    /* Estilos de botones del header */
 
     .header .btn {
         text-align: center;
@@ -505,9 +521,7 @@ z-index: 1300;
         height: fit-content;
         height: -moz-fit-content;
     }
-
-   
-
+    
     .header .menu-user{
         font-size: 0.5rem;
     }

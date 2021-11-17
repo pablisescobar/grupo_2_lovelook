@@ -5,7 +5,7 @@
 
 <body>
   <%- include('../partials/load.ejs') %>
-  <%- include('../partials/header.ejs', {categorias}) %> 
+  <%- include('../partials/header.ejs') %> 
 
     <main class="container-cart">
         <section class="section1">
@@ -44,15 +44,21 @@
         </section>
   
         <section class="buttonsIcons">
-          <span
-            class="iconify iconArrow"
-            data-icon="ion:arrow-undo-outline"
-          ></span>
-          <span class="iconify iconSync" data-icon="ion:sync"></span>
-          <span
-            class="iconify iconHeart"
-            data-icon="ion:heart-dislike-outline"
-          ></span>
+          <a  id="iconArrow">
+            <span
+              class="iconify iconArrow"
+              data-icon="ion:arrow-undo-outline"
+           ></span>
+          </a>
+          <a id="iconSync">
+            <span class="iconify iconSync" data-icon="ion:sync"></span>
+          </a>
+          <a id="iconHeart">
+            <span
+              class="iconify iconHeart"
+              data-icon="ion:heart-dislike-outline"
+            ></span>
+          </a>
           <input class="buy" type="submit" value="PAGAR" />
         </section>
   
@@ -61,7 +67,7 @@
         </div>
   
   
-        <%- include('../partials/slider.ejs') %> 
+       
   
 
         <div>
@@ -71,10 +77,10 @@
 
         <section class="section3">
           <% products.forEach(product=>{ %> 
-          <p><%= product.title%></p>
-          <div class="imgOffer">
-            <a href="/products/detail/<%- product.id %>">
-              <img class="offerImg" src= "/img/photos/<%= product.image %>" alt="">
+            <div class="imgOffer">
+              <a href="/products/detail/<%- product.id %>" class="target-offer">
+                <img class="offerImg" src= "/img/photos/<%= product.images[0].filename %>" alt="">
+                <p><%= product.name%></p>
           </div>
           <% }) %> 
         </section>

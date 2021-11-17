@@ -31,7 +31,7 @@ router.get('/profile/edit/:id', userSessionCheck, profileEdit)
 router.put('/profile/edit/:id',uploadUserAvatar.single('avatar') ,updateProfile)
 router.delete('/perfil/delete/:id',uploadUserAvatar.single('avatar'),deleteProfile)
 
-/* View cart shopping 
-router.get('/cart', cart); */
+ /* View cart shopping  */
+router.get('/cart',userSessionCheck, cart); 
 
 module.exports = router
