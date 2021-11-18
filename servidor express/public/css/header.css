@@ -108,7 +108,6 @@ z-index: 1300;
     grid-area: session;
 }
 
-<<<<<<< HEAD
 .header span.count{
     width: 15px;
     height: 15px;
@@ -127,8 +126,6 @@ z-index: 1300;
 
 /* View Mobile of Header */
 
-=======
->>>>>>> 0de339583e45f8672c8f27c2342a54392a06751a
 .header {
     position: sticky;
     top: 0;
