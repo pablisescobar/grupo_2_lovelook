@@ -107,7 +107,7 @@
     height: 40px;
     font-size: 1rem;
     color: gray;
-    background-color: var(--fondo-claro);
+    background-color: lightpink;
     outline: none;
     padding-left: 10px;
     border: none;
@@ -267,8 +267,6 @@ margin: auto;
     width: 100%;
 }
 
-.admin .del{
-}
 .admin .btn-delete:hover .del{
     color: red;
 }
@@ -282,16 +280,17 @@ margin: auto;
 .admin .btn-delete:hover{
     border-color: red;
     color: red;
-    box-shadow: inset 0 0 29px whitesmoke;
+    box-shadow: inset 0 0 29px rgb(245, 245, 245);
 }
 .admin .formDelete{
     width: 320px;
     margin: 0 auto;
     padding: 40px 0;
-    position: absolute;
+    position: fixed;
     text-align: center;
     left: 0;
     right: 0;
+    bottom: 40%;
     background-color: whitesmoke;
     z-index: 300;
     border: 2px solid black;
@@ -448,7 +447,7 @@ justify-content: flex-end;
     .admin .input {
         height: 30px;
         align-self: center;
-        font-size: 1rem;
+        font-size: 1.5rem;
         margin: 10px 5px 10px 0;
     }
 
@@ -469,6 +468,43 @@ justify-content: flex-end;
         height: 50px;
     }
 
+    .admin .delete h1 {
+        color: black;
+        font-size: 2rem;
+    }
+
+    .admin .inputDelete {
+        color: red; 
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .admin .inputDelete:focus {
+        background-color: rgba(255, 235, 205, 0);
+        border: none;
+        color: red;
+    }
+
+    .admin .inputDelete:hover {
+        color: grey;
+    }
+
+    .admin .formDelete{
+        display: none;
+        background-color:  lightpink;
+        border-radius: 20px;
+        
+    }
+
+    .admin button.delete:focus-within form {
+        display: block;
+    }
+
+    .admin button.delete h3:focus .admin .formDelete{
+        display: none;
+    }
+    .closeButtom{
+        display: none;
+    }
     .admin button.btn-reset {
         font-size: 1rem;
         height: 30px;

@@ -28,7 +28,7 @@
                         
                         <select class="dropdown" name="price" id="price" required title="price">
                             <option selected hidden>Precio</option>
-                            <% product.find(product => { %>
+                            <% category.products.find(product => { %>
                                  <option value="<%- product.price %>"><%- product.price %></option>
                              <% }) %>
                         </select>
@@ -37,21 +37,34 @@
         </section>
         <hr>
         <section class="section2">
-            <% category.forEach(product=>{ %> 
+            <% category.products.forEach(product=>{ %> 
             <article class="product">
                 <a href="/products/detail/<%= product.id %>">
                 <img src= "/img/photos/<%= product.images.length>0? product.images[0].filename:'default.png' %>" alt="">
-                <h3><%= product.name %></h3>
-                <h3>$<%= product.price %></h3>
-                <p><%=product.discount > 0?`${product.discount}% Descuento` : "" %></p>
+                <h3><% if (product.name.length > 12) { %>
+                    <%- `${product.name.slice(0,12)}...` %> 
+                <% }else{ %>
+                    <%= product.name %>
+                 <% } %> </h3>
+                
+                <p class="price">
+                    <%=toThousand(Math.round(product.price - product.price * product.discount /
+                        100))%>
+                </p>
+                <span class="price-line-medio">
+                    <%= product.discount> 0?`$${toThousand(Math.round(product.price))}` : "" %>
+                </span>
+                <p class="discount">
+                    <%=product.discount> 0?`${product.discount} %Off` : "" %>
+                </p>
                 </a>
             </article>
             <% }) %> 
         </section>
     </main>
-
     <%- include('../partials/footer.ejs') %> 
     <%- include('../partials/scripts.ejs') %> 
+    
 
 </body>
 

@@ -8,7 +8,7 @@
     
     <main class="container-listProduct">
         <section class="section1" style=<%= display %>>
-            <button> <span class="iconify iconFilter" data-icon="mi:filter" data-inline="false"></span></button>
+             <span class="iconify iconFilter" data-icon="mi:filter" data-inline="false"><button></button></span>
             <form class="nav-bar">
                 <input class="filted" type="submit" value="FILTRAR">
                 
@@ -35,14 +35,18 @@
             
             </form>
         </section>
-        
         <hr>
         <section class="section2">
             <% products.forEach(product=>{ %> 
             <article class="product">
                 <a href="/products/detail/<%= product.id %>">
                 <img src= "/img/photos/<%= product.images.length>0? product.images[0].filename:'default.png' %>" alt="">
-                <h3><%= product.name %></h3>
+                <h3><% if (product.name.length > 12) { %>
+                    <%- `${product.name.slice(0,12)}...` %> 
+                <% }else{ %>
+                    <%= product.name %>
+                 <% } %> </h3>
+                
                 <p class="price">
                     <%=toThousand(Math.round(product.price - product.price * product.discount /
                         100))%>
