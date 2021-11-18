@@ -15,16 +15,15 @@
       </figure>
       <input class="card__input input--style" type="text" id="email" name="email" placeholder="Ingresa tu email"
         value="<%= locals.old && old.email %>">
-      <% if (locals.errors && errors.email) { %>
-      <small class="text-danger"><%= errors.email.msg %> </small>
-      <% } %>
+      
       <small class="error-validator" id="errorEmail">
+        <%= (locals.errors && errors.email) ? errors.email.msg : "" %>
       </small>
 
       <input class="card__input input--style" type="password" id="password" name="password"
         placeholder="Ingresa tu contraseña">
-      <% if (locals.errors && errors.pass1) { %>
-      <small class="text-danger"><%= errors.pass1.msg %> </small>
+      <% if (locals.errors && errors.password) { %>
+      <small class="text-danger"><%= errors.password.msg %> </small>
       <% } %>
       <small class="error-validator" id="errorPassword">
       </small>
@@ -37,7 +36,7 @@
       </div>
 
       <% if (locals.errorMsg ) { %>
-      <small class="text-danger"><%= errorMsg %> </small>
+      <small class="text-danger"><%= locals.errorMsg %> </small>
       <% } %>
 
       <button type="submit" class="button button--positionRegister">

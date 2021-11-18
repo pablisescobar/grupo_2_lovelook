@@ -101,15 +101,15 @@ module.exports = {
                                         { association: "sizes" },
                                     ]
                                 })
-                                    .then(product => {
+                                    .then(products => {
                                         res.render('products/productCategory', {
-                                            category: category.products,
+                                            category,
                                             display: "display:grid;",
                                             position: "",
                                             colors,
                                             toThousand,
                                             sizes,
-                                            product,
+                                            products,
                                             session: req.session
                                         })
                                     })

@@ -8,6 +8,7 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 module.exports = {
   index: (req, res) => {
     db.Product.findAll({
+      limit: 6,
       where: {
         discount: {
           [Op.gte]: 15,

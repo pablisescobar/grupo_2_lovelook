@@ -46,6 +46,7 @@
     font-size: 100%;
     margin: 2px;
     margin: auto;
+    border-top: 2px solid lightpink;
 }
 
 .card-text {

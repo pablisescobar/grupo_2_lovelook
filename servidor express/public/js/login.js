@@ -54,30 +54,7 @@ function ge(element) {
                 break;
         }
     })
-    password.addEventListener('blur', function () {
-        switch (true) {
-            case !password.value.trim(): 
-                addBorderRed(password)
-                errorPassword.innerText = "La contraseña es obligatoria"
-                break;
-            default:
-                addBorderGreen(password)
-                errorPassword.innerText = ""
-                break;
-        }
-    })
-    password.addEventListener('keydown', function () {
-        switch (true) {
-            case !password.value.trim(): 
-                addBorderRed(password)
-                errorPassword.innerText = "La contraseña es obligatoria"
-                break;
-            default:
-                addBorderGreen(password)
-                errorPassword.innerText = ""
-                break;
-        }
-    })
+    
     loginForm.addEventListener('submit', (event) => {
         let error = false;
         event.preventDefault()

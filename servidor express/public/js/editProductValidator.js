@@ -31,8 +31,8 @@ function ge(element) {
       errorStock = ge("errorStock"),
       fileUpload = ge("file-upload"),
       errorFileUpload = ge("errorFileUpload"),
-      formEdit = ge("productForm"),
-      submitErrors = ge('errorProductForm'),
+      formEdit = ge("editProductForm"),
+      submitErrors = ge('errorEditProductForm'),
       regExAlpha = /^[a-zA-Z\sñáéíóúü ]{5,20}$/,
       regExDescrip = /^[a-zA-Z\sñáéíóúü ]{20,500}$/,
       regExNum = /^[0-9]{7,8}$/;
@@ -163,10 +163,11 @@ function ge(element) {
         }
       }
     });
+
     formEdit.addEventListener('submit',function(event){
       let error = false;
       event.preventDefault()
-      let elementosForm = this.elements
+      let elementosForm = formEdit.elements
       
       for (let index = 0; index < elementosForm.length-1; index++) {
           if(elementosForm[index].value == "" && elementosForm[index].name !== "archivo" || elementosForm[index].style.boxShadow == '0 0 10px red'){
