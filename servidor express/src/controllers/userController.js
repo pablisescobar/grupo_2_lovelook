@@ -1,7 +1,9 @@
 const db = require('../database/models');
+const Op = require('sequelize')
 const bcrypt = require('bcryptjs');
 const { validationResult } = require("express-validator");
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
 
 module.exports = {
     register: (req, res) => {
@@ -84,7 +86,6 @@ module.exports = {
 
     processLogin: (req, res) => {
         let errors = validationResult(req)
-
         if (errors.isEmpty()) {
             db.User.findOne({
                 where: {
@@ -149,15 +150,29 @@ module.exports = {
 
         res.redirect('/')
     },
-
-    /* cart: (req, res) => {
-        let productsOffer = getProducts.filter(product => product.discount > 15 ? product : null)
-        res.render('users/productCart', {
-            products: productsOffer,
-            position: "",
-            toThousand,
-            categorias,
-            session: req.session
+     cart: (req, res) => {
+        db.Product.findAll({
+            where: {
+              discount: {
+                [Op.gte]: 20,
+              },
+            },
+            limit:3,
+            include: [
+              { association: "category" },
+              { association: "images" },
+              { association: "colors" },
+              { association: "season" },
+              { association: "sizes" },
+            ],
+          })
+          .then(products=>{
+              res.render('users/productCart', {
+                  products,
+                  position: "",
+                  toThousand,
+                  session: req.session
+          })
         })
-    } */
+    }
 }

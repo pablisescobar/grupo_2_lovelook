@@ -15,8 +15,9 @@
 .sidenav a {
     padding: 8px 8px 8px 15px;
     text-decoration: none;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     color: black;
+   
     display: block;
     transition: 2s;
     width: fit-content;
@@ -42,7 +43,7 @@ z-index: 1300;
     position: absolute;
     top: 0;
     right: 25px;
-    font-size: 40px;
+    font-size: 30px;
     margin-left: 50px;
 }
 
@@ -102,6 +103,27 @@ z-index: 1300;
     grid-area: session;
 }
 
+<<<<<<< HEAD
+.header span.count{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border-color: none;
+    background-color: red;
+    color: white;
+   font-size: .8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: 10px;
+}
+
+
+/* View Mobile of Header */
+
+=======
+>>>>>>> 0de339583e45f8672c8f27c2342a54392a06751a
 .header {
     position: sticky;
     top: 0;
@@ -218,12 +240,25 @@ z-index: 1300;
 
 .header .carrito {
     grid-area: carrito;
-    display: none;
+    display: flex;
+    position: relative;
 }
 
+.header .products-cart-container{
+    width: 300px;
+    height: fit-content; 
+    background-color: #fff;
+    border:1px solid black;
+    position: absolute;
+    bottom:-40px;
+    z-index: 10000;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: end;
+}
 .header .usuario {
     grid-area: user;
-    font-size: 3.2rem;
+    font-size: 2.5rem;
     cursor: pointer;
     text-align: right;
     margin-right: 27px;
@@ -261,6 +296,15 @@ z-index: 1300;
     box-shadow: -10px 0px 4px var(--bordes);
     background-color: white;
     z-index: 300;
+}
+
+.header .desplegable{padding: 0 30px;}
+.header .desplegable a{
+    color:gray;
+}
+.header .desplegable .fa-angle-right,.header .fa-angle-down{
+color: lightblue;
+display: inline-block;
 }
 
 .iconLupaBar {
@@ -349,7 +393,7 @@ z-index: 1300;
         height: 110px;
         grid: 1fr 0.5fr / repeat(12, 1fr);
         grid-template-areas:
-            "logo logo buscador buscador buscador buscador buscador buscador buscador carrito session user"
+            "logo logo buscador buscador buscador buscador buscador buscador buscador session carrito user"
             "logo logo menu menu menu menu menu menu menu menu . .";
     }
 

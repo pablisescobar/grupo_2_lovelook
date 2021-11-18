@@ -27,9 +27,9 @@ router.post('/register',userLog,registerValidation, processRegister)
 /* View perfil user */
 router.get('/perfil', userSessionCheck, perfil);
 router.get('/profile/edit/:id', userSessionCheck, profileEdit)
-router.put('/profile/edit/:id',uploadUserAvatar.single('avatar') ,updateProfile)
+router.put('/profile/edit/:id',userSessionCheck,uploadUserAvatar.single('avatar') ,updateProfile)
 
-/* View cart shopping 
-router.get('/cart', cart); */
+ /* View cart shopping  */
+router.get('/cart',userSessionCheck, cart); 
 
 module.exports = router

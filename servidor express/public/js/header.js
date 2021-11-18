@@ -12,6 +12,10 @@ function openNav() {
   searchIco.style.filter = "drop-shadow(4px 4px 2px red);"
   document.getElementById("nav").style.width="100%"
   document.getElementById("nav").style.height="100vh"
+  setTimeout(() => {
+    document.getElementById("fa-angle-down").style.display = 'inline'
+  }, 1000);
+
 }
 /* CERRAMOS EL MENU LATERAL Y AL ABRIR LA BARRA DE BÚSQUEDA TAMBIÉN SE CIERRA */
 function closeNav() {
@@ -23,6 +27,10 @@ function closeNav() {
   searchIco.style.filter = "drop-shadow(4px 4px 2px red);"
   document.getElementById("nav").style.width="0"
   document.getElementById("nav").style.height="0"
+  document.getElementById("category_m").style.display = 'none'
+  document.getElementById("fa-angle-down").style.display = 'none'
+
+  
 }
 
 /* window.onclick = function (event) {
@@ -40,6 +48,8 @@ nav.onclick = function () {
     document.getElementById("mySidenav").style.opacity = "0.5";
     document.getElementById("nav").style.width="0"
     document.getElementById("nav").style.height="0"
+    document.getElementById("category_m").style.display = 'none'
+    document.getElementById("fa-angle-down").style.display = 'none'
   }
 
 /* BAR SEARCH */
