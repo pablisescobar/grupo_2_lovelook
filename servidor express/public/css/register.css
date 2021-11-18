@@ -32,6 +32,7 @@
 .check__label {
     padding-left: 1.3em;
     position: relative;
+    color: black;
 }
 
 .check__label:before {

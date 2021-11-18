@@ -211,7 +211,7 @@ select#price.dropdown {
         font-size: 0.8rem;
         line-height: 150%;
         color: green;
-        animation: acercarAlejar 2s alternate infinite;
+        /* animation: acercarAlejar 2s alternate infinite; */
     }
 }
 

@@ -11,6 +11,7 @@
         </div>
 
     </a>
+    <%- include('darkMode.ejs')%>
 
     <div id="nav" class="navOut"></div>
 
@@ -30,7 +31,7 @@
                     <ul>
                         <li class="btn"><a href="/">Inicio</a></li>
                         <li id="categorias_id" class="btn">
-                            <a id="categorias_dii">Categorías <i class="fas fa-angle-down" id="fa-angle-down"></i></a>
+                            <a id="categorias_dii">Categorías<i class="fas fa-angle-down" id="fa-angle-down"></i></a>
                             <div id="category_m" style="display: none;" class="menu_desplegable">
                                 <div class="desplegable">
                                     <% locals.categories.forEach(category=> { %>
@@ -100,7 +101,7 @@
                                 <li class="btn"><a href="/">Inicio</a></li>
                                 <li id="categoriasDesplegable" class="btn">
                                     <a>Categorías</a>
-                                    <div class="menu_desplegable" id="categoriasDesplegableView">
+                                    <div class="menu_desplegable" id="categoriasDesplegableView" style="display: none;">
                                         <div class="desplegable">
                                             <% locals.categories.forEach(category=> { %>
                                                 <a href="/products/<%= category.name %>"><span>
