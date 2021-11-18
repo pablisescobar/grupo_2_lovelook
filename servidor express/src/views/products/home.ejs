@@ -1,73 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
+  <%- include('../partials/head.ejs') %>
 
-<%- include('../partials/head.ejs') %>
+  <body class="container-body">
+    <%- include('../partials/load.ejs') %> <%- include('../partials/header.ejs')
+    %>
 
-    <body class="container-body">
+    <main class="home-inicio">
+      <!-- CAROUSEL -->
+      <%- include('../partials/carousel.ejs') %>
 
+      <!-- END CAROUSEL -->
 
-        <%- include('../partials/load.ejs') %>
-        <%- include('../partials/header.ejs') %>
+      <h1><%= title %></h1>
 
+      <%- include ('../partials/slider.ejs') %>
 
-            <main class="home-inicio">
-                <!-- CAROUSEL -->
-                <%- include('../partials/carousel.ejs') %>
+      <!--Imagenes-->
 
-                    <!-- END CAROUSEL -->
+      <div class="container-fluid">
+        <div class="cajaPrincipal">
+          <a href="/products" class="imagen1">
+            <img src="/img/photos/bubble.jpg" alt="" />
+            <h2>25% DE DESCUENTO EN PRODUCTOS SELECCIONADOS</h2>
+          </a>
+          <a href="/products" class="imagen1">
+            <img src="/img/photos/stitch3.jpg" alt="" />
+            <h2>REMERONES</h2>
+          </a>
+        </div>
+      </div>
 
-                    <h1>
-                        <%= title %>
-                    </h1>
+      <!--Final de imagenes-->
 
-                    <%- include ('../partials/slider.ejs') %>
-
-
-                        <!--Imagenes-->
-
-                        <div class="container-fluid">
-                            <div class="cajaPrincipal">
-                                <a href="/products" class="imagen1">
-                                    <img src="/img/photos/bubble.jpg" alt="">
-                                    <h2>25% DE DESCUENTO EN PRODUCTOS SELECCIONADOS</h2>
-                                </a>
-                                <a href="/products" class="imagen1">
-                                    <img src="/img/photos/stitch3.jpg" alt="">
-                                    <h2>REMERONES</h2>
-                                </a>
-                            </div>
-                        </div>
-
-                        <!--Final de imagenes-->
-
-                        <!--Comienzo de videos-->
-                        <div class="container">
-                            <div class="cajavideo">
-                                <div class=" video1">
-                                    <a href="/products"><video src="/img/video1.mp4" autoplay muted loop></video></a>
-                                    <h2>REMERAS</h2>
-                                </div>
-                                <div class=" video1">
-                                    <a href="/products"><video src="/img/video2.mp4" autoplay muted loop></video></a>
-                                    <h2>BUZOS</h2>
-                                </div>
-                            </div>
-                        </div>
-
-            </main>
-            <!--Final de videos-->
-            <%- include('../partials/whatsapp.ejs') %>
-
-                <%- include('../partials/footer.ejs') %>
-
-
-                
-
-
-                    <%- include('../partials/scripts.ejs') %>
-
-
-                    <script src="js/headerListener.js"></script>
-    </body>
-
+      <!--Comienzo de videos-->
+      <div class="container">
+        <div class="cajavideo">
+          <div class="video1">
+            <a href="/products"
+              ><video src="/img/video1.mp4" autoplay muted loop></video
+            ></a>
+            <h2>REMERAS</h2>
+          </div>
+          <div class="video1">
+            <a href="/products"
+              ><video src="/img/video2.mp4" autoplay muted loop></video
+            ></a>
+            <h2>BUZOS</h2>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!--Final de videos-->
+    <%- include('../partials/whatsapp.ejs') %> <%-
+    include('../partials/footer.ejs') %> <%- include('../partials/scripts.ejs')
+    %>
+  </body>
 </html>

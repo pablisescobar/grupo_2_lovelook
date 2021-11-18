@@ -79,7 +79,7 @@
     margin: 10px auto;
 }
 small {
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
 }
 @media screen and (min-width: 768px) {
@@ -110,6 +110,7 @@ small {
     width: 396px;
     height: 41px;
     font-size: 1.5rem;
+    background: white;
     }
 
     .perfil-user .label-perfil-user {

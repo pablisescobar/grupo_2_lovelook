@@ -5,8 +5,8 @@
   z-index: 1500;
   top: 0;
   left: 0;
+  overflow: auto;
   background-color: snow;
-  overflow-x: hidden;
   transition: width 1s ease, opacity 3s ease;
   padding-top: 60px;
   box-shadow: inset -10px 5px 30px var(--bordes);
