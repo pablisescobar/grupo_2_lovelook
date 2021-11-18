@@ -30,6 +30,8 @@
 .perfil-user .container {
     width: fit-content;
     margin: 5px auto;
+    position: relative;
+    margin-bottom: 20px;
 }
 
 .perfil-user .image-container {
@@ -63,6 +65,23 @@
     margin: 10px auto;
 }
 
+.btn_btn-submit {
+    border: 1px solid var(--bordes);
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #fd415a;
+    text-align: center;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+small {
+    position: absolute;
+    bottom: 0;
+}
 @media screen and (min-width: 768px) {
     
     .perfil-user .input-perfil-user {

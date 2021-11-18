@@ -14,7 +14,7 @@ window.addEventListener("load", () => {
         }else{
             categoriasDesplegable.style.display = 'none'
         }
-    
+
     });
 
    

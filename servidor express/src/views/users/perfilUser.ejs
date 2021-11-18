@@ -11,8 +11,7 @@
 
 
                 <div class="image-container">
-                    <label class="label-perfil-user img-label" for="examinar"><span class="iconify"
-                            data-icon="carbon:add-filled" style="display: none;"></span></label>
+                    <label class="label-perfil-user img-label" for="examinar"><span class="iconify" data-icon="carbon:add-filled"></span></label>
                     <input class="input-perfil-user" type="file" name="avatar" id="examinar" hidden>
                     
                     <img class="image-view" src="/img/user/userAvatars/<%= user.avatar %>" alt="">
@@ -20,47 +19,53 @@
 
                 <div class="container">
                     <label class="label-perfil-user" for="nombre">Nombre: </label>
-                    <input class="input--style input-perfil-user" type="text" name="nombre" id="nombre" value="<%= user.firstName %>">
+                    <input class="input--style input-perfil-user" type="text" name="nombre" id="nombre" value="<%= user.firstName %>" disabled>
                 </div>
 
                 <div class="container">
                     <label class="label-perfil-user" for="apellido">Apellido: </label>
-                    <input class="input--style input-perfil-user" type="text" name="apellido" id="apellido" value="<%= user.lastName %>">
+                    <input class="input--style input-perfil-user" type="text" name="apellido" id="apellido" value="<%= user.lastName %>" disabled>
                 </div>
 
                 <div class="container">
                     <label class="label-perfil-user" for="email">Email: </label>
-                    <input class="input--style input-perfil-user" type="email" name="email" id="email" value="<%= user.email %>">
+                    <input class="input--style input-perfil-user" type="email" name="email" id="email" value="<%= user.email %>"disabled>
                 </div>
                 
                 <div class="container">
                     <label class="label-perfil-user" for="telefono">Teléfono: </label>
-                    <input class="input--style input-perfil-user" type="tel" name="telefono" id="telefono" value="<%= user.phone ? user.phone : "------" %>">
+                    <input class="input--style input-perfil-user" type="tel" name="telefono" id="telefono" value="<%= user.phone ? user.phone : "------" %>" disabled>
                 </div>
                  
                     <div class="container">
                         <label class="label-perfil-user" for="direccion">Dirección: </label>
-                        <input class=" input--style input-perfil-user" type="text" name="direccion" id="direccion" value="<%= user.location != null && user.location.address ? user.location.address : "------" %>">
+                        <input class=" input--style input-perfil-user" type="text" name="direccion" id="direccion" value="<%= user.location != null && user.location.address ? user.location.address : "------" %>"disabled>
                     </div>
                     
                     <div class="container">
                         <label class="label-perfil-user" for="city">Ciudad: </label>
-                        <input class=" input--style input-perfil-user" type="text" name="city" id="city" value="<%= user.location != null && user.location.city ? user.location.city : "------" %>">
+                        <input class=" input--style input-perfil-user" type="text" name="city" id="city" value="<%= user.location != null && user.location.city ? user.location.city : "------" %>"disabled>
                     </div>
                     
                 <div class="container">
                     <label class="label-perfil-user" for="cp">Codigo Postal: </label>
-                    <input class=" input--style input-perfil-user" type="number" name="cp" id="cp" value="<%= user.location != null && user.location.pc ? user.location.pc : "------" %>">
+                    <input class=" input--style input-perfil-user" type="number" name="cp" id="cp" value="<%= user.location != null && user.location.pc ? user.location.pc : "------" %>"disabled>
                 </div>
             
                 <div class="container">
                     <label class="label-perfil-user" for="province">Provincia: </label>
-                    <input class=" input--style input-perfil-user" type="text" name="province" id="province" value="<%= user.location != null && user.location.province ? user.location.province : "------" %>">
+                    <input class=" input--style input-perfil-user" type="text" name="province" id="province" value="<%= user.location != null && user.location.province ? user.location.province : "------" %>"disabled>
                 </div>
                 <a href="/user/profile/edit/<%= user.id %>" class="changesButton">EDITAR DATOS</a>
-
+                <div>
+                    <label for="bad-btn-submit" class="btn_btn-submit">Eliminar perfil</label>
+                </div>
+                
             </form>
-
+            
+            <form id="formDelete" action="/user/perfil/delete/<%= user.id%>?_method=DELETE" method="POST">
+            <button id="bad-btn-submit" style="display:none" type="submit"></button>
+        </form>    
             <%- include('../partials/footer.ejs') %>
     </body>
 

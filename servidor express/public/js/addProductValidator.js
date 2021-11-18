@@ -35,10 +35,16 @@ window.addEventListener("load", function () {
     submitErrors = ge('errorAddProductForm'),
     seasonInsert = ge("seasonInsert"),
     errorSeasonInsert = ge("insertSeason"),
+    formAddSeason = ge("formAddSeason"),
+    errorFormSeasonInsert = ge("errorSeasonInsert"),
     categoryInsert = ge("categoryInsert"),
     errorCategoryInsert = ge("insertCategory"),
+    formAddCategory = ge("formAddCategory"),
+    errorFormCategoryInsert = ge("errorCategoryInsert"),
     colorInsert = ge("colorInsert"),
     errorColorInsert = ge("insertColor"),
+    formAddColor = ge("formAddColor"),
+    errorFormColorInsert = ge("errorcolorInsert"),
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]{5,20}$/,
     regExDescrip = /^[a-zA-Z\sñáéíóúü ]{20,500}$/,
     regExNum = /^[0-9]{7,8}$/;
@@ -169,6 +175,7 @@ window.addEventListener("load", function () {
       }
     }
   })
+
   formAdd.addEventListener('submit',function(event){
     let error = false;
     event.preventDefault()
@@ -190,7 +197,7 @@ window.addEventListener("load", function () {
         form.submit()
     }
 
-})
+});
 
   seasonInsert.addEventListener("blur", function () {
     switch (true) {
@@ -204,10 +211,28 @@ window.addEventListener("load", function () {
         break;
     }
   });
+
+  formAddSeason.addEventListener('submit',function(event){
+    let error = false;
+    event.preventDefault()
+     
+        if(seasonInsert.value == ""){
+            addBorderRed(seasonInsert);
+            errorFormSeasonInsert.innerHTML = "Ingrese una temporada";
+            error = true;
+        }
+
+    if(!error){
+        console.log('Todo bien');
+        formAddSeason.submit()
+    }
+
+});
+
   categoryInsert.addEventListener("blur", function () {
     switch (true) {
       case !categoryInsert.value.trim():
-        errorCategoryInsert.innerHTML = "Ingrese una categoría";
+        errorFormCategoryInsert.innerHTML = "Ingrese una categoría";
         addBorderRed(categoryInsert);
         break;
       default:
@@ -216,10 +241,28 @@ window.addEventListener("load", function () {
         break;
     }
   });
+
+  formAddCategory.addEventListener('submit',function(event){
+    let error = false;
+    event.preventDefault()
+    
+   if(categoryInsert.value == ""){
+            addBorderRed(categoryInsert);
+            errorFormCategoryInsert.innerHTML = "Ingrese una temporada";
+            error = true;
+        }
+
+    if(!error){
+        console.log('Todo bien');
+        formAddCategory.submit()
+    }
+
+});
+
   colorInsert.addEventListener("blur", function () {
     switch (true) {
       case !colorInsert.value.trim():
-        errorColorInsert.innerHTML = "Ingrese un color";
+        errorFormColorInsert.innerHTML = "Ingrese un color";
         addBorderRed(colorInsert);
         break;
       default:
@@ -228,5 +271,22 @@ window.addEventListener("load", function () {
         break;
     }
   });
+
+  formAddColor.addEventListener('submit',function(event){
+    let error = false;
+    event.preventDefault()
+    
+    if(colorInsert.value == ""){
+      addBorderRed(colorInsert);
+      errorFormColorInsert.innerHTML = "Ingrese una temporada";
+      error = true;
+  }
+
+    if(!error){
+        console.log('Todo bien');
+        formAddColor.submit()
+    }
+
+})
 
 });

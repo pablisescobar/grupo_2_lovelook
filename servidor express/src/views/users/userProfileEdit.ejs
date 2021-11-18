@@ -11,36 +11,42 @@
                 <input class="input-perfil-user" type="file" name="avatar" id="examinar" hidden/>
                 <img class="image-view" src="/img/user/userAvatars/<%= user.avatar %>" alt="">
             </div>
-
+            
             <div class="container">
                 <label class="label-perfil-user" for="nombre">Nombre: </label>
-                <input class="input--style input-perfil-user" type="text" name="name" id="nombre" value="<%= user.name %>"/>
+                <input class="input--style input-perfil-user" type="text" name="name" id="nombre" value="<%=user.firstName%>"/>
+                <small id="errorNombre" class="text-danger"></small>
             </div>
 
             <div class="container">
                 <label class="label-perfil-user" for="apellido">Apellido: </label>
-                <input class="input--style input-perfil-user" type="text" name="last_name" id="apellido" value="<%= user.last_name %>"/>
+                <input class="input--style input-perfil-user" type="text" name="last_name" id="apellido" value="<%= user.lastName %>"/>
             </div>
+            <small id="errorApellido" class="text-danger"></small>
 
              <div class="container">
                 <label class="label-perfil-user" for="email">Email: </label>
                 <input class="input--style input-perfil-user" type="email" name="email" id="email" value="<%= user.email %>"/>
             </div>
-            
+            <small id="errorEmail" class="text-danger"></small>
+
             <div class="container">
                 <label class="label-perfil-user" for="telefono">Teléfono: </label>
-                <input class="input--style input-perfil-user" type="tel" name="tel" id="telefono" value="<%= user.phone ? user.phone : "------" %>">
+                <input class="input--style input-perfil-user" type="tel" name="phone" id="telefono" value="<%= user.phone ? user.phone : "------" %>">
             </div>
-            
+            <small id="errorTelefono" class="text-danger"></small>
+
             <div class="container">
                 <label class="label-perfil-user" for="direccion">Dirección: </label>
                 <input class=" input--style input-perfil-user" type="text" name="address" id="direccion" value="<%= user.location ? user.location[0]?.address : "------" %>">
             </div>
+            <small id="errorDireccion" class="text-danger"></small>
             
             <div class="container">
                 <label class="label-perfil-user" for="cp">Codigo Postal: </label>
                 <input class=" input--style input-perfil-user" type="number" name="pc" id="cp" value="<%= user.location ? user.location[0]?.pc : "------" %>">
             </div>
+            <small id="errorCp" class="text-danger"></small>
 
             <div class="container">
                 <label class="label-perfil-user" for="city">City: </label>
@@ -53,8 +59,8 @@
             </div>
             <button class="changesButton" type="submit">GUARDAR CAMBIOS</button>
         </form>
-
-    <%- include('../partials/footer')%>
-
+        
+        <%- include('../partials/footer')%>
+        <script src="/js/profileEditValidation.js"></script>
   </body>
 </html>

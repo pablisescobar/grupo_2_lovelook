@@ -8,7 +8,8 @@ let {perfil,
      logout,
      profileEdit,
      updateProfile, 
-     processRegister } = require('../controllers/userController.js');
+     processRegister, 
+     deleteProfile} = require('../controllers/userController.js');
 const loginValidator = require('../validations/loginValidator');
 const userLog = require('../middleware/userLog');
 const registerValidation = require('../validations/registerValidation');
@@ -27,7 +28,8 @@ router.post('/register',userLog,registerValidation, processRegister)
 /* View perfil user */
 router.get('/perfil', userSessionCheck, perfil);
 router.get('/profile/edit/:id', userSessionCheck, profileEdit)
-router.put('/profile/edit/:id',userSessionCheck,uploadUserAvatar.single('avatar') ,updateProfile)
+router.put('/profile/edit/:id',uploadUserAvatar.single('avatar') ,updateProfile)
+router.delete('/perfil/delete/:id',uploadUserAvatar.single('avatar'),deleteProfile)
 
  /* View cart shopping  */
 router.get('/cart',userSessionCheck, cart); 
