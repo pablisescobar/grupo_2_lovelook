@@ -124,8 +124,6 @@
                 <small class="error-validator" id="errorPrice">
                 </small>
 
-
-
                 <!-- SELECT DE COLOR -->
                 <div class="container-inserts">
                     <select name="color" id="color" title="color" class="form-control fa"
@@ -148,7 +146,6 @@
                 <small class="error-validator" id="errorColor">
                 </small>
 
-
                 <!-- SELECT DE TALLE -->
                 <select name="size" id="size" title="Talle">
                     <option value="" hidden selected>Talle</option>
@@ -166,8 +163,6 @@
                 <small class="error-validator" id="errorSize">
                 </small>
 
-
-
                 <!-- INPUT STOCK/CANTIDAD -->
                 <input type="number" name="amount" id="stock" placeholder="Cantidad" title="Stock"
                     value="<%= locals.old && old.amount %>">
@@ -178,9 +173,6 @@
                 <% } %>
                 <small class="error-validator" id="errorStock">
                 </small>
-
-
-
                 <div class="input">
                     <label for="file-upload" class="btn btn-success"><i class="fas fa-cloud-upload-alt"></i>
                         Subir imágenes
@@ -188,8 +180,6 @@
 
                     <div id="info" style="margin: 3px;">
                     </div>
-
-
                     <input name="image" id="file-upload" onchange='cambiar()' type="file" style='display: none;'
                         multiple>
                     <% if(locals.errors && errors.image){ %>
@@ -200,21 +190,19 @@
                     <small class="error-validator" id="errorFileUpload">
                     </small>
                 </div>
-                <div class="button-container">
 
+                <div class="button-container">
                     <button type="reset" class="btn btn-danger"><span class="iconify" data-icon="whh:broom"></span></button>
                     <button type="submit" class="btn btn-success"><span class="iconify"
                             data-icon="fluent:add-12-filled"></span></button>
                 </div>
 
-
-
                 <a href="/admin/products" class="btn btn-secondary mt-4 w-100"><span class="iconify f-2"
                         data-icon="bi:arrow-left-square"></span></a>
                 <small class="error-validator" id="errorAddProductForm">
                 </small>
+                
             </form>
-
             <div class="form-secondary">
                 <form action="/admin/products/addSeason" method="post" id="formAddSeason">
                     <div class="container-addOption">
@@ -279,5 +267,4 @@
     </main>
     <script src="/js/addProductValidator.js"></script>
 </body>
-
 </html>

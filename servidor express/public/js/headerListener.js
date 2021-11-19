@@ -1,4 +1,4 @@
-window.onload = () => {
+window.addEventListener("load", () => {
     document.getElementById("categoriasDesplegable").addEventListener("mouseover", event => {
         document.getElementById("categoriasDesplegableView").style.display = 'flex' //elemento a mostrar
     });
@@ -18,4 +18,4 @@ window.onload = () => {
     });
 
    
-}
+})

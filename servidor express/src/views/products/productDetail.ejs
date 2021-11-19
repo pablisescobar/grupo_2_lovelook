@@ -13,17 +13,15 @@
                             <!-- Imagenes del producto -->
 
                             <div class="imgs row">
-                                <% if (product.images.length > 0) { %>
-                                    <% product.images.forEach(img=> { %>
-                                    <div class="column">
-                                        <img src="/img/photos/<%= img.filename ? img.filename : 'default.png' %>" alt="Nature" style="width:100%" onclick="myFunction(this);">
-                                    </div>
-                                    <% });%>
-                                <% } else{ %>
-                                    <div class="column">
-                                        <img src="/img/photos/default.png" alt="Nature" style="width:100%" onclick="myFunction(this);">
-                                    </div>
-                                <% } %> 
+                                <% if (product.images.length> 0) { %>
+                                    <% product.images.forEach((img,index)=> { %>
+    
+                                        <figure class="zoom" onmousemove="zoom(event)" onmouseover="transform(this)" onmouseout="destransform(this)" style="background-image: url('/img/photos/<%=img.filename?img.filename:`default.png`%>')">
+                                            <img src="/img/photos/<%= img.filename ? img.filename : 'default.png' %>" />
+                                        </figure>
+    
+                                        <% });%>
+                                            <% } %>
                             </div>
                             <div class="description-general-container">
                                 <div class="containerImage">
@@ -68,8 +66,8 @@
                                         </option>
 
                                     </select>
-                                    <div class="btn-add">
-                                        <input type="submit" value="Agregar al carrito">
+                                    <div>
+                                        <button type="submit" class="boton cuatro"><span>Agregar al carrito</span></button>
                                     </div>
                                     <h4 class="subtitle-guie-size"><a id="link-guie-task" >Guiá de talles</a></h4>
                                     
@@ -88,7 +86,7 @@
                                         <p>Envío GBA y Resto del país $550</p>
                                         <p>Envío CABA y Alrededores $490</p>
                                         <p>Retiro en Sucursal Andreani $290</p>
-                                        <h6>¿CUÁL ES EL TIEMPO DE ENTREGA?</h6>
+                                        <h4>¿CUÁL ES EL TIEMPO DE ENTREGA?</h6>
                                         <p>Envíos a Sucursal o Domicilio (CABA Y GBA): Entrega entre 3 a 6 días hábiles.</p>
                                         <p>Envíos a Sucursal o Domicilio (INTERIOR): Entrega entre 4 a 8 días hábiles.</p>
                                         <p>En épocas de alta demanda como HotSale y CyberMonday, las entregas se pueden ver demoradas hasta 15 días hábiles.</p>

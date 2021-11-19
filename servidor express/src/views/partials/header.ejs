@@ -1,128 +1,180 @@
 <header class="header" style=<%=position %>>
-    <a href="/" class="logo">
-        <img src="/img/logo.png" alt="">
-    </a>
-    <!-- ICONO MENU HAMBURGUESA -->
-    <a class="menu icon-size align-icon">
-        <div class="container" onclick="openNav()">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </div>
-
-    </a>
-
-    <div id="nav" class="navOut"></div>
-
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <!-- ICONO DE USUARIO (circle) -->
-        <% if (typeof session.user !="undefined" ) { %>
-            <a href="/user/login" class="usuario align-icon icon-size">
-                <span class="session"></span>
-                <span class="iconify  " data-icon="bi:person-circle" data-inline="false"></span>
-            </a>
-            <%} else{ %>
-                <a href="/user/login" class="usuario align-icon icon-size">
-                    <span class="iconify  " data-icon="bi:person-circle" data-inline="false"></span>
-                </a>
-                <% } %>
-                    <ul>
-                        <li class="btn"><a href="/">Inicio</a></li>
-                        <li id="categorias_id" class="btn">
-                            <a id="categorias_dii">Categorías <i class="fas fa-angle-down" id="fa-angle-down"></i></a>
-                            <div id="category_m" style="display: none;" class="menu_desplegable">
-                                <div class="desplegable">
-                                    <% locals.categories.forEach(category=> { %>
-                                        <a href="/products/<%= category.name %>"><i class="fas fa-angle-right"></i><span>
-                                                <%= category.name %>
-                                            </span></a>
-                                        <% }); %>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="btn"><a href="/products/accesorios">Accesorios</a></li>
-                        <li class="btn"><a href="/products">Oportunidades</a></li>
-                    </ul>
+  <a href="/" class="logo">
+    <img src="/img/logo.png" alt="" />
+  </a>
+  <!-- ICONO MENU HAMBURGUESA -->
+  <a class="menu icon-size align-icon">
+    <div class="container" onclick="openNav()">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
     </div>
+  </a>
+  <%- include('darkMode.ejs')%>
 
+  <div id="nav" class="navOut"></div>
 
-
-    <!-- ICONO DE LUPA  -->
-    <a class="icon-size align-icon lupa" id="search-ico" onclick="openBarSearch(this)">
-        <span class="iconify" id="search" data-icon="akar-icons:search" data-inline="false"></span>
-    </a>
-
-    <!-- ICONO DE FAVORITOS (estrella) -->
-    <a class="estrella icon-size align-icon" href="">
-        <span class="iconify" data-icon="akar-icons:star" data-inline="false"></span>
-    </a>
-
+  <div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+      >&times;</a
+    >
+    <!-- ICONO DE USUARIO (circle) -->
     <% if (typeof session.user !="undefined" ) { %>
-        <!-- ICONO DE USUARIO (circle) -->
-        <a href="/user/login" class="usuario align-icon icon-size user-desktop">
-            <span class="session"></span>
-            <span class="iconify  " data-icon="bi:person-circle" data-inline="false"></span>
-        </a>
-        <div class="menu-user">
-            <a href="/user/perfil">Mis datos</a>
-            <a href="/user/logout">Cerrar sesión</a>
-            <% if (session.user.rol === 1) { %>
-                <a href="/admin/products">ADMIN</a>
-                <% } %>
+    <a href="/user/login" class="usuario align-icon icon-size">
+      <span class="session"></span>
+      <span
+        class="iconify"
+        data-icon="bi:person-circle"
+        data-inline="false"
+      ></span>
+    </a>
+    <%} else{ %>
+    <a href="/user/login" class="usuario align-icon icon-size">
+      <span
+        class="iconify"
+        data-icon="bi:person-circle"
+        data-inline="false"
+      ></span>
+    </a>
+    <% } %>
+    <ul>
+      <li class="btn"><a href="/">Inicio</a></li>
+      <li id="categorias_id" class="btn">
+        <a id="categorias_dii"
+          >Categorías<i class="fas fa-angle-down" id="fa-angle-down"></i
+        ></a>
+        <div id="category_m" style="display: none" class="menu_desplegable">
+          <div class="desplegable">
+            <% locals.categories.forEach(category=> { %>
+            <a href="/products/<%= category.name %>"
+              ><i class="fas fa-angle-right"></i
+              ><span> <%= category.name %> </span></a
+            >
+            <% }); %>
+          </div>
         </div>
-        <% }else{ %>
-            <!-- ICONO DE USUARIO (circle) -->
-            <a href="/user/login" class="usuario align-icon icon-size user-desktop">
-                <span class="iconify  " data-icon="bi:person-circle" data-inline="false"></span>
-            </a>
+      </li>
+      <li class="btn"><a href="/products/accesorios">Accesorios</a></li>
+      <li class="btn"><a href="/products">Oportunidades</a></li>
+    </ul>
+  </div>
 
-            <% } %>
+  <!-- ICONO DE LUPA  -->
+  <a
+    class="icon-size align-icon lupa"
+    id="search-ico"
+    onclick="openBarSearch(this)"
+  >
+    <span
+      class="iconify"
+      id="search"
+      data-icon="akar-icons:search"
+      data-inline="false"
+    ></span>
+  </a>
 
+  <!-- ICONO DE FAVORITOS (estrella) -->
+  <a class="estrella icon-size align-icon" href="">
+    <span
+      class="iconify"
+      data-icon="akar-icons:star"
+      data-inline="false"
+    ></span>
+  </a>
 
-                <!-- ICONO DE CARRITO DE COMPRA -->
-                <% if(session .user && session.user.rol === 1){ %>  
-                    <div class="carrito">
-                        <a class="align-icon icon-size" href="/user/cart">
-                            <span class="iconify " data-icon="emojione-monotone:shopping-cart" data-inline="false"></span>
-                            <span class="count"><span>2</span></span>
-                        </a>
-                   <!--      <div class="products-cart-container">
+  <% if (typeof session.user !="undefined" ) { %>
+  <!-- ICONO DE USUARIO (circle) -->
+  <a href="/user/login" class="usuario align-icon icon-size user-desktop">
+    <span class="session"></span>
+    <span
+      class="iconify"
+      data-icon="bi:person-circle"
+      data-inline="false"
+    ></span>
+  </a>
+  <div class="menu-user">
+    <a href="/user/perfil">Mis datos</a>
+    <a href="/user/logout">Cerrar sesión</a>
+    <% if (session.user.rol === 2) { %>
+    <a href="/admin/products">ADMIN</a>
+    <% } %>
+  </div>
+  <% }else{ %>
+  <!-- ICONO DE USUARIO (circle) -->
+  <a href="/user/login" class="usuario align-icon icon-size user-desktop">
+    <span
+      class="iconify"
+      data-icon="bi:person-circle"
+      data-inline="false"
+    ></span>
+  </a>
+
+  <% } %>
+
+  <!-- ICONO DE CARRITO DE COMPRA -->
+  <% if(session .user && session.user.rol === 1){ %>
+  <div class="carrito">
+    <a class="align-icon icon-size" href="/user/cart">
+      <span
+        class="iconify"
+        data-icon="emojione-monotone:shopping-cart"
+        data-inline="false"
+      ></span>
+      <span class="count"><span>2</span></span>
+    </a>
+    <!--      <div class="products-cart-container">
                             <button type="submit">Vaciar</button>
                             <button><a href="user/cart">Ir a carrito</a></button>
                         </div> -->
-                    </div>
-                    <%}%>
+  </div>
+  <%}%>
 
-                        <!-- NAVEGACION PRINCIPAL (DESKTOP) -->
-                        <nav class="navbar" id="subMenu">
-                            <ul>
-                                <li class="btn"><a href="/">Inicio</a></li>
-                                <li id="categoriasDesplegable" class="btn">
-                                    <a>Categorías</a>
-                                    <div class="menu_desplegable" id="categoriasDesplegableView">
-                                        <div class="desplegable">
-                                            <% locals.categories.forEach(category=> { %>
-                                                <a href="/products/<%= category.name %>"><span>
-                                                        <%= category.name %>
-                                                    </span></a>
-                                                <% }); %>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="btn"><a href="/products/accesorios">Accesorios</a></li>
-                                <li class="btn"><a href="/products">Oportunidades</a></li>
-                            </ul>
-                        </nav>
+  <!-- NAVEGACION PRINCIPAL (DESKTOP) -->
+  <nav class="navbar" id="subMenu">
+    <ul>
+      <li class="btn"><a href="/">Inicio</a></li>
+      <li id="categoriasDesplegable" class="btn">
+        <a>Categorías</a>
+        <div
+          class="menu_desplegable"
+          id="categoriasDesplegableView"
+          style="display: none"
+        >
+          <div class="desplegable">
+            <% locals.categories.forEach(category=> { %>
+            <a href="/products/<%= category.name %>"
+              ><span> <%= category.name %> </span></a
+            >
+            <% }); %>
+          </div>
+        </div>
+      </li>
+      <li class="btn"><a href="/products/accesorios">Accesorios</a></li>
+      <li class="btn"><a href="/products">Oportunidades</a></li>
+    </ul>
+  </nav>
 
-                        <!-- BARRA DE BÚSQUEDA -->
-                        <form style="width: 0vw; opacity: 0;" action="/search" method="GET" class="search-bar"
-                            id="search-mobile">
-                            <input type="text" class="input-header" name="keys" placeholder="Buscar...">
-                            <button type="submit" id="btn-lupa">
-                                <span class="iconify iconLupaBar" data-icon="akar-icons:search" data-inline="false">
-                                </span>
-                            </button>
-                        </form>
-
+  <!-- BARRA DE BÚSQUEDA -->
+  <form
+    style="width: 0vw; opacity: 0"
+    action="/search"
+    method="GET"
+    class="search-bar"
+    id="search-mobile"
+  >
+    <input
+      type="text"
+      class="input-header"
+      name="keys"
+      placeholder="Buscar..."
+    />
+    <button type="submit" id="btn-lupa">
+      <span
+        class="iconify iconLupaBar"
+        data-icon="akar-icons:search"
+        data-inline="false"
+      >
+      </span>
+    </button>
+  </form>
 </header>
