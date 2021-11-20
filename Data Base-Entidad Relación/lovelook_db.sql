@@ -75,7 +75,7 @@ CREATE TABLE `images` (
   `filename` varchar(100) NOT NULL,
   `productId` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=257 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=264 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -84,7 +84,7 @@ CREATE TABLE `images` (
 
 LOCK TABLES `images` WRITE;
 /*!40000 ALTER TABLE `images` DISABLE KEYS */;
-INSERT INTO `images` VALUES (196,'1634009624778_img_snakes.jpg_.jpg',72),(198,'1634009729159_img_stitch2.jpg_.jpg',74),(199,'1634009799284_img_stitch3.jpg_.jpg',75),(200,'1634009879529_img_tigger.jpg_.jpg',76),(201,'1634009950386_img_tricolor2.jpg_.jpg',77),(202,'1634010008963_img_university.jpg_.jpg',78),(203,'1634010178772_img_university2.jpg_.jpg',79),(204,'1634010343185_img_vogue.jpg_.jpg',80),(205,'1634010427361_img_wild.jpg_.jpg',81),(209,'1634091073674_img_getALife.jpg_.jpg',58),(210,'1634091179974_img_wonderland.jpg_.jpg',82),(211,'1634180349613_img_flower.jpg_.jpg',84),(212,'1634180677217_img_harryPotter.jpg_.jpg',85),(213,'1634180903147_img_line2.jpg_.jpg',86),(219,'1634181345069_img_jean.jpg_.jpg',92),(221,'1634181636179_img_jean9.jpg_.jpg',94),(222,'1634181898795_img_jean2.jpg_.jpg',95),(223,'1634182041340_img_jean4.jpg_.jpg',96),(224,'1634182124096_img_jean6.jpg_.jpg',97),(225,'1634182228282_img_stitch.jpg_.jpg',98),(226,'1634182330034_img_powerGirls.jpg_.jpg',99),(227,'1634182562691_img_harryPotter.jpg_.jpg',100),(228,'1634182684295_img_mickey.jpg_.jpg',101),(230,'1634182887269_img_mickey2.jpg_.jpg',103),(231,'1634182898788_img_kitty.jpg_.jpg',102),(232,'1634182973337_img_selene3.jpg_.jpg',104),(233,'1634183119644_img_mom9.jpg_.jpg',105),(234,'1634183315606_img_mom5.jpg_.jpg',106),(235,'1634183685544_img_powerGirls5.jpg_.jpg',107),(236,'1634183768019_img_hunna2.jpg_.jpg',108),(237,'1634183881789_img_stitch2.jpg_.jpg',109),(238,'1634184051664_img_butterflies.jpg_.jpg',110),(240,'1634184214594_img_angels3.jpg_.jpg',112),(241,'1634184247606_img_doNot3.jpg_.jpg',111),(242,'1634184341991_img_smiles3.jpg_.jpg',113),(243,'1634184424824_img_flower2.jpg_.jpg',114),(244,'1634184495987_img_snakes4.jpg_.jpg',115),(245,'1634184682076_img_babuchaCloe.jpg_.jpg',116),(246,'1634184746031_img_babucha.jpg_.jpg',117),(247,'1634184880150_img_babucha3.jpg_.jpg',118),(248,'1634185019273_img_butterfly.jpg_.jpg',119),(249,'1634185078436_img_changes2.jpg_.jpg',120),(250,'1634185148950_img_kitty.jpg_.jpg',121),(251,'1634185198597_img_playboy3.jpg_.jpg',122),(252,'1634185235748_img_prada3.jpg_.jpg',123),(253,'1634185347648_img_university11.jpg_.jpg',124),(254,'1634185437270_img_life.jpg_.jpg',125),(255,'1634507132742_img_RELOG1.webp_.webp',126),(256,'1636169440101_img_looney.jpg_.jpg',61);
+INSERT INTO `images` VALUES (186,'1634008479488_img_merida.jpg_.jpg',62),(188,'1634008613548_img_mickey2.jpg_.jpg',64),(190,'1634008855458_img_powerGirls.jpg_.jpg',66),(191,'1634009068632_img_princess.jpg_.jpg',67),(192,'1634009122127_img_remeraBeKind.jpg_.jpg',68),(193,'1634009439465_img_simpsons.jpg_.jpg',69),(194,'1634009490332_img_smile.jpg_.jpg',70),(195,'1634009554779_img_smile2.jpg_.jpg',71),(196,'1634009624778_img_snakes.jpg_.jpg',72),(197,'1634009680926_img_stitch.jpg_.jpg',73),(198,'1634009729159_img_stitch2.jpg_.jpg',74),(199,'1634009799284_img_stitch3.jpg_.jpg',75),(200,'1634009879529_img_tigger.jpg_.jpg',76),(201,'1634009950386_img_tricolor2.jpg_.jpg',77),(202,'1634010008963_img_university.jpg_.jpg',78),(203,'1634010178772_img_university2.jpg_.jpg',79),(204,'1634010343185_img_vogue.jpg_.jpg',80),(205,'1634010427361_img_wild.jpg_.jpg',81),(209,'1634091073674_img_getALife.jpg_.jpg',58),(210,'1634091179974_img_wonderland.jpg_.jpg',82),(211,'1634180349613_img_flower.jpg_.jpg',84),(212,'1634180677217_img_harryPotter.jpg_.jpg',85),(213,'1634180903147_img_line2.jpg_.jpg',86),(219,'1634181345069_img_jean.jpg_.jpg',92),(221,'1634181636179_img_jean9.jpg_.jpg',94),(222,'1634181898795_img_jean2.jpg_.jpg',95),(223,'1634182041340_img_jean4.jpg_.jpg',96),(224,'1634182124096_img_jean6.jpg_.jpg',97),(225,'1634182228282_img_stitch.jpg_.jpg',98),(226,'1634182330034_img_powerGirls.jpg_.jpg',99),(227,'1634182562691_img_harryPotter.jpg_.jpg',100),(228,'1634182684295_img_mickey.jpg_.jpg',101),(230,'1634182887269_img_mickey2.jpg_.jpg',103),(231,'1634182898788_img_kitty.jpg_.jpg',102),(232,'1634182973337_img_selene3.jpg_.jpg',104),(233,'1634183119644_img_mom9.jpg_.jpg',105),(234,'1634183315606_img_mom5.jpg_.jpg',106),(235,'1634183685544_img_powerGirls5.jpg_.jpg',107),(236,'1634183768019_img_hunna2.jpg_.jpg',108),(237,'1634183881789_img_stitch2.jpg_.jpg',109),(238,'1634184051664_img_butterflies.jpg_.jpg',110),(240,'1634184214594_img_angels3.jpg_.jpg',112),(241,'1634184247606_img_doNot3.jpg_.jpg',111),(242,'1634184341991_img_smiles3.jpg_.jpg',113),(243,'1634184424824_img_flower2.jpg_.jpg',114),(244,'1634184495987_img_snakes4.jpg_.jpg',115),(245,'1634184682076_img_babuchaCloe.jpg_.jpg',116),(246,'1634184746031_img_babucha.jpg_.jpg',117),(247,'1634184880150_img_babucha3.jpg_.jpg',118),(248,'1634185019273_img_butterfly.jpg_.jpg',119),(249,'1634185078436_img_changes2.jpg_.jpg',120),(250,'1634185148950_img_kitty.jpg_.jpg',121),(251,'1634185198597_img_playboy3.jpg_.jpg',122),(252,'1634185235748_img_prada3.jpg_.jpg',123),(253,'1634185347648_img_university11.jpg_.jpg',124),(255,'1634507132742_img_RELOG1.webp_.webp',126);
 /*!40000 ALTER TABLE `images` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -128,16 +128,16 @@ CREATE TABLE `messages` (
   `issue` varchar(100) NOT NULL,
   `name` varchar(50) NOT NULL,
   `lastName` varchar(50) NOT NULL,
-  `dni` int(11) NOT NULL,
+  `dni` int(11) DEFAULT NULL,
   `email` varchar(100) NOT NULL,
   `phone` int(11) DEFAULT NULL,
   `cv` varchar(100) DEFAULT NULL,
   `location` varchar(100) DEFAULT NULL,
   `address` varchar(100) DEFAULT NULL,
-  `city` varchar(100) DEFAULT NULL,
+  `province` varchar(100) DEFAULT NULL,
   `cuit` int(11) DEFAULT NULL,
   `businessName` varchar(50) DEFAULT NULL,
-  `socialAddress` varchar(50) DEFAULT NULL,
+  `socialLocation` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -323,32 +323,34 @@ INSERT INTO `seasons` VALUES (1,'winter'),(2,'summer'),(3,'spring'),(4,'autumn')
 UNLOCK TABLES;
 
 --
--- Table structure for table `shopping_cart`
+-- Table structure for table `shoppingcart`
 --
 
-DROP TABLE IF EXISTS `shopping_cart`;
+DROP TABLE IF EXISTS `shoppingcart`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `shopping_cart` (
+CREATE TABLE `shoppingcart` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `userId` int(11) NOT NULL,
   `productId` int(11) NOT NULL,
   `totalPrice` int(11) NOT NULL,
+  `count` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `shopping_cart_FK` (`userId`),
   KEY `shopping_cart_FK_1` (`productId`),
   CONSTRAINT `shopping_cart_FK` FOREIGN KEY (`userId`) REFERENCES `users` (`id`),
   CONSTRAINT `shopping_cart_FK_1` FOREIGN KEY (`productId`) REFERENCES `products` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `shopping_cart`
+-- Dumping data for table `shoppingcart`
 --
 
-LOCK TABLES `shopping_cart` WRITE;
-/*!40000 ALTER TABLE `shopping_cart` DISABLE KEYS */;
-/*!40000 ALTER TABLE `shopping_cart` ENABLE KEYS */;
+LOCK TABLES `shoppingcart` WRITE;
+/*!40000 ALTER TABLE `shoppingcart` DISABLE KEYS */;
+INSERT INTO `shoppingcart` VALUES (2,5,58,16,23424);
+/*!40000 ALTER TABLE `shoppingcart` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
