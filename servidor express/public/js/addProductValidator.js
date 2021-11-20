@@ -176,13 +176,13 @@ window.addEventListener("load", function () {
     }
   })
 
-  formAdd.addEventListener('submit',function(event){
+  /* formAdd.addEventListener('submit',function(event){
     let error = false;
     event.preventDefault()
     let elementosForm = formAdd.elements
     
-    for (let index = 0; index < elementosForm.length-1; index++) {
-        if(elementosForm[index].value == "" && elementosForm[index].name !== "archivo"){
+    for (let index = 0; index < elementosForm.length-2; index++) {
+        if(elementosForm[index].value == "" && elementosForm[index].name !== "image"){
           if(index == "4") {
             continue 
           }
@@ -197,7 +197,7 @@ window.addEventListener("load", function () {
         form.submit()
     }
 
-});
+}); */
 
   seasonInsert.addEventListener("blur", function () {
     switch (true) {

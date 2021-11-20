@@ -3,23 +3,28 @@
   <%- include('../partials/head.ejs') %>
 
   <body class="container-body">
-    
-    <%- include('../partials/load.ejs') %>
+    <%- include('../partials/load.ejs') %> <%-
+    include('../partials/header.ejs')%>
 
-     <%- include('../partials/header.ejs')%>
-    
-    
     <main class="home-inicio">
       <!-- CAROUSEL -->
       <%- include('../partials/carousel.ejs') %>
 
       <!-- END CAROUSEL -->
-<div class="marqueShipping">
-    <marquee behavior="" direction="">
-            <span style="color: green;">🚛 ENVÍO GRATIS A PARTIR DE $1.199 💵 </span>
-            <span style="color: green;">PAGÁ EN 3 Y 6 CUOTAS SIN INTERÉS CON VISA, AMEX Y MASTER 💳</span>
-    </marquee>        
-    </div>
+      <div class="marqueContainer">
+        <marquee behavior="" direction="">
+          <span class="marqueTitle">♡ LOVE LOOK ♡</span>
+          <span class="marqueTitle">♡ LOVE LOOK ♡</span>
+          <span class="marqueTitle">♡ LOVE LOOK ♡</span>
+          <div class="marqueShipping">
+            <marquee behavior="" direction="">
+              <span style="color: rgba(234, 137, 155, 0.8)">🚛 ENVÍO GRATIS A PARTIR DE $1.199 💵 </span>
+              <span style="color: rgba(234, 137, 155, 0.8)">PAGÁ EN 3 Y 6 CUOTAS SIN INTERÉS CON VISA, AMEX Y MASTER 💳</span>
+            </marquee>
+          </div>
+        </marquee>
+      </div>
+
       <h1><%= title %></h1>
 
       <%- include ('../partials/slider.ejs') %>
@@ -72,9 +77,9 @@
       </div>
     </main>
     <!--Final de videos-->
-    <%- include('../partials/whatsapp.ejs') %> 
-    <%-include('../partials/footer.ejs') %> 
-    <%- include('../partials/scripts.ejs') %>
+    <%- include('../partials/whatsapp.ejs') %>
+    <%-include('../partials/footer.ejs') %> <%-
+    include('../partials/scripts.ejs') %>
 
     <script src="js/headerListener.js"></script>
   </body>

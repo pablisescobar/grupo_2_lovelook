@@ -164,7 +164,7 @@ function ge(element) {
       }
     });
 
-    formEdit.addEventListener('submit',function(event){
+    /* formEdit.addEventListener('submit',function(event){
       let error = false;
       event.preventDefault()
       let elementosForm = formEdit.elements
@@ -185,7 +185,7 @@ function ge(element) {
           form.submit()
       }
   
-  })
+  }) */
   
   });
   
