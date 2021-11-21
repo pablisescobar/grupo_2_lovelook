@@ -79,7 +79,7 @@
     .home-inicio .cajaPrincipal {
         display: flex;
         width: 100%;
-        justify-content: space-between;
+        justify-content: space-evenly;
         padding-bottom: 30px;
     }
     .home-inicio .cajaPrincipal .imagen1 {

@@ -23,6 +23,8 @@
 
 .container-cart .section1 .product img {
     width: 100%;
+    height: 250px;
+    object-fit: contain;
     border-radius: 6px;
     padding: 1px;
     margin: auto;
@@ -45,14 +47,13 @@
     border: 1px solid var(--bordes_claro);
     border-radius: 30%;
     position: absolute;
-    top: 90px;
     right: 30px;
 }
 
 .container-cart .description {
     width: 100%;
     display: grid;
-    /* grid: 1fr 1fr 1fr / 1fr 1fr 1fr; */
+    grid: 1fr 1px 1fr / 1fr 1fr 1fr;
     grid-template-areas:
         "precio cantidad subPrecio"
         "linea linea linea"
@@ -80,8 +81,8 @@
 
 .container-cart .description .linea {
     grid-area: linea;
-    width: 80%;
-    height: 3px;
+    width: 100%;
+    height: 1px;
     background-color: var(--bordes_claro);
     margin: auto;
 }
@@ -186,8 +187,8 @@
     /* border-radius: 15px; */
     padding: 7px;
     box-shadow: 0 5px 10px var(--bordes_claro);
-    width: 80%;
-    height: 380px;
+    width: 50%;
+    height: fit-content;
     /* padding-bottom: inherit; */
 }
 
@@ -212,8 +213,7 @@
     }
 
     .container-cart .section1 .iconOutline {
-        /* top: 116px; */
-        /* right: 80px; */
+        top: 116px;
     }
 
     .container-cart .section1 .product img {
@@ -226,10 +226,12 @@
 
     .container-cart .section1 .product .descriptionProduct {
         grid-area: dP;
+        margin: auto 0;
     }
 
     .container-cart .section1 .product .description {
         grid-area: d;
+        align-items: center;
     }
 
     .container-cart .buttonsIcons {
@@ -247,7 +249,7 @@
     }
 
     .container-cart .section3 p {
-        font-size: 40px;
+        /* font-size: 40px; */
     }
 
     .container-cart .section3 {
