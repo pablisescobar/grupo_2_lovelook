@@ -603,7 +603,8 @@ order: 1;
 }
 
 .selectTranslate.active{
-  left: -50%;
+  
+left: -50%;
 }
   .header .carrito span.count {
     width: 15px;
