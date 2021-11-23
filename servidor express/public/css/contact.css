@@ -1,3 +1,11 @@
+/* DARK MODE */
+.form-contact-container input.dark,
+.form-contact-container select.dark,
+.form-contact-container .cv-input.dark,
+.form-contact-container textarea.dark {background-color: black;}
+
+/* DARK MODE END */
+
 .form-contact-container {
   min-width: 320px;
   height: fit-content;
@@ -39,8 +47,8 @@
 
 .form-contact-container input:focus,
 .form-contact-container select:focus {
-  background-color: #fff;
-  box-shadow: 0 0 2px lightblue;
+  background-color: var(--bordes);
+  color: white;
 }
 
 .form-contact-container select:focus option {
@@ -60,22 +68,24 @@
 
 .form-contact-container textarea {
   padding: 10px;
-  border-color: var(--fondo-claro);
+  /* border-color: aliceblue; */
+  outline: none;
   font-size: 1.2rem;
   resize: vertical;
-  margin-bottom: 2px !important
+  margin-bottom: 2px !important;
 }
 
 .form-contact-container textarea::placeholder {
   font-size: 1rem;
   padding: 5px 0 0 10px;
   margin: auto 0;
+  color: white;
+  font-weight: bold;
 }
 
 .form-contact-container textarea:focus {
-  outline: none;
-  border-color: lightblue;
-  box-shadow: none;
+  background-color: var(--bordes);
+  color: white;
 }
 
 .form-contact-container .btn-send {

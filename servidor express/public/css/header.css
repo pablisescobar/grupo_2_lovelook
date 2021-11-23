@@ -289,7 +289,6 @@ letter-spacing: 2px;
 
 .header .sidenav a:active {
   color: lightblue;
-  letter-spacing: 1px;
 }
 
 .header .navbar-mobile {
@@ -460,6 +459,7 @@ letter-spacing: 2px;
 
 .header .desplegable {
   padding: 0 30px;
+  transition: 1s all;
 }
 .header .desplegable a {
   color: black;

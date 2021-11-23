@@ -13,6 +13,7 @@ window.addEventListener("load", () => {
             categoriasDesplegable.style.display = 'block'
         }else{
             categoriasDesplegable.style.display = 'none'
+           
         }
 
     });

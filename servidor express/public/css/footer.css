@@ -10,6 +10,12 @@
     color: gray;
     filter: blur(1px);
 }
+
+.footer .help ul.dark, .footer .contact ul.dark, .footer .about ul.dark{
+    
+background-color: rgb(61, 56, 56);
+}
+
  .footer.dark{
         background-color: rgb(61, 56, 56);
         color: white;
@@ -17,15 +23,78 @@
     }
  .footer a.dark{
         color: white;
+        text-shadow: 0 0 4px black;
     }
  .footer a.dark:hover{
-        color: black;
+        color: gray;
     }
  .footer .footer-sections-desktop .footer-subtitle.dark {
        text-shadow: 1px 1px 4px white;
     }
+/* DARK MODE END */
 
 
+/* End Page */
+.endPage{
+    position: fixed;
+    right: -100px;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    font-size: 1.5rem;
+    height: 30px;
+    text-shadow: 1px 1px 4px grey, -1px -1px 4px grey;
+    padding: 40px 20px;
+    background-color: rgb(227 38 111 / 31%);
+    text-align: center;
+    border-radius: 5px 0 0 5px;
+    transition: .5s ease;
+    box-shadow: 0px 0px 4px black,inset 0 0 11px var(--bordes);
+    opacity: 0;
+}
+.endPage.show-endPage{
+    right: 0;
+    opacity: 1;
+    animation: estirar 1.2s 1 alternate ease;
+    color: white;
+}
+.endPage:hover{font-size: 1.3rem;transition: .5s ease;}
+
+@keyframes estirar {
+    0%{
+        
+        width: 120px;
+    }
+    100%{
+        
+        width: 60px;
+    }
+    
+}
+
+.fa-arrow-down{
+    position: relative;
+    text-shadow: 0 -3px 2px black;
+    color: var(--fondo-claro);
+    animation: rowDownMove .5s alternate infinite ease;
+}
+
+@keyframes rowDownMove {
+    0%{
+        top:10px;
+        border-bottom:1px solid black;
+        box-shadow: 0 1px 2px white;
+    
+    }
+    50%{
+      
+    }
+    100%{
+        top:-10px
+    }
+}
 /* icono de whatsapp */
 .whatsapp {
     z-index   : 800;
@@ -60,8 +129,6 @@
 @media screen and (min-width: 768px) {
     .whatsapp {
         font-size: 4rem;
-        right: 25px;
-        bottom: 34px;
         margin: 0;
     }
 }
@@ -94,7 +161,7 @@
         "contacto contacto  contacto contacto   "
         "nosotros     nosotros  nosotros  nosotros    "
         "redes    redes     redes     redes "
-        ". copy   copy     afip "
+        "afip copy   copy     . "
         ". copy copy  . ";
     margin-top: 15px;
 }
