@@ -18,7 +18,7 @@ select.validationsErrors
     text-align: center;
     height: 0px;
     font-size: 0rem;
-    transition: .5s all ease; 
+    transition: .5s all ease;
 }
 .error.validationsErrors{
     font-size: 1rem;

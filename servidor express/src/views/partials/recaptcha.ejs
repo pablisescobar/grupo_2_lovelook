@@ -1,0 +1,10 @@
+<script type="text/javascript">
+    var checkRecaptcha = function() {
+        var response = grecaptcha.getResponse();
+      if (response.length != 0) {
+          
+      }else{
+          document.querySelector('#recaptchaError').innerHTML = "Campo obligatorio"
+      }
+    };
+  </script> 

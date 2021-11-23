@@ -1,3 +1,31 @@
+/* DARK MODE */
+.footer .redes-sociales .iconify.dark {
+    filter:drop-shadow(1px 1px 4px white);
+}
+.footer .redes-sociales .instagram.dark:hover {
+    color: gray;
+    filter: blur(1px);
+}
+.footer .redes-sociales .facebook.dark:hover {
+    color: gray;
+    filter: blur(1px);
+}
+ .footer.dark{
+        background-color: rgb(61, 56, 56);
+        color: white;
+        transition: 0.5s all ease;
+    }
+ .footer a.dark{
+        color: white;
+    }
+ .footer a.dark:hover{
+        color: black;
+    }
+ .footer .footer-sections-desktop .footer-subtitle.dark {
+       text-shadow: 1px 1px 4px white;
+    }
+
+
 /* icono de whatsapp */
 .whatsapp {
     z-index   : 800;
@@ -13,10 +41,6 @@
     opacity: 0.8;
     height: fit-content;
     width: fit-content;
-}
-
-.whatsapp.absolute{
-    position: absolute;
 }
 
 .whatsapp:hover {
@@ -172,28 +196,20 @@
     font-size : 40px;
     transition: color 1s ease;
 }
-.footer .redes-sociales .iconify.dark {
-    filter:drop-shadow(1px 1px 4px white);
-}
+
 
 .footer .redes-sociales .instagram:hover {
     color: orange;
     filter: blur(1px);
 }
 
-.footer .redes-sociales .instagram.dark:hover {
-    color: gray;
-    filter: blur(1px);
-}
+
 
 .footer .redes-sociales .facebook:hover {
     color: blue;
     filter: blur(1px);
 }
-.footer .redes-sociales .facebook.dark:hover {
-    color: gray;
-    filter: blur(1px);
-}
+
 
 .footer .legale {
     grid-area : copy;
@@ -245,9 +261,7 @@
     font-size: 5rem;
 }
 
-.footer .legale {
-}
-}
+
 
 /* View Desktop of footer */
 
@@ -284,19 +298,11 @@ right: 2vw;
             ".    .     .     redes     redes    redes      afip       afip . "
             ".    .     copy  copy      copy     copy      copy      .          .    ";
     }
-    .footer.dark{
-        background-color: rgb(61, 56, 56);
-        color: white;
-        transition: 0.5s all ease;
-    }
+   
     /* Elementos generales */
 
-    .footer a.dark{
-        color: white;
-    }
-    .footer a.dark:hover{
-        color: black;
-    }
+   
+   
     .footer .footer-sections {
        display: none;
     }
@@ -313,9 +319,7 @@ right: 2vw;
         justify-content: center;
         padding        : 0 0 10px 0;
     }
-    .footer .footer-sections-desktop .footer-subtitle.dark {
-       text-shadow: 1px 1px 4px white;
-    }
+   
 
     .footer .footer-sections-desktop .footer-subtitle:hover {
         cursor          : initial;
@@ -343,4 +347,5 @@ right: 2vw;
         align-items: center;
         gap        : 10px;
     }
+}
 }

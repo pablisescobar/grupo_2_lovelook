@@ -102,9 +102,10 @@
                                     <% } %>
 
                         </div>
-                        <!-- <div class="form-item captcha-contain">
-                        </div> -->
-                        <div class="g-recaptcha" data-sitekey="6LeH8OEZAAAAAMi0TO4HCEgcO9fRTkryTroe13GZ"></div>
+                        <div class="containerReCaptcha">
+                            <div class="g-recaptcha" id="ReCaptcha" data-sitekey="6Lf31UAcAAAAABrw2DUMZXzCldUObT0L4lEoBJcP"></div> 
+                            <span id="recaptchaError" class="error"></span>                    
+                        </div>
 
                         <div class="form-item">
                             <button class="btn-send" type="submit">Enviar</button>
@@ -114,10 +115,12 @@
                 </main>
 
                 <%- include('../partials/whatsapp.ejs') %>
+                    <%- include('../partials/footer.ejs') %>   
 
-                    <%- include('../partials/footer.ejs') %>
-
-
+                    <%- include('../partials/recaptcha.ejs') %>     
+                    <%- include('../partials/scripts.ejs') %>     
+                   
+            </script>
 
     </body>
 

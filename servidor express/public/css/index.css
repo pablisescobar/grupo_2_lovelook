@@ -5,7 +5,7 @@
 }
 
 .home-inicio video {
-    width: 100%;
+    width: 665px;
 }
 .home-inicio .container-fluid {
     display: flex;
@@ -118,7 +118,7 @@
     .home-inicio .cajaPrincipal {
         display: flex;
         width: 100%;
-        justify-content: space-between;
+        justify-content: space-evenly;
         padding-bottom: 30px;
     }
     .home-inicio .cajaPrincipal .imagen1 {
@@ -134,11 +134,13 @@
     }
 
     .home-inicio .cajaPrincipal {
-        justify-content: space-evenly;
         width: 100%;
     }
 
     .container-fluid .cajaPrincipal .imagen1 {
         display: flex;
+        width: 650px;
     }
+
+
 }
