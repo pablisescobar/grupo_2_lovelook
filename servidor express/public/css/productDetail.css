@@ -87,7 +87,7 @@ figure.zoom {
 
 .price-line-medio {
     text-decoration: line-through;
-    color: green;
+    /* color: green; */
     /* font-weight: bold; */
     font-size: 1rem;
 }
@@ -629,7 +629,8 @@ figure.zoom {
         padding: 0;
     }
     .details-products .product .description .discount.dark {
-        text-shadow: 2px 2px 10px black, 0 0 2px lightgrey;
+        
+text-shadow: 2px 2px 10px black, 0 0 2px lightgrey;
     }
 
     .details-products .add-look-container h2 {

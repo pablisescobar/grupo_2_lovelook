@@ -130,4 +130,7 @@
         align-self: center;
         width: 50%;
     }
+    .register .register-validation {
+        position: absolute;
+    }
 }

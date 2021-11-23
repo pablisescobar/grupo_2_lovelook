@@ -141,7 +141,7 @@ function ge(element) {
           break;
       }
     });
-    fileUpload.addEventListener("change", function fileValidation() {
+     fileUpload.addEventListener("change", function fileValidation() {
       let filePath = fileUpload.value,
         allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i;
       if (!allowefExtensions.exec(filePath)) {
@@ -162,15 +162,15 @@ function ge(element) {
           addBorderRed(fileUpload);
         }
       }
-    });
+    }); 
 
-    /* formEdit.addEventListener('submit',function(event){
+     formEdit.addEventListener('submit',function(event){
       let error = false;
       event.preventDefault()
       let elementosForm = formEdit.elements
       
       for (let index = 0; index < elementosForm.length-1; index++) {
-          if(elementosForm[index].value == "" && elementosForm[index].name !== "archivo" || elementosForm[index].style.boxShadow == '0 0 10px red'){
+          if(elementosForm[index].value == "" && elementosForm[index].name !== "image" || elementosForm[index].style.boxShadow == '0 0 10px red'){
             if(index == "4") {
               continue 
             }
@@ -182,10 +182,10 @@ function ge(element) {
   
       if(!error){
           console.log('Todo bien');
-          form.submit()
+          formEdit.submit()
       }
   
-  }) */
+  }) 
   
   });
   

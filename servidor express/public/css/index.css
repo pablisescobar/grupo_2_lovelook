@@ -5,7 +5,7 @@
 }
 
 .home-inicio video {
-    width: 100%;
+    width: 665px;
 }
 .home-inicio .container-fluid {
     display: flex;
@@ -64,26 +64,42 @@
     font-weight: bold;
 }
 
-.home-inicio .marqueContainer {
+.home-inicio .marqueeContainer {
+    width: 100%;
     font-size: 50px;
-    line-height: 180px;
     font-weight: 500;
     background: linear-gradient(150deg,rgba(253, 180, 191, 0.445), white, rgba(253, 180, 191, 0.705));
     background-size: 200% 150%;
     animation: BgGradient 5s ease infinite;
+    white-space: nowrap;
+    display: inline-block;
 }
 
-.home-inicio .marqueContainer .marqueTitle {
+.home-inicio .marqueeContainer .marqueeTitle {
     bottom: 500px;
-    padding: 250px;
+    padding: 60px;
     color: var(--bordes_claro);
+    letter-spacing: 10px;
+    display: inline-block;
     }
 
-.home-inicio .marqueShipping {
-    font-size: 20px;
-    line-height: 30px;
-    font-weight: bold;
+ .marqueeShipping {
+    width: 100%;
+    font-size: 15px;
+    font-weight: 500;
+    background: linear-gradient(150deg,rgba(253, 180, 191, 0.445), white, rgba(253, 180, 191, 0.705));
+    background-size: 200% 150%;
+    animation: BgGradient 5s ease infinite;
+    white-space: nowrap;
+    display: inline-block;
+} 
+
+.marqueeShipping .marqueeText {
+    bottom: 500px;
+    padding: 3px 70px ;
+    color: var(--bordes_claro);
     letter-spacing: 5px;
+    display: inline-block;
 }
 
 @media screen and (min-width: 768px) {
@@ -118,11 +134,13 @@
     }
 
     .home-inicio .cajaPrincipal {
-        justify-content: space-evenly;
         width: 100%;
     }
 
     .container-fluid .cajaPrincipal .imagen1 {
         display: flex;
+        width: 650px;
     }
+
+
 }

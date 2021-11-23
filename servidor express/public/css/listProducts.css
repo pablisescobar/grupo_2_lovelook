@@ -124,7 +124,6 @@ select#price.dropdown {
 .container-listProduct .section2 .product .discount {
   font-family: var(--poppins);
   font-size: 1rem;
-  line-height: 40%;
   color: green;
   animation: acercarAlejar 2s alternate infinite;
 }
@@ -239,7 +238,7 @@ select#price.dropdown {
     font-size: 0.8rem;
     line-height: 150%;
     color: green;
-    /* animation: acercarAlejar 2s alternate infinite; */
+    animation: acercarAlejar 2s alternate infinite;
   }
 }
 

@@ -100,7 +100,7 @@ background-color: rgb(61, 56, 56);
     z-index   : 800;
     display   : flex;
     position: fixed;
-    right: 25px;
+    right: 22px;
     bottom: 72px;
     font-size: 3rem;
     margin: 0;
@@ -129,13 +129,15 @@ background-color: rgb(61, 56, 56);
 @media screen and (min-width: 768px) {
     .whatsapp {
         font-size: 4rem;
+        right: 15px;
+        bottom: 70px;
         margin: 0;
     }
 }
 @media screen and (min-width: 1024px) {
     .whatsapp {
-        bottom: 99px;
-        right: 20px;
+        bottom: 80px;
+        right: 22px;
         font-size: 3.5rem;
     }
 }
@@ -328,9 +330,7 @@ background-color: rgb(61, 56, 56);
     font-size: 5rem;
 }
 
-.footer .legale {
-}
-}
+
 
 /* View Desktop of footer */
 
@@ -416,4 +416,5 @@ right: 2vw;
         align-items: center;
         gap        : 10px;
     }
+}
 }

@@ -176,7 +176,7 @@ window.addEventListener("load", function () {
     }
   })
 
-  /* formAdd.addEventListener('submit',function(event){
+  formAdd.addEventListener('submit',function(event){
     let error = false;
     event.preventDefault()
     let elementosForm = formAdd.elements
@@ -194,10 +194,10 @@ window.addEventListener("load", function () {
 
     if(!error){
         console.log('Todo bien');
-        form.submit()
+        formAdd.submit()
     }
 
-}); */
+}); 
 
   seasonInsert.addEventListener("blur", function () {
     switch (true) {
