@@ -1,5 +1,5 @@
 .slick-slide {
-    height: 450px;
+    height: 1200px;
     box-shadow: 0 5px 10px var(--bordes_claro);
     padding: 10px;
     margin: 10px;
@@ -27,6 +27,7 @@
 }
 .slick-dots {
     position: relative !important;
+    bottom: 0 !important;
 }
 
 .card-img-top {
@@ -39,11 +40,12 @@
 
 .card-body {
     padding-top: 15px;
+    text-align: center;
 }
 
-.card-title {
+.nameSlider {
     font-family: 'Poppins';
-    font-size: 100%;
+    font-size: 2.5rem;
     margin: 2px;
     margin: auto;
     border-top: 2px solid lightpink;
@@ -70,18 +72,28 @@ a.btn-primary {
 }
 
 .discount {
-    padding: 10px;
-    font-size: 0.8rem;
+    font-size: 1.5rem;
     line-height: 150%;
-    font-weight: bold;
     color: green;
-    /* animation: acercarAlejar 2s alternate infinite; */
+    animation: acercarAlejar 2s alternate infinite;
 }
+
+.priceDiscount {
+    font-size: 1.5rem;
+    text-decoration: line-through;
+}
+
+.priceSlider {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
 
 @media screen and (min-width: 768px) {
 
     .slick-slide {
-        height: 400px;
+        height: 450px;
         border-radius: 3%;
     }
 
@@ -105,8 +117,8 @@ a.btn-primary {
         max-width: 80%;
     }
     
-    .card-slider {
-        width: 850px;
-    }
+    /* .card-slider {
+        width:1500px;
+    } */
 
 }

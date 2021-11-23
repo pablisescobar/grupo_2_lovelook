@@ -3,7 +3,7 @@
     z-index   : 800;
     display   : flex;
     position: fixed;
-    right: 25px;
+    right: 22px;
     bottom: 72px;
     font-size: 3rem;
     margin: 0;
@@ -36,15 +36,15 @@
 @media screen and (min-width: 768px) {
     .whatsapp {
         font-size: 4rem;
-        right: 25px;
-        bottom: 34px;
+        right: 15px;
+        bottom: 70px;
         margin: 0;
     }
 }
 @media screen and (min-width: 1024px) {
     .whatsapp {
-        bottom: 35px;
-        right: 20px;
+        bottom: 80px;
+        right: 22px;
         font-size: 3.5rem;
     }
 }

@@ -37,11 +37,13 @@ module.exports = {
   },
   search: (req, res) => {
     db.Product.findAll({
+      limit: 6,
       where: {
         name: {
           [Op.like]: `%${req.query.keys}%`,
         },
       },
+      limit: 6,
       where: {
         description: {
           [Op.like]: `%${req.query.keys}%`,
@@ -56,6 +58,7 @@ module.exports = {
       ],
     }).then((result) => {
       db.Product.findAll({
+        limit: 6,
         include: [
           { association: "category" },
           { association: "images" },
@@ -65,6 +68,7 @@ module.exports = {
         ],
       }).then((products) => {
         db.Category.findAll({
+          limit: 6,
           where: {
             name: {
               [Op.like]: `%${req.query.keys}%`,

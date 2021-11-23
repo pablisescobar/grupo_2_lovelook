@@ -104,7 +104,7 @@
 .admin .input,
 .admin textarea {
     margin: 10px 5px 10px 0;
-    height: 40px;
+    
     font-size: 1rem;
     color: gray;
     background-color: var(--fondo-claro);
@@ -151,19 +151,13 @@ align-self: flex-start;
 .admin .error-validator{
     
 color: red;
-    
 align-self: flex-start;
-    
 background-color: whitesmoke;
-    
 width: 100%;
-    
 font-weight: bold;
-    
 letter-spacing: 3px;
-    
 text-align: center;
-    
+display: block;
 margin: auto;
 }
 
@@ -445,7 +439,7 @@ justify-content: flex-end;
     .admin select,
     .admin button,
     .admin .input {
-        height: 30px;
+        
         align-self: center;
         margin: 10px 5px 10px 0;
     }
