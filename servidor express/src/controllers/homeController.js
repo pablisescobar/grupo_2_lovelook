@@ -35,15 +35,15 @@ module.exports = {
   afip: (req, res) => {
     res.sendFile(path.join(__dirname, "../../public/img/afip.png"));
   },
+
   search: (req, res) => {
     db.Product.findAll({
-      limit: 6,
+     
       where: {
         name: {
           [Op.like]: `%${req.query.keys}%`,
         },
       },
-      limit: 6,
       where: {
         description: {
           [Op.like]: `%${req.query.keys}%`,
@@ -68,7 +68,6 @@ module.exports = {
         ],
       }).then((products) => {
         db.Category.findAll({
-          limit: 6,
           where: {
             name: {
               [Op.like]: `%${req.query.keys}%`,
@@ -81,7 +80,6 @@ module.exports = {
           ],
         }).then((categoryResult) => {
           res.render("products/resultOfSearch", {
-            result: products,
             result,
             categoryResult,
             toThousand,

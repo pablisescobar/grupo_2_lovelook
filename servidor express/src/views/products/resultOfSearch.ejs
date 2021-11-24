@@ -16,7 +16,7 @@
                     </h3>
 
                     <section class="section2">
-                      <% products.forEach(product=>{ %>
+                      <% result.forEach(product=>{ %>
                       <article class="product">
                         <a href="/products/detail/<%= product.id %>">
                           <img src="/img/photos/<%= product.images.length>0? product.images[0].filename:'default.png' %>" alt="">
