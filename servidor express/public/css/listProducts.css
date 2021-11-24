@@ -236,9 +236,6 @@ select#price.dropdown {
 
   .discount {
     font-size: 0.8rem;
-    line-height: 150%;
-    color: green;
-    animation: acercarAlejar 2s alternate infinite;
   }
 }
 

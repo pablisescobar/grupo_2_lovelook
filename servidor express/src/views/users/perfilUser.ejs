@@ -11,20 +11,20 @@
                 
 
                 <div class="image-container">
-                    <label class="label-perfil-user img-label" for="examinar"><span class="iconify" data-icon="carbon:add-filled"></span></label>
+                   
                     <input class="input-perfil-user" type="file" name="avatar" id="examinar" hidden>
                     
-                    <img class="image-view" src="/img/user/userAvatars/<%= user.avatar %>" alt="">
+                    <img class="image-view" <%= user.social_provider != "google" ? `src=/img/user/userAvatars/${user.avatar}` : `src=${user.avatar}` %> alt="">
                 </div>
 
                 <div class="container">
                     <label class="label-perfil-user" for="nombre">Nombre: </label>
-                    <input class="input--style input-perfil-user" type="text" name="nombre" id="nombre" value="<%= user.firstName %>" disabled>
+                    <input class="input--style input-perfil-user" type="text" name="name" id="nombre" value="<%= user.firstName %>" disabled>
                 </div>
 
                 <div class="container">
                     <label class="label-perfil-user" for="apellido">Apellido: </label>
-                    <input class="input--style input-perfil-user" type="text" name="apellido" id="apellido" value="<%= user.lastName %>" disabled>
+                    <input class="input--style input-perfil-user" type="text" name="last_name" id="apellido" value="<%= user.lastName %>" disabled>
                 </div>
 
                 <div class="container">
@@ -34,12 +34,12 @@
                 
                 <div class="container">
                     <label class="label-perfil-user" for="telefono">Teléfono: </label>
-                    <input class="input--style input-perfil-user" type="tel" name="telefono" id="telefono" value="<%= user.phone ? user.phone : "------" %>" disabled>
+                    <input class="input--style input-perfil-user" type="tel" name="phone" id="telefono" value="<%= user.phone ? user.phone : "------" %>" disabled>
                 </div>
                  
                     <div class="container">
                         <label class="label-perfil-user" for="direccion">Dirección: </label>
-                        <input class=" input--style input-perfil-user" type="text" name="direccion" id="direccion" value="<%= user.location != null && user.location.address ? user.location.address : "------" %>"disabled>
+                        <input class=" input--style input-perfil-user" type="text" name="address" id="direccion" value="<%= user.location != null && user.location.address ? user.location.address : "------" %>"disabled>
                     </div>
                     
                     <div class="container">

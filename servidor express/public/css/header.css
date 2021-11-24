@@ -5,6 +5,7 @@
     background-color: rgb(61, 56, 56);
     color: #fff;
     transition: 0.5s all ease;
+    /* display: none; */
   }
   .header .user-desktop.dark {
     color: #fff;
@@ -453,7 +454,7 @@ letter-spacing: 2px;
   padding: 0 10px 0 20px;
   transition: width 1s ease, opacity 500ms ease-in;
   box-shadow: 0px 0px 10px var(--bordes);
-  background-color: white;
+  background-color: rgba(255,255,255,0.8);
   z-index: 300;
 }
 
@@ -568,10 +569,8 @@ letter-spacing: 2px;
     display: none;
   }
 .header .containTranslateDarkMode{
-
-flex-direction: row;
-
-width: 100%;
+flex-direction: row;
+width: 100%;
 }
   .header .user-desktop {
     display: flex;
@@ -704,7 +703,7 @@ left: -50%;
   }
 
   .header .btn:hover::after {
-    width: 70%;
+    width: 60%;
   }
   .header .search-bar button {
     transform: none;

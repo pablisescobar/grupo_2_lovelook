@@ -85,11 +85,18 @@ body {
   overflow-x: hidden;
 }
 
+/* DARK MODE */
+body.dark {
+  background-color: rgb(61, 56, 56);
+  color: white;
+  transition: 0.5s all ease;
+}
 
-  /* DARK MODE */
-  body.dark {
-    background-color: rgb(61, 56, 56);
-    color: white;
-    transition: 0.5s all ease;
-  }
 
+/* BOT LOVE LOOK */
+
+.bot-LoveLook {
+  z-index: 20000;
+  bottom: 0;
+  right: 0;
+}

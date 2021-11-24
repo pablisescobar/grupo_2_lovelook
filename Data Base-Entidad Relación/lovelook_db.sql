@@ -101,8 +101,11 @@ CREATE TABLE `locations` (
   `city` varchar(50) DEFAULT NULL,
   `pc` int(11) DEFAULT NULL,
   `address` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+  `userId` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `locations_FK` (`userId`),
+  CONSTRAINT `locations_FK` FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,7 +114,7 @@ CREATE TABLE `locations` (
 
 LOCK TABLES `locations` WRITE;
 /*!40000 ALTER TABLE `locations` DISABLE KEYS */;
-INSERT INTO `locations` VALUES (1,'------','------',0,'------'),(2,'------','------',0,'------');
+INSERT INTO `locations` VALUES (15,NULL,NULL,NULL,NULL,24),(16,'Bueno Aires','San Miguel',1663,'Letonia 279',24),(17,NULL,NULL,NULL,NULL,25),(18,NULL,NULL,NULL,NULL,26),(19,'Bueno Aires','San Miguel',1663,'Letonia 279',26),(20,NULL,NULL,NULL,NULL,27),(21,NULL,NULL,NULL,NULL,28),(22,NULL,NULL,NULL,NULL,29),(23,NULL,NULL,NULL,NULL,30),(24,NULL,NULL,NULL,NULL,31),(25,NULL,NULL,NULL,NULL,32),(26,'','',0,'garcia lorca',33),(27,NULL,NULL,NULL,NULL,34),(28,NULL,NULL,NULL,NULL,35),(29,'','',0,'garcia lorca',33),(30,NULL,NULL,NULL,NULL,36);
 /*!40000 ALTER TABLE `locations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -139,7 +142,7 @@ CREATE TABLE `messages` (
   `businessName` varchar(50) DEFAULT NULL,
   `socialLocation` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -148,7 +151,7 @@ CREATE TABLE `messages` (
 
 LOCK TABLES `messages` WRITE;
 /*!40000 ALTER TABLE `messages` DISABLE KEYS */;
-INSERT INTO `messages` VALUES (6,'Hola quiero trabajar en la empresa','rrhh','Emanuel','Arroyo',0,'ema201217@gmail.com',1156412335,'1633887016554_img_CV-EmaA-Developer.pdf_.pdf','','','',0,'',''),(8,'sadasdadasasd asasdasasds asas','rrhh','Emanuel Arroyo','Arroyo',0,'ema201217@gmail.com',1156412335,'1634337507560_img_cv.pdf_.pdf','','','',0,'','');
+INSERT INTO `messages` VALUES (25,'Hola como estas','','Emanuel','Arroyo',NULL,'ema201217@gmail.com',1156412335,'1635972691683_img_CV-EmaA-Developer.pdf_.pdf',NULL,NULL,NULL,NULL,NULL,NULL),(26,'JSDAGDHGKASJHDJKLASHDLKJHSDJKASHD','RRHH','Emanuel','Arroyo',NULL,'ema201217@gmail.com',1156412335,'1635973083286_img_CV-EmaA-Developer.pdf_.pdf',NULL,NULL,NULL,NULL,NULL,NULL),(44,'ghkkghjfgjhf','Consultas generales','Emanuel','Arroyo',NULL,'ema201217@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(45,'ghfhgjfghj','Atención al cliente','Emanuel','Arroyo',NULL,'ema201217@gmail.com',1156412335,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(46,'jdhgfhg','RRHH','Emanuel','Arroyo',NULL,'ema201217@gmail.com',1156412335,'1636127742569_img_CV-EmaA-Developerdasdsadasdasijkdhasjidbhiasbdasibdaspibdpjioasbdpiasbdiasbpidbasd',NULL,NULL,NULL,NULL,NULL,NULL),(47,'dasdasdasdas','RRHH','Emanuel','Arroyo',NULL,'ema201217@gmail.com',1156412335,'1636128569795_img_CV-EmaA-Developerdasdsadasdasijkdhasjidbhiasbdasibdaspibdpjioasbdpiasbdiasbpidbasd',NULL,NULL,NULL,NULL,NULL,NULL),(48,'asdasdas','RRHH','Emanuel','Arroyo',NULL,'ema201217@gmail.com',1156412335,'1636128595096_img_CV-EmaA-Developerdasdsadasdasijkdhasjidbhiasbdasibdaspibdpjioasbdpiasbdiasbpidbasd',NULL,NULL,NULL,NULL,NULL,NULL),(49,'asdasdasdas','RRHH','Emanuel','Arroyo',NULL,'ema201217@gmail.com',1156412335,'1636166546190_img_CV-EmaA-Developerdasdsadasdasijkdhasjidbhiasbdasibdaspibdpjioasbdpiasbdiasbpidbasd',NULL,NULL,NULL,NULL,NULL,NULL),(50,'asdasdasd','Franquicia','dsdasdas','asdasdas',11111111,'ema201217@gmail.com',1156412335,NULL,'25 de Mayo','Letonia 279','Buenos Aires',20,'dasdasd aasdas','Carlos Tejedor'),(51,'asdasdasdasdsadas','Franquicia','asdsadas','asdasdas',36940637,'ema201217@gmail.com',1156412335,NULL,'Calingasta','Letonia 279','San Juan',20,'ASDASSD','25 de Mayo'),(52,'ADSDLKSADJASLKDSAFAS','Consultas generales','eMANUEL','ARROYO',NULL,'EMA2012@GMAIL.COM',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(53,'asdadasdasdsad','Atención al cliente','Emanuel','Arroyo',NULL,'ema201217@gmail.com',1156412335,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `messages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -177,7 +180,7 @@ CREATE TABLE `product_color` (
 
 LOCK TABLES `product_color` WRITE;
 /*!40000 ALTER TABLE `product_color` DISABLE KEYS */;
-INSERT INTO `product_color` VALUES (47,58,10),(50,61,9),(61,72,1),(63,74,5),(64,75,1),(65,76,6),(66,77,3),(67,78,8),(68,79,3),(69,80,9),(70,81,1),(71,82,2),(73,84,3),(74,85,9),(75,86,8),(81,92,7),(83,94,3),(84,95,7),(85,96,3),(86,97,7),(87,98,7),(88,99,6),(89,100,9),(90,101,3),(91,102,6),(92,103,1),(93,104,3),(94,105,8),(95,106,1),(96,107,6),(97,108,4),(98,109,6),(99,110,5),(100,111,1),(101,112,3),(102,113,2),(103,114,9),(104,115,6),(105,116,3),(106,117,1),(107,118,9),(108,119,1),(109,120,10),(110,121,1),(111,122,2),(112,123,9),(113,124,2),(114,125,6),(115,126,9);
+INSERT INTO `product_color` VALUES (47,58,10),(51,62,5),(53,64,9),(55,66,6),(56,67,5),(57,68,1),(58,69,2),(59,70,3),(60,71,2),(61,72,1),(62,73,7),(63,74,5),(64,75,1),(65,76,6),(66,77,3),(67,78,8),(68,79,3),(69,80,9),(70,81,1),(71,82,2),(73,84,3),(74,85,9),(75,86,8),(81,92,7),(83,94,3),(84,95,7),(85,96,3),(86,97,7),(87,98,7),(88,99,6),(89,100,9),(90,101,3),(91,102,6),(92,103,1),(93,104,3),(94,105,8),(95,106,1),(96,107,6),(97,108,4),(98,109,6),(99,110,5),(100,111,1),(101,112,3),(102,113,2),(103,114,9),(104,115,6),(105,116,3),(106,117,1),(107,118,9),(108,119,1),(109,120,10),(110,121,1),(111,122,2),(112,123,9),(113,124,2),(115,126,9);
 /*!40000 ALTER TABLE `product_color` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -206,7 +209,7 @@ CREATE TABLE `product_size` (
 
 LOCK TABLES `product_size` WRITE;
 /*!40000 ALTER TABLE `product_size` DISABLE KEYS */;
-INSERT INTO `product_size` VALUES (46,3,58),(49,1,61),(60,3,72),(62,3,74),(63,4,75),(64,1,76),(65,3,77),(66,3,78),(67,2,79),(68,4,80),(69,1,81),(70,4,82),(72,2,84),(73,3,85),(74,4,86),(75,2,92),(76,4,94),(77,3,95),(78,1,96),(79,2,97),(80,5,98),(81,4,99),(82,3,100),(83,4,101),(84,5,102),(85,3,103),(86,2,104),(87,1,105),(88,3,106),(89,4,107),(90,5,108),(91,3,109),(92,2,110),(93,5,111),(94,2,112),(95,3,113),(96,3,114),(97,2,115),(98,4,116),(99,2,117),(100,2,118),(101,4,119),(102,3,120),(103,2,121),(104,2,122),(105,1,123),(106,1,124),(107,2,125),(108,1,126);
+INSERT INTO `product_size` VALUES (46,3,58),(50,4,62),(52,4,64),(54,3,66),(55,4,67),(56,3,68),(57,1,69),(58,2,70),(59,3,71),(60,3,72),(61,4,73),(62,3,74),(63,4,75),(64,1,76),(65,3,77),(66,3,78),(67,2,79),(68,4,80),(69,1,81),(70,4,82),(72,2,84),(73,3,85),(74,4,86),(75,2,92),(76,4,94),(77,3,95),(78,1,96),(79,2,97),(80,5,98),(81,4,99),(82,3,100),(83,4,101),(84,5,102),(85,3,103),(86,2,104),(87,1,105),(88,3,106),(89,4,107),(90,5,108),(91,3,109),(92,2,110),(93,5,111),(94,2,112),(95,3,113),(96,3,114),(97,2,115),(98,4,116),(99,2,117),(100,2,118),(101,4,119),(102,3,120),(103,2,121),(104,2,122),(105,1,123),(106,1,124),(108,1,126);
 /*!40000 ALTER TABLE `product_size` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -240,7 +243,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (58,'Get a Life','Remeron de algodÃ³n estampado',1200,11,3,3,0),(61,'Looney Tunes','Remeron de algodÃ³n estampado',1200,14,3,2,15),(72,'Snakes','Remeron de algodÃ³n con diseÃ±o estampado',1200,25,3,2,0),(74,'Stitch','Remeron de algodÃ³n con diseÃ±o de stitch estampado',1200,12,3,3,0),(75,'Stitch','Remeron de algodÃ³n con diseÃ±o de stitch estampado',1500,9,3,3,0),(76,'Tigger','Remeron de algodÃ³n estampado',1320,11,3,2,0),(77,'Tricolor','Conjunto de buzo y babucha frizado',4500,9,4,1,25),(78,'University','Buzo frizado con diseÃ±o universitario',2400,4,1,4,15),(79,'University','Buzo frizado con diseÃ±o universitario',2400,6,1,1,15),(80,'Vogue','Maxibuzo frizado con diseÃ±o estampado',2600,6,5,1,15),(81,'Wilds','Remera de algodÃ³n con detalle en las vistas',1000,7,2,2,0),(82,'Wonderland','Remeron de algodÃ³n con diseÃ±o de dibujos estampado',1200,8,3,3,0),(84,'Flower','Buzo frizado con diseÃ±o estampado',2400,15,1,1,15),(85,'Harry Potter','Buzo frizado ediciÃ³n exclusiva de Harry Potter',2400,21,1,1,15),(86,'Line II','Buzo de algodÃ³n rÃºstico con combinaciones',2300,26,1,3,0),(92,'Jean Slouchy','PantalÃ³n de jean ',1800,12,8,3,0),(94,'Jean Skinny','PantalÃ³n de jean elastizado con roturas',2000,13,8,3,0),(95,'Jean Mom','PantalÃ³n de jean',2000,11,8,3,0),(96,'Rebels','Jardinero de jean',2200,9,8,4,15),(97,'wide II','PantalÃ³n de jean amplio',2200,10,8,4,15),(98,'Stitch','Remera y short con diseÃ±o sublimado',2500,22,9,2,0),(99,'PowerPuff','Remera y short con diseÃ±o sublimado',2500,21,9,2,0),(100,'Harry Potter','Remera manga larga y pantalÃ³n babucha con diseÃ±o sublimado',2500,14,9,4,15),(101,'Mickey','Remera manga larga y pantalÃ³n babucha con diseÃ±o estampado',2500,13,9,4,15),(102,'Hello Kitty','Campera de algodÃ³n rÃºstico con diseÃ±o estampado',2800,23,6,3,0),(103,'Mickey','Campera de algodÃ³n rÃºstico con diseÃ±o estampado',2800,23,6,3,0),(104,'Selene','Campera bÃ¡sica de algodÃ³n rÃºstico',2600,16,6,3,0),(105,'Mom II','Campera larga frizada, capucha con corderito',2800,12,6,1,15),(106,'Changes','Campera larga de algodÃ³n rÃºstico',2800,12,6,3,0),(107,'Power Girls','Maxibuzo con diseÃ±o estampado',2600,13,5,3,0),(108,'Hunna','Maxibuzo con diseÃ±o bordado',2600,18,5,3,0),(109,'Stitch','Maxibuzo de algodÃ³n rÃºstico con diseÃ±o sublimado',2600,16,5,3,0),(110,'Butterflies','Conjunto de buzo y babucha con diseÃ±os estampados',4500,9,4,1,25),(111,'Do Not','Conjunto de buzo y babucha con diseÃ±os',4500,7,4,1,25),(112,'Angels','Conjunto frizado de buzo y babucha con diseÃ±o estampado',4500,6,4,1,25),(113,'Smile','Conjunto frizado de buzo y babucha',4500,8,4,1,25),(114,'Flowers','Conjunto frizado de buzo y babucha',4500,9,4,1,25),(115,'Snakes','Conjunto frizado de buzo y babucha con diseÃ±o estampado',4500,12,4,1,25),(116,'Slipper','Babucha de algodÃ³n frizado',1800,11,7,1,15),(117,'Slipper II','Babucha de algodÃ³n frizado',1800,13,7,1,15),(118,'Cloe II','Babucha de algodÃ³n rÃºstico',1800,13,7,4,0),(119,'Butterfly','RemerÃ³n de algodÃ³n con diseÃ±o de mariposa',1200,13,3,2,0),(120,'Changes','RemerÃ³n de algodÃ³n con diseÃ±o',1200,15,3,2,0),(121,'Kitty','RemerÃ³n con diseÃ±o de Hello Kitty',1200,18,3,2,0),(122,'Playboy','RemerÃ³n con diseÃ±o estampado',1200,18,3,2,0),(123,'Prada','RemerÃ³n con diseÃ±o estampado',1200,19,3,2,0),(124,'University','RemerÃ³n con diseÃ±o ',1200,16,3,2,0),(125,'Life II','Remera con diseÃ±o estampado',1000,19,2,2,0),(126,'Reloj Casio Mujer Ltp-1131g','· HORA REGULAR Analógico: Tres manillas (Horas, minutos, segundos)\r\n· PRECISION: +/- 20 Seg.. por me',10000,50,12,5,25);
+INSERT INTO `products` VALUES (58,'Get a Life','Remeron de algodÃƒÂ³n estampado',1200,11,3,3,0),(62,'Merida','Remeron con diseño Disney princesas estampado',1200,15,3,2,20),(64,'Mickey','Maxibuzo con diseÃƒÂ±o Disney estampado',2600,7,5,4,15),(66,'Power Girls','Remeron con diseÃƒÂ±o de dibujos estampado',1200,9,3,3,0),(67,'Princess','Buzo con diseÃƒÂ±o de Disney princesa',2400,10,1,1,15),(68,'Be kind','Remera de algodÃƒÂ³n estampado',1000,21,2,2,0),(69,'Simpsons','Remeron de algodón estampado',1200,12,3,3,0),(70,'Smile','Remera con diseÃƒÂ±o estampado',1000,15,2,2,0),(71,'Smile II','Remera con diseÃƒÂ±o estampado',1000,12,2,2,0),(72,'Snakes','Remeron de algodÃƒÂ³n con diseÃƒÂ±o estampado',1200,25,3,2,0),(73,'Stitch','Remera de algodÃƒÂ³n con diseÃƒÂ±o de Stitch estampado',1000,7,2,3,0),(74,'Stitch','Remeron de algodÃƒÂ³n con diseÃƒÂ±o de stitch estampado',1200,12,3,3,0),(75,'Stitch','Remeron de algodÃƒÂ³n con diseÃƒÂ±o de stitch estampado',1500,9,3,3,0),(76,'Tigger','Remeron de algodÃƒÂ³n estampado',1320,11,3,2,0),(77,'Tricolor','Conjunto de buzo y babucha frizado',4500,9,4,1,25),(78,'University','Buzo frizado con diseÃƒÂ±o universitario',2400,4,1,4,15),(79,'University','Buzo frizado con diseÃƒÂ±o universitario',2400,6,1,1,15),(80,'Vogue','Maxibuzo frizado con diseÃƒÂ±o estampado',2600,6,5,1,15),(81,'Wilds','Remera de algodÃƒÂ³n con detalle en las vistas',1000,7,2,2,0),(82,'Wonderland','Remeron de algodÃƒÂ³n con diseÃƒÂ±o de dibujos estampado',1200,8,3,3,0),(84,'Flower','Buzo frizado con diseÃƒÂ±o estampado',2400,15,1,1,15),(85,'Harry Potter','Buzo frizado ediciÃƒÂ³n exclusiva de Harry Potter',2400,21,1,1,15),(86,'Line II','Buzo de algodÃƒÂ³n rÃƒÂºstico con combinaciones',2300,26,1,3,0),(92,'Jean Slouchy','PantalÃƒÂ³n de jean ',1800,12,8,3,0),(94,'Jean Skinny','PantalÃƒÂ³n de jean elastizado con roturas',2000,13,8,3,0),(95,'Jean Mom','PantalÃƒÂ³n de jean',2000,11,8,3,0),(96,'Rebels','Jardinero de jean',2200,9,8,4,15),(97,'wide II','PantalÃƒÂ³n de jean amplio',2200,10,8,4,15),(98,'Stitch','Remera y short con diseÃƒÂ±o sublimado',2500,22,9,2,0),(99,'PowerPuff','Remera y short con diseÃƒÂ±o sublimado',2500,21,9,2,0),(100,'Harry Potter','Remera manga larga y pantalÃƒÂ³n babucha con diseÃƒÂ±o sublimado',2500,14,9,4,15),(101,'Mickey','Remera manga larga y pantalÃƒÂ³n babucha con diseÃƒÂ±o estampado',2500,13,9,4,15),(102,'Hello Kitty','Campera de algodÃƒÂ³n rÃƒÂºstico con diseÃƒÂ±o estampado',2800,23,6,3,0),(103,'Mickey','Campera de algodÃƒÂ³n rÃƒÂºstico con diseÃƒÂ±o estampado',2800,23,6,3,0),(104,'Selene','Campera bÃƒÂ¡sica de algodÃƒÂ³n rÃƒÂºstico',2600,16,6,3,0),(105,'Mom II','Campera larga frizada, capucha con corderito',2800,12,6,1,15),(106,'Changes','Campera larga de algodÃƒÂ³n rÃƒÂºstico',2800,12,6,3,0),(107,'Power Girls','Maxibuzo con diseÃƒÂ±o estampado',2600,13,5,3,0),(108,'Hunna','Maxibuzo con diseÃƒÂ±o bordado',2600,18,5,3,0),(109,'Stitch','Maxibuzo de algodÃƒÂ³n rÃƒÂºstico con diseÃƒÂ±o sublimado',2600,16,5,3,0),(110,'Butterflies','Conjunto de buzo y babucha con diseÃƒÂ±os estampados',4500,9,4,1,25),(111,'Do Not','Conjunto de buzo y babucha con diseÃƒÂ±os',4500,7,4,1,25),(112,'Angels','Conjunto frizado de buzo y babucha con diseÃƒÂ±o estampado',4500,6,4,1,25),(113,'Smile','Conjunto frizado de buzo y babucha',4500,8,4,1,25),(114,'Flowers','Conjunto frizado de buzo y babucha',4500,9,4,1,25),(115,'Snakes','Conjunto frizado de buzo y babucha con diseÃƒÂ±o estampado',4500,12,4,1,25),(116,'Slipper','Babucha de algodÃƒÂ³n frizado',1800,11,7,1,15),(117,'Slipper II','Babucha de algodÃƒÂ³n frizado',1800,13,7,1,15),(118,'Cloe II','Babucha de algodÃƒÂ³n rÃƒÂºstico',1800,13,7,4,0),(119,'Butterfly','RemerÃƒÂ³n de algodÃƒÂ³n con diseÃƒÂ±o de mariposa',1200,13,3,2,0),(120,'Changes','RemerÃƒÂ³n de algodÃƒÂ³n con diseÃƒÂ±o',1200,15,3,2,0),(121,'Kitty','RemerÃƒÂ³n con diseÃƒÂ±o de Hello Kitty',1200,18,3,2,0),(122,'Playboy','Remeron con diseño estampado',1200,18,3,2,0),(123,'Prada','Remeron con diseño estampado',1200,19,3,2,0),(124,'University','Remeron con diseño exclusivo',1200,16,3,2,0),(126,'Reloj Casio','HORA REGULAR Analogico: Tres manillas (Horas, minutos, segundos)\r\nPRECISION: +/- 20 Seg.. por',10000,50,12,5,25);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -309,7 +312,7 @@ CREATE TABLE `seasons` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -390,16 +393,15 @@ CREATE TABLE `users` (
   `lastName` varchar(50) NOT NULL,
   `phone` int(11) DEFAULT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(60) NOT NULL,
+  `password` varchar(60) DEFAULT NULL,
   `rolId` int(11) DEFAULT NULL,
-  `locationId` int(11) DEFAULT NULL,
   `avatar` varchar(150) DEFAULT NULL,
+  `id_social` int(11) DEFAULT NULL,
+  `social_provider` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `locationId` (`locationId`),
   KEY `rolId` (`rolId`),
-  CONSTRAINT `users_ibfk_1` FOREIGN KEY (`locationId`) REFERENCES `locations` (`id`),
   CONSTRAINT `users_ibfk_3` FOREIGN KEY (`rolId`) REFERENCES `roles` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -408,7 +410,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (5,'mariela','paduani',NULL,'mariela@gmail.com','$2a$12$tD5e.5Jhp/WQWMgAH8njjeREM6PBt7F9w7jlZfk6Mc1VBcHCH5V.O',2,NULL,'1637200594272_img_.jpg');
+INSERT INTO `users` VALUES (5,'mariela','paduani',NULL,'mariela@gmail.com','$2a$12$tD5e.5Jhp/WQWMgAH8njjeREM6PBt7F9w7jlZfk6Mc1VBcHCH5V.O',2,'default-image.png',NULL,NULL),(24,'Emanuel','Arroyo',1156412335,'ema201217@gmail.com',NULL,1,'default-image.png',2147483647,'google'),(25,'Emanuel','Arroyo',NULL,'ema201217@gmail.com',NULL,1,'default-image.png',2147483647,'google'),(26,'cristian','arroyo',1156412335,'emanuelarroyo20177@gmail.com',NULL,1,'default-image.png',2147483647,'google'),(27,'Emanuel','Arroyo',NULL,'ema201217@gmail.com',NULL,1,'default-image.png',2147483647,'google'),(28,'Emanuel','Arroyo',NULL,'ema201217@gmail.com',NULL,1,'default-image.png',2147483647,'google'),(29,'Emanuel','Arroyo',NULL,'ema201217@gmail.com',NULL,1,'default-image.png',2147483647,'google'),(30,'Emanuel','Arroyo',NULL,'ema201217@gmail.com',NULL,1,'https://lh3.googleusercontent.com/a-/AOh14GiMMMmhX7NLOR6ZGbz159Y5I4dq5hzvY9PEmIKMuZY=s96-c',2147483647,'google'),(31,'Emanuel','Arroyo',NULL,'ema201217@gmail.com',NULL,1,'https://lh3.googleusercontent.com/a-/AOh14GiMMMmhX7NLOR6ZGbz159Y5I4dq5hzvY9PEmIKMuZY=s96-c',2147483647,'google'),(32,'Emanuel','Arroyo',NULL,'ema201217@gmail.com',NULL,1,'https://lh3.googleusercontent.com/a-/AOh14GiMMMmhX7NLOR6ZGbz159Y5I4dq5hzvY9PEmIKMuZY=s96-c',2147483647,'google'),(33,'Emanuel','Arroyo',0,'ema@gmail.com','$2a$12$8X3Qg0yuTXq46wnZvKxVpuV1y4aEjDk4E0rONldveuQ/t954IrJrG',1,'default-image.png',NULL,NULL),(34,'Emanuel','Arroyo',NULL,'ema201217@gmail.com',NULL,1,'https://lh3.googleusercontent.com/a-/AOh14GiMMMmhX7NLOR6ZGbz159Y5I4dq5hzvY9PEmIKMuZY=s96-c',2147483647,'google'),(35,'Emanuel','Arroyo',NULL,'ema201217@gmail.com',NULL,1,'https://lh3.googleusercontent.com/a-/AOh14GiMMMmhX7NLOR6ZGbz159Y5I4dq5hzvY9PEmIKMuZY=s96-c',2147483647,'google'),(36,'Emanuel','Arroyo',NULL,'ema201217@gmail.com',NULL,1,'https://lh3.googleusercontent.com/a-/AOh14GiMMMmhX7NLOR6ZGbz159Y5I4dq5hzvY9PEmIKMuZY=s96-c',2147483647,'google');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -425,4 +427,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-18  0:20:19
+-- Dump completed on 2021-11-24  2:12:51

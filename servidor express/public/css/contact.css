@@ -73,6 +73,7 @@
   font-size: 1.2rem;
   resize: vertical;
   margin-bottom: 2px !important;
+  background-color: var(--fondo-claro);
 }
 
 .form-contact-container textarea::placeholder {

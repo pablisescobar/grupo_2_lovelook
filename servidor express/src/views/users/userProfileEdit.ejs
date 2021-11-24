@@ -2,66 +2,109 @@
 <html lang="es">
   <%- include('../partials/head')%>
   <body>
-    <%- include('../partials/load.ejs') %>
-    <%- include('../partials/header')%>
+    <%- include('../partials/load.ejs') %> <%- include('../partials/header')%>
 
-        <form action="/user/profile/edit/<%= user.id %>?_method=PUT" method="POST" class="perfil-user" enctype="multipart/form-data">
-            <div class="image-container">
-                <label class="label-perfil-user img-label" for="examinar"><span class="iconify" data-icon="carbon:add-filled"></span></label>
-                <input class="input-perfil-user" type="file" name="avatar" id="examinar" hidden/>
-                <img class="image-view" src="/img/user/userAvatars/<%= user.avatar %>" alt="">
-            </div>
-            
-            <div class="container">
-                <label class="label-perfil-user" for="nombre">Nombre: </label>
-                <input class="input--style input-perfil-user" type="text" name="name" id="nombre" value="<%=user.firstName%>"/>
-            </div>
-            <small id="errorNombre" class="text-danger"></small>
+    <form
+      action="/user/profile/edit/<%= user.id %>?_method=PUT"
+      method="POST"
+      class="perfil-user"
+    >
+      <div class="image-container">
+        <label class="label-perfil-user img-label" for="examinar"
+          ><span class="iconify" data-icon="carbon:add-filled"></span
+        ></label>
+        <input
+          class="input-perfil-user"
+          type="file"
+          name="avatar"
+          id="examinar"
+          hidden
+        />
+        <img
+          class="image-view"
+          <%= user.social_provider != "google" ? `src=/img/user/userAvatars/${user.avatar}` : `src=${user.avatar}` %>
+          alt=""
+        />
+      </div>
 
-            <div class="container">
-                <label class="label-perfil-user" for="apellido">Apellido: </label>
-                <input class="input--style input-perfil-user" type="text" name="last_name" id="apellido" value="<%= user.lastName %>"/>
-            </div>
-            <small id="errorApellido" class="text-danger"></small>
+      <div class="container">
+        <label class="label-perfil-user" for="nombre">Nombre: </label>
+        <input
+          class="input--style input-perfil-user"
+          type="text"
+          name="name"
+          id="nombre"
+          value="<%=user.firstName%>"
+        />
+      </div>
+      <small id="errorNombre" class="text-danger"></small>
 
-             <div class="container">
-                <label class="label-perfil-user" for="email">Email: </label>
-                <input class="input--style input-perfil-user" type="email" name="email" id="email" value="<%= user.email %>"/>
-            </div>
-            <small id="errorEmail" class="text-danger"></small>
+      <div class="container">
+        <label class="label-perfil-user" for="apellido">Apellido: </label>
+        <input
+          class="input--style input-perfil-user"
+          type="text"
+          name="last_name"
+          id="apellido"
+          value="<%= user.lastName %>"
+        />
+      </div>
+      <small id="errorApellido" class="text-danger"></small>
 
-            <div class="container">
-                <label class="label-perfil-user" for="telefono">Teléfono: </label>
-                <input class="input--style input-perfil-user" type="tel" name="phone" id="telefono" value="<%= user.phone ? user.phone : "------" %>">
-            </div>
-            <small id="errorTelefono" class="text-danger"></small>
+      <div class="container">
+        <label class="label-perfil-user" for="email">Email: </label>
+        <input
+          class="input--style input-perfil-user"
+          type="email"
+          name="email"
+          id="email"
+          value="<%= user.email %>"
+        />
+      </div>
+      <small id="errorEmail" class="text-danger"></small>
 
-            <div class="container">
-                <label class="label-perfil-user" for="direccion">Dirección: </label>
-                <input class=" input--style input-perfil-user" type="text" name="address" id="direccion" value="<%= user.location ? user.location[0]?.address : "------" %>">
-            </div>
-            <small id="errorDireccion" class="text-danger"></small>
-            
-            <div class="container">
-                <label class="label-perfil-user" for="cp">Codigo Postal: </label>
-                <input class=" input--style input-perfil-user" type="number" name="pc" id="cp" value="<%= user.location ? user.location[0]?.pc : "------" %>">
-            </div>
-            <small id="errorCp" class="text-danger"></small>
+      <div class="container">
+        <label class="label-perfil-user" for="telefono">Teléfono: </label>
+        <input class="input--style input-perfil-user" type="tel" name="phone"
+        id="telefono" value="<%= user.phone ? user.phone : "------" %>">
+      </div>
+      <small id="errorTelefono" class="text-danger"></small>
 
-            <div class="container">
-                <label class="label-perfil-user" for="city">City: </label>
-                <input class=" input--style input-perfil-user" type="text" name="city" id="city" value="<%= user.location ? user.location[0]?.city : "------" %>">
-            </div>
+      <div class="container">
+        <label class="label-perfil-user" for="direccion">Dirección: </label>
+        <input class=" input--style input-perfil-user" type="text"
+        name="address" id="direccion" value="<%= user.location ?
+        user.location[0]?.address : "------" %>">
+      </div>
+      <small id="errorDireccion" class="text-danger"></small>
 
-            <div class="container">
-                <label class="label-perfil-user" for="province">Provincia: </label>
-                <input class=" input--style input-perfil-user" type="text" name="province" id="province" value="<%= user.location ? user.location[0]?.province : "------" %>">
-            </div>
-            <button class="changesButton" type="submit">GUARDAR CAMBIOS</button>
-            
-        </form>
-        
-        <%- include('../partials/footer')%>
-        <script src="/js/profileEditValidation.js"></script>
+      <div class="container">
+        <label class="label-perfil-user" for="cp">Codigo Postal: </label>
+        <input class=" input--style input-perfil-user" type="number" name="pc"
+        id="cp" value="<%= user.location ? user.location[0]?.pc : "------" %>">
+      </div>
+      <small id="errorCp" class="text-danger"></small>
+
+      <div class="container">
+        <label class="label-perfil-user" for="city">City: </label>
+        <input class=" input--style input-perfil-user" type="text" name="city"
+        id="city" value="<%= user.location ? user.location[0]?.city : "------"
+        %>">
+      </div>
+
+      <div class="container">
+        <label class="label-perfil-user" for="province">Provincia: </label>
+        <input class=" input--style input-perfil-user" type="text"
+        name="province" id="province" value="<%= user.location ?
+        user.location[0]?.province : "------" %>">
+      </div>
+      <button class="changesButton" type="submit">GUARDAR CAMBIOS</button>
+    </form>
+
+    <%- include('../partials/whatsapp.ejs') %>
+    <%-include('../partials/footer.ejs') %>
+     <%-include('../partials/scripts.ejs') %>
+
+    <script src="/js/profileEditValidation.js"></script>
   </body>
 </html>

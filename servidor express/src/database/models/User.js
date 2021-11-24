@@ -24,16 +24,21 @@ module.exports = (sequelize, dataTypes) => {
     },
     password: {
       type: dataTypes.STRING(60),
-      allowNull: false,
     },
     rolId: {
       type: dataTypes.INTEGER(11),
     },
-    locationId: {
-      type: dataTypes.INTEGER(11),
-    },
     avatar: {
       type: dataTypes.STRING(150),
+    },
+    id_social:{
+      type: dataTypes.INTEGER(11),
+      defaultValue: null
+    },
+    social_provider: {
+      type: dataTypes.STRING(50),
+      defaultValue: null
+      
     },
   };
   let User = sequelize.define("User", cols, {
@@ -45,9 +50,9 @@ module.exports = (sequelize, dataTypes) => {
       as: "rol",
       foreignKey: "rolId",
     });
-    User.belongsTo(models.Location, {
+    User.hasMany(models.Location, {
       as: "location",
-      foreignKey: "locationId",
+      foreignKey: "userId",
     });
   
     User.belongsToMany(models.Product, {

@@ -1,3 +1,15 @@
+/* Dark Mode */
+
+.login .google.dark{
+   
+box-shadow: inset 0 0 10px 2px gray;
+   
+transition: all 1s ease;
+}
+
+/* Dark Mode end */
+
+
 .modal {
     position: fixed;
     z-index: 10000;
@@ -29,16 +41,36 @@
     margin: 20px auto;
     width: 100%;
 }
+.login .google img{
+    object-fit: contain;
+}
+.login .google{
+   padding: 6px 24px;
+   border-radius: 8px;
+   height: 30px;
+   box-shadow: 0px 0px 5px rgb(0 0 0 / 35%);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: .8em;
+   font-weight: 600;
+   gap: 12px;
+   color: #4D4D4D;
+   background-color: white;
+   transition: all .5s ease;
+}
+
+
 
 .login .card , .register .card{
     background-color: white;
     width: 320px;
-    height: 449px;
     box-shadow: 0 0 10px var(--bordes);
     display         : flex;
     flex-direction  : column;
     align-items     : center;
     gap: 10px;
+    position: relative;
     z-index: 100;
     border-radius: 10px;
     background: linear-gradient(150deg,rgba(253,180,191,1), white, rgba(253,180,191,1));

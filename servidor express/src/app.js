@@ -8,6 +8,11 @@ const session = require('express-session')
 const localsCheck =require('./middleware/localsCheck')
 const headerCategories = require('./middleware/headerCategories')
 
+/* Passport */
+const passport = require('passport');
+
+
+
 /* Middleware */
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended:false }));
@@ -21,6 +26,10 @@ app.use(session({
 }))
 app.use(localsCheck)
 app.use(headerCategories)
+
+//Passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 /* VIEWS */
 app.set('views',path.join(__dirname,'views'))
@@ -41,6 +50,7 @@ app.use('/admin',adminRouter);
 app.use('/info',infoRouter);
 app.use('/products',productsRouter);
 app.use('/user',userRouter); 
+
 
 /* -------ERROR 404------------ */
 app.use((req,res,next)=>{

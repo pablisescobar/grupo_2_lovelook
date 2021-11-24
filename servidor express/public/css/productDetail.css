@@ -87,7 +87,7 @@ figure.zoom {
 
 .price-line-medio {
     text-decoration: line-through;
-    /* color: green; */
+    color: lightsalmon;
     /* font-weight: bold; */
     font-size: 1rem;
 }
@@ -249,16 +249,17 @@ figure.zoom {
 }
 
 .details-products .product .description .name {
-    letter-spacing: 3px;
+    letter-spacing: 5px;
     font-weight: bold;
     /* text-align: center; */
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .details-products .product .description .price {
     letter-spacing: 3px;
     font-weight: bold;
     position: relative;
+    color: lightseagreen;
     /* padding-left: 30px; */
     font-size: 1rem;
     text-align: left;
@@ -276,7 +277,8 @@ figure.zoom {
 .details-products .product .description .discount {
     letter-spacing: 2px;
     position: relative;
-    color: green;
+    color: lightblue;
+    font-weight: bolder;
     width: 100%;
     font-family: "Slabo 27px";
     text-align: left;
@@ -311,7 +313,6 @@ figure.zoom {
     font-size: 1.3rem;
     position: relative;
     grid-area: title;
-    cursor: pointer;
 }
 
 .details-products .product .select {

@@ -11,7 +11,7 @@
     background: none;
     height: 18px;
     width: 18px;
-    bottom: 3px;
+    /* bottom: 3px; */
     opacity: 0;
 }
 .register .input-container input {
@@ -76,6 +76,7 @@
     background-image: url("/img/icons/check.png");
     background-size: 1.2rem;
     background-position: center;
+    background-color: transparent;
     color: #08e676;
     border: none;
     transform: rotate(360deg);

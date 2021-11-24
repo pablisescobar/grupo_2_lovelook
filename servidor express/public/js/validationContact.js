@@ -395,14 +395,17 @@ window.addEventListener("load", function () {
     let elementos = form.elements;
 
     var response = grecaptcha.getResponse();
-
-    if (response.length == 0) {
-        
+    if (response == "") {
       $inputCaptcha.classList.remove("validationsSuccess");
       $inputCaptcha.classList.add("validationsErrors");
       $captchaError.classList.add("validationsErrors");
       $captchaError.innerText = "Captcha obligatorio";
       error = true;
+    } else {
+      $captchaError.innerText = "";
+      $inputCaptcha.classList.remove("validationsErrors");
+      $captchaError.classList.remove("validationsErrors");
+      $inputCaptcha.classList.add("validationsSuccess");
     }
 
     for (let i = 0; i < elementos.length - 1; i++) {

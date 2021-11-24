@@ -38,6 +38,7 @@
       <% if (locals.errorMsg ) { %>
       <small class="text-danger"><%= locals.errorMsg %> </small>
       <% } %>
+      <a href="/user/auth/google" class="google"><img src="/img/google.png" alt=""><span>GOOGLE</span></a>
 
       <button type="submit" class="button button--positionRegister">
         INGRESAR
@@ -50,7 +51,6 @@
   </div>
 
   </div>
-
   <%- include('../partials/whatsapp.ejs') %>
   <%- include('../partials/footer.ejs') %>
   <%- include('../partials/scripts.ejs') %>

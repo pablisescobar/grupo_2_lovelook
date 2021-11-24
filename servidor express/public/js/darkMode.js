@@ -50,7 +50,7 @@ let elementsHTML = [
   ".btnDesp",
   ".container-listProduct .filted",
   ".container-listProduct .section1",
-
+".login .google",
   ".slick-slide",
   "select#price.dropdown",
   "select#size.dropdown",
@@ -142,14 +142,14 @@ elementsHTML.forEach((element) => {
   });
 });
 
-let localMode = localStorage.getItem("mode");
-let contador = 0;
-$mode.onclick = function () {
-  contador++;
-  localStorage.setItem("mode", contador);
-};
+window.addEventListener("DOMContentLoaded", function () {
 
-window.addEventListener("load", function () {
+  let localMode = localStorage.getItem("mode");
+  let contador = 2;
+  $mode.addEventListener("click", function () {
+    ++contador;
+    localStorage.setItem("mode", contador);
+  });
   /* HEADER */
 
   elementsHTML.forEach((element) => {
