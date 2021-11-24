@@ -127,45 +127,6 @@ module.exports = {
       })
     },
 
-    updateProfile: (req, res) => {
-        let errors = validationResult(req)
-
-        if (errors.isEmpty()) {
-            let { firstname, lastName, phone, address, pc, province, city } = req.body;
-            db.User.update({
-                firstname,
-                lastName,
-                pc,
-                phone,
-                avatar: req.file ? req.file.filename : req.session.user.avatar
-            }, {
-                where: {
-                    id: req.params.id
-                }
-            })
-                .then(() => {
-                    db.Location.create({
-                        address,
-                        city,
-                        province,
-                        pc,
-                        userId: req.params.id
-                    })
-                        .then(() => {
-                            res.redirect('/user/perfil')
-                        })
-                })
-
-        } else {
-            res.render('users/userProfileEdit', {
-                position: "position:relative;",
-                errors: errors.mapped(),
-                old: req.body,
-                session: req.session
-            })
-        }
-    },
-
     processLogin: (req, res) => {
         let errors = validationResult(req)
         if (errors.isEmpty()) {
