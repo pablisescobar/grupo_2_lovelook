@@ -1,3 +1,7 @@
+.frameCategory {
+  display: none;
+}
+
 /* -------------------------- */
   /* MODO NOCHE */
   /* -------------------------- */
@@ -156,9 +160,11 @@
 .sidenav a {
   padding: 8px 8px 8px 15px;
   text-decoration: none;
+  font-size: 1.2;
   color: black;
   display: block;
-  cursor: pointer;
+  transition: 1s;
+  /*cursor: pointer;*/  
   width: fit-content;
 }
 
@@ -552,8 +558,57 @@ letter-spacing: 2px;
 }
 
 @media screen and (min-width: 1024px) {
+  .frameCategory {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--fondo-claro);
+    width: 100%;
+    height: 0;
+    font-size: 0;
+    opacity: 0;
+    transition: 0.5s font-size ease,1s height ease,2s opacity ease;
+}
 
+.btnUnique{
+  background-color:transparent
+}
+
+.btnUnique.active{
+  background-color: var(--fondo-claro);
+  }
+
+.frameCategory.active {
+    height: 120px;
+    font-size: 1rem;
+    opacity: 1;
+    transition: 1s font-size ease,0.5s height ease,2s opacity ease;
+}
+
+.frameCategory.active.dark, .btnUnique.active.dark{
+  background-color: var(--bordes);
+}
+.frameCategory.dark.active, .btnUnique.dark.active{
+  background-color: var(--bordes);
+}
+
+.ListProduct {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+.ListProduct a {
+  text-align: center;
+  padding: 10px;
+  letter-spacing: 2px;
+}
+.ListProduct a.dark {
   
+border-color: gray;
+}
+.ListProduct a:hover{
+  border: 1px solid white;
+}
   .header {
     width: 100vw;
     height: 110px;
@@ -656,14 +711,14 @@ left: -50%;
 .header .menu-mobile{
   display: none;
 }
-  .header .logo {
+  /* .header .logo {
     /* margin: auto 0; */
     /* width: 100px; */
     /* height: 100px; */
     /* transform: none; */
     /* box-shadow: 0 0 20px #fff; */
     /* background-color: #fff; */
-  }
+   */
 
   .header .lupa {
     display: none;
@@ -738,6 +793,4 @@ left: -50%;
   .header .menu-user {
     font-size: 0.5rem;
   }
-
-  
 }

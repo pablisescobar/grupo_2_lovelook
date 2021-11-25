@@ -40,19 +40,14 @@
             <ul>
               <li class="btn"><a href="/">Inicio</a></li>
               <li id="categorias_id" class="btn">
-                <a id="categorias_dii">Categorías<i class="fas fa-angle-down" id="fa-angle-down"></i></a>
-                <div id="category_m" style="display: none" class="menu_desplegable">
-                  <div class="desplegable">
+                <a>Categorías</a>
                     <% locals.categories.forEach(category=> { %>
-                      <a href="/products/<%= category.name %>"><i class="fas fa-angle-right"></i><span>
+                      <%= category.name %>">
                           <%= category.name %>
-                        </span></a>
                       <% }); %>
-                  </div>
-                </div>
               </li>
               <li class="btn"><a href="/products/accesorios">Accesorios</a></li>
-              <li class="btn"><a href="/products">Todo los Productos</a></li>
+              <li class="btn"><a href="/products">Todos los Productos</a></li>
             </ul>
             <% if (typeof session.user !="undefined" ) { %>
               <div class="menu-mobile">
@@ -117,17 +112,12 @@
               <nav class="navbar" id="subMenu">
                 <ul>
                   <li class="btn"><a href="/">Inicio</a></li>
-                  <li id="categoriasDesplegable" class="btn">
+                  <li id="categoryPc" class="btnUnique">
                     <a>Categorías</a>
-                    <div class="menu_desplegable" id="categoriasDesplegableView" style="display: none">
-                      <div class="desplegable">
                         <% locals.categories.forEach(category=> { %>
-                          <a href="/products/<%= category.name %>"><span>
+                          <%= category.name %>">
                               <%= category.name %>
-                            </span></a>
                           <% }); %>
-                      </div>
-                    </div>
                   </li>
                   <li class="btn"><a href="/products/accesorios">Accesorios</a></li>
                   <li class="btn"><a href="/products">Todo los productos</a></li>
@@ -143,3 +133,13 @@
                 </button>
               </form>
 </header>
+<div class="frameCategory" id="FrameCategory">
+  <div class="ListProduct">
+      <% locals.categories.forEach(category=> { %>
+          <a href="/products/<%= category.name %>">
+              <span>
+                  <%= category.name %>
+              </span></a>
+          <% }); %>
+  </div>
+</div>

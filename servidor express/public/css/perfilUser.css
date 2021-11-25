@@ -6,12 +6,20 @@
 }
 
 
-.perfil-user .input-perfil-user {
+.perfil-user .input-perfil-user { 
     width: 290px;
     height: 39px;
     border: 2px solid var(--bordes);
     font-size: 2rem;
     padding-left: 10px;
+}
+
+.perfil-user .input-perfil-user-border { 
+    width: 290px;
+    height: 39px;
+    font-size: 2rem;
+    padding-left: 10px;
+    border-radius: 20px;
 }
 
 .perfil-user .label-perfil-user {
@@ -111,6 +119,14 @@ small {
     height: 41px;
     font-size: 1.5rem;
     background: white;
+    }
+    
+    .perfil-user .input-perfil-user-border {
+    width: 250px;
+    height: 41px;
+    font-size: 1.5rem;
+    background: white;
+    border-radius: 20px;
     }
 
     .perfil-user .label-perfil-user {
