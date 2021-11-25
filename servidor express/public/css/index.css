@@ -25,6 +25,8 @@
     padding-bottom: 14px;
 }
 
+
+
 .container-fluid .cajaPrincipal .imagen1 {
     margin: 10px 0px;
     position: relative;
@@ -53,6 +55,10 @@
     font-weight: lighter;
     filter: drop-shadow(6px 8px 2px var(--shadows));
     margin-bottom: 20px;
+}
+
+.container .cajavideo .video1 {
+    width: 100%;
 }
 
 .home-inicio .container .cajavideo .video1 h2{
