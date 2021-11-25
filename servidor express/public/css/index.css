@@ -54,6 +54,18 @@
     margin-bottom: 20px;
 }
 
+.container .cajavideo .video1 {
+    width: 100%;
+}
+
+.home-inicio .container .cajavideo .video1 h2{
+    position: relative;
+    text-align: center;
+    bottom: 205px;
+    color: white;
+    background-color: rgba(234, 137, 154, 0.6);
+    font-weight: bold;
+}
 
 .home-inicio .marqueeContainer {
     width: 100%;
