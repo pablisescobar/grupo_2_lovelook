@@ -40,8 +40,10 @@
     background: transparent;
   }
   .header .sidenav.dark{
-background-color: rgb(61, 56, 56);
-box-shadow: inset -10px 5px 90px black;
+
+background-color: rgb(61, 56, 56);
+
+box-shadow: inset -10px 5px 90px black;
 }
 
 

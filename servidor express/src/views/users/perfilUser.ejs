@@ -19,42 +19,42 @@
 
                 <div class="container">
                     <label class="label-perfil-user" for="nombre">Nombre: </label>
-                    <input class="input--style input-perfil-user" type="text" name="name" id="nombre" value="<%= session.user.firstName %>" disabled>
+                    <input class="input--style input-perfil-user-border" type="text" name="nombre" id="nombre" value="<%= user.firstName %>" disabled>
                 </div>
 
                 <div class="container">
                     <label class="label-perfil-user" for="apellido">Apellido: </label>
-                    <input class="input--style input-perfil-user" type="text" name="last_name" id="apellido" value="<%= session.user.lastName %>" disabled>
+                    <input class="input--style input-perfil-user-border" type="text" name="apellido" id="apellido" value="<%= user.lastName %>" disabled>
                 </div>
 
                 <div class="container">
                     <label class="label-perfil-user" for="email">Email: </label>
-                    <input class="input--style input-perfil-user" type="email" name="email" id="email" value="<%= session.user.email != null && session.user.email %>" disabled>
+                    <input class="input--style input-perfil-user-border" type="email" name="email" id="email" value="<%= user.email %>"disabled>
                 </div>
                 
                 <div class="container">
                     <label class="label-perfil-user" for="telefono">Teléfono: </label>
-                    <input class="input--style input-perfil-user" type="tel" name="phone" id="telefono" value="<%= session.user.phone ? session.user.phone : "------" %>" disabled>
+                    <input class="input--style input-perfil-user-border" type="tel" name="telefono" id="telefono" value="<%= user.phone ? user.phone : "------" %>" disabled>
                 </div>
                  
                     <div class="container">
                         <label class="label-perfil-user" for="direccion">Dirección: </label>
-                        <input class=" input--style input-perfil-user" type="text" name="address" id="direccion" value="<%= session.user.location != null && session.user.location.address ? session.user.location.address : "------" %>"disabled>
+                        <input class=" input--style input-perfil-user-border" type="text" name="direccion" id="direccion" value="<%= user.location != null && user.location.address ? user.location.address : "------" %>"disabled>
                     </div>
                     
                     <div class="container">
                         <label class="label-perfil-user" for="city">Ciudad: </label>
-                        <input class=" input--style input-perfil-user" type="text" name="city" id="city" value="<%= session.user.location != null && session.user.location.city ? session.user.location.city : "------" %>"disabled>
+                        <input class=" input--style input-perfil-user-border" type="text" name="city" id="city" value="<%= user.location != null && user.location.city ? user.location.city : "------" %>"disabled>
                     </div>
                     
                 <div class="container">
                     <label class="label-perfil-user" for="cp">Codigo Postal: </label>
-                    <input class=" input--style input-perfil-user" type="number" name="cp" id="cp" value="<%= session.user.location != null && session.user.location.pc ? session.user.location.pc : "------" %>"disabled>
+                    <input class=" input--style input-perfil-user-border" type="number" name="cp" id="cp" value="<%= user.location != null && user.location.pc ? user.location.pc : "------" %>"disabled>
                 </div>
             
                 <div class="container">
                     <label class="label-perfil-user" for="province">Provincia: </label>
-                    <input class=" input--style input-perfil-user" type="text" name="province" id="province" value="<%= session.user.location != null && session.user.location.province ? session.user.location.province : "------" %>"disabled>
+                    <input class=" input--style input-perfil-user-border" type="text" name="province" id="province" value="<%= user.location != null && user.location.province ? user.location.province : "------" %>"disabled>
                 </div>
                 <a href="/user/profile/edit/<%= session.user.id %>" class="changesButton">EDITAR DATOS</a>
                 <div>
