@@ -12,55 +12,70 @@ module.exports = () => {
         callbackURL: "http://localhost:3000/user/auth/google/callback",
       },
 
-      async function (accessToken, refreshToken, profile, done) {
-        // Busco si hay un usuario logeado con google con el id enviado por parametro
-        const user = await db.User.findOne({
-          where: {
-            id_social: profile.id,
-          },
-        });
-        // En caso de que no lo haya crea el usuario guardando los datos del profile en la bd
-        if (!user) {
+      function (accessToken, refreshToken, profile, done) {
 
-            console.log(profile);
-          db.User.create({
-            firstName: profile.name.givenName,
-            lastName: profile.name.familyName,
+        db.User.findOne({
+          where: {
             email: profile.emails[0].value,
-            password: null,
-            phone: null,
-            rolId: 1,
-            id_social: profile.id,
-            social_provider: "google",
-            avatar: profile.photos[0].value,
-          })
-            .then((user) => {
-              db.Location.create({
-                province: null,
-                city: null,
-                pc: null,
-                address: null,
-                userId: user.id,
-              });
-              return done(null, user);
-            })
-            .catch((error) => {
-              console.log(error);
-            });
-          // Si ya existe
-        } else {
-          db.User.findOne({
-            where: {
+          },
+        }).then((user) => {
+          console.log(user);
+         
+          if (!user) {
+            console.log("creando");
+            db.User.create({
+              firstName: profile.name.givenName,
+              lastName: profile.name.familyName,
+              email: profile.emails[0].value,
+              password: null,
+              phone: null,
+              rolId: 1,
               id_social: profile.id,
-            },
-          })
-            .then((user) => {
-              return done(null, user);
+              social_provider: "google",
+              avatar: profile.photos[0].value,
             })
-            .catch((error) => {
-              console.log(error);
-            });
-        }
+              .then((user) => {
+                db.Location.create({
+                  province: null,
+                  city: null,
+                  pc: null,
+                  address: null,
+                  userId: user.id,
+                });
+                return done(null, user);
+              })
+              .catch((error) => {
+                console.log(error);
+              });
+            // Si ya existe
+          } else {
+            console.log("actualizando");
+            db.User.update(
+              {
+                firstName: profile.name.givenName,
+                lastName: profile.name.familyName,
+                email: profile.emails[0].value,
+                password: null,
+                phone: null,
+                rolId: 1,
+                id_social: profile.id,
+                social_provider: "google",
+                avatar: profile.photos[0].value,
+              },
+              {
+                where: {
+                  id_social: profile.id,
+                },
+              }
+            )
+              .then((user) => {
+                return done(null, user);
+              })
+              .catch((error) => {
+                console.log(error);
+              });
+          }
+        });
       }
     )
   );

@@ -59,7 +59,7 @@
     align-items: center;
     width: 90%;
 }
-
+.admin .imgs-admin{width: 600px;}
 .admin .table-container {
     overflow-y: hidden;
     width: 80%;

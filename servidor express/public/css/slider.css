@@ -73,16 +73,19 @@ a.btn-primary {
 .discount {
     font-size: 0.8rem;
     line-height: 150%;
+    color: lightblue;
 }
 
 .priceDiscount {
     font-size: 0.8rem;
     text-decoration: line-through;
+    color: lightsalmon;
 }
 
 .priceSlider {
     font-size: 1rem;
     font-weight: bold;
+    color: lightseagreen;
 }
 
 

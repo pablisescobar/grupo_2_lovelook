@@ -13,7 +13,7 @@ figure.zoom {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top;
+    /* object-position: top; */
     cursor: url(https://cdn.custom-cursor.com/db/6832/32/starter-cursor-flat-shiny-cursor.png) , default!important;
   }
 
@@ -234,6 +234,7 @@ figure.zoom {
     max-height: 100%;
     /* height: 500px; */
     margin: 0 auto 5px;
+    flex-wrap: wrap-reverse;
     padding: 10px;
     display: flex;
     width: 90%;
@@ -307,10 +308,10 @@ figure.zoom {
 }
 
 .details-products .product .form-1 .subtitle {
-    text-shadow: 2px 2px 2px gray;
     color: black;
     font-weight: bold;
     font-size: 1.3rem;
+    text-align: center;
     position: relative;
     grid-area: title;
 }
@@ -538,16 +539,9 @@ figure.zoom {
         padding: 10px 0;
     }
     .details-products .product .imgs {
-        /* grid-area: imagenes; */
-        /* align-items: start; */
-        /* justify-content: start; */
-        /* display: grid; */
-        /* grid: repeat(2, 50%) / 1fr 2fr; */
-        /* grid-template-areas:
-            "img img1"
-            "img img1"; */
+        grid-area: imagenes;
+        flex-wrap: nowrap;
         width: 500px;
-        /* display: flex; */
         gap: 10px;
         height: 400px;
         margin: 10px;

@@ -67,15 +67,7 @@
         </div>
 
 
-        <section class="section3">
-          <% products.forEach(product=>{ %> 
-            <div class="imgOffer">
-              <a href="/products/detail/<%- product.id %>" class="target-offer">
-                <img class="offerImg" src= "/img/photos/<%= product.images[0].filename %>" alt="">
-                <p><%= product.name%></p>
-          </div>
-          <% }) %> 
-        </section>
+        <%- include ('../partials/slider.ejs') %>
         
       </main>
 

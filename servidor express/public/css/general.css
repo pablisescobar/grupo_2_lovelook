@@ -41,7 +41,7 @@
 a {
   text-decoration: none !important;
   color: black;
-  display: inline-block;
+  display: block;
 }
 
 li {
@@ -93,10 +93,4 @@ body.dark {
 }
 
 
-/* BOT LOVE LOOK */
 
-.bot-LoveLook {
-  z-index: 20000;
-  bottom: 0;
-  right: 0;
-}

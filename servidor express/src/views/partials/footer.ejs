@@ -1,4 +1,4 @@
-<footer class="footer" >
+<footer class="footer">
   <!-- SECCIONES FOOTER MOBILE Y TABLET -->
 
   <section class="help footer-sections">
@@ -177,6 +177,14 @@
   <section class="legale">
     <small>&copy 2021. LOVE LOOK. Todos los derechos reservados</small>
   </section>
+  <div
+    class="fb-like"
+    data-share="true"
+    data-width="350"
+    data-show-faces="true"
+    style=" grid-area: shared;text-align: center;"
+  ></div>
+
   <section class="otros">
     <a href="https://www.mcafee.com/es-ar/antivirus.html" target="_blank"
       ><img src="/img/mcfee.png" alt="" class="antivirus"
@@ -186,26 +194,52 @@
     /></a>
   </section>
 
- <!--  <script>
-    window.addEventListener('mouseover', initLandbot, { once: true });
-    window.addEventListener('touchstart', initLandbot, { once: true });
-    var myLandbot;
-    function initLandbot() {
-      if (!myLandbot) {
-        var s = document.createElement('script');s.type = 'text/javascript';s.async = true;
-        s.addEventListener('load', function() {
-          var myLandbot = new Landbot.Livechat({
-            configUrl: 'https://chats.landbot.io/v3/H-1051213-XUJ175FR2C8V7MME/index.json',
-          });
-        });
-        s.src = 'https://static.landbot.io/landbot-3/landbot-3.0.0.js';
-        var x = document.getElementsByTagName('script')[0];
-        x.parentNode.insertBefore(s, x);
-      }
+    <!-- ChatBot LoveLOOK -->
+  <%- include('./chatbot.ejs') %>
+
+  <!-- Facebook Sing In -->
+  <script>
+   function statusChangeCallback(response) {
+    console.log('statusChangeCallback');
+    console.log(response);                 
+    if (response.status === 'connected') { 
+      testAPI();  
     }
-    </script> -->
-    <%- include('./chatbot.ejs') %>
-  
+  }
+ 
+
+   function checkLoginState() {             
+    FB.getLoginStatus(function(response) { 
+      statusChangeCallback(response);
+    });
+  }
+ 
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '624847598651244',                  
+      xfbml      : true,                   
+      version    : 'v12.0'         
+    });
+
+
+    FB.getLoginStatus(function(response) { 
+      statusChangeCallback(response);      
+    });
+  };
+ 
+  function testAPI() {                    
+    FB.api('/me', function(response) {
+     
+    });
+  }
+
+</script>
+
+
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/all.js"></script> 
+
+  <!-- Facebook Sing In end -->
+
 </footer>
 <a class="endPage"><i class="fas fa-arrow-down"></i></a>
-

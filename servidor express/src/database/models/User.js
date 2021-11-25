@@ -33,11 +33,11 @@ module.exports = (sequelize, dataTypes) => {
     },
     id_social:{
       type: dataTypes.INTEGER(11),
-      defaultValue: null
+      
     },
     social_provider: {
       type: dataTypes.STRING(50),
-      defaultValue: null
+     
       
     },
   };

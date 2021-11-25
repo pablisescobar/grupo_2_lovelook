@@ -83,7 +83,7 @@
                                             <%= product.price ? `$${toThousand(product.price)}` : "--" %>
                                                 <!-- PRECIO -->
                                         </td>
-                                        <td>
+                                        <td class="imgs-admin d-flex">
                                             <%product.images.forEach(image => {%>
                                             <img class="img-value"
                                                 src="/img/photos/<%= product.images.length>0? image.filename:'default.png' %>"

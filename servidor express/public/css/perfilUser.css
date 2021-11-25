@@ -80,7 +80,6 @@
     cursor: pointer;
 }
 small {
-    /* position: absolute; */
     bottom: 0;
 }
 @media screen and (min-width: 768px) {

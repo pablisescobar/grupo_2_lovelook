@@ -33,6 +33,7 @@ background-color: rgb(61, 56, 56);
     }
 /* DARK MODE END */
 
+#u_0_4_DO{display: none !important;}
 
 /* End Page */
 .endPage{
@@ -56,6 +57,7 @@ background-color: rgb(61, 56, 56);
 }
 .endPage.show-endPage{
     right: 0;
+    top: 40%;
     opacity: 1;
     animation: estirar 1.2s 1 alternate ease;
     color: white;
@@ -127,7 +129,7 @@ background-color: rgb(61, 56, 56);
 
 @media screen and (min-width: 768px) {
     .whatsapp {
-        font-size: 4rem;
+        font-size: 3rem;
         right: 15px;
         bottom: 70px;
         margin: 0;
@@ -163,7 +165,8 @@ background-color: rgb(61, 56, 56);
         "nosotros     nosotros  nosotros  nosotros    "
         "redes    redes     redes     redes "
         "afip copy   copy     . "
-        ". copy copy  . ";
+        ". copy copy  . " 
+        "shared shared shared shared";
     margin-top: 15px;
 }
 
@@ -252,9 +255,9 @@ background-color: rgb(61, 56, 56);
 }
 
 .footer .redes-sociales {
-    width          : 120px;
+    /* width          : 120px; */
     /* margin         : 0 auto; */
-    display        : flex;
+    display: flex;
     justify-content: space-around;
     align-items    : center;
     grid-area      : redes;
@@ -301,16 +304,15 @@ background-color: rgb(61, 56, 56);
 
 
 /* View TABLET of footer*/
-@media screen and (min-width:768px) {
-    /* .whatsapp {
-        font-size: 6rem;
-    } */
+@media screen and (min-width: 768px) {
+    
     .footer {
         margin: auto;
         grid-template-areas:
             " . ayuda     contacto nosotros       .       "
             " redes redes .               afip     afip   "
-            "copy  copy  copy     copy     copy        ";
+            "copy  copy  copy     copy     copy        "
+            "shared shared shared shared shared";
         width: 100%;
     }
 
@@ -333,7 +335,7 @@ background-color: rgb(61, 56, 56);
 
 /* View Desktop of footer */
 
-@media screen and (min-width:1024px) {
+@media screen and (min-width: 1024px) {
    /*  .whatsapp {
         bottom: 20vw;
 right: 2vw;
@@ -364,7 +366,8 @@ right: 2vw;
         grid-template-areas:
             "ayuda    ayuda ayuda contacto  contacto contacto  nosotros  nosotros   nosotros    "
             ".    .     .     redes     redes    redes      afip       afip . "
-            ".    .     copy  copy      copy     copy      copy      .          .    ";
+            ".    .     copy  copy      copy     copy      copy      .          .    "
+            "";
     }
    
     /* Elementos generales */

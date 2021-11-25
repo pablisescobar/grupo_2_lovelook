@@ -11,7 +11,8 @@ let {
   updateProfile,
   processRegister,
   deleteProfile,
-  loginGoogle
+  loginGoogle,
+  loginFacebook
 } = require("../controllers/userController.js");
 const loginValidator = require("../validations/loginValidator");
 const userLog = require("../middleware/userLog");
@@ -22,6 +23,8 @@ const userSessionCheck = require("../middleware/userSessionCheck");
 /* google sing in */
 const passport = require('passport');
 
+/* Facebook SDK */
+
 passport.serializeUser(function(user, done) {
   done(null, user);
 });
@@ -29,8 +32,14 @@ passport.deserializeUser(function(user, done) {
   done(null, user);
 });
 
+/* Google API SING IN*/
 const googleLogin = require('../functions/loginGoogle');
 googleLogin()
+
+
+/* Facebook API SING IN*/
+const facebookLogin = require('../functions/loginFacebook');
+facebookLogin()
 
 /* View login */
 router.get("/login", userLog, login);
@@ -61,5 +70,11 @@ router.get("/cart", userSessionCheck, cart);
 /* Google Sing In */
 router.get("/auth/google", passport.authenticate("google", { scope: ["profile", "email"] }));
 router.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/user/login' }), loginGoogle);
+
+/* Facebook Sing In */
+router.get("/auth/facebook", passport.authenticate("facebook", { scope: ['email', 'user_friends'] }));
+router.get('/auth/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/user/login' }), loginFacebook);
+
+
 
 module.exports = router;

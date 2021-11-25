@@ -10,7 +10,7 @@
             <h5 class="nameSlider">
               <%= product.name %>
             </h5>
-            <p class="priceSlider">
+            <p class="priceSlider">$
               <%=toThousand(Math.round(product.price - product.price * product.discount /
                   100))%>
           </p>

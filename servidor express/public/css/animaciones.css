@@ -45,6 +45,15 @@
         transform: rotate(10deg);
     }
 }
+@keyframes giro {
+    from {
+        transform: rotate(360deg);
+    }
+    
+    to {
+        transform: rotate(0);
+    }
+}
 
 @keyframes medioGiro {
     0% {

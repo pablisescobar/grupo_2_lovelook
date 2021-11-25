@@ -14,6 +14,8 @@ let elementsHTML = [
   ".header .iconLupaBar",
   ".header .btn",
   ".header .search-bar input",
+  ".sidenav",
+  ".sidenav a",
 
   /* footer */
   ".footer .help ul",
@@ -50,7 +52,7 @@ let elementsHTML = [
   ".btnDesp",
   ".container-listProduct .filted",
   ".container-listProduct .section1",
-".login .google",
+  ".login .google",
   ".slick-slide",
   "select#price.dropdown",
   "select#size.dropdown",
@@ -58,6 +60,19 @@ let elementsHTML = [
   "select#price.dropdown option",
   "select#size.dropdown option",
   "select#color.dropdown option",
+  "descriptionHelp p",
+  ".containerHelp .accordion",
+  ".descriptionHelp .help",
+  ".home-inicio .marqueeContainer",
+  ".marqueeShipping",
+  ".login .card",
+  ".register .card",
+  ".login .card__logo",
+  ".register .card__logo",
+  ".login .card__input",
+  ".register .input-container input",
+  ".login .button",
+".register .button",
 
   /* contact */
   ".form-contact-container input",
@@ -143,7 +158,6 @@ elementsHTML.forEach((element) => {
 });
 
 window.addEventListener("DOMContentLoaded", function () {
-
   let localMode = localStorage.getItem("mode");
   let contador = 2;
   $mode.addEventListener("click", function () {

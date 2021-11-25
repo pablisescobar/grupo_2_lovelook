@@ -18,10 +18,19 @@ module.exports = {
     });
   },
   perfil: (req, res) => {
-    db.User.findByPk(req.session.user.id, {
+
+
+    db.User.findOne({
+     where:{
+       id:req.session.user.id
+     } 
+    }, {
       include: [{ association: "location" }],
     })
       .then((user) => {
+        console.log("usuario en sesion ----");
+       console.log(user);
+       console.log("---------------");
         res.render("users/perfilUser", {
           position: "position:relative;",
           user,
@@ -45,7 +54,8 @@ module.exports = {
     let errors = validationResult(req);
 
     if (errors.isEmpty()) {
-      let { firstName, lastName, phone, address, pc, province, city } =req.body;
+      let { firstName, lastName, phone, address, pc, province, city } =
+        req.body;
       db.User.update(
         {
           firstName,
@@ -66,9 +76,9 @@ module.exports = {
           pc,
           userId: req.params.id,
         }).then(() => {
-            res.redirect("/user/perfil");
-          });
+          res.redirect("/user/perfil");
         });
+      });
     } else {
       res.render("users/userProfileEdit", {
         position: "position:relative;",
@@ -83,14 +93,12 @@ module.exports = {
       where: {
         id: req.params.id,
       },
-    })
-    .then(() => {
+    }).then(() => {
       db.Location.destroy({
         where: {
           userId: req.params.id,
         },
-      })
-      .then(() => {
+      }).then(() => {
         req.session.destroy();
         if (req.cookies.userLoveLook) {
           res.cookie("userLoveLook", "", { maxAge: -1 });
@@ -114,13 +122,11 @@ module.exports = {
           lastName: user.lastName,
           email: user.email,
           rol: user.rolId,
+          id_social: 0,
+          avatar: "default-image.png",
+          social_provider:'local'
         };
-        if (req.body.remember) {
-          res.cookie("userLoveLook", req.session.user, {
-            expires: new Date(Date.now() + 90000),
-            httpOnly: true,
-          });
-        }
+        
         res.locals.user = req.session.user;
 
         res.redirect("/");
@@ -146,6 +152,9 @@ module.exports = {
         password: bcrypt.hashSync(password, 12),
         rolId: 1,
         avatar: "default-image.png",
+        social_provider:"local",
+        id_social: 0,
+        
       })
         .then(() => {
           res.redirect("/user/login");
@@ -174,7 +183,7 @@ module.exports = {
           [Op.gte]: 20,
         },
       },
-      limit: 3,
+      limit: 8,
       include: [
         { association: "category" },
         { association: "images" },
@@ -192,17 +201,52 @@ module.exports = {
     });
   },
   loginGoogle: (req, res) => {
-    let user = req.session.passport.user
-   
+    let user = req.session.passport.user;
+
     req.session.user = {
-      id: user.id,
+      
       firstName: user.firstName,
       lastName: user.lastName,
       email: user.email,
-      googleId: user.id_social,
-      avatar:user.picture
+      id_social: user.id_social,
+      avatar: user.picture,
+      rol:1,
+      social_provider:user.social_provider
     };
 
-    res.redirect('/')
-}
+    if (req.body.remember) {
+      res.cookie("userLoveLook", req.session.user, {
+        expires: new Date(Date.now() + 90000),
+        httpOnly: true,
+      });
+    }
+    res.locals.user = req.session.user;
+
+    res.redirect("/");
+  },
+  loginFacebook: (req, res) => {
+ 
+    let user = req.session.passport.user;
+    console.log(req.session.passport.user);
+
+    req.session.user = {
+     
+      firstName: user.displayName,
+      lastName: user.displayName,
+      email: "invitado@facebook.com",
+      id_social: user.id,
+      avatar: "default-image.png",
+      rol:1,
+      social_provider:user.social_provider
+    }; 
+    if (req.body.remember) {
+      res.cookie("userLoveLook", req.session.user, {
+        expires: new Date(Date.now() + 90000),
+        httpOnly: true,
+      });
+    }
+    res.locals.user = req.session.user;
+
+    res.redirect("/"); 
+  },
 };

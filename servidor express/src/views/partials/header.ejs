@@ -57,10 +57,10 @@
             <% if (typeof session.user !="undefined" ) { %>
               <div class="menu-mobile">
                 <a href="/user/perfil">Mis datos</a>
-                <% if (session.user.rol===2) { %>
+                <% if (session.user.rol==2) { %>
                   <a href="/admin/products">ADMIN</a>
                   <% } %>
-                  <% if(session.user && session.user.rol===1){ %>
+                  <% if(session.user && session.user.rol==1){ %>
                     <div class="carritoMobile">
                       <a class="align-icon icon-size" href="/user/cart">
                         <span class="iconify" data-icon="emojione-monotone:shopping-cart" data-inline="false"></span>
@@ -68,7 +68,7 @@
                       </a>
                     </div>
                     <%}%>
-                  <a href="/user/logout"><i class="fas fa-sign-out"></i></a>
+                  <a href="/user/logout" id="logout"><i class="fas fa-sign-out"></i></a>
               </div>
               <% } %>
     </div>
@@ -90,7 +90,7 @@
       </a>
       <div class="menu-user">
         <a href="/user/perfil">Mis datos</a>
-        <a href="/user/logout">Cerrar sesión</a>
+        <a href="/user/logout" id="logout2">Cerrar sesión</a>
         <% if (session.user.rol==2) { %>
           <a href="/admin/products">ADMIN</a>
           <% } %>
@@ -104,7 +104,7 @@
         <% } %>
 
           <!-- ICONO DE CARRITO DE COMPRA -->
-          <% if(session.user && session.user.rol===1){ %>
+          <% if(session.user && session.user.rol==1){ %>
             <div class="carrito">
               <a class="align-icon icon-size" href="/user/cart">
                 <span class="iconify" data-icon="emojione-monotone:shopping-cart" data-inline="false"></span>
