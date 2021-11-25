@@ -277,7 +277,10 @@ margin: auto;
     box-shadow: inset 0 0 29px rgb(245, 245, 245);
 }
 .admin .formDelete{
-    width: 320px;
+    width: 280px;
+    height: 280px;
+    background-color:  lightpink ;
+    border-radius: 20px;
     margin: 0 auto;
     padding: 40px 0;
     position: fixed;
@@ -285,7 +288,6 @@ margin: auto;
     left: 0;
     right: 0;
     bottom: 40%;
-    background-color: whitesmoke;
     z-index: 300;
     border: 2px solid black;
 }
@@ -307,6 +309,18 @@ margin: auto;
     height: 35px;
     font-size: 100%;
 }
+
+.formDelete .inputDelete {
+    font-size: 2rem;
+    color: red;
+    border-radius: 20px;
+    background-color: lightpink;
+}
+
+.questionDelete {
+    font-size: 1.8rem;
+}
+
 @media screen and (min-width: 768px) {
 
     .admin h2 {
@@ -375,6 +389,11 @@ justify-content: flex-end;
     }
     .form-secondary{
     width: 60%;
+}
+
+.admin .formDelete {
+    width: 400px;
+    height: 240px;
 }
 }
 
@@ -484,8 +503,7 @@ justify-content: flex-end;
     .admin .formDelete{
         display: none;
         background-color:  lightpink;
-        border-radius: 20px;
-        
+        border-radius: 20px; 
     }
 
     .admin button.delete:focus-within form {
