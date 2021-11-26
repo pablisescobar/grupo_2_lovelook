@@ -73,6 +73,9 @@ let elementsHTML = [
   ".register .input-container input",
   ".login .button",
 ".register .button",
+".perfil-user .input-perfil-user-border",
+".perfil-user .input-perfil-user",
+".changesButton",
 
   /* contact */
   ".form-contact-container input",

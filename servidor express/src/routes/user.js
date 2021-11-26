@@ -1,7 +1,7 @@
 let express = require("express");
 let router = express.Router();
 let {
-  perfil,
+  profile,
   cart,
   login,
   register,
@@ -38,8 +38,8 @@ googleLogin()
 
 
 /* Facebook API SING IN*/
-/* const facebookLogin = require('../functions/loginFacebook');
-facebookLogin() */
+const facebookLogin = require('../functions/loginFacebook');
+facebookLogin()
 
 /* View login */
 router.get("/login", userLog, login);
@@ -51,7 +51,7 @@ router.get("/register", userLog, register);
 router.post("/register", userLog, registerValidation, processRegister);
 
 /* View perfil user */
-router.get("/perfil", userSessionCheck, perfil);
+router.get("/perfil", userSessionCheck, profile);
 router.get("/profile/edit/:id", userSessionCheck, profileEdit);
 router.put(
   "/profile/edit/:id",

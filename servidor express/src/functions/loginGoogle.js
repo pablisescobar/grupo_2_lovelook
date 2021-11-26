@@ -13,70 +13,45 @@ module.exports = () => {
       },
 
       function (accessToken, refreshToken, profile, done) {
-
-        db.User.findOne(
-          {
-            where: {
-              id_social: profile.id,
-            },
-          },
-          {
-            include: [{ association: "location" }],
-          }
-        ).then((user) => {
+        console.log(profile);
+         db.User.findOne({
+         where: {
+           id_social: profile.id,
+         },
+       }).then((user) => { 
+         
+        
           if (!user) {
-            console.log("creando"); 
-
-            db.User.create({
-              firstName: profile.name.givenName,
-              lastName: profile.name.familyName,
-              email: profile.emails[0].value,
-              password: null,
-              phone: null,
-              rolId: 1,
-              id_social: profile.id,
-              social_provider: "google",
-              avatar: profile.photos[0].value,
-            })
-              .then((user) => {
-                db.Location.create({
-                  province: null,
-                  city: null,
-                  pc: null,
-                  address: null,
-                  userId: user.id,
-                });
-                return done(null, user);
-              })
-              .catch((error) => {
-                console.log(error);
-              });
-          }else{
-            console.log("editando");
-            db.User.update({
-              firstName: profile.name.givenName,
-              lastName: profile.name.familyName,
-              email: profile.emails[0].value,
-              password: null,
-              phone: null,
-              rolId: 1,
-              id_social: profile.id,
-              social_provider: "google",
-              avatar: profile.photos[0].value,
-            },{
-              where: {
-                id_social: profile.id,
-              },
-            },)
-            .then(user=>{
-              return done(null, user);
-            })
-            .catch((error) => {
-              console.log(error);
-            }); 
-          }
-        });
-      }
+           console.log("creando"); 
+           db.User.create({
+             firstName:profile.name.givenName,
+             lastName: profile.name.familyName,
+             email: profile.emails[0].value,
+             password: null,
+             phone: null,
+             rolId: 1,
+             id_social: profile.id,
+             social_provider: "google",
+             avatar: profile.photos[0].value,
+           })
+             .then((user) => {
+               db.Location.create({
+                 province: null,
+                 city: null,
+                 pc: null,
+                 address: null,
+                 userId: user.id,
+               });
+               return done(null, user);
+             })
+             .catch((error) => {
+               console.log(error);
+             });
+           // Si ya existe
+         }
+         done(null, user)
+       }); 
+     }
     )
   );
 };

@@ -217,7 +217,7 @@ box-shadow: inset -10px 5px 90px black;
   display: none;
 }
 
-.header .menu-mobile{display: flex;flex-wrap: wrap;background-color: rgb(255 47 191 / 50%);width: 100%;justify-content: space-evenly;align-items: center;}
+.header .menu-mobile{display: flex;flex-wrap: wrap;background-color: rgb(255 47 191 / 25%);width: 100%;justify-content: space-evenly;align-items: center;}
 .header .menu-mobile a{
 
 font-weight: bold;

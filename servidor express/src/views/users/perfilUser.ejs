@@ -14,12 +14,12 @@
                    
                     <input class="input-perfil-user" type="file" name="avatar" id="examinar" hidden>
                     
-                    <img class="image-view" src="/img/user/userAvatars/<%user.avatar%>" alt="">
+                    <img class="image-view" <%= user.social_provider != "google" ? `src=/img/user/userAvatars/${user.avatar}` : `src=${user.avatar}`%> alt="">
                 </div>
 
                 <div class="container">
                     <label class="label-perfil-user" for="nombre">Nombre: </label>
-                    <input class="input--style input-perfil-user-border" type="text" name="nombre" id="nombre" value="<%= user.firstName %>" disabled>
+                    <input class="input--style input-perfil-user-border" type="text" name="nombre" id="nombre" value="<%= user.firstName%>" disabled>
                 </div>
 
                 <div class="container">
@@ -29,38 +29,37 @@
 
                 <div class="container">
                     <label class="label-perfil-user" for="email">Email: </label>
-                    <input class="input--style input-perfil-user-border" type="email" name="email" id="email" value="<%= user.email %>"disabled>
+                    <input class="input--style input-perfil-user-border" type="email" name="email" id="email" value="<%= user.email %>" disabled>
                 </div>
                 
                 <div class="container">
                     <label class="label-perfil-user" for="telefono">Teléfono: </label>
-                    <input class="input--style input-perfil-user-border" type="tel" name="telefono" id="telefono" value="<%= user.phone ? user.phone : "------" %>" disabled>
+                    <input class="input--style input-perfil-user-border" type="tel" name="telefono" id="telefono" value="<%= user.phone ? user.phone : "" %>" disabled>
                 </div>
                  
                     <div class="container">
                         <label class="label-perfil-user" for="direccion">Dirección: </label>
-                        <input class=" input--style input-perfil-user-border" type="text" name="direccion" id="direccion" value="<%= user.location != null && user.location.address ? user.location.address : "------" %>" disabled>
+                        <input class=" input--style input-perfil-user-border" type="text" name="direccion" id="direccion" value="<%= user.location ? user.location[0].address : "" %>" disabled>
                     </div>
                     
                     <div class="container">
                         <label class="label-perfil-user" for="city">Ciudad: </label>
-                        <input class=" input--style input-perfil-user-border" type="text" name="city" id="city" value="<%= user.location != null && user.location.city ? user.location.city : "------" %>" disabled>
+                        <input class=" input--style input-perfil-user-border" type="text" name="city" id="city" value="<%= user.location ? user.location[0].city : "" %>" disabled>
                     </div>
                     
                 <div class="container">
                     <label class="label-perfil-user" for="cp">Codigo Postal: </label>
-                    <input class=" input--style input-perfil-user-border" type="number" name="cp" id="cp" value="<%= user.location != null && user.location.pc ? user.location.pc : "------" %>" disabled>
+                    <input class=" input--style input-perfil-user-border" type="number" name="cp" id="cp" value="<%= user.location ? user.location[0].pc : "" %>" disabled>
                 </div>
             
                 <div class="container">
                     <label class="label-perfil-user" for="province">Provincia: </label>
-                    <input class=" input--style input-perfil-user-border" type="text" name="province" id="province" value="<%= user.location != null && user.location.province ? user.location.province : "------" %>" disabled>
+                    <input class=" input--style input-perfil-user-border" type="text" name="province" id="province" value="<%= user.location ? user.location[0].province : "" %>" disabled>
                 </div>
                 <a href="/user/profile/edit/<%= user.id %>" class="changesButton">EDITAR DATOS</a>
                 <div>
                     <label for="bad-btn-submit" class="btn_btn-submit">Eliminar perfil</label>
                 </div>
-                
             </form>
             
             <form id="formDelete" action="/user/perfil/delete/<%= user.id%>?_method=DELETE" method="POST">

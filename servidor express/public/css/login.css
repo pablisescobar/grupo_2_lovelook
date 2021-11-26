@@ -1,9 +1,7 @@
 /* Dark Mode */
 
 .login .google.dark {
-  box-shadow: inset 0 0 10px 2px gray;
-  transition: all 1s ease;
-  background-color: darkgray;
+  /* transition: all 1s ease; */
 }
 .login .google.dark:hover {
   box-shadow: inset 0 0 10px 2px darkblue, 0 0 10px darkgray;
@@ -43,8 +41,8 @@
 
 .login .button.dark,
 .register .button.dark {
-  box-shadow: inset 0 0 100px var(--bordes);
-  border: 1px solid gray;
+  box-shadow: inset 0 0 100px #ad1a1a9e;
+  border: none;
 }
 .login .button:hover.dark,
 .register .button:hover.dark {
@@ -102,6 +100,7 @@
   box-shadow: 0px 0px 5px rgb(0 0 0 / 35%);
   display: flex;
   align-items: center;
+  justify-content: space-between;
   background-color: black;
   color: white;
   transition: all 1s ease;

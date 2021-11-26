@@ -143,7 +143,7 @@ window.addEventListener('load', () => {
       if (imagen.files && imagen.files[0]) {
         let reader = new FileReader();
         reader.onload = function (e) {
-          $imgPreview.innerHTML = '<img src="' + e.target.result + '"/>';
+          document.querySelector('.image-view').setAttribute("src",e.target.result);
         };
         reader.readAsDataURL(imagen.files[0]);
         errorImagen.innerHTML = "";
