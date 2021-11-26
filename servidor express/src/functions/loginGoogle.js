@@ -14,15 +14,19 @@ module.exports = () => {
 
       function (accessToken, refreshToken, profile, done) {
 
-        db.User.findOne({
-          where: {
-            email: profile.emails[0].value,
+        db.User.findOne(
+          {
+            where: {
+              id_social: profile.id,
+            },
           },
-        }).then((user) => {
-          console.log(user);
-         
+          {
+            include: [{ association: "location" }],
+          }
+        ).then((user) => {
           if (!user) {
-            console.log("creando");
+            console.log("creando"); 
+
             db.User.create({
               firstName: profile.name.givenName,
               lastName: profile.name.familyName,
@@ -47,33 +51,29 @@ module.exports = () => {
               .catch((error) => {
                 console.log(error);
               });
-            // Si ya existe
-          } else {
-            console.log("actualizando");
-            db.User.update(
-              {
-                firstName: profile.name.givenName,
-                lastName: profile.name.familyName,
-                email: profile.emails[0].value,
-                password: null,
-                phone: null,
-                rolId: 1,
+          }else{
+            console.log("editando");
+            db.User.update({
+              firstName: profile.name.givenName,
+              lastName: profile.name.familyName,
+              email: profile.emails[0].value,
+              password: null,
+              phone: null,
+              rolId: 1,
+              id_social: profile.id,
+              social_provider: "google",
+              avatar: profile.photos[0].value,
+            },{
+              where: {
                 id_social: profile.id,
-                social_provider: "google",
-                avatar: profile.photos[0].value,
               },
-              {
-                where: {
-                  id_social: profile.id,
-                },
-              }
-            )
-              .then((user) => {
-                return done(null, user);
-              })
-              .catch((error) => {
-                console.log(error);
-              });
+            },)
+            .then(user=>{
+              return done(null, user);
+            })
+            .catch((error) => {
+              console.log(error);
+            }); 
           }
         });
       }

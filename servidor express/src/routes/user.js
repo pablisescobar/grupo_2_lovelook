@@ -38,8 +38,8 @@ googleLogin()
 
 
 /* Facebook API SING IN*/
-const facebookLogin = require('../functions/loginFacebook');
-facebookLogin()
+/* const facebookLogin = require('../functions/loginFacebook');
+facebookLogin() */
 
 /* View login */
 router.get("/login", userLog, login);

@@ -79,6 +79,7 @@ background-color: rgb(61, 56, 56);
 .fa-arrow-down{
     position: relative;
     text-shadow: 0 -3px 2px black;
+    transform: rotate(180deg);
     color: var(--fondo-claro);
     animation: rowDownMove .5s alternate infinite ease;
 }
@@ -86,14 +87,14 @@ background-color: rgb(61, 56, 56);
 @keyframes rowDownMove {
     0%{
         top:10px;
-        border-bottom:1px solid black;
+        
     
     }
     50%{
       
     }
     100%{
-        top:-10px
+        top:-10px;border-bottom:1px solid black;
     }
 }
 /* icono de whatsapp */
