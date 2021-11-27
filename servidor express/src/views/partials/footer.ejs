@@ -197,11 +197,9 @@
     <!-- ChatBot LoveLOOK -->
   <%- include('./chatbot.ejs') %>
 
-  <!-- Facebook Sing In -->
+  <!-- Facebook Shared -->
   <script>
-   function statusChangeCallback(response) {
-    console.log('statusChangeCallback');
-    console.log(response);                 
+   function statusChangeCallback(response) {             
     if (response.status === 'connected') { 
       testAPI();  
     }
@@ -217,7 +215,7 @@
 
   window.fbAsyncInit = function() {
     FB.init({
-      appId      : '624847598651244',                  
+      appId      : '1335634096866488',                  
       xfbml      : true,                   
       version    : 'v12.0'         
     });
@@ -235,13 +233,10 @@
   }
 
 </script>
-
-
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/all.js"></script> 
+  <!-- Facebook Shared end -->
 
-  <!-- Facebook Sing In end -->
-  <script src="sweetalert2.all.min.js"></script>
-<script src="/js/CartShopping/Cart.js"></script>
-<script src="/js/CartShopping/order.js"></script>
 </footer>
+
+
 <a id="endPage"><i class="fas fa-arrow-down"></i></a>

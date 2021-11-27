@@ -4,7 +4,7 @@ let desplegar = document.getElementsByClassName('categoryPc')
         document.getElementById("categoriasDesplegableView").style.display = 'none' //elemento a ocultar
     });
     document.getElementById("categorias_dii").addEventListener("click", event => {
-        console.log(event)
+     /*    console.log(event) */
         let categoriasDesplegable = document.getElementById("category_m")
         if(categoriasDesplegable.style.display == 'none'){
             categoriasDesplegable.style.display = 'block'

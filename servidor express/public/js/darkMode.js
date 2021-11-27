@@ -39,7 +39,8 @@ let elementsHTML = [
   ".container-listProduct .section2 .product .discount",
   ".container-listProduct .section2 .product h3",
   ".container-listProduct .section2 .product p",
-  ".container-listProduct .section2 .product a",
+  ".container-listProduct .section2 .product .cardProduct",
+  ".container-listProduct .cardActionProduct",
 
   /* other */
   "body",

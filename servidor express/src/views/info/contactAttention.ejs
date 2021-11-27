@@ -3,8 +3,12 @@
 
 <%- include('../partials/head.ejs') %>
 
-    <body>
+<body>
+    <!-- ReCaptcha -->
+        <%- include('../partials/recaptcha.ejs') %>
+      <!-- Loading -->
         <%- include('../partials/load.ejs') %>
+        <!-- Header -->
             <%- include('../partials/header.ejs') %>
 
                 <main class="form-contact-container">
@@ -94,7 +98,7 @@
                     <%- include('../partials/footer.ejs') %>
                    
                     <%- include('../partials/scripts.ejs') %>   
-
+                    <script src="/js/validationContact.js"></script>
 
     </body>
 

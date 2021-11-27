@@ -4,11 +4,10 @@ const db = require("../database/models");
 const { Op } = require("sequelize");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-
 module.exports = {
   index: (req, res) => {
     db.Product.findAll({
-      limit: 6,
+      limit: 8,
       where: {
         discount: {
           [Op.gte]: 15,
@@ -37,17 +36,21 @@ module.exports = {
   },
 
   search: (req, res) => {
-    db.Product.findAll({
-     
+ 
+    let productResultPromise = db.Product.findAll({
       where: {
-        name: {
-          [Op.like]: `%${req.query.keys}%`,
-        },
-      },
-      where: {
-        description: {
-          [Op.like]: `%${req.query.keys}%`,
-        },
+        [Op.or]: [
+          {
+            name: {
+              [Op.like]: `%${req.query.keys}%`,
+            },
+          },
+          {
+            description: {
+              [Op.like]: `%${req.query.keys}%`,
+            },
+          },
+        ],
       },
       include: [
         { association: "category" },
@@ -56,39 +59,26 @@ module.exports = {
         { association: "season" },
         { association: "sizes" },
       ],
-    }).then((result) => {
-      db.Product.findAll({
-        limit: 6,
-        include: [
-          { association: "category" },
-          { association: "images" },
-          { association: "colors" },
-          { association: "season" },
-          { association: "sizes" },
-        ],
-      }).then((products) => {
-        db.Category.findAll({
-          where: {
-            name: {
-              [Op.like]: `%${req.query.keys}%`,
-            },
-          },
-          include: [
-            {
-              association: "products",
-            },
-          ],
-        }).then((categoryResult) => {
-          res.render("products/resultOfSearch", {
-            result,
-            categoryResult,
-            toThousand,
-            search: req.query.keys,
-            position: "",
-            products,
-            session: req.session,
-          });
-        });
+    });
+    let colorPromise = db.Color.findAll();
+    let sizePromise = db.Size.findAll();
+
+    Promise.all([
+      productResultPromise,
+      colorPromise,
+      sizePromise,
+    ]).then(([products, colors, sizes]) => {
+   
+
+      res.render("products/listProducts", {
+        toThousand,
+        colors,
+        sizes,
+        search: req.query.keys,
+        position: "",
+        display: "display:grid;",
+        products,
+        session: req.session,
       });
     });
   },

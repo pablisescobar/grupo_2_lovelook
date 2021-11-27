@@ -1,8 +1,8 @@
 <div class="container">
   <!--  -->
-  <div class="card-slider">
+  <div class="card-slider" id="lista-productos">
     <% products.forEach(product => { %>
-    <div class="col-lg-12">
+    <div class="col-lg-12" >
       <div class="card w-100">
         <a
           href="/products/detail/<%= `${product.id}/${product.categoryId}`%>"
@@ -30,7 +30,7 @@
             <%=product.discount> 0?`${product.discount} %Off` : "" %>
           </p>
           <div class="clientAction">
-            <a data-tippy-content="Tooltip" href="/user/cart" class="btn-primary"
+            <a href="/user/cart" class="btn-primary"
               ><i class="fas fa-shopping-basket"></i
             ></a>
             <a
@@ -41,8 +41,7 @@
             ></a>
             <a
               href=""
-              class="btn-primary agregar-carrito"
-              title="agregar al carrito"
+              class="btn-primary"
               ><i class="far fa-heart"></i
             ></a>
             <!-- "fas fa-heart" para cuando esta seleccionado -->

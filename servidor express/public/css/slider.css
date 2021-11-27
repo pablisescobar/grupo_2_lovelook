@@ -92,7 +92,12 @@ a.btn-primary {
     border-radius: 5px;
     letter-spacing: 2px;
     width: 50px;
+    border: 1px;
     /* background-color: honeydew; */
+}
+
+a.btn-primary:hover{
+    filter: invert(1);
 }
 
 .slick-list.draggable {

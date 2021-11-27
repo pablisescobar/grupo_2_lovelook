@@ -44,14 +44,14 @@
                 <div id="category_m" style="display: none" class="menu_desplegable">
                   <div class="desplegable">
                     <% locals.categories.forEach(category=> { %>
-                      <a href="/products/<%= category.name %>"><i class="fas fa-angle-right"></i><span>
+                      <a href="/products/<%= category.id %>"><i class="fas fa-angle-right"></i><span>
                           <%= category.name %>
                         </span></a>
                       <% }); %>
                   </div>
                 </div>
               </li>
-              <li class="btn"><a href="/products/accesorios">Accesorios</a></li>
+              <li class="btn"><a href="/products/12">Accesorios</a></li>
               <li class="btn"><a href="/products">Todo los Productos</a></li>
             </ul>
             <% if (typeof session.user !="undefined" ) { %>
@@ -67,22 +67,24 @@
                         <span class="count"><span></span></span>
                       </a>
                     </div>
-                    <div id="carrito">
-                      <table id="lista-carrito">
-                        <thead>
-                          <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                          </tr>
-                        </thead>
-                        <tbody></tbody>
-                      </table>
-                    </div>
+                   
                     <%}%>
+                  
                   <a href="/user/logout" id="logout"><i class="fas fa-sign-out"></i></a>
               </div>
               <% } %>
+              <div id="carrito">
+                <table id="lista-carrito">
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+              </div>
     </div>
     <!-- ICONO DE LUPA  -->
     <a class="icon-size align-icon lupa" id="search-ico" onclick="openBarSearch(this)">
@@ -141,7 +143,7 @@
                       </div>
                     </div>
                   </li>
-                  <li class="btn"><a href="/products/accesorios">Accesorios</a></li>
+                  <li class="btn"><a href="/products/12">Accesorios</a></li>
                   <li class="btn"><a href="/products">Todo los productos</a></li>
                 </ul>
               </nav>
