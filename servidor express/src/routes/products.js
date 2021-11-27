@@ -4,7 +4,7 @@ let {detail,list,category,accessories} = require('../controllers/productsControl
 
 router.get('/',list);
 router.get('/:category?',category);
-router.get('/detail/:id',detail);
+router.get('/detail/:id/:categoryId',detail);
 router.get('/accesorios',accessories);
 
 

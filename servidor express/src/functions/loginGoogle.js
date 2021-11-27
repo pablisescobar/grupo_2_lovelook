@@ -23,6 +23,7 @@ module.exports = () => {
         
           if (!user) {
            console.log("creando"); 
+           
            db.User.create({
              firstName:profile.name.givenName,
              lastName: profile.name.familyName,

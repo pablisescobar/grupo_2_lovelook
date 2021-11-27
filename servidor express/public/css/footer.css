@@ -36,9 +36,9 @@ background-color: rgb(61, 56, 56);
 #u_0_4_DO{display: none !important;}
 
 /* End Page */
-.endPage{
+#endPage{
     position: fixed;
-    right: 50%;
+    right: 75%;
     bottom: 0;
     width: 50px;
     display: flex;
@@ -51,18 +51,19 @@ background-color: rgb(61, 56, 56);
     padding: 30px 5px;
     background-color: rgb(227 38 111 / 31%);
     text-align: center;
-    border-radius: 5px 0 0 5px;
+    border-radius: 5px 5px 0 0;
     transition: .5s ease;
     box-shadow: 0px 0px 4px black,inset 0 0 11px var(--bordes);
     opacity: 0;
+    z-index: 10000;
 }
-.endPage.show-endPage{
+#endPage.show-endPage{
     opacity: 1; 
     bottom: 0;
     animation: estirar 1.2s 1 alternate ease;
     color: white;
 }
-.endPage:hover{font-size: 1.3rem;transition: .5s ease;}
+#endPage:hover{font-size: 1.3rem;transition: .5s ease;}
 
 @keyframes estirar {
     0%{

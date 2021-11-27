@@ -33,7 +33,7 @@
     color: #fff;
   }
   .header .search-bar input.dark {
-    color: #fff;
+    color: #000;
   }
   .header .search-bar input.dark::selection {
     color: #d3d3d3;
@@ -290,9 +290,9 @@ letter-spacing: 2px;
     ". . logo . . "
     "buscador buscador buscador buscador translDark";
   border-bottom: 3px solid var(--fondo-claro);
-  /* margin-bottom: 10px; */
-  z-index: 999;
-  width: 100%;
+  margin-bottom: 12px;
+  z-index: 100;
+  width: 100vw;
   padding: 5px;
   background-color: #fff;
 }
@@ -504,6 +504,7 @@ letter-spacing: 2px;
   width: 100%;
   border: none;
   font-size: 1.5rem;
+  background-color: transparent;
 }
 
 .header .search-bar button {

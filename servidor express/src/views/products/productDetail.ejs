@@ -54,20 +54,22 @@
                                     <p> <%= product.description %>  </p>
                                     <select class="select select-style" name="color" id="">
                                         <option value="" hidden>Color</option>
-                                        <option value='<%= product.colors.length > 0 ? product.colors[0].name : ' '  %>' 
+                                        <option value='<%= product.colors.length > 0 ? product.colors[0].id : ' '  %>' 
                                             <%= product.colors.length > 0 ? "selected" :null %>><%= product.colors.length > 0 ? product.colors[0].name : 'Color' %>
                                         </option>
 
                                     </select>
                                     <select class="select select-style" name="talle" id="">
                                         <option value="" hidden>Talles</option>
-                                        <option value='<%= product.sizes.length > 0 ? product.sizes[0].name : ' '  %>'
+                                        <option value='<%= product.sizes.length > 0 ? product.sizes[0].id : ' '  %>'
                                             <%= product.sizes.length > 0 ? "selected" :null %>><%= product.sizes.length > 0 ? product.sizes[0].name : 'Talle' %>
                                         </option>
 
                                     </select>
                                     <div>
-                                        <button type="submit" class="boton cuatro agregar-carrito"><span>Agregar al carrito</span></button>
+                                        <button class="boton agregar-carrito"><span>Agregar al carrito</span></button>
+                                        <button href="user/cart" class="boton"><span>Compra directa</span></button>
+                                        <button class="boton"><span><i class="far fa-heart"></i></span></button>
                                     </div>
                                     <h4 class="subtitle-guie-size"><a id="link-guie-task" >Guiá de talles</a></h4>
                                     
@@ -120,7 +122,6 @@
 
                             <%- include('../partials/slider.ejs') %> 
                         </section>
-                <a href="#endPage" class="endPage"><i class="fas fa-arrow-down"></i></a>
 
                     </main>
                     <%- include('../partials/whatsapp.ejs') %>

@@ -19,6 +19,7 @@ passport.use(
         
        
          if (!user) {
+         
           console.log("creando"); 
           db.User.create({
             firstName:profile.displayName,

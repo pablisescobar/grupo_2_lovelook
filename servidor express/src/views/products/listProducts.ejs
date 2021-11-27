@@ -40,7 +40,7 @@
       <% products.forEach(product=>{ %>
       <article class="product">
         <div>
-          <a href="/products/detail/<%= product.id %>">
+          <a href="/products/detail/<%= `${product.id}/${product.categoryId}`%>">
           <img src="/img/photos/<%= product.images.length>0? product.images[0].filename:'default.png' %>" alt="">
           <h3><% if (product.name.length > 12) { %>
             <%- `${product.name.slice(0,12)}...` %>
@@ -59,7 +59,7 @@
             <%=product.discount> 0?`${product.discount} %Off` : "" %>
           </p>
         </a>
-        <div href="" id="<% product.id %> " class="agregar-carrito"><span>Agregar</span></div>
+     
         </div>
         
       </article>

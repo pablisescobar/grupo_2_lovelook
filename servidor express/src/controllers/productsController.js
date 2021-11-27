@@ -31,24 +31,20 @@ module.exports = {
             })
     },
     detail: (req, res) => {
-        db.Product.findOne({
-            where: {
-                id: req.params.id
-            },
+        db.Product.findByPk(req.params.id,{
             include: [{ association: "category" },
             { association: "images" },
             { association: "colors" },
             { association: "season" },
-            { association: "sizes" },
-            ]
+            { association: "sizes" }]
         })
             .then((product) => {
                 db.Product.findAll({
                     where: {
-                        categoryId: product.categoryId
+                       categoryId: req.params.categoryId
                     },
-                    limit: 5
-                    ,
+                    limit: 5,
+
                     include: [{ association: "category" },
                     { association: "images" },
                     { association: "colors" },
@@ -57,6 +53,7 @@ module.exports = {
                     ]
                 })
                     .then(products => {
+                        console.log(products);
                         res.render('products/productDetail', {
                             product,
                             products,
@@ -131,7 +128,7 @@ module.exports = {
             })
             let categoryPromise = db.Category.findOne({
                 where: {
-                    name: "accesorios"
+                    name: /Aaccesorios/
                 }
             })
             let categoriesPromise = db.Category.findAll()

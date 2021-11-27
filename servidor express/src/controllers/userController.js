@@ -90,16 +90,17 @@ module.exports = {
     }
   },
   deleteProfile: (req, res) => {
-    db.User.destroy({
-      where: {
-        id: req.params.id,
-      },
-    }).then(() => {
-      db.Location.destroy({
+db.Location.destroy({
         where: {
           userId: req.params.id,
         },
-      }).then(() => {
+      })
+    .then(() => {db.User.destroy({
+      where: {
+        id: req.params.id,
+      },
+    })
+      .then(() => {
         req.session.destroy();
         if (req.cookies.userLoveLook) {
           res.cookie("userLoveLook", "", { maxAge: -1 });
@@ -127,10 +128,12 @@ module.exports = {
           avatar: "default-image.png",
           social_provider: "local",
         };
-
+        if (req.body.remember) {
+          res.cookie("userLoveLook", req.session.user, { expires: new Date(Date.now() + 90000), httpOnly: true })
+      };
         res.locals.user = req.session.user;
 
-        res.redirect("/");
+        res.redirect("/user/perfil");
       });
     } else {
       res.render("users/login", {
@@ -145,7 +148,7 @@ module.exports = {
     let errors = validationResult(req);
 
     if (errors.isEmpty()) {
-      let { firstName, lastName, email, password } = req.body;
+      let { firstName, lastName, email, password ,pc ,address,city,province} = req.body;
       db.User.create({
         firstName,
         lastName,
@@ -156,7 +159,14 @@ module.exports = {
         social_provider: "local",
         id_social: 0,
       })
-        .then(() => {
+        .then((user) => {
+          db.Location.create({
+            pc,
+            address,
+            city,
+            province,
+            userId:user.id
+          })
           res.redirect("/user/login");
         })
         .catch((err) => console.log(err));
@@ -201,6 +211,7 @@ module.exports = {
     });
   },
   loginGoogle: (req, res) => {
+    res.cookie("userLoveLook", "")
     req.session.user = {
       id: req.session.passport.user.id,
       firstName: req.session.passport.user.firstName,
@@ -216,6 +227,7 @@ module.exports = {
     res.redirect("/user/perfil");
   },
   loginFacebook: (req, res) => {
+   
     let arr = req.session.passport.user.firstName.split(" ");
     console.log(arr);
     req.session.user = {
@@ -229,7 +241,7 @@ module.exports = {
       avatar: req.session.passport.user.avatar,
       phone: req.session.passport.user.phone,
     };
-    /*   console.log(req.session.user); */
+    
     res.redirect("/user/perfil");
   },
 };

@@ -103,6 +103,7 @@ font-weight: bold;
 .btn_btn-submit {
     border: 1px solid var(--bordes);
     width: 150px;
+    color: white;
     height: 30px;
     border-radius: 10px;
     background-color: #fd415a;

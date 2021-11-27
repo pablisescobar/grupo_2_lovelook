@@ -1,24 +1,31 @@
 .slick-slide {
-    height: 1200px;
+    /* height: 1200px; */
     box-shadow: 0 5px 10px var(--bordes_claro);
-    padding: 10px;
-    margin: 10px;
+    margin: 15px 10px;
     border-radius: 5%;
+}
+.slick-dotted.slick-slider{
+    width: 60%;
+    margin: auto;
+}
+.slick-track{
+    display: flex !important;
 }
 
 .slick-next, .slick-prev {
     width: 40px !important;
     height:40px !important;
     border-radius: 50% !important;
+    z-index: 1;
     color: white !important;
     text-shadow: 0px 0px 15px var(--bordes) !important;
 }
 
 .slick-next {
-    right: 25px !important;
+    /* right: 25px !important; */
 }
 .slick-prev {
-    left: 25px !important;
+    /* left: 25px !important; */
 }
 .slick-next:before, .slick-prev:before {
     color: white !important;
@@ -32,17 +39,36 @@
 
 .card-img-top {
     width: 100%;
-    height: 160px;
-    margin: auto;
+    padding: 5px;
+    height: 170px;
     object-fit: cover;
+    border-radius: 10px;
     object-position: top;
 }
 
 .card-body {
-    padding-top: 15px;
+    padding-top: 10px;
     text-align: center;
 }
+.card-body .fas , .card-body .far{
+ font-size: 1.3em;
+}
+.card-body div.clientAction{
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--fondo);
+    padding-top: 5px;
+    border-radius: 0 0 5px 5px;
+}
+.card-body div.prices-section{
+}
 
+.card-body .fa-shopping-basket{
+    /* color: lightgreen; */
+}
+.card-body .fa-cart-plus{
+    /* color: lightskyblue; */
+}
 .nameSlider {
     font-family: 'Poppins';
     font-size: 1.2rem;
@@ -60,13 +86,17 @@
 
 a.btn-primary {
     color: black;
-    background-color: pink;
-    padding: 3px;
-    border-radius: 10%;
+    padding: 5px;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 5px;
+    letter-spacing: 2px;
+    width: 50px;
+    /* background-color: honeydew; */
 }
 
 .slick-list.draggable {
-    max-width: 80%;
+    width: 100%;
     margin: auto;
 }
 
@@ -90,11 +120,15 @@ a.btn-primary {
 
 
 
+@media screen and (min-width: 543px) {
+    .slick-dotted.slick-slider{
+    width: 80%;
+}
+}
 @media screen and (min-width: 768px) {
 
     .slick-slide {
         width: 180px !important;
-        height: 320px !important;
         border-radius: 3%;
     }
 
@@ -102,20 +136,20 @@ a.btn-primary {
         font-size: 1.2rem;
     }
 
-    .slick-list.draggable {
-        max-width: 90%;
-    }
-
     .card-slider {
-        width: auto;
-        margin: auto;
+    width: 80%;
+    margin: auto;
+    }
+    .slick-dotted.slick-slider{
+       
+width: 70%;
     }
 }
 
 @media screen and (min-width: 1024px) {
 
-    .slick-list.draggable {
-        max-width: 80%;
+    .slick-dotted.slick-slider{
+      
     }
     
      .card-slider {

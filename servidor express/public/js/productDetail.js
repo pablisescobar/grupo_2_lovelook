@@ -35,9 +35,7 @@ function capitalize(text) {// funcion creada para colocarle una mayuscula en la 
 }
 
 subtitle1.onclick = function () {
-  subtitle1.style.color = "var(--bordes)"
-  subtitle2.style.color = "black"
-  subtitle3.style.color = "black"
+ 
   info[0].classList.toggle('active')
   info[1].classList.remove('active')
   info[2].classList.remove('active')
@@ -47,9 +45,7 @@ subtitle1.onclick = function () {
   }
 }
 subtitle2.onclick = function () {
-  subtitle2.style.color = "var(--bordes)"
-  subtitle1.style.color = "black"
-  subtitle3.style.color = "black"
+
   info[1].classList.toggle('active')
   info[0].classList.remove('active')
   info[2].classList.remove('active')
@@ -59,9 +55,7 @@ subtitle2.onclick = function () {
   }
 }
 subtitle3.onclick = function () {
-  subtitle3.style.color = "var(--bordes)"
-  subtitle2.style.color = "black"
-  subtitle1.style.color = "black"
+
   info[2].classList.toggle('active')
   info[1].classList.remove('active')
   info[0].classList.remove('active')
@@ -77,9 +71,6 @@ closeItems.onclick = function(){
   info[1].classList.remove('active')
   info[2].classList.remove('active')
   closeItems.style.display="none"
-  subtitle1.style.color = "black"
-  subtitle2.style.color = "black"
-  subtitle3.style.color = "black"
   imgGuie.classList.remove('img-guie')
 }
 

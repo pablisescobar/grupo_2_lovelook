@@ -14,7 +14,7 @@
                    
                     <input class="input-perfil-user" type="file" name="avatar" id="examinar" hidden>
                     
-                    <img class="image-view" <%= user.social_provider != "google" ? `src=/img/user/userAvatars/${user.avatar}` : `src=${user.avatar}`%> alt="">
+                    <img class="image-view" <%= /http/.test(user.avatar) ?`src=${user.avatar}` :`src=/img/user/userAvatars/${user.avatar}` %> alt="">
                 </div>
 
                 <div class="container">
