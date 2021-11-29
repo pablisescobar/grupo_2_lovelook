@@ -1,3 +1,26 @@
+/* DARK MODE */
+
+.details-products .product .form-1 .subtitle.dark {
+    color: lightgray;
+}
+.details-products .product .form-1 .subtitle.dark:hover {
+}
+.details-products .product .description .discount.dark {
+    
+text-shadow: 2px 2px 10px black, 0 0 2px lightgrey;
+}
+.details-products .add-look-container h2 a.dark {
+    color: lightgray;
+    text-shadow: 2px 2px 6px black;
+}
+.details-products .price-line-medio.dark{
+    text-shadow: 2px 2px 10px black,0 0 2px lightgray;
+}
+
+/* DARK MODE end */
+
+
+
 figure.zoom {
     background-position: 50% 50%;
     position: relative;
@@ -18,27 +41,25 @@ figure.zoom {
   }
 
   .boton {
-	padding: 7px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 80%;
-    height: 35px;
-    margin: 5px 0;
-    background: #141414;
-    color: #fff;
-    font-family: 'Roboto', sans-serif;
-    font-size: 80%;
-    cursor: url(https://cdn.custom-cursor.com/db/6831/32/starter-cursor-flat-shiny-pointer.png) , pointer!important;
-    font-weight: 500;
-    border: none;
-    text-transform: uppercase;
-    transition: .3s ease all;
-    border-radius: 5px;
-    position: relative;
-    font-weight: bold;
-    overflow: hidden;
-    box-shadow: 2px 2px 3px darkgreen;
+	padding: 7px 15px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 35px;
+	margin: 5px 0;
+	background: lightblue;
+	color: black;
+	font-family: 'Roboto', sans-serif;
+	font-size: 80%;
+	cursor: url(https://cdn.custom-cursor.com/db/6831/32/starter-cursor-flat-shiny-pointer.png) , pointer!important;
+	border: none;
+	text-transform: uppercase;
+	transition: .3s ease all;
+	border-radius: 5px;
+	position: relative;
+	font-weight: bold;
+	overflow: hidden;
+	box-shadow: 2px 2px 3px var(--paragraph);
 }
 
 .boton span {
@@ -83,6 +104,11 @@ figure.zoom {
 
 .price-line-medio {
     text-decoration: line-through;
+<<<<<<< HEAD
+=======
+    color: lightsalmon;
+    /* font-weight: bold; */
+>>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
     font-size: 1rem;
 }
 
@@ -102,7 +128,14 @@ figure.zoom {
 .details-products .column img:hover {
     opacity: 1;
 }
+<<<<<<< HEAD
 
+=======
+.details-products .contain-hidden p {
+    color: black;
+}
+/* Clear floats after the columns */
+>>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
 .details-products.row:after {
     content: "";
     display: table;
@@ -211,6 +244,7 @@ figure.zoom {
     max-width: 600px;
     max-height: 100%;
     margin: 0 auto 5px;
+    flex-wrap: wrap-reverse;
     padding: 10px;
     display: flex;
     width: 90%;
@@ -225,15 +259,25 @@ figure.zoom {
 }
 
 .details-products .product .description .name {
-    letter-spacing: 3px;
+    letter-spacing: 5px;
     font-weight: bold;
+<<<<<<< HEAD
     font-size: 1.5rem;
+=======
+    /* text-align: center; */
+    font-size: 2rem;
+>>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
 }
 
 .details-products .product .description .price {
     letter-spacing: 3px;
     font-weight: bold;
     position: relative;
+<<<<<<< HEAD
+=======
+    color: lightseagreen;
+    /* padding-left: 30px; */
+>>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
     font-size: 1rem;
     text-align: left;
 }
@@ -250,7 +294,8 @@ figure.zoom {
 .details-products .product .description .discount {
     letter-spacing: 2px;
     position: relative;
-    color: green;
+    color: lightblue;
+    font-weight: bolder;
     width: 100%;
     font-family: "Slabo 27px";
     text-align: left;
@@ -273,16 +318,18 @@ figure.zoom {
     max-width: 600px;
     margin: 0 auto;
     padding: 10px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .details-products .product .form-1 .subtitle {
-    text-shadow: 2px 2px 2px gray;
     color: black;
     font-weight: bold;
     font-size: 1.3rem;
+    text-align: center;
     position: relative;
     grid-area: title;
-    cursor: pointer;
 }
 
 .details-products .product .select {
@@ -290,11 +337,15 @@ figure.zoom {
     border: none;
     font-size: 1.2rem;
     appearance: none;
-    padding: 10px 0 10px 10px;
+    padding: 5px 0 5px 5px;
     border-radius: 3px;
     border-bottom: 2px solid black;
     display: block;
+<<<<<<< HEAD
     width: 80%;
+=======
+    width: 100%;
+>>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
     background-color: white;
 }
 
@@ -313,10 +364,19 @@ figure.zoom {
     background-color: var(--fondo-claro);
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
 .details-products .pad {
     padding: 10px;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
 .details-products .product .form-1 .subtitle-guie-size a {
     font-weight: bold;
     letter-spacing: 3px;
@@ -326,7 +386,7 @@ figure.zoom {
     background-size: 100% 100%;
     border-radius: 10px;
     font-size: 1.3rem;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 .details-products .product .form-1 .subtitle-guie-size a.dark {
     color: white;
@@ -388,6 +448,15 @@ figure.zoom {
         font-size: 2rem;
     }
 
+<<<<<<< HEAD
+=======
+  
+
+    .details-products .product .form-1 .subtitle-guie-size {
+        /* margin: 0 auto; */
+    }
+
+>>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
     .details-products .add-look-container h2 {
         font-size: 5rem;
     }
@@ -452,6 +521,11 @@ figure.zoom {
         padding: 10px 0;
     }
     .details-products .product .imgs {
+<<<<<<< HEAD
+=======
+        grid-area: imagenes;
+        flex-wrap: nowrap;
+>>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
         width: 500px;
         gap: 10px;
         height: 400px;
@@ -490,10 +564,15 @@ figure.zoom {
         text-align: left;
         margin: 10px 0;
     }
+<<<<<<< HEAD
     .details-products .product .form-1 .subtitle.dark {
         color: lightgray;
     }
     
+=======
+
+
+>>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
     .details-products .product .form-1 .subtitle::before {
         bottom: 0;
     }
@@ -521,14 +600,16 @@ figure.zoom {
         top: auto;
     }
 
+<<<<<<< HEAD
+=======
+    /* SECCION HIJO DEL CONTENEDOR PRINCIPAL MAIN */
+
+>>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
     .details-products .product .description .discount {
         font-size: 1.2rem;
         padding: 0;
     }
-    .details-products .product .description .discount.dark {
-        
-text-shadow: 2px 2px 10px black, 0 0 2px lightgrey;
-    }
+ 
 
     .details-products .add-look-container h2 {
         font-size: 4rem;
@@ -536,16 +617,11 @@ text-shadow: 2px 2px 10px black, 0 0 2px lightgrey;
         border: none;
     }
     
-    .details-products .add-look-container h2 a.dark {
-        color: lightgray;
-        text-shadow: 2px 2px 6px black;
-    }
+   
 
     .details-products select.gridColor {
         grid-area: color;
     }
 
-    .details-products .price-line-medio.dark{
-        text-shadow: 2px 2px 10px black,0 0 2px lightgray;
-    }
+  
 }

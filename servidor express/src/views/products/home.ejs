@@ -4,19 +4,9 @@
 
   <body class="container-body">
     <%- include('../partials/load.ejs') %> 
+   
     
-      <div class="marqueeShipping">
-        <marquee behavior="" direction="" SCROLLAMOUNT=10>
-          <span class="marqueeText" style="color: rgba(234, 137, 155, 0.8)">🚛 ENVÍO GRATIS A PARTIR DE $3.499 💵 </span>
-          <span class="marqueeText" style="color: rgba(234, 137, 155, 0.8)">PAGÁ EN 3 Y 6 CUOTAS SIN INTERÉS CON VISA, AMEX Y MASTER 💳</span>
-          <span class="marqueeText" style="color: rgba(234, 137, 155, 0.8)">🚛 ENVÍO GRATIS A PARTIR DE $3.499 💵 </span>
-          <span class="marqueeText" style="color: rgba(234, 137, 155, 0.8)">PAGÁ EN 3 Y 6 CUOTAS SIN INTERÉS CON VISA, AMEX Y MASTER 💳</span>
-          <span class="marqueeText" style="color: rgba(234, 137, 155, 0.8)">🚛 ENVÍO GRATIS A PARTIR DE $3.499 💵 </span>
-          <span class="marqueeText" style="color: rgba(234, 137, 155, 0.8)">PAGÁ EN 3 Y 6 CUOTAS SIN INTERÉS CON VISA, AMEX Y MASTER 💳</span>
-          <span class="marqueeText" style="color: rgba(234, 137, 155, 0.8)">🚛 ENVÍO GRATIS A PARTIR DE $3.499 💵 </span>
-          <span class="marqueeText" style="color: rgba(234, 137, 155, 0.8)">PAGÁ EN 3 Y 6 CUOTAS SIN INTERÉS CON VISA, AMEX Y MASTER 💳</span>
-        </marquee>
-      </div>
+   
 
     <%-include('../partials/header.ejs')%>
 
@@ -26,7 +16,7 @@
       <%- include('../partials/carousel.ejs') %>
 
       <!-- END CAROUSEL -->
-      <div class="marqueeContainer">
+      <div class="marqueeContainer" id="SL">
         <marquee behavior="" direction="" SCROLLAMOUNT=10>
           <span class="marqueeTitle">♡ LOVE LOOK ♡</span>
           <span class="marqueeTitle">♡ LOVE LOOK ♡</span>
@@ -44,40 +34,31 @@
 
       <%- include ('../partials/slider.ejs') %>
 
-      <!--Imagenes-->
-
-      <div class="container-fluid">
+      <div class="categoryContainer">
         <div class="cajaPrincipal">
-          <a href="/products/Jeans" class="imagen1">
+          <a href="/products/8" class="imagen1">
             <img src="/img/photos/1634009068632_img_princess.jpg_.jpg" alt="" />
             <h2>JEANS</h2>
           </a>
-          <a href="/products/Remerones" class="imagen1">
+          <a href="/products/3" class="imagen1">
             <img src="/img/photos/stitch3.jpg" alt="" />
             <h2>REMERONES</h2>
           </a>
         </div>
-      </div>
-
-      <!--Final de imagenes-->
-
-      <!--Comienzo de videos-->
-      <div class="container">
-        <div class="cajavideo">
-          <div class="video1">
-            <a href="/products/Remeras"
-              ><video src="/img/video1.mp4" autoplay muted loop></video
-            ></a>
-            <h2>REMERAS</h2>
-          </div>
-          <div class="video1">
-            <a href="/products/Buzos"
-              ><video src="/img/video2.mp4" autoplay muted loop></video
-            ></a>
-            <h2>BUZOS</h2>
-          </div>
+        <div class="cajaPrincipal">
+          <a href="/products/2" class="imagen1"
+            ><video src="/img/video1.mp4" autoplay muted loop ></video>
+              <h2>REMERAS</h2>
+          </a>
+          <a href="/products/1" class="imagen1"
+            ><video src="/img/video2.mp4" autoplay muted loop></video>
+              <h2>BUZOS</h2>
+          </a>
+          
         </div>
+
       </div>
+      
       <div class="marqueeContainer">
         <marquee behavior="" direction="" SCROLLAMOUNT=10>
           <span class="marqueeTitle">♡ LOVE LOOK ♡</span>
@@ -91,12 +72,15 @@
         </marquee>
       </div>
 
-      <%- include('../partials/chatbot.ejs') %>
+     
 
     </main>
     <!--Final de videos-->
     <%- include('../partials/whatsapp.ejs') %>
     <%-include('../partials/footer.ejs') %>
      <%-include('../partials/scripts.ejs') %>
+     <script src="/js/carousel.js"></script>
+     <script src="/js/slider.js"></script>
+     
   </body>
 </html>

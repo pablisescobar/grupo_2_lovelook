@@ -4,7 +4,11 @@
 <%- include('../partials/head.ejs') %>
 
     <body>
+        <!-- ReCaptcha -->
+        <%- include('../partials/recaptcha.ejs') %>
+          <!-- Loading -->
         <%- include('../partials/load.ejs') %>
+        <!-- Header -->
             <%- include('../partials/header.ejs') %>
 
                 <main class="form-contact-container">
@@ -102,14 +106,13 @@
                                     <% } %>
 
                         </div>
-                        <div class="containerReCaptcha">
-                            <div class="g-recaptcha" id="ReCaptcha" data-sitekey="6Lf31UAcAAAAABrw2DUMZXzCldUObT0L4lEoBJcP"></div> 
-                            <span id="recaptchaError" class="error"></span>                    
-                        </div>
+
+
+                        <%- include('../partials/reCaptView.ejs') %>
 
                         <div class="form-item">
                             <button class="btn-send" type="submit">Enviar</button>
-                        </div>
+                            </div>
                     </form>
 
                 </main>
@@ -117,9 +120,9 @@
                 <%- include('../partials/whatsapp.ejs') %>
                     <%- include('../partials/footer.ejs') %>   
 
-                    <%- include('../partials/recaptcha.ejs') %>     
+                     
                     <%- include('../partials/scripts.ejs') %>     
-                   
+                    <script src="/js/validationContact.js"></script>
             </script>
 
     </body>

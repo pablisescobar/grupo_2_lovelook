@@ -2,26 +2,36 @@ function global(element) {
   return document.getElementById(element)
 }
 
+function addBorderRed(input){
+  input.style.boxShadow = '0 0 10px red'
+}
+
+function addBorderGreen(input){
+  input.style.boxShadow = '0 0 10px green'
+}
+
 window.addEventListener('load', () => {
   let name = global('nombre'),
     errorNombre = global('errorNombre'),
     apellido = global('apellido'),
-    last_name = global('errorApellido'),
+    errorApellido = global('errorApellido'),
     correo = global('email'),
-    email = global('errorEmail'),
+    errorEmail = global('errorEmail'),
     telefono = global('telefono'),
-    phone = global('errorTelefono'),
+    errorTelefono = global('errorTelefono'),
     direccion = global('direccion'),
-    address = global('errorDireccion'),
+    errorDireccion = global('errorDireccion'),
     pc = global('cp'),
-    codepostal = global('errorCp'),
+    errorCp = global('errorCp'),
     imagen = global('examinar'),
-    image = global('errorImage'),
+    errorImagen = global('errorImagen'),
+    formEdit = global('editProfileForm'),
+    errorFormEdit = global('errorProfileEditForm')
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]{4,}$/,
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
     regExTel = /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/i,
-    regExImage = /\.(gif|jpg|jpeg|tiff|png)$/i,
-    regExAlphaNum = /^([a-zA-Z0-9_-]){1,16}$/
+    regExAlphaNum = /^[a-zA-Z0-9\s]*$/
+
 
   name.addEventListener('blur', function () {
     switch (true) {
@@ -39,18 +49,18 @@ window.addEventListener('load', () => {
         break
     }
   })
-  last_name.addEventListener('blur', function () {
+  apellido.addEventListener('blur', function () {
     switch (true) {
       case !apellido.value.trim():
         errorApellido.innerHTML = 'El campo apellido es obligatorio'
         apellido.style.boxShadow = '0 0 10px red'
         break
-      case !regExAlpha.test(Inputname.value):
+      case !regExAlpha.test(apellido.value):
         errorApellido.innerHTML = 'Debes ingresar un apellido'
-        last_name.style.boxShadow = '0 0 10px red'
+        apellido.style.boxShadow = '0 0 10px red'
         break
       default:
-        last_name.style.boxShadow = '0 0 10px green'
+        apellido.style.boxShadow = '0 0 10px green'
         errorApellido.innerHTML = ''
         break
     }
@@ -58,50 +68,109 @@ window.addEventListener('load', () => {
   correo.addEventListener('blur', function () {
     switch (true) {
       case !correo.value.trim():
-        email.innerHTML = 'El campo email es obligatorio'
+        errorEmail.innerHTML = 'El campo email es obligatorio'
         correo.style.boxShadow = '0 0 10px red'
         break
       case !regExEmail.test(correo.value):
-        email.innerHTML = 'Debes ingresar un email válido'
+        errorEmail.innerHTML = 'Debes ingresar un email válido'
         correo.style.boxShadow = '0 0 10px red'
         break
       default:
         correo.style.boxShadow = '0 0 10px green'
-        email.innerHTML = ''
+        errorEmail.innerHTML = ''
         break
     }
   })
-  phone.addEventListener("blur", function () {
+  telefono.addEventListener("blur", function () {
     switch (true) {
-      case !phone.value.trim():
+      case !telefono.value.trim():
         errorTelefono.innerHTML = "El campo telefono es obligatorio";
-        phone.style.boxShadow = '0 0 10px red';
+        telefono.style.boxShadow = '0 0 10px red';
         break;
-      case !regExTel.test(phone.value):
+      case !regExTel.test(telefono.value):
         errorTelefono.innerHTML = "Debes ingresar un telefono válido";
-        phone.style.boxShadow = '0 0 10px red';
+        telefono.style.boxShadow = '0 0 10px red';
         break;
       default:
-          phone.style.boxShadow = '0 0 10px green';
+          telefono.style.boxShadow = '0 0 10px green';
           errorTelefono.innerHTML = "";
         break;
     }
   })
-  address.addEventListener("blur", function () {
+  direccion.addEventListener("blur", function () {
     switch (true) {
-      case !address.value.trim():
+      case !direccion.value.trim():
         errorDireccion.innerHTML = "El campo dirección es obligatorio";
-        address.style.boxShadow = '0 0 10px red';
+        direccion.style.boxShadow = '0 0 10px red';
         break;
-      case !regExAlphaNum.test(address.value):
+      case !regExAlphaNum.test(direccion.value):
         errorDireccion.innerHTML = "Debes ingresar una dirección válida";
-        address.style.boxShadow = '0 0 10px red';
+        direccion.style.boxShadow = '0 0 10px red';
         break;
       default:
-          address.style.boxShadow = '0 0 10px green';
+          direccion.style.boxShadow = '0 0 10px green';
           errorDireccion.innerHTML = "";
         break;
     }
   })
-  
+  pc.addEventListener('blur', function(){
+    switch (true) {
+      case !pc.value.trim():
+        errorCp.innerHTML = "El campo dirección es obligatorio";
+        pc.style.boxShadow = '0 0 10px red';
+        break;
+      case !regExAlphaNum.test(pc.value):
+        errorCp.innerHTML = "Debes ingresar una dirección válida";
+        pc.style.boxShadow = '0 0 10px red';
+        break;
+      default:
+          pc.style.boxShadow = '0 0 10px green';
+          errorCp.innerHTML = "";
+        break;
+    }
+  })
+  imagen.addEventListener("change", function fileValidation() {
+    let filePath = imagen.value,
+      allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i;
+    if (!allowefExtensions.exec(filePath)) {
+      errorImagen.innerHTML =
+        "Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)";
+      imagen.value = "";
+      $imgPreview.innerHTML = "";
+      return false;
+    } else {
+      console.log(imagen.files);
+      if (imagen.files && imagen.files[0]) {
+        let reader = new FileReader();
+        reader.onload = function (e) {
+          document.querySelector('.image-view').setAttribute("src",e.target.result);
+        };
+        reader.readAsDataURL(imagen.files[0]);
+        errorImagen.innerHTML = "";
+        addBorderRed(imagen);
+      }
+    }
+  });
+  formEdit.addEventListener('submit',function(event){
+    let error = false;
+    event.preventDefault()
+    let elementosForm = formEdit.elements
+    
+    for (let index = 0; index < elementosForm.length-1; index++) {
+        if(elementosForm[index].value == "" && elementosForm[index].name !== "avatar" || elementosForm[index].style.boxShadow == '0 0 10px red'){
+          if(index == "4") {
+            continue 
+          }
+          addBorderRed(elementosForm[index]);
+            errorFormEdit.innerHTML = "Los campos señalados son obligatorios";
+            error = true;
+        }
+    }
+
+    if(!error){
+        console.log('Todo bien');
+        formEdit.submit()
+    }
+
+}) 
 })

@@ -12,13 +12,19 @@
   color: green;
 }
 
-.container-listProduct .section2 .product a.dark {
+.container-listProduct .section2 .product .cardProduct.dark {
   background: #292727;
   border-color: black;
 }
 
 .container-listProduct .filted.dark:hover {
   border-color: white;
+  color: white;
+}
+.container-listProduct .cardActionProduct.dark {
+  background-color: var(--bordes);
+}
+.container-listProduct .cardActionProduct.dark span {
   color: white;
 }
 
@@ -86,25 +92,25 @@ select#priceSelect.dropdown {
 .container-listProduct .section2 {
   padding: 20px 10px;
   display: flex;
-  flex-direction: column !important;
+  flex-wrap: wrap;
+  /* flex-direction: column !important; */
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
 }
 .container-listProduct .section2 .product:hover {
-  animation: opacity 3s alternate;
+  animation: opacity 1s alternate;
 }
 
-.container-listProduct .section2 .product a {
+.container-listProduct .section2 .product .cardProduct {
   width: 230px;
   width: moz-fit-content;
-  height: 400px;
   margin: 1rem;
-  padding: 0.5rem;
+  padding: 5px;
   text-align: center;
   border: 1px solid var(--bordes_claro);
   box-shadow: 0 0 8px var(--bordes);
-  border-radius: 5%;
+  border-radius: 15px;
 }
 
 .container-listProduct .section2 .product img {
@@ -114,6 +120,7 @@ select#priceSelect.dropdown {
   object-position: top;
   border-radius: 15px;
   height: 250px;
+  padding: 5px;
 }
 
 .container-listProduct .section2 .product h3 {
@@ -134,8 +141,19 @@ select#priceSelect.dropdown {
   animation: acercarAlejar 2s alternate infinite;
 }
 
+.container-listProduct .cardActionProduct {
+  display: flex;
+  background-color: var(--fondo);
+  font-size: 1.3rem;
+  justify-content: space-around;
+  border-radius: 0 0 10px 10px;
+}
+
+.container-listProduct .infoProduct {
+  height: 122px;
+}
+
 @media screen and (min-width: 768px) {
- 
   .container-listProduct .section1 .iconFilter {
     display: none;
   }
@@ -146,7 +164,6 @@ select#priceSelect.dropdown {
   }
 
   .container-listProduct a {
-    padding-top: 10px;
     grid-area: filtrar;
   }
 
@@ -205,7 +222,6 @@ select#priceSelect.dropdown {
   }
 
   .container-listProduct .section2 .product:hover {
-    animation: opacity 3s alternate;
   }
 
   .container-listProduct .section2 .product img {
@@ -242,15 +258,13 @@ select#priceSelect.dropdown {
 
   .discount {
     font-size: 0.8rem;
-    line-height: 150%;
-    color: green;
-    animation: acercarAlejar 2s alternate infinite;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .container-listProduct {
-    max-width: 1024px;
+    max-width: 1440px;
+    width: 100%;
     margin: 0 auto;
   }
 
@@ -268,5 +282,8 @@ select#priceSelect.dropdown {
   .container-listProduct .section2 .product {
     margin: 10px;
   }
+<<<<<<< HEAD
  
+=======
+>>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
 }

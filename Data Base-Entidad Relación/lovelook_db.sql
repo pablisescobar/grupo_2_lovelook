@@ -50,7 +50,7 @@ CREATE TABLE `colors` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -59,7 +59,7 @@ CREATE TABLE `colors` (
 
 LOCK TABLES `colors` WRITE;
 /*!40000 ALTER TABLE `colors` DISABLE KEYS */;
-INSERT INTO `colors` VALUES (1,'gris'),(2,'blanco'),(3,'negro'),(4,'naranja'),(5,'lila'),(6,'rosa'),(7,'celeste'),(8,'marron'),(9,'natural'),(10,'verde');
+INSERT INTO `colors` VALUES (1,'gris'),(2,'blanco'),(3,'negro'),(4,'naranja'),(5,'lila'),(6,'rosa'),(7,'celeste'),(8,'marron'),(9,'natural'),(10,'verde'),(11,'violeta');
 /*!40000 ALTER TABLE `colors` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -101,8 +101,11 @@ CREATE TABLE `locations` (
   `city` varchar(50) DEFAULT NULL,
   `pc` int(11) DEFAULT NULL,
   `address` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+  `userId` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `locations_FK` (`userId`),
+  CONSTRAINT `locations_FK` FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -139,7 +142,7 @@ CREATE TABLE `messages` (
   `businessName` varchar(50) DEFAULT NULL,
   `socialLocation` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -148,7 +151,7 @@ CREATE TABLE `messages` (
 
 LOCK TABLES `messages` WRITE;
 /*!40000 ALTER TABLE `messages` DISABLE KEYS */;
-INSERT INTO `messages` VALUES (6,'Hola quiero trabajar en la empresa','rrhh','Emanuel','Arroyo',0,'ema201217@gmail.com',1156412335,'1633887016554_img_CV-EmaA-Developer.pdf_.pdf','','','',0,'',''),(8,'sadasdadasasd asasdasasds asas','rrhh','Emanuel Arroyo','Arroyo',0,'ema201217@gmail.com',1156412335,'1634337507560_img_cv.pdf_.pdf','','','',0,'','');
+INSERT INTO `messages` VALUES (25,'Hola como estas','','Emanuel','Arroyo',NULL,'ema201217@gmail.com',1156412335,'1635972691683_img_CV-EmaA-Developer.pdf_.pdf',NULL,NULL,NULL,NULL,NULL,NULL),(26,'JSDAGDHGKASJHDJKLASHDLKJHSDJKASHD','RRHH','Emanuel','Arroyo',NULL,'ema201217@gmail.com',1156412335,'1635973083286_img_CV-EmaA-Developer.pdf_.pdf',NULL,NULL,NULL,NULL,NULL,NULL),(44,'ghkkghjfgjhf','Consultas generales','Emanuel','Arroyo',NULL,'ema201217@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(45,'ghfhgjfghj','Atención al cliente','Emanuel','Arroyo',NULL,'ema201217@gmail.com',1156412335,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(46,'jdhgfhg','RRHH','Emanuel','Arroyo',NULL,'ema201217@gmail.com',1156412335,'1636127742569_img_CV-EmaA-Developerdasdsadasdasijkdhasjidbhiasbdasibdaspibdpjioasbdpiasbdiasbpidbasd',NULL,NULL,NULL,NULL,NULL,NULL),(47,'dasdasdasdas','RRHH','Emanuel','Arroyo',NULL,'ema201217@gmail.com',1156412335,'1636128569795_img_CV-EmaA-Developerdasdsadasdasijkdhasjidbhiasbdasibdaspibdpjioasbdpiasbdiasbpidbasd',NULL,NULL,NULL,NULL,NULL,NULL),(48,'asdasdas','RRHH','Emanuel','Arroyo',NULL,'ema201217@gmail.com',1156412335,'1636128595096_img_CV-EmaA-Developerdasdsadasdasijkdhasjidbhiasbdasibdaspibdpjioasbdpiasbdiasbpidbasd',NULL,NULL,NULL,NULL,NULL,NULL),(49,'asdasdasdas','RRHH','Emanuel','Arroyo',NULL,'ema201217@gmail.com',1156412335,'1636166546190_img_CV-EmaA-Developerdasdsadasdasijkdhasjidbhiasbdasibdaspibdpjioasbdpiasbdiasbpidbasd',NULL,NULL,NULL,NULL,NULL,NULL),(50,'asdasdasd','Franquicia','dsdasdas','asdasdas',11111111,'ema201217@gmail.com',1156412335,NULL,'25 de Mayo','Letonia 279','Buenos Aires',20,'dasdasd aasdas','Carlos Tejedor'),(51,'asdasdasdasdsadas','Franquicia','asdsadas','asdasdas',36940637,'ema201217@gmail.com',1156412335,NULL,'Calingasta','Letonia 279','San Juan',20,'ASDASSD','25 de Mayo'),(52,'ADSDLKSADJASLKDSAFAS','Consultas generales','eMANUEL','ARROYO',NULL,'EMA2012@GMAIL.COM',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(53,'asdadasdasdsad','Atención al cliente','Emanuel','Arroyo',NULL,'ema201217@gmail.com',1156412335,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `messages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -309,7 +312,7 @@ CREATE TABLE `seasons` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -390,14 +393,13 @@ CREATE TABLE `users` (
   `lastName` varchar(50) NOT NULL,
   `phone` int(11) DEFAULT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(60) NOT NULL,
+  `password` varchar(60) DEFAULT NULL,
   `rolId` int(11) DEFAULT NULL,
-  `locationId` int(11) DEFAULT NULL,
   `avatar` varchar(150) DEFAULT NULL,
+  `id_social` int(11) DEFAULT NULL,
+  `social_provider` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `locationId` (`locationId`),
   KEY `rolId` (`rolId`),
-  CONSTRAINT `users_ibfk_1` FOREIGN KEY (`locationId`) REFERENCES `locations` (`id`),
   CONSTRAINT `users_ibfk_3` FOREIGN KEY (`rolId`) REFERENCES `roles` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;

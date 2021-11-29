@@ -177,6 +177,14 @@
   <section class="legale">
     <small>&copy 2021. LOVE LOOK. Todos los derechos reservados</small>
   </section>
+  <div
+    class="fb-like"
+    data-share="true"
+    data-width="250"
+    data-show-faces="true"
+    style=" grid-area: shared;text-align: center;"
+  ></div>
+
   <section class="otros">
     <a href="https://www.mcafee.com/es-ar/antivirus.html" target="_blank"
       ><img src="/img/mcfee.png" alt="" class="antivirus"
@@ -186,6 +194,49 @@
     /></a>
   </section>
 
-  
-  
+    <!-- ChatBot LoveLOOK -->
+  <%- include('./chatbot.ejs') %>
+
+  <!-- Facebook Shared -->
+  <script>
+   function statusChangeCallback(response) {             
+    if (response.status === 'connected') { 
+      testAPI();  
+    }
+  }
+ 
+
+   function checkLoginState() {             
+    FB.getLoginStatus(function(response) { 
+      statusChangeCallback(response);
+    });
+  }
+ 
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1335634096866488',                  
+      xfbml      : true,                   
+      version    : 'v12.0'         
+    });
+
+
+    FB.getLoginStatus(function(response) { 
+      statusChangeCallback(response);      
+    });
+  };
+ 
+  function testAPI() {                    
+    FB.api('/me', function(response) {
+     
+    });
+  }
+
+</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/all.js"></script> 
+  <!-- Facebook Shared end -->
+
 </footer>
+
+
+<a id="endPage"><i class="fas fa-arrow-down"></i></a>

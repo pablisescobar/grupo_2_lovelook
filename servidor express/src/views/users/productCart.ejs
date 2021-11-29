@@ -1,89 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
-
-    <%- include('../partials/head.ejs') %> 
-
-<body>
-  <%- include('../partials/load.ejs') %>
-  <%- include('../partials/header.ejs') %> 
+  <%- include('../partials/head.ejs') %>
+  <body>
+    <%- include('../partials/load.ejs') %> <%- include('../partials/header.ejs')
+    %>
 
     <main class="container-cart">
-        <section class="section1">
-          <article>
-             
-            <form method="POST" action="" class="product">
-            <img src="/img/photos/flower2.jpg" alt="">
-              <div class="descriptionProduct">
-
-              <span class="iconify iconOutline"
-                  data-icon="ion:trash-outline">
+      <section class="section1">
+        <!--  <article>
+          <form method="POST" action="" class="product">
+            <img src="/img/photos/flower2.jpg" alt="" />
+            <div class="descriptionProduct">
+              <span class="iconify iconOutline" data-icon="ion:trash-outline">
               </span>
-                
-                <h5>Nombre: Conjunto FLOWERS</h5>
-                <p>Color: Lila</p>
-                <p>Talle: M</p>
-                <p>Descuento:</p>
-              </div>
-              <br />
-              <div class="description">
-                <span class="price">Precio</span>
-                <span class="valuePrice">$1200</span>
-                <span class="count">Cantidad</span>
-                <span class="linea"></span>
-                <input
-                  class="valueCount"
-                  type="number"
-                  name="cantidad"
-                  id="cantidad"
-                />
-                <span class="subPrice">Sub-total</span>
-                <span class="valueSubPrice">$2400</span>
-              </div>
-            </form>
-          </article>
-        </section>
-  
-        <section class="buttonsIcons">
-          <a  id="iconArrow">
-            <span
-              class="iconify iconArrow"
-              data-icon="ion:arrow-undo-outline"
-           ></span>
-          </a>
-          <a id="iconSync">
-            <span class="iconify iconSync" data-icon="ion:sync"></span>
-          </a>
-          <a id="iconHeart">
-            <span
-              class="iconify iconHeart"
-              data-icon="ion:heart-dislike-outline"
-            ></span>
-          </a>
-          <input class="buy" type="submit" value="PAGAR" />
-        </section>
 
-        <div>
-          <h4 class="questionAdd">Nuestras Ofertas</h4>
-        </div>
+              <h5>Nombre: Conjunto FLOWERS</h5>
+              <p>Color: Lila</p>
+              <p>Talle: M</p>
+              <p>Descuento:</p>
+            </div>
+            <br />
+            <div class="description">
+              <span class="price">Precio</span>
+              <span class="valuePrice">$1200</span>
+              <span class="count">Cantidad</span>
+              <span class="linea"></span>
+              <input
+                class="valueCount"
+                type="number"
+                name="cantidad"
+                id="cantidad"
+              />
+              <span class="subPrice">Sub-total</span>
+              <span class="valueSubPrice">$2400</span>
+            </div>
+          </form>
+        </article> -->
+     
+       <table class="table" id="lista-compra" >
+         <thead>
+           <tr class="table-danger">
+             <th scope="col">Imagen</th>
+             <th scope="col">Titulo</th>
+             <th scope="col">Precio</th>
+             <th scope="col">Cantidad</th>
+             <th scope="col">Sub-total</th>
+             <th scope="col"></th>
+           </tr>
+         </thead>
+         <tbody></tbody>
+<tr>
+  <th colspan="4" scope="col" class="text-right">TOTAL :</th>
+  <th scope="col">
+    <p id="total"></p>
+  </th>
+</tr>
+        </table>
+       
+     </section>
 
 
-        <section class="section3">
-          <% products.forEach(product=>{ %> 
-            <div class="imgOffer">
-              <a href="/products/detail/<%- product.id %>" class="target-offer">
-                <img class="offerImg" src= "/img/photos/<%= product.images[0].filename %>" alt="">
-                <p><%= product.name%></p>
-          </div>
-          <% }) %> 
-        </section>
-      </main>
+      <section class="buttonsIcons">
+        <a id="iconArrow" class="btn btn-outline-secondary h-2">Seguir comprando
+          <i class="fal fa-tshirt" style="font-size: 1.5rem;"></i>
+        </a>
+        <a id="iconSync" class="btn btn-outline-info h-2">Actualizar
+          <span class="iconify" style="font-size: 1.5rem;" data-icon="ion:sync"></span>
+        </a>
+        <a id="vaciar-carrito-2" class="btn btn-outline-danger h-2">Vaciar
+          <span class="iconify" style="font-size: 1.5rem;" data-icon="bi:cart-x"></span>
+        </a>
+        <button id="procesar-compra" class="btn btn-outline-success h-2" type="submit">Realizar Compra</button>
+      </section>
+      <div>
+        <h4 class="questionAdd">Nuestras Ofertas</h4>
+      </div>
 
-    <%- include('../partials/whatsapp.ejs') %> 
+      <%- include ('../partials/slider.ejs') %>
+    </main>
 
-    <%- include('../partials/footer.ejs') %> 
-    
-    <%- include('../partials/scripts.ejs') %> 
+    <%- include('../partials/whatsapp.ejs') %> <%-
+    include('../partials/footer.ejs') %> <%- include('../partials/scripts.ejs')
+    %>
 
-</body>
-
+    <!-- Script -->
+    <script src="/js/slider.js"></script>
+  </body>
 </html>

@@ -39,18 +39,25 @@
       <small class="text-danger"><%= locals.errorMsg %> </small>
       <% } %>
 
+    
       <button type="submit" class="button button--positionRegister">
         INGRESAR
       </button>
       <a href="/user/register" class="button button--positionRegister">REGISTRARSE</a>
       <small class="error-validator" id="errorLoginForm">
       </small>
+      <!-- LOGIN FACEBOOK -->
+      <a href="/user/auth/facebook" class="facebook"><i class="fab fa-facebook-f"></i><span>Continuar con Facebook</span></a> 
+        <!-- LOGIN GOOGLE -->
+       <a href="/user/auth/google" class="google"><img src="/img/google.png" alt=""><span>Continuar con Google</span></a> 
+
+
+       
     </form>
 
   </div>
 
   </div>
-
   <%- include('../partials/whatsapp.ejs') %>
   <%- include('../partials/footer.ejs') %>
   <%- include('../partials/scripts.ejs') %>

@@ -4,6 +4,7 @@
 <%- include('../partials/head.ejs') %>
 
     <body>
+        <%- include('../partials/recaptcha.ejs') %>
         <%- include('../partials/load.ejs') %>
             <%- include('../partials/header.ejs') %>
 
@@ -193,10 +194,7 @@
                                     <% } %>
 
                         </div>
-                        <div class="containerReCaptcha">
-                            <div class="g-recaptcha" id="ReCaptcha" data-sitekey="6Lf31UAcAAAAABrw2DUMZXzCldUObT0L4lEoBJcP"></div> 
-                            <span id="recaptchaError" class="error"></span>                    
-                        </div>
+                        <%- include('../partials/reCaptView.ejs') %>
                         <div class="form-item">
                             <button class="btn-send" type="submit">Enviar</button>
                         </div>
@@ -208,8 +206,9 @@
 
                     <%- include('../partials/footer.ejs') %>
 
-                    <%- include('../partials/recaptcha.ejs') %>     
+                      
                     <%- include('../partials/scripts.ejs') %>   
+                    <script src="/js/validationContact.js"></script>
 
     </body>
 

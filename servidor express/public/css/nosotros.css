@@ -1,3 +1,13 @@
+/* DARK MODE */
+.sectionWe.dark{
+   
+background-color: rgb(61, 56, 56);
+}
+.sectionWe a.dark{color: white;border-bottom: 2px solid;}
+
+
+/* DARK MODE END */
+
 .containerWe {
     font-family: "Poppins";
     font-size: 0.7rem;

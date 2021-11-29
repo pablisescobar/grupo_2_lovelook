@@ -1,11 +1,32 @@
+
+/* DARK MODE */
+input.validationsErrors.dark,
+textarea.validationsErrors.dark,
+label.validationsErrors.dark,
+select.validationsErrors.dark
+{background-color: gray !important;box-shadow: inset 0 0 10px red, inset 0 0 21px black;color: white;letter-spacing: 3px;}
+input.validationsSuccess.dark,
+textarea.validationsSuccess.dark,
+label.validationsSuccess.dark,
+select.validationsSuccess.dark
+{
+    background-color: gray !important;
+    box-shadow: inset 0 0 9px 1px green, inset 0 0 18px black;
+    color: white;
+    letter-spacing: 2px;
+}
+.error.validationsErrors.dark{
+    font-weight: bold;
+    background: transparent;
+    text-shadow: 0 10px 5px black, 9px 9px 18px black;
+}
+/* DARK MODE END */
+
 input.validationsErrors,
 textarea.validationsErrors,
 label.validationsErrors,
 select.validationsErrors
-{
- box-shadow: inset 0 0 5px 1px rgb(243,171,171),0 0 2px red;
- background-color: white !important;
-} 
+{box-shadow: inset 0 0 5px 1px rgb(243,171,171),0 0 2px red;/* background-color: white !important; */letter-spacing: 2px;} 
 
 .error{
     color: red;
@@ -27,12 +48,12 @@ select.validationsErrors
 }
 
 
+
 input.validationsSuccess,
 textarea.validationsSuccess,
 label.validationsSuccess,
 select.validationsSuccess
 {
     box-shadow: inset 0 0 5px 1px rgb(191, 233, 191),0 0 2px green;
-    background-color: white !important;
-  
+    letter-spacing: 2px;
 }

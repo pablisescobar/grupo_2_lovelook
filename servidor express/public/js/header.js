@@ -12,10 +12,10 @@ let iconRowDownCategory=qs("#fa-angle-down")
 
 /* Menu BURGER  */
 
-var McButton = $("[data=hamburger-menu]");
-var McBar1 = McButton.find("b:nth-child(1)");
-var McBar2 = McButton.find("b:nth-child(2)");
-var McBar3 = McButton.find("b:nth-child(3)");
+let McButton = $("[data=hamburger-menu]");
+let McBar1 = McButton.find("b:nth-child(1)");
+let McBar2 = McButton.find("b:nth-child(2)");
+let McBar3 = McButton.find("b:nth-child(3)");
 function animation() {
   if (McButton.hasClass("active")) {
     McBar1.velocity({ top: "50%" }, { duration: 200, easing: "swing" });
@@ -44,7 +44,7 @@ McButton.click(function () {
  
     $(this).addClass("active");
     animation();
-    mySidenav.style.width = "250px";
+    mySidenav.style.width = "210px";
     mySidenav.style.opacity = "1";
     barSearch.style.width = "0vw";
     barSearch.style.opacity = "0";
@@ -123,8 +123,9 @@ searchIco.onclick = function () {
       McBar1.velocity("reverse", { delay: 800 });
     }
   
-    
+    qs("#search-mobile").style.display = "flex";
     barSearch.style.width = "90%";
+    document.querySelector(".input-header").focus()
     barSearch.style.opacity = "1";
     searchIco.style.color = "var(--bordes)";
     searchIco.style.filter = "drop-shadow(4px 4px 2px gray);";
@@ -132,7 +133,7 @@ searchIco.onclick = function () {
     mySidenav.style.opacity = "0.5";
     boxCloseNav.style.width = "0";
     boxCloseNav.style.height = "0";
-    qs("#btn-lupa").style.display = "inline-block";
+    qs("#btn-lupa").style.display = "flex";
   } else {
     
     barSearch.style.width = "0vw";
@@ -140,20 +141,26 @@ searchIco.onclick = function () {
     searchIco.style.color = "black";
     searchIco.style.filter = "drop-shadow(4px 4px 2px red);";
     setTimeout(() => {
-      qs("#btn-lupa").style.display = "none";
+      qs("#search-mobile").style.display = "none";
     }, 500);
   }
 };
-
 
 /* TRANSLATE GOOGLE */
 
 let icoWord = qs('.translateSelect')
 let selectTranslate  = qs('.selectTranslate')
-
-
 icoWord.onclick= function(){
   selectTranslate.classList.toggle("active")
   boxCloseNav.style.width = "100%";
   boxCloseNav.style.height = "100vh";
 }
+
+/* CART SHOPPING */
+qs("#cart-popup-right").addEventListener("click",(event)=>{
+  event.preventDefault()
+  qs("#carrito").classList.toggle("active")
+})
+
+
+

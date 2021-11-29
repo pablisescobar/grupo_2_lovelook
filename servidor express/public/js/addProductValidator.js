@@ -2,15 +2,13 @@ function ge(element) {
   return document.getElementById(element);
 }
 
-function addBorderRed(input){
-  input.style.boxShadow = '0 0 10px red'
+function addBorderRed(input) {
+  input.style.boxShadow = "0 0 10px red";
 }
 
-function addBorderGreen(input){
-  input.style.boxShadow = '0 0 10px green'
+function addBorderGreen(input) {
+  input.style.boxShadow = "0 0 10px green";
 }
-
-
 
 window.addEventListener("load", function () {
   let inputName = ge("name"),
@@ -32,7 +30,7 @@ window.addEventListener("load", function () {
     fileUpload = ge("file-upload"),
     errorFileUpload = ge("errorFileUpload"),
     formAdd = ge("productForm"),
-    submitErrors = ge('errorAddProductForm'),
+    submitErrors = ge("errorAddProductForm"),
     seasonInsert = ge("seasonInsert"),
     errorSeasonInsert = ge("insertSeason"),
     formAddSeason = ge("formAddSeason"),
@@ -56,7 +54,8 @@ window.addEventListener("load", function () {
         addBorderRed(inputName);
         break;
       case !regExAlpha.test(inputName.value):
-        errorName.innerHTML = "Debes ingresar un nombre válido, 5 - 20 caracteres";
+        errorName.innerHTML =
+          "Debes ingresar un nombre válido, 5 - 20 caracteres";
         addBorderRed(inputName);
         break;
       default:
@@ -72,7 +71,8 @@ window.addEventListener("load", function () {
         addBorderRed(description);
         break;
       case !regExDescrip.test(description.value):
-        errorDescription.innerHTML = "Debes ingresar una descripción válida, 20 - 500 caracteres";
+        errorDescription.innerHTML =
+          "Debes ingresar una descripción válida, 20 - 500 caracteres";
         addBorderRed(description);
         break;
       default:
@@ -155,10 +155,10 @@ window.addEventListener("load", function () {
   });
   fileUpload.addEventListener("change", function fileValidation() {
     let filePath = fileUpload.value,
-      allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i;
+      allowefExtensions = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
     if (!allowefExtensions.exec(filePath)) {
       errorFileUpload.innerHTML =
-        "Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)";
+        "Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif - .webp)";
       fileUpload.value = "";
       $imgPreview.innerHTML = "";
       return false;
@@ -174,30 +174,32 @@ window.addEventListener("load", function () {
         addBorderRed(fileUpload);
       }
     }
-  })
+  });
 
-  formAdd.addEventListener('submit',function(event){
+  formAdd.addEventListener("submit", function (event) {
     let error = false;
-    event.preventDefault()
-    let elementosForm = formAdd.elements
-    
-    for (let index = 0; index < elementosForm.length-2; index++) {
-        if(elementosForm[index].value == "" && elementosForm[index].name !== "image"){
-          if(index == "4") {
-            continue 
-          }
-            addBorderRed(elementosForm[index]);
-            submitErrors.innerHTML = "Los campos señalados son obligatorios";
-            error = true;
+    event.preventDefault();
+    let elementosForm = formAdd.elements;
+
+    for (let index = 0; index < elementosForm.length - 2; index++) {
+      if (
+        elementosForm[index].value == "" &&
+        elementosForm[index].name !== "image"
+      ) {
+        if (index == "4") {
+          continue;
         }
+        addBorderRed(elementosForm[index]);
+        submitErrors.innerHTML = "Los campos señalados son obligatorios";
+        error = true;
+      }
     }
 
-    if(!error){
-        console.log('Todo bien');
-        formAdd.submit()
+    if (!error) {
+      console.log("Todo bien");
+      formAdd.submit();
     }
-
-}); 
+  });
 
   seasonInsert.addEventListener("blur", function () {
     switch (true) {
@@ -212,22 +214,21 @@ window.addEventListener("load", function () {
     }
   });
 
-  formAddSeason.addEventListener('submit',function(event){
+  formAddSeason.addEventListener("submit", function (event) {
     let error = false;
-    event.preventDefault()
-     
-        if(seasonInsert.value == ""){
-            addBorderRed(seasonInsert);
-            errorFormSeasonInsert.innerHTML = "Ingrese una temporada";
-            error = true;
-        }
+    event.preventDefault();
 
-    if(!error){
-        console.log('Todo bien');
-        formAddSeason.submit()
+    if (seasonInsert.value == "") {
+      addBorderRed(seasonInsert);
+      errorFormSeasonInsert.innerHTML = "Ingrese una temporada";
+      error = true;
     }
 
-});
+    if (!error) {
+      console.log("Todo bien");
+      formAddSeason.submit();
+    }
+  });
 
   categoryInsert.addEventListener("blur", function () {
     switch (true) {
@@ -242,22 +243,21 @@ window.addEventListener("load", function () {
     }
   });
 
-  formAddCategory.addEventListener('submit',function(event){
+  formAddCategory.addEventListener("submit", function (event) {
     let error = false;
-    event.preventDefault()
-    
-   if(categoryInsert.value == ""){
-            addBorderRed(categoryInsert);
-            errorFormCategoryInsert.innerHTML = "Ingrese una temporada";
-            error = true;
-        }
+    event.preventDefault();
 
-    if(!error){
-        console.log('Todo bien');
-        formAddCategory.submit()
+    if (categoryInsert.value == "") {
+      addBorderRed(categoryInsert);
+      errorFormCategoryInsert.innerHTML = "Ingrese una temporada";
+      error = true;
     }
 
-});
+    if (!error) {
+      console.log("Todo bien");
+      formAddCategory.submit();
+    }
+  });
 
   colorInsert.addEventListener("blur", function () {
     switch (true) {
@@ -272,21 +272,19 @@ window.addEventListener("load", function () {
     }
   });
 
-  formAddColor.addEventListener('submit',function(event){
+  formAddColor.addEventListener("submit", function (event) {
     let error = false;
-    event.preventDefault()
-    
-    if(colorInsert.value == ""){
+    event.preventDefault();
+
+    if (colorInsert.value == "") {
       addBorderRed(colorInsert);
       errorFormColorInsert.innerHTML = "Ingrese una temporada";
       error = true;
-  }
-
-    if(!error){
-        console.log('Todo bien');
-        formAddColor.submit()
     }
 
-})
-
+    if (!error) {
+      console.log("Todo bien");
+      formAddColor.submit();
+    }
+  });
 });

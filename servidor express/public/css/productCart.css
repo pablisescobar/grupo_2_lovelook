@@ -1,3 +1,7 @@
+.cart.borrar-producto{
+    color: green;
+}
+
 .container-cart {
     width: 90%;
     margin: 10px auto;
@@ -13,11 +17,17 @@
 }
 
 .container-cart .section1 {
+<<<<<<< HEAD
     width: 80%;
     height: 70%;
     border-radius: 10px;
     padding: 10px;
+=======
+    /* box-shadow: 0 0 10px var(--bordes_claro); */
+    /* padding: -6px; */
+>>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
     margin: 0 auto;
+    overflow: scroll;
 }
 
 .container-cart .section1 .product img {
@@ -159,8 +169,13 @@
     font-family: var(--yesteryear);
     font-size: 40px;
     text-align: center;
+    letter-spacing: 1px;
     padding: 3px;
+<<<<<<< HEAD
     filter: drop-shadow(6px 8px 2px var(--shadows));
+=======
+    text-shadow: 2px 2px 4px var(--shadows);
+>>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
 }
 
 .container-cart .section3 {
@@ -191,9 +206,8 @@
 @media screen and (min-width: 768px) {
 
     .container-cart .section1 {
-        padding-top: 15px;
-        max-width: 600px;
-        margin: auto;
+        margin: 10px auto;
+        overflow: hidden;
     }
 
     .container-cart .section1 .product {

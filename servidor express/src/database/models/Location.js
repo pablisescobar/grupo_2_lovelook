@@ -18,6 +18,9 @@ module.exports = (sequelize, dataTypes) => {
         },
         address:{
             type:dataTypes.STRING(50)
+        },
+        userId:{
+            type:dataTypes.INTEGER(11)  
         }
 
     }
@@ -28,9 +31,9 @@ module.exports = (sequelize, dataTypes) => {
 
     const Location = sequelize.define(alias, cols, config)
     Location.associate= function(models){
-        Location.hasOne(models.User,{
+        Location.belongsTo(models.User,{
             as:"user",
-            foreignKey:"locationId"
+            foreignKey:"userId"
         })
     }
     return Location;
