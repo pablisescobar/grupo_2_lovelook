@@ -21,6 +21,7 @@
 @import url("load.css");
 @import url("validations.css");
 @import url("darkMode.css");
+@import url("bootstrap.css");
 
 /* Google Font  */
 /*----------- Poppins --------------- */
@@ -42,6 +43,7 @@ a {
   text-decoration: none !important;
   color: black;
   display: block;
+  cursor: pointer;
 }
 
 li {
@@ -83,6 +85,7 @@ body {
   position: relative;
   margin: auto;
   overflow-x: hidden;
+  
 }
 
 /* DARK MODE */
@@ -91,4 +94,32 @@ body.dark {
   color: white;
   transition: 0.5s all ease;
   overflow-x: hidden;
+}
+
+.swal-confirm {
+  border: 0;
+  border-radius: 0.25em;
+  background: initial;
+  background-color: #dc3741;
+  color: #fff;
+  font-size: 1em;
+  margin: 0.3125em;
+  padding: 0.625em 1.1em;
+  transition: box-shadow .1s;
+  box-shadow: 0 0 0 3px transparent;
+  font-weight: 500;
+
+}
+.swal-cancel {
+  border: 0;
+  border-radius: 0.25em;
+  background: initial;
+  background-color: #6e7881;
+  color: #fff;
+  font-size: 1em;
+  margin: 0.3125em;
+  padding: 0.625em 1.1em;
+  transition: box-shadow 0.1s;
+  box-shadow: 0 0 0 3px transparent;
+  font-weight: 500;
 }

@@ -1,9 +1,9 @@
 .icon-size {
-    font-size: 3rem;
+    font-size: 2rem;
 }
 @media screen and (min-width: 500px) {
     .icon-size {
-        font-size: 3.5rem;
+        font-size: 2rem;
     }
 }
 

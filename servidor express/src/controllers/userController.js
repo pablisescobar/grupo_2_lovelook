@@ -133,7 +133,7 @@ db.Location.destroy({
       };
         res.locals.user = req.session.user;
 
-        res.redirect("/user/perfil");
+        res.redirect("/");
       });
     } else {
       res.render("users/login", {
@@ -223,8 +223,8 @@ db.Location.destroy({
       avatar: req.session.passport.user.avatar,
       phone: req.session.passport.user.phone,
     };
-    /*   console.log(req.session.user); */
-    res.redirect("/user/perfil");
+    res.cookie("userLoveLook", req.session.user, { expires: new Date(Date.now() + 90000), httpOnly: true })
+    res.redirect("/");
   },
   loginFacebook: (req, res) => {
    
@@ -241,7 +241,7 @@ db.Location.destroy({
       avatar: req.session.passport.user.avatar,
       phone: req.session.passport.user.phone,
     };
-    
-    res.redirect("/user/perfil");
+    res.cookie("userLoveLook", req.session.user, { expires: new Date(Date.now() + 90000), httpOnly: true })
+    res.redirect("/");
   },
 };

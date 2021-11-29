@@ -1,3 +1,7 @@
+.cart.borrar-producto{
+    color: green;
+}
+
 .container-cart {
     width: 90%;
     margin: 10px auto;
@@ -13,12 +17,10 @@
 }
 
 .container-cart .section1 {
-    width: 80%;
-    height: 70%;
-    border-radius: 10px;
-    /* box-shadow: 0 2px 10px var(--bordes_claro); */
-    padding: 10px;
+    /* box-shadow: 0 0 10px var(--bordes_claro); */
+    /* padding: -6px; */
     margin: 0 auto;
+    overflow: scroll;
 }
 
 .container-cart .section1 .product img {
@@ -197,9 +199,8 @@
 @media screen and (min-width: 768px) {
 
     .container-cart .section1 {
-        padding-top: 15px;
-        max-width: 600px;
-        margin: auto;
+        margin: 10px auto;
+        overflow: hidden;
     }
 
     .container-cart .section1 .product {

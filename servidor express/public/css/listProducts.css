@@ -24,7 +24,7 @@
 .container-listProduct .cardActionProduct.dark {
   background-color: var(--bordes);
 }
-.container-listProduct .cardActionProduct.dark a {
+.container-listProduct .cardActionProduct.dark span {
   color: white;
 }
 
