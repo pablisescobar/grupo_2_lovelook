@@ -4,7 +4,6 @@ const db = require("../database/models");
 const { Op } = require("sequelize");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-
 module.exports = {
   index: (req, res) => {
     db.Product.findAll({
@@ -38,16 +37,39 @@ module.exports = {
 
   search: (req, res) => {
     db.Product.findAll({
-     
       where: {
-        name: {
-          [Op.like]: `%${req.query.keys}%`,
-        },
-      },
-      where: {
-        description: {
-          [Op.like]: `%${req.query.keys}%`,
-        },
+        [Op.or]: [
+          {
+            name: {
+              [Op.like]: `%${req.query.keys}%`,
+            },
+          },
+          {
+            description: {
+              [Op.like]: `%${req.query.keys}%`,
+            },
+          },
+          {
+            category: {
+              [Op.like]: `%${req.query.keys}%`,
+            },
+          },
+          {
+            colors: {
+              [Op.like]: `%${req.query.keys}%`,
+            },
+          },
+          {
+            season: {
+              [Op.like]: `%${req.query.keys}%`,
+            },
+          },
+          {
+            sizes: {
+              [Op.like]: `%${req.query.keys}%`,
+            },
+          },
+        ],
       },
       include: [
         { association: "category" },

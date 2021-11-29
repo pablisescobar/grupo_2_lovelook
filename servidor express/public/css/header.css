@@ -559,7 +559,7 @@ letter-spacing: 2px;
     height: 110px;
     grid: 1fr 0.5fr 1fr / repeat(12, 1fr);
     grid-template-areas:
-      " logo buscador buscador buscador buscador buscador buscador . session  carrito user . "
+      " logo buscador buscador buscador buscador buscador buscador . . carrito session user   "
       " logo menu menu menu menu menu menu menu menu menu  menu translDark";
     
   }
@@ -736,7 +736,7 @@ left: -50%;
   }
 
   .header .menu-user {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
   }
 
   

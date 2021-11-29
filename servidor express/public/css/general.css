@@ -22,6 +22,7 @@
 @import url("load.css");
 @import url("validations.css");
 @import url("darkMode.css");
+@import url("user.css");
 
 /* Google Font  */
 /*----------- Poppins --------------- */
@@ -94,3 +95,21 @@ body {
     transition: 0.5s all ease;
   }
 
+/*  CHATBOT  */
+@media screen and (min-width: 320px) {
+  div.loveLookBot {
+    z-index: 9000000 !important;
+    transform: scale(0.8) !important;
+    position: fixed;
+    right: 6px;
+    bottom: 17px;
+  }
+  }
+
+@media screen and (min-width: 1024px) {
+  
+  div.loveLookBot {
+    right: 12px;
+    bottom: 25px;
+  }
+}

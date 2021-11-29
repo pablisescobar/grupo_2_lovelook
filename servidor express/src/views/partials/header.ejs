@@ -91,7 +91,7 @@
       <div class="menu-user">
         <a href="/user/perfil">Mis datos</a>
         <a href="/user/logout">Cerrar sesión</a>
-        <% if (session.user.rol==2) { %>
+        <% if (session.user.rol==2 || session.user.rol==3) { %>
           <a href="/admin/products">ADMIN</a>
           <% } %>
       </div>
@@ -104,7 +104,7 @@
         <% } %>
 
           <!-- ICONO DE CARRITO DE COMPRA -->
-          <% if(session .user && session.user.rol===1){ %>
+          <% if(session.user && session.user.rol===1){ %>
             <div class="carrito">
               <a class="align-icon icon-size" href="/user/cart">
                 <span class="iconify" data-icon="emojione-monotone:shopping-cart" data-inline="false"></span>

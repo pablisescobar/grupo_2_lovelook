@@ -36,26 +36,32 @@
   color: pink;
 }
 
-select#color.dropdown {
+select#colorSelect.dropdown {
   border-radius: 15px;
   color: pink;
   border: 1px solid var(--bordes_claro);
   height: 30px;
   background-color: transparent;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
-select#size.dropdown {
+select#sizeSelect.dropdown {
   border-radius: 15px;
   color: pink;
   border: 1px solid var(--bordes_claro);
   background-color: transparent;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
-select#price.dropdown {
+select#priceSelect.dropdown {
   border-radius: 15px;
   color: pink;
   border: 1px solid var(--bordes_claro);
   background-color: transparent;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
 .container-listProduct .section1 .iconFilter {
@@ -262,6 +268,5 @@ select#price.dropdown {
   .container-listProduct .section2 .product {
     margin: 10px;
   }
-  
  
 }

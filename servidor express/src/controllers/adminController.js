@@ -156,7 +156,8 @@ module.exports = {
 
     searchAdmin: (req, res) => {
         try {
-            db.Product.findAll({
+
+           let searchProductPromise = db.Product.findAll({
                 where: {
                     [Op.or]: [{
                         name: {
@@ -174,14 +175,39 @@ module.exports = {
                 { association: "colors" },
                 { association: "sizes" }]
             })
+            let searchUserPromise = db.User.findAll({
+                where: {
+                    [Op.or]: [{
+                        firstName: {
+                            [Op.like]: `%${req.query.keys}%`
+                        }
+                    }, {
+                        email: {
+                            [Op.like]: `%${req.query.keys}%`
+                        }
+                    }]
+                },
+                include: [{ association: "location"},
+                            { association: "rol"}]
+            })
+Promise.all([searchProductPromise,searchUserPromise])
 
-                .then(products => {
-                    res.render('admin/listProductAdmin', {
+                .then(([products,users])=> {
+                    if(products.length > 0) {
+                       res.render('admin/listProductAdmin', {
                         products,
                         position: "",
                         toThousand,
                         session: req.session
-                    })
+                    })  
+                    } else if(users.length > 0) {
+                        res.render('admin/users', {
+                            users,
+                            position: "",
+                            toThousand,
+                            session: req.session
+                        }) 
+                    }
                 })
         } catch (err) {
             console.log(err);

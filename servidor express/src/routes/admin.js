@@ -11,14 +11,17 @@ let { listProductAdmin,
     destroyValue,
     message,
     deleteMessage } = require('../controllers/adminController.js');
-let multer = require('../middleware/uploadProductsFiles')
-let productValidator = require('../validations/adminValidation.js')
-let categoryInsert = require('../validations/insertCategory.js')
-let colorInsert= require('../validations/insertColor.js')
-let seasonInsert = require('../validations/insertSeason.js')
-let uploadAdminCheck = require('../middleware/uploadAdminCheck')
+let { seeUser, deleteUser, userChange, adminUserChange } = require('../controllers/superUserController');
+let multer = require('../middleware/uploadProductsFiles');
+let productValidator = require('../validations/adminValidation.js');
+let categoryInsert = require('../validations/insertCategory.js');
+let colorInsert= require('../validations/insertColor.js');
+let seasonInsert = require('../validations/insertSeason.js');
+let uploadAdminCheck = require('../middleware/uploadAdminCheck');
+let superUserCheck = require('../middleware/superUserCheck');
 
 /* GET - View List Products */
+router.get('/users', superUserCheck, seeUser);
 router.get('/products', uploadAdminCheck , listProductAdmin);
 
 /* GET - View Add Product  */
@@ -35,12 +38,15 @@ router.delete('/products/productDelete/:id', uploadAdminCheck, destroy);
 router.delete('/products/deleteCategory/:id', uploadAdminCheck, destroyValue.category);
 router.delete('/products/deleteColor/:id', uploadAdminCheck, destroyValue.color);
 router.delete('/products/deleteSeason/:id', uploadAdminCheck, destroyValue.season);
+router.delete('/users/deleteUser/:id', superUserCheck, deleteUser);
 
 /* GET - View Edit Product */
 router.get('/products/edit/:id', uploadAdminCheck, editProduct);
 
 /* PUT - Editamos un producto con el método realizado en el controlador */
 router.put('/products/edit/:id', uploadAdminCheck, multer.array('image', 4), productValidator, updateProduct);
+router.put('/users/userChange/:id', superUserCheck, userChange);
+router.put('/users/adminUserChange/:id', superUserCheck, adminUserChange);
 
 
 /* Bar search */
