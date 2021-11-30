@@ -1,4 +1,4 @@
-<div class="container">
+
   <!--  -->
   <div class="card-slider" id="lista-productos">
     <% products.forEach(product => { %>
@@ -7,6 +7,7 @@
         <a
           href="/products/detail/<%= `${product.id}/${product.categoryId}`%>"
           style="display: block"
+          data-id="<%= product.id%>"
         >
           <img
             class="card-img-top"
@@ -16,7 +17,7 @@
         <div class="card-body">
           <h5 class="nameSlider"><%= product.name %></h5>
           <div class="prices-section">
-            <p class="priceSlider">
+            <p class="priceSlider price">
               $ <%=toThousand(Math.round(product.price - product.price *
               product.discount / 100))%>
             </p>
@@ -30,20 +31,20 @@
             <%=product.discount> 0?`${product.discount} %Off` : "" %>
           </p>
           <div class="clientAction">
-            <a href="/user/cart" class="btn-primary"
+            <span href="/user/cart" class="btn-primary"
               ><i class="fas fa-shopping-basket"></i
-            ></a>
-            <a
+            ></span>
+            <span
               href=""
               class="btn-primary agregar-carrito"
               title="agregar al carrito"
               ><i class="fas fa-cart-plus"></i
-            ></a>
-            <a
+            ></span>
+            <span
               href=""
               class="btn-primary"
               ><i class="far fa-heart"></i
-            ></a>
+            ></span>
             <!-- "fas fa-heart" para cuando esta seleccionado -->
           </div>
         </div>
@@ -52,3 +53,5 @@
     <% }) %>
   </div>
 </div>
+
+

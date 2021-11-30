@@ -10,7 +10,7 @@ function zoom(e){
 
 function transform(element){
   element.style.transform="scale(1.2)"
-  element.style.zIndex= "800"
+
   element.style.transition="0.5s transform ease"
   element.style.border="5px solid pink"
   
@@ -18,7 +18,7 @@ function transform(element){
 
 function destransform(element){
   element.style.transform="scale(1)"
-  element.style.zIndex= "1"
+
   element.style.transition="0.5s transform ease"
   element.style.border="none"
 }

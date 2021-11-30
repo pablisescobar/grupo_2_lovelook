@@ -1,18 +1,19 @@
-<section class="section2">
+<section class="section2" id="sectionProducts"><!-- lista-productos --> 
+  <input id="accountantProducts" style="display: none;" value="<%= products.length %> "></input>
     <% products.forEach(product=>{ %>
-    <article class="product">
+    <article class="product" price="<%= product.price %>" color="<%= product.colors[0].name %>" size="<%= product.sizes[0].name %>">
       <div class="cardProduct">
-        <a href="/products/detail/<%= `${product.id}/${product.categoryId}`%>">
+        <a href="/products/detail/<%= `${product.id}/${product.categoryId}`%>" data-id="<%= product.id%>">
         <img src="/img/photos/<%= product.images.length>0? product.images[0].filename:'default.png' %>" alt="">
       </a>
       <div class="infoProduct">
-         <h3><% if (product.name.length > 12) { %>
+         <h5><% if (product.name.length > 12) { %>
           <%- `${product.name.slice(0,12)}...` %>
           <% }else{ %>
           <%= product.name %>
-          <% } %> </h3>
+          <% } %> </h5>
 
-        <p class="price">
+        <p class="price">$
           <%=toThousand(Math.round(product.price - product.price * product.discount /
                       100))%>
         </p>
@@ -25,18 +26,18 @@
       </div>
        
        <div class="cardActionProduct">
-          <a href="/user/cart" class="btn-primary"
+          <span class="btn-primary"
             ><i class="fas fa-shopping-basket"></i
-          ></a>
-          <a href=""
-            class="btn-primary agregar-carrito"
-            title="agregar al carrito"
+          ></span>
+          <span href=""
+            class="btn-primary agregar-carrito cart"
+            title="agregar al carrito" data-icon-id="<%= product.id%>"
             ><i class="fas fa-cart-plus">
-              </i></a>
-          <a href=""
+              </i></span>
+          <span href=""
            
             class="btn-primary"><i class="far fa-heart"></i
-          ></a>
+          ></span>
            <!-- "fas fa-heart" para cuando esta seleccionado  -->
         </div>
        

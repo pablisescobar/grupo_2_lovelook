@@ -2,7 +2,9 @@
   <a class="text-dark" href="/">Home</a>
   <a class="text-dark" href="/admin/products">Productos</a>
   <a class="text-dark" href="/admin/messages">Mensajes</a>
-  <a class="text-dark" href="#">Usuarios</a>
+  <% if(session.user && session.user.rol === 3){ %>
+    <a class="text-dark" href="/admin/users">Usuarios</a>
+    <%}%>
   <a class="text-dark" href="#">Ventas</a>
   <div class="search-container">
     <form action="/admin/products/search" method="GET">

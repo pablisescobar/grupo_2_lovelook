@@ -84,7 +84,7 @@
     margin: auto;
 }
 
-a.btn-primary {
+span.btn-primary {
     color: black;
     padding: 5px;
     align-items: center;
@@ -96,7 +96,7 @@ a.btn-primary {
     /* background-color: honeydew; */
 }
 
-a.btn-primary:hover{
+span.btn-primary:hover{
     filter: invert(1);
 }
 
@@ -154,11 +154,11 @@ width: 70%;
 @media screen and (min-width: 1024px) {
 
     .slick-dotted.slick-slider{
-      
+      width: 90%;
     }
     
      .card-slider {
         width:750px;
-    } 
+   } 
 
 }

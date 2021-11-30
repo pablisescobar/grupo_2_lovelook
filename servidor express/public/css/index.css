@@ -1,17 +1,18 @@
 .home-inicio {
-    min-width: 320px;
+    /* min-width: 320px; */
     width: 100%;
     margin: auto;
 }
 
 .home-inicio video {
-    width: 320px;
+    width: 100%;
 }
 .home-inicio .categoryContainer {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
     width: 100%;
+    padding: 10px;
 }
 
 .home-inicio .imagen1 img {
@@ -24,7 +25,7 @@
 }
 
 .categoryContainer .cajaPrincipal .imagen1 {
-    /* margin: 10px 0px; */
+    margin: 10px 0px;
     position: relative;
 }
 .categoryContainer .cajaPrincipal .imagen1 h2 {
@@ -51,7 +52,7 @@
     text-align: center;
     border-bottom: 2px solid black;
     font-family: var(--yesteryear);
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: lighter;
     filter: drop-shadow(6px 8px 2px var(--shadows));
     margin-bottom: 20px;
@@ -141,6 +142,7 @@
     }
     .home-inicio .cajaPrincipal .imagen1 {
         width: 50%;
+        margin: 4px;
     }
 }
 

@@ -21,6 +21,8 @@
 @import url("load.css");
 @import url("validations.css");
 @import url("darkMode.css");
+@import url("user.css");
+@import url("bootstrap.css");
 
 /* Google Font  */
 /*----------- Poppins --------------- */
@@ -42,6 +44,7 @@ a {
   text-decoration: none !important;
   color: black;
   display: block;
+  cursor: pointer;
 }
 
 li {
@@ -91,4 +94,59 @@ body.dark {
   color: white;
   transition: 0.5s all ease;
   overflow-x: hidden;
+}
+
+.swal-confirm {
+  border: 0;
+  border-radius: 0.25em;
+  background: initial;
+  background-color: #dc3741;
+  color: #fff;
+  font-size: 1em;
+  margin: 0.3125em;
+  padding: 0.625em 1.1em;
+  transition: box-shadow 0.1s;
+  box-shadow: 0 0 0 3px transparent;
+  font-weight: 500;
+}
+.swal-cancel {
+  border: 0;
+  border-radius: 0.25em;
+  background: initial;
+  background-color: #6e7881;
+  color: #fff;
+  font-size: 1em;
+  margin: 0.3125em;
+  padding: 0.625em 1.1em;
+  transition: box-shadow 0.1s;
+  box-shadow: 0 0 0 3px transparent;
+  font-weight: 500;
+}
+.btn-primar {
+  color: #fff;
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+.btn-primar:hover {
+  color: #fff;
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
+
+/*  CHATBOT  */
+@media screen and (min-width: 320px) {
+  div.loveLookBot {
+    z-index: 9000000 !important;
+    transform: scale(0.8) !important;
+    position: fixed;
+    right: 6px;
+    bottom: 17px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  div.loveLookBot {
+    right: 12px;
+    bottom: 25px;
+  }
 }

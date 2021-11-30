@@ -8,6 +8,7 @@
     z-index: 10000;
     background-color: rgba(255,205,212,0.5);
 }
+
 .circle {
     width: 70px;
     height: 70px;
@@ -16,6 +17,7 @@
     border-radius: 50%;
     animation: girar 1s infinite;
   }
+
   @keyframes girar {
     from {
       transform: rotate(0deg);

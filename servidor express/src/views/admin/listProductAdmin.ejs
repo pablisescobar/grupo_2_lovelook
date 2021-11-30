@@ -56,10 +56,10 @@
                                         </td>
                                         <td class="imgs-admin d-flex">
                                             <%product.images.forEach(image => {%>
-                                            <img class="img-value"
+                                         <a href="products/productDetail.ejs">  <img class="img-value"
                                                 src="/img/photos/<%= product.images.length>0? image.filename:'default.png' %>"
                                                 alt="">
-                                                <% }) %> 
+                                                <% }) %> </a> 
                                             <!-- IMAGEN -->
                                         </td>
                                         <td>

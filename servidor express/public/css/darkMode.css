@@ -13,7 +13,7 @@ svg.x {
     height: 20px;
     background: white;
     position: absolute;
-    cursor: pointer;
+    /* cursor: pointer; */
     border-radius: 100px;
     background: #9cd6ef;
   }

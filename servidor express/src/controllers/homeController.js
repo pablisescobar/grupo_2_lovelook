@@ -36,8 +36,7 @@ module.exports = {
   },
 
   search: (req, res) => {
- 
-    let productResultPromise = db.Product.findAll({
+    db.Product.findAll({
       where: {
         [Op.or]: [
           {
@@ -47,6 +46,26 @@ module.exports = {
           },
           {
             description: {
+              [Op.like]: `%${req.query.keys}%`,
+            },
+          },
+          {
+            category: {
+              [Op.like]: `%${req.query.keys}%`,
+            },
+          },
+          {
+            colors: {
+              [Op.like]: `%${req.query.keys}%`,
+            },
+          },
+          {
+            season: {
+              [Op.like]: `%${req.query.keys}%`,
+            },
+          },
+          {
+            sizes: {
               [Op.like]: `%${req.query.keys}%`,
             },
           },

@@ -52,7 +52,7 @@
                     <div class="container">
                         <label class="label-perfil-user" for="email">Email: </label>
                         <input class="input--style input-perfil-user" type="email" name="email" id="email"
-                            value="<%= user.email %>">
+                            value="<%= user.email %>" disabled>
                         <% if (locals.errors && errors.email) { %>
                             <small class="text-danger">
                                 <%= errors.email.msg %>
@@ -98,8 +98,9 @@
         user.location[0].city : "" %>">
                     </div>
 
-                    <button class="changesButton" type="submit">GUARDAR CAMBIOS</button>
+                    <button class="btn btn-outline-success m-auto mt-4" type="submit">GUARDAR CAMBIOS</button>
                     <small id="errorProfileEditForm" class="text-danger"></small>
+                    <a href="/user/perfil" class="btn btn-outline-secondary m-auto mt-2">CANCELAR</a>
                 </form>
                 <%- include('../partials/footer.ejs') %>
                     <%- include('../partials/whatsapp.ejs') %>

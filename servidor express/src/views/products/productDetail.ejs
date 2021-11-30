@@ -66,10 +66,12 @@
                                         </option>
 
                                     </select>
-                                    <div>
-                                        <button class="boton agregar-carrito"><span>Agregar al carrito</span></button>
-                                        <button href="user/cart" class="boton"><span>Compra directa</span></button>
-                                        <button class="boton"><span><i class="far fa-heart"></i></span></button>
+                                    <div class="d-flex justify-content-around flex-grow-wrap">
+                                        <span class="btn btn-info agregar-carrito m-2"><span>Agregar <i class="fas fa-cart-plus"></i
+                                            ></span></span>
+                                        <span href="" class="btn btn-success m-2"><span>Compra <i class="fas fa-shopping-basket"></i
+                                            ></span></span>
+                                        <span class="btn btn-warning m-2"><span><i class="far fa-heart"></i></span></span>
                                     </div>
                                     <h4 class="subtitle-guie-size"><a id="link-guie-task" >Guiá de talles</a></h4>
                                     
@@ -124,13 +126,19 @@
                         </section>
 
                     </main>
+
                     <%- include('../partials/whatsapp.ejs') %>
+
                         <%- include('../partials/footer.ejs') %>
+
+                        <!-- SCRIPTS general -->
                             <%- include('../partials/scripts.ejs') %>
 
+                            <!-- View name -->
                             <script src="/js/productDetail.js"></script>
+                    
+                            <!-- Slider -->
                             <script src="/js/slider.js" defer></script>
-
 
     </body>
 

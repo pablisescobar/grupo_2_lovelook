@@ -1,4 +1,5 @@
 let $mode = document.querySelector("#Mode");
+let cartPoppupHeader = qs(".listaCarritoHeader")
 gsap.set("#moon, .star", { opacity: 0 });
 gsap.set("#sun, #cloud, #moon", { x: 15 });
 gsap.set(".star", { x: 35, y: -5 });
@@ -16,6 +17,7 @@ let elementsHTML = [
   ".header .search-bar input",
   ".sidenav",
   ".sidenav a",
+  ".header .carritoHeader",
 
   /* footer */
   ".footer .help ul",
@@ -102,12 +104,14 @@ function addClass(element) {
   document
     .querySelectorAll(element)
     .forEach((item) => item.classList.add("dark"));
+    cartPoppupHeader.classList.add("table-dark")
 }
 
 function removeClass(element) {
   document
     .querySelectorAll(element)
     .forEach((item) => item.classList.remove("dark"));
+    cartPoppupHeader.classList.remove("table-dark")
 }
 
 function moveDay() {
@@ -169,15 +173,17 @@ window.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("mode", contador);
   });
   /* HEADER */
-
+let x = qs(".listaCarritoHeader")
   elementsHTML.forEach((element) => {
     if (localMode) {
       if (localMode % 2 === 0) {
         removeClass(element);
         /* se activa el modo normal */
         moveNight();
+       
       } else {
         addClass(element);
+     
         /* se activa el modo dark */
         moveDay();
       }
