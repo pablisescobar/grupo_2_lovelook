@@ -127,9 +127,7 @@ function procesarCompra(event) {
         })
           /* LUEGO DEL CARTEL DE COMPRA REALIZADA ELIMINAME TODOS LOS PRODUCTOS DEL CARRITO */
           compra.vaciarCarrito(event);
-          compra.calcularTotal();
-          
-       
+          compra.calcularTotal();       
       }
     });
 }})

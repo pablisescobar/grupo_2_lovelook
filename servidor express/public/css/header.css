@@ -719,6 +719,7 @@ header .listaCarritoHeader {
     opacity: 1 !important;
     transition: none !important;
     height: 40px;
+    display: flex !important;
     background: transparent;
     /* left: 0; */
   }

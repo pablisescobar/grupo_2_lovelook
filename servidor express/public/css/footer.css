@@ -288,7 +288,7 @@ background-color: rgb(61, 56, 56);
 .footer .legale {
     grid-area : copy;
     align-self: center;
-    text-align: center;
+    text-align: left;
     font-size: .6rem;
     letter-spacing: 4px;
 }
