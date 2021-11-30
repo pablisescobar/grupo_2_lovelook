@@ -609,16 +609,11 @@ header .listaCarritoHeader {
     height: 110px;
     grid: 1fr 0.5fr 1fr / repeat(12, 1fr);
     grid-template-areas:
-<<<<<<< HEAD
-      " logo buscador buscador buscador buscador buscador buscador . . carrito session user   "
-      " logo menu menu menu menu menu menu menu menu menu  menu translDark";
-    
-=======
       " logo . . buscador buscador buscador buscador buscador buscador session user cart "
       " logo menu menu menu menu menu menu menu menu menu  translate dark";
     padding: 10px;
->>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
   }
+
 
   .header .menu {
     display: none;

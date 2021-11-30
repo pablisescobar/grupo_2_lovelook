@@ -1,6 +1,7 @@
-<section class="section2" id="lista-productos">
+<section class="section2" id="sectionProducts"><!-- lista-productos --> 
+  <input id="accountantProducts" style="display: none;" value="<%= products.length %> "></input>
     <% products.forEach(product=>{ %>
-    <article class="product">
+    <article class="product" price="<%= product.price %>" color="<%= product.colors[0].name %>" size="<%= product.sizes[0].name %>">
       <div class="cardProduct">
         <a href="/products/detail/<%= `${product.id}/${product.categoryId}`%>" data-id="<%= product.id%>">
         <img src="/img/photos/<%= product.images.length>0? product.images[0].filename:'default.png' %>" alt="">

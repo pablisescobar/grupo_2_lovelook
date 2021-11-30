@@ -40,36 +40,11 @@
       </div>
     </section>
     <hr>
-    <section id="sectionProducts" class="section2">
-      <input id="accountantProducts" style="display: none;" value="<%= products.length %> "></input>
-      <% products.forEach(product=>{ %>
-      <article class="product" price="<%= product.price %>" color="<%= product.colors[0].name %>" size="<%= product.sizes[0].name %>">
-        <a href="/products/detail/<%= product.id %>">
-          <img src="/img/photos/<%= product.images.length>0? product.images[0].filename:'default.png' %>" alt="">
-          <h3><% if (product.name.length > 12) { %>
-            <%- `${product.name.slice(0,12)}...` %>
-            <% }else{ %>
-            <%= product.name %> 
-            <% } %> </h3>
-
-          <p class="price">
-            <%=toThousand(Math.round(product.price - product.price * product.discount /
-                        100))%>
-          </p>
-          <span class="price-line-medio">
-            <%= product.discount> 0?`$${toThousand(Math.round(product.price))}` : "" %>
-          </span>
-          <p class="discount">
-            <%=product.discount> 0?`${product.discount} %Off` : "" %>
-          </p>
-        </a>
-      </article>
-      <% }) %>
-    </section>
+    <%- include('../partials/cardProduct.ejs') %> 
   </main>
-  </section>
+  
 
-
+  
   <%- include('../partials/footer.ejs') %>
   <%-include('../partials/scripts.ejs') %>
   <%-include('../partials/whatsapp.ejs') %>

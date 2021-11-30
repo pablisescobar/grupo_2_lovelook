@@ -1,5 +1,3 @@
-/* Dark Mode  */
-
 .container-listProduct .section1.dark {
   background-color: rgb(61, 56, 56);
 }
@@ -24,7 +22,7 @@
 .container-listProduct .cardActionProduct.dark {
   background-color: var(--bordes);
 }
-.container-listProduct .cardActionProduct.dark span {
+.container-listProduct .cardActionProduct.dark a {
   color: white;
 }
 
@@ -221,9 +219,6 @@ select#priceSelect.dropdown {
     justify-self: center;
   }
 
-  .container-listProduct .section2 .product:hover {
-  }
-
   .container-listProduct .section2 .product img {
     max-width: 1024px;
     width: 100%;
@@ -282,8 +277,4 @@ select#priceSelect.dropdown {
   .container-listProduct .section2 .product {
     margin: 10px;
   }
-<<<<<<< HEAD
- 
-=======
->>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
 }

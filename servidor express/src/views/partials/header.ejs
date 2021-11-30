@@ -39,18 +39,6 @@
           <span class="count"><span></span></span>
           <%}%>
       </a>
-      <div class="menu-user">
-        <a href="/user/perfil">Mis datos</a>
-        <a href="/user/logout">Cerrar sesión</a>
-        <% if (session.user.rol==2 || session.user.rol==3) { %>
-          <a href="/admin/products">ADMIN</a>
-          <% } %>
-      </div>
-    
-
-        <!-- ICONO DE USUARIO (circle) -->
-        <a href="/user/login" class="usuario align-icon icon-size user-desktop">
-          <span class="iconify" data-icon="bi:person-circle" data-inline="false"></span>
     </div>
     
 
@@ -70,12 +58,6 @@
           </div>
           <span id="google_translate_element" class="selectTranslate"></span>
 
-          <!-- ICONO DE CARRITO DE COMPRA -->
-          <% if(session.user && session.user.rol===1){ %>
-            <div class="carrito">
-              <a class="align-icon icon-size" href="/user/cart">
-                <span class="iconify" data-icon="emojione-monotone:shopping-cart" data-inline="false"></span>
-                <span class="count"><span>1</span></span>
           <div id="nav" class="navOut"></div>
 
           <div id="mySidenav" class="sidenav">

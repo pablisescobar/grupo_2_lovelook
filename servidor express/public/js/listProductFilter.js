@@ -7,7 +7,9 @@ window.addEventListener("load", () => {
   let sectionProducts = document.getElementById('sectionProducts');
   let accountant = document.getElementById('accountantProducts');
 
+
   filterProducts.addEventListener("click", () => {
+      
       let products = []
       if(colorSelect.value != '' && sizeSelect.value != '' && priceSelect != ''){
         articles.forEach((article) => {
@@ -22,6 +24,7 @@ window.addEventListener("load", () => {
             }
             });
       }
+      
             articles.forEach(ar => {
             if(ar.style.display == 'none'){
                 products.push(ar)
@@ -30,5 +33,12 @@ window.addEventListener("load", () => {
         if(products.length == accountant.value){
             sectionProducts.innerHTML+= '<p>No hay productos</p>'
         }
+        
   });
+  
+  
 });
+
+articles.forEach(article => {
+        article.style.display = "block";
+      });
