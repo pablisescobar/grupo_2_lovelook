@@ -98,7 +98,6 @@ font-weight: bold;
     align-items: center;
     margin: 10px auto;
 }
-.changesButton:hover {}
 
 .btn_btn-submit {
     border: 1px solid var(--bordes);
@@ -120,19 +119,9 @@ small {
     text-align: center;
 }
 @media screen and (min-width: 768px) {
-    
-    .perfil-user .input-perfil-user {
-        /* width: 397px; */
-        /* height: 50px; */
-    }
 
     .perfil-user .label-perfil-user {
         font-size: 1rem;
-    }
-
-    .perfil-user .image-view {
-        /* width: 250px; */
-        /* height: 250px; */
     }
 
     .perfil-user .img-label {
