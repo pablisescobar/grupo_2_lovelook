@@ -214,7 +214,6 @@ background-color: rgb(61, 56, 56);
     display: none;
     position        : absolute;
     background-color: white;
-    z-index         : 100;
     margin          : 0 auto;
     font-size: 0.9rem;
     font-weight: bold;

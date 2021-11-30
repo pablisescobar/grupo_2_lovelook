@@ -614,6 +614,7 @@ header .listaCarritoHeader {
     padding: 10px;
   }
 
+
   .header .menu {
     display: none;
   }
@@ -778,6 +779,6 @@ header .listaCarritoHeader {
   }
 
   .header .menu-user {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
   }
 }
