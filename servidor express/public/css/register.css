@@ -43,6 +43,8 @@
     padding-left: 1.3em;
     position: relative;
     color: black;
+    display: flex;
+    justify-content: center;
 }
 
 .check__label:before {
