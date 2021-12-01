@@ -1,5 +1,6 @@
 .slick-slide {
-    /* height: 1200px; */
+    height: 320px !important;
+    position: relative;
     box-shadow: 0 5px 10px var(--bordes_claro);
     margin: 15px 10px;
     border-radius: 5%;
@@ -41,7 +42,6 @@
 }
 
 .card-body {
-    padding-top: 10px;
     text-align: center;
 }
 .card-body .fas , .card-body .far{

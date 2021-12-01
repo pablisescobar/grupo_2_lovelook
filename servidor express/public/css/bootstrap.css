@@ -2139,7 +2139,7 @@ textarea.form-control.is-invalid {
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
-  /* cursor: pointer; */
+  cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
@@ -2255,7 +2255,7 @@ fieldset:disabled .btn {
   border-color: #0dcaf0;
 }
 .btn-info:hover {
-  color: #000;
+  color: #FFF;
   background-color: #31d2f2;
   border-color: #25cff2;
 }
@@ -5954,7 +5954,7 @@ fieldset:disabled .btn {
   justify-content: space-between;
 }
 .justify-content-around {
-  justify-content: space-around;
+  justify-content: start;
 }
 .justify-content-evenly {
   justify-content: space-evenly;

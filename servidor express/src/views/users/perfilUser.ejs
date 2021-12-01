@@ -56,9 +56,9 @@
                     <label class="label-perfil-user" for="province">Provincia: </label>
                     <input class=" input--style input-perfil-user-border" type="text" name="province" id="province" value="<%= user.location ? user.location[0].province : "" %>" disabled>
                 </div>
-                <a href="/user/profile/edit/<%= user.id %>" class="changesButton">EDITAR DATOS</a>
-                <div>
-                    <label for="bad-btn-submit" class="btn_btn-submit">Eliminar perfil</label>
+                <a href="/user/profile/edit/<%= user.id %>" class="changesButton btn btn-info m-auto mt-2">EDITAR DATOS</a>
+                <div class="m-auto mt-2">
+                    <label for="bad-btn-submit" class="btn btn-danger">ELIMINAR MI CUENTA</label>
                 </div>
             </form>
             

@@ -79,6 +79,8 @@ let elementsHTML = [
 ".perfil-user .input-perfil-user-border",
 ".perfil-user .input-perfil-user",
 ".changesButton",
+".details-products.active",
+".details-products .accordion-container",
 
   /* contact */
   ".form-contact-container input",
