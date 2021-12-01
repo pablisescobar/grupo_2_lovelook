@@ -21,9 +21,18 @@ class Carrito {
   }
 
   leerDatosProducto(producto) {
+    if (/\/products\/detail/.test(location.pathname)) {
+      let sectionProductDetail = document.querySelector(
+        ".details-products .product .imgs"
+      ).children[0];
+      var imgDetail = sectionProductDetail.querySelector("img").src;
+    }
+
     /* OBTENEMOS LOS VALORES DE LA TARJETA QUE INTRODUCIMOS COMO PARAMETRO */
     var infoProducto = {
-      image: producto.querySelector("img").src,
+      image: /\/products\/detail/.test(location.pathname)
+        ? imgDetail
+        : producto.querySelector("img").src,
       title: producto.querySelector("h5").textContent,
       price: Number(
         producto
@@ -202,7 +211,8 @@ $ ${toThousand(producto.price)}
       /* OBTENEMOS EL ID DE ESA TARJETA UBICADO EN EL DATA-ID EN LA ETIQUETA "a" */
       producto = event.target.parentElement.parentElement;
       console.log(producto);
-      productoId = producto.querySelector("a").dataset.id;/* getAttribute("data-id"); */
+      productoId =
+        producto.querySelector("a").dataset.id; /* getAttribute("data-id"); */
       console.log(productoId);
 
       event.target.parentElement.parentElement.remove();

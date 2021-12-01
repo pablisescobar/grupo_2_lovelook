@@ -612,6 +612,7 @@ header .listaCarritoHeader {
       " logo . . buscador buscador buscador buscador buscador buscador session user cart "
       " logo menu menu menu menu menu menu menu menu menu  translate dark";
     padding: 10px;
+    z-index: 300;
   }
 
 
