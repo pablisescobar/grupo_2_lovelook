@@ -3,8 +3,7 @@
 .details-products .product .form-1 .subtitle.dark {
   color: lightgray;
 }
-.details-products .product .form-1 .subtitle.dark:hover {
-}
+
 .details-products .product .description .discount.dark {
   text-shadow: 2px 2px 10px black, 0 0 2px lightgrey;
 }
@@ -201,10 +200,9 @@ figure.zoom img:hover {
 }
 
 .price-line-medio {
-  text-decoration: line-through;
-  color: lightsalmon;
-  /* font-weight: bold; */
-  font-size: 1rem;
+    text-decoration: line-through;
+    font-size: 1rem;
+    color: red;
 }
 .details-products .detailButton{
 font-size: 1.5rem;
@@ -221,7 +219,6 @@ transition:width 1s;
 .details-products .column img:hover {
   opacity: 1;
 }
-
 .details-products .contain-hidden p {
   color: black;
 }
@@ -350,25 +347,17 @@ transition:width 1s;
 }
 
 .details-products .product .description .name {
-  letter-spacing: 5px;
-  font-weight: bold;
-  font-size: 1.5rem;
-  /* text-align: center; */
-  font-size: 2rem;
+    letter-spacing: 5px;
+    font-weight: bold;
+    font-size: 1.5rem;
 }
 
 .details-products .product .description .price {
-  letter-spacing: 3px;
-  font-weight: bold;
-  position: relative;
-  color: lightseagreen;
-  /* padding-left: 30px; */
-  font-size: 1rem;
-  text-align: left;
-}
-
-.details-products .product .description .price:before {
-  /* content: "$"; */
+    letter-spacing: 3px;
+    font-weight: bold;
+    position: relative;
+    font-size: 1rem;
+    text-align: left;
 }
 
 .details-products .product .description .price:hover:before {
@@ -377,13 +366,13 @@ transition:width 1s;
 }
 
 .details-products .product .description .discount {
-  letter-spacing: 2px;
-  position: relative;
-  color: lightblue;
-  font-weight: bolder;
-  width: 100%;
-  font-family: "Slabo 27px";
-  text-align: left;
+    letter-spacing: 2px;
+    position: relative;
+    color: green;
+    font-weight: bolder;
+    width: 100%;
+    font-family: "Slabo 27px";
+    text-align: left;
 }
 
 .details-products .product .description .discount::before {
@@ -418,16 +407,16 @@ transition:width 1s;
 }
 
 .details-products .product .select {
-  outline: none;
-  border: none;
-  font-size: 1.2rem;
-  appearance: none;
-  padding: 5px 0 5px 5px;
-  border-radius: 3px;
-  border-bottom: 2px solid black;
-  display: block;
-  width: 100%;
-  background-color: white;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    appearance: none;
+    padding: 5px 0 5px 5px;
+    border-radius: 3px;
+    border-bottom: 2px solid black;
+    display: block;
+    width: 80%;
+    background-color: white;
 }
 
 .details-products .product .select:focus {
@@ -512,17 +501,13 @@ transition:width 1s;
   width: 100%;
 }
 @media screen and (min-width: 768px) {
-  .details-products .product .select {
-    font-size: 2rem;
-  }
+    .details-products .product .select {
+        font-size: 2rem;
+    }
 
-  .details-products .product .form-1 .subtitle-guie-size {
-    /* margin: 0 auto; */
-  }
-
-  .details-products .add-look-container h2 {
-    font-size: 5rem;
-  }
+    .details-products .add-look-container h2 {
+        font-size: 5rem;
+    }
 
   .details-products .add-look-container {
     max-width: 900px;
@@ -546,12 +531,130 @@ transition:width 1s;
 }
 
 @media screen and (min-width: 1024px) {
-  .details-products {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 20px auto;
-  }
+    .details-products {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 20px auto;
+    }
+
+    .details-products .product {
+        display: flex;
+        flex-wrap: wrap;
+        border: none;
+    }
+
+    .details-products .containerImage {
+        position: absolute;
+        height: fit-content;
+        left: 0;
+        z-index: 200;
+    }
+
+    .details-products .accordion-container h4{
+        color: black;
+    }
+    .details-products .accordion-container p{
+        color: black;
+        font-size: .8rem;
+    }
+    .details-products .containerImage img {
+        height: 80vh;
+        object-fit: contain;
+    }
+    .details-products .accordion-container {
+        width: 320px;
+        position: relative;
+        z-index: 200;
+        padding: 10px 0;
+    }
+    .details-products .product .imgs {
+        width: 500px;
+        gap: 10px;
+        height: 400px;
+        margin: 10px;
+    }
+
+    .details-products .product .description {
+        grid-area: descripcion;
+        width: 282px;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+    }
+
+    .details-products .product .description .name {
+        font-size: 1.5rem;
+        text-align: left;
+    }
+
+    .details-products .product .description .price {
+        font-size: 1.2rem;
+        padding: 0;
+    }
+
+    .details-products .product .form-1 {
+        padding: 0;
+        border: none;
+        grid-area: form1;
+        width: 320px;
+        margin: auto;
+    }
+
+    .details-products .product .form-1 .subtitle {
+        font-size: 1rem;
+        padding: 0;
+        text-align: left;
+        margin: 10px 0;
+    }
+    .details-products .product .form-1 .subtitle.dark {
+        color: lightgray;
+    }
+    
+    .details-products .product .form-1 .subtitle::before {
+        bottom: 0;
+    }
+
+    .details-products .product .select {
+        font-size: 1rem;
+        margin: 5px 0;
+    }
+
+    .details-products .product .form-1 .subtitle-guie-size a {
+        height: auto;
+        font-size: 1rem;
+        border: none;
+        text-transform: uppercase;
+        margin: auto;
+    }
+
+    .details-products .product .form-1 .subtitle-guie-size a:hover {
+        filter: hue-rotate(10deg);
+    }
+
+    .details-products .product .form-1 .subtitle::before {
+        left: 50%;
+        bottom: -5px;
+        top: auto;
+    }
+
+    .details-products .product .description .discount {
+        font-size: 1.2rem;
+        padding: 0;
+    }
+ 
+
+    .details-products .add-look-container h2 {
+        font-size: 4rem;
+        filter: drop-shadow(6px 8px 2px var(--shadows));
+        border: none;
+    }
+    
+   
+
+    .details-products select.gridColor {
+        grid-area: color;
+    }
 
   .details-products .product {
     display: flex;

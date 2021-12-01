@@ -91,7 +91,6 @@ select#priceSelect.dropdown {
   padding: 20px 10px;
   display: flex;
   flex-wrap: wrap;
-  /* flex-direction: column !important; */
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
@@ -109,6 +108,7 @@ select#priceSelect.dropdown {
   border: 1px solid var(--bordes_claro);
   box-shadow: 0 0 8px var(--bordes);
   border-radius: 15px;
+  
 }
 
 .container-listProduct .section2 .product img {
