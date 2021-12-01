@@ -1,5 +1,6 @@
 let $mode = document.querySelector("#Mode");
 let cartPoppupHeader = qs(".listaCarritoHeader")
+let cartViewList = qs("#lista-compra")
 gsap.set("#moon, .star", { opacity: 0 });
 gsap.set("#sun, #cloud, #moon", { x: 15 });
 gsap.set(".star", { x: 35, y: -5 });
@@ -107,13 +108,15 @@ function addClass(element) {
     .querySelectorAll(element)
     .forEach((item) => item.classList.add("dark"));
     cartPoppupHeader.classList.add("table-dark")
-}
-
-function removeClass(element) {
-  document
+    cartViewList.classList.add("table-dark")
+  }
+  
+  function removeClass(element) {
+    document
     .querySelectorAll(element)
     .forEach((item) => item.classList.remove("dark"));
     cartPoppupHeader.classList.remove("table-dark")
+    cartViewList.classList.remove("table-dark")
 }
 
 function moveDay() {

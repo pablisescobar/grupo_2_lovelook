@@ -75,11 +75,11 @@ function showSlides(n) {
     slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+    dots[i].className = dots[i].className.replace(" activedd", "");
   }
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " activedd";
-  captionText.innerHTML = dots[slideIndex-1].alt;
+  /* captionText.innerHTML = dots[slideIndex-1].alt; */
 }
 
 /* galery images end */

@@ -93,47 +93,44 @@
                                     </option>
 
                                 </select>
-                                <div class="d-flex justify-content-around flex-grow-wrap">
+                                <div class="d-flex justify-content-start flex-grow-wrap">
                                     <!-- AGREGAR AL CARRITO -->
-                                    <span class="btn btn-info m-2 detailButton agregar-carrito" id="CarritoDetail"><i
+                                    <span class="btn btn-info m-2 detailButton agregar-carrito" id="AddCartDetail"><i
                                             class="fas fa-cart-plus"></i><span></span></span>
                                     <script>
-                                        tippy('#CarritoDetail', {
+                                        tippy('#AddCartDetail', {
                                             content: "Agregar al carrito",
                                             animation: 'fade',
-                                            theme: 'gradient',
-                                            placement: 'top-start',
-                                            duration:1000,
+                                            placement: 'top-end',
+                                            duration:200,
                                             
                                         });
                                     </script>
 
                                     <!-- COMPRA DIRECTA -->
-                                    <span href="" class="btn btn-success m-2 detailButton" id="BuyDirect"><span><i
+                                    <span href="" class="btn btn-success m-2 detailButton" id="BuyDirectDetail"><span><i
                                                 class="fas fa-shopping-basket"></i></span></span>
 
                                                 <script>
-                                                    tippy('#BuyDirect', {
+                                                    tippy('#BuyDirectDetail', {
                                                         content: "Compra directa",
                                                         animation: 'fade',
-                                                        theme: 'gradient',
-                                                        placement: 'bottom',
-                                                        duration:1000,
+                                                        placement: 'top',
+                                                        duration:200,
                                                         
                                                         
                                                     });
                                                 </script>
                                     <!-- FAVORITOS -->
-                                    <span class="btn btn-warning m-2 detailButton" id="AddFavorite"><span><i
+                                    <span class="btn btn-warning m-2 detailButton" id="AddFavoriteDetail"><span><i
                                                 class="far fa-heart"></i></span></span>
 
                                                 <script>
-                                                    tippy('#AddFavorite', {
+                                                    tippy('#AddFavoriteDetail', {
                                                         content: "Agregar a favoritos",
                                                         animation: 'fade',
-                                                        theme: 'gradient',
-                                                        placement: 'top-end',
-                                                        duration:1000,
+                                                        placement: 'top-start',
+                                                        duration:200,
                                                         
                                                     });
                                                 </script>
@@ -154,6 +151,7 @@
                                     <h4>Envios ...</h4>
                                 </div>
                                 <div class="contain-hidden" id="InfoHidden">
+
                                     <p>El valor de envío dependerá del método de envío que selecciones al momento de
                                         finalizar tu compra. Según cada método de envío los valores son:</p>
                                     <p>Envío GBA y Resto del país $550</p>

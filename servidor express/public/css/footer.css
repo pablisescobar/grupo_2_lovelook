@@ -335,7 +335,7 @@ background-color: rgb(61, 56, 56);
     font-size: 5rem;
 }
 
-
+}
 
 /* View Desktop of footer */
 
@@ -371,8 +371,8 @@ right: 2vw;
         grid-template-areas:
             "ayuda    ayuda ayuda contacto  contacto contacto  nosotros  nosotros   nosotros    "
             ".    redes     redes     redes     redes    redes      afip       afip . "
-            ".    .     copy  copy      copy     copy      copy      .          .    "
-            "shared shared shared shared shared shared shared shared shared";
+            "    copy     copy  copy      copy    copy shared shared shared shared    "
+            " copy copy copy copy copy shared shared shared shared";
     }
    
     /* Elementos generales */
@@ -423,5 +423,8 @@ right: 2vw;
         align-items: center;
         gap        : 10px;
     }
-}
+
+    .footer .legale{
+        text-align: left
+    }
 }

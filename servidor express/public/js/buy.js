@@ -1,28 +1,20 @@
 
 let compra = new Carrito();
 let listaCompra = document.querySelector("#lista-compra tbody");
-
 let procesarCompraBtn = document.getElementById("procesar-compra");
 let vaciarCarritoBtn2 = document.getElementById("vaciar-carrito-2");
 
-
-
 function cargarEventos() {
- 
+
 
   document.addEventListener("DOMContentLoaded",()=>{
         compra.leerLocalStorageCompra()
+       
     });
 
-  window.addEventListener("click", function (event) {
+  listaCompra.addEventListener("click", function (event) {
     compra.eliminarProducto(event);
-    
   });
-
-
-
-  compra.calcularTotal();
-  
 
   procesarCompraBtn.addEventListener("click", procesarCompra);
 }
@@ -63,16 +55,15 @@ vaciarCarritoBtn2.addEventListener('click',(event)=>{
               showConfirmButton: false,
             });
             compra.vaciarCarrito(event);
-            
+           compra.calcularTotal()
           }
         });
     }
 })
+
 }
 
-
 function procesarCompra(event) {
-  event.preventDefault();
 
   if (compra.obtenerProductosLocalStorage().length === 0) {
     /* SI ESTA VACIO EL CARRITO ENVIA ESTE CARTEL */
@@ -127,13 +118,13 @@ function procesarCompra(event) {
         })
           /* LUEGO DEL CARTEL DE COMPRA REALIZADA ELIMINAME TODOS LOS PRODUCTOS DEL CARRITO */
           compra.vaciarCarrito(event);
-          compra.calcularTotal();       
+                
       }
     });
 }})
   }
 }
 
-
-
 cargarEventos();
+
+
