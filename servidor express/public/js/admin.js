@@ -44,4 +44,3 @@ form.setAttribute('action',`/admin/products/${enlace}/${Number(values[indexValue
 
 
 
-

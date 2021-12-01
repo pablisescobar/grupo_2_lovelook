@@ -1,5 +1,6 @@
 .slick-slide {
-    /* height: 1200px; */
+    height: 320px !important;
+    position: relative;
     box-shadow: 0 5px 10px var(--bordes_claro);
     margin: 15px 10px;
     border-radius: 5%;
@@ -21,12 +22,6 @@
     text-shadow: 0px 0px 15px var(--bordes) !important;
 }
 
-.slick-next {
-    /* right: 25px !important; */
-}
-.slick-prev {
-    /* left: 25px !important; */
-}
 .slick-next:before, .slick-prev:before {
     color: white !important;
     font-size: 2.5rem !important;
@@ -47,7 +42,6 @@
 }
 
 .card-body {
-    padding-top: 10px;
     text-align: center;
 }
 .card-body .fas , .card-body .far{
@@ -60,18 +54,10 @@
     padding-top: 5px;
     border-radius: 0 0 5px 5px;
 }
-.card-body div.prices-section{
-}
 
-.card-body .fa-shopping-basket{
-    /* color: lightgreen; */
-}
-.card-body .fa-cart-plus{
-    /* color: lightskyblue; */
-}
 .nameSlider {
     font-family: 'Poppins';
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin: 2px;
     margin: auto;
     border-top: 2px solid lightpink;
@@ -106,21 +92,22 @@ span.btn-primary:hover{
 }
 
 .discount {
-    font-size: 0.8rem;
+    font-size: 1rem;
     line-height: 150%;
-    color: lightblue;
+    color: green;
+    animation: acercarAlejar 2s alternate infinite;
 }
 
 .priceDiscount {
     font-size: 0.8rem;
     text-decoration: line-through;
-    color: lightsalmon;
+    color: red;
 }
 
 .priceSlider {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: bold;
-    color: lightseagreen;
+    color: black;
 }
 
 
@@ -154,7 +141,8 @@ width: 70%;
 @media screen and (min-width: 1024px) {
 
     .slick-dotted.slick-slider{
-      width: 90%;
+      
+width: 90%;
     }
     
      .card-slider {

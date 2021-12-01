@@ -35,7 +35,7 @@ module.exports = {
     res.sendFile(path.join(__dirname, "../../public/img/afip.png"));
   },
 
-  search: (req, res) => {
+  search: (req, res) =>{
     db.Product.findAll({
       where: {
         [Op.or]: [
@@ -47,29 +47,9 @@ module.exports = {
           {
             description: {
               [Op.like]: `%${req.query.keys}%`,
-            },
-          },
-          {
-            category: {
-              [Op.like]: `%${req.query.keys}%`,
-            },
-          },
-          {
-            colors: {
-              [Op.like]: `%${req.query.keys}%`,
-            },
-          },
-          {
-            season: {
-              [Op.like]: `%${req.query.keys}%`,
-            },
-          },
-          {
-            sizes: {
-              [Op.like]: `%${req.query.keys}%`,
-            },
-          },
-        ],
+            }
+          }
+        ]
       },
       include: [
         { association: "category" },
@@ -78,27 +58,24 @@ module.exports = {
         { association: "season" },
         { association: "sizes" },
       ],
-    });
-    let colorPromise = db.Color.findAll();
-    let sizePromise = db.Size.findAll();
-
-    Promise.all([
-      productResultPromise,
-      colorPromise,
-      sizePromise,
-    ]).then(([products, colors, sizes]) => {
-   
-
-      res.render("products/listProducts", {
-        toThousand,
-        colors,
-        sizes,
-        search: req.query.keys,
-        position: "",
-        display: "display:grid;",
-        products,
-        session: req.session,
-      });
-    });
-  },
+    })
+    .then(products =>{
+      db.Color.findAll()
+      .then(colors => {
+        db.Size.findAll()
+        .then(sizes => {
+          res.render("products/listProducts", {
+            toThousand,
+            colors,
+            sizes,
+            search: req.query.keys,
+            position: "",
+            display: "display:grid;",
+            products,
+            session: req.session,
+          });
+        })
+      })
+    })
+  }
 };

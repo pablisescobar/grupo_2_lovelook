@@ -44,7 +44,7 @@ router.delete('/users/deleteUser/:id', superUserCheck, deleteUser);
 router.get('/products/edit/:id', uploadAdminCheck, editProduct);
 
 /* PUT - Editamos un producto con el método realizado en el controlador */
-router.put('/products/edit/:id', uploadAdminCheck, multer.array('image', 4), productValidator, updateProduct);
+router.put('/products/edit/:id', uploadAdminCheck, multer.array('image'), productValidator, updateProduct);
 router.put('/users/userChange/:id', superUserCheck, userChange);
 router.put('/users/adminUserChange/:id', superUserCheck, adminUserChange);
 
