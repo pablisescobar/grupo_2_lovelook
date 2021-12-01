@@ -7,11 +7,11 @@
         <img src="/img/photos/<%= product.images.length>0? product.images[0].filename:'default.png' %>" alt="">
       </a>
       <div class="infoProduct">
-         <h5><% if (product.name.length > 12) { %>
+         <h3><% if (product.name.length > 12) { %>
           <%- `${product.name.slice(0,12)}...` %>
           <% }else{ %>
           <%= product.name %>
-          <% } %> </h5>
+          <% } %> </h3>
 
         <p class="price">$
           <%=toThousand(Math.round(product.price - product.price * product.discount /

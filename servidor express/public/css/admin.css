@@ -59,7 +59,11 @@
     align-items: center;
     width: 90%;
 }
-.admin .imgs-admin{ width: 600px; }
+.admin .imgs-admin{ 
+    width: 100%;
+    margin: 0;
+ }
+
 .admin .table-container {
     overflow-y: hidden;
     width: 80%;
@@ -261,37 +265,7 @@ margin: auto;
     width: 100%;
 }
 
-.admin .btn-delete:hover .del{
-    color: red;
-}
-.admin .btn-delete{
-    border: 1.5px solid gray;
-    text-align: center;
-    color: gray;
-    box-shadow: inset 0 0 29px lightpink;
-    width: 15%;
-}
-.admin .btn-delete:hover{
-    border-color: red;
-    color: red;
-    box-shadow: inset 0 0 29px rgb(245, 245, 245);
-}
-.admin .formDelete{
-    display: none;
-    width: 280px;
-    height: 280px;
-    background-color:  lightpink;
-    border-radius: 20px;
-    margin: 0 auto;
-    padding: 40px 0;
-    position: fixed;
-    text-align: center;
-    left: 0;
-    right: 0;
-    bottom: 40%;
-    z-index: 300;
-    border: 2px solid black;
-}
+
 .admin .windowGeneral{
     width: 0;
 }
@@ -311,16 +285,7 @@ margin: auto;
     font-size: 100%;
 }
 
-.formDelete .inputDelete {
-    font-size: 2rem;
-    color: red;
-    border-radius: 20px;
-    background-color: lightpink;
-}
 
-.questionDelete {
-    font-size: 1.8rem;
-}
 
 @media screen and (min-width: 768px) {
 
@@ -392,10 +357,6 @@ justify-content: flex-end;
     width: 60%;
 }
 
-.admin .formDelete {
-    width: 400px;
-    height: 240px;
-}
 }
 
 @media screen and (min-width: 1024px) {
@@ -474,38 +435,8 @@ justify-content: flex-end;
         transform: scale(1.1);
     }
 
-    .admin button.delete {
-        color: red;
-        border-color: red;
-        width: 50px;
-        height: 50px;
-    }
+    
 
-    .admin .delete h1 {
-        color: black;
-        font-size: 2rem;
-    }
-
-    .admin .inputDelete {
-        color: red; 
-        font-size: 1.5rem;
-        font-weight: bold;
-    }
-    .admin .inputDelete:focus {
-        background-color: rgba(255, 235, 205, 0);
-        border: none;
-        color: red;
-    }
-
-    .admin .inputDelete:hover {
-        color: grey;
-    }
-
-    .admin .formDelete{
-        display: none;
-        background-color:  lightpink;
-        border-radius: 20px; 
-    }
 
     .admin button.delete:focus-within form {
         display: block;

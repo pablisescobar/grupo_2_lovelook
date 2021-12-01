@@ -104,12 +104,8 @@ figure.zoom {
 
 .price-line-medio {
     text-decoration: line-through;
-<<<<<<< HEAD
-=======
-    color: lightsalmon;
-    /* font-weight: bold; */
->>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
     font-size: 1rem;
+    color: red;
 }
 
 .details-products .column img {
@@ -128,14 +124,10 @@ figure.zoom {
 .details-products .column img:hover {
     opacity: 1;
 }
-<<<<<<< HEAD
-
-=======
 .details-products .contain-hidden p {
     color: black;
 }
 /* Clear floats after the columns */
->>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
 .details-products.row:after {
     content: "";
     display: table;
@@ -261,23 +253,13 @@ figure.zoom {
 .details-products .product .description .name {
     letter-spacing: 5px;
     font-weight: bold;
-<<<<<<< HEAD
     font-size: 1.5rem;
-=======
-    /* text-align: center; */
-    font-size: 2rem;
->>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
 }
 
 .details-products .product .description .price {
     letter-spacing: 3px;
     font-weight: bold;
     position: relative;
-<<<<<<< HEAD
-=======
-    color: lightseagreen;
-    /* padding-left: 30px; */
->>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
     font-size: 1rem;
     text-align: left;
 }
@@ -294,7 +276,7 @@ figure.zoom {
 .details-products .product .description .discount {
     letter-spacing: 2px;
     position: relative;
-    color: lightblue;
+    color: green;
     font-weight: bolder;
     width: 100%;
     font-family: "Slabo 27px";
@@ -341,11 +323,7 @@ figure.zoom {
     border-radius: 3px;
     border-bottom: 2px solid black;
     display: block;
-<<<<<<< HEAD
     width: 80%;
-=======
-    width: 100%;
->>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
     background-color: white;
 }
 
@@ -364,19 +342,10 @@ figure.zoom {
     background-color: var(--fondo-claro);
 }
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
 .details-products .pad {
     padding: 10px;
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
 .details-products .product .form-1 .subtitle-guie-size a {
     font-weight: bold;
     letter-spacing: 3px;
@@ -448,15 +417,6 @@ figure.zoom {
         font-size: 2rem;
     }
 
-<<<<<<< HEAD
-=======
-  
-
-    .details-products .product .form-1 .subtitle-guie-size {
-        /* margin: 0 auto; */
-    }
-
->>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
     .details-products .add-look-container h2 {
         font-size: 5rem;
     }
@@ -521,11 +481,6 @@ figure.zoom {
         padding: 10px 0;
     }
     .details-products .product .imgs {
-<<<<<<< HEAD
-=======
-        grid-area: imagenes;
-        flex-wrap: nowrap;
->>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
         width: 500px;
         gap: 10px;
         height: 400px;
@@ -564,15 +519,10 @@ figure.zoom {
         text-align: left;
         margin: 10px 0;
     }
-<<<<<<< HEAD
     .details-products .product .form-1 .subtitle.dark {
         color: lightgray;
     }
     
-=======
-
-
->>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
     .details-products .product .form-1 .subtitle::before {
         bottom: 0;
     }
@@ -600,11 +550,6 @@ figure.zoom {
         top: auto;
     }
 
-<<<<<<< HEAD
-=======
-    /* SECCION HIJO DEL CONTENEDOR PRINCIPAL MAIN */
-
->>>>>>> 1316920a924d7fc92520d115c3a3f06b0a123731
     .details-products .product .description .discount {
         font-size: 1.2rem;
         padding: 0;
