@@ -11,6 +11,7 @@
     margin: 15px 10px;
     border-radius: 5%;
     background-color: white;
+    /* max-width: 250px; */
 }
 .slick-dotted.slick-slider{
     width: 60%;
@@ -37,6 +38,7 @@
 .slick-dots {
     position: relative !important;
     bottom: 0 !important;
+    display: none !important;
 }
 
 .card-img-top {

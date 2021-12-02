@@ -414,8 +414,8 @@ header .listaCarritoHeader {
 .header .logo {
   grid-area: logo;
   margin: auto;
-  width: 70px;
-  height: 70px;
+  width: 120px;
+  height: 120px;
   box-shadow: 0 0 30px #fff;
   background-color: #fff;
   border-radius: 50%;
@@ -504,7 +504,7 @@ header .listaCarritoHeader {
   align-items: center;
   width: 0vw;
   opacity: 0;
-  margin: auto 0 auto 100px;
+  margin: auto 0 auto 50px;
   border: 2px solid var(--bordes);
   border-radius: 20px;
   padding: 0 10px 0 20px;
@@ -609,7 +609,7 @@ header .listaCarritoHeader {
 @media screen and (min-width: 1024px) {
   .header {
     width: 100vw;
-    height: 110px;
+    height: 160px;
     grid: 1fr 0.5fr 1fr / repeat(12, 1fr);
     grid-template-areas:
       " logo . . buscador buscador buscador buscador buscador buscador session user cart "
@@ -699,8 +699,8 @@ header .listaCarritoHeader {
   }
   .header .logo {
     /* margin: auto 0; */
-    width: 80px;
-    height: 80px;
+    /* width: 80px; */
+    /* height: 80px; */
     /* transform: none; */
     object-fit: contain;
     /* box-shadow: 0 0 20px #fff; */
