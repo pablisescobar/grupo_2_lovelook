@@ -14,6 +14,7 @@ function cargarEventos() {
   document.addEventListener("DOMContentLoaded",()=>{
         compra.leerLocalStorageCompra()
         calcularCantidad()
+        compra.calcularTotal()
     });
 
   listaCompra.addEventListener("click", function (event) {
@@ -22,7 +23,9 @@ function cargarEventos() {
   });
 
   procesarCompraBtn.addEventListener("click", procesarCompra);
-}
+
+
+
 
 if(location.pathname == "/user/cart"){
     let $iconRow = document.querySelector("#iconArrow");
@@ -131,8 +134,9 @@ function procesarCompra(event) {
     }) 
 }})
   }
+
+}
+
 }
 
 cargarEventos();
-
-

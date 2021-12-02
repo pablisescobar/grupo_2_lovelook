@@ -5,9 +5,7 @@ let listaProductos = document.querySelector("#lista-carrito tbody");
 let vaciarCarritoBtn = document.querySelector("#vaciar-carrito");
 let viewCart = document.getElementById("viewCart");
 
-function calcularCantidad(){
-  document.querySelector(".carrito .count span").innerText = JSON.parse(localStorage.getItem("productos")).length
-}
+
 
 if(location.pathname == "/user/cart"){
  carrito.style.display = "none" 
@@ -16,6 +14,9 @@ if(location.pathname == "/user/cart"){
 }
 
 function cargarEventos() {
+  function calcularCantidad(){
+    document.querySelector(".carrito .count span").innerText = JSON.parse(localStorage.getItem("productos")).length
+  }
   /* FUNCION PARA ACTUALIZAR CONSTANTEMENTE EL ESTADO LA CANTIDAD DEL ICONO DEL CARRITO DE COMPRA ARRIBA A LA DERECHA EN EL HEADER */
  
 
@@ -62,7 +63,7 @@ function cargarEventos() {
               showConfirmButton: false,
             });
             carro.vaciarCarrito(event);
-            
+          
           }
         });
     }

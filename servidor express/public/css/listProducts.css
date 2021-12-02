@@ -3,7 +3,7 @@
 }
 .container-listProduct .section2 .product h3.dark,
 .container-listProduct .section2 .product p.dark {
-  color: white;
+  /* color: white; */
 }
 
 .container-listProduct .section2 .product .discount.dark {
@@ -11,8 +11,8 @@
 }
 
 .container-listProduct .section2 .product .cardProduct.dark {
-  background: #292727;
   border-color: black;
+  background-color: whitesmoke;
 }
 
 .container-listProduct .filted.dark:hover {
@@ -153,6 +153,8 @@ select#priceSelect.dropdown {
 
 .container-listProduct .infoProduct {
   height: 122px;
+  border-top: 1px solid var(--fondo);
+  padding-top: 5px;
 }
 
 @media screen and (min-width: 768px) {
