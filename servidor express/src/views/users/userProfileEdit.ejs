@@ -89,13 +89,13 @@
 
                     <div class="container">
                         <label class="label-perfil-user" for="province">Provincia: </label>
-                        <input class=" input--style input-perfil-user" type="text" name="province" id="province" value="<%= locals.old ? old.province :
-        user.location ? user.location[0].province : "" %>">
+                        <select class="input--style input-perfil-user" name="province" id="province"><option value=""<%= locals.old ? old.province :
+                        user.location ? user.location[0].province : "" %>""></option></select>
                     </div>
                     <div class="container">
                         <label class="label-perfil-user" for="city">Ciudad: </label>
-                        <input class=" input--style input-perfil-user" type="text" name="city" id="city" value="<%= locals.old ? old.city : user.location ?
-        user.location[0].city : "" %>">
+                        <select class="input--style input-perfil-user" name="city" id="city"><option value=""<%= locals.old ? old.city : user.location ?
+                        user.location[0].city : "" %>""></option></select>
                     </div>
 
                     <button class="btn btn-outline-success m-auto mt-4" type="submit">GUARDAR CAMBIOS</button>

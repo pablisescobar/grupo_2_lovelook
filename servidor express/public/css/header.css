@@ -262,6 +262,11 @@ header .listaCarritoHeader {
 
   letter-spacing: 2px;
 }
+.header .avatarHeader {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
 
 .header .bar1,
 .header .bar2,
@@ -596,9 +601,6 @@ header .listaCarritoHeader {
     background-color: transparent;
   }
 
-  .header .search-bar button {
-  }
-
   .header .menu-user {
     font-size: 0.7rem;
   }
@@ -634,9 +636,7 @@ header .listaCarritoHeader {
   }
   .translateSelect {
     position: relative;
-
     order: 1;
-
     cursor: pointer;
   }
 
