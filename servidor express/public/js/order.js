@@ -20,13 +20,14 @@ function cargarEventos() {
  
 
   /* COMPRAR PRODUCTO */
-  window.addEventListener("click", (event) => {
+  window.addEventListener("click", (event) => { 
     carro.comprarProduto(event) 
     calcularCantidad()
+    
   });
 
   /* ELIMINAR PRODUCTO */
-  window.addEventListener("click", (event) => {
+  carrito.addEventListener("click", (event) => {
     carro.eliminarProducto(event)
   });
 

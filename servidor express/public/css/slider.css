@@ -1,9 +1,16 @@
+
+/* DARK MODE */
+
+.slick-slide.dark {background-color: floralwhite;color: black;}
+/* DARK MODE END*/
+
 .slick-slide {
     height: 320px !important;
     position: relative;
     box-shadow: 0 5px 10px var(--bordes_claro);
     margin: 15px 10px;
     border-radius: 5%;
+    background-color: white;
 }
 .slick-dotted.slick-slider{
     width: 60%;
@@ -53,6 +60,9 @@
     background-color: var(--fondo);
     padding-top: 5px;
     border-radius: 0 0 5px 5px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 .nameSlider {
@@ -70,7 +80,7 @@
     margin: auto;
 }
 
-span.btn-primary {
+span.btn-primary,a.btn-primary {
     color: black;
     padding: 5px;
     align-items: center;
@@ -95,7 +105,6 @@ span.btn-primary:hover{
     font-size: 1rem;
     line-height: 150%;
     color: green;
-    animation: acercarAlejar 2s alternate infinite;
 }
 
 .priceDiscount {

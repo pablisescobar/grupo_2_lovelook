@@ -19,8 +19,8 @@
     cursor: pointer;
     position: absolute;
     top: 40%;
-    padding: 16px;
-    color: var(--dark-blue);
+    padding: 7px;
+    color: var(--bordes);
     font-weight: bold;
     transition: 0.6s ease;
     user-select: none;

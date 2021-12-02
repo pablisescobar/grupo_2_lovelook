@@ -28,47 +28,17 @@
 
           <!-- botones de acciones -->
           <div class="clientAction">
-            <!-- COMPRA DIRECTA -->
-            <span href="/user/cart" class="btn-primary" id="BuyDirectSlider"><i class="fas fa-shopping-basket"></i></span>
 
-            <!-- TOOLTIP COMPRA DIRECTA-->
-            <script>
-              tippy('#BuyDirectSlider', {
-                content: "Compra directa",
-                animation: 'fade',
-                theme: 'gradient',
-                placement: 'top-end',
-                duration: 200,
-              });
-            </script>
 
             <!-- AGREGAR AL CARRITO -->
-            <span href="" class="btn-primary agregar-carrito" id="AddCartSlider"><i
+            <span href="" class="btn-primary agregar-carrito text-dark" id="AddCartSlider"><i
                 class="fas fa-cart-plus"></i></span>
 
-            <!-- TOOLTIP AGREGAR AL CARRITO-->
-            <script>
-              tippy('#AddCartSlider', {
-                content: "Agregar al carrito",
-                animation: 'fade',
-                theme: 'gradient',
-                placement: 'top',
-                duration: 200,
-              });
-            </script>
             <!-- FAVORITO -->
-            <span href="" class="btn-primary" id="AddFavoriteSlider"><i class="far fa-heart"></i></span>
+            <span href="" class="btn-primary agregar-favoritos" id="AddFavoriteSlider"><i
+                class="far fa-heart"></i></span>
 
-            <!-- TOOLTIP AGREGAR A FAVORITO-->
 
-            <script>
-              tippy('#AddFavoriteSlider', {
-                content: "Agregar a favoritos",
-                animation: 'fade',
-                placement: 'top-start',
-                duration: 200,
-              });
-            </script>
             <!-- "fas fa-heart" para cuando esta seleccionado -->
           </div>
         </div>
@@ -76,4 +46,24 @@
     </div>
     <% }) %>
 </div>
-</div>
+
+
+<!-- TOOLTIP AGREGAR AL CARRITO-->
+<script>
+  tippy('#AddCartSlider', {
+    content: "Agregar al carrito",
+    animation: 'fade',
+    placement: 'top-end',
+    duration: 200,
+  });
+</script>
+<!-- TOOLTIP AGREGAR A FAVORITO-->
+
+<script>
+  tippy('#AddFavoriteSlider', {
+    content: "Agregar a favoritos",
+    animation: 'fade',
+    placement: 'top-start',
+    duration: 200,
+  });
+</script>

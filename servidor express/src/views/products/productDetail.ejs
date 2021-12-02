@@ -19,9 +19,7 @@
                                 <div>
                                     <% product.images.forEach((img,index)=> { %>
                                         <div class="mySlides zoom">
-                                            <div class="numbertext">
-                                                <%=(index + 1) + "/" + product.images.length%>
-                                            </div>
+                                          
                                             <img class="imgView"
                                                 src="/img/photos/<%= img.filename ? img.filename : 'default.png' %>">
                                         </div>
@@ -107,23 +105,10 @@
                                         });
                                     </script>
 
-                                    <!-- COMPRA DIRECTA -->
-                                    <span href="" class="btn btn-success m-2 detailButton" id="BuyDirectDetail"><span><i
-                                                class="fas fa-shopping-basket"></i></span></span>
-
-                                                <script>
-                                                    tippy('#BuyDirectDetail', {
-                                                        content: "Compra directa",
-                                                        animation: 'fade',
-                                                        placement: 'top',
-                                                        duration:200,
-                                                        
-                                                        
-                                                    });
-                                                </script>
+                                 
                                     <!-- FAVORITOS -->
-                                    <span class="btn btn-warning m-2 detailButton" id="AddFavoriteDetail"><span><i
-                                                class="far fa-heart"></i></span></span>
+                                    <span class="btn btn-warning m-2 detailButton agregar-favoritos" id="AddFavoriteDetail"><i
+                                                class="far fa-heart"></i></span>
 
                                                 <script>
                                                     tippy('#AddFavoriteDetail', {

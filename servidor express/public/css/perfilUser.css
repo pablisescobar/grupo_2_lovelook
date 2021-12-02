@@ -128,7 +128,7 @@ small {
     .perfil-user .input-perfil-user-border {
     width: 250px;
     height: 41px;
-    background: white;
+    /* background: white; */
     border-radius: 20px;
     }
 

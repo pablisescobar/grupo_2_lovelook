@@ -13,6 +13,9 @@ class Carrito {
   comprarProduto(event) {
     /*   event.preventDefault(); */
     if (event.target.parentElement.classList.contains("agregar-carrito")) {
+      console.log(event.target);
+
+     /*  event.target.classList.toggle("text-success") */
       const producto =
         event.target.parentElement.parentElement.parentElement.parentElement;
 
@@ -21,7 +24,7 @@ class Carrito {
       calcularCantidad();
     }
   }
-
+/* clas es el nombre de la clase que le agregamos o sacamos , ejemplo   add("...") o remove("...") */
   leerDatosProducto(producto) {
     
     if( /\/products\/detail/.test(location.pathname)){
@@ -41,8 +44,10 @@ class Carrito {
       ),
       id: producto.querySelector("a").getAttribute("data-id") /* DATA-ID */,
       count: 1,
+      
     };
-
+    
+    
     /* OBTENEMOS LOS PRODUCTOS QUE ESTAN EN EL ALMACENAMIENTO LOCAL DEL NAVEGADOR */
     let productosLS = this.obtenerProductosLocalStorage();
 
@@ -207,10 +212,11 @@ $ ${toThousand(producto.price)}
     if (event.target.classList.contains("borrar-producto")) {
       /* ELIMINAME ESE PRODUCTO DEL HTML */
       /* OBTENEMOS EL ID DE ESA TARJETA UBICADO EN EL DATA-ID EN LA ETIQUETA "a" */
-      producto = event.target.parentElement.parentElement;
+      producto = event.target.parentElement;
       console.log(producto);
       
       productoId = producto.querySelector("a").getAttribute("data-id");/* getAttribute("data-id"); */
+      console.log(productoId);
       event.target.parentElement.parentElement.remove();
     }
 
@@ -232,6 +238,7 @@ $ ${toThousand(producto.price)}
       }
     }
     this.vaciarLocalStorage();
+    
     return false;
   }
 

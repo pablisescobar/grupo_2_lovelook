@@ -91,7 +91,7 @@ body {
 /* DARK MODE */
 body.dark {
   background-color: rgb(61, 56, 56);
-  color: white;
+  /* color: white; */
   transition: 0.5s all ease;
   overflow-x: hidden;
 }

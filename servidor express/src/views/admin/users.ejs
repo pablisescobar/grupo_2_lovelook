@@ -35,7 +35,7 @@
     <%- include('../partials/load.ejs') %> <%-
     include('../partials/headerAdmin.ejs') %>
     <main class="admin">
-        <h2 class="mt-4 text-center">users</h2>
+        <h2 class="mt-4 text-center">USUARIOS</h2>
         
         <div class="table-container">
             <table class="table table-striped">
@@ -59,7 +59,7 @@
                         <td>
                             <a href="users/userDetail.ejs">
                                 <img class="img-value"
-                                    src="/img/user/userAvatars/<%= user.avatar ? user.avatar:'default.png' %>"
+                                    <%= /http/.test(user.avatar) ?`src=${user.avatar}` :`src=/img/user/userAvatars/${user.avatar}` %>
                                     alt="" />
                             </a>
                         </td>

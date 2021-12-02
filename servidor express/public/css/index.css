@@ -1,3 +1,11 @@
+/* DARK MODE */
+
+.home-inicio h1.dark{
+    color: white;
+}
+
+/* DARK MODE END */
+
 .home-inicio {
     /* min-width: 320px; */
     width: 100%;
@@ -52,7 +60,7 @@
     text-align: center;
     border-bottom: 2px solid black;
     font-family: var(--yesteryear);
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: lighter;
     filter: drop-shadow(6px 8px 2px var(--shadows));
     margin-bottom: 20px;
