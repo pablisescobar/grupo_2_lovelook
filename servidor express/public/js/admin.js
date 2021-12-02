@@ -1,4 +1,4 @@
-let delSeason = document.querySelector("#DelSeason")
+ let delSeason = document.querySelector("#DelSeason")
 let delCategory = document.querySelector("#DelCategory")
 let delColor= document.querySelector("#DelColor")
 
@@ -40,7 +40,7 @@ let value1 = +document.getElementById('category').options[document.getElementByI
 let value2 = +document.getElementById('color').options[document.getElementById('color').selectedIndex].value
 let values=[value0,value1,value2]
 form.setAttribute('action',`/admin/products/${enlace}/${Number(values[indexValue])}?_method=DELETE`)
-}
+} 
 
 
 
