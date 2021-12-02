@@ -20,7 +20,12 @@
           </thead>
           
           <!-- LISTA DE PRODUCTOS EN CARRITO -->
-          <tbody></tbody>
+          <tbody>
+
+
+
+
+          </tbody>
           <!-- LISTA DE PRODUCTOS EN CARRITO END (enviados desde javascript)-->
           <tr>
             <th colspan="4" scope="col" class="text-right">TOTAL :</th>
@@ -37,35 +42,72 @@
 
         <!-- BOTON SEGUIR COMPRANDO -->
         <a id="iconArrow" class="btn btn-outline-secondary h-2"
-          >Seguir comprando
+          >
           <i class="fal fa-tshirt" style="font-size: 1.5rem"></i>
         </a>
+
+        <script>
+          tippy('#iconArrow', {
+              content: "Seguir Comprando",
+              animation: 'fade',
+              placement: 'top-start',
+              duration:200,
+          });
+      </script>
+
         <!-- BOTON ACTUALIZAR PAGINA -->
         <a id="iconSync" class="btn btn-outline-info h-2"
-          >Actualizar
+          >
           <span
             class="iconify"
             style="font-size: 1.5rem"
             data-icon="ion:sync"
           ></span>
         </a>
+        <script>
+          tippy('#iconSync', {
+              content: "Actualizar",
+              animation: 'fade',
+              placement: 'top-start',
+              duration:200,
+          });
+      </script>
+
         <!-- VACIAR CARRITO -->
         <a id="vaciar-carrito-2" class="btn btn-outline-danger h-2"
-          >Vaciar
+          >
           <span
             class="iconify"
             style="font-size: 1.5rem"
             data-icon="bi:cart-x"
           ></span>
         </a>
+
+        <script>
+          tippy('#vaciar-carrito-2', {
+              content: "Vaciar Carrito",
+              animation: 'fade',
+              placement: 'top-start',
+              duration:200,
+          });
+      </script>
         <!-- REALIZAR COMPRA -->
         <button
           id="procesar-compra"
           class="btn btn-outline-success h-2"
           type="submit"
         >
-          Realizar Compra
+        <i class="fas fa-shopping-basket"></i>
         </button>
+
+        <script>
+          tippy('#procesar-compra', {
+              content: "Realizar Compra",
+              animation: 'fade',
+              placement: 'top-start',
+              duration:200,
+          });
+      </script>
 
       </section>
 
@@ -86,5 +128,6 @@
 
     <!-- Script -->
     <script src="/js/slider.js"></script>
+    
   </body>
 </html>

@@ -24,7 +24,7 @@
     /* box-shadow: 0 0 10px var(--bordes_claro); */
     /* padding: -6px; */
     margin: 0 auto;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .container-cart .section1 .product img {
@@ -114,7 +114,8 @@
     margin: auto;
     justify-items: center;
     display: flex;
-    justify-content: space-around;
+    justify-content: start;
+    gap: 4px;
     padding: 15px;
     border-bottom: 1px solid var(--bordes_claro);
 }

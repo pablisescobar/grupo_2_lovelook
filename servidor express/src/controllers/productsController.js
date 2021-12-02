@@ -95,4 +95,23 @@ module.exports = {
       });
     });
   },
+  sales:(req, res) => {
+    db.Products.findAll({
+      where:{
+        discount: {
+          [Op.gte]: 10,
+        },
+      }
+    })
+    .then((products)=> {
+      res.render("products/Ofertas", {
+        products,
+        title: "Productos en oferta",
+        position: "",
+        toThousand,
+        session: req.session,
+    
+      })
+    })
+  }
 };

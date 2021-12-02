@@ -81,7 +81,7 @@
                     <div class="container">
                         <label class="label-perfil-user" for="cp">Codigo Postal: </label>
                         <input class=" input--style input-perfil-user" type="number" name="pc" id="cp" value="<%= locals.old ? old.pc : user.location ?
-        user.location[0].pc : "" %>">
+                        user.location[0].pc : "" %>">
                     </div>
                     <small id="errorCp" class="text-danger">
                         <%= locals.errors && errors.pc ? errors.pc.msg : "" %>
@@ -92,6 +92,8 @@
                         <select class="input--style input-perfil-user" name="province" id="province"><option value=""<%= locals.old ? old.province :
                         user.location ? user.location[0].province : "" %>""></option></select>
                     </div>
+
+
                     <div class="container">
                         <label class="label-perfil-user" for="city">Ciudad: </label>
                         <select class="input--style input-perfil-user" name="city" id="city"><option value=""<%= locals.old ? old.city : user.location ?

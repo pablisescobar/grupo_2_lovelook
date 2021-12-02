@@ -42,6 +42,12 @@
                     <small class="text-danger"><%= errors.password2.msg %> </small>
                 <% } %>
                 <small class="register-validation" id="errorPassword2" class="text-danger"></small>
+
+                <input class="input--style" type="text" id="secretPass" name="secretPass" placeholder="Como se llamaba tu primer mascota?" >
+                <% if (locals.errors && errors.secret) { %>
+                    <small class="text-danger"><%= errors.secret.msg %> </small>
+                <% } %>
+                <small class="register-validation" id="errorSecret" class="text-danger"></small>
                 
             </div>
             <div class="conditions">

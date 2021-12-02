@@ -12,35 +12,39 @@ function addBorderGreen(input){
 
 window.addEventListener('load', () => {
   let name = global('nombre'),
-    errorNombre = global('errorNombre'),
-    apellido = global('apellido'),
-    errorApellido = global('errorApellido'),
-    correo = global('email'),
-    errorEmail = global('errorEmail'),
+  apellido = global('apellido'),
+  correo = global('email'),
     telefono = global('telefono'),
-    errorTelefono = global('errorTelefono'),
     direccion = global('direccion'),
-    errorDireccion = global('errorDireccion'),
     pc = global('cp'),
-    errorCp = global('errorCp'),
     imagen = global('examinar'),
     provincia = global('province'),
-    errorProvincia = global('errorProvince'),
     ciudad = global('city'),
-    errorCiudad = golbal('errorCity'),
-    errorImagen = global('errorImagen'),
     formEdit = global('editProfileForm'),
-    errorFormEdit = global('errorProfileEditForm')
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]{4,}$/,
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
+    errorTelefono = global('errorTelefono'),
     regExTel = /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/i,
     regExAlphaNum = /^[a-zA-Z0-9\s]*$/
+    errorCp = global('errorCp'),
+    
+    
+    /* Spans errror */
+    errorEmail = global('errorEmail'),
+    errorApellido = global('errorApellido'),
+    errorNombre = global('errorNombre'),
+    errorProvincia = global('errorProvince'),
+    errorDireccion = global('errorDireccion'),
+    errorCiudad = golbal('errorCity'),
+    errorImagen = global('errorImagen'),
+    errorFormEdit = global('errorProfileEditForm')
 
 
-  name.addEventListener('blur', function () {
-    switch (true) {
-      case !name.value.trim():
-        errorNombre.innerHTML = 'El campo nombre es obligatorio'
+
+    name.addEventListener('blur', function () {
+      switch (true) {
+        case !name.value.trim():
+          errorNombre.innerHTML = 'El campo nombre es obligatorio'
         name.style.boxShadow = '0 0 10px red'
         break
       case !regExAlpha.test(name.value):
@@ -155,71 +159,71 @@ window.addEventListener('load', () => {
       }
     }
   });
-  $selectLocalidad.disabled = true;
-  $selectDSocial.disabled = true;
-  fetch("https://apis.datos.gob.ar/georef/api/provincias")
-    .then((response) => response.json())
-    .then((data) => {
-      var provinces = data.provincias.sort(function (prev, next) {
-        return prev.nombre > next.nombre
-          ? 1
-          : prev.nombre < next.nombre
-          ? -1
-          : 0;
-      });
-      return provinces.forEach((province) => {
-        $selectProvince.innerHTML += `<option value="${province.id}">${province.nombre}</option>`;
-      });
-    })
-    .catch((err) => console.log(err));
-
-  $selectProvince.onblur = function () {
-    if ($selectProvince.options[$selectProvince.selectedIndex].value == "") {
-      error($selectProvince, $ProvinceError, "Selección obligatoria");
-    }
-  };
-
-  $selectProvince.onchange = function (event) {
-    $selectLocalidad.innerHTML = "";
-    $selectLocalidad.disabled = false;
-    $selectDSocial.disabled = false;
-
-    let provinceNombre = event.target.value;
-
-    success($selectProvince, $ProvinceError);
-
-    /* OPTIONS SELECT LOCALIDADES */
-
-    function fetchProvince(value) {
-      fetch(
-        `https://apis.datos.gob.ar/georef/api/departamentos?provincia=${value}&campos=id,nombre&max=5000`
-      )
-        .then((response) => response.json())
-        .then((results) => {
-          console.log(results);
-          let localidades = results.departamentos.sort(function (prev, next) {
-            return prev.nombre > next.nombre
-              ? 1
-              : prev.nombre < next.nombre
-              ? -1
-              : 0;
-          });
-
-          localidades.forEach((location) => {
-            if (results.parametros.provincia[0] == "02") {
-              $selectLocalidad.innerHTML =
-                "<option value='0' selected>No hay opciones</option>";
-            } else {
-              $selectLocalidad.innerHTML += `<option value="" selected hidden>Selecciona</option>
-                              <option value="${location.nombre}">${location.nombre}</option>`;
-              $selectDSocial.innerHTML += `<option value="" selected hidden>Selecciona</option>
-                              <option value="${location.nombre}">${location.nombre}</option>`;
-            }
-          });
+   $selectLocalidad.disabled = true;
+    $selectDSocial.disabled = true;
+    fetch("https://apis.datos.gob.ar/georef/api/provincias")
+      .then((response) => response.json())
+      .then((data) => {
+        var provinces = data.provincias.sort(function (prev, next) {
+          return prev.nombre > next.nombre
+            ? 1
+            : prev.nombre < next.nombre
+            ? -1
+            : 0;
         });
-    }
-    fetchProvince(provinceNombre);
-  };
+        return provinces.forEach((province) => {
+          $selectProvince.innerHTML += `<option value="${province.id}">${province.nombre}</option>`;
+        });
+      })
+      .catch((err) => console.log(err));
+
+    $selectProvince.onblur = function () {
+      if ($selectProvince.options[$selectProvince.selectedIndex].value == "") {
+        error($selectProvince, $ProvinceError, "Selección obligatoria");
+      }
+    };
+
+    $selectProvince.onchange = function (event) {
+      $selectLocalidad.innerHTML = "";
+      $selectLocalidad.disabled = false;
+      $selectDSocial.disabled = false;
+
+      let provinceNombre = event.target.value;
+
+      success($selectProvince, $ProvinceError);
+
+      /* OPTIONS SELECT LOCALIDADES */
+
+      function fetchProvince(value) {
+        fetch(
+          `https://apis.datos.gob.ar/georef/api/departamentos?provincia=${value}&campos=id,nombre&max=5000`
+        )
+          .then((response) => response.json())
+          .then((results) => {
+            console.log(results);
+            let localidades = results.departamentos.sort(function (prev, next) {
+              return prev.nombre > next.nombre
+                ? 1
+                : prev.nombre < next.nombre
+                ? -1
+                : 0;
+            });
+
+            localidades.forEach((location) => {
+              if (results.parametros.provincia[0] == "02") {
+                $selectLocalidad.innerHTML =
+                  "<option value='0' selected>No hay opciones</option>";
+              } else {
+                $selectLocalidad.innerHTML += `<option value="" selected hidden>Selecciona</option>
+                                <option value="${location.nombre}">${location.nombre}</option>`;
+                $selectDSocial.innerHTML += `<option value="" selected hidden>Selecciona</option>
+                                <option value="${location.nombre}">${location.nombre}</option>`;
+              }
+            });
+          });
+      }
+      fetchProvince(provinceNombre);
+    };
 
   formEdit.addEventListener('submit',function(event){
     let error = false;

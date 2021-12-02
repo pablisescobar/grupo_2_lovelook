@@ -21,7 +21,7 @@ class Carrito {
 
       /* console.log(producto); */
       this.leerDatosProducto(producto);
-      calcularCantidad();
+     
     }
   }
 /* clas es el nombre de la clase que le agregamos o sacamos , ejemplo   add("...") o remove("...") */
@@ -94,12 +94,13 @@ class Carrito {
             });
 
             this.eliminarProductoLocalStorage(infoProducto.id);
-            calcularCantidad();
+            setTimeout(() => {
+              location.reload()
+            }, 1200);
             /* Y ELIMINA EL ELEMENTO DEL ALMACENAMIENTO LOCAL */
 
-            /* document.querySelector("#lista-carrito tbody").children[0].remove() */
-
             let cards = listaProductos.querySelectorAll("a");
+            
             let cardId = [];
             cards.forEach((card) => {
               /* console.log(card); */
@@ -113,6 +114,10 @@ class Carrito {
                 }
               });
             });
+
+
+
+
           }
         });
     } else {
@@ -184,7 +189,7 @@ $ ${toThousand(producto.price)}
  $ ${toThousand(producto.price)}
 </td>
 <td>
-<input type="number" class="form-control cantidad m-auto" min="1" value="${
+<input type="number" class="form-control cantidad m-auto" id="CCC" min="1" value="${
         producto.count
       }"> 
 </td>
@@ -203,6 +208,7 @@ $ ${toThousand(producto.price)}
     /* GUARDAMOS EN EL PRODUCTO EN EL ALMACENAMIENTO LOCAL */
     this.guardarProductosLocalStorage(producto);
     calcularCantidad();
+    this.calcularTotal()
   }
 
   eliminarProducto(event) {
@@ -238,7 +244,6 @@ $ ${toThousand(producto.price)}
       }
     }
     this.vaciarLocalStorage();
-    
     return false;
   }
 
@@ -268,6 +273,7 @@ $ ${toThousand(producto.price)}
       }
     });
     localStorage.setItem("productos", JSON.stringify(productosLS));
+  
   }
 
   leerLocalStorage() {
@@ -333,6 +339,7 @@ $ ${toThousand(producto.price)}
 
   vaciarLocalStorage() {
     localStorage.removeItem("productos");
+    document.querySelector(".carrito .count span").innerText = "0"
   }
 
   procesarPedido(event) {
