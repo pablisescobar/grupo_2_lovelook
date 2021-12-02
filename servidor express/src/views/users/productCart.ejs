@@ -7,47 +7,77 @@
 
     <main class="container-cart">
       <section class="section1">
-      
-       <table class="table" id="lista-compra" >
-         <thead>
-           <tr class="table-danger">
-             <th scope="col">Imagen</th>
-             <th scope="col">Titulo</th>
-             <th scope="col">Precio</th>
-             <th scope="col">Cantidad</th>
-             <th scope="col">Sub-total</th>
-             <th scope="col"></th>
-           </tr>
-         </thead>
-         <tbody></tbody>
-<tr>
-  <th colspan="4" scope="col" class="text-right">TOTAL :</th>
-  <th scope="col">
-    <p id="total"></p>
-  </th>
-</tr>
+        <table class="table" id="lista-compra">
+          <thead>
+            <tr class="table-danger">
+              <th scope="col">Imagen</th>
+              <th scope="col">Titulo</th>
+              <th scope="col">Precio</th>
+              <th scope="col">Cantidad</th>
+              <th scope="col">Sub-total</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          
+          <!-- LISTA DE PRODUCTOS EN CARRITO -->
+          <tbody></tbody>
+          <!-- LISTA DE PRODUCTOS EN CARRITO END (enviados desde javascript)-->
+          <tr>
+            <th colspan="4" scope="col" class="text-right">TOTAL :</th>
+            <th scope="col">
+              <p id="total"></p>
+            </th>
+          </tr>
         </table>
-       
-     </section>
+      </section>
 
+      <!-- BOTONES DE OPERACIONES -->
 
       <section class="buttonsIcons">
-        <a id="iconArrow" class="btn btn-outline-secondary h-2">Seguir comprando
-          <i class="fal fa-tshirt" style="font-size: 1.5rem;"></i>
+
+        <!-- BOTON SEGUIR COMPRANDO -->
+        <a id="iconArrow" class="btn btn-outline-secondary h-2"
+          >Seguir comprando
+          <i class="fal fa-tshirt" style="font-size: 1.5rem"></i>
         </a>
-        <a id="iconSync" class="btn btn-outline-info h-2">Actualizar
-          <span class="iconify" style="font-size: 1.5rem;" data-icon="ion:sync"></span>
+        <!-- BOTON ACTUALIZAR PAGINA -->
+        <a id="iconSync" class="btn btn-outline-info h-2"
+          >Actualizar
+          <span
+            class="iconify"
+            style="font-size: 1.5rem"
+            data-icon="ion:sync"
+          ></span>
         </a>
-        <a id="vaciar-carrito-2" class="btn btn-outline-danger h-2">Vaciar
-          <span class="iconify" style="font-size: 1.5rem;" data-icon="bi:cart-x"></span>
+        <!-- VACIAR CARRITO -->
+        <a id="vaciar-carrito-2" class="btn btn-outline-danger h-2"
+          >Vaciar
+          <span
+            class="iconify"
+            style="font-size: 1.5rem"
+            data-icon="bi:cart-x"
+          ></span>
         </a>
-        <button id="procesar-compra" class="btn btn-outline-success h-2" type="submit">Realizar Compra</button>
+        <!-- REALIZAR COMPRA -->
+        <button
+          id="procesar-compra"
+          class="btn btn-outline-success h-2"
+          type="submit"
+        >
+          Realizar Compra
+        </button>
+
       </section>
+
+      <!-- OFERTAS SLIDER -->
+
       <div>
         <h4 class="questionAdd">Nuestras Ofertas</h4>
       </div>
-
+      
       <%- include ('../partials/slider.ejs') %>
+
+      <!-- OFERTAS SLIDER END -->
     </main>
 
     <%- include('../partials/whatsapp.ejs') %> <%-

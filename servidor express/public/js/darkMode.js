@@ -1,5 +1,6 @@
 let $mode = document.querySelector("#Mode");
 let cartPoppupHeader = qs(".listaCarritoHeader")
+let viewCartTable = qs("#lista-compra")
 gsap.set("#moon, .star", { opacity: 0 });
 gsap.set("#sun, #cloud, #moon", { x: 15 });
 gsap.set(".star", { x: 35, y: -5 });
@@ -79,8 +80,9 @@ let elementsHTML = [
 ".perfil-user .input-perfil-user-border",
 ".perfil-user .input-perfil-user",
 ".changesButton",
-".details-products.active",
-".details-products .accordion-container",
+".details-products .subtitle-item",
+".slick-slide",
+".home-inicio h1",
 
   /* contact */
   ".form-contact-container input",
@@ -106,14 +108,24 @@ function addClass(element) {
   document
     .querySelectorAll(element)
     .forEach((item) => item.classList.add("dark"));
-    cartPoppupHeader.classList.add("table-dark")
-}
-
-function removeClass(element) {
-  document
+    if(location.pathname != "/user/cart"){
+      cartPoppupHeader.classList.add("table-dark")
+    }
+    if(location.pathname == "/user/cart"){
+    viewCartTable.classList.add("table-dark")
+    }
+  }
+  
+  function removeClass(element) {
+    document
     .querySelectorAll(element)
     .forEach((item) => item.classList.remove("dark"));
-    cartPoppupHeader.classList.remove("table-dark")
+    if(location.pathname != "/user/cart"){
+      cartPoppupHeader.classList.remove("table-dark")
+    }
+    if(location.pathname == "/user/cart"){
+    viewCartTable.classList.remove("table-dark")
+    }
 }
 
 function moveDay() {

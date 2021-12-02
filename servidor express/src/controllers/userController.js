@@ -17,6 +17,12 @@ module.exports = {
       session: req.session,
     });
   },
+  forget:(req, res) => {
+    res.render('users/forgetPass', {
+      position: "position:relative;",
+      session: req.session,
+    })
+  },
   profile: (req, res) => {
     db.User.findOne({
       where: {

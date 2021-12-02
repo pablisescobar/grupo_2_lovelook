@@ -9,18 +9,25 @@ function calcularCantidad(){
   document.querySelector(".carrito .count span").innerText = JSON.parse(localStorage.getItem("productos")).length
 }
 
+if(location.pathname == "/user/cart"){
+ carrito.style.display = "none" 
+}else{
+  carrito.style.display = "block" 
+}
+
 function cargarEventos() {
   /* FUNCION PARA ACTUALIZAR CONSTANTEMENTE EL ESTADO LA CANTIDAD DEL ICONO DEL CARRITO DE COMPRA ARRIBA A LA DERECHA EN EL HEADER */
  
 
   /* COMPRAR PRODUCTO */
-  window.addEventListener("click", (event) => {
+  window.addEventListener("click", (event) => { 
     carro.comprarProduto(event) 
     calcularCantidad()
+    
   });
 
   /* ELIMINAR PRODUCTO */
-  window.addEventListener("click", (event) => {
+  carrito.addEventListener("click", (event) => {
     carro.eliminarProducto(event)
   });
 

@@ -12,7 +12,8 @@ let {
   processRegister,
   deleteProfile,
   loginGoogle,
-  loginFacebook
+  loginFacebook,
+  forget
 } = require("../controllers/userController.js");
 const loginValidator = require("../validations/loginValidator");
 const userLog = require("../middleware/userLog");
@@ -63,6 +64,7 @@ router.delete(
   uploadUserAvatar.single("avatar"),
   deleteProfile
 );
+router.get('/forgetPass',forget)
 
 /* View cart shopping  */
 router.get("/cart", userSessionCheck, cart);

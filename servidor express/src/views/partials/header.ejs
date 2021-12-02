@@ -1,7 +1,7 @@
 <%- include('marqueeShipping.ejs') %> 
 <header class="header" style=<%=position%>
   >
-
+    <!-- CARRITO HEADER -->
   <div id="carrito" class="carritoHeader">
     <div class="d-flex justify-content-around mb-2">
       <div>
@@ -15,7 +15,7 @@
         </button>
       </div>
     </div>
-
+<!-- Lista carrito -->
     <table id="lista-carrito" class="listaCarritoHeader table">
       <thead>
         <tr class="table-danger">
@@ -29,7 +29,7 @@
     </table>
   </div>
 
- 
+ <!-- CARRITO HEADER END -->
     <div class="carrito">
       <a class="align-icon icon-size" href="" id="cart-popup-right">
         <span class="iconify" data-icon="emojione-monotone:shopping-cart" data-inline="false"></span>
@@ -67,12 +67,13 @@
 
             <% if (typeof session.user !="undefined" ) { %>
               <a href="/user/login" class="usuario align-icon icon-size">
-                <span class="session"></span>
-                <span class="iconify" data-icon="bi:person-circle" data-inline="false"></span>
+                <div class="avatarHeader">
+                  <img <%= /http/.test(user.avatar) ?`src=${user.avatar}` :`src=/img/user/userAvatars/${user.avatar}` %> alt="">
+                </div>
               </a>
 
               <%} else{ %>
-                <a href="/user/login" class="usuario align-icon icon-size">
+                <a href="/user/perfil" class="usuario align-icon icon-size">
                   <span class="iconify" data-icon="bi:person-circle" data-inline="false"></span>
                 </a>
                 <% } %>
@@ -91,7 +92,7 @@
                       </div>
                     </li>
                     <li class="btn"><a href="/products/12">Accesorios</a></li>
-                    <li class="btn"><a href="/products">Todo los Productos</a></li>
+                    <li class="btn"><a href="/products">Ofertas</a></li>
                   </ul>
                   <% if (typeof session.user !="undefined" ) { %>
                     <div class="menu-mobile">
@@ -115,11 +116,12 @@
 
           <% if (typeof session.user !="undefined" ) { %>
             <!-- ICONO DE USUARIO (circle) -->
-            <a href="/user/login" class="usuario align-icon icon-size user-desktop">
-              <span class="session"></span>
-              <span class="iconify" data-icon="bi:person-circle" data-inline="false"></span>
+            <a id="circle_despegable" class="usuario align-icon icon-size user-desktop">
+             <div class="avatarHeader">
+               <img <%= /http/.test(user.avatar) ?`src=${user.avatar}` :`src=/img/user/userAvatars/${user.avatar}` %> alt="">
+             </div>
             </a>
-            <div class="menu-user">
+            <div class="menu-user" style="top:-100%;right:8% ;position:fixed;transition:all 1s;" id="user-desplegable">
               <a href="/user/perfil">Mis datos</a>
               <a href="/user/logout" id="logout2">Cerrar sesión</a>
               <% if (session.user.rol==2 || session.user.rol == 3) { %>
@@ -151,7 +153,7 @@
                       </div>
                     </li>
                     <li class="btn"><a href="/products/12">Accesorios</a></li>
-                    <li class="btn"><a href="/products">Todo los productos</a></li>
+                    <li class="btn"><a href="/products">Ofertas</a></li>
                   </ul>
                 </nav>
 
