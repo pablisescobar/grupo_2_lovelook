@@ -5954,7 +5954,7 @@ fieldset:disabled .btn {
   justify-content: space-between;
 }
 .justify-content-around {
-  justify-content: start;
+  justify-content: space-around;
 }
 .justify-content-evenly {
   justify-content: space-evenly;

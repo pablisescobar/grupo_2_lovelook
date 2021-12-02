@@ -1,6 +1,7 @@
 <%- include('marqueeShipping.ejs') %> 
-<header class="header" style=<%=position%>>
-
+<header class="header" style=<%=position%>
+  >
+    <!-- CARRITO HEADER -->
   <div id="carrito" class="carritoHeader">
     <div class="d-flex justify-content-around mb-2">
       <div>
@@ -14,7 +15,7 @@
         </button>
       </div>
     </div>
-
+<!-- Lista carrito -->
     <table id="lista-carrito" class="listaCarritoHeader table">
       <thead>
         <tr class="table-danger">
@@ -28,14 +29,14 @@
     </table>
   </div>
 
- 
+ <!-- CARRITO HEADER END -->
     <div class="carrito">
       <a class="align-icon icon-size" href="" id="cart-popup-right">
         <span class="iconify" data-icon="emojione-monotone:shopping-cart" data-inline="false"></span>
         <% if (typeof session.user !="undefined" ) { %>
-        <span class="count" style="color:black;background-color:lightgreen"><span></span></span>
+        <span class="count" style="color:black;background-color:lightgreen"><span>0</span></span>
         <%} else{ %>
-          <span class="count"><span></span></span>
+          <span class="count"><span>0</span></span>
           <%}%>
       </a>
     </div>

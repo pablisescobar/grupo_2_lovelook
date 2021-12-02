@@ -5,34 +5,35 @@ function calcularCantidad() {
     localStorage.getItem("productos")
   ).length;
 }
+
+
 /* window.addEventListener("DOMContentLoaded",calcularCantidad) */
 class Carrito {
   // Añadir el producto al carrito
   comprarProduto(event) {
     /*   event.preventDefault(); */
     if (event.target.parentElement.classList.contains("agregar-carrito")) {
+      console.log(event.target);
+
+     /*  event.target.classList.toggle("text-success") */
       const producto =
         event.target.parentElement.parentElement.parentElement.parentElement;
 
       /* console.log(producto); */
       this.leerDatosProducto(producto);
-      calcularCantidad();
+     
     }
   }
-
+/* clas es el nombre de la clase que le agregamos o sacamos , ejemplo   add("...") o remove("...") */
   leerDatosProducto(producto) {
-    if (/\/products\/detail/.test(location.pathname)) {
-      let sectionProductDetail = document.querySelector(
-        ".details-products .product .imgs"
-      ).children[0];
-      var imgDetail = sectionProductDetail.querySelector("img").src;
+    
+    if( /\/products\/detail/.test(location.pathname)){
+      let sectionProductDetail=document.querySelector('.details-products .product .imgs').children[0]
+      var imgDetail=sectionProductDetail.querySelector('img').src
     }
-
     /* OBTENEMOS LOS VALORES DE LA TARJETA QUE INTRODUCIMOS COMO PARAMETRO */
     var infoProducto = {
-      image: /\/products\/detail/.test(location.pathname)
-        ? imgDetail
-        : producto.querySelector("img").src,
+      image: /\/products\/detail/.test(location.pathname) ? imgDetail:producto.querySelector("img").src,
       title: producto.querySelector("h5").textContent,
       price: Number(
         producto
@@ -43,8 +44,10 @@ class Carrito {
       ),
       id: producto.querySelector("a").getAttribute("data-id") /* DATA-ID */,
       count: 1,
+      
     };
-
+    
+    
     /* OBTENEMOS LOS PRODUCTOS QUE ESTAN EN EL ALMACENAMIENTO LOCAL DEL NAVEGADOR */
     let productosLS = this.obtenerProductosLocalStorage();
 
@@ -91,12 +94,13 @@ class Carrito {
             });
 
             this.eliminarProductoLocalStorage(infoProducto.id);
-            calcularCantidad();
+            setTimeout(() => {
+              location.reload()
+            }, 1200);
             /* Y ELIMINA EL ELEMENTO DEL ALMACENAMIENTO LOCAL */
 
-            /* document.querySelector("#lista-carrito tbody").children[0].remove() */
-
             let cards = listaProductos.querySelectorAll("a");
+            
             let cardId = [];
             cards.forEach((card) => {
               /* console.log(card); */
@@ -110,6 +114,10 @@ class Carrito {
                 }
               });
             });
+
+
+
+
           }
         });
     } else {
@@ -177,15 +185,15 @@ $ ${toThousand(producto.price)}
 </td>
 <td>${producto.title}</td>
 
-<td>
+<td class="priceCart">
  $ ${toThousand(producto.price)}
 </td>
 <td>
-<input type="number" class="form-control cantidad m-auto" min="1" value="${
+<input type="number" class="form-control cantidad m-auto" id="CCC" min="1" value="${
         producto.count
       }"> 
 </td>
-<td>
+<td id="sub-total">
  $ ${toThousand(producto.price * producto.count)}
 </td>
 <td>
@@ -195,11 +203,12 @@ $ ${toThousand(producto.price)}
 </td>
 </tr>
 `;
-    }
+}
 
     /* GUARDAMOS EN EL PRODUCTO EN EL ALMACENAMIENTO LOCAL */
     this.guardarProductosLocalStorage(producto);
     calcularCantidad();
+    this.calcularTotal()
   }
 
   eliminarProducto(event) {
@@ -209,21 +218,19 @@ $ ${toThousand(producto.price)}
     if (event.target.classList.contains("borrar-producto")) {
       /* ELIMINAME ESE PRODUCTO DEL HTML */
       /* OBTENEMOS EL ID DE ESA TARJETA UBICADO EN EL DATA-ID EN LA ETIQUETA "a" */
-      producto = event.target.parentElement.parentElement;
+      producto = event.target.parentElement;
       console.log(producto);
-      productoId =
-        producto.querySelector("a").dataset.id; /* getAttribute("data-id"); */
+      
+      productoId = producto.querySelector("a").getAttribute("data-id");/* getAttribute("data-id"); */
       console.log(productoId);
-
       event.target.parentElement.parentElement.remove();
     }
+
     /* UTILIZANDO ESE ID LLAMAMOS AL METODO eliminarProductoLocalStorage */
     this.eliminarProductoLocalStorage(productoId);
     /* ACTUALIZAMOS EN TIEMPO REAL EL TOTAL DE DINERO EN EL CARRITO DE COMPRA */
 
     this.calcularTotal();
-
-    calcularCantidad();
   }
 
   vaciarCarrito(event) {
@@ -266,6 +273,7 @@ $ ${toThousand(producto.price)}
       }
     });
     localStorage.setItem("productos", JSON.stringify(productosLS));
+  
   }
 
   leerLocalStorage() {
@@ -307,7 +315,7 @@ $ ${toThousand(producto.price)}
     </td>
     <td>${producto.title}</td>
   
-    <td>
+    <td id="priceCart">
      $ ${toThousand(producto.price)}
     </td>
     <td>
@@ -315,7 +323,7 @@ $ ${toThousand(producto.price)}
       producto.count
     }"> 
   </td>
-    <td>
+    <td id="sub-total">
      $ ${toThousand(producto.price * producto.count)}
     </td>
     <td>
@@ -331,6 +339,7 @@ $ ${toThousand(producto.price)}
 
   vaciarLocalStorage() {
     localStorage.removeItem("productos");
+    document.querySelector(".carrito .count span").innerText = "0"
   }
 
   procesarPedido(event) {
@@ -365,4 +374,6 @@ $ ${toThousand(producto.price)}
       totalP.innerHTML = `$  ${total.toFixed(2)}`;
     }
   }
+
+
 }

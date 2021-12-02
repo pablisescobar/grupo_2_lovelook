@@ -2,10 +2,10 @@ $(document).ready(function ($) {
     $(".card-slider").slick({
       dots: true,
       infinite: true,
-      speed: 500,
+      speed: 3000,
       slidesToShow: 3,
       slidesToScroll: 1,
-      autoplay: false,
+      autoplay: true,
       autoplaySpeed: 2000,
       arrows: true,
       responsive: [
