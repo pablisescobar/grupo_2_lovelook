@@ -15,7 +15,7 @@ window.addEventListener("load", function () {
     });
     swalWithBootstrapButtons
       .fire({
-        title: "¿Estas seguro de vaciar el carrito?",
+        title: "¿Estas seguro de eliminar el usuario? Esta acción es irreversible",
         icon: "question",
         showCancelButton: true,
         confirmButtonText: "Confirmar",

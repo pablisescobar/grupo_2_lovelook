@@ -8,8 +8,15 @@ window.addEventListener('load', () => {
     email = global('Email'),
     pass = global('Password'),
     pass2 = global('Password2'),
+    secretPass = global('secretPass')
     formulario = global('Registro'),
     term = global('terms'),
+    regExAlpha = /^[a-zA-Z\sñáéíóúü ]{3,}$/,
+    regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
+    regExPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$/
+    
+    
+    /* spans errors */
     errorName = global('errorfirstName'),
     errorlastName = global('errorlastName'),
     errorEmail = global('errorEmail'),
@@ -17,10 +24,7 @@ window.addEventListener('load', () => {
     errorpass2 = global('errorPassword2'),
     errorterm = global('errorTerms'),
     errorForm = global('errorForm'),
-    regExAlpha = /^[a-zA-Z\sñáéíóúü ]{3,}$/,
-    regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
-    regExPassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,10}$/
-
+    errorSecret= global('errorSecret')
 
 
     Inputname.addEventListener("blur", function () {
@@ -100,6 +104,22 @@ window.addEventListener('load', () => {
           default:
               pass2.style.boxShadow = '0 0 10px green';
               errorpass2.innerHTML = "";
+            break;
+        }
+      })
+      secretPass.addEventListener("blur", function () {
+        switch (true) {
+          case !secretPass.value.trim():
+            errorSecret.innerHTML = "El campo nombre es obligatorio";
+            secretPass.style.boxShadow = '0 0 10px red';
+            break;
+          case !regExAlpha.test(secretPass.value):
+            errorSecret.innerHTML = "Debes ingresar un nombre válido";
+            secretPass.style.boxShadow = '0 0 10px red';
+            break;
+          default:
+              secretPass.style.boxShadow = '0 0 10px green';
+              errorSecret.innerHTML = "";
             break;
         }
       })

@@ -67,8 +67,8 @@
             <% if (typeof session.user !="undefined" ) { %>
               <a href="/user/login" class="usuario align-icon icon-size">
                 <div class="avatarHeader">
-                  <img <%= /http/.test(user.avatar) ?`src=${user.avatar}` :`src=/img/user/userAvatars/${user.avatar}` %> alt="">
-                </div>
+               <img <%= /http/.test(user.avatar) ?`src=${user.avatar}` :`src=/img/user/userAvatars/${user.avatar}` %> alt="">
+             </div>
               </a>
 
               <%} else{ %>
@@ -91,12 +91,12 @@
                       </div>
                     </li>
                     <li class="btn"><a href="/products/12">Accesorios</a></li>
-                    <li class="btn"><a href="/products">Ofertas</a></li>
+                    <li class="btn"><a href="/products/Ofertas">Ofertas</a></li>
                   </ul>
                   <% if (typeof session.user !="undefined" ) { %>
                     <div class="menu-mobile">
                       <a href="/user/perfil">Mis datos</a>
-                      <% if (session.user.rol==2 || session.user.rol == 3) { %>
+                      <% if (session.user.rol==2) { %>
                         <a href="/admin/products">ADMIN</a>
                         <% } %>
                           <a href="/user/logout" id="logout"><i class="fas fa-sign-out"></i></a>
@@ -112,21 +112,23 @@
           <a class="estrella icon-size align-icon" href="">
             <span class="iconify" data-icon="akar-icons:star" data-inline="false"></span>
           </a>
-
           <% if (typeof session.user !="undefined" ) { %>
+
             <!-- ICONO DE USUARIO (circle) -->
-            <a id="circle_despegable" class="usuario align-icon icon-size user-desktop">
+            <div class="userDesktop usuario">
+              <div class="menu-user"  id="user-desplegable">
+                <a href="/user/perfil">Mis datos</a>
+                <a href="/user/logout" id="logout2                                                                                                                                                                                                                                                                                                                                                                                                                      ">Cerrar sesión</a>
+                
+              </div>
+
+            <a id="circle_despegable" class="align-icon icon-size user-desktop">
              <div class="avatarHeader">
                <img <%= /http/.test(user.avatar) ?`src=${user.avatar}` :`src=/img/user/userAvatars/${user.avatar}` %> alt="">
-             </div>
+              </div>
             </a>
-            <div class="menu-user" style="top:-100%;right:8% ;position:fixed;transition:all 1s;" id="user-desplegable">
-              <a href="/user/perfil">Mis datos</a>
-              <a href="/user/logout" id="logout2">Cerrar sesión</a>
-              <% if (session.user.rol==2 || session.user.rol == 3) { %>
-                <a href="/admin/products">ADMIN</a>
-                <% } %>
-            </div>
+           
+          </div>
             <% }else{ %>
               <!-- ICONO DE USUARIO (circle) -->
               <a href="/user/login" class="usuario align-icon icon-size user-desktop">
@@ -152,7 +154,7 @@
                       </div>
                     </li>
                     <li class="btn"><a href="/products/12">Accesorios</a></li>
-                    <li class="btn"><a href="/products">Ofertas</a></li>
+                    <li class="btn"><a href="/products/Ofertas">Ofertas</a></li>
                   </ul>
                 </nav>
 

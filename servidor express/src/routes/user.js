@@ -64,6 +64,7 @@ router.delete(
   uploadUserAvatar.single("avatar"),
   deleteProfile
 );
+/* Coincidencia de datos para recuperar contraseña */
 router.get('/forgetPass',forget)
 
 /* View cart shopping  */

@@ -266,6 +266,9 @@ header .listaCarritoHeader {
   height: 50px;
   border-radius: 50%;
 }
+.header .avatarHeader img {
+  border-radius: 50%;
+}
 
 .header .bar1,
 .header .bar2,
@@ -473,6 +476,8 @@ header .listaCarritoHeader {
   justify-content: end;
 }
 .header .usuario {
+  position: relative;
+  display: flex;
   grid-area: user;
   font-size: 2.5rem;
   /* cursor: pointer; */
@@ -603,6 +608,14 @@ header .listaCarritoHeader {
   .header .menu-user {
     font-size: 0.7rem;
   }
+  .header .avatarHeader {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .header .avatarHeader img {
+    border-radius: 50%;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -611,17 +624,28 @@ header .listaCarritoHeader {
     height: 110px;
     grid: 1fr 0.5fr 1fr / repeat(12, 1fr);
     grid-template-areas:
-      " logo . . buscador buscador buscador buscador buscador buscador session user cart "
+      " logo . buscador buscador buscador buscador buscador buscador . user user cart "
       " logo menu menu menu menu menu menu menu menu menu  translate dark";
     padding: 10px;
     z-index: 300;
+  }
+  .header .avatarHeader {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+  }
+  .header .avatarHeader img {
+    border-radius: 50%;
   }
 
 
   .header .menu {
     display: none;
   }
-
+.header .menu-user {
+  top: 0;
+  
+}
   .header .user-desktop {
     display: flex;
     font-size: 2.2rem;
@@ -781,5 +805,7 @@ header .listaCarritoHeader {
 
   .header .menu-user {
     font-size: 0.7rem;
+    position: absolute;
+    top: -100%;
   }
 }

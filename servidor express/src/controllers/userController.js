@@ -132,7 +132,7 @@ db.Location.destroy({
           email: user.email,
           rol: user.rolId,
           id_social: 0,
-          avatar: "default-image.png",
+          avatar: user.avatar,
           social_provider: "local",
         };
         console.log(req.session.user)
