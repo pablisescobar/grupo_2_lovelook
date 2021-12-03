@@ -290,7 +290,7 @@ header .listaCarritoHeader {
 .header .menu-mobile {
   display: flex;
   flex-wrap: wrap;
-  background-color: darkgray;
+  background-color: rgba(255, 192, 203, 0.336);
   width: 100%;
   justify-content: space-evenly;
   align-items: center;

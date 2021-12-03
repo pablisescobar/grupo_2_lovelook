@@ -100,9 +100,10 @@
               <% if (typeof session.user !="undefined" ) { %>
                 <div class="menu-mobile">
                   <a href="/user/perfil">Mis datos</a>
-                  <% if (session.user.rol==2) { %>
-                    <a href="/admin/products">ADMIN</a>
-                    <% } %>
+                  <% if (session.user.rol == 2 || session.user.rol == 3) { %>
+                        <a href="/admin/products">ADMIN</a>
+                        <% } %>
+
                       <a href="/user/logout" id="logout"><i class="fas fa-sign-out"></i></a>
                 </div>
                 <% } %>
@@ -121,6 +122,10 @@
             <a href="/user/logout"
               id="logout2                                                                                                                                                                                                                                                                                                                                                                                                                      ">Cerrar
               sesión</a>
+              <% if (session.user.rol == 2 || session.user.rol == 3) { %>
+                <a href="/admin/products">ADMIN</a>
+                <% } %>
+
           </div>
 
           <a id="circle_despegable" class="align-icon icon-size">

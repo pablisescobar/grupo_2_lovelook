@@ -34,8 +34,8 @@
                                 <%= errors.firstName.msg %>
                             </small>
                             <% } %>
+                        <small id="errorNombre" class="text-danger"></small>
                     </div>
-                    <small id="errorNombre" class="text-danger"></small>
 
                     <div class="container">
                         <label class="label-perfil-user" for="apellido">Apellido: </label>
@@ -89,15 +89,15 @@
 
                     <div class="container">
                         <label class="label-perfil-user" for="province">Provincia: </label>
-                        <select class="input--style input-perfil-user" name="province" id="province"><option value=""<%= locals.old ? old.province :
-                        user.location ? user.location[0].province : "" %>></option></select>
+                        <input class="input--style input-perfil-user" name="province" id="province" value=""<%= locals.old ? old.province :
+                        user.location ? user.location[0].province : "" %>"">
                     </div>
 
 
                     <div class="container">
                         <label class="label-perfil-user" for="city">Ciudad: </label>
-                        <select class="input--style input-perfil-user" name="city" id="city"><option value=""<%= locals.old ? old.city : user.location ?
-                        user.location[0].city : "" %>></option></select>
+                        <input class="input--style input-perfil-user" name="city" id="city" value=""<%= locals.old ? old.city : user.location ?
+                        user.location[0].city : "" %>"">
                     </div>
 
                     <button class="btn btn-success m-auto mt-4" type="submit">GUARDAR CAMBIOS</button>
@@ -107,7 +107,9 @@
                 <%- include('../partials/footer.ejs') %>
                     <%- include('../partials/whatsapp.ejs') %>
                         <%- include('../partials/scripts.ejs') %>
-                        <script src="/js/profileEditValidation.js"></script>
+                        
+    <script src="/js/profileEditValidation.js" defer></script>
+                            
     </body>
 
 </html>

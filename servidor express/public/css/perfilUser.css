@@ -74,6 +74,16 @@
   color: var(--bordes);
 }
 
+.btn-info {
+  background-color: green !important;
+  border-color: green !important;
+}
+
+.btn-secondary {
+  background-color: red !important;
+  border-color: red !important;
+}
+
 small {
   bottom: 0;
   text-align: center;

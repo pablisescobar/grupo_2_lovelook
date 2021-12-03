@@ -1,4 +1,5 @@
 const db = require("../database/models");
+const {Op} = require('sequelize')
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
@@ -117,7 +118,7 @@ module.exports = {
     });
   },
   sales:(req, res) => {
-    db.Products.findAll({
+    db.Product.findAll({
       where:{
         discount: {
           [Op.gte]: 10,
@@ -125,7 +126,7 @@ module.exports = {
       }
     })
     .then((products)=> {
-      res.render("products/Ofertas", {
+      res.render("products/ofertas", {
         products,
         title: "Productos en oferta",
         position: "",
