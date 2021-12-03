@@ -33,7 +33,7 @@ window.addEventListener("load", () => {
             }
         })
         if(products.length == accountant.value){
-            sectionProducts.innerHTML+= '<p>No hay productos</p>'
+            sectionProducts.innerHTML+= '<p>No hay productos que coincidan con la búsqueda</p>'
         }
         
   });
