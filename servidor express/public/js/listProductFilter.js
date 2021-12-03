@@ -6,6 +6,8 @@ window.addEventListener("load", () => {
   let articles = document.querySelectorAll("article");
   let sectionProducts = document.getElementById('sectionProducts');
   let accountant = document.getElementById('accountantProducts');
+  let filterButtom = document.getElementById('filter');
+  let filterNavBar = document.getElementById('navBar');
 
 
   filterProducts.addEventListener("click", () => {
@@ -35,10 +37,17 @@ window.addEventListener("load", () => {
         }
         
   });
-  
+  filterButtom.addEventListener("click", () => {
+     
+      if(filterNavBar.style.display == "flex") {
+          filterNavBar.style.display = "none"
+      } else {
+          filterNavBar.style.display = "flex"
+      }
+      
+  })
   
 });
 
-articles.forEach(article => {
-        article.style.display = "block";
-      });
+
+
