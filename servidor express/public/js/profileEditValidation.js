@@ -10,6 +10,7 @@ function addBorderGreen(input){
   input.style.boxShadow = '0 0 10px green'
 }
 
+
 window.addEventListener('load', () => {
   let name = global('nombre'),
   apellido = global('apellido'),
@@ -159,7 +160,7 @@ window.addEventListener('load', () => {
       }
     }
   });
-   $selectLocalidad.disabled = true;
+ /*   $selectLocalidad.disabled = true;
     $selectDSocial.disabled = true;
     fetch("https://apis.datos.gob.ar/georef/api/provincias")
       .then((response) => response.json())
@@ -192,7 +193,7 @@ window.addEventListener('load', () => {
 
       success($selectProvince, $ProvinceError);
 
-      /* OPTIONS SELECT LOCALIDADES */
+      // OPTIONS SELECT LOCALIDADES
 
       function fetchProvince(value) {
         fetch(
@@ -223,7 +224,7 @@ window.addEventListener('load', () => {
           });
       }
       fetchProvince(provinceNombre);
-    };
+    }; */
 
   formEdit.addEventListener('submit',function(event){
     let error = false;

@@ -7,12 +7,20 @@
   transition: 0.5s all ease;
   /* display: none; */
 }
+.header .avatarHeader img.dark{
+  border: 1px solid gray;
+}
 .header .user-desktop.dark {
   color: #fff;
   filter: drop-shadow(1px 1px 3px white);
 }
 .header .iconLupaBar.dark {
   filter: drop-shadow(1px 1px 2px black);
+}
+.user-mobile{
+  display: flex;
+  position: absolute;
+  right: 10px;
 }
 .header .menu-user a.dark {
   color: #d3d3d3;
@@ -38,8 +46,7 @@
   background: transparent;
 }
 .header .sidenav.dark {
-  background-color: rgb(61, 56, 56);
-
+  background-color: rgb(98 91 91);
   box-shadow: inset -10px 5px 90px black;
 }
 
@@ -206,7 +213,9 @@
 .header:hover {
   opacity: 1;
 }
-
+.header .userDesktop{
+  display: none;
+}
 .header .carritoHeader {
   position: absolute;
   top: 100%;
@@ -476,15 +485,6 @@ header .listaCarritoHeader {
   display: flex;
   justify-content: end;
 }
-.header .usuario {
-  position: relative;
-  display: flex;
-  grid-area: user;
-  font-size: 2.5rem;
-  /* cursor: pointer; */
-  text-align: right;
-  margin-right: 27px;
-}
 
 .session {
   display: block;
@@ -608,6 +608,12 @@ header .listaCarritoHeader {
 
   .header .menu-user {
     font-size: 0.7rem;
+    top:-150%;
+    transition:1s;
+  }
+  .header .menu-user.active {
+    top:0;
+    transition:1s;
   }
   .header .avatarHeader {
     width: 50px;
@@ -622,23 +628,29 @@ header .listaCarritoHeader {
 @media screen and (min-width: 1024px) {
   .header {
     width: 100vw;
-    height: 160px;
+    height: 145px;
     grid: 1fr 0.5fr 1fr / repeat(12, 1fr);
     grid-template-areas:
       " logo . buscador buscador buscador buscador buscador buscador . user user cart "
       " logo menu menu menu menu menu menu menu menu menu  translate dark";
-    padding: 10px;
+    padding: 10px 0 0 0;
     z-index: 300;
   }
   .header .avatarHeader {
-    width: 50px;
-    height: 50px;
     border-radius: 50%;
+    outline: 1px solid gray;
   }
   .header .avatarHeader img {
     border-radius: 50%;
+    outline: 1px solid gray;
+    padding: 2px;
+    animation: persp 3s 3;
+    width: 50px;
+    height: 50px;
   }
-
+.header .user-mobile{
+  display: none;
+}
 
   .header .menu {
     display: none;
@@ -714,7 +726,7 @@ header .listaCarritoHeader {
   }
 
   .header .navbar ul li {
-    height: 30px;
+    /* height: 30px; */
     width: 100%;
     /* padding: 5px; */
   }
@@ -749,6 +761,7 @@ header .listaCarritoHeader {
     display: flex !important;
     background: transparent;
     /* left: 0; */
+    align-self: center;
   }
 
   .header .btn {
@@ -806,7 +819,53 @@ header .listaCarritoHeader {
 
   .header .menu-user {
     font-size: 0.7rem;
-    position: absolute;
-    top: -100%;
+    position: relative;
+    top:-150%;
+    opacity:0;
+    transform: rotateX(
+0deg);
+    transition: top 2s,opacity .5s,transform 1s;
   }
+  .header .menu-user.active {
+    top: 0;
+    opacity: 1;
+    transform: rotateX(360deg);
+    transition: top .5s,opacity 2s,transform 1s;
+  }
+
+  .header .userDesktop{
+    grid-area: user;
+    display: flex;
+  }
+
+
+@keyframes persp {
+  0%{
+    opacity: 0;
+  }
+  10%{
+    opacity: 1;
+  }
+  40%{
+    transform: rotateY(
+0deg);
+  }
+
+  100%{
+    transform: rotateY(
+      360deg);
+  }
+}
+
+@keyframes headerSesionRot {
+  from{
+    transform: rotateX(
+      0deg);
+  }
+  to{
+    transform: rotateX(
+      0deg);
+  }
+}
+
 }
