@@ -60,7 +60,7 @@
     text-align: center;
     border-bottom: 2px solid black;
     font-family: var(--yesteryear);
-    font-size: 2rem;
+    font-size: 4rem;
     font-weight: lighter;
     filter: drop-shadow(6px 8px 2px var(--shadows));
     margin-bottom: 20px;
