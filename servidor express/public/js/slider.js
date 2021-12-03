@@ -2,7 +2,7 @@ $(document).ready(function ($) {
     $(".card-slider").slick({
       dots: true,
       infinite: true,
-      speed: 3000,
+      speed: 2000,
       slidesToShow: 3,
       slidesToScroll: 1,
       autoplay: true,
