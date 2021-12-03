@@ -13,6 +13,14 @@ module.exports = {
         { association: "sizes" },
       ],
     }).then((products) => {
+
+      let prices = new Set() /* Un elemento Set almacena valores unicos, en este caso lo coloque para que los precios no se repitan */
+      products.forEach(product => {
+          prices.add(product.price)
+      })
+      prices = Array.from(prices) /* convierto el elemento tipo de dato Set en un Array (from) */
+      prices.sort((a, b) => a - b)
+      
       db.Color.findAll().then((colors) => {
         db.Size.findAll().then((sizes) => {
           res.render("products/listProducts", {
@@ -21,6 +29,7 @@ module.exports = {
             sizes,
             position: "",
             toThousand,
+            prices,
             display: "display:grid;",
             session: req.session,
           });
@@ -81,6 +90,17 @@ module.exports = {
         { association: "sizes" },
       ],
     }).then((products) => {
+
+      
+    
+      let prices = new Set() /* Un elemento Set almacena valores unicos, en este caso lo coloque para que los precios no se repitan */
+      products.forEach(product => {
+          prices.add(product.price)
+      })
+      prices = Array.from(prices) /* convierto el elemento tipo de dato Set en un Array (from) */
+      prices.sort((a, b) => a - b)
+  
+
       db.Color.findAll().then((colors) => {
         db.Size.findAll().then((sizes) => {
           res.render("products/listProducts", {
@@ -90,6 +110,7 @@ module.exports = {
             toThousand,
             sizes,
             products,
+            prices,
             session: req.session,
           });
         });

@@ -32,8 +32,11 @@
 
         <select class="dropdown" name="price" id="priceSelect" title="price">
           <option value="" selected hidden>PRECIO</option>
-          <% products.find(product => { %>
-          <option value="<%- product.price %>"><%- product.price %></option>
+
+
+
+          <% prices.forEach(price => { %>
+          <option value="<%- price %>"><%- price %></option>
           <% }) %>
         </select>
       </div>

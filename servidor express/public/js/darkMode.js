@@ -84,6 +84,7 @@ let elementsHTML = [
 ".slick-slide",
 ".home-inicio h1",
 ".avatarHeader img",
+"'.categoriesList a'",
 
   /* contact */
   ".form-contact-container input",

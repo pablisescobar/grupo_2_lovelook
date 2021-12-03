@@ -64,6 +64,14 @@ module.exports = {
       .then(colors => {
         db.Size.findAll()
         .then(sizes => {
+
+          let prices = new Set() /* Un elemento Set almacena valores unicos, en este caso lo coloque para que los precios no se repitan */
+          products.forEach(product => {
+              prices.add(product.price)
+          })
+          prices = Array.from(prices) /* convierto el elemento tipo de dato Set en un Array (from) */
+          prices.sort((a, b) => a - b)
+
           res.render("products/listProducts", {
             toThousand,
             colors,
@@ -72,6 +80,7 @@ module.exports = {
             position: "",
             display: "display:grid;",
             products,
+            prices,
             session: req.session,
           });
         })
