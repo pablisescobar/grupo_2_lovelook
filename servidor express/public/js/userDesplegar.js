@@ -1,11 +1,8 @@
 
-let desplegarId = document.getElementById('circle_despegable')
-let block = document.getElementById('user-desplegable')
 
-desplegarId.addEventListener('click', ()=> {
-    if(block.style.top == '-100%'){
-        block.style.top = '85px'
-    }else {
-        block.style.top = '-100%'
-    }
+let avatarHeader = document.querySelector("#circle_despegable")
+let menuUser = document.querySelector("#user-desplegable")
+
+avatarHeader.addEventListener('click', function(){
+    menuUser.classList.toggle("active")
 })

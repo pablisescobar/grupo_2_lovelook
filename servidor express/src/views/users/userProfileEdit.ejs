@@ -90,25 +90,24 @@
                     <div class="container">
                         <label class="label-perfil-user" for="province">Provincia: </label>
                         <select class="input--style input-perfil-user" name="province" id="province"><option value=""<%= locals.old ? old.province :
-                        user.location ? user.location[0].province : "" %>""></option></select>
+                        user.location ? user.location[0].province : "" %>></option></select>
                     </div>
 
 
                     <div class="container">
                         <label class="label-perfil-user" for="city">Ciudad: </label>
                         <select class="input--style input-perfil-user" name="city" id="city"><option value=""<%= locals.old ? old.city : user.location ?
-                        user.location[0].city : "" %>""></option></select>
+                        user.location[0].city : "" %>></option></select>
                     </div>
 
-                    <button class="btn btn-outline-success m-auto mt-4" type="submit">GUARDAR CAMBIOS</button>
+                    <button class="btn btn-success m-auto mt-4" type="submit">GUARDAR CAMBIOS</button>
                     <small id="errorProfileEditForm" class="text-danger"></small>
-                    <a href="/user/perfil" class="btn btn-outline-secondary m-auto mt-2">CANCELAR</a>
+                    <a href="/user/perfil" class="btn btn-secondary m-auto mt-2">CANCELAR</a>
                 </form>
                 <%- include('../partials/footer.ejs') %>
                     <%- include('../partials/whatsapp.ejs') %>
                         <%- include('../partials/scripts.ejs') %>
-                            <script src="/js/profileEditValidation.js"></script>
-                            <script src="/js/perfilUser.js"></script>
+                        <script src="/js/profileEditValidation.js"></script>
     </body>
 
 </html>

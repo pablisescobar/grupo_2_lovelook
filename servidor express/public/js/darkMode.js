@@ -83,6 +83,7 @@ let elementsHTML = [
 ".details-products .subtitle-item",
 ".slick-slide",
 ".home-inicio h1",
+".avatarHeader img",
 
   /* contact */
   ".form-contact-container input",
