@@ -158,72 +158,7 @@ window.addEventListener("load", () => {
       }
     }
   });
-  /* $selectLocalidad.disabled = true;
-    $selectDSocial.disabled = true;
-    fetch("https://apis.datos.gob.ar/georef/api/provincias")
-      .then((response) => response.json())
-      .then((data) => {
-        var provinces = data.provincias.sort(function (prev, next) {
-          return prev.nombre > next.nombre
-            ? 1
-            : prev.nombre < next.nombre
-            ? -1
-            : 0;
-        });
-        return provinces.forEach((province) => {
-          $selectProvince.innerHTML += `<option value="${province.id}">${province.nombre}</option>`;
-        });
-      })
-      .catch((err) => console.log(err));
-
-    $selectProvince.onblur = function () {
-      if ($selectProvince.options[$selectProvince.selectedIndex].value == "") {
-        error($selectProvince, $ProvinceError, "Selección obligatoria");
-      }
-    };
-
-    $selectProvince.onchange = function (event) {
-      $selectLocalidad.innerHTML = "";
-      $selectLocalidad.disabled = false;
-      $selectDSocial.disabled = false;
-
-      let provinceNombre = event.target.value;
-
-      success($selectProvince, $ProvinceError);
-
-      /* OPTIONS SELECT LOCALIDADES 
-
-      function fetchProvince(value) {
-        fetch(
-          `https://apis.datos.gob.ar/georef/api/departamentos?provincia=${value}&campos=id,nombre&max=5000`
-        )
-          .then((response) => response.json())
-          .then((results) => {
-            console.log(results);
-            let localidades = results.departamentos.sort(function (prev, next) {
-              return prev.nombre > next.nombre
-                ? 1
-                : prev.nombre < next.nombre
-                ? -1
-                : 0;
-            });
-
-            localidades.forEach((location) => {
-              if (results.parametros.provincia[0] == "02") {
-                $selectLocalidad.innerHTML =
-                  "<option value='0' selected>No hay opciones</option>";
-              } else {
-                $selectLocalidad.innerHTML += `<option value="" selected hidden>Selecciona</option>
-                                <option value="${location.nombre}">${location.nombre}</option>`;
-                $selectDSocial.innerHTML += `<option value="" selected hidden>Selecciona</option>
-                                <option value="${location.nombre}">${location.nombre}</option>`;
-              }
-            });
-          });
-      }
-      fetchProvince(provinceNombre);
-    }; */
-
+  
   formEdit.addEventListener("submit", function (event) {
     let error = false;
     event.preventDefault();
