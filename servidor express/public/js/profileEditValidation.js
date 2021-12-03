@@ -1,3 +1,4 @@
+
 function global(element) {
   return document.getElementById(element);
 }
@@ -18,24 +19,22 @@ window.addEventListener("load", () => {
     direccion = global("direccion"),
     pc = global("cp"),
     imagen = global("examinar"),
-    
     formEdit = global("editProfileForm"),
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]{4,}$/,
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
     errorTelefono = global("errorTelefono"),
-    regExTel =
-      /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/i,
+    regExTel = /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/i,
     regExAlphaNum = /^[a-zA-Z0-9\s]*$/;
-  (errorCp = global("errorCp")),
     /* Spans errror */
-    (errorEmail = global("errorEmail")),
-    (errorApellido = global("errorApellido")),
-    (errorNombre = global("errorNombre")),
-    (errorProvincia = global("errorProvince")),
-    (errorDireccion = global("errorDireccion")),
-    (errorCiudad = golbal("errorCity")),
-    (errorImagen = global("errorImagen")),
-    (errorFormEdit = global("errorProfileEditForm"));
+    errorNombre = global("errorNombre"),
+    errorApellido = global("errorApellido"),
+    errorEmail = global("errorEmail"),
+    errorProvincia = global("errorProvince"),
+    errorDireccion = global("errorDireccion"),
+    errorCp = global("errorCp"),
+    errorCiudad = golbal("errorCity"),
+    errorImagen = global("errorImagen"),
+    errorFormEdit = global("errorProfileEditForm");
 
   name.addEventListener("blur", function () {
     switch (true) {
