@@ -65,35 +65,31 @@
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 
-              <%} else{ %>
-                <a href="/user/perfil" class="usuario align-icon icon-size">
-                  <span class="iconify" data-icon="bi:person-circle" data-inline="false"></span>
-                </a>
-                <% } %>
-                  <ul>
-                    <li class="btn"><a href="/">Inicio</a></li>
-                    <li id="categorias_id" class="btn">
-                      <a id="categorias_dii">Categorías<i class="fas fa-angle-down" id="fa-angle-down"></i></a>
-                      <div id="category_m" style="display: none" class="menu_desplegable">
-                        <div class="desplegable">
-                          <% locals.categories.forEach(category=> { %>
-                            <a href="/products/<%= category.id %>"><i class="fas fa-angle-right"></i><span>
-                                <%= category.name %>
-                              </span></a>
-                            <% }); %>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="btn"><a href="/products/12">Accesorios</a></li>
-                    <li class="btn"><a href="/products/Ofertas">Ofertas</a></li>
-                  </ul>
-                  <% if (typeof session.user !="undefined" ) { %>
-                    <div class="menu-mobile">
-                      <a href="/user/perfil">Mis datos</a>
-                      <% if (session.user.rol == 2 || session.user.rol == 3) { %>
-                        <a href="/admin/products">ADMIN</a>
-                        <% } %>
-                          <a href="/user/logout" id="logout"><i class="fas fa-sign-out"></i></a>
+        <!-- ICONO DE USUARIO MOBILE (circle) -->
+        <% if (typeof session.user !="undefined" ) { %>
+          <a href="/user/login" class="align-icon icon-size user-mobile">
+            <div class="avatarHeader">
+              <img <%=/http/.test(user.avatar) ?`src=${user.avatar}` :`src=/img/user/userAvatars/${user.avatar}` %>
+              alt="">
+            </div>
+          </a>
+          <%} else{ %>
+            <a href="/user/perfil" class="align-icon icon-size user-mobile">
+              <span class="iconify" data-icon="bi:person-circle" data-inline="false"></span>
+            </a>
+            <% } %>
+              <!-- MENU MOBILE -->
+              <ul>
+                <li class="btn"><a href="/">Inicio</a></li>
+                <li id="categorias_id" class="btn">
+                  <a id="categorias_dii">Categorías<i class="fas fa-angle-down" id="fa-angle-down"></i></a>
+                  <div id="category_m" style="display: none" class="menu_desplegable">
+                    <div class="desplegable">
+                      <% locals.categories.forEach(category=> { %>
+                        <a href="/products/<%= category.id %>"><i class="fas fa-angle-right"></i><span>
+                            <%= category.name %>
+                          </span></a>
+                        <% }); %>
                     </div>
                   </div>
                 </li>
@@ -115,21 +111,13 @@
         <span class="iconify" id="search" data-icon="akar-icons:search" data-inline="false"></span>
       </a>
 
-            <!-- ICONO DE USUARIO (circle) -->
-            <div class="userDesktop usuario">
-              <div class="menu-user"  id="user-desplegable">
-                <a href="/user/perfil">Mis datos</a>
-                <% if (session.user.rol == 2 || session.user.rol == 3) { %>
-                  <a href="/admin/products">ADMIN</a>
-                  <% } %>
-                <a href="/user/logout" id="logout2">Cerrar sesión</a>
-              </div>
+      <% if (typeof session.user !="undefined" ) { %>
 
         <!-- ICONO DE USUARIO DESKTOP (circle) -->
         <div class="userDesktop">
           <div class="menu-user" id="user-desplegable">
-            <a class="user-hover" href="/user/perfil">Mis datos</a>
-            <a class="user-hover" href="/user/logout"
+            <a href="/user/perfil">Mis datos</a>
+            <a href="/user/logout"
               id="logout2                                                                                                                                                                                                                                                                                                                                                                                                                      ">Cerrar
               sesión</a>
           </div>

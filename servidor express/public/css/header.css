@@ -823,9 +823,6 @@ header .listaCarritoHeader {
     height: fit-content;
     height: -moz-fit-content;
   }
-  .header .user-hover:hover {
-    color: var(--bordes);
-  }
 
   .header .menu-user {
     font-size: 0.7rem;
