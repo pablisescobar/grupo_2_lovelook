@@ -18,8 +18,7 @@ window.addEventListener("load", () => {
     direccion = global("direccion"),
     pc = global("cp"),
     imagen = global("examinar"),
-    /* provincia = global('province'), */
-    /* ciudad = global('city'), */
+    
     formEdit = global("editProfileForm"),
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]{4,}$/,
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,

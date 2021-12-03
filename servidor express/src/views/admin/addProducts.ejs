@@ -12,6 +12,21 @@
             <form action="/admin/products/add" method="post" class="inputRows" enctype="multipart/form-data"
                 id="productForm">
 
+                <div class="preview-image-container">
+                    <label for="imgInp" class="btn btn-success"><i class="fas fa-cloud-upload-alt"></i>
+                        Subir imágenes
+                    </label>
+                    <input type='file' id="imgInp" name="image" aria-label="file example" hidden="hidden" multiple>
+                    <img class="preview-image" id="blah" src="https://via.placeholder.com/150" alt="Tu imagen" >
+                    <% if(locals.errors && errors.image){ %>
+                    <small class="error-validator">
+                        <%= errors.image.msg %>
+                    </small>
+                    <% } %>
+                    <small class="error-validator" id="errorFileUpload">
+                    </small>
+                </div>
+
                 <!-- INPUT NAME -->
                 <input type="text" name="name" value="<%= locals.old && old.name %>" id="name" placeholder="Nombre"
                     title="nombre">
@@ -145,23 +160,7 @@
                 <% } %>
                 <small class="error-validator" id="errorStock">
                 </small>
-                <div class="input">
-                    <label for="file-upload" class="btn btn-success"><i class="fas fa-cloud-upload-alt"></i>
-                        Subir imágenes
-                    </label>
-
-                    <div id="info" style="margin: 3px;">
-                    </div>
-                    <input name="image" id="file-upload" onchange='cambiar()' type="file" style='display: none;'
-                        multiple>
-                    <% if(locals.errors && errors.image){ %>
-                    <small class="error-validator">
-                        <%= errors.image.msg %>
-                    </small>
-                    <% } %>
-                    <small class="error-validator" id="errorFileUpload">
-                    </small>
-                </div>
+                
 
                 <div class="button-container">
                     <button type="reset" class="btn btn-danger"><span class="iconify" data-icon="whh:broom"></span></button>
@@ -239,5 +238,7 @@
     </main>
     <a id="endPage"><i class="fas fa-arrow-down"></i></a>
     <script src="/js/addProductValidator.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="/js/previewImg.js"></script>
 </body>
 </html>

@@ -11,7 +11,10 @@ let { listProductAdmin,
     destroyValue,
     message,
     deleteMessage } = require('../controllers/adminController.js');
-let { seeUser, deleteUser, userChange, adminUserChange } = require('../controllers/superUserController');
+let { seeUser,
+     deleteUser, 
+     userChange, 
+     adminUserChange } = require('../controllers/superUserController');
 let multer = require('../middleware/uploadProductsFiles');
 let productValidator = require('../validations/adminValidation.js');
 let categoryInsert = require('../validations/insertCategory.js');
