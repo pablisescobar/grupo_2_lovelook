@@ -5,7 +5,7 @@ let {detail,list,category,sales} = require('../controllers/productsController.js
 router.get('/',list);
 router.get('/:categoryId?',category);
 router.get('/detail/:id/:categoryId',detail);
-router.get('/Ofertas', sales)
+router.get('/products/Ofertas', sales)
 
 
 
