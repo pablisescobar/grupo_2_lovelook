@@ -32,7 +32,7 @@ window.addEventListener("load", () => {
     errorProvincia = global("errorProvince"),
     errorDireccion = global("errorDireccion"),
     errorCp = global("errorCp"),
-    errorCiudad = golbal("errorCity"),
+    errorCiudad = global("errorCity"),
     errorImagen = global("errorImagen"),
     errorFormEdit = global("errorProfileEditForm");
 
