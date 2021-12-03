@@ -86,9 +86,15 @@ select#priceSelect.dropdown {
 
 .container-listProduct .section1 .nav-bar {
   display: none;
+  margin-top: 31px;
+  justify-content: space-evenly;
 }
 
 
+select#sizeSelect.dropdown:focus,select#priceSelect.dropdown:focus,select#colorSelect.dropdown:focus,
+select#sizeSelect.dropdown:active,select#priceSelect.dropdown:active,select#colorSelect.dropdown:focus{
+outline:none;
+}
 .container-listProduct .section2 {
   padding: 20px 10px;
   display: flex;

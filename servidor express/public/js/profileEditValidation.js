@@ -140,7 +140,7 @@ window.addEventListener('load', () => {
   })
   imagen.addEventListener("change", function fileValidation() {
     let filePath = imagen.value,
-      allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i;
+      allowefExtensions = /(.jpg|.jpeg|.png|.gif|.webp)$/i;
     if (!allowefExtensions.exec(filePath)) {
       errorImagen.innerHTML =
         "Carga un archivo de imagen válido, con las extensiones (.jpg - .jpeg - .png - .gif)";

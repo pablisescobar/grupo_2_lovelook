@@ -83,7 +83,8 @@
                 <li class="btn"><a href="/">Inicio</a></li>
                 <li id="categorias_id" class="btn">
                   <a id="categorias_dii">Categorías<i class="fas fa-angle-down" id="fa-angle-down"></i></a>
-                  <div id="category_m" style="display: none" class="menu_desplegable">
+
+                  <div id="category_m" class="menu_desplegable">
                     <div class="desplegable">
                       <% locals.categories.forEach(category=> { %>
                         <a href="/products/<%= category.id %>"><i class="fas fa-angle-right"></i><span>
@@ -139,23 +140,14 @@
             <nav class="navbar" id="subMenu">
               <ul>
                 <li class="btn"><a href="/">Inicio</a></li>
-                <li id="categoriasDesplegable" class="btn">
+                <li id="categoriasDesplegableDesktop" class="btn btnDesp">
                   <a>Categorías</a>
-                  <div class="menu_desplegable" id="categoriasDesplegableView" style="display: none">
-                    <div class="desplegable">
-                      <% locals.categories.forEach(category=> { %>
-                        <a href="/products/<%= category.name %>"><span>
-                            <%= category.name %>
-                          </span></a>
-                        <% }); %>
-                    </div>
-                  </div>
                 </li>
                 <li class="btn"><a href="/products/12">Accesorios</a></li>
                 <li class="btn"><a href="/products/Ofertas">Ofertas</a></li>
               </ul>
             </nav>
-
+           
             <!-- BARRA DE BÚSQUEDA -->
             <form style="width: 0vw; opacity: 0" action="/search" method="GET" class="search-bar" id="search-mobile">
               <input type="text" class="input-header" name="keys" placeholder="Buscar..." />
@@ -165,3 +157,13 @@
               </button>
             </form>
   </header>
+  <div class="categoriesBox" id="CBox">
+    <div class="categoriesList">
+        <% locals.categories.forEach(category=> { %>
+            <a href="/products/<%= category.name %>">
+                <span>
+                    <%= category.name %>
+                </span></a>
+            <% }); %>
+    </div>
+</div>
