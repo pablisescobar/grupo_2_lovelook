@@ -26,35 +26,33 @@ module.exports = {
      },
 
      deleteUser: (req, res) => {
-        db.User.findOne({
-            where: {
-                id: req.params.id
-              },
-        }).then((user)=> {
+        
             db.Location.destroy({
                 where: {
-                    id: user.locationId
+                    userId: req.params.id
                   },
             })
-            /* db.Sales.destroy({
-                where:{
-                    id:req.params.id
-                }, 
+            .then(() => {
+                /* db.Sales.destroy({
+                    where:{
+                        id:req.params.id
+                    }, 
+                })
+                db.ShoppingCart.destroy({
+                    where:{
+                        id: req.params.id
+                    }
+                }) */
+                db.User.destroy({
+                where: {
+                    id: req.params.id,
+                },
+                }).then(() => {
+                
+                res.redirect('/admin/users')
+                })
             })
-            db.ShoppingCart.destroy({
-                where:{
-                    id: req.params.id
-                }
-            }) */
-            db.User.destroy({
-              where: {
-                id: req.params.id,
-              },
-            }).then(() => {
-             
-              res.redirect('/admin/users')
-            })
-          })
+            
         },
         userChange: (req, res) => {
             db.User.update({

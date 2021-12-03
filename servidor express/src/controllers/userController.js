@@ -124,7 +124,6 @@ db.Location.destroy({
           email: req.body.email,
         },
       }).then((user) => {
-        console.log(user)
         req.session.user = {
           id: user.id,
           firstName: user.firstName,
@@ -135,7 +134,6 @@ db.Location.destroy({
           avatar: user.avatar,
           social_provider: "local",
         };
-        console.log(req.session.user)
         if (req.body.remember) {
           res.cookie("userLoveLook", req.session.user, { expires: new Date(Date.now() + 90000), httpOnly: true })
       };
